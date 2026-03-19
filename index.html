@@ -1180,6 +1180,7 @@ function hasBuzzCoverage(r) {
 }
 
 function hasNYTCoverage(r) {
+  if (r.nyt_top_100 || r.pete_wells || r.nyt_stars) return true;
   if (r.buzz_sources && r.buzz_sources.some(s => s === 'NY Times' || s === 'NYT' || s === 'NYT Top 100')) return true;
   if (r.pete_wells_rank) return true;
   return getBuzzLinks(r.name)?.links?.some(l => l.source==='NY Times' || l.source==='NYT') || false;
@@ -1242,11 +1243,15 @@ function renderCard(r, isRadar) {
   const bdata = getBuzzLinks(r.name);
   const hasBuzz = hasBuzzCoverage(r);
 
-  // NYT badge — 3 tiers
-  const isNYT = r.buzz_sources && r.buzz_sources.some(s => s === 'NYT' || s === 'NY Times');
+  // NYT badge — 4 tiers using real data fields
+  const isNYT = (r.buzz_sources && r.buzz_sources.some(s => s === 'NYT' || s === 'NY Times')) || r.pete_wells || r.nyt_top_100;
   if (isNYT) {
     if (r.nyt_top_100) {
-      badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100</span>`;
+      const bl = getBuzzLinks(r.name);
+      const nytLink = bl && bl.links && bl.links.find(l => l.source === 'NYT');
+      const rankMatch = nytLink && nytLink.label && nytLink.label.match(/#(\d+)/);
+      const rankStr = rankMatch ? ` #${rankMatch[1]}` : '';
+      badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rankStr}</span>`;
     } else if (r.pete_wells && r.nyt_stars) {
       const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
       badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
@@ -1626,6 +1631,25 @@ function renderCardAR(r) {
     else badges += `<span class="badge bib">✨ Michelin Rec</span>`;
   }
   if (hasBuzzAR(r) && !r.michelin) badges += `<span class="badge press">📰 Press Pick</span>`;
+  if (!r.michelin) {
+    const isNYT_AR = (r.buzz_sources && r.buzz_sources.some(s => s === 'NYT' || s === 'NY Times')) || r.pete_wells || r.nyt_top_100;
+    if (isNYT_AR) {
+      // Remove generic press pick if NYT
+      badges = badges.replace(`<span class="badge press">📰 Press Pick</span>`, '');
+      if (r.nyt_top_100) {
+        const blAR = BUZZ_LINKS[r.name] || BUZZ_LINKS[(r.name||'').toLowerCase()];
+        const nytLinkAR = blAR && blAR.links && blAR.links.find(l => l.source === 'NYT');
+        const rm = nytLinkAR && nytLinkAR.label && nytLinkAR.label.match(/#(\d+)/);
+        const rs = rm ? ` #${rm[1]}` : '';
+        badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rs}</span>`;
+      } else if (r.pete_wells && r.nyt_stars) {
+        const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
+        badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
+      } else {
+        badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">📰 NYT</span>`;
+      }
+    }
+  }
   const rat = Number(r.googleRating || 0), rev = Number(r.googleReviewCount || 0);
   if (rat >= 4.7 && rev >= 500) {
     const rs = rev >= 1000 ? (rev/1000).toFixed(1)+'k' : rev;
