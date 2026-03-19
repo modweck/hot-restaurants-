@@ -979,12 +979,14 @@ function setTrendFilter(buzz, btn) {
   homeState.trendFilter = buzz;
   document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
+  if (allRestaurants.length > 0) doSearch();
 }
 
 function setRadius(miles, btn) {
   homeState.radiusMiles = miles;
   document.querySelectorAll('.radius-btn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
+  if (allRestaurants.length > 0) doSearch();
 }
 
 function homeUseGPS() {
@@ -1115,6 +1117,7 @@ function setCuisine(val, btn) {
   state.cuisine = val;
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
   btn.classList.add('on');
+  if (allRestaurants.length > 0) doSearch();
 }
 
 function setTransport(mode, btn) {
@@ -1573,6 +1576,7 @@ function arSetCuisine(val, btn) {
   arState.cuisine = val;
   document.querySelectorAll('#ar-form .chip').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
+  if (allRestaurants.length > 0) doSearch();
 }
 
 function arAdjParty(d) {
