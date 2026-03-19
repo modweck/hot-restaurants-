@@ -51,11 +51,711 @@ try {
   console.log(`\u2705 Booking lookup: ${BOOKING_KEYS.length} entries`);
 } catch (err) { console.warn('\u274c Booking lookup missing:', err.message); }
 
+// ── MASTER BOOK (primary source — 8,400+ restaurants) ──
+let MASTER_BOOK = {};
+let MASTER_KEYS = [];
+let AVAILABILITY_BOOK = {};
+try {
+  MASTER_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'BOOKING_MASTER.json'), 'utf8'));
+  MASTER_KEYS = Object.keys(MASTER_BOOK);
+  console.log(`✅ Master book: ${MASTER_KEYS.length} restaurants`);
+} catch (err) { console.warn('⚠️ Master book missing, using booking_lookup:', err.message); }
+try {
+  AVAILABILITY_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'AVAILABILITY_MASTER.json'), 'utf8'));
+  console.log(`✅ Availability book: ${Object.keys(AVAILABILITY_BOOK).length} restaurants`);
+} catch (err) { console.warn('⚠️ Availability book missing:', err.message); }
+
 let CUISINE_LOOKUP = {};
 try {
   CUISINE_LOOKUP = JSON.parse(fs.readFileSync(path.join(__dirname, 'cuisine_lookup.json'), 'utf8'));
   console.log(`\u2705 Cuisine lookup: ${Object.keys(CUISINE_LOOKUP).length} entries`);
 } catch (err) { console.warn('\u26a0\ufe0f Cuisine lookup missing:', err.message); }
+
+let BUZZ_LOOKUP = {};
+try {
+  BUZZ_LOOKUP = JSON.parse(fs.readFileSync(path.join(__dirname, 'buzz_lookup.json'), 'utf8'));
+  console.log(`\u2705 Buzz lookup: ${Object.keys(BUZZ_LOOKUP).length} entries`);
+} catch (err) { console.warn('\u26a0\ufe0f Buzz lookup missing:', err.message); }
+// ── REVIEW VELOCITY DATA ──
+let REVIEW_SNAPSHOTS = {};
+try {
+  REVIEW_SNAPSHOTS = JSON.parse(fs.readFileSync(path.join(__dirname, 'review_snapshots.json'), 'utf8'));
+  const withVelocity = Object.values(REVIEW_SNAPSHOTS).filter(r => r.snapshots && r.snapshots.length >= 2).length;
+  console.log(`\u2705 Review snapshots: ${Object.keys(REVIEW_SNAPSHOTS).length} restaurants (${withVelocity} with velocity data)`);
+} catch (err) { console.warn('\u26a0\ufe0f Review snapshots missing:', err.message); }
+
+/**
+ * Calculate review velocity for a restaurant
+ * Returns object with growth stats or null if not enough data
+ */
+function getReviewVelocity(placeId) {
+  if (!placeId || !REVIEW_SNAPSHOTS[placeId]) return null;
+  const data = REVIEW_SNAPSHOTS[placeId];
+  if (!data.snapshots || data.snapshots.length < 2) return null;
+
+  const latest = data.snapshots[data.snapshots.length - 1];
+  const oldest = data.snapshots[0];
+  const daysBetween = Math.max(1, (new Date(latest.date) - new Date(oldest.date)) / 86400000);
+  const growth = latest.review_count - oldest.review_count;
+  const growthPer30 = Math.round((growth / daysBetween) * 30);
+
+  return {
+    growth30: growthPer30,
+    totalGrowth: growth,
+    daysTracked: Math.round(daysBetween),
+    latestCount: latest.review_count,
+    latestRating: latest.rating,
+    firstSeen: data.first_seen || oldest.date
+  };
+}
+
+// ── BUZZ RESTAURANTS (Eater, Infatuation, TimeOut, Grub Street coverage) ──
+// These bypass quality tier filters and get a 4.4 score floor
+const BUZZ_RESTAURANTS = new Set([
+  '15 east',
+  '188 bakery cuchifritos',
+  '4 charles prime rib',
+  '8282',
+  'a sushi',
+  'a&a bake and doubles',
+  'abc cocina',
+  'abc kitchen',
+  'abc kitchens - dumbo',
+  'abuqir seafood',
+  'adda',
+  'agi\'s counter',
+  'ai fiori',
+  'al di la trattoria',
+  'alley 41',
+  'almond',
+  'alta calidad',
+  'altro paradiso',
+  'amber',
+  'anton\'s',
+  'anything',
+  'aquavit',
+  'aska',
+  'askili orchard',
+  'asset',
+  'atera',
+  'atla',
+  'atoboy',
+  'atomix',
+  'augustine',
+  'avenue',
+  'avra madison estiatorio',
+  'babbo',
+  'bad roman',
+  'balthazar',
+  'bamonte\'s',
+  'bananas',
+  'banh anh em',
+  'bar',
+  'bar kabawa',
+  'bar mario',
+  'bar miller',
+  'bar pitti',
+  'barbetta',
+  'barbuto',
+  'barney greengrass',
+  'bartolo',
+  'bayon',
+  'bea',
+  'beauty & essex',
+  'becco',
+  'bird dog',
+  'birds',
+  'birria-landia',
+  'bistrot ha',
+  'blend',
+  'blu on the hudson',
+  'blue hill',
+  'blue hill at stone barns',
+  'blue ribbon sushi',
+  'bohemian spirit',
+  'bondst',
+  'bongkoch',
+  'bonnie\'s',
+  'boqueria ues',
+  'borgo',
+  'boro6 wine bar',
+  'bouquet',
+  'bowery meat company',
+  'branch',
+  'brass',
+  'brick',
+  'bridges',
+  'briscola',
+  'brooklyn chop house',
+  'bubby\'s',
+  'buddakan',
+  'bungalow',
+  'burrata',
+  'buvette',
+  'bánh anh em',
+  'c as in charlie',
+  'cadence',
+  'cafe boulud',
+  'cafe cluny',
+  'cafe fiorello',
+  'cafe kestrel',
+  'cafe mado',
+  'cafe mogador',
+  'cafe zaffri',
+  'café mars',
+  'café spaghetti',
+  'caleta 111 cevicheria',
+  'carbone',
+  'cardamom',
+  'carmine\'s',
+  'carnitas ramirez',
+  'casa enrique',
+  'casa mono',
+  'catch',
+  'cathédrale',
+  'caviar russe',
+  'cecily',
+  'celestine',
+  'cervo\'s',
+  'cha kee',
+  'chalong',
+  'chambers',
+  'charlie bird',
+  'chavela\'s',
+  'chef\'s table at brooklyn fare',
+  'cheli',
+  'chez fifi',
+  'chez ma tante',
+  'cho dang gol',
+  'chongqing lao zao',
+  'chuan tian xia',
+  'chutney masala',
+  'ci siamo',
+  'cipriani downtown',
+  'claro',
+  'claud',
+  'clinton st. baking company',
+  'clover hill',
+  'cocina consuelo',
+  'colonie',
+  'commerce',
+  'concrete',
+  'confidant',
+  'contra',
+  'cookshop',
+  'coqodaq',
+  'cosme',
+  'cote',
+  'court street',
+  'covacha',
+  'craft',
+  'crave fishbar',
+  'crave fishbar uws',
+  'crown shy',
+  'da toscano',
+  'dame',
+  'daniel',
+  'dante',
+  'david burke tavern',
+  'del frisco\'s double eagle steakhouse',
+  'delmonico\'s',
+  'demo',
+  'dhamaka',
+  'di an di',
+  'di fara pizza',
+  'dim sum go go',
+  'dimes',
+  'dirt candy',
+  'don angie',
+  'don peppe',
+  'double',
+  'double chicken please',
+  'dowling\'s',
+  'drift restaurant & bar',
+  'drink',
+  'dubuhaus',
+  'egg',
+  'eleven madison park',
+  'emily',
+  'emmett\'s on grove',
+  'emmy squared',
+  'empellón',
+  'emporio',
+  'ends meat',
+  'enoteca maria',
+  'entre nous',
+  'estela',
+  'estiatorio milos',
+  'ewe\'s delicious treats',
+  'extra virgin',
+  'eyval',
+  'fairfax',
+  'falansai',
+  'famous',
+  'fasano',
+  'fedora',
+  'felina steak',
+  'fig & olive',
+  'fish cheeks',
+  'five leaves',
+  'flora bar',
+  'fogo de chao',
+  'fogo de chão',
+  'four twenty five',
+  'francie',
+  'frankies spuntino',
+  'freemans',
+  'frenchette',
+  'frevo',
+  'gabriel kreuther',
+  'gage & tollner',
+  'gallaghers steakhouse',
+  'gaonnuri',
+  'gjelina',
+  'gnocchi bar',
+  'golden diner',
+  'golden steer',
+  'gordo\'s cantina',
+  'gotham',
+  'gramercy tavern',
+  'grand central oyster bar',
+  'great ny noodletown',
+  'gupshup',
+  'h',
+  'ha\'s snack bar',
+  'haenyeo',
+  'hags',
+  'hainan chicken house',
+  'hakata tonton',
+  'hakkasan',
+  'hamburger america',
+  'han dynasty lic',
+  'han dynasty uws',
+  'hangawi',
+  'harry\'s',
+  'hart\'s',
+  'hasalon',
+  'hawksmoor',
+  'hawksmoor nyc',
+  'hearth',
+  'hellbender',
+  'ho foods',
+  'hometown bar b que new york',
+  'houseman',
+  'hupo',
+  'hutong new york',
+  'i cavallini',
+  'i sodi',
+  'ichimura',
+  'il buco',
+  'il buco alimentari',
+  'il mulino',
+  'ilili midtown',
+  'indian accent',
+  'industry',
+  'insa',
+  'ippudo',
+  'ishq',
+  'jack\'s wife freda',
+  'jajaja mexicana',
+  'jean-georges',
+  'jeffrey\'s grocery',
+  'jeju noodle bar',
+  'jiang nan',
+  'joe allen',
+  'joe\'s shanghai',
+  'joo ok',
+  'joseph leonard',
+  'juliana\'s pizza',
+  'jungsik',
+  'junoon',
+  'jupiter',
+  'kabawa',
+  'kanan',
+  'kanyakumari',
+  'katz\'s',
+  'keens',
+  'keens steakhouse',
+  'king',
+  'kisa',
+  'kissaki',
+  'ko',
+  'kochi',
+  'koloman',
+  'kono',
+  'kopitiam',
+  'kosaka',
+  'kru',
+  'kung fu little steamed buns ramen',
+  'kyma',
+  'l\'abeille',
+  'l\'artusi',
+  'l\'industrie pizzeria',
+  'la bonne soupe',
+  'la dong',
+  'la grande boucherie',
+  'la marchande',
+  'la masseria',
+  'lafayette',
+  'laghman express',
+  'lakruwana',
+  'laliko',
+  'land',
+  'laser wolf',
+  'lavo',
+  'laziza',
+  'le b.',
+  'le bernardin',
+  'le chene',
+  'le chêne',
+  'le coucou',
+  'le crocodile',
+  'le pavillon',
+  'le rock',
+  'le veau d\'or',
+  'legacy records',
+  'legend of taste',
+  'levant',
+  'levantine',
+  'lexington candy shop',
+  'lilia',
+  'lincoln ristorante',
+  'little alley',
+  'little italy',
+  'little myanmar',
+  'little owl',
+  'llama inn',
+  'llama san',
+  'locanda verde',
+  'loi estiatorio',
+  'lola\'s',
+  'lord\'s',
+  'lore',
+  'loring place',
+  'lucali',
+  'lucia pizza of avenue x',
+  'lucien',
+  'lucky',
+  'lunar',
+  'lungi',
+  'lupa',
+  'lure fishbar',
+  'maddy rose',
+  'madera',
+  'maialino mare',
+  'maison pickle',
+  'maison premiere',
+  'manhatta',
+  'marea',
+  'market table',
+  'masa',
+  'mastro\'s steakhouse',
+  'messy',
+  'meximodo',
+  'milk bar',
+  'minetta tavern',
+  'misi',
+  'miss ada',
+  'mission chinese food',
+  'mitsuru',
+  'mixteca',
+  'miznon',
+  'momofuku ko',
+  'momofuku noodle bar',
+  'momoya upper west',
+  'moody tongue sushi',
+  'morimoto',
+  'motorino',
+  'mozzarella',
+  'mr chow',
+  'muku',
+  'málà project',
+  'mắm',
+  'nami nori',
+  'neighbors',
+  'nerai',
+  'nerina',
+  'nobu downtown',
+  'nom wah tea parlor',
+  'noodle village',
+  'noreetuh',
+  'noz market',
+  'o',
+  'oasis',
+  'ocean prime',
+  'odo',
+  'oiji mi',
+  'okdongsik',
+  'okiboru house of tsukemen',
+  'old homestead steakhouse',
+  'old sport',
+  'olio e più',
+  'olmo',
+  'olmsted',
+  'one if by land two if by sea',
+  'one white street',
+  'ops',
+  'oso',
+  'ovelia psistaria bar',
+  'oxalis',
+  'oxomoco',
+  'palma',
+  'parcelle chinatown',
+  'parcelle greenwich village',
+  'pasquale jones',
+  'pastis',
+  'pastrami queen',
+  'patsy\'s italian restaurant',
+  'paulie gee\'s',
+  'peasant',
+  'peking duck house',
+  'penny',
+  'peppercorn station',
+  'per se',
+  'pera mediterranean brasserie',
+  'peter luger',
+  'phayul',
+  'philippe chow',
+  'phoenix palace',
+  'pierozek',
+  'pig and khao',
+  'pinch chinese',
+  'place des fêtes',
+  'popular',
+  'potluck club',
+  'pranakhon',
+  'quality italian',
+  'quality meats',
+  'raf\'s',
+  'raku',
+  'randazzo\'s clam bar',
+  'raoul\'s',
+  'ras plant based',
+  'razza',
+  'red hook tavern',
+  'red rooster',
+  'renaissance',
+  'rezdora',
+  'rice thief',
+  'richardson',
+  'rider',
+  'riverpark',
+  'roast',
+  'roberta\'s',
+  'rolo\'s',
+  'rosa mexicano',
+  'rubirosa',
+  'ruffian',
+  'rule of thirds',
+  'runner up',
+  'russ & daughters cafe',
+  's & p lunch',
+  'sadelle\'s',
+  'saga',
+  'sagara',
+  'sailor',
+  'sal tang\'s',
+  'salty lunch lady\'s little luncheonette',
+  'san sabino',
+  'sant ambroeus',
+  'santi',
+  'sappeisan',
+  'saranrom thai',
+  'sauced',
+  'scarpetta',
+  'scarr\'s pizza',
+  'schmuck',
+  'sea',
+  'semma',
+  'seoul',
+  'serendipity 3',
+  'serendipity 3 times square',
+  'settepani',
+  'shalom japan',
+  'shaw-nae\'s',
+  'shaw-naé\'s house',
+  'shukette',
+  'shuko',
+  'smith & wollensky',
+  'snail',
+  'soba totto',
+  'socarrat east',
+  'sofreh',
+  'souraji',
+  'sparks steak house',
+  'speedy romeo',
+  'spice',
+  'st. anselm',
+  'st. jardim',
+  'steak frites',
+  'steam',
+  'sticky rice',
+  'stk steakhouse',
+  'strange delight',
+  'stretch pizza',
+  'strip house',
+  'sugarfish',
+  'sunday',
+  'sunday in brooklyn',
+  'sunn\'s',
+  'superiority burger',
+  'sushi amane',
+  'sushi ginza onodera',
+  'sushi nakazawa',
+  'sushi noz',
+  'sushi on me',
+  'sushi ouji',
+  'sushi sho',
+  'sylvia\'s',
+  'szechuan mountain house',
+  'tacombi',
+  'taim mediterranean kitchen',
+  'taiwanese gourmet',
+  'tamarind',
+  'tao downtown',
+  'tao uptown',
+  'tatiana',
+  'tatiana by kwame onwuachi',
+  'tavern on the green',
+  'taverna kyclades',
+  'temple canteen',
+  'terre',
+  'tha phraya',
+  'thai diner',
+  'the bar room at the modern',
+  'the brick',
+  'the corner',
+  'the dining room at gramercy tavern',
+  'the dutch',
+  'the four horsemen',
+  'the golden swan',
+  'the grill',
+  'the lobster club',
+  'the mermaid inn',
+  'the modern',
+  'the musket room',
+  'the odeon',
+  'the polo bar',
+  'the pool',
+  'the river cafe',
+  'the sea fire grill',
+  'the smith',
+  'the snail',
+  'the standard grill',
+  'the tavern at gramercy tavern',
+  'the view',
+  'theodora',
+  'third falcon',
+  'tiny\'s',
+  'tolo',
+  'toloache',
+  'tonchin',
+  'tong sam gyup goo yi',
+  'tony\'s di napoli',
+  'torrisi',
+  'tribeca grill',
+  'trinciti roti shop',
+  'tsukimi',
+  'twist',
+  'txikito',
+  'ugly baby',
+  'una pizza napoletana',
+  'union square cafe',
+  'untable',
+  'upland',
+  'verde',
+  'veselka',
+  'via carota',
+  'village café',
+  'waverly inn',
+  'wayla',
+  'wayne & sons',
+  'wayward fare',
+  'westville',
+  'westville hell\'s kitchen',
+  'westville lic',
+  'westville uws',
+  'white bear',
+  'wild cherry',
+  'wildair',
+  'win son',
+  'wolfgang\'s steakhouse',
+  'wonder',
+  'yellow rose',
+  'yemenat',
+  'yoon haeundae galbi',
+  'zaab zaab',
+  'zou zou\'s',
+  'zuma',
+  'çka ka qëllue',
+]);
+
+function isBuzzRestaurant(name) {
+  if (!name) return false;
+  const n = name.toLowerCase().trim();
+  return BUZZ_RESTAURANTS.has(n) || !!BUZZ_LOOKUP[n];
+}
+
+// ── SEATWIZE SCORE ──
+// Blended quality score: Google rating + Michelin prestige bonus
+// Michelin starred (1-3★): +0.2 | Bib Gourmand / Recommended: +0.1
+// No review count bonuses/penalties — Google already factors volume
+function enrichNYT(r) {
+  const mk = (r.name || '').toLowerCase().trim();
+  const entry = MASTER_BOOK[mk] || MASTER_BOOK[mk.replace(/^the /, '')] || {};
+  if (!r.buzz_sources || r.buzz_sources.length === 0) {
+    r.buzz_sources = entry.buzz_sources || [];
+  }
+  if (!r.nyt_stars && entry.nyt_stars) r.nyt_stars = entry.nyt_stars;
+  if (!r.pete_wells && entry.pete_wells) r.pete_wells = entry.pete_wells;
+  if (!r.nyt_top_100 && entry.nyt_top_100) r.nyt_top_100 = entry.nyt_top_100;
+  if (!r.pete_wells_rank && entry.pete_wells_rank) r.pete_wells_rank = entry.pete_wells_rank;
+  return r;
+}
+
+function computeSeatWizeScore(r) {
+  let score = r.googleRating || 0;
+  if (score === 0) return 0;
+
+  // Michelin bonus only
+  if (r.michelin) {
+    const stars = r.michelin.stars || 0;
+    if (stars >= 1) score += 0.2;
+    else score += 0.1; // bib_gourmand or recommended
+  }
+
+  score = Math.min(5.0, Math.round(score * 10) / 10);
+
+  // Floor: Michelin/Bib never drop below 4.4
+  if (r.michelin && score < 4.4) score = 4.4;
+  // Floor: Buzz restaurants never drop below 4.4
+  if (isBuzzRestaurant(r.name) && score < 4.4) score = 4.4;
+
+  return score;
+}
+
+// ── RESERVATION LIKELIHOOD DATA ──
+let LIKELIHOOD_DATA = {};
+let LIKELIHOOD_TIME_MODS = {};
+let LIKELIHOOD_PARTY_MODS = {};
+try {
+  LIKELIHOOD_DATA = JSON.parse(fs.readFileSync(path.join(__dirname, 'reservation_likelihood.json'), 'utf8'));
+  LIKELIHOOD_TIME_MODS = LIKELIHOOD_DATA._time_modifiers || {};
+  LIKELIHOOD_PARTY_MODS = LIKELIHOOD_DATA._party_size_modifiers || {};
+  const count = Object.keys(LIKELIHOOD_DATA).filter(k => !k.startsWith('_')).length;
+  console.log(`\u2705 Reservation likelihood: ${count} restaurants profiled`);
+} catch (err) { console.warn('\u26a0\ufe0f Reservation likelihood missing:', err.message); }
+
+/**
+ * Get reservation likelihood for a restaurant
+ * Returns the pre-computed profile or null
+ */
+function getReservationLikelihood(placeId) {
+  if (!placeId || !LIKELIHOOD_DATA[placeId]) return null;
+  const data = LIKELIHOOD_DATA[placeId];
+  if (!data.demand_score && data.demand_score !== 0) return null;
+  return data;
+}
 
 const CUISINE_FILTER_MAP = {
   'american':       ['American', 'Soul Food', 'Hawaiian', 'Tex-Mex'],
@@ -77,13 +777,25 @@ const CUISINE_FILTER_MAP = {
   'vietnamese':     ['Vietnamese']
 };
 
-function cuisineLookupMatches(name, userCuisine) {
+function cuisineLookupMatches(name, userCuisine, fallbackCuisine) {
   if (!userCuisine || !name) return true;
-  const c = CUISINE_LOOKUP[name];
-  if (!c) return false;
   const allowed = CUISINE_FILTER_MAP[userCuisine.toLowerCase()] || [];
-  if (allowed.length === 0) return false;
-  return c.split('/').some(p => allowed.some(a => p.trim().toLowerCase().includes(a.toLowerCase())));
+  if (allowed.length === 0) return true; // no filter map entry = can't filter, allow
+
+  // Check CUISINE_LOOKUP first (most accurate source)
+  const c = CUISINE_LOOKUP[name];
+  if (c) {
+    return c.split('/').some(p => allowed.some(a => p.trim().toLowerCase().includes(a.toLowerCase())));
+  }
+
+  // Fallback: check the restaurant's own cuisine field
+  if (fallbackCuisine) {
+    const fb = String(fallbackCuisine).toLowerCase();
+    return allowed.some(a => fb.includes(a.toLowerCase()));
+  }
+
+  // Not in lookup AND no fallback cuisine → EXCLUDE (strict mode)
+  return false;
 }
 
 function normalizeForBooking(name) {
@@ -94,9 +806,13 @@ function normalizeForBooking(name) {
     .trim();
 }
 
+function normalizeApostrophes(s) {
+  return s.replace(/[\u2018\u2019\u201A\u201B\u2032\u0060]/g, "'");
+}
+
 function getBookingInfo(name) {
   if (!name) return null;
-  const key = name.toLowerCase().trim();
+  const key = normalizeApostrophes(name.toLowerCase().trim());
   if (BOOKING_LOOKUP[key]) return BOOKING_LOOKUP[key];
   const noThe = key.replace(/^the\s+/, '');
   if (BOOKING_LOOKUP[noThe]) return BOOKING_LOOKUP[noThe];
@@ -106,6 +822,21 @@ function getBookingInfo(name) {
     if (lk.length < 4) continue;
     if (key.includes(lk) || lk.includes(key)) return BOOKING_LOOKUP[lk];
     if (norm && norm.length >= 4 && (norm.includes(lk) || lk.includes(norm))) return BOOKING_LOOKUP[lk];
+  }
+  // Fall back to MASTER_BOOK with apostrophe normalization
+  let masterEntry = MASTER_BOOK[key] || MASTER_BOOK[noThe];
+  if (!masterEntry) {
+    for (const mk of MASTER_KEYS) {
+      const mkNorm = normalizeApostrophes(mk.toLowerCase());
+      if (mkNorm === key || mkNorm === noThe) { masterEntry = MASTER_BOOK[mk]; break; }
+    }
+  }
+  if (masterEntry) {
+    const bookingUrl = masterEntry.booking_url || masterEntry.url || null;
+    const platform = masterEntry.platform || masterEntry.booking_platform || null;
+    if (bookingUrl && platform && platform !== 'none' && platform !== 'unknown') {
+      return { platform, url: bookingUrl };
+    }
   }
   return null;
 }
@@ -179,7 +910,7 @@ async function detectBookingPlatforms(restaurants, KEY) {
 
   // Pass 3: Crawl restaurant websites for booking links (max 10, only unmatched)
   const unmatched = restaurants.filter(r => !r.booking_platform && r.websiteUri);
-  const toCrawl = unmatched.slice(0, 10);
+  const toCrawl = unmatched.slice(0, 30);
   if (toCrawl.length > 0) {
     console.log(`\ud83d\udd0d Crawling ${toCrawl.length} restaurant websites for booking links...`);
     await runWithConcurrency(toCrawl, 5, async (r) => {
@@ -274,26 +1005,40 @@ function setCache(key, data) { resultCache.set(key, { data, timestamp: Date.now(
 
 function normalizeQualityMode(q) {
   q = String(q||'any').toLowerCase().trim();
-  if (q === 'recommended_44') return 'recommended_44';
-  if (q === 'elite_45') return 'elite_45';
-  if (q === 'strict_elite_46') return 'strict_elite_46';
-  if (q === 'strict_elite_47') return 'strict_elite_47';
-  if (q === 'five_star') return 'elite_45';
-  if (q === 'top_rated_and_above' || q === 'top_rated') return 'recommended_44';
+  // 'all' = All Restaurants, no rating floor
+  if (q === 'all') return 'all';
+  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
+  if (q === 'very_good' || q === 'any') return 'very_good';
+  if (q === 'great') return 'great';
+  if (q === 'exceptional') return 'exceptional';
+  // Legacy mappings (keep for backward compat)
+  if (q === 'recommended_44') return 'very_good';
+  if (q === 'elite_45') return 'great';
+  if (q === 'strict_elite_46' || q === 'strict_elite_47') return 'exceptional';
+  if (q === 'five_star') return 'exceptional';
+  if (q === 'top_rated_and_above' || q === 'top_rated') return 'very_good';
+  // Special filters
   if (q === 'michelin') return 'michelin';
   if (q === 'bib_gourmand') return 'bib_gourmand';
+  if (q === 'michelin_rec') return 'michelin_rec';
   if (q === 'chase_sapphire') return 'chase_sapphire';
   if (q === 'rakuten') return 'rakuten';
-  return 'any';
+  if (q === 'new_rising' || q === 'new_and_rising') return 'new_rising';
+  return 'very_good';
 }
 
 function filterRestaurantsByTier(candidates, qualityMode) {
   const elite = [], moreOptions = [], excluded = [];
-  let eliteMin = 4.5, moreMin = 4.4, strict47 = false;
-  if (qualityMode === 'strict_elite_47') { strict47 = true; eliteMin = 4.7; moreMin = 999; }
-  else if (qualityMode === 'strict_elite_46') { eliteMin = 4.6; moreMin = 999; }
-  else if (qualityMode === 'elite_45') { eliteMin = 4.5; moreMin = 4.4; }
-  else if (qualityMode === 'recommended_44') { eliteMin = 4.4; moreMin = 999; }
+  // 'all' = no floor, everything passes
+  if (qualityMode === 'all') {
+    candidates.forEach(p => elite.push(p));
+    return { elite, moreOptions, excluded };
+  }
+  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
+  let eliteMin = 4.4, moreMin = 999;
+  if (qualityMode === 'exceptional') { eliteMin = 4.8; moreMin = 999; }
+  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.4; }
+  else if (qualityMode === 'very_good') { eliteMin = 4.4; moreMin = 999; }
 
   for (const place of candidates) {
     try {
@@ -303,19 +1048,31 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // MICHELIN BYPASS: Michelin restaurants always pass all filters
       if (place.michelin) { elite.push(place); continue; }
 
+      // BUZZ BYPASS: press-covered restaurants always pass (Eater, Infatuation, NYT etc)
+      if (isBuzzRestaurant(place.name) || (place.buzz_sources && place.buzz_sources.length > 0)) { elite.push(place); continue; }
+
       // CHASE SAPPHIRE BYPASS: Chase partner restaurants always pass filters
       if (place.chase_sapphire) { moreOptions.push(place); continue; }
 
-      // 5.0 with under 500 reviews — likely inflated
-      if (rating >= 5.0 && reviews < 500) { excluded.push({ name: place.name, reason: `perfect_5.0 (${reviews}rev)` }); continue; }
+      // 5.0 with under 500 reviews — likely inflated, cap at 4.8 instead of excluding
+      if (rating >= 5.0 && reviews < 500) { place.googleRating = 4.8; place.rating = 4.8; }
       // 4.9 needs 50+ reviews
       if (rating >= 4.9 && reviews < 50) { excluded.push({ name: place.name, reason: `unreliable ${rating}\u2605/${reviews}rev` }); continue; }
       // 4.7-4.8 needs 50+ reviews
       if (rating >= 4.7 && reviews < 50) { excluded.push({ name: place.name, reason: `few_reviews ${rating}\u2605/${reviews}rev` }); continue; }
-      // Everything else needs 25+ reviews
-      if (reviews < 25) { excluded.push({ name: place.name, reason: `min_reviews (${reviews})` }); continue; }
+      // Everything else needs 150+ reviews
+      if (reviews < 150) { excluded.push({ name: place.name, reason: `min_reviews (${reviews})` }); continue; }
+
+      // DEFAULT HOT SPOTS: must be 4.7+ with 750+ reviews (amazing reviews tier)
+      // Lower rated restaurants only show when a specific quality filter is selected
+      if (qualityMode === 'very_good') {
+        if (rating >= 4.7 && reviews >= 750) elite.push(place);
+        else excluded.push({ name: place.name, reason: 'below_hot_threshold' });
+        continue;
+      }
+
       if (rating >= eliteMin) elite.push(place);
-      else if (!strict47 && rating >= moreMin) moreOptions.push(place);
+      else if (rating >= moreMin) moreOptions.push(place);
       else excluded.push({ name: place.name, reason: 'below_threshold' });
     } catch (err) { excluded.push({ name: place?.name, reason: `error: ${err.message}` }); }
   }
@@ -336,6 +1093,7 @@ async function newApiNearbyRings(lat, lng, KEY) {
         body: JSON.stringify({
           includedTypes: ['restaurant'], maxResultCount: 20, rankPreference: 'POPULARITY',
           locationRestriction: { circle: { center: { latitude: lat, longitude: lng }, radius } },
+          minRating: 4.4,
           languageCode: 'en'
         })
       });
@@ -362,12 +1120,9 @@ async function newApiTextByCuisine(lat, lng, userCuisine, KEY) {
     queries = [`best ${userCuisine} restaurants`, `top rated ${userCuisine} restaurants`];
   } else {
     queries = [
-      'best italian restaurants', 'best japanese restaurants',
-      'best chinese restaurants', 'best mexican restaurants',
-      'best thai restaurants', 'best indian restaurants',
-      'best french restaurants', 'best korean restaurants',
-      'best mediterranean restaurants', 'best american restaurants',
-      'best sushi restaurants', 'best seafood restaurants'
+      'best italian restaurants', 'best sushi restaurants',
+      'best mexican restaurants', 'best mediterranean restaurants',
+      'best american restaurants', 'best french restaurants'
     ];
   }
 
@@ -382,6 +1137,7 @@ async function newApiTextByCuisine(lat, lng, userCuisine, KEY) {
         body: JSON.stringify({
           textQuery: query, maxResultCount: 20,
           locationBias: { circle: { center: { latitude: lat, longitude: lng }, radius: 8000 } },
+          minRating: 4.4,
           languageCode: 'en'
         })
       });
@@ -422,14 +1178,13 @@ function buildGrid(cLat, cLng) {
 
 exports.handler = async (event) => {
   const stableResponse = (elite=[], more=[], stats={}, error=null) => {
-    // Enrich all results with deposit info
     const enrichDeposit = (arr) => (arr || []).map(r => ({
       ...r,
       deposit_type: r.deposit_type || getDepositType(r.name)
     }));
     return {
       statusCode: 200, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ elite: enrichDeposit(elite), moreOptions: enrichDeposit(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error })
+      body: JSON.stringify({ elite: enrichDeposit(elite), moreOptions: enrichDeposit(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error, likelihood_modifiers: { time: LIKELIHOOD_TIME_MODS, party: LIKELIHOOD_PARTY_MODS } })
     };
   };
 
@@ -439,25 +1194,43 @@ exports.handler = async (event) => {
     const t0 = Date.now();
     const timings = { legacy_ms: 0, new_nearby_ms: 0, new_text_ms: 0, filtering_ms: 0, total_ms: 0 };
     const body = JSON.parse(event.body || '{}');
-    const { location, cuisine, openNow, quality } = body;
+    const { location, cuisine, openNow, quality, broadCity, transport } = body;
+    const allNYCMode = !!body.allNYC || body.broadCity === true || body.broadCity === 'true' || body.transport === 'all_nyc';
     const qualityMode = normalizeQualityMode(quality || 'any');
     const KEY = process.env.GOOGLE_PLACES_API_KEY;
     if (!KEY) return stableResponse([], [], {}, 'API key not configured');
 
-    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v15';
+    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v22';
     const cached = getFromCache(cacheKey);
     if (cached) { timings.total_ms = Date.now()-t0; return stableResponse(cached.elite, cached.moreOptions, { ...cached.stats, cached: true, performance: { ...timings, cache_hit: true } }); }
 
-    // Geocode
+    // Geocode — skip for All NYC mode, use NYC center as default
     let lat, lng, confirmedAddress = null;
-    const locStr = String(location||'').trim();
-    const cm = locStr.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
-    if (cm) { lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`; }
-    else {
-      const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
-      if (gd.status !== 'OK') return stableResponse([],[],{ performance: { total_ms: Date.now()-t0 } }, `Geocode failed: ${gd.status}`);
-      lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
-      confirmedAddress = gd.results[0].formatted_address;
+    if (allNYCMode) {
+      // Try to geocode the actual address for accurate distance calculations
+      const locStr = String(location||'').trim();
+      const cm = locStr.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
+      if (cm) {
+        lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`;
+      } else if (locStr && locStr.toLowerCase() !== 'new york, ny' && locStr.toLowerCase() !== 'nyc') {
+        try {
+          const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
+          if (gd.status === 'OK') {
+            lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
+            confirmedAddress = gd.results[0].formatted_address;
+          } else { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
+        } catch(e) { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
+      } else { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
+    } else {
+      const locStr = String(location||'').trim();
+      const cm = locStr.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
+      if (cm) { lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`; }
+      else {
+        const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
+        if (gd.status !== 'OK') return stableResponse([],[],{ performance: { total_ms: Date.now()-t0 } }, `Geocode failed: ${gd.status}`);
+        lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
+        confirmedAddress = gd.results[0].formatted_address;
+      }
     }
     const gLat = Math.round(lat*10000)/10000, gLng = Math.round(lng*10000)/10000;
 
@@ -467,48 +1240,204 @@ exports.handler = async (event) => {
       if (c?.name) chaseNameLookup.add(normalizeName(c.name));
     }
 
-    // Michelin mode (unchanged)
-    if (qualityMode === 'michelin') {
-      const resolved = await resolveMichelinPlaces(KEY);
-      const within = resolved.filter(r => r?.lat != null && r?.lng != null).map(r => {
-        const d = haversineMiles(gLat, gLng, r.lat, r.lng);
-        return { place_id: r.place_id, name: r.name, vicinity: r.address||'', formatted_address: r.address||'',
-          price_level: r.price_level || null, opening_hours: null, geometry: { location: { lat: r.lat, lng: r.lng } },
-          googleRating: r.googleRating, googleReviewCount: r.googleReviewCount,
-          distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
-          michelin: { stars: r.stars||0, distinction: r.distinction||'star' },
-          cuisine: CUISINE_LOOKUP[r.name] || r.cuisine || null,
-          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null,
-          chase_sapphire: chaseNameLookup.has(normalizeName(r.name)) };
-      }).filter(r => r.distanceMiles <= 15).sort((a,b) => (b.michelin?.stars || 0) - (a.michelin?.stars || 0) || (b.googleRating || 0) - (a.googleRating || 0) || a.distanceMiles - b.distanceMiles);
-      timings.total_ms = Date.now()-t0;
-      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, michelinMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
-      setCache(cacheKey, { elite: within, moreOptions: [], stats });
-      return stableResponse(within, [], stats);
+    const rakutenNameLookup = new Set();
+    for (const r of RAKUTEN_BASE) {
+      if (r?.name) rakutenNameLookup.add(normalizeName(r.name));
     }
 
-    // Bib Gourmand mode — 15 mile radius (pre-resolved, no API calls needed)
+    // Michelin mode — pull directly from BOOKING_MASTER (michelin_stars >= 1)
+    if (qualityMode === 'michelin') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+
+      // Build list from MASTER_BOOK entries that have michelin_stars >= 1
+      const michelinEntries = [];
+      for (const [name, entry] of Object.entries(MASTER_BOOK)) {
+        if (!entry || typeof entry !== 'object') continue;
+        const stars = entry.michelin_stars || 0;
+        if (stars < 1) continue;
+        if (!entry.lat || !entry.lng) continue;
+        michelinEntries.push({ name, entry, stars });
+      }
+      console.log(`⭐ Michelin from MASTER_BOOK: ${michelinEntries.length}`);
+
+      const allResults = michelinEntries.map(({ name, entry, stars }) => {
+        const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
+        return {
+          place_id: entry.place_id || null,
+          name,
+          vicinity: entry.address || entry.neighborhood || '',
+          formatted_address: entry.address || '',
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat: entry.lat, lng: entry.lng } },
+          googleRating: entry.google_rating || entry.googleRating || null,
+          googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
+          distanceMiles: Math.round(d * 10) / 10,
+          walkMinEstimate: Math.round(d * 20),
+          driveMinEstimate: Math.round(d * 4),
+          transitMinEstimate: Math.round(d * 6),
+          michelin: { stars, distinction: 'star' },
+          cuisine: entry.cuisine || CUISINE_LOOKUP[name] || null,
+          booking_platform: entry.platform || entry.booking_platform || null,
+          booking_url: entry.url || entry.booking_url || null,
+          website: entry.website || null,
+          instagram: entry.instagram || null,
+          bib_gourmand: entry.bib_gourmand || null,
+          chase_sapphire: chaseNameLookup.has(normalizeName(name)),
+          rakuten: rakutenNameLookup.has(normalizeName(name)),
+          bilt_dining: entry.bilt_dining || null,
+          inkind: entry.inkind || null
+        };
+      });
+
+      // Distance filter — respect transport/radius param from frontend
+      const maxDist = allNYCMode ? 999 :
+        body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
+
+      const filtered = allResults
+        .filter(r => r.distanceMiles <= maxDist)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+
+      filtered.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      filtered.sort((a, b) =>
+        (b.michelin?.stars || 0) - (a.michelin?.stars || 0) ||
+        (b.seatwizeScore || 0) - (a.seatwizeScore || 0) ||
+        a.distanceMiles - b.distanceMiles
+      );
+
+      timings.total_ms = Date.now() - t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, michelinMode: true, count: filtered.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: filtered, moreOptions: [], stats });
+      return stableResponse(filtered, [], stats);
+    }
+
+    // Bib Gourmand mode — pull directly from BOOKING_MASTER (bib_gourmand === true)
     if (qualityMode === 'bib_gourmand') {
-      const bibPlaces = getBibGourmandPlaces();
-      console.log(`\ud83c\udf7d\ufe0f Bib Gourmand: ${bibPlaces.length} pre-resolved entries`);
-      const within = bibPlaces.map(r => {
-        const d = haversineMiles(gLat, gLng, r.lat, r.lng);
-        return { place_id: r.place_id, name: r.name, vicinity: r.address||'', formatted_address: r.address||'',
-          price_level: r.price_level || null, opening_hours: null, geometry: { location: { lat: r.lat, lng: r.lng } },
-          googleRating: r.googleRating, googleReviewCount: r.googleReviewCount,
-          distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
-          michelin: { stars: 0, distinction: 'bib_gourmand' }, cuisine: CUISINE_LOOKUP[r.name] || r.cuisine || null,
-          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null,
-          chase_sapphire: chaseNameLookup.has(normalizeName(r.name)) };
-      }).filter(r => r.distanceMiles <= 15).sort((a,b) => (b.googleRating || 0) - (a.googleRating || 0) || a.distanceMiles - b.distanceMiles);
-      timings.total_ms = Date.now()-t0;
-      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, bibGourmandMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
-      setCache(cacheKey, { elite: within, moreOptions: [], stats });
-      return stableResponse(within, [], stats);
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+
+      const bibEntries = [];
+      for (const [name, entry] of Object.entries(MASTER_BOOK)) {
+        if (!entry || typeof entry !== 'object') continue;
+        if (!entry.bib_gourmand) continue;
+        if (!entry.lat || !entry.lng) continue;
+        bibEntries.push({ name, entry });
+      }
+      console.log(`🍽️ Bib Gourmand from MASTER_BOOK: ${bibEntries.length}`);
+
+      const allResults = bibEntries.map(({ name, entry }) => {
+        const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
+        return {
+          place_id: entry.place_id || null,
+          name,
+          vicinity: entry.address || entry.neighborhood || '',
+          formatted_address: entry.address || '',
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat: entry.lat, lng: entry.lng } },
+          googleRating: entry.google_rating || entry.googleRating || null,
+          googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
+          distanceMiles: Math.round(d * 10) / 10,
+          walkMinEstimate: Math.round(d * 20),
+          driveMinEstimate: Math.round(d * 4),
+          transitMinEstimate: Math.round(d * 6),
+          michelin: { stars: 0, distinction: 'bib_gourmand' },
+          cuisine: entry.cuisine || CUISINE_LOOKUP[name] || null,
+          booking_platform: entry.platform || entry.booking_platform || null,
+          booking_url: entry.url || entry.booking_url || null,
+          website: entry.website || null,
+          instagram: entry.instagram || null,
+          bib_gourmand: true,
+          chase_sapphire: chaseNameLookup.has(normalizeName(name)),
+          rakuten: rakutenNameLookup.has(normalizeName(name)),
+          bilt_dining: entry.bilt_dining || null,
+          inkind: entry.inkind || null
+        };
+      });
+
+      const maxDist = allNYCMode ? 999 :
+        body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
+
+      const filtered = allResults
+        .filter(r => r.distanceMiles <= maxDist)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+
+      filtered.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      filtered.sort((a, b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
+      timings.total_ms = Date.now() - t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, bibGourmandMode: true, count: filtered.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: filtered, moreOptions: [], stats });
+      return stableResponse(filtered, [], stats);
+    }
+
+    // Michelin Recommended mode — pull from BOOKING_MASTER (michelin_recommended === true, no stars)
+    if (qualityMode === 'michelin_rec') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+
+      const recEntries = [];
+      for (const [name, entry] of Object.entries(MASTER_BOOK)) {
+        if (!entry || typeof entry !== 'object') continue;
+        if (!entry.michelin_recommended) continue;
+        if ((entry.michelin_stars || 0) >= 1) continue; // exclude starred — those are in Michelin Stars filter
+        if (!entry.lat || !entry.lng) continue;
+        recEntries.push({ name, entry });
+      }
+      console.log(`📖 Michelin Recommended from MASTER_BOOK: ${recEntries.length}`);
+
+      const allResults = recEntries.map(({ name, entry }) => {
+        const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
+        return {
+          place_id: entry.place_id || null,
+          name,
+          vicinity: entry.address || entry.neighborhood || '',
+          formatted_address: entry.address || '',
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat: entry.lat, lng: entry.lng } },
+          googleRating: entry.google_rating || entry.googleRating || null,
+          googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
+          distanceMiles: Math.round(d * 10) / 10,
+          walkMinEstimate: Math.round(d * 20),
+          driveMinEstimate: Math.round(d * 4),
+          transitMinEstimate: Math.round(d * 6),
+          michelin: { stars: 0, distinction: entry.bib_gourmand ? 'bib_gourmand' : 'recommended' },
+          michelin_recommended: true,
+          cuisine: entry.cuisine || CUISINE_LOOKUP[name] || null,
+          booking_platform: entry.platform || entry.booking_platform || null,
+          booking_url: entry.url || entry.booking_url || null,
+          website: entry.website || null,
+          instagram: entry.instagram || null,
+          bib_gourmand: entry.bib_gourmand || null,
+          chase_sapphire: chaseNameLookup.has(normalizeName(name)),
+          rakuten: rakutenNameLookup.has(normalizeName(name)),
+          bilt_dining: entry.bilt_dining || null,
+          inkind: entry.inkind || null
+        };
+      });
+
+      const maxDist = allNYCMode ? 999 :
+        body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
+
+      const filtered = allResults
+        .filter(r => r.distanceMiles <= maxDist)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+
+      filtered.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      filtered.sort((a, b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
+      timings.total_ms = Date.now() - t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, michelinRecMode: true, count: filtered.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: filtered, moreOptions: [], stats });
+      return stableResponse(filtered, [], stats);
     }
 
     // Chase Sapphire Reserve mode — 15 mile radius from chase_sapphire_nyc.json
     if (qualityMode === 'chase_sapphire') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
       console.log(`\ud83d\udcb3 Chase Sapphire: ${CHASE_SAPPHIRE_BASE.length} entries`);
       const within = CHASE_SAPPHIRE_BASE.filter(r => r.lat != null && r.lng != null).map(r => {
         const d = haversineMiles(gLat, gLng, r.lat, r.lng);
@@ -517,9 +1446,12 @@ exports.handler = async (event) => {
           googleRating: r.googleRating || 0, googleReviewCount: r.googleReviewCount || 0,
           distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
           michelin: null, cuisine: CUISINE_LOOKUP[r.name] || r.cuisine || null,
-          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null,
+          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null, website: (() => { const mk = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk] || MASTER_BOOK[mk.replace(/^the /,"")] || {}).website || null; })(), instagram: (() => { const mk2 = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk2] || MASTER_BOOK[mk2.replace(/^the /,"")] || {}).instagram || null; })(),
           chase_sapphire: true };
-      }).filter(r => r.distanceMiles <= 15).sort((a,b) => (b.googleRating || 0) - (a.googleRating || 0) || a.distanceMiles - b.distanceMiles);
+      }).filter(r => r.distanceMiles <= 15)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+      within.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      within.sort((a,b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
       timings.total_ms = Date.now()-t0;
       const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, chaseSapphireMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
       setCache(cacheKey, { elite: within, moreOptions: [], stats });
@@ -528,6 +1460,7 @@ exports.handler = async (event) => {
 
     // Rakuten mode — 15 mile radius from rakuten_nyc.json
     if (qualityMode === 'rakuten') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
       console.log('Rakuten: ' + RAKUTEN_BASE.length + ' entries');
       const within = RAKUTEN_BASE.filter(r => r.lat != null && r.lng != null).map(r => {
         const d = haversineMiles(gLat, gLng, r.lat, r.lng);
@@ -536,19 +1469,178 @@ exports.handler = async (event) => {
           googleRating: r.googleRating || 0, googleReviewCount: r.googleReviewCount || 0,
           distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
           michelin: null, cuisine: CUISINE_LOOKUP[r.name] || r.cuisine || null,
-          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null,
+          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null, website: (() => { const mk = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk] || MASTER_BOOK[mk.replace(/^the /,"")] || {}).website || null; })(), instagram: (() => { const mk2 = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk2] || MASTER_BOOK[mk2.replace(/^the /,"")] || {}).instagram || null; })(),
           rakuten: true };
-      }).filter(r => r.distanceMiles <= 15).sort((a,b) => (b.googleRating || 0) - (a.googleRating || 0) || a.distanceMiles - b.distanceMiles);
+      }).filter(r => r.distanceMiles <= 15)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+      within.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      within.sort((a,b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
       timings.total_ms = Date.now()-t0;
       const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, rakutenMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
       setCache(cacheKey, { elite: within, moreOptions: [], stats });
       return stableResponse(within, [], stats);
     }
 
+    // New & Rising mode — pull from REVIEW_SNAPSHOTS velocity data
+    if (qualityMode === 'new_rising') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+      console.log(`✨ New & Rising mode: ${Object.keys(REVIEW_SNAPSHOTS).length} tracked restaurants`);
+
+      const rising = [];
+      for (const [pid, data] of Object.entries(REVIEW_SNAPSHOTS)) {
+        if (!data.snapshots || data.snapshots.length < 2) continue;
+        if (data.graduated) continue; // blew up past 150 reviews, no longer new
+
+        const latest = data.snapshots[data.snapshots.length - 1];
+        const oldest = data.snapshots[0];
+        const daysBetween = Math.max(1, (new Date(latest.date) - new Date(oldest.date)) / 86400000);
+        const growth = latest.review_count - oldest.review_count;
+        const growthPer30 = Math.round((growth / daysBetween) * 30);
+
+        // Must meet velocity + rating + review count criteria
+        if (latest.rating < 4.4) continue;
+        if (latest.review_count < 15 || latest.review_count > 150) continue;
+        if (growthPer30 < 20) continue;
+
+        // Try to find in BOOKING_MASTER for booking info
+        const mk = normalizeName(data.name);
+        const entry = MASTER_BOOK[mk] || MASTER_BOOK[mk.replace(/^the /, '')] || {};
+
+        const d = (data.lat && data.lng) ? haversineMiles(gLat, gLng, data.lat, data.lng) : 999;
+
+        rising.push({
+          place_id: pid,
+          name: data.name,
+          vicinity: data.address || '',
+          formatted_address: data.address || '',
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat: data.lat, lng: data.lng } },
+          googleRating: latest.rating,
+          googleReviewCount: latest.review_count,
+          distanceMiles: Math.round(d * 10) / 10,
+          walkMinEstimate: Math.round(d * 20),
+          driveMinEstimate: Math.round(d * 4),
+          transitMinEstimate: Math.round(d * 6),
+          booking_platform: entry.platform || entry.booking_platform || null,
+          booking_url: entry.url || entry.booking_url || null,
+          website: entry.website || null,
+          instagram: entry.instagram || INSTA?.[data.name?.toLowerCase()] || null,
+          cuisine: entry.cuisine || CUISINE_LOOKUP[mk] || null,
+          bib_gourmand: entry.bib_gourmand || null,
+          michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : null,
+          velocity: { growth30: growthPer30, totalReviews: latest.review_count, daysBetween: Math.round(daysBetween) },
+          new_rising: true,
+          _source: 'new_rising'
+        });
+      }
+
+      // Sort by velocity (fastest growing first)
+      rising.sort((a, b) => (b.velocity?.growth30 || 0) - (a.velocity?.growth30 || 0));
+
+      // Apply distance + cuisine filters
+      const filtered = rising
+        .filter(r => r.distanceMiles <= 15)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+
+      console.log(`✨ New & Rising: ${filtered.length} qualifying restaurants`);
+      timings.total_ms = Date.now() - t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, newRisingMode: true, count: filtered.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: filtered, moreOptions: [], stats });
+      return stableResponse(filtered, [], stats);
+    }
+
     // =========================================================================
-    // THREE-LAYER PARALLEL SEARCH (speed-optimized)
+    // ALL NYC FAST PATH — skip Google API entirely, use booking_lookup only
     // =========================================================================
     const cuisineStr = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+    const isAllNYC = (transport === 'all_nyc' || broadCity === true || broadCity === 'true');
+
+    const allNycSource = MASTER_KEYS.length > 0 ? MASTER_BOOK : BOOKING_LOOKUP;
+    const allNycKeys = MASTER_KEYS.length > 0 ? MASTER_KEYS : BOOKING_KEYS;
+    if (isAllNYC && allNycKeys.length > 0) {
+      console.log(`🗽 ALL NYC MODE — using ${allNycKeys.length} master book entries`);
+      const injected = [];
+      for (const [key, entry] of Object.entries(allNycSource)) {
+        if (!entry.lat || !entry.lng) continue;
+
+        // Cuisine filter
+        if (cuisineStr) {
+          const entryCuisine = CUISINE_LOOKUP[key] || entry.cuisine || null;
+          if (!entryCuisine) continue;
+          const c = entryCuisine.toLowerCase();
+          const cs = cuisineStr.toLowerCase();
+          if (!c.includes(cs) && !cs.includes(c)) continue;
+        }
+
+        const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
+        injected.push({
+          name: key,
+          place_id: entry.place_id || null,
+          address: entry.address || entry.neighborhood || null,
+          lat: entry.lat, lng: entry.lng,
+          rating: entry.google_rating || entry.resy_rating || 0,
+          user_ratings_total: entry.google_reviews || 0,
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat: entry.lat, lng: entry.lng } },
+          types: ['restaurant'],
+          booking_platform: entry.platform || entry.booking_platform || null,
+          booking_url: entry.url || entry.booking_url || null,
+          distanceMiles: Math.round(d*10)/10,
+          walkMinEstimate: Math.round(d*20),
+          driveMinEstimate: Math.round(d*4),
+          transitMinEstimate: Math.round(d*6),
+          googleRating: entry.google_rating || 0,
+          googleReviewCount: entry.google_reviews || 0,
+          michelin: entry.michelin || null,
+          bib_gourmand: entry.bib_gourmand || null,
+          chase_sapphire: chaseNameLookup.has(normalizeName(key)) || entry.chase_sapphire || null,
+          rakuten: rakutenNameLookup.has(normalizeName(key)) || entry.rakuten || null,
+          bilt_dining: entry.bilt_dining || null,
+          inkind: entry.inkind || null,
+          vibe_tags: entry.vibe_tags || [],
+          cuisine: entry.cuisine || CUISINE_LOOKUP[key] || null,
+          instagram: entry.instagram || null,
+          // ── Availability: from AVAILABILITY_MASTER ──
+          horizon: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].horizon || null : null,
+          slots:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].slots   || null : null,
+          tier:    AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].tier    || null : null,
+          website: entry.website || null,
+          buzz_sources: entry.buzz_sources || [],
+          nyt_stars: entry.nyt_stars || null,
+          pete_wells: entry.pete_wells || false,
+          nyt_top_100: entry.nyt_top_100 || false,
+          pete_wells_rank: entry.pete_wells_rank || null,
+          _source: 'master_book',
+        });
+      }
+      console.log(`🗽 ALL NYC MODE: ${injected.length} restaurants from master book`);
+
+      // Apply quality filter
+      const { elite, moreOptions, excluded } = filterRestaurantsByTier(injected, qualityMode);
+      console.log(`FILTER ${qualityMode}: Elite(>=4.5):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
+
+      // Compute SeatWize scores
+      [...elite, ...moreOptions].forEach(r => enrichNYT(r));
+      [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+
+      // Detect booking platforms
+      detectBookingPlatforms(elite);
+      detectBookingPlatforms(moreOptions);
+
+      const stats = {
+        confirmedAddress, userLocation: { lat: gLat, lng: gLng },
+        allNYCMode: true, count: elite.length + moreOptions.length,
+        performance: { ...timings, cache_hit: false }
+      };
+      setCache(cacheKey, { elite, moreOptions, stats });
+      return stableResponse(elite, moreOptions, stats);
+    }
+
+    // =========================================================================
+    // THREE-LAYER PARALLEL SEARCH (speed-optimized) — for non-All-NYC searches
+    // =========================================================================
 
     const [legacyFlat, nearbyResults, textResults] = await Promise.all([
 
@@ -689,20 +1781,21 @@ exports.handler = async (event) => {
     });
     if (cleaned.length < beforeExclude) console.log(`\ud83e\uddf9 Excluded ${beforeExclude - cleaned.length} non-restaurants (chains/delis/coffee/bars/venues)`);
 
-    // Cuisine filter: only filter nearby-ring results (Layer 2)
-    // Layer 1 (keyword) and Layer 3 (text) already searched by cuisine
+    // Post-filter by cuisine type
     let cuisineFiltered = cleaned;
     if (cuisineStr) {
       const allowedTypes = CUISINE_TYPE_MAP[cuisineStr.toLowerCase()] || [];
       if (allowedTypes.length > 0) {
         const beforeCount = cuisineFiltered.length;
         cuisineFiltered = cuisineFiltered.filter(p => {
-          if (p._source === 'legacy' || p._source === 'new_text') return true;
+          // Check our cuisine lookup first (most accurate)
+          const lookupResult = cuisineLookupMatches(p.name, cuisineStr, p.cuisine);
+          if (lookupResult) return true;   // matched via lookup or fallback cuisine
+          // Not matched — fall back to Google types and name
           const pTypes = (p.types || []).map(t => t.toLowerCase());
           const matches = allowedTypes.some(at => pTypes.includes(at));
           const nameMatch = (p.name || '').toLowerCase().includes(cuisineStr.toLowerCase());
-          const lookupMatch = cuisineLookupMatches(p.name, cuisineStr);
-          return matches || nameMatch || lookupMatch;
+          return matches || nameMatch;
         });
         console.log(`\ud83c\udf55 Cuisine filter "${cuisineStr}": ${beforeCount} \u2192 ${cuisineFiltered.length} (removed ${beforeCount - cuisineFiltered.length})`);
       }
@@ -740,14 +1833,99 @@ exports.handler = async (event) => {
         googleRating: p.rating || p.googleRating || 0, googleReviewCount: p.user_ratings_total || p.googleReviewCount || 0,
         distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
         booking_platform: bp, booking_url: bu,
+        website: (() => { const mk = (p.name||'').toLowerCase().trim(); return (MASTER_BOOK[mk] || MASTER_BOOK[(mk).replace(/^the /,'')] || {}).website || null; })(),
+        instagram: (() => { const mk = (p.name||'').toLowerCase().trim(); return (MASTER_BOOK[mk] || MASTER_BOOK[(mk).replace(/^the /,'')] || {}).instagram || null; })(),
         websiteUri: p.websiteUri || null,
         cuisine: CUISINE_LOOKUP[p.name] || p.cuisine || null,
+        velocity: getReviewVelocity(p.place_id),
+        likelihood: getReservationLikelihood(p.place_id),
         _source: p._source || 'legacy'
       };
     });
 
-    const within = withDist.filter(r => r.distanceMiles <= 7.0);
-    console.log(`\ud83d\udcca Within 7mi: ${within.length}`);
+    const maxDistMiles = 7.0;
+    const googleResults = withDist.filter(r => r.distanceMiles <= maxDistMiles);
+    console.log(`\ud83d\udcca Within 7mi (Google): ${googleResults.length}`);
+
+    // =========================================================================
+    // BUILD `within` FROM MASTER_BOOK FIRST — Google fills in at the end
+    // =========================================================================
+    const within = [];
+    const existingIds = new Set();
+    const existingNames = new Set();
+
+    let masterInjected = 0;
+    for (const [mk, entry] of Object.entries(MASTER_BOOK)) {
+      if (!entry.lat || !entry.lng) continue;
+      if (entry.place_id && existingIds.has(entry.place_id)) continue;
+      if (existingNames.has(normalizeName(mk))) continue;
+      if (cuisineStr) {
+        const entryCuisine = CUISINE_LOOKUP[mk] || entry.cuisine || null;
+        if (!entryCuisine) continue;
+        const c = entryCuisine.toLowerCase(), cs = cuisineStr.toLowerCase();
+        if (!c.includes(cs) && !cs.includes(c)) continue;
+      }
+      // Filter junk by name — same chains/non-restaurants as Google filter
+      const MASTER_JUNK_NAMES = [
+        /\bstarbucks\b/i, /\bdunkin\b/i, /\bmcdonald/i, /\bsubway\b/i,
+        /\bchipotle\b/i, /\bshake shack\b/i, /\bsweetgreen\b/i,
+        /\bpanera\b/i, /\bpret a manger\b/i, /\bchick-fil-a\b/i,
+        /\bwendy'?s\b/i, /\bburger king\b/i, /\btaco bell\b/i,
+        /\bpopeyes\b/i, /\bfive guys\b/i, /\bpapa john/i, /\bdomino/i,
+        /\bpizza hut\b/i, /\blittle caesars\b/i, /\bkfc\b/i, /\barby'?s\b/i,
+        /\bdunkin/i, /\bwingstop\b/i, /\bpanda express\b/i,
+      ];
+      if (MASTER_JUNK_NAMES.some(rx => rx.test(mk))) continue;
+      // Filter junk by cuisine tag
+      const JUNK_CUISINES = ['bakery', 'coffee', 'cafe', 'fast food', 'deli', 'juice bar', 'smoothie', 'dessert', 'ice cream', 'donut', 'bagel'];
+      const entryCuisineRaw = (entry.cuisine || '').toLowerCase();
+      if (JUNK_CUISINES.some(j => entryCuisineRaw.includes(j))) continue;
+      const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
+      if (d > maxDistMiles) continue;
+      within.push({
+        place_id: entry.place_id || null,
+        name: mk,
+        vicinity: entry.address || entry.neighborhood || '',
+        formatted_address: entry.address || entry.neighborhood || '',
+        price_level: entry.price || null,
+        opening_hours: null,
+        geometry: { location: { lat: entry.lat, lng: entry.lng } },
+        types: ['restaurant'],
+        googleRating: entry.google_rating || 0,
+        googleReviewCount: entry.google_reviews || 0,
+        distanceMiles: Math.round(d * 10) / 10,
+        walkMinEstimate: Math.round(d * 20),
+        driveMinEstimate: Math.round(d * 4),
+        transitMinEstimate: Math.round(d * 6),
+        booking_platform: entry.platform || entry.booking_platform || null,
+        booking_url: entry.url || entry.booking_url || null,
+        website: entry.website || null,
+        cuisine: entry.cuisine || CUISINE_LOOKUP[mk] || null,
+        vibe_tags: entry.vibe_tags || [],
+        instagram: entry.instagram || null,
+        bib_gourmand: entry.bib_gourmand || null,
+        michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : null,
+        chase_sapphire: chaseNameLookup.has(normalizeName(mk)) || null,
+        rakuten: rakutenNameLookup.has(normalizeName(mk)) || null,
+        bilt_dining: entry.bilt_dining || null,
+        inkind: entry.inkind || null,
+        horizon: AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].horizon || null : null,
+        slots:   AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].slots   || null : null,
+        tier:    AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].tier    || null : null,
+        velocity: getReviewVelocity(entry.place_id || null),
+        likelihood: getReservationLikelihood(entry.place_id || null),
+        buzz_sources: entry.buzz_sources || [],
+        nyt_stars: entry.nyt_stars || null,
+        pete_wells: entry.pete_wells || false,
+        nyt_top_100: entry.nyt_top_100 || false,
+        pete_wells_rank: entry.pete_wells_rank || null,
+        _source: 'master_book',
+      });
+      if (entry.place_id) existingIds.add(entry.place_id);
+      existingNames.add(normalizeName(mk));
+      masterInjected++;
+    }
+    console.log(`\u2705 MASTER_BOOK base: ${masterInjected} restaurants within ${maxDistMiles}mi`);
 
     const michelin = await resolveMichelinPlaces(KEY);
     attachMichelinBadges(within, michelin);
@@ -764,16 +1942,12 @@ exports.handler = async (event) => {
         c.booking_url = b.booking_url || null;
       }
     }
-
-    // INJECT Michelin restaurants not in Google results
-    const existingIds = new Set(within.map(r => r.place_id).filter(Boolean));
-    const existingNames = new Set(within.map(r => normalizeName(r.name)).filter(Boolean));
     let injected = 0;
     for (const m of michelin) {
       if (!m?.lat || !m?.lng) continue;
       if (m.place_id && existingIds.has(m.place_id)) continue;
       if (m.name && existingNames.has(normalizeName(m.name))) continue;
-      if (cuisineStr && !cuisineLookupMatches(m.name, cuisineStr)) continue;
+      if (cuisineStr && !cuisineLookupMatches(m.name, cuisineStr, m.cuisine)) continue;
       const d = haversineMiles(gLat, gLng, m.lat, m.lng);
       if (d > 7.0) continue;
       within.push({
@@ -790,6 +1964,8 @@ exports.handler = async (event) => {
         booking_url: m.booking_url || null,
         _source: 'michelin_inject'
       });
+      if (m.place_id) existingIds.add(m.place_id);
+      existingNames.add(normalizeName(m.name));
       injected++;
     }
     if (injected) console.log(`\u2705 Injected ${injected} Michelin restaurants not in Google results`);
@@ -800,7 +1976,7 @@ exports.handler = async (event) => {
     for (const b of bibPlaces) {
       if (!b?.lat || !b?.lng) continue;
       if (b.name && existingNames.has(normalizeName(b.name))) continue;
-      if (cuisineStr && !cuisineLookupMatches(b.name, cuisineStr)) continue;
+      if (cuisineStr && !cuisineLookupMatches(b.name, cuisineStr, b.cuisine)) continue;
       const d = haversineMiles(gLat, gLng, b.lat, b.lng);
       if (d > 7.0) continue;
       within.push({
@@ -828,7 +2004,7 @@ exports.handler = async (event) => {
       if (!p?.lat || !p?.lng) continue;
       if (p.place_id && existingIds.has(p.place_id)) continue;
       if (p.name && existingNames.has(normalizeName(p.name))) continue;
-      if (cuisineStr && !cuisineLookupMatches(p.name, cuisineStr)) continue;
+      if (cuisineStr && !cuisineLookupMatches(p.name, cuisineStr, p.cuisine)) continue;
       const d = haversineMiles(gLat, gLng, p.lat, p.lng);
       if (d > 7.0) continue;
       within.push({
@@ -864,7 +2040,7 @@ exports.handler = async (event) => {
     for (const c of CHASE_SAPPHIRE_BASE) {
       if (!c?.lat || !c?.lng) continue;
       if (c.name && existingNames.has(normalizeName(c.name))) continue;
-      if (cuisineStr && !cuisineLookupMatches(c.name, cuisineStr)) continue;
+      if (cuisineStr && !cuisineLookupMatches(c.name, cuisineStr, c.cuisine)) continue;
       const d = haversineMiles(gLat, gLng, c.lat, c.lng);
       if (d > 15.0) continue;
       within.push({
@@ -886,6 +2062,42 @@ exports.handler = async (event) => {
     }
     if (chaseInjected) console.log(`\u2705 Injected ${chaseInjected} Chase Sapphire restaurants not in other results`);
 
+    // INJECT Google results last — fills in anything MASTER_BOOK missed
+    // 250+ review minimum — below that is likely noise already covered by master
+    let googleInjected = 0;
+    for (const g of googleResults) {
+      if (!g.place_id && !g.name) continue;
+      if ((g.googleReviewCount || g.user_ratings_total || 0) < 250) continue;
+      if (g.place_id && existingIds.has(g.place_id)) continue;
+      if (g.name && existingNames.has(normalizeName(g.name))) continue;
+      const gmk = (g.name||'').toLowerCase().trim();
+      const gmaster = MASTER_BOOK[gmk] || MASTER_BOOK[gmk.replace(/^the /,'')] || {};
+      within.push({ ...g, _source: g._source || 'google', instagram: g.instagram || gmaster.instagram || null, website: g.website || gmaster.website || null });
+      if (g.place_id) existingIds.add(g.place_id);
+      if (g.name) existingNames.add(normalizeName(g.name));
+      googleInjected++;
+    }
+    if (googleInjected) console.log(`\u2705 Injected ${googleInjected} restaurants from Google not in MASTER_BOOK`);
+
+    // Final dedup pass — catch any duplicates from multiple inject paths
+    const deduped = [];
+    const dedupSeen = new Set();
+    for (const r of within) {
+      const key = r.place_id || normalizeName(r.name);
+      if (!key || dedupSeen.has(key)) continue;
+      dedupSeen.add(key);
+      // Also dedupe by normalized name if place_id was the key
+      if (r.place_id && r.name) {
+        const nk = normalizeName(r.name);
+        if (nk && dedupSeen.has(nk)) continue;
+        dedupSeen.add(nk);
+      }
+      deduped.push(r);
+    }
+    if (deduped.length < within.length) console.log(`\ud83e\uddf9 Deduped: removed ${within.length - deduped.length} duplicate restaurants`);
+    within.length = 0;
+    within.push(...deduped);
+
     const fStart = Date.now();
     const { elite, moreOptions, excluded } = filterRestaurantsByTier(within, qualityMode);
     timings.filtering_ms = Date.now() - fStart;
@@ -898,9 +2110,15 @@ exports.handler = async (event) => {
 
     timings.total_ms = Date.now() - t0;
 
+    // Enrich all results with NYT data from MASTER_BOOK
+    [...elite, ...moreOptions].forEach(r => enrichNYT(r));
+
+    // Compute SeatWize scores for all visible restaurants
+    [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+
     const sortFn = (a,b) => {
       if (a.walkMinEstimate !== b.walkMinEstimate) return a.walkMinEstimate - b.walkMinEstimate;
-      if (b.googleRating !== a.googleRating) return b.googleRating - a.googleRating;
+      if ((b.seatwizeScore||0) !== (a.seatwizeScore||0)) return (b.seatwizeScore||0) - (a.seatwizeScore||0);
       if (b.googleReviewCount !== a.googleReviewCount) return b.googleReviewCount - a.googleReviewCount;
       return String(a.name||'').localeCompare(String(b.name||''));
     };
