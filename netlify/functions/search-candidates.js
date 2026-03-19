@@ -1014,11 +1014,8 @@ function normalizeQualityMode(q) {
   q = String(q||'any').toLowerCase().trim();
   // 'all' = All Restaurants, no rating floor
   if (q === 'all') return 'all';
-  // any = no filter, show everything
-  if (q === 'any') return 'all';
-  // Tier system: Good 4.4+ | Very Good 4.6+ | Great 4.7+ | Excellent 4.8+
-  if (q === 'good' || q === 'still_good') return 'good';
-  if (q === 'very_good') return 'very_good';
+  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
+  if (q === 'very_good' || q === 'any') return 'very_good';
   if (q === 'great') return 'great';
   if (q === 'exceptional') return 'exceptional';
   // Legacy mappings (keep for backward compat)
@@ -1044,12 +1041,11 @@ function filterRestaurantsByTier(candidates, qualityMode) {
     candidates.forEach(p => elite.push(p));
     return { elite, moreOptions, excluded };
   }
-  // Tier system: Good 4.4+ | Very Good 4.6+ | Great 4.7+ | Excellent 4.8+
+  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
   let eliteMin = 4.4, moreMin = 999;
   if (qualityMode === 'exceptional') { eliteMin = 4.8; moreMin = 999; }
-  else if (qualityMode === 'great') { eliteMin = 4.7; moreMin = 4.4; }
-  else if (qualityMode === 'very_good') { eliteMin = 4.6; moreMin = 4.4; }
-  else if (qualityMode === 'good') { eliteMin = 4.4; moreMin = 999; }
+  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.4; }
+  else if (qualityMode === 'very_good') { eliteMin = 4.4; moreMin = 999; }
 
   for (const place of candidates) {
     try {
@@ -1081,12 +1077,6 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // Lower rated restaurants only show when a specific quality filter is selected
       if (qualityMode === 'very_good') {
         if (rating >= 4.7 && reviews >= 750) elite.push(place);
-        else excluded.push(place);
-        continue;
-      }
-      // Good tier: 4.4+
-      if (qualityMode === 'good') {
-        if (rating >= 4.4) elite.push(place);
         else excluded.push(place);
         continue;
       }
