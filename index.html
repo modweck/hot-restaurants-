@@ -167,13 +167,6 @@
     .web-link:hover{color:#1a1a2e;border-color:rgba(0,0,0,0.2)}
     .insta-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;text-decoration:none;color:#c13584;opacity:.7;transition:opacity .15s}
     .insta-link:hover{opacity:1}
-    .insta-buzz-link{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#fff0f7;color:#c13584;border:1px solid rgba(193,53,132,0.25);transition:all .15s}
-    .insta-buzz-link:hover{background:#ffd6ee;border-color:rgba(193,53,132,0.5)}
-    .insta-buzz-wrap{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px}
-    .insta-buzz-more{display:inline-flex;align-items:center;padding:3px 8px;border-radius:11px;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:#c13584;border:1px solid rgba(193,53,132,0.25);transition:all .15s}
-    .insta-buzz-more:hover{background:#fff0f7}
-    .insta-buzz-expanded{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;width:100%}
-    .insta-buzz-sub{font-size:10px;opacity:.85}
     .loc-banner{background:#fff;border:1px solid rgba(0,0,0,.07);padding:7px 13px;border-radius:8px;margin:0 16px 10px;font-size:12px;color:#888;display:flex;align-items:center;gap:5px}
     .err-banner{background:#fef2f2;border:1px solid rgba(220,38,38,.2);padding:10px 13px;border-radius:9px;margin:0 16px 10px;font-size:13px;font-weight:600;color:#dc2626}
     .empty{text-align:center;padding:50px 20px}
@@ -243,11 +236,12 @@
           <button class="fchip" onclick="setTrendFilter('bib',this)">🍽️ Bib Gourmand</button>
           <button class="fchip" onclick="setTrendFilter('nyt',this)">📰 NYT Reviewed</button>
           <button class="fchip" onclick="setTrendFilter('press',this)">📰 Eater / Infa</button>
+          <button class="fchip" onclick="setTrendFilter('instagram',this)">📸 Instagram Buzz</button>
           <button class="fchip" onclick="setTrendFilter('instagram',this)">🎯 Instagram Influencers</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">🔥 Amazing Reviews</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">✨ New &amp; Rising</button>
         </div>
-        <button class="trending-view-btn" onclick="goToSearch(homeState.trendFilter, homeState.cuisine)">🔥 View Hot Spots</button>
+        <button class="trending-view-btn" onclick="goToSearch(homeState.trendFilter)">🔥 View Hot Spots</button>
       </div>
     </div>
 
@@ -402,7 +396,7 @@
       <div style="margin-bottom:12px">
         <span class="flabel">🔥 Buzz Filter</span>
         <div class="dselect">
-          <select id="buzzFilter" onchange="state.buzzFilter=this.value; if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="buzzFilter" onchange="state.buzzFilter=this.value; if(allRestaurants.length>0) doSearch();">
             <option value="any">All Hot Spots</option>
             <option value="michelin">⭐ Michelin Stars</option>
             <option value="michelin_rec">📖 Michelin Recommended</option>
@@ -583,11 +577,9 @@
           <span class="flabel">🔥 Quality</span>
           <div class="dselect">
             <select id="arBuzzFilter" onchange="arState.buzzFilter=this.value">
-              <option value="any" selected>Any</option>
-              <option value="good">Good (4.4+)</option>
-              <option value="very_good">Very Good (4.6+)</option>
-              <option value="great">Great (4.7+)</option>
-              <option value="exceptional">Excellent (4.8+)</option>
+              <option value="any">Very Good &amp; Up</option>
+              <option value="great">Great</option>
+              <option value="exceptional">Exceptional</option>
             </select>
           </div>
         </div>
@@ -983,14 +975,6 @@ function setHeroTab(tab, btn) {
   }
 }
 
-function toggleInstaBuzz(id, btn) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const isOpen = el.style.display !== 'none';
-  el.style.display = isOpen ? 'none' : 'flex';
-  btn.textContent = isOpen ? btn.textContent.replace('▴', '▾') : btn.textContent.replace('▾', '▴');
-}
-
 function setTrendFilter(buzz, btn) {
   homeState.trendFilter = buzz;
   document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
@@ -1109,7 +1093,7 @@ const BUZZ_SET = new Set(["15 east","4 charles prime rib","8282","abc cocina","a
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
 const state = { cuisine:'any', buzzFilter:'any', priceFilter:'any', rewardsFilter:'any', transport:'all_nyc' };
-let allRestaurants = [], rawRestaurants = [], abortCtrl = null, searching = false;
+let allRestaurants = [], abortCtrl = null, searching = false;
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 (function(){
@@ -1340,30 +1324,12 @@ function renderCard(r, isRadar) {
 
   // Website + Instagram links
   let cardLinks = '';
-  if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
+  if (r.website || instaHandle) {
     cardLinks = '<div class="card-links">';
     if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
     if (instaHandle) {
       const cleanHandle = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
       cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">📸 @${cleanHandle}</a>`;
-    }
-    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-      const top = sorted[0];
-      const rest = sorted.slice(1);
-      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-      if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
-      } else {
-        cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
-        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
-        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
-        rest.forEach(p => {
-          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
-        });
-        cardLinks += `</span></span>`;
-      }
     }
     cardLinks += '</div>';
   }
@@ -1415,18 +1381,9 @@ function display(restaurants) {
     return hasEaterOrInfat || BUZZ_SET.has((r.name||'').toLowerCase().trim());
   });
   else if (bf==='nyt') list = list.filter(r => hasNYTCoverage(r));
-  else if (bf==='instagram') list = list.filter(r => !!(r.instagram_buzz && r.instagram_buzz.length > 0));
+  else if (bf==='instagram') list = list.filter(r => !!(r.instagram || INSTA[(r.name||'').toLowerCase()]));
   else if (bf==='google_amazing') list = list.filter(r => Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750);
   else if (bf==='new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
-
-  // ── Cuisine filter ──
-  if (state.cuisine && state.cuisine !== 'any') {
-    const cs = state.cuisine.toLowerCase();
-    list = list.filter(r => {
-      const c = (r.cuisine || '').toLowerCase();
-      return c.includes(cs) || cs.includes(c);
-    });
-  }
 
   if (state.priceFilter!=='any') {
     const pl = Number(state.priceFilter);
@@ -1529,7 +1486,6 @@ async function doSearch() {
     }));
 
     allRestaurants = results;
-    rawRestaurants = results;
     display(allRestaurants);
 
   } catch(err) {
@@ -1552,7 +1508,6 @@ function isBroadCity(loc) {
 // ─── BACK ─────────────────────────────────────────────────────────────────────
 function goBack() {
   allRestaurants = [];
-  rawRestaurants = [];
   document.getElementById('search').classList.remove('hidden');
   document.getElementById('results').style.display = 'none';
   document.getElementById('list').innerHTML = '';
@@ -1623,7 +1578,6 @@ function arSetCuisine(val, btn) {
   arState.cuisine = val;
   document.querySelectorAll('#ar-form .chip').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
 function arAdjParty(d) {
@@ -1697,12 +1651,11 @@ function renderCardAR(r) {
     }
   }
   const rat = Number(r.googleRating || 0), rev = Number(r.googleReviewCount || 0);
-  if (rat >= 4.0 && rev > 0) {
+  if (rat >= 4.7 && rev >= 500) {
     const rs = rev >= 1000 ? (rev/1000).toFixed(1)+'k' : rev;
-    const opacity = rat >= 4.7 ? '1' : rat >= 4.4 ? '.8' : '.55';
-    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rat} (${rs})</span>`;
+    badges += `<span class="badge goog">⭐ ${rat} (${rs})</span>`;
   } else if (rat >= 4.0) {
-    badges += `<span class="badge goog" style="opacity:.55">⭐ ${rat}</span>`;
+    badges += `<span class="badge goog" style="opacity:.45">⭐ ${rat}</span>`;
   }
 
   const tier = availTierAR(r);
@@ -1729,30 +1682,12 @@ function renderCardAR(r) {
   }
 
   let cardLinks = '';
-  if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
+  if (r.website || instaHandle) {
     cardLinks = '<div class="card-links">';
     if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
     if (instaHandle) {
       const ch = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
       cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">📸 @${ch}</a>`;
-    }
-    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-      const top = sorted[0];
-      const rest = sorted.slice(1);
-      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-      if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
-      } else {
-        cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
-        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
-        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
-        rest.forEach(p => {
-          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
-        });
-        cardLinks += `</span></span>`;
-      }
     }
     cardLinks += '</div>';
   }
@@ -1779,17 +1714,10 @@ function applyARFilters(list) {
   else if (bf === 'nyt') list = list.filter(r => hasBuzzAR(r));
   else if (bf === 'google_amazing') list = list.filter(r => Number(r.googleRating||0) >= 4.7 && Number(r.googleReviewCount||0) >= 750);
   else if (bf === 'new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
-  else if (bf === 'good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
-  else if (bf === 'still_good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
-  else if (bf === 'any') {} // no filter
-  else if (bf === 'very_good') list = list.filter(r => Number(r.googleRating||0) >= 4.6);
-  else if (bf === 'great') list = list.filter(r => Number(r.googleRating||0) >= 4.7);
+  else if (bf === 'very_good') list = list.filter(r => Number(r.googleRating||0) >= 4.3);
+  else if (bf === 'great') list = list.filter(r => Number(r.googleRating||0) >= 4.6);
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
   if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
-  if (arState.cuisine && arState.cuisine !== 'any') {
-    const cs = arState.cuisine.toLowerCase();
-    list = list.filter(r => (r.cuisine || '').toLowerCase().includes(cs) || cs.includes((r.cuisine || '').toLowerCase().trim()));
-  }
   const rf = arState.rewardsFilter;
   if (rf !== 'any') {
     list = list.filter(r => {
@@ -1810,15 +1738,10 @@ function displayAllNYC(restaurants) {
     document.getElementById('allRestList').innerHTML = `<div style="text-align:center;padding:50px 20px;color:#555"><div style="font-size:36px;margin-bottom:12px">🍽️</div><div>No restaurants match these filters</div></div>`;
     return;
   }
-  // Sort: Michelin always top, then by rating ascending from tier floor so you see the tier minimum first
-  const tierFloor = { any: 0, good: 4.4, very_good: 4.6, great: 4.7, exceptional: 4.8 }[arState.buzzFilter] || 0;
   filtered.sort((a, b) => {
-    const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
-    if (michelinDiff !== 0) return michelinDiff;
-    const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-    // Both above floor — sort ascending (closest to floor first)
-    if (rA >= tierFloor && rB >= tierFloor) return rA - rB;
-    return rB - rA;
+    const sA = (a.michelin?.stars||0)*100 + (hasBuzzAR(a)?10:0) + Number(a.googleRating||0);
+    const sB = (b.michelin?.stars||0)*100 + (hasBuzzAR(b)?10:0) + Number(b.googleRating||0);
+    return sB - sA;
   });
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
 }
@@ -2111,6 +2034,8 @@ async function doBarSearch() {
       return;
     }
     let results = [...(data.elite||[]), ...(data.moreOptions||[])];
+
+    // Client-side filters (belt-and-suspenders on top of backend filters)
     if (priceLevel !== 'any') {
       results = results.filter(b => b.price_level === Number(priceLevel));
     }
