@@ -76,6 +76,13 @@ try {
   BUZZ_LOOKUP = JSON.parse(fs.readFileSync(path.join(__dirname, 'buzz_lookup.json'), 'utf8'));
   console.log(`\u2705 Buzz lookup: ${Object.keys(BUZZ_LOOKUP).length} entries`);
 } catch (err) { console.warn('\u26a0\ufe0f Buzz lookup missing:', err.message); }
+
+// ── INSTAGRAM BUZZ (influencer posts mentioning this restaurant) ──
+let INSTAGRAM_BUZZ = {};
+try {
+  INSTAGRAM_BUZZ = JSON.parse(fs.readFileSync(path.join(__dirname, 'instagram_buzz.json'), 'utf8'));
+  console.log(`✅ Instagram buzz: ${Object.keys(INSTAGRAM_BUZZ).length} restaurants with influencer links`);
+} catch (err) { console.warn('⚠️ Instagram buzz missing:', err.message); }
 // ── REVIEW VELOCITY DATA ──
 let REVIEW_SNAPSHOTS = {};
 try {
@@ -1007,8 +1014,11 @@ function normalizeQualityMode(q) {
   q = String(q||'any').toLowerCase().trim();
   // 'all' = All Restaurants, no rating floor
   if (q === 'all') return 'all';
-  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
-  if (q === 'very_good' || q === 'any') return 'very_good';
+  // any = no filter, show everything
+  if (q === 'any') return 'all';
+  // Tier system: Good 4.4+ | Very Good 4.6+ | Great 4.7+ | Excellent 4.8+
+  if (q === 'good' || q === 'still_good') return 'good';
+  if (q === 'very_good') return 'very_good';
   if (q === 'great') return 'great';
   if (q === 'exceptional') return 'exceptional';
   // Legacy mappings (keep for backward compat)
@@ -1034,11 +1044,12 @@ function filterRestaurantsByTier(candidates, qualityMode) {
     candidates.forEach(p => elite.push(p));
     return { elite, moreOptions, excluded };
   }
-  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
+  // Tier system: Good 4.4+ | Very Good 4.6+ | Great 4.7+ | Excellent 4.8+
   let eliteMin = 4.4, moreMin = 999;
   if (qualityMode === 'exceptional') { eliteMin = 4.8; moreMin = 999; }
-  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.4; }
-  else if (qualityMode === 'very_good') { eliteMin = 4.4; moreMin = 999; }
+  else if (qualityMode === 'great') { eliteMin = 4.7; moreMin = 4.4; }
+  else if (qualityMode === 'very_good') { eliteMin = 4.6; moreMin = 4.4; }
+  else if (qualityMode === 'good') { eliteMin = 4.4; moreMin = 999; }
 
   for (const place of candidates) {
     try {
@@ -1051,29 +1062,38 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // BUZZ BYPASS: press-covered restaurants always pass (Eater, Infatuation, NYT etc)
       if (isBuzzRestaurant(place.name) || (place.buzz_sources && place.buzz_sources.length > 0)) { elite.push(place); continue; }
 
+      // INSTAGRAM BUZZ BYPASS: influencer-tagged restaurants always pass
+      if (place.instagram_buzz && place.instagram_buzz.length > 0) { elite.push(place); continue; }
+
       // CHASE SAPPHIRE BYPASS: Chase partner restaurants always pass filters
       if (place.chase_sapphire) { moreOptions.push(place); continue; }
 
       // 5.0 with under 500 reviews — likely inflated, cap at 4.8 instead of excluding
       if (rating >= 5.0 && reviews < 500) { place.googleRating = 4.8; place.rating = 4.8; }
       // 4.9 needs 50+ reviews
-      if (rating >= 4.9 && reviews < 50) { excluded.push({ name: place.name, reason: `unreliable ${rating}\u2605/${reviews}rev` }); continue; }
+      if (rating >= 4.9 && reviews < 50) { excluded.push(place); continue; }
       // 4.7-4.8 needs 50+ reviews
-      if (rating >= 4.7 && reviews < 50) { excluded.push({ name: place.name, reason: `few_reviews ${rating}\u2605/${reviews}rev` }); continue; }
+      if (rating >= 4.7 && reviews < 50) { excluded.push(place); continue; }
       // Everything else needs 150+ reviews
-      if (reviews < 150) { excluded.push({ name: place.name, reason: `min_reviews (${reviews})` }); continue; }
+      if (reviews < 150) { excluded.push(place); continue; }
 
       // DEFAULT HOT SPOTS: must be 4.7+ with 750+ reviews (amazing reviews tier)
       // Lower rated restaurants only show when a specific quality filter is selected
       if (qualityMode === 'very_good') {
         if (rating >= 4.7 && reviews >= 750) elite.push(place);
-        else excluded.push({ name: place.name, reason: 'below_hot_threshold' });
+        else excluded.push(place);
+        continue;
+      }
+      // Good tier: 4.4+
+      if (qualityMode === 'good') {
+        if (rating >= 4.4) elite.push(place);
+        else excluded.push(place);
         continue;
       }
 
       if (rating >= eliteMin) elite.push(place);
       else if (rating >= moreMin) moreOptions.push(place);
-      else excluded.push({ name: place.name, reason: 'below_threshold' });
+      else excluded.push(place);
     } catch (err) { excluded.push({ name: place?.name, reason: `error: ${err.message}` }); }
   }
   console.log(`FILTER ${qualityMode}: Elite(>=${eliteMin}):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
@@ -1177,7 +1197,7 @@ function buildGrid(cLat, cLng) {
 }
 
 exports.handler = async (event) => {
-  const stableResponse = (elite=[], more=[], stats={}, error=null) => {
+  const stableResponse = (elite=[], more=[], stats={}, error=null, excluded=[]) => {
     const enrichDeposit = (arr) => (arr || []).map(r => ({
       ...r,
       deposit_type: r.deposit_type || getDepositType(r.name)
@@ -1200,7 +1220,7 @@ exports.handler = async (event) => {
     const KEY = process.env.GOOGLE_PLACES_API_KEY;
     if (!KEY) return stableResponse([], [], {}, 'API key not configured');
 
-    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v22';
+    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v23';
     const cached = getFromCache(cacheKey);
     if (cached) { timings.total_ms = Date.now()-t0; return stableResponse(cached.elite, cached.moreOptions, { ...cached.stats, cached: true, performance: { ...timings, cache_hit: true } }); }
 
@@ -1564,13 +1584,21 @@ exports.handler = async (event) => {
       for (const [key, entry] of Object.entries(allNycSource)) {
         if (!entry.lat || !entry.lng) continue;
 
+        // ALL NYC SPEED FILTER: skip low quality entries to reduce payload size
+        // Full data is preserved in BOOKING_MASTER — this only affects All NYC display
+        const rating = entry.google_rating || 0;
+        const reviews = entry.google_reviews || 0;
+        const hasInstaBuzz = !!INSTAGRAM_BUZZ[key];
+        const isBuzz = !!(entry.buzz_sources && entry.buzz_sources.length > 0);
+        const isMichelin = !!entry.michelin;
+        if (!isMichelin && !isBuzz && !hasInstaBuzz) {
+          if (rating < 4.3 || reviews < 100) continue;
+        }
+
         // Cuisine filter
         if (cuisineStr) {
           const entryCuisine = CUISINE_LOOKUP[key] || entry.cuisine || null;
-          if (!entryCuisine) continue;
-          const c = entryCuisine.toLowerCase();
-          const cs = cuisineStr.toLowerCase();
-          if (!c.includes(cs) && !cs.includes(c)) continue;
+          if (!cuisineLookupMatches(key, cuisineStr, entryCuisine)) continue;
         }
 
         const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
@@ -1612,6 +1640,7 @@ exports.handler = async (event) => {
           pete_wells: entry.pete_wells || false,
           nyt_top_100: entry.nyt_top_100 || false,
           pete_wells_rank: entry.pete_wells_rank || null,
+          instagram_buzz: INSTAGRAM_BUZZ[key] || null,
           _source: 'master_book',
         });
       }
@@ -1622,20 +1651,21 @@ exports.handler = async (event) => {
       console.log(`FILTER ${qualityMode}: Elite(>=4.5):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
 
       // Compute SeatWize scores
-      [...elite, ...moreOptions].forEach(r => enrichNYT(r));
-      [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      [...elite, ...moreOptions, ...excluded].forEach(r => enrichNYT(r));
+      [...elite, ...moreOptions, ...excluded].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
 
       // Detect booking platforms
       detectBookingPlatforms(elite);
       detectBookingPlatforms(moreOptions);
+      detectBookingPlatforms(excluded);
 
       const stats = {
         confirmedAddress, userLocation: { lat: gLat, lng: gLng },
         allNYCMode: true, count: elite.length + moreOptions.length,
         performance: { ...timings, cache_hit: false }
       };
-      setCache(cacheKey, { elite, moreOptions, stats });
-      return stableResponse(elite, moreOptions, stats);
+      setCache(cacheKey, { elite, moreOptions, excluded, stats });
+      return stableResponse(elite, moreOptions, stats, null, excluded);
     }
 
     // =========================================================================
@@ -1919,6 +1949,7 @@ exports.handler = async (event) => {
         pete_wells: entry.pete_wells || false,
         nyt_top_100: entry.nyt_top_100 || false,
         pete_wells_rank: entry.pete_wells_rank || null,
+        instagram_buzz: INSTAGRAM_BUZZ[mk] || null,
         _source: 'master_book',
       });
       if (entry.place_id) existingIds.add(entry.place_id);
