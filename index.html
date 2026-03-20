@@ -524,7 +524,7 @@
         <div style="margin-bottom:14px">
           <span class="flabel">📍 Location</span>
           <div style="display:flex;gap:7px">
-            <input type="text" id="arAddrInput" class="finput" placeholder="Address or neighborhood" value="New York, NY" style="flex:1">
+            <input type="text" id="arAddrInput" class="finput" placeholder="Enter your address or neighborhood..." value="" style="flex:1">
             <button onclick="arUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:16px;color:#ff4500;flex-shrink:0">📍</button>
           </div>
         </div>
@@ -719,7 +719,7 @@
         <div style="margin-bottom:14px">
           <span class="flabel">📍 Location</span>
           <div style="display:flex;gap:7px">
-            <input type="text" id="barAddrInput" class="finput" placeholder="Address or neighborhood" value="New York, NY" style="flex:1">
+            <input type="text" id="barAddrInput" class="finput" placeholder="Enter your address or neighborhood..." value="" style="flex:1">
             <button onclick="barUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:16px;color:#ff4500;flex-shrink:0">📍</button>
           </div>
         </div>
@@ -1020,13 +1020,19 @@ function setRadius(miles, btn) {
 
 function homeUseGPS() {
   if (!navigator.geolocation) return;
+  const el = document.getElementById('homeAddrInput');
+  if (el) el.placeholder = 'Getting location...';
   navigator.geolocation.getCurrentPosition(
-    p => {
+    async p => {
       const coordStr = p.coords.latitude + ',' + p.coords.longitude;
-      document.getElementById('homeAddrInput').value = coordStr;
-      homeState.addr = coordStr;
+      const addr = await reverseGeocode(p.coords.latitude, p.coords.longitude);
+      if (el) {
+        el.value = addr || coordStr;
+        el.placeholder = 'Enter your address or neighborhood...';
+      }
+      homeState.addr = addr || coordStr;
     },
-    () => alert('Could not get location')
+    () => { if (el) el.placeholder = 'Enter your address or neighborhood...'; alert('Could not get location'); }
   );
 }
 
@@ -1160,11 +1166,32 @@ function adjParty(d) {
   el.value = Math.max(1, Math.min(20, parseInt(el.value)+d));
 }
 
+async function reverseGeocode(lat, lng) {
+  try {
+    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBX275d7cDYs9Q2rXWocvpCGXLg171gEPU`);
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      // Find street address component (like Uber — "123 Main St, New York, NY")
+      const result = data.results[0];
+      return result.formatted_address.replace(', USA', '');
+    }
+  } catch(e) {}
+  return null;
+}
+
 function useGPS() {
   if (!navigator.geolocation) return;
+  const el = document.getElementById('addressInput');
+  if (el) el.placeholder = 'Getting location...';
   navigator.geolocation.getCurrentPosition(
-    p => { document.getElementById('addressInput').value = `${p.coords.latitude},${p.coords.longitude}`; },
-    () => alert('Could not get location')
+    async p => {
+      const addr = await reverseGeocode(p.coords.latitude, p.coords.longitude);
+      if (el) {
+        el.value = addr || `${p.coords.latitude},${p.coords.longitude}`;
+        el.placeholder = 'Enter your address or neighborhood...';
+      }
+    },
+    () => { if (el) el.placeholder = 'Enter your address or neighborhood...'; alert('Could not get location'); }
   );
 }
 
@@ -1659,10 +1686,15 @@ function arAdjParty(d) {
 
 function arUseGPS() {
   if (!navigator.geolocation) return;
-  navigator.geolocation.getCurrentPosition(pos => {
-    const el = document.getElementById('arAddrInput');
-    if (el) el.value = `${pos.coords.latitude.toFixed(5)}, ${pos.coords.longitude.toFixed(5)}`;
-  });
+  const el = document.getElementById('arAddrInput');
+  if (el) el.placeholder = 'Getting location...';
+  navigator.geolocation.getCurrentPosition(async pos => {
+    const addr = await reverseGeocode(pos.coords.latitude, pos.coords.longitude);
+    if (el) {
+      el.value = addr || `${pos.coords.latitude.toFixed(5)}, ${pos.coords.longitude.toFixed(5)}`;
+      el.placeholder = 'Enter your address or neighborhood...';
+    }
+  }, () => { if (el) el.placeholder = 'Enter your address or neighborhood...'; });
 }
 
 function arGoBack() {
@@ -1935,9 +1967,17 @@ let barSearching = false, barAbort = null;
 
 function barUseGPS() {
   if (!navigator.geolocation) return;
+  const el = document.getElementById('barAddrInput');
+  if (el) el.placeholder = 'Getting location...';
   navigator.geolocation.getCurrentPosition(
-    p => { document.getElementById('barAddrInput').value = `${p.coords.latitude},${p.coords.longitude}`; },
-    () => alert('Could not get location')
+    async p => {
+      const addr = await reverseGeocode(p.coords.latitude, p.coords.longitude);
+      if (el) {
+        el.value = addr || `${p.coords.latitude},${p.coords.longitude}`;
+        el.placeholder = 'Enter your address or neighborhood...';
+      }
+    },
+    () => { if (el) el.placeholder = 'Enter your address or neighborhood...'; alert('Could not get location'); }
   );
 }
 
