@@ -760,7 +760,7 @@
       </div>
       <div id="allRestWarnings"></div>
       <div id="allRestList"></div>
-      <div style="height:80px"></div>
+      <div id="allRestSentinel" style="height:60px;display:flex;align-items:center;justify-content:center"></div>
     </div>
 
   </div><!-- /view-allrestaurants -->
@@ -1778,6 +1778,7 @@ initAC();
 
 const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
+let allNYCPage = 1, allNYCTotalCount = 0, allNYCLoadingMore = false, allNYCObserver = null;
 
 // Init date
 (function() {
@@ -2044,6 +2045,66 @@ function displayAllNYC(restaurants) {
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
 }
 
+// Fetch one page of All NYC results
+async function fetchAllNYCPage(page) {
+  const location = document.getElementById('arAddrInput')?.value.trim() || 'New York, NY';
+  const cuisine = arState.cuisine === 'any' ? undefined : arState.cuisine;
+  const isAllNYC = arState.transport === 'all_nyc';
+  const resp = await fetch('/.netlify/functions/search-candidates', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      location, quality: 'all', cuisine,
+      broadCity: isAllNYC, transport: arState.transport,
+      walkTime: document.getElementById('arWalkTime')?.value,
+      driveTime: document.getElementById('arDriveTime')?.value,
+      radiusMiles: document.getElementById('arRadiusMiles')?.value,
+      page
+    }),
+    signal: allNYCAbort?.signal
+  });
+  return resp.json();
+}
+
+function setupAllNYCObserver() {
+  if (allNYCObserver) { allNYCObserver.disconnect(); allNYCObserver = null; }
+  const sentinel = document.getElementById('allRestSentinel');
+  if (!sentinel) return;
+  allNYCObserver = new IntersectionObserver(async (entries) => {
+    if (!entries[0].isIntersecting || allNYCLoadingMore) return;
+    const loaded = allNYCRestaurants.length;
+    if (loaded >= allNYCTotalCount) {
+      sentinel.innerHTML = `<span style="font-size:12px;color:#aaa">All ${allNYCTotalCount} restaurants loaded</span>`;
+      allNYCObserver.disconnect();
+      return;
+    }
+    allNYCLoadingMore = true;
+    sentinel.innerHTML = `<span style="font-size:13px;color:#888">Loading more...</span>`;
+    try {
+      const nextPage = Math.floor(loaded / 150) + 1;
+      const data = await fetchAllNYCPage(nextPage);
+      if (data?.error) return;
+      let newResults = [...(data.elite || []), ...(data.moreOptions || [])];
+      const seen = new Set(allNYCRestaurants.map(r => (r.name||'').toLowerCase().trim()));
+      newResults = newResults.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
+      newResults = newResults.map(r => ({ ...r, name: r.name||r.vicinity||'', booking_platform: r.booking_platform||null, booking_url: r.booking_url||null, website: r.website||null }));
+      allNYCRestaurants = [...allNYCRestaurants, ...newResults];
+      allNYCTotalCount = data.stats?.totalCount || allNYCTotalCount;
+      const listEl = document.getElementById('allRestList');
+      if (listEl && newResults.length > 0) {
+        listEl.insertAdjacentHTML('beforeend', newResults.map(r => renderCardAR(r)).join(''));
+      }
+      document.getElementById('allRestMeta').textContent = `${allNYCRestaurants.length} of ${allNYCTotalCount} restaurants`;
+      sentinel.innerHTML = '';
+    } catch(err) {
+      if (err.name !== 'AbortError') sentinel.innerHTML = '';
+    } finally {
+      allNYCLoadingMore = false;
+    }
+  }, { rootMargin: '200px' });
+  allNYCObserver.observe(sentinel);
+}
+
 async function doAllNYCSearch() {
   if (allNYCSearching && allNYCAbort) allNYCAbort.abort();
   allNYCSearching = true;
@@ -2054,13 +2115,14 @@ async function doAllNYCSearch() {
 
   const listEl = document.getElementById('allRestList');
   const warnEl = document.getElementById('allRestWarnings');
+  const sentinel = document.getElementById('allRestSentinel');
   listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all NYC restaurants...</div></div>`;
   warnEl.innerHTML = '';
+  if (sentinel) sentinel.innerHTML = '';
 
   const btn = document.getElementById('arSearchBtn');
   if (btn) { btn.disabled = true; btn.textContent = '⏳ Searching...'; }
 
-  // Cache key — re-fetch when quality, cuisine, or transport changes
   const cacheKey = `${arState.buzzFilter}|${arState.cuisine}|${arState.transport}|${document.getElementById('arAddrInput')?.value.trim()||'nyc'}`;
   if (allNYCRestaurants.length > 0 && allNYCCacheKey === cacheKey) {
     displayAllNYC(allNYCRestaurants);
@@ -2070,33 +2132,11 @@ async function doAllNYCSearch() {
   }
   allNYCCacheKey = cacheKey;
   allNYCRestaurants = [];
+  allNYCPage = 1;
+  allNYCTotalCount = 0;
 
   try {
-    const location = document.getElementById('arAddrInput')?.value.trim() || 'New York, NY';
-    const cuisine = arState.cuisine === 'any' ? undefined : arState.cuisine;
-    const isAllNYC = arState.transport === 'all_nyc';
-
-    // Map quality dropdown → backend quality param
-    // 'any' (All Restaurants) = 'all' on backend = no rating floor
-    // 'very_good' / 'great' / 'exceptional' pass straight through
-    const qualityParam = 'all';
-
-    const resp = await fetch('/.netlify/functions/search-candidates', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        location,
-        quality: qualityParam,
-        cuisine,
-        broadCity: isAllNYC,
-        transport: arState.transport,
-        walkTime: document.getElementById('arWalkTime')?.value,
-        driveTime: document.getElementById('arDriveTime')?.value,
-        radiusMiles: document.getElementById('arRadiusMiles')?.value
-      }),
-      signal: allNYCAbort.signal
-    });
-    const data = await resp.json();
+    const data = await fetchAllNYCPage(1);
     if (data?.error) {
       warnEl.innerHTML = `<div style="padding:12px 20px;color:#f87171;font-size:13px">❌ ${data.error}</div>`;
       listEl.innerHTML = '';
@@ -2107,7 +2147,9 @@ async function doAllNYCSearch() {
     results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
     results = results.map(r => ({ ...r, name: r.name||r.vicinity||'', booking_platform: r.booking_platform||null, booking_url: r.booking_url||null, website: r.website||null }));
     allNYCRestaurants = results;
+    allNYCTotalCount = data.stats?.totalCount || results.length;
     displayAllNYC(allNYCRestaurants);
+    setupAllNYCObserver();
   } catch(err) {
     if (err.name === 'AbortError') return;
     warnEl.innerHTML = `<div style="padding:12px 20px;color:#f87171;font-size:13px">😔 ${err.message || 'Search failed'}</div>`;
