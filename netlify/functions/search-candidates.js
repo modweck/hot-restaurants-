@@ -1645,39 +1645,42 @@ exports.handler = async (event) => {
       }
       console.log(`🗽 ALL NYC MODE: ${injected.length} restaurants from master book`);
 
-      // Hard cap: sort by buzz/quality first, then cap at 500 to stay under 6MB limit
-      injected.sort((a, b) => {
-        const aHasBuzz = (a.buzz_sources && a.buzz_sources.length > 0) || a.michelin || a.instagram_buzz ? 1 : 0;
-        const bHasBuzz = (b.buzz_sources && b.buzz_sources.length > 0) || b.michelin || b.instagram_buzz ? 1 : 0;
-        if (bHasBuzz !== aHasBuzz) return bHasBuzz - aHasBuzz;
-        return (b.googleRating || 0) - (a.googleRating || 0);
-      });
-      const ALL_NYC_CAP = 500;
-      if (injected.length > ALL_NYC_CAP) {
-        console.log(`🗽 ALL NYC MODE: capping ${injected.length} → ${ALL_NYC_CAP} restaurants to stay under 6MB`);
-        injected.length = ALL_NYC_CAP;
-      }
-
       // Apply quality filter
       const { elite, moreOptions, excluded } = filterRestaurantsByTier(injected, qualityMode);
       console.log(`FILTER ${qualityMode}: Elite(>=4.5):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
 
-      // Compute SeatWize scores
-      [...elite, ...moreOptions, ...excluded].forEach(r => enrichNYT(r));
-      [...elite, ...moreOptions, ...excluded].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      // Compute SeatWize scores + enrich NYT
+      [...elite, ...moreOptions].forEach(r => enrichNYT(r));
+      [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
 
       // Detect booking platforms
       detectBookingPlatforms(elite);
       detectBookingPlatforms(moreOptions);
-      detectBookingPlatforms(excluded);
 
+      // ── PAGINATION: sort combined results, then slice to the requested page ──
+      const allSorted = [...elite, ...moreOptions];
+      allSorted.sort((a, b) => {
+        const aTop = (a.buzz_sources && a.buzz_sources.length > 0) || a.michelin || a.instagram_buzz ? 1 : 0;
+        const bTop = (b.buzz_sources && b.buzz_sources.length > 0) || b.michelin || b.instagram_buzz ? 1 : 0;
+        if (bTop !== aTop) return bTop - aTop;
+        return (b.seatwizeScore || b.googleRating || 0) - (a.seatwizeScore || a.googleRating || 0);
+      });
+
+      const PAGE_SIZE = 150;
+      const page = Math.max(1, parseInt(body.page) || 1);
+      const totalCount = allSorted.length;
+      const pageStart = (page - 1) * PAGE_SIZE;
+      const pageResults = allSorted.slice(pageStart, pageStart + PAGE_SIZE);
+      console.log(`🗽 ALL NYC PAGE ${page}: sending ${pageResults.length} of ${totalCount} total`);
+
+      timings.total_ms = Date.now() - t0;
       const stats = {
         confirmedAddress, userLocation: { lat: gLat, lng: gLng },
-        allNYCMode: true, count: elite.length + moreOptions.length,
+        allNYCMode: true, count: totalCount,
+        page, pageSize: PAGE_SIZE, totalCount,
         performance: { ...timings, cache_hit: false }
       };
-      setCache(cacheKey, { elite, moreOptions, excluded, stats });
-      return stableResponse(elite, moreOptions, stats, null, excluded);
+      return stableResponse(pageResults, [], stats, null, []);
     }
 
     // =========================================================================
