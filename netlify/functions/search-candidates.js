@@ -1633,13 +1633,7 @@ exports.handler = async (event) => {
           pete_wells: entry.pete_wells || false,
           nyt_top_100: entry.nyt_top_100 || false,
           pete_wells_rank: entry.pete_wells_rank || null,
-          instagram_buzz: (() => {
-            const buzz = INSTAGRAM_BUZZ[key];
-            if (!buzz || !buzz.length) return null;
-            // Keep top 5 by likes — correct field names, preserves dropdown
-            const sorted = [...buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-            return sorted.slice(0, 5).map(p => ({ influencer: p.influencer, post_url: p.post_url, likes: p.likes||0 }));
-          })(),
+          instagram_buzz: INSTAGRAM_BUZZ[key] || null,
           _source: 'master_book',
         });
       }
@@ -1649,38 +1643,22 @@ exports.handler = async (event) => {
       const { elite, moreOptions, excluded } = filterRestaurantsByTier(injected, qualityMode);
       console.log(`FILTER ${qualityMode}: Elite(>=4.5):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
 
-      // Compute SeatWize scores + enrich NYT
-      [...elite, ...moreOptions].forEach(r => enrichNYT(r));
-      [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      // Compute SeatWize scores
+      [...elite, ...moreOptions, ...excluded].forEach(r => enrichNYT(r));
+      [...elite, ...moreOptions, ...excluded].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
 
       // Detect booking platforms
       detectBookingPlatforms(elite);
       detectBookingPlatforms(moreOptions);
+      detectBookingPlatforms(excluded);
 
-      // ── PAGINATION: sort combined results, then slice to the requested page ──
-      const allSorted = [...elite, ...moreOptions];
-      allSorted.sort((a, b) => {
-        const aTop = (a.buzz_sources && a.buzz_sources.length > 0) || a.michelin || a.instagram_buzz ? 1 : 0;
-        const bTop = (b.buzz_sources && b.buzz_sources.length > 0) || b.michelin || b.instagram_buzz ? 1 : 0;
-        if (bTop !== aTop) return bTop - aTop;
-        return (b.seatwizeScore || b.googleRating || 0) - (a.seatwizeScore || a.googleRating || 0);
-      });
-
-      const PAGE_SIZE = 150;
-      const page = Math.max(1, parseInt(body.page) || 1);
-      const totalCount = allSorted.length;
-      const pageStart = (page - 1) * PAGE_SIZE;
-      const pageResults = allSorted.slice(pageStart, pageStart + PAGE_SIZE);
-      console.log(`🗽 ALL NYC PAGE ${page}: sending ${pageResults.length} of ${totalCount} total`);
-
-      timings.total_ms = Date.now() - t0;
       const stats = {
         confirmedAddress, userLocation: { lat: gLat, lng: gLng },
-        allNYCMode: true, count: totalCount,
-        page, pageSize: PAGE_SIZE, totalCount,
+        allNYCMode: true, count: elite.length + moreOptions.length,
         performance: { ...timings, cache_hit: false }
       };
-      return stableResponse(pageResults, [], stats, null, []);
+      setCache(cacheKey, { elite, moreOptions, excluded, stats });
+      return stableResponse(elite, moreOptions, stats, null, excluded);
     }
 
     // =========================================================================
