@@ -61,8 +61,9 @@ try {
   console.log(`✅ Master book: ${MASTER_KEYS.length} restaurants`);
 } catch (err) { console.warn('⚠️ Master book missing, using booking_lookup:', err.message); }
 try {
-  AVAILABILITY_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'AVAILABILITY_MASTER.json'), 'utf8'));
-  console.log(`✅ Availability book: ${Object.keys(AVAILABILITY_BOOK).length} restaurants`);
+  AVAILABILITY_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'tonight_availability.json'), 'utf8'));
+  const availCount = Object.keys(AVAILABILITY_BOOK).filter(k => !k.startsWith('_')).length;
+  console.log(`✅ Tonight availability: ${availCount} restaurants`);
 } catch (err) { console.warn('⚠️ Availability book missing:', err.message); }
 
 let CUISINE_LOOKUP = {};
@@ -1620,10 +1621,13 @@ exports.handler = async (event) => {
           vibe_tags: entry.vibe_tags || [],
           cuisine: entry.cuisine || CUISINE_LOOKUP[key] || null,
           instagram: entry.instagram || null,
-          // ── Availability: from AVAILABILITY_MASTER ──
-          horizon: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].horizon || null : null,
-          slots:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].slots   || null : null,
-          tier:    AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].tier    || null : null,
+          // ── Availability: from tonight_availability.json ──
+          avail_tier:  AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].tier    || null : null,
+          avail_slots: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].dinner_slots || 0 : 0,
+          has_early:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_early || false : false,
+          has_prime:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_prime || false : false,
+          has_late:    AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_late  || false : false,
+          sample_times: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].sample_times || [] : [],
           website: entry.website || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
@@ -1929,9 +1933,12 @@ exports.handler = async (event) => {
         rakuten: rakutenNameLookup.has(normalizeName(mk)) || null,
         bilt_dining: entry.bilt_dining || null,
         inkind: entry.inkind || null,
-        horizon: AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].horizon || null : null,
-        slots:   AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].slots   || null : null,
-        tier:    AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].tier    || null : null,
+        avail_tier:  AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].tier    || null : null,
+        avail_slots: AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].dinner_slots || 0 : 0,
+        has_early:   AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].has_early || false : false,
+        has_prime:   AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].has_prime || false : false,
+        has_late:    AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].has_late  || false : false,
+        sample_times: AVAILABILITY_BOOK[mk] ? AVAILABILITY_BOOK[mk].sample_times || [] : [],
         velocity: getReviewVelocity(entry.place_id || null),
         likelihood: getReservationLikelihood(entry.place_id || null),
         buzz_sources: entry.buzz_sources || [],
