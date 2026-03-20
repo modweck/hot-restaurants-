@@ -56,7 +56,18 @@
     .nearby-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;margin:-2px -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
     .nearby-scroll::-webkit-scrollbar{display:none}
     .rcard{flex-shrink:0;width:160px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-    .rcard-img{width:160px;height:120px;border-radius:12px;object-fit:cover;background:#f0ede8;margin-bottom:8px;position:relative;overflow:hidden}
+    .rcard-img{width:160px;height:120px;border-radius:12px;background:#f0ede8;margin-bottom:8px;position:relative;overflow:hidden}
+    .rcard-avail{position:absolute;bottom:7px;left:7px;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif}
+    .rcard-avail.av{background:rgba(46,125,50,0.88);color:#fff}
+    .rcard-avail.lim{background:rgba(200,70,0,0.88);color:#fff}
+    .rcard-avail.hard{background:rgba(160,20,20,0.88);color:#fff}
+    .rcard-avail.sold{background:rgba(30,30,30,0.82);color:#fff}
+    .rcard-time{position:absolute;bottom:7px;right:7px;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif;color:#fff}
+    .rcard-time.early{background:rgba(46,125,50,0.82)}
+    .rcard-time.prime{background:rgba(57,73,171,0.82)}
+    .rcard-time.late{background:rgba(194,24,91,0.82)}
+    .rcard-time.horizon{background:rgba(230,81,0,0.82)}
+    .rcard-drop{font-size:10px;font-weight:700;color:#e65100;margin-top:2px}
     .rcard-img-placeholder{width:160px;height:120px;border-radius:12px;background:linear-gradient(135deg,#243050 0%,#131e2e 100%);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}
     .rcard-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.2;margin-bottom:3px}
     .rcard-sub{font-size:11px;color:#888;margin-bottom:4px}
@@ -247,7 +258,30 @@
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">🔥 Amazing Reviews</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">✨ New &amp; Rising</button>
         </div>
-        <button class="trending-view-btn" onclick="goToSearch(homeState.trendFilter, homeState.cuisine)">🔥 View Hot Spots</button>
+
+        <!-- Available Tonight -->
+        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:12px">
+          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">🟢 Available Tonight</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
+            <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early  6–7:30</button>
+            <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime  7:30–9</button>
+            <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late  9pm+</button>
+          </div>
+        </div>
+
+        <!-- Upcoming horizon -->
+        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:14px">
+          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">📅 Or Browse Upcoming</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="fchip" id="hor-3" onclick="setHorizonFilter(3,this)">+3 days</button>
+            <button class="fchip" id="hor-5" onclick="setHorizonFilter(5,this)">+5 days</button>
+            <button class="fchip" id="hor-7" onclick="setHorizonFilter(7,this)">+7 days</button>
+            <button class="fchip" id="hor-14" onclick="setHorizonFilter(14,this)">+14 days</button>
+          </div>
+        </div>
+
+        <button class="trending-view-btn" id="trendingViewBtn" onclick="goToSearch(homeState.trendFilter, homeState.cuisine)">🔥 View Hot Spots — Tonight</button>
       </div>
     </div>
 
@@ -289,37 +323,64 @@
       <!-- 5. Featured cards — real restaurants from BUZZ_SET -->
       <div class="nearby-scroll" id="nearbyCards">
         <div class="rcard" onclick="goToSearchWithAddr('italian')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail sold">Fully Booked</div>
+            <div class="rcard-time horizon">+3d</div>
+          </div>
           <div class="rcard-name">Via Carota</div>
           <div class="rcard-sub">Italian · West Village</div>
-          <div class="rcard-rating">🔥 Bib Gourmand</div>
+          <div class="rcard-rating">🍽️ Bib Gourmand</div>
+          <div class="rcard-drop">🔔 Fri 10am</div>
         </div>
         <div class="rcard" onclick="goToSearchWithAddr('american')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail av">Available</div>
+            <div class="rcard-time early">Early</div>
+          </div>
           <div class="rcard-name">Gramercy Tavern</div>
           <div class="rcard-sub">American · Flatiron</div>
           <div class="rcard-rating">⭐ Michelin Star</div>
         </div>
         <div class="rcard" onclick="goToSearchWithAddr('italian')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail lim">Limited</div>
+            <div class="rcard-time prime">Prime</div>
+          </div>
           <div class="rcard-name">Lilia</div>
           <div class="rcard-sub">Italian · Williamsburg</div>
           <div class="rcard-rating">🔥 NYT Top 100</div>
         </div>
         <div class="rcard" onclick="goToSearchWithAddr('italian')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail sold">Fully Booked</div>
+            <div class="rcard-time horizon">+7d</div>
+          </div>
           <div class="rcard-name">Carbone</div>
           <div class="rcard-sub">Italian · West Village</div>
           <div class="rcard-rating">🔥 Press Pick</div>
+          <div class="rcard-drop">🔔 Thu 10am</div>
         </div>
         <div class="rcard" onclick="goToSearchWithAddr('indian')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail hard">Hard to Get</div>
+            <div class="rcard-time late">Late</div>
+          </div>
           <div class="rcard-name">Semma</div>
           <div class="rcard-sub">Indian · Greenwich Village</div>
           <div class="rcard-rating">⭐ Michelin · NYT #1</div>
         </div>
         <div class="rcard" onclick="goToSearchWithAddr('korean')">
-          <div class="rcard-img"><img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy"></div>
+          <div class="rcard-img">
+            <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
+            <div class="rcard-avail lim">Limited</div>
+            <div class="rcard-time early">Early</div>
+            <div style="position:absolute;bottom:7px;right:43px;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif;color:#fff;background:rgba(194,24,91,0.82)">Late</div>
+          </div>
           <div class="rcard-name">Atomix</div>
           <div class="rcard-sub">Korean · Midtown</div>
           <div class="rcard-rating">⭐⭐ Michelin</div>
@@ -564,19 +625,21 @@
           </div>
         </div>
 
-        <!-- Date + Party -->
-        <div class="frow">
-          <div style="flex:1.3">
-            <span class="flabel">📅 Date</span>
-            <input type="date" id="arDateInput" class="finput">
+        <!-- Available Tonight -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">🟢 Available Tonight</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
+            <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early  6–7:30</button>
+            <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime  7:30–9</button>
+            <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late  9pm+</button>
           </div>
-          <div style="flex:.9">
-            <span class="flabel">👥 Party</span>
-            <div class="stepper">
-              <button class="step-btn" onclick="arAdjParty(-1)">−</button>
-              <input type="number" id="arParty" class="step-num" value="2" min="1" max="20" readonly>
-              <button class="step-btn" onclick="arAdjParty(1)">+</button>
-            </div>
+          <span class="flabel" style="margin-top:6px">📅 Or Browse Upcoming</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="fchip" id="ar-hor-3" onclick="arSetHorizon(3,this)">+3 days</button>
+            <button class="fchip" id="ar-hor-5" onclick="arSetHorizon(5,this)">+5 days</button>
+            <button class="fchip" id="ar-hor-7" onclick="arSetHorizon(7,this)">+7 days</button>
+            <button class="fchip" id="ar-hor-14" onclick="arSetHorizon(14,this)">+14 days</button>
           </div>
         </div>
 
@@ -847,6 +910,24 @@
           </div>
         </div>
 
+        <!-- Available Tonight -->
+        <div style="margin-bottom:16px">
+          <span class="flabel">🟢 Available Tonight</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <button class="fchip on" id="bar-avail-any" onclick="barSetAvail('any',this)">Any Time</button>
+            <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early  6–7:30</button>
+            <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime  7:30–9</button>
+            <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late  9pm+</button>
+          </div>
+          <span class="flabel" style="margin-top:6px">📅 Or Browse Upcoming</span>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="fchip" id="bar-hor-3" onclick="barSetHorizon(3,this)">+3 days</button>
+            <button class="fchip" id="bar-hor-5" onclick="barSetHorizon(5,this)">+5 days</button>
+            <button class="fchip" id="bar-hor-7" onclick="barSetHorizon(7,this)">+7 days</button>
+            <button class="fchip" id="bar-hor-14" onclick="barSetHorizon(14,this)">+14 days</button>
+          </div>
+        </div>
+
         <!-- Find Button -->
         <button id="barSearchBtn" onclick="doBarSearch()"
           style="width:100%;padding:17px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;transition:all .2s">
@@ -928,7 +1009,28 @@
 
 <script>
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', radiusMiles: 0, addr: '', cuisine: 'any' };
+const homeState = { tab: 'hotspots', trendFilter: 'any', radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
+
+function setAvailFilter(val, btn) {
+  homeState.horizonFilter = null;
+  ['hor-3','hor-5','hor-7','hor-14'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  ['avail-any','avail-tonight','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  homeState.availFilter = val;
+  btn.classList.add('on');
+  const labels = { any:'Any Time', tonight:'Tonight', early:'Early (6–7:30)', prime:'Prime Time', late:'Late Night' };
+  const vb = document.getElementById('trendingViewBtn');
+  if (vb) vb.textContent = '🔥 View Hot Spots — ' + (labels[val] || 'Tonight');
+}
+
+function setHorizonFilter(days, btn) {
+  homeState.availFilter = null;
+  homeState.horizonFilter = days;
+  ['avail-any','avail-tonight','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  ['hor-3','hor-5','hor-7','hor-14'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  btn.classList.add('on');
+  const vb = document.getElementById('trendingViewBtn');
+  if (vb) vb.textContent = '🔥 View Hot Spots — Next ' + days + ' Days';
+}
 
 function showView(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
@@ -1653,7 +1755,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc' };
+const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -1672,6 +1774,31 @@ function arSetTransport(mode, btn) {
     const el = document.getElementById('ar-dd-' + m);
     if (el) el.classList.toggle('open', m === mode);
   });
+}
+
+function arSetAvail(val, btn) {
+  ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  arState.availFilter = val; arState.horizonFilter = null;
+  btn.classList.add('on');
+}
+function arSetHorizon(days, btn) {
+  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  arState.availFilter = null; arState.horizonFilter = days;
+  btn.classList.add('on');
+}
+function barSetAvail(val, btn) {
+  ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['bar-avail-any','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  barState.availFilter = val; barState.horizonFilter = null;
+  btn.classList.add('on');
+}
+function barSetHorizon(days, btn) {
+  ['bar-avail-any','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  barState.availFilter = null; barState.horizonFilter = days;
+  btn.classList.add('on');
 }
 
 function arSetCuisine(val) {
@@ -1961,7 +2088,8 @@ const barState = {
   transport: 'all_nyc', mood: 'any', specialty: 'any',
   lateNight: false, lateNightLevel: 'off',
   buzz: false, dayMode: 'weekday', priceLevel: 'any',
-  allResults: [], sortBy: 'rating'
+  allResults: [], sortBy: 'rating',
+  availFilter: 'any', horizonFilter: null
 };
 let barSearching = false, barAbort = null;
 
