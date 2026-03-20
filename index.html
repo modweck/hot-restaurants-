@@ -1452,6 +1452,8 @@ function display(restaurants) {
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.resy_url||b.opentable_url||b.resy_venue_id||b.opentable_id);
     if (aHasData && !bHasData) return -1;
     if (!aHasData && bHasData) return 1;
+    const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
+    if (rB !== rA) return rB - rA;
     return (b._bs||0)-(a._bs||0);
   });
 
