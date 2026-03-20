@@ -584,10 +584,10 @@
           <div class="dselect">
             <select id="arBuzzFilter" onchange="arState.buzzFilter=this.value">
               <option value="any" selected>Any</option>
-              <option value="good">Good (4.4+)</option>
-              <option value="very_good">Very Good (4.6+)</option>
-              <option value="great">Great (4.7+)</option>
-              <option value="exceptional">Excellent (4.8+)</option>
+              <option value="good">Good (4.0–4.4)</option>
+              <option value="very_good">Very Good (4.5–4.6)</option>
+              <option value="great">Great (4.7)</option>
+              <option value="exceptional">Excellent (4.8–5.0)</option>
             </select>
           </div>
         </div>
@@ -1779,11 +1779,11 @@ function applyARFilters(list) {
   else if (bf === 'nyt') list = list.filter(r => hasBuzzAR(r));
   else if (bf === 'google_amazing') list = list.filter(r => Number(r.googleRating||0) >= 4.7 && Number(r.googleReviewCount||0) >= 750);
   else if (bf === 'new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
-  else if (bf === 'good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
-  else if (bf === 'still_good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
+  else if (bf === 'good') list = list.filter(r => { const g = Number(r.googleRating||0); return g >= 4.0 && g <= 4.499; });
+  else if (bf === 'still_good') list = list.filter(r => { const g = Number(r.googleRating||0); return g >= 4.0 && g <= 4.499; });
   else if (bf === 'any') {} // no filter
-  else if (bf === 'very_good') list = list.filter(r => Number(r.googleRating||0) >= 4.6);
-  else if (bf === 'great') list = list.filter(r => Number(r.googleRating||0) >= 4.7);
+  else if (bf === 'very_good') list = list.filter(r => { const g = Number(r.googleRating||0); return g >= 4.5 && g <= 4.699; });
+  else if (bf === 'great') list = list.filter(r => { const g = Number(r.googleRating||0); return g >= 4.7 && g <= 4.799; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
   if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
   if (arState.cuisine && arState.cuisine !== 'any') {
@@ -1811,7 +1811,8 @@ function displayAllNYC(restaurants) {
     return;
   }
   // Sort: Michelin always top, then by rating ascending from tier floor so you see the tier minimum first
-  const tierFloor = { any: 0, good: 4.4, very_good: 4.6, great: 4.7, exceptional: 4.8 }[arState.buzzFilter] || 0;
+  const tierFloor = { any: 0, good: 4.0, very_good: 4.5, great: 4.7, exceptional: 4.8 }[arState.buzzFilter] || 0;
+  const tierCeil  = { any: 9, good: 4.499, very_good: 4.699, great: 4.799, exceptional: 5.0 }[arState.buzzFilter] || 9;
   filtered.sort((a, b) => {
     const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
     if (michelinDiff !== 0) return michelinDiff;
@@ -1856,9 +1857,10 @@ async function doAllNYCSearch() {
     const isAllNYC = arState.transport === 'all_nyc';
 
     // Map quality dropdown → backend quality param
-    // 'any' (All Restaurants) = 'all' on backend = no rating floor
-    // 'very_good' / 'great' / 'exceptional' pass straight through
-    const qualityParam = 'all';
+    // 'exceptional' stays as-is (backend maps it to 'excellent' tier)
+    const qualityParam = arState.buzzFilter && !['michelin','michelin_rec','bib','press','nyt','google_amazing','new_rising'].includes(arState.buzzFilter)
+      ? arState.buzzFilter
+      : 'all';
 
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method: 'POST',
