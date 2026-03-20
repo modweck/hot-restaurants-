@@ -1359,6 +1359,11 @@ function getBuzzLinks(name) {
 
 // ─── AVAILABILITY TIER ────────────────────────────────────────────────────────
 function availTier(r) {
+  // New fields from tonight_availability.json
+  if (r.avail_tier === 'open')    return 'available';
+  if (r.avail_tier === 'limited') return 'limited';
+  if (r.avail_tier === 'booked')  return 'booked';
+  // Legacy fallback (old field names) — safe to remove after next full deploy
   const h = r.horizon, sl = r.slots, t = r.tier;
   if (h?.day1==='easy') return 'available';
   if (h?.day1==='medium') return 'limited';
@@ -1369,10 +1374,6 @@ function availTier(r) {
   if (t==='easy') return 'available';
   if (t==='medium') return 'limited';
   if (t==='hard') return 'hard';
-  if (h) {
-    const keys = ['day3','day7','day14'].filter(k => h[k]);
-    if (keys.length && keys.every(k => h[k]==='hard')) return 'radar';
-  }
   return null;
 }
 
@@ -1448,10 +1449,17 @@ function renderCard(r, isRadar) {
   // Availability
   const tier = availTier(r);
   let availHtml = '';
+  // Build time window badges
+  const timeBadges = [];
+  if (r.has_early) timeBadges.push(`<span style="display:inline-flex;align-items:center;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);margin-left:4px">Early</span>`);
+  if (r.has_prime) timeBadges.push(`<span style="display:inline-flex;align-items:center;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:700;background:#e8eaf6;color:#3949ab;border:1px solid rgba(57,73,171,.2);margin-left:4px">Prime</span>`);
+  if (r.has_late)  timeBadges.push(`<span style="display:inline-flex;align-items:center;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:700;background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.2);margin-left:4px">Late</span>`);
+  const timeBadgeHtml = timeBadges.join('');
   if (isRadar) availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
-  else if (tier==='available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
-  else if (tier==='limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
-  else if (tier==='hard') availHtml = `<div><span class="avail hard">🔴 Hard to Book</span></div>`;
+  else if (tier==='available') availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span>${timeBadgeHtml}</div>`;
+  else if (tier==='limited')   availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">🟡 Limited Spots</span>${timeBadgeHtml}</div>`;
+  else if (tier==='booked')    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+  else if (tier==='hard')      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Hard to Book</span>${timeBadgeHtml}</div>`;
 
   // Maps URL
   const mapsUrl = r.place_id
