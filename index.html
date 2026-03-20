@@ -625,25 +625,27 @@
         <!-- Cuisine -->
         <div style="margin-bottom:16px">
           <span class="flabel">🍴 Cuisine</span>
-          <div class="chips">
-            <button class="chip on" onclick="arSetCuisine('any',this)">🍴 Any</button>
-            <button class="chip" onclick="arSetCuisine('american',this)">American</button>
-            <button class="chip" onclick="arSetCuisine('italian',this)">Italian</button>
-            <button class="chip" onclick="arSetCuisine('japanese',this)">Japanese</button>
-            <button class="chip" onclick="arSetCuisine('sushi',this)">Sushi</button>
-            <button class="chip" onclick="arSetCuisine('french',this)">French</button>
-            <button class="chip" onclick="arSetCuisine('korean',this)">Korean</button>
-            <button class="chip" onclick="arSetCuisine('chinese',this)">Chinese</button>
-            <button class="chip" onclick="arSetCuisine('mexican',this)">Mexican</button>
-            <button class="chip" onclick="arSetCuisine('indian',this)">Indian</button>
-            <button class="chip" onclick="arSetCuisine('steakhouse',this)">Steakhouse</button>
-            <button class="chip" onclick="arSetCuisine('mediterranean',this)">Mediterranean</button>
-            <button class="chip" onclick="arSetCuisine('seafood',this)">Seafood</button>
-            <button class="chip" onclick="arSetCuisine('thai',this)">Thai</button>
-            <button class="chip" onclick="arSetCuisine('barbecue',this)">BBQ</button>
-            <button class="chip" onclick="arSetCuisine('pizza',this)">Pizza</button>
-            <button class="chip" onclick="arSetCuisine('spanish',this)">Spanish</button>
-            <button class="chip" onclick="arSetCuisine('vietnamese',this)">Vietnamese</button>
+          <div class="dselect">
+            <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
+              <option value="any">🍴 Any Cuisine</option>
+              <option value="american">🍔 American</option>
+              <option value="italian">🍝 Italian</option>
+              <option value="japanese">🍱 Japanese</option>
+              <option value="sushi">🍣 Sushi</option>
+              <option value="french">🥐 French</option>
+              <option value="korean">🥘 Korean</option>
+              <option value="chinese">🥡 Chinese</option>
+              <option value="mexican">🌮 Mexican</option>
+              <option value="indian">🍛 Indian</option>
+              <option value="steakhouse">🥩 Steakhouse</option>
+              <option value="mediterranean">🫒 Mediterranean</option>
+              <option value="seafood">🦞 Seafood</option>
+              <option value="thai">🍜 Thai</option>
+              <option value="barbecue">🍖 BBQ</option>
+              <option value="pizza">🍕 Pizza</option>
+              <option value="spanish">🥘 Spanish</option>
+              <option value="vietnamese">🍜 Vietnamese</option>
+            </select>
           </div>
         </div>
 
@@ -1672,10 +1674,8 @@ function arSetTransport(mode, btn) {
   });
 }
 
-function arSetCuisine(val, btn) {
+function arSetCuisine(val) {
   arState.cuisine = val;
-  document.querySelectorAll('#ar-form .chip').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
