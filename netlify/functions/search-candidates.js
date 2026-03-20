@@ -1636,9 +1636,9 @@ exports.handler = async (event) => {
           instagram_buzz: (() => {
             const buzz = INSTAGRAM_BUZZ[key];
             if (!buzz || !buzz.length) return null;
-            // Trim to just top influencer + count — frontend only needs this
-            const top = buzz[0];
-            return [{ username: top.username, url: top.url, count: buzz.length }];
+            // Keep top 5 by likes — correct field names, preserves dropdown
+            const sorted = [...buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
+            return sorted.slice(0, 5).map(p => ({ influencer: p.influencer, post_url: p.post_url, likes: p.likes||0 }));
           })(),
           _source: 'master_book',
         });
