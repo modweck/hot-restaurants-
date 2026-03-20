@@ -1189,13 +1189,57 @@ function buildGrid(cLat, cLng) {
 
 exports.handler = async (event) => {
   const stableResponse = (elite=[], more=[], stats={}, error=null, excluded=[]) => {
-    const enrichDeposit = (arr) => (arr || []).map(r => ({
-      ...r,
-      deposit_type: r.deposit_type || getDepositType(r.name)
-    }));
+    // Slim each restaurant to only the fields the frontend needs.
+    // This keeps responses well under the 6MB Netlify payload limit.
+    const slimRecord = (r) => {
+      if (!r) return null;
+      return {
+        name: r.name || null,
+        place_id: r.place_id || null,
+        vicinity: r.vicinity || r.formatted_address || null,
+        lat: r.lat ?? r.geometry?.location?.lat ?? null,
+        lng: r.lng ?? r.geometry?.location?.lng ?? null,
+        googleRating: r.googleRating ?? r.rating ?? null,
+        googleReviewCount: r.googleReviewCount ?? r.user_ratings_total ?? null,
+        price_level: r.price_level ?? null,
+        distanceMiles: r.distanceMiles ?? null,
+        walkMinEstimate: r.walkMinEstimate ?? null,
+        driveMinEstimate: r.driveMinEstimate ?? null,
+        transitMinEstimate: r.transitMinEstimate ?? null,
+        seatwizeScore: r.seatwizeScore ?? null,
+        booking_platform: r.booking_platform || null,
+        booking_url: r.booking_url || null,
+        deposit_type: r.deposit_type || getDepositType(r.name),
+        michelin: r.michelin || null,
+        bib_gourmand: r.bib_gourmand || null,
+        chase_sapphire: r.chase_sapphire || null,
+        rakuten: r.rakuten || null,
+        bilt_dining: r.bilt_dining || null,
+        inkind: r.inkind || null,
+        cuisine: r.cuisine || null,
+        instagram: r.instagram || null,
+        website: r.website || null,
+        buzz_sources: r.buzz_sources?.length ? r.buzz_sources : undefined,
+        nyt_stars: r.nyt_stars || null,
+        pete_wells: r.pete_wells || null,
+        nyt_top_100: r.nyt_top_100 || null,
+        pete_wells_rank: r.pete_wells_rank || null,
+        instagram_buzz: r.instagram_buzz || null,
+        avail_tier: r.avail_tier || null,
+        avail_slots: r.avail_slots || null,
+        has_early: r.has_early || null,
+        has_prime: r.has_prime || null,
+        has_late: r.has_late || null,
+        vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
+        velocity: r.velocity || null,
+        new_rising: r.new_rising || null,
+        michelin_recommended: r.michelin_recommended || null,
+      };
+    };
+    const slim = (arr) => (arr || []).map(slimRecord).filter(Boolean);
     return {
       statusCode: 200, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ elite: enrichDeposit(elite), moreOptions: enrichDeposit(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error, likelihood_modifiers: { time: LIKELIHOOD_TIME_MODS, party: LIKELIHOOD_PARTY_MODS } })
+      body: JSON.stringify({ elite: slim(elite), moreOptions: slim(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error, likelihood_modifiers: { time: LIKELIHOOD_TIME_MODS, party: LIKELIHOOD_PARTY_MODS } })
     };
   };
 
