@@ -1282,11 +1282,11 @@ function renderCard(r, isRadar) {
   if (hasBuzz && !r.michelin && !r.bib_gourmand && !isNYT) badges += `<span class="badge press">📰 Press Pick</span>`;
 
   const rating = Number(r.googleRating||0), reviews = Number(r.googleReviewCount||0);
-  if (rating >= 4.7 && reviews >= 500) {
-    const rs = reviews>=1000?(reviews/1000).toFixed(1)+'k':reviews;
-    badges += `<span class="badge goog">⭐ ${rating} (${rs})</span>`;
-  } else if (rating >= 4.0) {
-    badges += `<span class="badge goog" style="opacity:.45">⭐ ${rating}</span>`;
+  if (rating >= 4.0) {
+    const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : null;
+    const opacity = rating >= 4.7 ? '1' : rating >= 4.4 ? '.8' : '.55';
+    const countStr = rs ? ` (${rs})` : '';
+    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rating}${countStr}</span>`;
   }
 
   // Instagram — backend field takes priority, fallback to lookup table
