@@ -1601,6 +1601,19 @@ function display(restaurants) {
     });
   }
 
+  // ── Availability filter ──
+  const af = homeState.availFilter;
+  if (af && af !== 'any') {
+    list = list.filter(r => {
+      const tier = r.avail_tier;
+      if (!tier) return true; // no data — show it
+      if (af === 'early') return r.has_early && tier !== 'booked';
+      if (af === 'prime') return r.has_prime && tier !== 'booked';
+      if (af === 'late')  return r.has_late  && tier !== 'booked';
+      return true;
+    });
+  }
+
   list.sort((a,b) => {
     const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
@@ -1990,6 +2003,19 @@ function applyARFilters(list) {
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
+      return true;
+    });
+  }
+  // ── Availability filter ──
+  const af = arState.availFilter;
+  const hf = arState.horizonFilter;
+  if (af && af !== 'any') {
+    list = list.filter(r => {
+      const tier = r.avail_tier;
+      if (!tier) return true; // no data — show it
+      if (af === 'early') return r.has_early && tier !== 'booked';
+      if (af === 'prime') return r.has_prime && tier !== 'booked';
+      if (af === 'late')  return r.has_late  && tier !== 'booked';
       return true;
     });
   }
