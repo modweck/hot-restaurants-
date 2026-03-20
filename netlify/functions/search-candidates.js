@@ -1014,10 +1014,12 @@ function normalizeQualityMode(q) {
   q = String(q||'any').toLowerCase().trim();
   // 'all' = All Restaurants, no rating floor
   if (q === 'all') return 'all';
-  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
-  if (q === 'very_good' || q === 'any') return 'very_good';
+  // Tier system: Good 4.0-4.4 | Very Good 4.5-4.6 | Great 4.7 | Excellent 4.8-5.0
+  if (q === 'excellent') return 'excellent';
   if (q === 'great') return 'great';
-  if (q === 'exceptional') return 'exceptional';
+  if (q === 'very_good' || q === 'any') return 'very_good';
+  if (q === 'good') return 'good';
+  if (q === 'exceptional') return 'excellent'; // legacy alias
   // Legacy mappings (keep for backward compat)
   if (q === 'recommended_44') return 'very_good';
   if (q === 'elite_45') return 'great';
@@ -1041,11 +1043,17 @@ function filterRestaurantsByTier(candidates, qualityMode) {
     candidates.forEach(p => elite.push(p));
     return { elite, moreOptions, excluded };
   }
-  // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
-  let eliteMin = 4.4, moreMin = 999;
-  if (qualityMode === 'exceptional') { eliteMin = 4.8; moreMin = 999; }
-  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.4; }
-  else if (qualityMode === 'very_good') { eliteMin = 4.4; moreMin = 999; }
+  // Tier system with ranges (min inclusive, max inclusive):
+  //   excellent  → 4.8 – 5.0
+  //   great      → 4.7 – 4.79
+  //   very_good  → 4.5 – 4.69
+  //   good       → 4.0 – 4.49
+  //   any/default→ no ceiling
+  let eliteMin = 4.4, eliteMax = 5.0, moreMin = 999, moreMax = 5.0;
+  if (qualityMode === 'excellent')       { eliteMin = 4.8; eliteMax = 5.0;   moreMin = 999; }
+  else if (qualityMode === 'great')      { eliteMin = 4.7; eliteMax = 4.799; moreMin = 999; }
+  else if (qualityMode === 'very_good')  { eliteMin = 4.5; eliteMax = 4.699; moreMin = 999; }
+  else if (qualityMode === 'good')       { eliteMin = 4.0; eliteMax = 4.499; moreMin = 999; }
 
   for (const place of candidates) {
     try {
@@ -1073,20 +1081,19 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // Everything else needs 150+ reviews
       if (reviews < 150) { excluded.push(place); continue; }
 
-      // DEFAULT HOT SPOTS: must be 4.7+ with 750+ reviews (amazing reviews tier)
-      // Lower rated restaurants only show when a specific quality filter is selected
-      if (qualityMode === 'very_good') {
-        if (rating >= 4.7 && reviews >= 750) elite.push(place);
+      // GOOD / VERY GOOD: show restaurants in the selected range
+      if (qualityMode === 'very_good' || qualityMode === 'good') {
+        if (rating >= eliteMin && rating <= eliteMax && reviews >= 150) elite.push(place);
         else excluded.push(place);
         continue;
       }
 
-      if (rating >= eliteMin) elite.push(place);
-      else if (rating >= moreMin) moreOptions.push(place);
+      if (rating >= eliteMin && rating <= eliteMax) elite.push(place);
+      else if (rating >= moreMin && rating <= moreMax) moreOptions.push(place);
       else excluded.push(place);
     } catch (err) { excluded.push({ name: place?.name, reason: `error: ${err.message}` }); }
   }
-  console.log(`FILTER ${qualityMode}: Elite(>=${eliteMin}):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
+  console.log(`FILTER ${qualityMode}: Elite(${eliteMin}-${eliteMax}):${elite.length} | More:${moreOptions.length} | Excl:${excluded.length}`);
   return { elite, moreOptions, excluded };
 }
 
