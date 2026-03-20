@@ -936,7 +936,19 @@ function switchNav(name) {
   const navEl = document.getElementById('nav-' + navKey);
   if (navEl) navEl.classList.add('active');
   if (name === 'allrestaurants') showView('allrestaurants');
-  else if (name === 'search') showView('search');
+  else if (name === 'search') {
+    // Reset Hot Spots to All NYC default
+    state.transport = 'all_nyc';
+    document.querySelectorAll('#tgroup .tbtn').forEach(b => b.classList.remove('active'));
+    const allNYCBtn = document.querySelector('#tgroup .tbtn:last-child');
+    if (allNYCBtn) allNYCBtn.classList.add('active');
+    ['walk','drive','radius'].forEach(m => {
+      const el = document.getElementById('dd-' + m);
+      if (el) el.classList.remove('open');
+    });
+    showView('search');
+    doSearch();
+  }
   else if (name === 'home') showView('home');
   else if (name === 'drinks') {
     const bf = document.getElementById('bar-form');
