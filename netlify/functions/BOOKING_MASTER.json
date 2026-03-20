@@ -249,8 +249,8 @@
     "pete_wells": true
   },
   "soothr": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/soothr",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/soothr-new-york",
     "lat": 40.7323017,
     "lng": -73.9873417,
     "google_rating": 4.7,
@@ -266,11 +266,12 @@
     "michelin_recommended": true,
     "buzz_sources": [
       "Infatuation"
-    ]
+    ],
+    "opentable_url": "https://www.opentable.com/r/soothr-new-york"
   },
   "san sabino": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/san-sabino",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/san-sabino-reservations-new-york",
     "lat": 40.7380436,
     "lng": -74.0021189,
     "google_rating": 4.4,
@@ -288,7 +289,8 @@
     ],
     "instagram": "sansabinonyc",
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "opentable_url": "https://www.opentable.com/r/san-sabino-reservations-new-york"
   },
   "estelle\u2019s": {
     "platform": "resy",
@@ -435,8 +437,8 @@
     ]
   },
   "bad roman": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/bad-roman",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bad-roman-new-york",
     "lat": 40.7685526,
     "lng": -73.9831866,
     "google_rating": 4.1,
@@ -454,7 +456,8 @@
     ],
     "instagram": "badromannyc",
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "opentable_url": "https://www.opentable.com/r/bad-roman-new-york"
   },
   "carmine's - 44th street": {
     "platform": "opentable",
@@ -861,8 +864,8 @@
     "bilt_id": "9809371b-1e86-4a51-bd19-5e4e3780a560"
   },
   "don angie": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/don-angie",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/don-angie-reservations-new-york",
     "lat": 40.7378037,
     "lng": -74.00209389999999,
     "google_rating": 4.6,
@@ -886,7 +889,8 @@
     "inkind": true,
     "michelin_recommended": true,
     "nyt_stars": 2,
-    "pete_wells": true
+    "pete_wells": true,
+    "opentable_url": "https://www.opentable.com/r/don-angie-reservations-new-york"
   },
   "wild cherry": {
     "platform": "resy",
@@ -1489,7 +1493,8 @@
     ],
     "instagram": "lamarchandenyc",
     "price": 3,
-    "price_estimated": true
+    "price_estimated": true,
+    "resy_url": "https://resy.com/cities/ny/la-marchande"
   },
   "golden steer at one fifth": {
     "platform": "opentable",
@@ -2252,8 +2257,8 @@
     "michelin_recommended": true
   },
   "scarpetta": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/scarpetta",
+    "platform": "website",
+    "url": "https://www.scarpettarestaurants.com/location/scarpetta-new-york-city/",
     "lat": 40.7445876,
     "lng": -73.9855838,
     "google_rating": 4.6,
@@ -3754,8 +3759,8 @@
     "last_availability_check": "2026-03-06"
   },
   "blue hill at stone barns": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/blue-hill-at-stone-barns",
+    "platform": "website",
+    "url": "https://www.bluehillfarm.com/",
     "lat": 40.7320465,
     "lng": -73.9996685,
     "google_rating": 4.6,
@@ -4949,8 +4954,8 @@
     "nyt_top_100": true
   },
   "shion 69 leonard street": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/shion-69-leonard-street",
+    "platform": "website",
+    "url": "http://www.69leonardstreet.com",
     "lat": 40.7176901,
     "lng": -74.0053795,
     "google_rating": 4.5,
@@ -4991,7 +4996,8 @@
     ],
     "price": 4,
     "michelin_stars": 1,
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "resy_url": "https://resy.com/cities/ny/noda"
   },
   "icca": {
     "platform": "tock",
@@ -5040,8 +5046,8 @@
     "resy_slug": "momofuku-ko"
   },
   "yoshino omakase": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/yoshino",
+    "platform": "tock",
+    "url": "https://www.exploretock.com/yoshinonewyork",
     "lat": 40.72621400000001,
     "lng": -73.992093,
     "google_rating": 4.5,
@@ -5154,7 +5160,7 @@
   },
   "sushi amane": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sushi-amane",
+    "url": "https://resy.com/cities/ny/sushi-amane-fly",
     "lat": 40.7515882,
     "lng": -73.9718128,
     "google_rating": 4.6,
@@ -5173,7 +5179,8 @@
     ],
     "price": 4,
     "website": "http://www.sushi-amane.com",
-    "michelin_stars": 1
+    "michelin_stars": 1,
+    "resy_url": "https://resy.com/cities/ny/sushi-amane-fly"
   },
   "torien": {
     "platform": "resy",
@@ -5196,8 +5203,8 @@
     "buzz_sources": []
   },
   "tsukimi": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/tsukimi",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/tsukimi-new-york",
     "lat": 40.7290907,
     "lng": -73.9854363,
     "google_rating": 4.6,
@@ -5217,11 +5224,12 @@
     "price": 2,
     "price_estimated": true,
     "michelin_stars": 1,
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "opentable_url": "https://www.opentable.com/r/tsukimi-new-york"
   },
   "kosaka": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/kosaka",
+    "platform": "tock",
+    "url": "https://www.exploretock.com/kosaka",
     "lat": 40.7382662,
     "lng": -74.0014434,
     "google_rating": 4.5,
@@ -5654,8 +5662,8 @@
     "price_estimated": true
   },
   "the parliament new york": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-parliament",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-parliament-reservations-new-york",
     "lat": 40.756593,
     "lng": -73.971947,
     "google_rating": 4.9,
@@ -5663,7 +5671,8 @@
     "place_id": "ChIJ___7z_xYwokR5HzTdFOyHes",
     "website": "https://theparliamentnyc.com/",
     "vibe_tags": [],
-    "instagram": "theparliamentnyc"
+    "instagram": "theparliamentnyc",
+    "opentable_url": "https://www.opentable.com/r/the-parliament-reservations-new-york"
   },
   "antique garage soho": {
     "platform": "opentable",
@@ -5684,8 +5693,8 @@
     "resy_slug": "antique-garage-soho"
   },
   "fairfax": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/fairfax",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/fairfax-reservations-new-york",
     "lat": 40.7343541,
     "lng": -74.0031158,
     "google_rating": 4.5,
@@ -5701,7 +5710,8 @@
       "trendy"
     ],
     "instagram": "fairfaxnyc",
-    "price": 2
+    "price": 2,
+    "opentable_url": "https://www.opentable.com/r/fairfax-reservations-new-york"
   },
   "ilili midtown": {
     "platform": "resy",
@@ -6124,8 +6134,8 @@
     "website": "https://www.instagram.com/sushionmenyc"
   },
   "kaizen flushing": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/kaizen-flushing",
+    "platform": "website",
+    "url": "https://wabinori.com/",
     "lat": 40.7650265,
     "lng": -73.8322898,
     "google_rating": 4.6,
@@ -6157,8 +6167,8 @@
     "instagram": "wabinorihandroll"
   },
   "yakiniku toraji": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/yakiniku-toraji",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/yakiniku-toraji-new-york",
     "lat": 40.7510572,
     "lng": -73.9727999,
     "google_rating": 4.5,
@@ -6171,7 +6181,8 @@
     ],
     "instagram": "toraji_nyc",
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "opentable_url": "https://www.opentable.com/r/yakiniku-toraji-new-york"
   },
   "sake no hana": {
     "platform": "opentable",
@@ -7838,8 +7849,8 @@
     "michelin_recommended": true
   },
   "parcelle chinatown": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/parcelle-chinatown",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/parcelle-wine-reservations-new-york",
     "lat": 40.714381,
     "lng": -73.9911544,
     "google_rating": 4.5,
@@ -7860,7 +7871,8 @@
     "price": 3,
     "price_estimated": true,
     "bilt_dining": true,
-    "bilt_id": "6bc0e484-423c-3c16-b65c-8638f2af02f1"
+    "bilt_id": "6bc0e484-423c-3c16-b65c-8638f2af02f1",
+    "opentable_url": "https://www.opentable.com/r/parcelle-wine-reservations-new-york"
   },
   "emporio": {
     "platform": "opentable",
@@ -10309,8 +10321,8 @@
     "website": "https://www.boucherieus.com"
   },
   "benoit": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/benoit-new-york",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/benoit-restaurant-and-wine-bar-reservations-new-york",
     "lat": 40.7625483,
     "lng": -73.9772776,
     "google_rating": 4.4,
@@ -10326,7 +10338,8 @@
     "price": 3,
     "bilt_dining": true,
     "bilt_id": "d8ddb1bc-4009-3ae8-8216-b620d0974bd5",
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "opentable_url": "https://www.opentable.com/r/benoit-restaurant-and-wine-bar-reservations-new-york"
   },
   "chez napoleon": {
     "platform": "opentable",
@@ -10454,8 +10467,8 @@
     "website": "http://www.morimotomexicocity.com"
   },
   "mifune": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/mifune-new-york",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/mifune-new-york",
     "lat": 40.7515882,
     "lng": -73.9718128,
     "google_rating": 4.4,
@@ -10469,11 +10482,12 @@
       "foodie"
     ],
     "instagram": "officialnycshp",
-    "price": 4
+    "price": 4,
+    "opentable_url": "https://www.opentable.com/r/mifune-new-york"
   },
   "little owl": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-little-owl",
+    "platform": "website",
+    "url": "https://www.thelittleowlnyc.com/",
     "lat": 40.7323792,
     "lng": -74.00533879999999,
     "google_rating": 4.5,
@@ -11464,8 +11478,8 @@
     "inkind": true
   },
   "sushi sho": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/sushi-sho-nyc",
+    "platform": "tock",
+    "url": "https://www.exploretock.com/sushi-sho-nyc",
     "lat": 40.7526643,
     "lng": -73.9807136,
     "google_rating": 4.6,
@@ -12437,7 +12451,7 @@
   },
   "serendipity 3 times square": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/serendipity-3-times-square",
+    "url": "https://resy.com/cities/ny/serendipity-3",
     "lat": 40.7591064,
     "lng": -73.983717,
     "google_rating": 4.1,
@@ -12456,7 +12470,7 @@
     "price": 2,
     "price_estimated": true,
     "neighborhood": "New York",
-    "resy_url": "https://resy.com/cities/ny/serendipity3-times-square",
+    "resy_url": "https://resy.com/cities/ny/serendipity-3",
     "resy_slug": "serendipity3-times-square",
     "bilt_dining": true,
     "bilt_id": "2b0b0552-24a2-40e2-8631-f4a92ffb55fa"
@@ -20057,8 +20071,8 @@
     "price": 2
   },
   "cavatappi nyc": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/cavatappi",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cavatappi-brooklyn",
     "lat": 40.617137,
     "lng": -74.011122,
     "google_rating": 4.7,
@@ -20070,7 +20084,8 @@
       "date_night"
     ],
     "instagram": "cavatappi_restaurant",
-    "price": 2
+    "price": 2,
+    "opentable_url": "https://www.opentable.com/r/cavatappi-brooklyn"
   },
   "trattoria ora": {
     "platform": "opentable",
@@ -20169,8 +20184,8 @@
     "price": 2
   },
   "emilia's": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/emilias",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/emilias-restaurant-reservations-bronx-2",
     "lat": 40.8541452,
     "lng": -73.8889524,
     "google_rating": 4.6,
@@ -20183,7 +20198,8 @@
     ],
     "price": 2,
     "bilt_dining": true,
-    "bilt_id": "600bd19a-dcf1-4f2e-8903-fe50bae426a1"
+    "bilt_id": "600bd19a-dcf1-4f2e-8903-fe50bae426a1",
+    "opentable_url": "https://www.opentable.com/r/emilias-restaurant-reservations-bronx-2"
   },
   "casasalvo restaurant": {
     "platform": "resy",
@@ -45451,8 +45467,8 @@
     "website": "https://ahgassigopchangnyc.com"
   },
   "Ahgassi Gopchang Korean BBQ": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/ahgassi-gopchang-korean-bbq",
+    "platform": "tock",
+    "url": "https://www.exploretock.com/ahgassigopchangnyc",
     "lat": 40.747079899999996,
     "lng": -73.9850233,
     "google_rating": 4.8,
@@ -78584,8 +78600,8 @@
     "google_reviews": 981
   },
   "Don't Tell Liv": {
-    "url": "https://resy.com/cities/ny/dont-tell-liv",
-    "platform": "resy",
+    "url": "https://livjc.com",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/ny/dont-tell-liv",
     "resy_slug": "dont-tell-liv",
     "lat": 40.72075774480983,
@@ -78656,8 +78672,8 @@
     "google_reviews": 90
   },
   "Franklin Social": {
-    "url": "https://resy.com/cities/ny/franklin-social",
-    "platform": "resy",
+    "url": "https://franklinsocial.com",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/ny/franklin-social",
     "resy_slug": "franklin-social",
     "lat": 40.718902,
@@ -78782,9 +78798,9 @@
     "website": "https://www.the-ainsworth.com"
   },
   "UH Hoboken": {
-    "url": "https://resy.com/cities/ny/uh-hoboken",
+    "url": "https://resy.com/cities/hob/uh-hoboken",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/uh-hoboken",
+    "resy_url": "https://resy.com/cities/hob/uh-hoboken",
     "resy_slug": "uh-hoboken",
     "lat": 40.7398295784858,
     "lng": -74.0272930194076,
@@ -79043,9 +79059,9 @@
     "bilt_id": "0a1ba1e4-f1fa-37cd-9d10-48b330fa68bf"
   },
   "Flour": {
-    "url": "https://resy.com/cities/ny/flour-hoboken",
+    "url": "https://resy.com/cities/hob/flour-hoboken",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/flour-hoboken",
+    "resy_url": "https://resy.com/cities/hob/flour-hoboken",
     "resy_slug": "flour-hoboken",
     "lat": 40.7438437146648,
     "lng": -74.0371207597785,
@@ -79059,8 +79075,8 @@
     "website": "http://www.flourhoboken.com"
   },
   "Anthony David's": {
-    "url": "https://resy.com/cities/ny/anthony-davids",
-    "platform": "resy",
+    "url": "https://anthonydavids.com",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/ny/anthony-davids",
     "resy_slug": "anthony-davids",
     "lat": 40.748571,
@@ -79712,9 +79728,9 @@
     "google_reviews": 56
   },
   "Around the Clock": {
-    "url": "https://resy.com/cities/ny/around-the-clock",
+    "url": "https://resy.com/cities/estrt/around-the-clock",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/around-the-clock",
+    "resy_url": "https://resy.com/cities/estrt/around-the-clock",
     "resy_slug": "around-the-clock",
     "lat": 40.8072528665347,
     "lng": -74.0700516741041,
@@ -104604,7 +104620,7 @@
   },
   "c\u00f4te": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/cote-korean-steakhouse",
+    "url": "https://resy.com/cities/ny/cote-nyc",
     "lat": 40.7413041,
     "lng": -73.99125269999999,
     "google_rating": 4.6,
@@ -104622,7 +104638,8 @@
     "michelin_recommended": true,
     "buzz_sources": [
       "Infatuation"
-    ]
+    ],
+    "resy_url": "https://resy.com/cities/ny/cote-nyc"
   },
   "the good good": {
     "platform": "resy",
@@ -105043,8 +105060,8 @@
     "place_id": "ChIJBfPp9pNbwokRhmKBnSX-_bc"
   },
   "zutto japanese american bar": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/zutto",
+    "platform": "website",
+    "url": "https://zuttonyc.com/tribeca-location/",
     "lat": 40.7184362,
     "lng": -74.0090421,
     "google_rating": 4.4,
@@ -105537,8 +105554,8 @@
     "vibe_tags": []
   },
   "momofuku ssam bar": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/momofuku-ssam-bar",
+    "platform": "website",
+    "url": "https://ssambar.momofuku.com/",
     "lat": 40.7054623,
     "lng": -74.0016428,
     "google_rating": 4.4,
@@ -107752,8 +107769,8 @@
     "place_id": "ChIJt2LXGrlZwokRCEWTvpTyp5k"
   },
   "scarr's pizza": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/scarrs-pizza",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/scarrs-pizza-new-york",
     "address": "35 Orchard Street, New York, NY 10002",
     "neighborhood": "Lower East Side",
     "cuisine": "Pizza",
@@ -107770,7 +107787,8 @@
     "google_rating": 4.4,
     "google_reviews": 4596,
     "website": "http://www.scarrspizza.com/",
-    "place_id": "ChIJOUqatilawokRguvFSj0wX7Y"
+    "place_id": "ChIJOUqatilawokRguvFSj0wX7Y",
+    "opentable_url": "https://www.opentable.com/r/scarrs-pizza-new-york"
   },
   "r slice pizza": {
     "platform": "website",
@@ -107853,8 +107871,8 @@
     "place_id": "ChIJO-UIwMVNwokRc5w60Z4FMpo"
   },
   "hwaro": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/hwaro",
+    "platform": "tock",
+    "url": "https://www.exploretock.com/hwaronyc",
     "address": "776 8th Avenue, New York, NY 10036",
     "neighborhood": "Times Square",
     "cuisine": "Korean",
@@ -108183,8 +108201,8 @@
     "place_id": "ChIJwYDDibRbwokR7p0WTQvV1Y8"
   },
   "lola's": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/lolas",
+    "platform": "website",
+    "url": "https://www.lolasnyc.com/",
     "address": "40 West 28th Street, New York, NY 10001",
     "neighborhood": "NoMad",
     "cuisine": "American",
