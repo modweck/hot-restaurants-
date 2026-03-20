@@ -1633,11 +1633,30 @@ exports.handler = async (event) => {
           pete_wells: entry.pete_wells || false,
           nyt_top_100: entry.nyt_top_100 || false,
           pete_wells_rank: entry.pete_wells_rank || null,
-          instagram_buzz: INSTAGRAM_BUZZ[key] || null,
+          instagram_buzz: (() => {
+            const buzz = INSTAGRAM_BUZZ[key];
+            if (!buzz || !buzz.length) return null;
+            // Trim to just top influencer + count — frontend only needs this
+            const top = buzz[0];
+            return [{ username: top.username, url: top.url, count: buzz.length }];
+          })(),
           _source: 'master_book',
         });
       }
       console.log(`🗽 ALL NYC MODE: ${injected.length} restaurants from master book`);
+
+      // Hard cap: sort by buzz/quality first, then cap at 500 to stay under 6MB limit
+      injected.sort((a, b) => {
+        const aHasBuzz = (a.buzz_sources && a.buzz_sources.length > 0) || a.michelin || a.instagram_buzz ? 1 : 0;
+        const bHasBuzz = (b.buzz_sources && b.buzz_sources.length > 0) || b.michelin || b.instagram_buzz ? 1 : 0;
+        if (bHasBuzz !== aHasBuzz) return bHasBuzz - aHasBuzz;
+        return (b.googleRating || 0) - (a.googleRating || 0);
+      });
+      const ALL_NYC_CAP = 500;
+      if (injected.length > ALL_NYC_CAP) {
+        console.log(`🗽 ALL NYC MODE: capping ${injected.length} → ${ALL_NYC_CAP} restaurants to stay under 6MB`);
+        injected.length = ALL_NYC_CAP;
+      }
 
       // Apply quality filter
       const { elite, moreOptions, excluded } = filterRestaurantsByTier(injected, qualityMode);
