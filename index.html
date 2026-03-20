@@ -1447,7 +1447,13 @@ function display(restaurants) {
     });
   }
 
-  list.sort((a,b) => (b._bs||0)-(a._bs||0));
+  list.sort((a,b) => {
+    const aHasData = (Number(a.googleRating||0) > 0) || !!(a.resy_url||a.opentable_url||a.resy_venue_id||a.opentable_id);
+    const bHasData = (Number(b.googleRating||0) > 0) || !!(b.resy_url||b.opentable_url||b.resy_venue_id||b.opentable_id);
+    if (aHasData && !bHasData) return -1;
+    if (!aHasData && bHasData) return 1;
+    return (b._bs||0)-(a._bs||0);
+  });
 
   const avail=[], radar=[];
   list.forEach(r => { const t=availTier(r); (t==='hard'||t==='radar'?radar:avail).push(r); });
@@ -1816,11 +1822,13 @@ function displayAllNYC(restaurants) {
   // Sort: Michelin always top, then by rating ascending from tier floor so you see the tier minimum first
   const tierFloor = { any: 0, good: 4.4, very_good: 4.6, great: 4.7, exceptional: 4.8 }[arState.buzzFilter] || 0;
   filtered.sort((a, b) => {
+    const aHasData = (Number(a.googleRating||0) > 0) || !!(a.resy_url||a.opentable_url||a.resy_venue_id||a.opentable_id);
+    const bHasData = (Number(b.googleRating||0) > 0) || !!(b.resy_url||b.opentable_url||b.resy_venue_id||b.opentable_id);
+    if (aHasData && !bHasData) return -1;
+    if (!aHasData && bHasData) return 1;
     const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
     if (michelinDiff !== 0) return michelinDiff;
     const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-    // Both above floor — sort ascending (closest to floor first)
-    if (rA >= tierFloor && rB >= tierFloor) return rA - rB;
     return rB - rA;
   });
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
