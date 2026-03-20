@@ -1234,7 +1234,10 @@ function availTier(r) {
 function tc(str) {
   if (!str) return '';
   const minor = new Set(['a','an','the','and','but','or','for','nor','of','on','in','at','to','by','up','as','is','if','it']);
-  return str.replace(/\w\S*/g,(w,i) => i>0&&minor.has(w.toLowerCase())?w.toLowerCase():w.charAt(0).toUpperCase()+w.slice(1).toLowerCase());
+  return str.replace(/\w\S*/g,(w,i) => {
+    if (i>0&&minor.has(w.toLowerCase())) return w.toLowerCase();
+    return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();
+  }).replace(/'\w/g, m => m.toLowerCase());
 }
 
 // ─── RENDER CARD ──────────────────────────────────────────────────────────────
@@ -1647,7 +1650,7 @@ function arGoBack() {
 
 const BUZZ_SET_AR = new Set(["15 east","4 charles prime rib","8282","abc cocina","abc kitchen","adda","ai fiori","al di la trattoria","altro paradiso","aquavit","aska","atera","atla","atoboy","atomix","babbo","bad roman","balthazar","bondst","bonnie's","buvette","carbone","cardamom","casa enrique","casa mono","catch","caviar russe","cecily","cervo's","charlie bird","ci siamo","claud","commerce","contra","coqodaq","cosme","craft","crown shy","dame","daniel","dante","dhamaka","don angie","double chicken please","eleven madison park","estela","fish cheeks","four twenty five","francie","frankies spuntino","frenchette","frevo","gabriel kreuther","gage & tollner","gramercy tavern","grand central oyster bar","haenyeo","hangawi","hart's","hasalon","hawksmoor","hearth","i sodi","il buco","il buco alimentari","indian accent","jack's wife freda","jeju noodle bar","jungsik","junoon","katz's","keens","king","kisa","kissaki","ko","kochi","kopitiam","la grande boucherie","laser wolf","le bernardin","le coucou","le pavillon","lilia","little owl","locanda verde","lucali","manhatta","marea","masa","minetta tavern","misi","momofuku ko","momofuku noodle bar","motorino","nami nori","nobu downtown","nom wah tea parlor","noreetuh","odo","ops","oxomoco","palma","pasquale jones","pastis","per se","peter luger","pig and khao","quality italian","quality meats","raf's","rao's","rezdora","roberta's","rubirosa","ruffian","saga","san sabino","sant ambroeus","scarr's pizza","semma","smith & wollensky","st. anselm","strip house","sugarfish","sunday in brooklyn","sushi nakazawa","tatiana","the dutch","the modern","the musket room","the polo bar","the river cafe","tiny's","torrisi","txikito","ugly baby","una pizza napoletana","union square cafe","via carota","wildair","win son","zuma"]);
 
-function tcAR(str) { return str ? str.replace(/\b\w/g, l => l.toUpperCase()) : ''; }
+function tcAR(str) { return str ? str.replace(/\b\w/g, l => l.toUpperCase()).replace(/'\w/g, m => m.toLowerCase()) : ''; }
 
 function availTierAR(r) {
   const t = r.tier;
