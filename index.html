@@ -725,10 +725,10 @@
         <div style="margin-bottom:14px">
           <span class="flabel">📏 Distance</span>
           <div class="tgroup" id="bar-tgroup">
-            <button class="tbtn active" onclick="barSetTransport('walk',this)">🚶 Walk</button>
+            <button class="tbtn" onclick="barSetTransport('walk',this)">🚶 Walk</button>
             <button class="tbtn" onclick="barSetTransport('drive',this)">🚗 Drive</button>
             <button class="tbtn" onclick="barSetTransport('radius',this)">📍 Radius</button>
-            <button class="tbtn" onclick="barSetTransport('all_nyc',this)">⭐ All NYC</button>
+            <button class="tbtn active" onclick="barSetTransport('all_nyc',this)">⭐ All NYC</button>
           </div>
           <div class="dist-drop open" id="bar-dd-walk">
             <select id="barWalkTime" class="finput" style="padding:7px 10px;font-size:12px">
@@ -1911,7 +1911,7 @@ async function doAllNYCSearch() {
 }
 // ─── BAR STATE & FUNCTIONS ───────────────────────────────────────────────────
 const barState = {
-  transport: 'walk', mood: 'any', specialty: 'any',
+  transport: 'all_nyc', mood: 'any', specialty: 'any',
   lateNight: false, lateNightLevel: 'off',
   buzz: false, dayMode: 'weekday', priceLevel: 'any',
   allResults: [], sortBy: 'rating'
