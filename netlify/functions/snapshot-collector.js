@@ -348,7 +348,7 @@ async function main() {
       const growthPer30 = Math.round((growth / daysBetween) * 30);
       const currentRating = latest.rating;
 
-      if (currentRating >= 4.6 && growthPer30 >= 10) {
+      if (currentRating >= 4.6 && growthPer30 >= 25) {
         rising.push({
           name: data.name,
           rating: currentRating,
