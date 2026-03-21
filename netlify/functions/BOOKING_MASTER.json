@@ -65,8 +65,8 @@
     "michelin_recommended": true
   },
   "nobu downtown": {
-    "platform": "website",
-    "url": "https://www.noburestaurants.com/downtown/home/?utm_source=google&utm_medium=Yext",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/nobu-downtown-new-york",
     "lat": 40.7107732,
     "lng": -74.00958039999999,
     "google_rating": 4.4,
@@ -88,7 +88,8 @@
     "price": 4,
     "nyt_stars": 1,
     "pete_wells": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/nobu-downtown"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/nobu-downtown",
+    "opentable_url": "https://www.opentable.com/r/nobu-downtown-new-york"
   },
   "nobu next door": {
     "platform": "opentable",
@@ -224,8 +225,8 @@
     "inkind": true
   },
   "frenchette": {
-    "platform": "website",
-    "url": "http://frenchettenyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/frenchette-new-york",
     "lat": 40.7196553,
     "lng": -74.0057849,
     "google_rating": 4.4,
@@ -248,7 +249,8 @@
     "price": 3,
     "nyt_stars": 3,
     "pete_wells": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/frenchette"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/frenchette",
+    "opentable_url": "https://www.opentable.com/r/frenchette-new-york"
   },
   "soothr": {
     "platform": "opentable",
@@ -369,8 +371,8 @@
     "nyt_stars": 2
   },
   "la grande boucherie": {
-    "platform": "website",
-    "url": "https://www.boucherieus.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/la-grande-boucherie-new-york",
     "lat": 40.7626274,
     "lng": -73.98084109999999,
     "google_rating": 4.6,
@@ -388,7 +390,8 @@
     ],
     "instagram": "boucherie_us",
     "price": 2,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/la-grande-boucherie"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/la-grande-boucherie",
+    "opentable_url": "https://www.opentable.com/r/la-grande-boucherie-new-york"
   },
   "exquisite restaurant": {
     "platform": "opentable",
@@ -534,8 +537,8 @@
     "inkind": true
   },
   "strip house": {
-    "platform": "website",
-    "url": "https://www.striphouse.com/location/striphouse-midtown/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/strip-house-new-york",
     "lat": 40.7552982,
     "lng": -73.9806899,
     "google_rating": 4.4,
@@ -553,7 +556,8 @@
     ],
     "instagram": "striphouseofficial",
     "price": 4,
-    "inkind": true
+    "inkind": true,
+    "opentable_url": "https://www.opentable.com/strip-house-new-york"
   },
   "the smith lincoln square": {
     "platform": "opentable",
@@ -740,8 +744,8 @@
     "pete_wells": true
   },
   "sushi noz": {
-    "platform": "website",
-    "url": "http://www.sushinoz.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sushi-noz-new-york",
     "lat": 40.7738629,
     "lng": -73.9581386,
     "google_rating": 4.5,
@@ -763,7 +767,8 @@
     "instagram": "sushinoznyc",
     "michelin_recommended": true,
     "nyt_top_100": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/sushi-noz"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/sushi-noz",
+    "opentable_url": "https://www.opentable.com/r/sushi-noz-new-york"
   },
   "lady mendl's": {
     "platform": "opentable",
@@ -821,8 +826,8 @@
     "price": 2
   },
   "jajaja mexicana": {
-    "platform": "website",
-    "url": "https://www.jajajamexicana.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/jajaja-mexicana-lower-east-side-new-york-city",
     "lat": 40.7142288,
     "lng": -73.9903753,
     "google_rating": 4.6,
@@ -838,7 +843,8 @@
     ],
     "price": 2,
     "address": "162 E Broadway, New York, NY 10002, USA",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/jajaja-mexicana"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/jajaja-mexicana",
+    "opentable_url": "https://www.opentable.com/r/jajaja-mexicana-lower-east-side-new-york-city"
   },
   "tony's di napoli": {
     "url": "https://www.opentable.com/tonys-di-napoli-midtown",
@@ -983,8 +989,8 @@
     "inkind": true
   },
   "del frisco's double eagle steakhouse": {
-    "platform": "website",
-    "url": "https://www.delfriscos.com/location/del-friscos-double-eagle-steakhouse-new-york-ny/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/del-friscos-double-eagle-steak-house-new-york-city-new-york",
     "lat": 40.7594099,
     "lng": -73.98222,
     "google_rating": 4.5,
@@ -1002,7 +1008,8 @@
     ],
     "instagram": "del.friscos",
     "price": 4,
-    "inkind": true
+    "inkind": true,
+    "opentable_url": "https://www.opentable.com/r/del-friscos-double-eagle-steak-house-new-york-city-new-york"
   },
   "quality italian": {
     "platform": "opentable",
@@ -1406,8 +1413,8 @@
     "website": "https://www.souvlakigr.com"
   },
   "nami nori": {
-    "platform": "website",
-    "url": "http://naminori.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/nami-nori-west-village-new-york",
     "lat": 40.7302179,
     "lng": -74.003219,
     "google_rating": 4.4,
@@ -1433,7 +1440,8 @@
     "michelin_recommended": true,
     "nyt_stars": 2,
     "pete_wells": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/nami-nori"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/nami-nori",
+    "opentable_url": "https://www.opentable.com/r/nami-nori-west-village-new-york"
   },
   "palma": {
     "platform": "opentable",
@@ -2453,8 +2461,8 @@
     "michelin_recommended": true
   },
   "gage and tollner": {
-    "platform": "website",
-    "url": "https://www.gageandtollner.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/gage-and-tollner-brooklyn",
     "lat": 40.6913485,
     "lng": -73.9878195,
     "google_rating": 4.3,
@@ -2478,7 +2486,8 @@
     "michelin_stars": null,
     "michelin_recommended": true,
     "nyt_top_100": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/gage-and-tollner"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/gage-and-tollner",
+    "opentable_url": "https://www.opentable.com/r/gage-and-tollner-brooklyn"
   },
   "caf\u00e9 mars": {
     "platform": "opentable",
@@ -5304,8 +5313,8 @@
     "michelin_recommended": true
   },
   "sushi by scratch restaurants": {
-    "platform": "website",
-    "url": "https://sushibyscratchrestaurants.com/new-york",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sushi-by-scratch-new-york",
     "lat": 40.7399259,
     "lng": -73.98939179999999,
     "google_rating": 4.5,
@@ -5321,7 +5330,8 @@
     "instagram": "sushibyscratchrestaurants",
     "price": 3,
     "price_estimated": true,
-    "inkind": true
+    "inkind": true,
+    "opentable_url": "https://www.opentable.com/r/sushi-by-scratch-new-york"
   },
   "eataly soho - il ristorante": {
     "platform": "opentable",
@@ -5764,8 +5774,8 @@
     "bilt_id": "50a428d3-ff6f-4e8b-97fb-dbb6bf345939"
   },
   "sailor": {
-    "platform": "website",
-    "url": "https://www.sailor.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sailor-brooklyn",
     "lat": 40.6894027,
     "lng": -73.97031989999999,
     "google_rating": 4.4,
@@ -5789,7 +5799,8 @@
     "nyt_stars": 3,
     "pete_wells": true,
     "nyt_top_100": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/sailor"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/sailor",
+    "opentable_url": "https://www.opentable.com/r/sailor-brooklyn"
   },
   "kissaki - bowery": {
     "platform": "website",
@@ -6393,8 +6404,8 @@
     "price": 2
   },
   "landmark cevicheria": {
-    "platform": "website",
-    "url": "https://www.landmarkcevicheria.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/landmark-cevicheria-brooklyn",
     "lat": 40.6842816,
     "lng": -73.991911,
     "google_rating": 4.9,
@@ -6410,7 +6421,8 @@
     "price_estimated": true,
     "bilt_dining": true,
     "bilt_id": "078b9303-3f85-3184-bcbf-f9b2ae6190b4",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/landmark-cevicheria"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/landmark-cevicheria",
+    "opentable_url": "https://www.opentable.com/r/landmark-cevicheria-brooklyn"
   },
   "villaggio ristorante": {
     "platform": "opentable",
@@ -7686,8 +7698,8 @@
     ]
   },
   "tempura matsui": {
-    "platform": "website",
-    "url": "http://www.tempuramatsui.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/tempura-matsui",
     "lat": 40.7482875,
     "lng": -73.97487989999999,
     "google_rating": 4.8,
@@ -7704,7 +7716,8 @@
     "instagram": "tempuramatsui",
     "price": 4,
     "michelin_stars": 1,
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "opentable_url": "https://www.opentable.com/tempura-matsui"
   },
   "ichimura": {
     "platform": "website",
@@ -7741,8 +7754,8 @@
     "price": 3
   },
   "botte brooklyn": {
-    "platform": "website",
-    "url": "https://botterestaurants.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/botte-brooklyn",
     "lat": 40.6944625,
     "lng": -73.9830314,
     "google_rating": 4.4,
@@ -7755,7 +7768,8 @@
     ],
     "price": 2,
     "inkind": true,
-    "resy_url": "https://resy.com/cities/brooklyn-ny/venues/botte-brooklyn"
+    "resy_url": "https://resy.com/cities/brooklyn-ny/venues/botte-brooklyn",
+    "opentable_url": "https://www.opentable.com/r/botte-brooklyn"
   },
   "henry's end": {
     "platform": "opentable",
@@ -7788,8 +7802,8 @@
     "price": 2
   },
   "khaosan": {
-    "platform": "website",
-    "url": "https://khaosannyc.com/?utm_source=google",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/khaosan-brooklyn",
     "lat": 40.6945863,
     "lng": -73.99428019999999,
     "google_rating": 4.8,
@@ -7802,7 +7816,8 @@
     ],
     "price": 2,
     "bilt_dining": true,
-    "bilt_id": "49dd4f24-b2e6-3cee-aa45-ba5bb9fb0831"
+    "bilt_id": "49dd4f24-b2e6-3cee-aa45-ba5bb9fb0831",
+    "opentable_url": "https://www.opentable.com/r/khaosan-brooklyn"
   },
   "Potluck Club \u4f70\u6a02": {
     "platform": "opentable",
@@ -8102,8 +8117,8 @@
     ]
   },
   "il poeta": {
-    "platform": "website",
-    "url": "https://www.ilpoetanyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/il-poeta-forest-hills",
     "lat": 40.7109556,
     "lng": -73.8545293,
     "google_rating": 4.5,
@@ -8114,11 +8129,12 @@
     "vibe_tags": [
       "date_night"
     ],
-    "price": 2
+    "price": 2,
+    "opentable_url": "https://www.opentable.com/r/il-poeta-forest-hills"
   },
   "bahari estiatorio": {
-    "platform": "website",
-    "url": "http://www.bahariestiatorio.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bahari-estiatorio-astoria",
     "lat": 40.7616385,
     "lng": -73.9249391,
     "google_rating": 4.5,
@@ -8133,7 +8149,8 @@
     "price": 2,
     "buzz_sources": [
       "Infatuation"
-    ]
+    ],
+    "opentable_url": "https://www.opentable.com/r/bahari-estiatorio-astoria"
   },
   "PLATEIA GR": {
     "platform": "opentable",
@@ -8907,8 +8924,8 @@
     "michelin_recommended": true
   },
   "enoteca maria": {
-    "platform": "website",
-    "url": "http://www.enotecamaria.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/enoteca-maria-staten-island",
     "lat": 40.6420052,
     "lng": -74.07729259999999,
     "google_rating": 4.7,
@@ -8929,7 +8946,8 @@
     ],
     "instagram": "nonnasoftheworld",
     "michelin_recommended": true,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/enoteca-maria"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/enoteca-maria",
+    "opentable_url": "https://www.opentable.com/r/enoteca-maria-staten-island"
   },
   "gordo's cantina": {
     "platform": "resy",
@@ -10085,8 +10103,8 @@
     "price": 2
   },
   "malatesta trattoria": {
-    "platform": "website",
-    "url": "http://malatestanyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/malatesta-trattoria-new-york",
     "lat": 40.7328499,
     "lng": -74.0084783,
     "google_rating": 4.4,
@@ -10098,11 +10116,12 @@
       "date_night"
     ],
     "price": 2,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/malatesta-trattoria"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/malatesta-trattoria",
+    "opentable_url": "https://www.opentable.com/r/malatesta-trattoria-new-york"
   },
   "scalini fedeli": {
-    "platform": "website",
-    "url": "https://scalinifedeli.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/scalini-fedeli-new-york",
     "lat": 40.7174142,
     "lng": -74.0094278,
     "google_rating": 4.8,
@@ -10114,7 +10133,8 @@
       "date_night",
       "foodie"
     ],
-    "price": 3
+    "price": 3,
+    "opentable_url": "https://www.opentable.com/scalini-fedeli-new-york"
   },
   "Sfilatino Italian Gourmet": {
     "platform": "opentable",
@@ -10918,8 +10938,8 @@
     "ot_slug": "clement-at-the-peninsula"
   },
   "majorelle": {
-    "platform": "website",
-    "url": "https://www.lowellhotel.com/restaurants-and-bar/majorelle/57-1/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/majorelle-at-the-lowell-new-york",
     "lat": 40.765754,
     "lng": -73.9692007,
     "google_rating": 4.6,
@@ -10932,7 +10952,8 @@
       "upscale"
     ],
     "instagram": "thelowellhotel",
-    "price": 3
+    "price": 3,
+    "opentable_url": "https://www.opentable.com/r/majorelle-at-the-lowell-new-york"
   },
   "FREE RANGE at Double Chicken Please": {
     "platform": "resy",
@@ -11487,8 +11508,8 @@
     "nyt_top_100": true
   },
   "noz kitchen": {
-    "platform": "website",
-    "url": "https://www.nozmarket.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/noz-market-new-york",
     "lat": 40.773822,
     "lng": -73.9579557,
     "google_rating": 4.4,
@@ -11503,7 +11524,8 @@
     ],
     "instagram": "nozmarketnyc",
     "price": 3,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/noz-kitchen"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/noz-kitchen",
+    "opentable_url": "https://www.opentable.com/r/noz-market-new-york"
   },
   "Sant Ambroeus Madison": {
     "platform": "opentable",
@@ -11625,8 +11647,8 @@
     "website": "https://www.baekjeongnyc.com"
   },
   "samwon garden": {
-    "platform": "website",
-    "url": "https://www.antoyabbq.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/antoya-new-york",
     "lat": 40.7481097,
     "lng": -73.9872039,
     "google_rating": 4.4,
@@ -11639,7 +11661,8 @@
     ],
     "instagram": "antoyabbq",
     "price": 2,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/samwon-garden"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/samwon-garden",
+    "opentable_url": "https://www.opentable.com/r/antoya-new-york"
   },
   "Antoya BBQ": {
     "platform": "opentable",
@@ -12082,8 +12105,8 @@
     "ot_slug": "heirloom-room"
   },
   "beija flor": {
-    "platform": "website",
-    "url": "https://www.beijaflor.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/beija-flor-long-island-city",
     "lat": 40.7545901,
     "lng": -73.9338897,
     "google_rating": 4.5,
@@ -12098,7 +12121,8 @@
     "instagram": "beijaflorlic",
     "price": 2,
     "bilt_dining": true,
-    "bilt_id": "9f8decd0-8bc5-3230-8237-7f6196c09118"
+    "bilt_id": "9f8decd0-8bc5-3230-8237-7f6196c09118",
+    "opentable_url": "https://www.opentable.com/r/beija-flor-long-island-city"
   },
   "pizzarte": {
     "platform": "opentable",
@@ -12178,8 +12202,8 @@
     "bilt_id": "71a90cd6-d912-4b26-b095-a823d94c4f13"
   },
   "delbianco italian restaurant": {
-    "platform": "website",
-    "url": "https://delbianconyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/delbianco-italian-restaurant-new-york-city",
     "lat": 40.7568288,
     "lng": -73.9759816,
     "google_rating": 4.7,
@@ -12192,7 +12216,8 @@
     ],
     "instagram": "delbianco_nyc",
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "opentable_url": "https://www.opentable.com/r/delbianco-italian-restaurant-new-york-city"
   },
   "wagamama - midtown": {
     "platform": "opentable",
@@ -12363,8 +12388,8 @@
     "bilt_id": "6d6de8fd-3d1a-3160-94b6-24293cfdac0d"
   },
   "tam mai thai": {
-    "platform": "website",
-    "url": "https://www.tammaithai.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/tam-mai-thai-new-york",
     "lat": 40.7633128,
     "lng": -73.97717109999999,
     "google_rating": 4.8,
@@ -12377,7 +12402,8 @@
     ],
     "price": 2,
     "bilt_dining": true,
-    "bilt_id": "bd0d14d7-d41d-4a8f-9cd4-0e234d232ab3"
+    "bilt_id": "bd0d14d7-d41d-4a8f-9cd4-0e234d232ab3",
+    "opentable_url": "https://www.opentable.com/r/tam-mai-thai-new-york"
   },
   "sweet chick": {
     "platform": "website",
@@ -20245,8 +20271,8 @@
     "website": "https://www.tararosenyc.com"
   },
   "briciola harlem": {
-    "platform": "website",
-    "url": "https://briciolawinebar.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/briciola-new-york",
     "lat": 40.8240899,
     "lng": -73.9452634,
     "google_rating": 4.5,
@@ -20259,7 +20285,8 @@
       "foodie"
     ],
     "instagram": "briciolawinebar",
-    "price": 3
+    "price": 3,
+    "opentable_url": "https://www.opentable.com/r/briciola-new-york"
   },
   "pastavino": {
     "platform": "opentable",
@@ -20452,8 +20479,8 @@
     "michelin_recommended": true
   },
   "time and tide": {
-    "platform": "website",
-    "url": "https://www.timeandtide.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/time-and-tide-new-york",
     "lat": 40.7421171,
     "lng": -73.9855467,
     "google_rating": 4.5,
@@ -20466,7 +20493,8 @@
       "lively"
     ],
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "opentable_url": "https://www.opentable.com/r/time-and-tide-new-york"
   },
   "sushi akira ues": {
     "platform": "resy",
@@ -104813,9 +104841,9 @@
   },
   "chama mama": {
     "name": "Chama Mama",
-    "platform": "website",
+    "platform": "opentable",
     "resy_slug": "chama-mama-uws",
-    "url": "https://www.chamamama.com/location/chama-mama/?utm_source=gmb&utm_medium=organic&utm_campaign=local&utm_id=gmb-chelsea",
+    "url": "https://www.opentable.com/r/chama-mama-new-york",
     "resy_url": "https://resy.com/cities/ny/chama-mama-uws",
     "buzz_sources": [
       "Eater"
@@ -104829,13 +104857,14 @@
     "website": "https://www.chamamama.com/location/chama-mama/?utm_source=gmb&utm_medium=organic&utm_campaign=local&utm_id=gmb-chelsea",
     "address": "149 W 14th St, New York, NY 10011, USA",
     "place_id": "ChIJp4h8O45ZwokRiZ6Zhg0hV8M",
-    "venue_id": 51532
+    "venue_id": 51532,
+    "opentable_url": "https://www.opentable.com/r/chama-mama-new-york"
   },
   "sant ambroeus brookfield": {
     "name": "Sant Ambroeus Brookfield",
-    "platform": "website",
+    "platform": "opentable",
     "resy_slug": "san-ambroeus-brookfield-place",
-    "url": null,
+    "url": "https://www.opentable.com/r/sant-ambroeus-brookfield-new-york",
     "resy_url": "https://resy.com/cities/ny/san-ambroeus-brookfield-place",
     "lat": 40.713403199999995,
     "lng": -74.0148877,
@@ -104845,7 +104874,8 @@
     "cuisine": "Italian Restaurant",
     "address": "230 Vesey St, New York, NY 10080, USA",
     "place_id": "ChIJBfPp9pNbwokRhmKBnSX-_bc",
-    "venue_id": 57316
+    "venue_id": 57316,
+    "opentable_url": "https://www.opentable.com/r/sant-ambroeus-brookfield-new-york"
   },
   "zutto japanese american bar": {
     "platform": "website",
@@ -108080,8 +108110,8 @@
     "place_id": "ChIJZy5-auNZwokRiindmTlEhpU"
   },
   "zimmi's": {
-    "platform": "website",
-    "url": "https://www.zimmisnyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/zimmis-new-york",
     "address": "131 Charles Street, New York, NY 10014",
     "neighborhood": "West Village",
     "cuisine": "French",
@@ -108100,7 +108130,8 @@
     "google_rating": 4.5,
     "google_reviews": 127,
     "website": "https://www.zimmisnyc.com/",
-    "place_id": "ChIJGwq75f5ZwokRP0EMH-FLL0g"
+    "place_id": "ChIJGwq75f5ZwokRP0EMH-FLL0g",
+    "opentable_url": "https://www.opentable.com/r/zimmis-new-york"
   },
   "koloman": {
     "platform": "website",
