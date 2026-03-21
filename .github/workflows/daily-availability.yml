@@ -2,7 +2,7 @@ name: Daily Availability Check
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # 11am EST (UTC-5) = 4pm UTC
+    - cron: '30 15 * * *'  # 10:30am EST (UTC-5) = 3:30pm UTC
   workflow_dispatch:        # also allows manual trigger from GitHub UI
 
 jobs:
