@@ -3,7 +3,7 @@ name: Update Review Snapshots & Likelihood
 # Runs every day at 6 AM EST (11 AM UTC)
 on:
   schedule:
-    - cron: '0 11 * * *'
+    - cron: '0 11 * * 0'
   workflow_dispatch:  # Also lets you run it manually from GitHub
 
 jobs:
