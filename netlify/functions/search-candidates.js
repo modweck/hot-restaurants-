@@ -1553,9 +1553,9 @@ exports.handler = async (event) => {
         const growthPer30 = Math.round((growth / daysBetween) * 30);
 
         // Must meet velocity + rating + review count criteria
-        if (latest.rating < 4.4) continue;
+        if (latest.rating < 4.6) continue;
         if (latest.review_count < 15 || latest.review_count > 150) continue;
-        if (growthPer30 < 20) continue;
+        if (growthPer30 < 25) continue;
 
         // Try to find in BOOKING_MASTER for booking info
         const mk = normalizeName(data.name);
