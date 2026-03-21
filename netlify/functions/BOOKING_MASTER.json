@@ -109148,5 +109148,570 @@
     "google_reviews": 910,
     "price": 1,
     "website": "https://www.facebook.com/TCountryInn/"
+  },
+  "nepali bhanchha ghar": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/nepali-bhanchha-ghar-new-york",
+    "lat": 40.7471014,
+    "lng": -73.8909012,
+    "google_rating": 3.9,
+    "google_reviews": 1111,
+    "place_id": "ChIJd06GLQdfwokRQunm5arxBcM",
+    "website": "https://www.bhanchhagharny.com/",
+    "address": "74-15 Roosevelt Ave, Jackson Heights, NY 11372, United States",
+    "vibe_tags": [],
+    "instagram": "bhanchhaghar",
+    "price": 1,
+    "buzz_sources": [
+      "Eater"
+    ]
+  },
+  "panda harlem": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/panda-harlem",
+    "lat": 40.8201232596891,
+    "lng": -73.9585665454977,
+    "google_rating": 3.7,
+    "google_reviews": 486,
+    "place_id": "ChIJUdrnWUb3wokROEn6VyMo5QM",
+    "neighborhood": "West Harlem",
+    "instagram": "panda.harlem",
+    "cuisine": "Chinese",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "https://www.pandaharlem.com",
+    "bilt_dining": true,
+    "bilt_id": "94531e3a-16ab-34c0-8705-7b7bbb4477e5"
+  },
+  "asian taste": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/asian-taste-northampton",
+    "lat": 40.7228463,
+    "lng": -73.9831229,
+    "google_rating": 3.9,
+    "google_reviews": 56,
+    "place_id": "ChIJ_9FzENVZwokRMrIDeocVGmI",
+    "website": "https://asiantastenytogo.com/",
+    "vibe_tags": [],
+    "price": 1
+  },
+  "china kitchen": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/kitchen-w-hong-kong-kowloon",
+    "lat": 40.7632157,
+    "lng": -73.9489097,
+    "google_rating": 3.9,
+    "google_reviews": 232,
+    "place_id": "ChIJQefBmcVYwokR8MSSO9Ffw78",
+    "website": "http://www.china1kitchennewyork.com/?utm_source=gmb&utm_medium=website",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "double dragon": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/double-dragon-nassau",
+    "lat": 40.6340341,
+    "lng": -73.9022687,
+    "google_rating": 3.8,
+    "google_reviews": 148,
+    "place_id": "ChIJMVgtk89cwokR0aSB-MxIXBo",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "el valle jerome": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/envero-en-el-valle-el-provenir",
+    "lat": 40.8826188,
+    "lng": -73.88163159999999,
+    "google_rating": 3.3,
+    "google_reviews": 449,
+    "place_id": "ChIJBw5PZAvzwokRSstFTYAfgVE",
+    "vibe_tags": [],
+    "price": 1
+  },
+  "golden dragon restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/restaurant-golden-dragon-hot-pot-calgary",
+    "lat": 40.7629685,
+    "lng": -73.92088509999999,
+    "google_rating": 3.9,
+    "google_reviews": 93,
+    "place_id": "ChIJUbTlBTlfwokRk8U4Xdu8tFo",
+    "website": "http://www.goldendragonastoria.com/?utm_source=gmb&utm_medium=website",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "great wall nyc": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/great-wall-lebanon",
+    "lat": 40.850857,
+    "lng": -73.938519,
+    "google_rating": 3.7,
+    "google_reviews": 125,
+    "place_id": "ChIJbctg5qD2wokRT69JyXKUFUA",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "green lake": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/dukes-seafood-green-lake",
+    "lat": 40.6532387,
+    "lng": -73.95922809999999,
+    "google_rating": 3.5,
+    "google_reviews": 279,
+    "place_id": "ChIJu6A1rGpbwokR9wWoKOYXvec",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "jade garden": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/jade-garden-eau-claire",
+    "lat": 40.8418106,
+    "lng": -73.93892509999999,
+    "google_rating": 3.9,
+    "google_reviews": 374,
+    "place_id": "ChIJT0-_NZz2wokRUZVXvOfNtZA",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "kam's kitchen": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/kams-kitchen-singapore",
+    "lat": 40.6830183,
+    "lng": -73.8064436,
+    "google_rating": 3.8,
+    "google_reviews": 138,
+    "place_id": "ChIJpYDL_NZhwokRwP5YCzfAbdA",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "kuzina": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/kuzina-edinburgh-2",
+    "lat": 40.5325999,
+    "lng": -74.1919794,
+    "google_rating": 3.8,
+    "google_reviews": 161,
+    "place_id": "ChIJtyuqnOlKwokRQB2Sq0G-xZc",
+    "website": "https://whereyoueat.com/Kuzina-Huguenot-601.html",
+    "cuisine": "Greek",
+    "vibe_tags": [
+      "chill",
+      "lively"
+    ],
+    "price": 1
+  },
+  "mamoun's falafel": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/mamouns-falafel-princeton",
+    "lat": 40.773716,
+    "lng": -73.95950400000001,
+    "google_rating": 3.6,
+    "google_reviews": 57,
+    "place_id": "ChIJAebgRK1ZwokRyY9D6z9ROmc",
+    "website": "https://www.mamouns.com/?olonwp=JjBtp_vMLk25gkYh_bnoiQ",
+    "vibe_tags": [],
+    "instagram": "mamounsfalafel",
+    "price": 1
+  },
+  "new dragon": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/new-dragon-vancouver",
+    "lat": 40.80202980000001,
+    "lng": -73.9344811,
+    "google_rating": 3.7,
+    "google_reviews": 74,
+    "place_id": "ChIJLcBiIuL1wokRQwArzI1V-Lc",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1,
+    "price_estimated": true
+  },
+  "new dynasty chinese restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/new-dynasty-renaissance-guiyang-hotel-guiyang",
+    "lat": 40.7494897,
+    "lng": -73.9956564,
+    "google_rating": 3.9,
+    "google_reviews": 224,
+    "place_id": "ChIJR9Q6M7BZwokROYgGYkkxBEw",
+    "website": "http://www.newdynastyny.com/?utm_source=gmb&utm_medium=website",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "noches de palenque": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/500-noches-san-cristobal-de-las-casas-chiapas",
+    "lat": 40.8127004,
+    "lng": -73.9032134,
+    "google_rating": 3.8,
+    "google_reviews": 142,
+    "place_id": "ChIJ98wSg7r1wokRpP8TOJQM8yE",
+    "website": "https://nochesdepalenqueny.com/",
+    "cuisine": "Mexican",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1,
+    "price_estimated": true
+  },
+  "prime astoria": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/prime-met-steakhouse-and-rooftop-lounge-flushing",
+    "lat": 40.768617,
+    "lng": -73.9106922,
+    "google_rating": 3.7,
+    "google_reviews": 9,
+    "place_id": "ChIJUaxfm7BfwokRu0U7Lgf2tMs",
+    "website": "https://primeastoria.com/",
+    "cuisine": "Caribbean",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1,
+    "price_estimated": true
+  },
+  "puebla mexican food": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bistro-702-puebla",
+    "lat": 40.7179943,
+    "lng": -73.9883263,
+    "google_rating": 3.6,
+    "google_reviews": 73,
+    "place_id": "ChIJIYJaPYFZwokRTywuTfTHfm8",
+    "website": "http://www.pueblamexicanfood.com/",
+    "cuisine": "Mexican",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "puebla puebla": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/menjurjeria-milagros-puebla",
+    "lat": 40.7179943,
+    "lng": -73.9883263,
+    "google_rating": 3.6,
+    "google_reviews": 73,
+    "place_id": "ChIJIYJaPYFZwokRTywuTfTHfm8",
+    "website": "http://www.pueblamexicanfood.com/",
+    "cuisine": "Mexican",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "puerta del sol": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/puerta-del-sol-oropesa-orpesa",
+    "lat": 40.6201664,
+    "lng": -73.9983029,
+    "google_rating": 3.4,
+    "google_reviews": 141,
+    "place_id": "ChIJ22AIEB9FwokRetQuLAXsNrg",
+    "website": "https://www.puertadelsolmenu.com/?utm_source=gbp",
+    "cuisine": "Mexican",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1,
+    "price_estimated": true
+  },
+  "sol de quito": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sol-de-colombia-bayside",
+    "lat": 40.701885,
+    "lng": -73.91893089999999,
+    "google_rating": 3.5,
+    "google_reviews": 238,
+    "place_id": "ChIJw-_xcBxcwokR4EvhLcTjVXA",
+    "vibe_tags": [],
+    "price": 1
+  },
+  "taste of italy": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/loveria-caffe-taste-of-italy-colleyville",
+    "lat": 40.7489212,
+    "lng": -73.86911719999999,
+    "google_rating": 3.6,
+    "google_reviews": 147,
+    "place_id": "ChIJUec417lfwokRbx5w0uzFh30",
+    "website": "https://www.tasteofitalycorona.com/",
+    "cuisine": "Italian",
+    "vibe_tags": [
+      "date_night"
+    ],
+    "price": 1
+  },
+  "the smoke house": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/smoke-house-newport",
+    "lat": 40.692087,
+    "lng": -73.7612662,
+    "google_rating": 3.8,
+    "google_reviews": 1944,
+    "place_id": "ChIJCfYimVlhwokRM6852-1mhNA",
+    "website": "https://thesmokehouse.shop/",
+    "cuisine": "Barbecue",
+    "vibe_tags": [
+      "lively"
+    ],
+    "price": 1
+  },
+  "eatzy thai": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/eatzy-thai-astoria",
+    "lat": 40.7611579,
+    "lng": -73.9233467,
+    "google_rating": 3.8,
+    "google_reviews": 634,
+    "place_id": "ChIJh3du_ddfwokRFatN-f8F0-U",
+    "website": "https://eatzythai.com/",
+    "cuisine": "Thai",
+    "vibe_tags": [
+      "chill"
+    ],
+    "instagram": "eatzyfoods",
+    "price": 1
+  },
+  "the mac shack": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/mac-shack-brooklyn",
+    "lat": 40.6818248,
+    "lng": -73.9291234,
+    "google_rating": 3.9,
+    "google_reviews": 146,
+    "place_id": "ChIJ95IkNYJdwokRZsIS0ysbub0",
+    "website": "http://www.macshackny.com/",
+    "cuisine": "American",
+    "vibe_tags": [
+      "chill"
+    ],
+    "instagram": "macshackny",
+    "price": 1
+  },
+  "panda king": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/panda-new-york",
+    "lat": 40.7623787,
+    "lng": -73.8154856,
+    "google_rating": 3.2,
+    "google_reviews": 118,
+    "place_id": "ChIJpVQb4iJgwokRtYxerBszZoY",
+    "website": "https://smorefood.com/order-online/panda-king-flushing-11355-1q7tj85h?utm_source=gmb&utm_medium=website",
+    "cuisine": "Chinese",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "thai peppercorn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/thai-peppercorn-new-york",
+    "lat": 40.788169,
+    "lng": -73.9536713,
+    "google_rating": 3.9,
+    "google_reviews": 206,
+    "place_id": "ChIJp1_D1KBYwokRJ9a1jf7jypg",
+    "cuisine": "Thai",
+    "vibe_tags": [
+      "chill"
+    ],
+    "price": 1
+  },
+  "gigis": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/gigis-at-night",
+    "lat": 40.85106902005348,
+    "lng": -74.2290387343588,
+    "google_rating": 3.9,
+    "google_reviews": 33,
+    "place_id": "ChIJffKDyvldwokRCbpBkSbBrm0",
+    "website": "https://eatgigi.com/",
+    "neighborhood": "Cedar Grove",
+    "cuisine": "Latin American",
+    "price": 1,
+    "vibe_tags": [
+      "lively"
+    ],
+    "instagram": "gigicurryandnoodlebar"
+  },
+  "broadway comedy club": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/broadway-comedy-club-new-york",
+    "lat": 40.7644332,
+    "lng": -73.98566269999999,
+    "google_rating": 3.7,
+    "google_reviews": 3061,
+    "place_id": "ChIJzbNCnFdYwokR_biZR5iHYxY",
+    "website": "http://www.broadwaycomedyclub.com/",
+    "vibe_tags": [],
+    "price": 1
+  },
+  "common ground nyc": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/common-ground-nyc",
+    "lat": 40.7395947,
+    "lng": -74.0073324,
+    "google_rating": 3.4,
+    "google_reviews": 803,
+    "place_id": "ChIJrwjIEcBZwokRFqjDrYjIbK0",
+    "neighborhood": "New York",
+    "instagram": "commongroundbar",
+    "cuisine": "American",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "http://commongroundnyc.com",
+    "last_availability_check": "2026-03-06"
+  },
+  "cupid's secret": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/cupids-secret",
+    "lat": 40.76875845808563,
+    "lng": -73.98313187472858,
+    "google_rating": 3.6,
+    "google_reviews": 28,
+    "place_id": "ChIJ7y6gXqBZwokRfek_3Rjp7Nc",
+    "neighborhood": "Midtown",
+    "instagram": "vossevents",
+    "cuisine": "French",
+    "price": 1,
+    "vibe_tags": [
+      "date_night"
+    ],
+    "website": "https://www.vossevents.com/residency/cupids-secret-new-york"
+  },
+  "ding a ling": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/ding-a-ling",
+    "lat": 40.7250803792234,
+    "lng": -73.9785970613684,
+    "google_rating": 3.5,
+    "google_reviews": 158,
+    "place_id": "ChIJpWkDZbNZwokRd0vEsmrQIWs",
+    "neighborhood": "New York",
+    "instagram": "dingalingcocktaillounge",
+    "cuisine": "American",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "http://www.dingalingnyc.com",
+    "last_availability_check": "2026-03-06"
+  },
+  "jue lan club": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/jue-lan-club",
+    "lat": 40.740925,
+    "lng": -73.993554,
+    "google_rating": 3.8,
+    "google_reviews": 973,
+    "place_id": "ChIJpZ1jwAFZwokRmfXFIqDLYjU",
+    "neighborhood": "Chelsea",
+    "instagram": "juelankitchen",
+    "cuisine": "Chinese",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "https://www.juelanclub.com"
+  },
+  "mezzanine": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/mezzanine-ny",
+    "lat": 40.725543,
+    "lng": -74.0052702,
+    "google_rating": 3.3,
+    "google_reviews": 10,
+    "place_id": "ChIJAQA8xIxZwokRZokKoBrHKC4",
+    "website": "https://www.thedominickhotel.com/mezzanine",
+    "neighborhood": "New York",
+    "cuisine": "American",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ]
+  },
+  "number one caviar boutique": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/number-one-caviar-boutique",
+    "lat": 40.7076337,
+    "lng": -74.010757,
+    "google_rating": 3.9,
+    "google_reviews": 122,
+    "place_id": "ChIJ2WPZKQlbwokRP85eL6NuRwE",
+    "neighborhood": "Financial District",
+    "instagram": "Wallstreetcaviar",
+    "cuisine": "American",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "http://numberonecaviar.com",
+    "last_availability_check": "2026-03-06"
+  },
+  "wakuwaku + oldies": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/oldies",
+    "lat": 40.65648,
+    "lng": -74.0079,
+    "google_rating": 3.9,
+    "google_reviews": 310,
+    "place_id": "ChIJCZ9CZdxbwokRQROyg7cV45A",
+    "neighborhood": "Brooklyn",
+    "instagram": "wakuwakubk",
+    "cuisine": "Japanese",
+    "price": 1,
+    "vibe_tags": [
+      "foodie"
+    ],
+    "website": "http://wakuwakuny.com/wakuwaku"
+  },
+  "private room nyc": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/private-room-nyc",
+    "lat": 40.77154521897568,
+    "lng": -73.90801077020915,
+    "google_rating": 3.9,
+    "google_reviews": 38,
+    "place_id": "ChIJi6-xHiBfwokRtTYisnigIxU",
+    "neighborhood": "Astoria",
+    "instagram": "privateroomny",
+    "cuisine": "Caribbean",
+    "price": 1,
+    "vibe_tags": [
+      "chill"
+    ],
+    "website": "http://privateroomnewyork.com"
   }
 }
