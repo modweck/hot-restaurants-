@@ -1043,9 +1043,9 @@ function filterRestaurantsByTier(candidates, qualityMode) {
     return { elite, moreOptions, excluded };
   }
   // New tier system: Very Good 4.4+ | Great 4.6+ | Exceptional 4.8+
-  let eliteMin = 4.4, moreMin = 999;
+  let eliteMin = 4.0, moreMin = 999;
   if (qualityMode === 'exceptional') { eliteMin = 4.8; moreMin = 999; }
-  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.4; }
+  else if (qualityMode === 'great') { eliteMin = 4.6; moreMin = 4.0; }
   else if (qualityMode === 'very_good') { eliteMin = 4.4; moreMin = 999; }
 
   for (const place of candidates) {
@@ -1077,7 +1077,7 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // DEFAULT HOT SPOTS: must be 4.7+ with 750+ reviews (amazing reviews tier)
       // Lower rated restaurants only show when a specific quality filter is selected
       if (qualityMode === 'very_good') {
-        if (rating >= 4.7 && reviews >= 750) elite.push(place);
+        if (rating >= 4.0 && reviews >= 150) elite.push(place);
         else excluded.push(place);
         continue;
       }
@@ -1104,7 +1104,7 @@ async function newApiNearbyRings(lat, lng, KEY) {
         body: JSON.stringify({
           includedTypes: ['restaurant'], maxResultCount: 20, rankPreference: 'POPULARITY',
           locationRestriction: { circle: { center: { latitude: lat, longitude: lng }, radius } },
-          minRating: 4.4,
+          minRating: 4.3,
           languageCode: 'en'
         })
       });
@@ -1148,7 +1148,7 @@ async function newApiTextByCuisine(lat, lng, userCuisine, KEY) {
         body: JSON.stringify({
           textQuery: query, maxResultCount: 20,
           locationBias: { circle: { center: { latitude: lat, longitude: lng }, radius: 8000 } },
-          minRating: 4.4,
+          minRating: 4.3,
           languageCode: 'en'
         })
       });
