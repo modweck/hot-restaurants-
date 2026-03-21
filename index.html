@@ -1234,6 +1234,11 @@ const BUZZ_SET = new Set(["15 east","4 charles prime rib","8282","abc cocina","a
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
 const state = { cuisine:'any', buzzFilter:'any', priceFilter:'any', rewardsFilter:'any', transport:'all_nyc' };
+
+// Bilt-only = has bilt_dining but no real booking URL → hidden unless Bilt filter is active
+function isBiltOnly(r) {
+  return r.bilt_dining && !r.resy_url && !r.opentable_url;
+}
 let allRestaurants = [], rawRestaurants = [], abortCtrl = null, searching = false;
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
@@ -1588,6 +1593,11 @@ function display(restaurants) {
   if (state.priceFilter!=='any') {
     const pl = Number(state.priceFilter);
     list = list.filter(r => r.price_level===pl);
+  }
+
+  // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
+  if (state.rewardsFilter !== 'bilt') {
+    list = list.filter(r => !isBiltOnly(r));
   }
 
   if (state.rewardsFilter!=='any') {
@@ -1996,6 +2006,11 @@ function applyARFilters(list) {
     const cs = arState.cuisine.toLowerCase();
     list = list.filter(r => (r.cuisine || '').toLowerCase().includes(cs) || cs.includes((r.cuisine || '').toLowerCase().trim()));
   }
+  // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
+  if (arState.rewardsFilter !== 'bilt') {
+    list = list.filter(r => !isBiltOnly(r));
+  }
+
   const rf = arState.rewardsFilter;
   if (rf !== 'any') {
     list = list.filter(r => {
