@@ -93,23 +93,34 @@ function slotToHour(timeStr) {
 }
 
 // ── Time window bucketing ─────────────────────────────────────────────────────
-// Early = 6:00pm–7:30pm  (18.0–19.5)
-// Prime = 7:30pm–9:00pm  (19.5–21.0)
-// Late  = 9:00pm+        (21.0–23.99)
+// Early = 5:00pm–6:30pm  (17.0–18.5)
+// Prime = 6:30pm–8:30pm  (18.5–20.5)
+// Late  = 8:30pm+        (20.5–24.0)
+// 0-1 slots = booked, 2-3 slots = limited, 4+ = available
 function buildTimeFlags(slots) {
-  let has_early = false;
-  let has_prime = false;
-  let has_late  = false;
+  let early_count = 0;
+  let prime_count = 0;
+  let late_count  = 0;
 
   for (const slot of (slots || [])) {
     const hour = slotToHour(slot.time);
     if (hour === null) continue;
-    if (hour >= 17.0 && hour < 18.5) has_early = true;
-    if (hour >= 18.5 && hour < 20.5) has_prime = true;
-    if (hour >= 20.5 && hour < 24.0) has_late  = true;
+    if (hour >= 17.0 && hour < 18.5) early_count++;
+    if (hour >= 18.5 && hour < 20.5) prime_count++;
+    if (hour >= 20.5 && hour < 24.0) late_count++;
   }
 
-  return { has_early, has_prime, has_late };
+  function windowStatus(count) {
+    if (count <= 1) return 'booked';
+    if (count <= 3) return 'limited';
+    return 'available';
+  }
+
+  return {
+    early: windowStatus(early_count),
+    prime: windowStatus(prime_count),
+    late:  windowStatus(late_count),
+  };
 }
 
 // ── Convert internal tier → tonight_availability tier ────────────────────────
@@ -194,11 +205,11 @@ async function checkOne(name, url, date, partySize) {
     const tier = toAvailTier(internalTier, slots.length);
 
     // ── Time flags — all false when booked ────────────────────────────────
-    const { has_early, has_prime, has_late } = tier === 'booked'
-      ? { has_early: false, has_prime: false, has_late: false }
+    const windows = tier === 'booked'
+      ? { early: 'booked', prime: 'booked', late: 'booked' }
       : buildTimeFlags(slots);
 
-    return { tier, dinner_slots: dinnerSlots, has_early, has_prime, has_late };
+    return { tier, dinner_slots: dinnerSlots, early: windows.early, prime: windows.prime, late: windows.late };
 
   } catch (e) {
     return null;
@@ -257,17 +268,15 @@ async function main() {
       output[key] = {
         tier:         result.tier,
         dinner_slots: result.dinner_slots,
-        has_early:    result.has_early,
-        has_prime:    result.has_prime,
-        has_late:     result.has_late,
+        early:        result.early,
+        prime:        result.prime,
+        late:         result.late,
         _checked_date: TODAY
       };
 
       const EMOJI = { booked: '⚫', limited: '🟠', open: '🟢' };
       const timeStr = [
-        result.has_early && 'Early',
-        result.has_prime && 'Prime',
-        result.has_late  && 'Late'
+        result.early, result.prime, result.late
       ].filter(Boolean).join('/') || (result.tier === 'booked' ? 'none' : '—');
 
       console.log(`${EMOJI[result.tier] || '⚪'} ${result.tier.padEnd(7)} [${timeStr}] (${result.dinner_slots} dinner slots)`);
@@ -275,7 +284,7 @@ async function main() {
     } else {
       // Don't overwrite existing good data on a failed check
       if (!output[key]) {
-        output[key] = { tier: null, dinner_slots: 0, has_early: false, has_prime: false, has_late: false, _checked_date: TODAY };
+        output[key] = { tier: null, dinner_slots: 0, early: 'booked', prime: 'booked', late: 'booked', _checked_date: TODAY };
       }
       console.log(`❌ failed`);
       fail++;
