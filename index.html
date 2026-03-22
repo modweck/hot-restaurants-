@@ -2094,11 +2094,11 @@ function applyARFilters(list) {
   else if (bf === 'nyt') list = list.filter(r => hasBuzzAR(r));
   else if (bf === 'google_amazing') list = list.filter(r => Number(r.googleRating||0) >= 4.7 && Number(r.googleReviewCount||0) >= 750);
   else if (bf === 'new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
-  else if (bf === 'good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
-  else if (bf === 'still_good') list = list.filter(r => Number(r.googleRating||0) >= 4.4);
+  else if (bf === 'good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.2 && rg < 4.5; });
+  else if (bf === 'still_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.2 && rg < 4.5; });
   else if (bf === 'any') {} // no filter
-  else if (bf === 'very_good') list = list.filter(r => Number(r.googleRating||0) >= 4.6);
-  else if (bf === 'great') list = list.filter(r => Number(r.googleRating||0) >= 4.7);
+  else if (bf === 'very_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.5 && rg < 4.65; });
+  else if (bf === 'great') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.6 && rg < 4.75; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
   if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
   if (arState.cuisine && arState.cuisine !== 'any') {
@@ -2147,8 +2147,7 @@ function displayAllNYC(restaurants) {
     document.getElementById('allRestList').innerHTML = `<div style="text-align:center;padding:50px 20px;color:#555"><div style="font-size:36px;margin-bottom:12px">🍽️</div><div>No restaurants match these filters</div></div>`;
     return;
   }
-  // Sort: Michelin always top, then by rating ascending from tier floor so you see the tier minimum first
-  const tierFloor = { any: 0, good: 4.4, very_good: 4.6, great: 4.7, exceptional: 4.8 }[arState.buzzFilter] || 0;
+  // Sort: highest rating first (descending), Michelin always on top
   filtered.sort((a, b) => {
     const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
@@ -2157,7 +2156,7 @@ function displayAllNYC(restaurants) {
     const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
     if (michelinDiff !== 0) return michelinDiff;
     const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-    return rB - rA;
+    return rB - rA; // highest rating first
   });
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
 }
