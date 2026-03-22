@@ -143,6 +143,7 @@
     .badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700}
     .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.2)}
+    .badge.vibe{background:#f0f7ff;color:#3b82f6;border:1px solid rgba(59,130,246,.2);font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
     .badge.bib{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.2)}
     .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.2)}
     .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.2)}
@@ -257,6 +258,25 @@
           <button class="fchip" onclick="setTrendFilter('instagram',this)">🎯 Instagram Influencers</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">🔥 Amazing Reviews</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">✨ New &amp; Rising</button>
+        </div>
+
+        <!-- Vibes -->
+        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:12px">
+          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">✨ Vibes</span>
+          <div class="filter-chips" id="vibeChips">
+            <button class="fchip" onclick="setVibeFilter('date_night',this)">🍷 Date</button>
+            <button class="fchip" onclick="setVibeFilter('upscale',this)">💎 Upscale</button>
+            <button class="fchip" onclick="setVibeFilter('lively',this)">🔥 Lively</button>
+            <button class="fchip" onclick="setVibeFilter('chill',this)">😌 Chill</button>
+            <button class="fchip" onclick="setVibeFilter('trendy',this)">✨ Trendy</button>
+            <button class="fchip" onclick="setVibeFilter('brunch',this)">🥞 Brunch</button>
+            <button class="fchip" onclick="setVibeFilter('outdoor',this)">🌿 Outdoor</button>
+            <button class="fchip" onclick="setVibeFilter('late_night',this)">🌙 Late Night</button>
+            <button class="fchip" onclick="setVibeFilter('casual',this)">👕 Casual</button>
+            <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">🕵️ Hidden Gem</button>
+            <button class="fchip" onclick="setVibeFilter('foodie',this)">🍽 Foodie</button>
+            <button class="fchip" onclick="setVibeFilter('group_friendly',this)">👥 Group</button>
+          </div>
         </div>
 
         <!-- Available Tonight -->
@@ -1009,7 +1029,7 @@
 
 <script>
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
+const homeState = { tab: 'hotspots', trendFilter: 'any', vibeFilter: null, radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
 
 function setAvailFilter(val, btn) {
   homeState.horizonFilter = null;
@@ -1116,6 +1136,17 @@ function setTrendFilter(buzz, btn) {
   btn.classList.add('on');
 }
 
+function setVibeFilter(vibe, btn) {
+  if (homeState.vibeFilter === vibe) {
+    homeState.vibeFilter = null;
+    btn.classList.remove('on');
+  } else {
+    homeState.vibeFilter = vibe;
+    document.querySelectorAll('#vibeChips .fchip').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  }
+}
+
 function setRadius(miles, btn) {
   homeState.radiusMiles = miles;
   document.querySelectorAll('.radius-btn').forEach(b => b.classList.remove('on'));
@@ -1214,11 +1245,12 @@ function goToSearch(buzz, cuisine) {
     if (dd) dd.classList.add('open');
   }
 
+  // Sync vibe filter from home screen
+  state.vibeFilter = homeState.vibeFilter || null;
+
   // Auto-fire search so results show immediately
   doSearch();
 }
-
-// Legacy stubs (no longer used but keep to avoid errors)
 function setTrendingFilter1(){}
 function setTrendingFilter2(){}
 function setNearbyCuisine(){}
@@ -1233,7 +1265,7 @@ const INSTA = {"53": "53nyc", "886": "eighteightsix", "929": "929.nyc", "8282": 
 const BUZZ_SET = new Set(["15 east","4 charles prime rib","8282","abc cocina","abc kitchen","adda","ai fiori","al di la trattoria","altro paradiso","aquavit","aska","atera","atla","atoboy","atomix","babbo","bad roman","balthazar","bar pitti","barbuto","barney greengrass","blue hill","blue hill at stone barns","blue ribbon sushi","bondst","bonnie's","buvette","carbone","cardamom","carmine's","casa enrique","casa mono","catch","cathédrale","caviar russe","cecily","celestine","cervo's","charlie bird","chez ma tante","ci siamo","cipriani downtown","claud","clinton st. baking company","clover hill","colonie","commerce","contra","cookshop","coqodaq","cosme","craft","crown shy","dame","daniel","dante","dhamaka","don angie","double chicken please","eleven madison park","emily","estela","fish cheeks","five leaves","four twenty five","francie","frankies spuntino","frenchette","frevo","gabriel kreuther","gage & tollner","gramercy tavern","grand central oyster bar","haenyeo","hags","hangawi","hart's","hasalon","hawksmoor","hearth","i sodi","il buco","il buco alimentari","indian accent","jack's wife freda","jean-georges","jeju noodle bar","joseph leonard","jungsik","junoon","katz's","keens","keens steakhouse","king","kisa","kissaki","ko","kochi","kopitiam","la grande boucherie","lafayette","laser wolf","le bernardin","le coucou","le pavillon","le rock","lilia","lincoln ristorante","little owl","locanda verde","lucali","lupa","manhatta","marea","masa","minetta tavern","misi","momofuku ko","momofuku noodle bar","motorino","nami nori","nobu downtown","nom wah tea parlor","noreetuh","odo","oiji mi","olmsted","one white street","ops","oxalis","oxomoco","palma","pasquale jones","pastis","per se","peter luger","pig and khao","place des fêtes","quality italian","quality meats","raf's","rao's","rezdora","roberta's","rubirosa","ruffian","sadelle's","saga","san sabino","sant ambroeus","scarr's pizza","semma","shuko","smith & wollensky","st. anselm","strip house","sugarfish","sunday in brooklyn","sushi nakazawa","tatiana","the dutch","the grill","the modern","the musket room","the odeon","the polo bar","the pool","the river cafe","the standard grill","tiny's","torrisi","tribeca grill","txikito","ugly baby","una pizza napoletana","union square cafe","via carota","waverly inn","wildair","win son","zuma"]);
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
-const state = { cuisine:'any', buzzFilter:'any', priceFilter:'any', rewardsFilter:'any', transport:'all_nyc' };
+const state = { cuisine:'any', buzzFilter:'any', priceFilter:'any', rewardsFilter:'any', transport:'all_nyc', vibeFilter: null };
 
 // Bilt-only = has bilt_dining but no real booking URL → hidden unless Bilt filter is active
 function isBiltOnly(r) {
@@ -1396,10 +1428,21 @@ function tc(str) {
 function renderCard(r, isRadar) {
   const name = tc(r.name) || 'Unknown';
   const addr = (r.vicinity||r.formatted_address||'').replace(/,?\s*U\.?S\.?A?\.?$/i,'');
-  const vibeTxt = (r.vibe_tags && r.vibe_tags.length) ? r.vibe_tags.slice(0,2).map(v => v.replace(/_/g,' ')).join(', ') : null;
   const sub = [r.cuisine, addr, r.distanceMiles!=null?`${r.distanceMiles} mi`:null].filter(Boolean).join(' · ');
-  const subFull = vibeTxt ? `${sub}${sub ? ' · ' : ''}${vibeTxt}` : sub;
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
+
+  // Vibe tag pills
+  const VIBE_EMOJI = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
+  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
+  let vibeHtml = '';
+  if (r.vibe_tags && r.vibe_tags.length) {
+    const pills = r.vibe_tags.slice(0,4).map(v => {
+      const emoji = VIBE_EMOJI[v] || '';
+      const label = VIBE_LABEL[v] || v.replace(/_/g,' ');
+      return `<span class="badge vibe">${emoji} ${label}</span>`;
+    }).join('');
+    vibeHtml = `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px">${pills}</div>`;
+  }
 
   // Buzz badges
   let badges = '';
@@ -1532,7 +1575,8 @@ function renderCard(r, isRadar) {
 
   return `<div class="card${isRadar?' dim':''}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
-    <div class="card-sub">${subFull}</div>
+    <div class="card-sub">${sub}</div>
+    ${vibeHtml}
     ${badgesHtml}
     ${availHtml}
     <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
@@ -1588,6 +1632,12 @@ function display(restaurants) {
       const c = (r.cuisine || '').toLowerCase();
       return c.includes(cs) || cs.includes(c);
     });
+  }
+
+  // ── Vibe filter ──
+  if (state.vibeFilter) {
+    const vf = state.vibeFilter;
+    list = list.filter(r => r.vibe_tags && r.vibe_tags.includes(vf));
   }
 
   if (state.priceFilter!=='any') {
