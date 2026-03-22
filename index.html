@@ -718,6 +718,26 @@
           </div>
         </div>
 
+        <!-- Vibe -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">✨ Vibe</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="fchip on" id="ar-vibe-any" onclick="arSetVibe(null,this)">🔥 All</button>
+            <button class="fchip" id="ar-vibe-date_night" onclick="arSetVibe('date_night',this)">🍷 Date</button>
+            <button class="fchip" id="ar-vibe-upscale" onclick="arSetVibe('upscale',this)">💎 Upscale</button>
+            <button class="fchip" id="ar-vibe-lively" onclick="arSetVibe('lively',this)">🔥 Lively</button>
+            <button class="fchip" id="ar-vibe-chill" onclick="arSetVibe('chill',this)">😌 Chill</button>
+            <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">✨ Trendy</button>
+            <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">🥞 Brunch</button>
+            <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">🌿 Outdoor</button>
+            <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">🌙 Late Night</button>
+            <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">👕 Casual</button>
+            <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">🕵️ Hidden Gem</button>
+            <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">🍽 Foodie</button>
+            <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">👥 Group</button>
+          </div>
+        </div>
+
         <!-- Rewards -->
         <div style="margin-bottom:16px">
           <span class="flabel">🎁 Rewards</span>
@@ -878,6 +898,23 @@
               <option value="whiskey">🥃 Whiskey</option>
               <option value="karaoke">🎤 Karaoke</option>
             </select>
+          </div>
+        </div>
+
+        <!-- Restaurant Vibe Filter for Bars -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">✨ Vibe</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="fchip on" id="bar-vibe-any" onclick="barSetVibe(null,this)">🔥 All</button>
+            <button class="fchip" id="bar-vibe-date_night" onclick="barSetVibe('date_night',this)">🍷 Date</button>
+            <button class="fchip" id="bar-vibe-upscale" onclick="barSetVibe('upscale',this)">💎 Upscale</button>
+            <button class="fchip" id="bar-vibe-lively" onclick="barSetVibe('lively',this)">🔥 Lively</button>
+            <button class="fchip" id="bar-vibe-chill" onclick="barSetVibe('chill',this)">😌 Chill</button>
+            <button class="fchip" id="bar-vibe-trendy" onclick="barSetVibe('trendy',this)">✨ Trendy</button>
+            <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">🌿 Outdoor</button>
+            <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">🌙 Late Night</button>
+            <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">🕵️ Hidden Gem</button>
+            <button class="fchip" id="bar-vibe-group_friendly" onclick="barSetVibe('group_friendly',this)">👥 Group</button>
           </div>
         </div>
 
@@ -1836,7 +1873,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null };
+const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -1869,6 +1906,12 @@ function arSetHorizon(days, btn) {
   arState.availFilter = null; arState.horizonFilter = days;
   btn.classList.add('on');
 }
+function barSetVibe(vibe, btn) {
+  barState.vibeFilter = vibe;
+  document.querySelectorAll('[id^="bar-vibe-"]').forEach(b => b.classList.remove('on'));
+  (btn || document.getElementById(vibe ? `bar-vibe-${vibe}` : 'bar-vibe-any')).classList.add('on');
+}
+
 function barSetAvail(val, btn) {
   ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['bar-avail-any','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
@@ -1880,6 +1923,12 @@ function barSetHorizon(days, btn) {
   ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   barState.availFilter = null; barState.horizonFilter = days;
   btn.classList.add('on');
+}
+
+function arSetVibe(vibe, btn) {
+  arState.vibeFilter = vibe;
+  document.querySelectorAll('[id^="ar-vibe-"]').forEach(b => b.classList.remove('on'));
+  (btn || document.getElementById(vibe ? `ar-vibe-${vibe}` : 'ar-vibe-any')).classList.add('on');
 }
 
 function arSetCuisine(val) {
@@ -2084,6 +2133,10 @@ function applyARFilters(list) {
       return true;
     });
   }
+  // ── Vibe filter ──
+  if (arState.vibeFilter) {
+    list = list.filter(r => r.vibe_tags && r.vibe_tags.includes(arState.vibeFilter));
+  }
   return list;
 }
 
@@ -2188,7 +2241,7 @@ const barState = {
   lateNight: false, lateNightLevel: 'off',
   buzz: false, dayMode: 'weekday', priceLevel: 'any',
   allResults: [], sortBy: 'rating',
-  availFilter: 'any', horizonFilter: null
+  availFilter: 'any', horizonFilter: null, vibeFilter: null
 };
 let barSearching = false, barAbort = null;
 
@@ -2434,6 +2487,10 @@ async function doBarSearch() {
 
     if (data.confirmedAddress) {
       warn.innerHTML = `<div class="loc-banner">📍 ${data.confirmedAddress.replace(/,?\s*USA?\.?$/i,'')}</div>`;
+    }
+    // ── Vibe filter ──
+    if (barState.vibeFilter) {
+      results = results.filter(b => b.vibe_tags && b.vibe_tags.includes(barState.vibeFilter));
     }
     barState.allResults = results;
     displayBarResults(results, data.stats && data.stats.totalCount);
