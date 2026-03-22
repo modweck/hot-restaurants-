@@ -13527,10 +13527,140 @@
     "10": 2
   },
   "_meta": {
-    "last_run": "2026-03-21",
-    "restaurants_processed": 509,
+    "last_run": "2026-03-22",
+    "restaurants_processed": 514,
     "errors": 0,
-    "google_reviews_analyzed": 2540,
+    "google_reviews_analyzed": 25,
     "yelp_reviews_analyzed": 0
+  },
+  "ChIJT2yTxARbwokRB1dXqU1LFM0": {
+    "name": "No Last Names",
+    "demand_score": 20,
+    "base_tier": "high",
+    "base_label": "Good Chance",
+    "reasons": [],
+    "availability": null,
+    "nlp": {
+      "hard_signals": 0,
+      "easy_signals": 0,
+      "wait_signals": 0,
+      "size_estimate": "medium",
+      "difficulty": "unknown",
+      "sample_size": 5
+    },
+    "platform": {
+      "name": "unknown",
+      "inventory_type": "unknown",
+      "churn": "unknown"
+    },
+    "velocity_growth30": null,
+    "photo_count": 10,
+    "yelp": null,
+    "last_updated": "2026-03-22"
+  },
+  "ChIJ_cCxIwBZwokRl7N4OVuIhsQ": {
+    "name": "Rulin",
+    "demand_score": 30,
+    "base_tier": "high",
+    "base_label": "Good Chance",
+    "reasons": [
+      "Small/intimate venue",
+      "Resy (timed drops, competitive)"
+    ],
+    "availability": null,
+    "nlp": {
+      "hard_signals": 0,
+      "easy_signals": 0,
+      "wait_signals": 0,
+      "size_estimate": "small",
+      "difficulty": "unknown",
+      "sample_size": 5
+    },
+    "platform": {
+      "name": "resy",
+      "inventory_type": "drops",
+      "churn": "medium"
+    },
+    "velocity_growth30": null,
+    "photo_count": 10,
+    "yelp": null,
+    "last_updated": "2026-03-22"
+  },
+  "ChIJBfstmZVbwokR46K9zOToCeM": {
+    "name": "Smyth Tavern",
+    "demand_score": 11,
+    "base_tier": "very_high",
+    "base_label": "Easy to Book",
+    "reasons": [
+      "Resy (timed drops, competitive)"
+    ],
+    "availability": null,
+    "nlp": {
+      "hard_signals": 0,
+      "easy_signals": 1,
+      "wait_signals": 0,
+      "size_estimate": "medium",
+      "difficulty": "unknown",
+      "sample_size": 5
+    },
+    "platform": {
+      "name": "resy",
+      "inventory_type": "drops",
+      "churn": "medium"
+    },
+    "velocity_growth30": null,
+    "photo_count": 10,
+    "yelp": null,
+    "last_updated": "2026-03-22"
+  },
+  "ChIJl0MZLf9fwokRHtBmOVuCi6Y": {
+    "name": "Julieta Taberna Bar NY",
+    "demand_score": 20,
+    "base_tier": "high",
+    "base_label": "Good Chance",
+    "reasons": [],
+    "availability": null,
+    "nlp": {
+      "hard_signals": 0,
+      "easy_signals": 0,
+      "wait_signals": 0,
+      "size_estimate": "medium",
+      "difficulty": "unknown",
+      "sample_size": 5
+    },
+    "platform": {
+      "name": "unknown",
+      "inventory_type": "unknown",
+      "churn": "unknown"
+    },
+    "velocity_growth30": null,
+    "photo_count": 10,
+    "yelp": null,
+    "last_updated": "2026-03-22"
+  },
+  "ChIJW2b2LhlhwokRfix8u5jWof8": {
+    "name": "Wabi Nori Queens",
+    "demand_score": 27,
+    "base_tier": "high",
+    "base_label": "Good Chance",
+    "reasons": [],
+    "availability": null,
+    "nlp": {
+      "hard_signals": 0,
+      "easy_signals": 0,
+      "wait_signals": 0,
+      "size_estimate": "medium",
+      "difficulty": "unknown",
+      "sample_size": 5
+    },
+    "platform": {
+      "name": "unknown",
+      "inventory_type": "unknown",
+      "churn": "unknown"
+    },
+    "velocity_growth30": null,
+    "photo_count": 10,
+    "yelp": null,
+    "last_updated": "2026-03-22"
   }
 }
