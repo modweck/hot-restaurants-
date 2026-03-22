@@ -228,6 +228,9 @@ async function takeSnapshot(bookingLookup) {
   console.log(`   Checking ${Object.keys(bookingLookup).length} restaurants via Google Places API...`);
   console.log(`   ⏱️  Estimated time: ~${Math.round(Object.keys(bookingLookup).length * 0.25 / 60)} minutes\n`);
 
+  // Create snapshots folder if it doesn't exist yet
+  fs.mkdirSync(SNAPSHOT_DIR, { recursive: true });
+
   const snapshot = {};
   let checked = 0, found = 0, failed = 0;
   const keys = Object.keys(bookingLookup);
@@ -265,7 +268,6 @@ async function takeSnapshot(bookingLookup) {
   }
 
   if (!DRY_RUN) {
-    if (!fs.existsSync(SNAPSHOT_DIR)) fs.mkdirSync(SNAPSHOT_DIR, { recursive: true });
     fs.writeFileSync(snapshotFile, JSON.stringify(snapshot, null, 2));
   }
 
