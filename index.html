@@ -1546,23 +1546,41 @@ function renderCard(r, isRadar) {
     return `<span style="${_styleBooked}">${label} Booked</span>`;
   }
 
-  const earlyStatus = r.early || (r.has_early ? 'available' : 'booked');
-  const primeStatus = r.prime || (r.has_prime ? 'available' : 'booked');
-  const lateStatus  = r.late  || (r.has_late  ? 'available' : 'booked');
-
-  const allAvailable = earlyStatus === 'available' && primeStatus === 'available' && lateStatus === 'available';
-  const allBooked    = earlyStatus === 'booked'    && primeStatus === 'booked'    && lateStatus === 'booked';
-  const hasAnyData   = r.early || r.prime || r.late || r.has_early || r.has_prime || r.has_late;
+  // Only compute window statuses if we actually have window data
+  const hasNewData = r.early || r.prime || r.late;
+  const hasOldData = r.has_early || r.has_prime || r.has_late;
+  const hasWindowData = hasNewData || hasOldData;
 
   let timeBadgeHtml = '';
-  if (!allAvailable && !allBooked && hasAnyData) {
-    timeBadgeHtml = _windowBadge(earlyStatus, 'Early') + _windowBadge(primeStatus, 'Prime') + _windowBadge(lateStatus, 'Late');
-  }
 
-  if (isRadar) availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
-  else if (allAvailable) availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
-  else if (allBooked || tier==='booked') availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
-  else availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
+  if (hasWindowData) {
+    // Use new string fields if present, fall back to old booleans
+    const earlyStatus = r.early || (r.has_early ? 'available' : 'booked');
+    const primeStatus = r.prime || (r.has_prime ? 'available' : 'booked');
+    const lateStatus  = r.late  || (r.has_late  ? 'available' : 'booked');
+
+    const allAvailable = earlyStatus === 'available' && primeStatus === 'available' && lateStatus === 'available';
+    const allBooked    = earlyStatus === 'booked'    && primeStatus === 'booked'    && lateStatus === 'booked';
+
+    if (isRadar) {
+      availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
+    } else if (tier === 'booked' || allBooked) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+    } else if (allAvailable) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
+    } else {
+      timeBadgeHtml = _windowBadge(earlyStatus, 'Early') + _windowBadge(primeStatus, 'Prime') + _windowBadge(lateStatus, 'Late');
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
+    }
+  } else if (isRadar) {
+    availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
+  } else if (tier === 'booked') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+  } else if (tier === 'available') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
+  } else if (tier === 'limited') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">🟡 Limited Spots</span></div>`;
+  }
 
   // Maps URL
   const mapsUrl = r.place_id
