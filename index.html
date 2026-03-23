@@ -1493,7 +1493,9 @@ function tc(str) {
 function renderCard(r, isRadar) {
   const name = tc(r.name) || 'Unknown';
   const addr = (r.vicinity||r.formatted_address||'').replace(/,?\s*U\.?S\.?A?\.?$/i,'');
-  const sub = [r.cuisine, addr, r.distanceMiles!=null?`${r.distanceMiles} mi`:null].filter(Boolean).join(' · ');
+  const walkStr = r.walkMinEstimate > 0 ? `🚶 ${r.walkMinEstimate} min` : null;
+  const driveStr = r.driveMinEstimate > 0 ? `🚗 ${r.driveMinEstimate} min` : null;
+  const sub = [r.cuisine, addr, r.distanceMiles!=null?`${r.distanceMiles} mi`:null, walkStr, driveStr].filter(Boolean).join(' · ');
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
