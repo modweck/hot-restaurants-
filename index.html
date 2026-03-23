@@ -141,7 +141,11 @@
     .card-price{font-size:12px;color:#bbb;font-weight:600;letter-spacing:-.3px;flex-shrink:0}
     .card-sub{font-size:12px;color:#999;margin-bottom:5px;line-height:1.4}
     .card-travel{display:flex;align-items:center;flex-wrap:wrap;gap:2px;font-size:11px;font-weight:600;color:#666;margin-bottom:8px}
-    .travel-sep{color:#ccc;margin:0 4px;font-weight:400}
+    .travel-sep{color:#ccc;font-weight:400}
+    .sort-bar{display:flex;align-items:center;gap:6px;padding:8px 16px 6px;background:#f5f0eb}
+    .sort-bar-label{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.8px;flex-shrink:0}
+    .sort-btn{padding:5px 12px;border-radius:20px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:11px;font-weight:700;color:#666;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+    .sort-btn.on{background:rgba(255,69,0,.12);color:#ff4500;border-color:rgba(255,69,0,.35)}
     .badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700}
     .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.2)}
@@ -561,6 +565,12 @@
     <div id="results">
       <div class="res-header">
         <span class="res-meta" id="resMeta"></span>
+      </div>
+      <div class="sort-bar">
+        <span class="sort-bar-label">Sort:</span>
+        <button class="sort-btn on" id="sort-rating" onclick="setHotSort('rating')">⭐ Rating</button>
+        <button class="sort-btn" id="sort-distance" onclick="setHotSort('distance')">📍 Distance</button>
+        <button class="sort-btn" id="sort-price" onclick="setHotSort('price_asc')">💰 Price</button>
       </div>
       <div id="warnings"></div>
       <div id="list"></div>
@@ -1068,7 +1078,7 @@
 
 <script>
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 1, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
+const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
 
 function setAvailFilter(val, btn) {
   homeState.horizonFilter = null;
@@ -1295,20 +1305,6 @@ function goToSearch(buzz, cuisine) {
 
   // Apply radius from home screen — store directly so getTP() uses it reliably
   const r = homeState.radiusMiles;
-
-  // If radius mode is selected but no address was entered, block and prompt
-  if (r > 0 && (!homeAddr || !homeAddr.value.trim())) {
-    if (homeAddr) {
-      homeAddr.focus();
-      homeAddr.placeholder = '⚠️ Enter your address to use distance filter';
-      homeAddr.style.borderColor = 'rgba(255,69,0,0.7)';
-      setTimeout(() => {
-        homeAddr.placeholder = 'Enter your address or neighborhood...';
-        homeAddr.style.borderColor = 'rgba(0,0,0,0.1)';
-      }, 3000);
-    }
-    return;
-  }
   if (r === 0) {
     state.transport = 'all_nyc';
     state._homeRadius = 0;
@@ -1518,7 +1514,7 @@ function renderCard(r, isRadar) {
     if (distMi != null) parts.push(`📍 ${distMi} mi`);
     if (walkMins != null) parts.push(`🚶 ${walkMins} min walk`);
     if (driveMins != null) parts.push(`🚗 ${driveMins} min drive`);
-    travelHtml = `<div class="card-travel">${parts.join('<span class="travel-sep">·</span>')}</div>`;
+    travelHtml = `<div class="card-travel">${parts.join('<span class="travel-sep"> · </span>')}</div>`;
   }
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
@@ -1713,6 +1709,17 @@ function renderCard(r, isRadar) {
   </div>`;
 }
 
+// ─── SORT ─────────────────────────────────────────────────────────────────────
+window._hotSortMode = 'rating';
+function setHotSort(mode) {
+  window._hotSortMode = mode;
+  ['rating','distance','price_asc'].forEach(m => {
+    const btn = document.getElementById('sort-' + (m === 'price_asc' ? 'price' : m));
+    if (btn) btn.classList.toggle('on', m === mode);
+  });
+  if (window._hotResults) display(window._hotResults);
+}
+
 // ─── DISPLAY ──────────────────────────────────────────────────────────────────
 function display(restaurants) {
   restaurants.forEach(r => { r._bs = buzzScore(r); });
@@ -1807,15 +1814,21 @@ function display(restaurants) {
     });
   }
 
-  if (state.transport === 'radius') {
+  const sortMode = window._hotSortMode || 'rating';
+  if (sortMode === 'distance') {
     list.sort((a,b) => {
       const dA = a.distanceMiles ?? 999, dB = b.distanceMiles ?? 999;
       if (dA !== dB) return dA - dB;
-      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-      if (rB !== rA) return rB - rA;
-      return (b._bs||0)-(a._bs||0);
+      return Number(b.googleRating||0) - Number(a.googleRating||0);
+    });
+  } else if (sortMode === 'price_asc') {
+    list.sort((a,b) => {
+      const pA = a.price_level || 99, pB = b.price_level || 99;
+      if (pA !== pB) return pA - pB;
+      return Number(b.googleRating||0) - Number(a.googleRating||0);
     });
   } else {
+    // default: rating
     list.sort((a,b) => {
       const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
       const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
@@ -1912,6 +1925,12 @@ async function doSearch() {
 
     allRestaurants = results;
     rawRestaurants = results;
+    window._hotResults = results;
+    window._hotSortMode = 'rating';
+    ['rating','distance','price_asc'].forEach(m => {
+      const btn = document.getElementById('sort-' + (m === 'price_asc' ? 'price' : m));
+      if (btn) btn.classList.toggle('on', m === 'rating');
+    });
     display(allRestaurants);
 
   } catch(err) {
