@@ -1779,15 +1779,25 @@ function display(restaurants) {
     });
   }
 
-  list.sort((a,b) => {
-    const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
-    const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
-    if (aHasData && !bHasData) return -1;
-    if (!aHasData && bHasData) return 1;
-    const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-    if (rB !== rA) return rB - rA;
-    return (b._bs||0)-(a._bs||0);
-  });
+  if (state.transport === 'radius') {
+    list.sort((a,b) => {
+      const dA = a.distanceMiles ?? 999, dB = b.distanceMiles ?? 999;
+      if (dA !== dB) return dA - dB;
+      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
+      if (rB !== rA) return rB - rA;
+      return (b._bs||0)-(a._bs||0);
+    });
+  } else {
+    list.sort((a,b) => {
+      const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
+      const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
+      if (aHasData && !bHasData) return -1;
+      if (!aHasData && bHasData) return 1;
+      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
+      if (rB !== rA) return rB - rA;
+      return (b._bs||0)-(a._bs||0);
+    });
+  }
 
   const avail=[], radar=[];
   list.forEach(r => { const t=availTier(r); (t==='hard'||t==='radar'?radar:avail).push(r); });
