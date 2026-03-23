@@ -1066,7 +1066,7 @@
 
 <script>
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', vibeFilter: null, radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
+const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
 
 function setAvailFilter(val, btn) {
   homeState.horizonFilter = null;
@@ -1168,20 +1168,41 @@ function toggleInstaBuzz(id, btn) {
 }
 
 function setTrendFilter(buzz, btn) {
-  homeState.trendFilter = buzz;
-  document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
+  if (buzz === 'any') {
+    homeState.trendFilters = [];
+    homeState.trendFilter = 'any';
+    document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    return;
+  }
+  const idx = homeState.trendFilters.indexOf(buzz);
+  if (idx > -1) {
+    homeState.trendFilters.splice(idx, 1);
+    btn.classList.remove('on');
+  } else {
+    homeState.trendFilters.push(buzz);
+    btn.classList.add('on');
+  }
+  const anyBtn = document.querySelector('#trendingChips .fchip');
+  if (homeState.trendFilters.length > 0) {
+    anyBtn && anyBtn.classList.remove('on');
+    homeState.trendFilter = homeState.trendFilters[0];
+  } else {
+    anyBtn && anyBtn.classList.add('on');
+    homeState.trendFilter = 'any';
+  }
 }
 
 function setVibeFilter(vibe, btn) {
-  if (homeState.vibeFilter === vibe) {
-    homeState.vibeFilter = null;
+  const idx = homeState.vibeFilters.indexOf(vibe);
+  if (idx > -1) {
+    homeState.vibeFilters.splice(idx, 1);
     btn.classList.remove('on');
   } else {
-    homeState.vibeFilter = vibe;
-    document.querySelectorAll('#vibeChips .fchip').forEach(b => b.classList.remove('on'));
+    homeState.vibeFilters.push(vibe);
     btn.classList.add('on');
   }
+  homeState.vibeFilter = homeState.vibeFilters[0] || null;
 }
 
 function setRadius(miles, btn) {
@@ -1284,6 +1305,8 @@ function goToSearch(buzz, cuisine) {
 
   // Sync vibe filter from home screen
   state.vibeFilter = homeState.vibeFilter || null;
+  state.vibeFilters = homeState.vibeFilters || [];
+  state.trendFilters = homeState.trendFilters || [];
 
   // Auto-fire search so results show immediately
   doSearch();
@@ -1681,22 +1704,27 @@ function display(restaurants) {
     const maxMi = +document.getElementById('radiusMiles').value;
     list = list.filter(r => r.distanceMiles == null || r.distanceMiles <= maxMi);
   }
-  const bf = state.buzzFilter;
-
-  if (bf==='michelin') list = list.filter(r => (r.michelin?.stars||0)>=1);
-  else if (bf==='michelin_rec') list = list.filter(r => r.michelin_recommended || (r.michelin && r.michelin.distinction==='recommended'));
-  else if (bf==='bib') list = list.filter(r => r.bib_gourmand || (r.michelin && (r.michelin.distinction==='bib_gourmand'||r.michelin.distinction==='bib')));
-  else if (bf==='press') list = list.filter(r => {
-    if (r.buzz_sources && r.buzz_sources.length > 0) return true;
-    if (r.infatuation_url) return true;
-    const bdata = getBuzzLinks(r.name);
-    const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
-    return hasEaterOrInfat || BUZZ_SET.has((r.name||'').toLowerCase().trim());
-  });
-  else if (bf==='nyt') list = list.filter(r => hasNYTCoverage(r));
-  else if (bf==='instagram') list = list.filter(r => !!(r.instagram_buzz && r.instagram_buzz.length > 0));
-  else if (bf==='google_amazing') list = list.filter(r => Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750);
-  else if (bf==='new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
+  // ── Trend/buzz filter — supports multiple selections (OR logic) ──
+  const bfs = (state.trendFilters && state.trendFilters.length > 0) ? state.trendFilters : (state.buzzFilter && state.buzzFilter !== 'any' ? [state.buzzFilter] : []);
+  if (bfs.length > 0) {
+    list = list.filter(r => bfs.some(bf => {
+      if (bf==='michelin') return (r.michelin?.stars||0)>=1;
+      if (bf==='michelin_rec') return r.michelin_recommended || (r.michelin && r.michelin.distinction==='recommended');
+      if (bf==='bib') return r.bib_gourmand || (r.michelin && (r.michelin.distinction==='bib_gourmand'||r.michelin.distinction==='bib'));
+      if (bf==='press') {
+        if (r.buzz_sources && r.buzz_sources.length > 0) return true;
+        if (r.infatuation_url) return true;
+        const bdata = getBuzzLinks(r.name);
+        const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
+        return hasEaterOrInfat || BUZZ_SET.has((r.name||'').toLowerCase().trim());
+      }
+      if (bf==='nyt') return hasNYTCoverage(r);
+      if (bf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
+      if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (bf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
+      return false;
+    }));
+  }
 
   // ── Cuisine filter ──
   if (state.cuisine && state.cuisine !== 'any') {
@@ -1707,10 +1735,10 @@ function display(restaurants) {
     });
   }
 
-  // ── Vibe filter ──
-  if (state.vibeFilter) {
-    const vf = state.vibeFilter;
-    list = list.filter(r => r.vibe_tags && r.vibe_tags.includes(vf));
+  // ── Vibe filter — supports multiple selections (OR logic) ──
+  const vfs = (state.vibeFilters && state.vibeFilters.length > 0) ? state.vibeFilters : (state.vibeFilter ? [state.vibeFilter] : []);
+  if (vfs.length > 0) {
+    list = list.filter(r => r.vibe_tags && vfs.some(vf => r.vibe_tags.includes(vf)));
   }
 
   if (state.priceFilter!=='any') {
