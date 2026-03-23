@@ -1686,17 +1686,6 @@ function renderCard(r, isRadar) {
   </div>`;
 }
 
-// ─── SORT ─────────────────────────────────────────────────────────────────────
-window._hotSortMode = 'rating';
-function setHotSort(mode) {
-  window._hotSortMode = mode;
-  ['rating','distance','price_asc'].forEach(m => {
-    const btn = document.getElementById('sort-' + (m === 'price_asc' ? 'price' : m));
-    if (btn) btn.classList.toggle('on', m === mode);
-  });
-  if (window._hotResults) display(window._hotResults);
-}
-
 // ─── DISPLAY ──────────────────────────────────────────────────────────────────
 function display(restaurants) {
   restaurants.forEach(r => { r._bs = buzzScore(r); });
@@ -1886,12 +1875,6 @@ async function doSearch() {
 
     allRestaurants = results;
     rawRestaurants = results;
-    window._hotResults = results;
-    window._hotSortMode = 'rating';
-    ['rating','distance','price_asc'].forEach(m => {
-      const btn = document.getElementById('sort-' + (m === 'price_asc' ? 'price' : m));
-      if (btn) btn.classList.toggle('on', m === 'rating');
-    });
     display(allRestaurants);
 
   } catch(err) {
