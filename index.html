@@ -1705,8 +1705,8 @@ function display(restaurants) {
       return dm == null || dm <= maxMin;
     });
   } else if (state.transport === 'radius') {
-    const maxMi = +document.getElementById('radiusMiles').value;
-    list = list.filter(r => r.distanceMiles == null || r.distanceMiles <= maxMi);
+    const maxMi = state._homeRadius || +document.getElementById('radiusMiles').value || 1;
+    list = list.filter(r => r.distanceMiles != null && r.distanceMiles <= maxMi);
   }
   // ── Trend/buzz filter — supports multiple selections (OR logic) ──
   const bfs = (state.trendFilters && state.trendFilters.length > 0) ? state.trendFilters : (state.buzzFilter && state.buzzFilter !== 'any' ? [state.buzzFilter] : []);
