@@ -1291,16 +1291,16 @@ function goToSearch(buzz, cuisine) {
   const mainInput = document.getElementById('addressInput');
   if (homeAddr && homeAddr.value.trim()) mainInput.value = homeAddr.value;
 
-  // Apply radius from home screen
+  // Apply radius from home screen — store directly so getTP() uses it reliably
   const r = homeState.radiusMiles;
   if (r === 0) {
     state.transport = 'all_nyc';
-  } else if (r > 0) {
+    state._homeRadius = 0;
+  } else {
     state.transport = 'radius';
+    state._homeRadius = r;
     const rSelect = document.getElementById('radiusMiles');
     if (rSelect) rSelect.value = r;
-    const dd = document.getElementById('dd-radius');
-    if (dd) dd.classList.add('open');
   }
 
   // Sync vibe filter from home screen
@@ -1400,7 +1400,11 @@ function getTP() {
   const t = state.transport;
   if (t==='walk')   return { transport:'walk',   walkTime:   +document.getElementById('walkTime').value };
   if (t==='drive')  return { transport:'drive',  driveTime:  +document.getElementById('driveTime').value };
-  if (t==='radius') return { transport:'radius', radiusMiles:+document.getElementById('radiusMiles').value };
+  if (t==='radius') {
+    // Use stored home radius if set, otherwise read dropdown
+    const miles = state._homeRadius || +document.getElementById('radiusMiles').value || 1;
+    return { transport:'radius', radiusMiles: miles };
+  }
   return { transport:'all_nyc' };
 }
 
@@ -1836,7 +1840,7 @@ async function doSearch() {
         location,
         quality: qualityParam,
         cuisine: cuisine==='any' ? undefined : cuisine,
-        broadCity: isBroadCity(location) || state.transport==='all_nyc',
+        broadCity: state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc'),
         transport: tp.transport,
         walkTime: tp.walkTime,
         driveTime: tp.driveTime,
