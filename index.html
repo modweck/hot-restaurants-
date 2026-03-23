@@ -139,7 +139,9 @@
     .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
     .card-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1a1a2e;line-height:1.2;flex:1;padding-right:6px}
     .card-price{font-size:12px;color:#bbb;font-weight:600;letter-spacing:-.3px;flex-shrink:0}
-    .card-sub{font-size:12px;color:#999;margin-bottom:8px;line-height:1.4}
+    .card-sub{font-size:12px;color:#999;margin-bottom:5px;line-height:1.4}
+    .card-travel{display:flex;align-items:center;flex-wrap:wrap;gap:2px;font-size:11px;font-weight:600;color:#666;margin-bottom:8px}
+    .travel-sep{color:#ccc;margin:0 4px;font-weight:400}
     .badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700}
     .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.2)}
@@ -1506,7 +1508,18 @@ function tc(str) {
 function renderCard(r, isRadar) {
   const name = tc(r.name) || 'Unknown';
   const addr = (r.vicinity||r.formatted_address||'').replace(/,?\s*U\.?S\.?A?\.?$/i,'');
-  const sub = [r.cuisine, addr, r.distanceMiles!=null?`${r.distanceMiles} mi`:null].filter(Boolean).join(' · ');
+  const sub = [r.cuisine, addr].filter(Boolean).join(' · ');
+  const walkMins = r.walkMinEstimate ?? r.walkMinutes;
+  const driveMins = r.driveMinEstimate ?? r.driveMinutes;
+  const distMi = r.distanceMiles;
+  let travelHtml = '';
+  if (walkMins != null || driveMins != null || distMi != null) {
+    const parts = [];
+    if (distMi != null) parts.push(`📍 ${distMi} mi`);
+    if (walkMins != null) parts.push(`🚶 ${walkMins} min walk`);
+    if (driveMins != null) parts.push(`🚗 ${driveMins} min drive`);
+    travelHtml = `<div class="card-travel">${parts.join('<span class="travel-sep">·</span>')}</div>`;
+  }
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
@@ -1690,6 +1703,7 @@ function renderCard(r, isRadar) {
   return `<div class="card${isRadar?' dim':''}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
+    ${travelHtml}
     ${vibeHtml}
     ${badgesHtml}
     ${availHtml}
