@@ -1066,7 +1066,7 @@
 
 <script>
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
+const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 1, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null };
 
 function setAvailFilter(val, btn) {
   homeState.horizonFilter = null;
@@ -1293,6 +1293,20 @@ function goToSearch(buzz, cuisine) {
 
   // Apply radius from home screen — store directly so getTP() uses it reliably
   const r = homeState.radiusMiles;
+
+  // If radius mode is selected but no address was entered, block and prompt
+  if (r > 0 && (!homeAddr || !homeAddr.value.trim())) {
+    if (homeAddr) {
+      homeAddr.focus();
+      homeAddr.placeholder = '⚠️ Enter your address to use distance filter';
+      homeAddr.style.borderColor = 'rgba(255,69,0,0.7)';
+      setTimeout(() => {
+        homeAddr.placeholder = 'Enter your address or neighborhood...';
+        homeAddr.style.borderColor = 'rgba(0,0,0,0.1)';
+      }, 3000);
+    }
+    return;
+  }
   if (r === 0) {
     state.transport = 'all_nyc';
     state._homeRadius = 0;
