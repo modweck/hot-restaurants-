@@ -1609,74 +1609,10 @@ exports.handler = async (event) => {
     // ALL NYC FAST PATH — skip Google API entirely, use booking_lookup only
     // =========================================================================
     const cuisineStr = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
-    const radiusMilesReq = parseFloat(body.radiusMiles) || 0;
-    const isRadiusMode = (transport === 'radius' && radiusMilesReq > 0);
-    const isAllNYC = !isRadiusMode && (transport === 'all_nyc' || broadCity === true || broadCity === 'true');
+    const isAllNYC = (transport === 'all_nyc' || broadCity === true || broadCity === 'true');
 
     const allNycSource = MASTER_KEYS.length > 0 ? MASTER_BOOK : BOOKING_LOOKUP;
     const allNycKeys = MASTER_KEYS.length > 0 ? MASTER_KEYS : BOOKING_KEYS;
-
-    // ── RADIUS MODE: pull from master book but filter by distance ──────────
-    if (isRadiusMode && allNycKeys.length > 0) {
-      console.log(`📍 RADIUS MODE — ${radiusMilesReq} miles from ${gLat},${gLng}`);
-      const injected = [];
-      for (const [key, entry] of Object.entries(allNycSource)) {
-        if (!entry.lat || !entry.lng) continue;
-        const d = haversineMiles(gLat, gLng, entry.lat, entry.lng);
-        if (d > radiusMilesReq) continue; // hard filter by radius
-
-        const rating = entry.google_rating || 0;
-        const reviews = entry.google_reviews || 0;
-        const hasInstaBuzz = !!INSTAGRAM_BUZZ[key];
-        const isBuzz = !!(entry.buzz_sources && entry.buzz_sources.length > 0);
-        const isMichelin = !!entry.michelin;
-        if (!isMichelin && !isBuzz && !hasInstaBuzz) {
-          if (rating < 4.3 || reviews < 100) continue;
-        }
-        if (cuisineStr) {
-          const entryCuisine = CUISINE_LOOKUP[key] || entry.cuisine || null;
-          if (!cuisineLookupMatches(key, cuisineStr, entryCuisine)) continue;
-        }
-        injected.push({
-          name: key, place_id: entry.place_id || null,
-          address: entry.address || entry.neighborhood || null,
-          lat: entry.lat, lng: entry.lng,
-          rating: entry.google_rating || 0, user_ratings_total: entry.google_reviews || 0,
-          price_level: entry.price || null, opening_hours: null,
-          geometry: { location: { lat: entry.lat, lng: entry.lng } },
-          types: ['restaurant'],
-          booking_platform: entry.platform || entry.booking_platform || null,
-          booking_url: entry.url || entry.booking_url || null,
-          distanceMiles: Math.round(d*10)/10,
-          walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
-          googleRating: entry.google_rating || 0, googleReviewCount: entry.google_reviews || 0,
-          michelin: entry.michelin || null, bib_gourmand: entry.bib_gourmand || null,
-          chase_sapphire: chaseNameLookup.has(normalizeName(key)) || entry.chase_sapphire || null,
-          rakuten: rakutenNameLookup.has(normalizeName(key)) || entry.rakuten || null,
-          bilt_dining: entry.bilt_dining || null, inkind: entry.inkind || null,
-          vibe_tags: entry.vibe_tags || [], cuisine: entry.cuisine || CUISINE_LOOKUP[key] || null,
-          instagram: entry.instagram || null,
-          avail_tier:  AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].tier    || null : null,
-          avail_slots: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].dinner_slots || 0 : 0,
-          early: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].early || null : null,
-          prime: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].prime || null : null,
-          late:  AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].late  || null : null,
-          website: entry.website || null, buzz_sources: entry.buzz_sources || [],
-          nyt_stars: entry.nyt_stars || null, pete_wells: entry.pete_wells || false,
-          nyt_top_100: entry.nyt_top_100 || false, pete_wells_rank: entry.pete_wells_rank || null,
-          instagram_buzz: INSTAGRAM_BUZZ[key] || null, _source: 'master_book',
-        });
-      }
-      console.log(`📍 RADIUS: ${injected.length} restaurants within ${radiusMilesReq} miles`);
-      const { elite, moreOptions } = filterRestaurantsByTier(injected, qualityMode);
-      [...elite, ...moreOptions].forEach(r => enrichNYT(r));
-      [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
-      detectBookingPlatforms(elite); detectBookingPlatforms(moreOptions);
-      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, totalCount: injected.length };
-      timings.total_ms = Date.now()-t0;
-      return stableResponse(elite, moreOptions, { ...stats, performance: timings });
-    }
-
     if (isAllNYC && allNycKeys.length > 0) {
       console.log(`🗽 ALL NYC MODE — using ${allNycKeys.length} master book entries`);
       const injected = [];
@@ -1732,9 +1668,9 @@ exports.handler = async (event) => {
           // ── Availability: from tonight_availability.json ──
           avail_tier:  AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].tier    || null : null,
           avail_slots: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].dinner_slots || 0 : 0,
-          early: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].early || null : null,
-          prime: AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].prime || null : null,
-          late:  AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].late  || null : null,
+          has_early:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_early || false : false,
+          has_prime:   AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_prime || false : false,
+          has_late:    AVAILABILITY_BOOK[key] ? AVAILABILITY_BOOK[key].has_late  || false : false,
           website: entry.website || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
