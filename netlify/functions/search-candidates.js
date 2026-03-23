@@ -1074,10 +1074,12 @@ function filterRestaurantsByTier(candidates, qualityMode) {
       // Everything else needs 150+ reviews
       if (reviews < 150) { excluded.push(place); continue; }
 
-      // DEFAULT HOT SPOTS: must be 4.7+ with 750+ reviews (amazing reviews tier)
-      // Lower rated restaurants only show when a specific quality filter is selected
+      // DEFAULT HOT SPOTS: buzz-credentialed OR truly amazing reviews only
+      // Michelin, press, instagram buzz, NYT already bypassed above — this catches
+      // pure crowd favorites: 4.7+ with 750+ reviews
       if (qualityMode === 'very_good') {
-        if (rating >= 4.0 && reviews >= 150) elite.push(place);
+        const isAmazingReviews = rating >= 4.7 && reviews >= 750;
+        if (isAmazingReviews) elite.push(place);
         else excluded.push(place);
         continue;
       }
@@ -1255,7 +1257,7 @@ exports.handler = async (event) => {
     const KEY = process.env.GOOGLE_PLACES_API_KEY;
     if (!KEY) return stableResponse([], [], {}, 'API key not configured');
 
-    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v23';
+    const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v24';
     const cached = getFromCache(cacheKey);
     if (cached) { timings.total_ms = Date.now()-t0; return stableResponse(cached.elite, cached.moreOptions, { ...cached.stats, cached: true, performance: { ...timings, cache_hit: true } }); }
 
