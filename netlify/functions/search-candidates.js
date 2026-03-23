@@ -1910,7 +1910,9 @@ exports.handler = async (event) => {
       };
     });
 
-    const maxDistMiles = 7.0;
+    const maxDistMiles = body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 7.0) :
+      body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+      body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 7.0;
     const googleResults = withDist.filter(r => r.distanceMiles <= maxDistMiles);
     console.log(`\ud83d\udcca Within 7mi (Google): ${googleResults.length}`);
 
