@@ -484,7 +484,7 @@
       <div style="margin-bottom:12px">
         <span class="flabel">🔥 Buzz Filter</span>
         <div class="dselect">
-          <select id="buzzFilter" onchange="state.buzzFilter=this.value; if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="buzzFilter" onchange="state.buzzFilter=this.value; state.trendFilters=[]; if(rawRestaurants.length>0) display(rawRestaurants);">
             <option value="any">All Hot Spots</option>
             <option value="michelin">⭐ Michelin Stars</option>
             <option value="michelin_rec">📖 Michelin Recommended</option>
@@ -1101,8 +1101,13 @@ function switchNav(name) {
   if (navEl) navEl.classList.add('active');
   if (name === 'allrestaurants') showView('allrestaurants');
   else if (name === 'search') {
-    // Reset Hot Spots to All NYC default
+    // Reset Hot Spots to All NYC default — clear all stale filter state
     state.transport = 'all_nyc';
+    state._homeRadius = 0;
+    state.trendFilters = [];
+    state.buzzFilter = 'any';
+    const sel = document.getElementById('buzzFilter');
+    if (sel) sel.value = 'any';
     document.querySelectorAll('#tgroup .tbtn').forEach(b => b.classList.remove('active'));
     const allNYCBtn = document.querySelector('#tgroup .tbtn:last-child');
     if (allNYCBtn) allNYCBtn.classList.add('active');
@@ -1307,6 +1312,12 @@ function goToSearch(buzz, cuisine) {
   state.vibeFilter = homeState.vibeFilter || null;
   state.vibeFilters = homeState.vibeFilters || [];
   state.trendFilters = homeState.trendFilters || [];
+  // Keep dropdown in sync — trendFilters take over, so reset dropdown to 'any'
+  if (state.trendFilters.length > 0) {
+    state.buzzFilter = 'any';
+    const sel = document.getElementById('buzzFilter');
+    if (sel) sel.value = 'any';
+  }
 
   // Auto-fire search so results show immediately
   doSearch();
