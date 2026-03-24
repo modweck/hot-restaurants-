@@ -48,6 +48,8 @@ for (const [key, v] of Object.entries(raw)) {
     has_prime,
     has_late
   };
+  if (v.fully_locked) slim[key].fully_locked = true;
+  if (v.opens_in) slim[key].opens_in = v.opens_in;
 }
 
 const keys = Object.keys(slim).filter(k => !k.startsWith('_'));
