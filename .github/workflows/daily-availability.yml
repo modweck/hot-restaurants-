@@ -33,7 +33,7 @@ jobs:
         run: |
           cd netlify/functions
           node resy-tonight-check.js --all
-        timeout-minutes: 90
+        timeout-minutes: 120
 
       - name: Slim down availability file
         run: |
