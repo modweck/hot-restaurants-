@@ -23,12 +23,6 @@ jobs:
           cd netlify/functions
           npm install node-fetch 2>/dev/null || true
 
-      - name: Write Resy token into scraper
-        run: |
-          cd netlify/functions
-          sed -i "s|X-Resy-Auth-Token': '.*'|X-Resy-Auth-Token': '${{ secrets.RESY_TOKEN }}'|g" resy-tonight-check.js
-          sed -i "s|X-Resy-Universal-Auth': '.*'|X-Resy-Universal-Auth': '${{ secrets.RESY_TOKEN }}'|g" resy-tonight-check.js
-
       - name: Run availability scraper
         run: |
           cd netlify/functions
@@ -48,22 +42,3 @@ jobs:
           git add netlify/functions/tonight_availability.json
           git diff --staged --quiet || git commit -m "🍽️ availability update $(date +'%Y-%m-%d')"
           git push
-
-      - name: Notify on failure
-        if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "❌ SeatWize availability check failed — $(date +'%Y-%m-%d')"
-          to: maurice@dwecks.net
-          from: SeatWize Bot <bot@seatwize.com>
-          body: |
-            The nightly Resy availability check failed.
-            
-            Existing availability data from the previous run has been kept — nothing was overwritten.
-            
-            Check the GitHub Actions log for details:
-            https://github.com/modweck/hot-restaurants-/actions
