@@ -1663,7 +1663,7 @@ exports.handler = async (event) => {
         if (!isTagged && !(hasEaterBuzz && reviews >= 5 && reviews <= 50 && rating >= 4.0)) continue;
 
         // Hard filter: must be 5-50 reviews (graduated restaurants drop off)
-        if (reviews < 5 || reviews > 60) continue;
+        if (reviews < 5 || reviews > 50) continue;
         if (rating < 4.0) continue;
 
         const lat = entry.lat || entry.geometry?.location?.lat || 0;
