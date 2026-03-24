@@ -155,20 +155,26 @@ function scoreTonightSlots(result) {
     return h !== null && h >= 18 && h < 22;
   });
 
-  const primeSlots = slots.filter(s => {
-    const h = getHour(s.time);
-    return h !== null && h >= 19 && h < 21;
-  });
-
-  // Also capture early (5-6pm) and late (10pm+) slots
+  // Early: 5:00–6:30pm | Prime: 6:45–8:30pm | Late: 8:45pm+
   const earlySlots = slots.filter(s => {
     const h = getHour(s.time);
-    return h !== null && h >= 17 && h < 18;
+    const m = parseInt(getMinute(s.time) || '0');
+    const totalMin = h * 60 + m;
+    return totalMin >= 1020 && totalMin < 1110; // 17:00–18:30
+  });
+
+  const primeSlots = slots.filter(s => {
+    const h = getHour(s.time);
+    const m = parseInt(getMinute(s.time) || '0');
+    const totalMin = h * 60 + m;
+    return totalMin >= 1125 && totalMin < 1230; // 18:45–20:30
   });
 
   const lateSlots = slots.filter(s => {
     const h = getHour(s.time);
-    return h !== null && h >= 22;
+    const m = parseInt(getMinute(s.time) || '0');
+    const totalMin = h * 60 + m;
+    return totalMin >= 1245; // 20:45+
   });
 
   const totalSlots = slots.length;
@@ -302,7 +308,7 @@ async function main() {
       process.stdout.write(`  💾 Saved progress (${i+1}/${toCheck.length})\n`);
     }
 
-    await sleep(1500);
+    await sleep(3000);
   }
 
   // Final save with metadata
