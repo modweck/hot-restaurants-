@@ -35,9 +35,9 @@ const path = require('path');
 
 // ─── CONFIG — update these paths to match your project ───────────────────────
 
-const BOOKING_MASTER_PATH = path.join(__dirname, 'netlify/functions/BOOKING_MASTER.json');
-const CANDIDATES_PATH     = path.join(__dirname, 'new-restaurant-candidates.json');
-const LAST_RUN_PATH       = path.join(__dirname, 'last-run.json');
+const BOOKING_MASTER_PATH = path.join(__dirname, 'BOOKING_MASTER.json');
+const CANDIDATES_PATH     = path.join(__dirname, '../../data/new-restaurant-candidates.json');
+const LAST_RUN_PATH       = path.join(__dirname, '../../data/last-run.json');
 
 // Quality filters
 const MIN_REVIEWS  = 5;
@@ -196,8 +196,8 @@ function loadBookingMaster() {
     process.exit(1);
   }
   const data = JSON.parse(fs.readFileSync(BOOKING_MASTER_PATH, 'utf8'));
-  const nameSet = new Set(data.map(r => normalizeName(r.name)));
-  console.log(`✅ Loaded BOOKING_MASTER — ${data.length} restaurants, ${nameSet.size} unique names`);
+  const nameSet = new Set(Object.keys(data).map(k => normalizeName(k)));
+  console.log(`✅ Loaded BOOKING_MASTER — ${Object.keys(data).length} restaurants, ${nameSet.size} unique names`);
   return nameSet;
 }
 
