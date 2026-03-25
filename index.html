@@ -561,6 +561,23 @@
       <div class="res-header">
         <span class="res-meta" id="resMeta"></span>
       </div>
+      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setSortOrder(this.value)">
+          <option value="rating">⭐ Rating</option>
+          <option value="distance">📏 Distance</option>
+          <option value="price_low">💰 Price ↑</option>
+          <option value="price_high">💰 Price ↓</option>
+        </select>
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="state.reviewCountFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">📊 Reviews</option>
+          <option value="150">150+</option>
+          <option value="250">250+</option>
+          <option value="500">500+</option>
+          <option value="1000">1000+</option>
+          <option value="1500">1500+</option>
+          <option value="2000">2000+</option>
+        </select>
+      </div>
       <div id="warnings"></div>
       <div id="list"></div>
       <div style="height:80px"></div>
@@ -799,6 +816,23 @@
         <button class="back-btn" onclick="arGoBack()">← Back</button>
         <span class="res-meta" id="allRestMeta"></span>
       </div>
+      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setARSortOrder(this.value)">
+          <option value="rating">⭐ Rating</option>
+          <option value="distance">📏 Distance</option>
+          <option value="price_low">💰 Price ↑</option>
+          <option value="price_high">💰 Price ↓</option>
+        </select>
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="arState.reviewCountFilter=this.value;if(allNYCRestaurants.length)displayAllNYC(allNYCRestaurants)">
+          <option value="any">📊 Reviews</option>
+          <option value="150">150+</option>
+          <option value="250">250+</option>
+          <option value="500">500+</option>
+          <option value="1000">1000+</option>
+          <option value="1500">1500+</option>
+          <option value="2000">2000+</option>
+        </select>
+      </div>
       <div id="allRestWarnings"></div>
       <div id="allRestList"></div>
       <div style="height:80px"></div>
@@ -1031,6 +1065,23 @@
       <div class="res-header">
         <button class="back-btn" onclick="barGoBack()">← Back</button>
         <span class="res-meta" id="barResultsMeta"></span>
+      </div>
+      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setBarSortOrder(this.value)">
+          <option value="rating">⭐ Rating</option>
+          <option value="distance">📏 Distance</option>
+          <option value="price_low">💰 Price ↑</option>
+          <option value="price_high">💰 Price ↓</option>
+        </select>
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="barState.reviewCountFilter=this.value;barRefilter()">
+          <option value="any">📊 Reviews</option>
+          <option value="150">150+</option>
+          <option value="250">250+</option>
+          <option value="500">500+</option>
+          <option value="1000">1000+</option>
+          <option value="1500">1500+</option>
+          <option value="2000">2000+</option>
+        </select>
       </div>
       <div id="barResultsWarnings"></div>
       <div id="barResultsList"></div>

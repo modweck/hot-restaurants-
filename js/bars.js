@@ -253,7 +253,7 @@ async function doBarSearch() {
       results = results.filter(b => (b.bar_vibes || b.vibe_tags || []).includes(barState.vibeFilter));
     }
     barState.allResults = results;
-    displayBarResults(results, data.stats && data.stats.totalCount);
+    barRefilter();
   } catch(err) {
     if (err.name === 'AbortError') return;
     warn.innerHTML = `<div class="err-banner">😔 ${err.message || 'Search failed'}</div>`;
@@ -262,4 +262,33 @@ async function doBarSearch() {
     barSearching = false;
     if (btn) { btn.disabled = false; btn.textContent = '🍸 Find Bars & Drinks'; }
   }
+}
+
+let barSortBy = 'rating';
+function setBarSortOrder(val) { barSortBy = val; barRefilter(); }
+
+function barRefilter() {
+  let results = barState.allResults || [];
+  if (barState.vibeFilter) {
+    results = results.filter(b => (b.bar_vibes || b.vibe_tags || []).includes(barState.vibeFilter));
+  }
+  if (barState.priceLevel && barState.priceLevel !== 'any') {
+    const p = parseInt(barState.priceLevel);
+    results = results.filter(b => (b.price_level || b.price || 0) === p);
+  }
+  if (barState.reviewCountFilter && barState.reviewCountFilter !== 'any') {
+    const minR = Number(barState.reviewCountFilter);
+    results = results.filter(b => (Number(b.googleReviewCount || b.google_reviews || 0)) >= minR);
+  }
+  if (barState.maxDist && barState.maxDist !== 'any') {
+    const maxD = parseFloat(barState.maxDist);
+    results = results.filter(b => (b.distanceMiles ?? 999) <= maxD);
+  }
+  results.sort((a, b) => {
+    if (barSortBy === 'distance') return (a.distanceMiles ?? 999) - (b.distanceMiles ?? 999);
+    if (barSortBy === 'price_low') return (a.price_level || a.price || 99) - (b.price_level || b.price || 99);
+    if (barSortBy === 'price_high') return (b.price_level || b.price || 0) - (a.price_level || a.price || 0);
+    return (b.barScore || b.googleRating || 0) - (a.barScore || a.googleRating || 0);
+  });
+  displayBarResults(results);
 }
