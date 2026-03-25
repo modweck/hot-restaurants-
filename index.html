@@ -1653,6 +1653,14 @@ function renderCard(r, isRadar) {
       timeBadgeHtml = _windowBadge(earlyStatus, 'Early') + _windowBadge(primeStatus, 'Prime') + _windowBadge(lateStatus, 'Late');
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
     }
+  } else if (isRadar) {
+    availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
+  } else if (tier === 'booked') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+  } else if (tier === 'available') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
+  } else if (tier === 'limited') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">🟡 Limited Spots</span></div>`;
   }
 
   // Maps URL
