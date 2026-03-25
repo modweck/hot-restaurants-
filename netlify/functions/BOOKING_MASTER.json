@@ -5249,8 +5249,8 @@
     "michelin_recommended": true
   },
   "momofuku ko": {
-    "platform": "resy",
-    "url": "https://ko.momofuku.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/momofuku-ko-table-seating-new-york",
     "lat": 40.7249366,
     "lng": -73.9915668,
     "google_rating": 4.6,
@@ -72803,7 +72803,7 @@
   },
   "Le District": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/le-district-bar-&-bistro",
+    "url": "https://resy.com/cities/ny/le-district-bar-&-bistro",
     "lat": 40.712717700000006,
     "lng": -74.0157109,
     "google_rating": 4.3,
@@ -83323,7 +83323,7 @@
   },
   "Spiga Trattoria": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/spiga",
+    "url": "https://resy.com/cities/ny/spiga-ny",
     "lat": 40.78515460000001,
     "lng": -73.97274589999999,
     "google_rating": 4.6,
@@ -88908,7 +88908,7 @@
   },
   "samurai papa": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/samurai-papa",
+    "url": "https://resy.com/cities/ny/samurai-mama",
     "cuisine": "",
     "rating": "",
     "price_level": "PRICE_LEVEL_MODERATE",
@@ -88938,7 +88938,7 @@
       "chill",
       "hidden_gem"
     ],
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/samurai-papa"
+    "resy_url": "https://resy.com/cities/ny/samurai-mama"
   },
   "Santo Taco": {
     "platform": "resy",
@@ -91543,8 +91543,8 @@
     ]
   },
   "IRIS": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/iris",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/iris-new-york",
     "cuisine": "Mediterranean",
     "rating": "",
     "price_level": "",
@@ -93592,8 +93592,8 @@
     ]
   },
   "PUTTERY": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/puttery",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/puttery-new-york",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -101233,8 +101233,8 @@
     "address": "376 Classon Ave, Brooklyn, NY 11238, United States"
   },
   "spiga restaurant": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/spiga-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/spiga-ny",
     "lat": 40.764405,
     "lng": -73.9669253,
     "google_rating": 4.9,
@@ -114918,7 +114918,7 @@
   },
   "côte": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
+    "url": "https://resy.com/cities/ny/cote-nyc",
     "lat": 40.7413041,
     "lng": -73.99125269999999,
     "google_rating": 4.6,
@@ -117991,7 +117991,7 @@
   },
   "l'abeille": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/labielle",
+    "url": "https://resy.com/cities/ny/labielle",
     "lat": 40.7332,
     "lng": -74.0064,
     "google_rating": 4.6,
@@ -118009,7 +118009,8 @@
       "upscale",
       "foodie"
     ],
-    "address": "412 Greenwich St, New York, NY 10013, United States"
+    "address": "412 Greenwich St, New York, NY 10013, United States",
+    "resy_url": "https://resy.com/cities/ny/labielle"
   },
   "abuqir": {
     "platform": "website",
