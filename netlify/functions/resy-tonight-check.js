@@ -62,6 +62,10 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function extractResySlug(url) {
   if (!url) return null;
+  // Handle /venues/ format: resy.com/cities/new-york-ny/venues/the-slug
+  const v = url.match(/resy\.com\/cities\/[a-z-]+\/venues\/([a-z0-9-]+)\/?/i);
+  if (v) return v[1];
+  // Handle normal format: resy.com/cities/ny/the-slug
   const m = url.match(/resy\.com\/cities\/[a-z-]+\/([a-z0-9-]+)\/?/i);
   return m ? m[1] : null;
 }
@@ -98,8 +102,8 @@ function formatTime(timeStr) {
   return `${h12}:${min}${ampm}`;
 }
 
-// ── Resy API call ──
-async function checkResy(name, url, date, partySize) {
+// ── Resy API call with retry ──
+async function checkResy(name, url, date, partySize, retryCount = 0) {
   const slug = extractResySlug(url);
   if (!slug) return { error: 'no_slug', slots: [] };
 
@@ -116,17 +120,41 @@ async function checkResy(name, url, date, partySize) {
   try {
     // Step 1: get venue ID from slug — must succeed or we skip
     const venueResp = await fetch(`https://api.resy.com/3/venue?url_slug=${slug}&location=ny`, { headers });
+
+    // Rate limited — back off and retry up to 3 times
+    if (venueResp.status === 429 || venueResp.status === 503) {
+      if (retryCount < 3) {
+        const backoff = (retryCount + 1) * 10000; // 10s, 20s, 30s
+        process.stdout.write(`⏳ rate limited, waiting ${backoff/1000}s... `);
+        await sleep(backoff);
+        return checkResy(name, url, date, partySize, retryCount + 1);
+      }
+      return { error: `rate_limited_${venueResp.status}`, slots: [] };
+    }
+
     if (!venueResp.ok) return { error: `venue_http_${venueResp.status}`, slots: [] };
 
     const venueData = await venueResp.json();
     const venueId = venueData?.id?.resy;
     if (!venueId) return { error: 'no_venue_id', slots: [] };
 
-    // Step 2: check availability with venue ID — restaurant-specific, no fallback
+    // Step 2: check availability with venue ID
     const availResp = await fetch(
       `https://api.resy.com/4/find?lat=40.7128&long=-74.006&day=${date}&party_size=${partySize}&venue_id=${venueId}`,
       { headers }
     );
+
+    // Rate limited on availability — retry
+    if (availResp.status === 429 || availResp.status === 503) {
+      if (retryCount < 3) {
+        const backoff = (retryCount + 1) * 10000;
+        process.stdout.write(`⏳ rate limited, waiting ${backoff/1000}s... `);
+        await sleep(backoff);
+        return checkResy(name, url, date, partySize, retryCount + 1);
+      }
+      return { error: `rate_limited_${availResp.status}`, slots: [] };
+    }
+
     if (!availResp.ok) return { error: `avail_http_${availResp.status}`, slots: [] };
 
     const availData = await availResp.json();
@@ -137,6 +165,11 @@ async function checkResy(name, url, date, partySize) {
     return { venue_id: venueId, date, party_size: partySize, slots, error: null };
 
   } catch (e) {
+    // Network error — retry
+    if (retryCount < 2) {
+      await sleep(5000);
+      return checkResy(name, url, date, partySize, retryCount + 1);
+    }
     return { error: e.message, slots: [] };
   }
 }
@@ -308,7 +341,7 @@ async function main() {
       process.stdout.write(`  💾 Saved progress (${i+1}/${toCheck.length})\n`);
     }
 
-    await sleep(3000);
+    await sleep(5000);
   }
 
   // Final save with metadata
