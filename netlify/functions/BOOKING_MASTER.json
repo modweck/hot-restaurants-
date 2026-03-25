@@ -2232,7 +2232,7 @@
   },
   "the grill": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/q-grill",
+    "url": "https://resy.com/cities/ny/the-grill-ny",
     "lat": 40.7583177,
     "lng": -73.9718681,
     "google_rating": 4.5,
@@ -2251,7 +2251,7 @@
       "group_friendly"
     ],
     "price": 4,
-    "resy_url": "https://resy.com/cities/ny/q-grill",
+    "resy_url": "https://resy.com/cities/ny/the-grill-ny",
     "resy_slug": "q-grill",
     "website": "https://www.thegrillnewyork.com",
     "bilt_dining": true,
@@ -7731,7 +7731,7 @@
   },
   "LaRina Pastificio & Vino": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/la-rina-new-york",
+    "url": "https://resy.com/cities/ny/larina",
     "lat": 40.6933422,
     "lng": -73.97042200000001,
     "google_rating": 4.7,
@@ -85757,7 +85757,7 @@
   "Piccola Cucina Enoteca Tapas": {
     "url": "https://resy.com/cities/ny/piccola-cucina-enoteca-tapas",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/piccola-cucina-enoteca-tapas",
+    "resy_url": "https://resy.com/cities/ny/piccola-cucina-enoteca-tapas",
     "resy_slug": "piccola-cucina-enoteca-tapas",
     "lat": 40.72521778048606,
     "lng": -74.00325594600805,
@@ -99238,7 +99238,7 @@
   },
   "Cafe Spaghetti": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/cafe-spaghetti",
+    "url": "https://resy.com/cities/ny/cafe-spaghetti",
     "lat": 40.6840866,
     "lng": -74.0024577,
     "google_rating": 4.7,
@@ -99263,7 +99263,8 @@
     ],
     "nyt_stars": 2,
     "pete_wells": true,
-    "address": "126 Union St, Brooklyn, NY 11231, United States"
+    "address": "126 Union St, Brooklyn, NY 11231, United States",
+    "resy_url": "https://resy.com/cities/ny/cafe-spaghetti"
   },
   "Cafe Zaffri": {
     "platform": "resy",
@@ -100563,7 +100564,8 @@
       "lively",
       "trendy"
     ],
-    "address": "222 E 53rd St, New York, NY 10022, USA"
+    "address": "222 E 53rd St, New York, NY 10022, USA",
+    "resy_url": "https://resy.com/cities/ny/obao-midtown"
   },
   "One Bite Omakase": {
     "platform": "opentable",
@@ -101289,7 +101291,8 @@
       "date_night",
       "upscale"
     ],
-    "address": "245 E 44th St, New York, NY 10017, United States"
+    "address": "245 E 44th St, New York, NY 10017, United States",
+    "resy_url": "https://resy.com/cities/ny/sushi-amane-fly"
   },
   "Sushi By M": {
     "platform": "opentable",
@@ -116775,7 +116778,8 @@
       "date_night",
       "lively"
     ],
-    "address": "20 E 49th St, New York, NY 10017, USA"
+    "address": "20 E 49th St, New York, NY 10017, USA",
+    "resy_url": "https://resy.com/cities/ny/la-piazza-ny"
   },
   "Ren": {
     "platform": "resy",
