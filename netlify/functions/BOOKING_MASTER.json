@@ -880,7 +880,7 @@
     "address": "1359 1st Ave, New York, NY 10021, USA"
   },
   "joe allen": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "http://www.joeallenrestaurant.com/",
     "lat": 40.7601421,
     "lng": -73.9890705,
@@ -899,7 +899,9 @@
     ],
     "instagram": "joeallennyc",
     "price": 2,
-    "address": "326 W 46th St, New York, NY 10036, USA"
+    "address": "326 W 46th St, New York, NY 10036, USA",
+    "booking_url": "https://www.opentable.com/joe-allen-reservations-new-york",
+    "ot_rid": 107137
   },
   "jajaja mexicana": {
     "platform": "opentable",
@@ -1928,7 +1930,7 @@
     "address": "120 W 51st St, New York, NY 10020, USA"
   },
   "sparks steak house": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "https://sparkssteakhouse.com/",
     "lat": 40.7529737,
     "lng": -73.9720665,
@@ -1949,7 +1951,9 @@
     "price": 4,
     "bilt_dining": true,
     "bilt_id": "565fe9f9-178d-4af0-ba93-cacb1609c164",
-    "address": "210 E 46th St, New York, NY 10017, USA"
+    "address": "210 E 46th St, New York, NY 10017, USA",
+    "booking_url": "https://www.opentable.com/sparks-steak-house",
+    "ot_rid": 78106
   },
   "wolfgang's steakhouse": {
     "platform": "opentable",
@@ -6662,7 +6666,7 @@
     "address": "230 E 58th St, New York, NY 10022, USA"
   },
   "mike's bistro": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "http://www.mikesbistro.com/",
     "lat": 40.7594553,
     "lng": -73.9710257,
@@ -6678,7 +6682,8 @@
     ],
     "instagram": "mikesbistroues",
     "price": 4,
-    "address": "127 E 54th St, New York, NY 10022, USA"
+    "address": "127 E 54th St, New York, NY 10022, USA",
+    "booking_url": "https://www.opentable.com/mikes-bistro-ues"
   },
   "la masseria": {
     "platform": "opentable",
@@ -8316,7 +8321,7 @@
     "address": "41 John St, New York, NY 10038, USA"
   },
   "d garden": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "http://dgardencaribbean.com/",
     "lat": 40.64215129999999,
     "lng": -73.9326066,
@@ -8330,7 +8335,8 @@
       "date_night"
     ],
     "price": 2,
-    "address": "4617 Avenue D, Brooklyn, NY 11203, USA"
+    "address": "4617 Avenue D, Brooklyn, NY 11203, USA",
+    "booking_url": "https://www.opentable.com/r/d-garden-caribbean-bar-and-grill-brooklyn"
   },
   "the good fork": {
     "platform": "opentable",
@@ -8512,7 +8518,8 @@
     "instagram": "christossteakhouse",
     "price": 3,
     "ot_slug": "christos-steak-house",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/christos-steak-house"
   },
   "agnanti meze": {
     "platform": "website",
@@ -17826,7 +17833,9 @@
     "instagram": "sojourn_social",
     "price": 2,
     "ot_slug": "sojourn",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/sojourn-social-new-york",
+    "ot_rid": 1213360
   },
   "wonderpho": {
     "platform": "opentable",
@@ -21518,7 +21527,7 @@
     "platform": "website"
   },
   "sandro's": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "http://www.sandrosrestaurant.com/",
     "lat": 40.7772444,
     "lng": -73.9508955,
@@ -21532,10 +21541,11 @@
       "date_night"
     ],
     "price": 3,
-    "address": "322 East 86th St, New York, NY 10028, USA"
+    "address": "322 East 86th St, New York, NY 10028, USA",
+    "booking_url": "https://www.opentable.com/r/sandros-restaurant-new-york"
   },
   "roberto's": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "https://www.robertosbronx.com/",
     "lat": 40.8537165,
     "lng": -73.88835019999999,
@@ -21555,7 +21565,8 @@
     "buzz_sources": [
       "Eater"
     ],
-    "address": "603 Crescent Ave #605, Bronx, NY 10458, USA"
+    "address": "603 Crescent Ave #605, Bronx, NY 10458, USA",
+    "booking_url": "https://www.opentable.com/robertos-restaurant-reservations-bronx"
   },
   "don coqui": {
     "platform": "opentable",
@@ -29736,7 +29747,8 @@
     "instagram": "northforknyc",
     "price": 2,
     "ot_slug": "the-north-fork",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/north-fork-new-york"
   },
   "Fork And Vine": {
     "url": "http://northforknyc.com/",
@@ -29964,7 +29976,9 @@
     "ot_slug": "bm",
     "michelin_stars": 1,
     "michelin_recommended": true,
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/bom-new-york",
+    "ot_rid": 1323247
   },
   "ooki sushi": {
     "platform": "opentable",
@@ -36322,7 +36336,9 @@
     ],
     "price": 2,
     "ot_slug": "bamboo-walk-caribbean",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/bamboo-walk-brooklyn",
+    "ot_rid": 1227751
   },
   "el zason": {
     "platform": "opentable",
@@ -68585,7 +68601,8 @@
     "ot_slug": "black-tap-craft-burgers-and-beer",
     "bilt_dining": true,
     "bilt_id": "bcf4cd50-90e6-35fc-a32e-9a59af9604c7",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/black-tap-soho-new-york"
   },
   "Pazza Notte": {
     "platform": "opentable",
@@ -70556,7 +70573,9 @@
     "instagram": "via13nyc",
     "price": 2,
     "ot_slug": "via-13",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/via-13-new-york-city",
+    "ot_rid": 76384
   },
   "Westville Chelsea": {
     "url": "https://westville.com/locations/westville-chelsea/",
@@ -72552,7 +72571,9 @@
     "ot_slug": "omakaseed-vegan-by-sushi-by-bou",
     "bilt_dining": true,
     "bilt_id": "78c79505-62ca-302f-9f32-d3df7f508a2f",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/omakaseed-vegan-by-sushi-by-bou-sanctuary-hotel-new-york",
+    "ot_rid": 1238299
   },
   "Salvi": {
     "url": "http://www.salvirestaurant.com/",
@@ -73059,7 +73080,9 @@
     "instagram": "il_cantinori_restaurant",
     "price": 4,
     "ot_slug": "il-cantinori",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/il-cantinori-reservations-new-york",
+    "ot_rid": 6242
   },
   "Russian Samovar": {
     "url": "https://www.opentable.com/r/russian-samovar-and-tolstoys-lounge-new-york",
@@ -73281,7 +73304,8 @@
     "ot_slug": "ninos-46",
     "bilt_dining": true,
     "bilt_id": "58002776-55b7-4874-bae3-d1891e6419b6",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/ninos-46"
   },
   "Cellini Italian Restaurant": {
     "url": "https://cellinirestaurant.com/",
@@ -73516,7 +73540,9 @@
     "bilt_dining": true,
     "bilt_id": "68242f97-9466-36c4-b600-bf4791b87333",
     "michelin_recommended": true,
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/novita-new-york-city-manhattan-new-york",
+    "ot_rid": 30202
   },
   "Sobaya": {
     "url": "http://www.sobaya-nyc.com/",
@@ -73778,7 +73804,8 @@
     "instagram": "thegreektribeca",
     "price": 2,
     "ot_slug": "the-greek-tribeca",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/greca-by-the-greek-new-york"
   },
   "Cascabel Taqueria East": {
     "platform": "walk_in",
@@ -73839,7 +73866,9 @@
     "buzz_sources": [
       "Eater"
     ],
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/sushi-of-gari-columbus-avenue",
+    "ot_rid": 4196
   },
   "Bistango at the Kimberly Hotel": {
     "url": "https://www.bistangokimberly.com/",
@@ -73858,7 +73887,9 @@
     "instagram": "bistangokimberly",
     "price": 2,
     "ot_slug": "bistango-at-the-kimberly-hotel",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/bistango-at-the-kimberly-hotel",
+    "ot_rid": 152107
   },
   "Row House": {
     "url": "https://www.opentable.com/row-house",
@@ -74435,7 +74466,9 @@
     "ot_slug": "restaurant-nippon",
     "bilt_dining": true,
     "bilt_id": "263d9f7d-b94e-3760-bd1a-629acc2392ed",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/restaurant-nippon",
+    "ot_rid": 45151
   },
   "China Xiang": {
     "url": "https://chinaxiangny.com/",
@@ -74640,7 +74673,9 @@
     "instagram": "sushi.of.gari",
     "price": 4,
     "ot_slug": "gari-columbus",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/sushi-of-gari-columbus-avenue",
+    "ot_rid": 4196
   },
   "Old Tbilisi Garden": {
     "url": "https://www.opentable.com/old-tbilisi",
@@ -80787,7 +80822,9 @@
     "website": "https://www.thebazaar.com/location/new-york-city",
     "bilt_dining": true,
     "bilt_id": "d05db102-f098-4e81-9fdf-5757747a8cdd",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/bazaar-meat-by-jose-andres-new-york",
+    "ot_rid": 1183222
   },
   "Handsome Rice": {
     "url": "http://www.handsomerice.com",
@@ -82075,7 +82112,8 @@
     ],
     "ot_slug": "big-apple-brunch",
     "website": "https://linktr.ee/bigapplebrunch",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/big-apple-brunch-new-york"
   },
   "Kare Thai": {
     "url": "http://www.karethai.com",
@@ -83222,7 +83260,8 @@
     ],
     "ot_slug": "aoc-east",
     "website": "http://www.aoceast.com",
-    "platform": "website"
+    "platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/aoc-east-new-york"
   },
   "Famous Famiglia": {
     "url": "https://www.famousfamigliaofnewyork.com",
@@ -102392,7 +102431,7 @@
     "address": "132 W 47th St, New York, NY 10036"
   },
   "Antoya (fka Samwon Garden)": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "https://www.antoyabbq.com/",
     "lat": 40.7481097,
     "lng": -73.9872039,
@@ -102407,7 +102446,9 @@
     "vibe_tags": [
       "trendy"
     ],
-    "address": "37 W 32nd St, New York, NY 10001, USA"
+    "address": "37 W 32nd St, New York, NY 10001, USA",
+    "booking_url": "https://www.opentable.com/r/antoya-new-york",
+    "ot_rid": 1009441
   },
   "Bazaar Meat by José Andrés - New York": {
     "platform": "opentable",
@@ -104263,7 +104304,7 @@
   },
   "Five Acres": {
     "name": "Five Acres",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "594c7ca9-40f6-3a90-89bc-06a6427d5fd0",
     "address": "Rink Level, 30 Rockefeller Plaza Suite 8, New York City, NY 10112",
@@ -104280,7 +104321,9 @@
       "date_night",
       "lively"
     ],
-    "url": "https://www.5acresnyc.com/"
+    "url": "https://www.5acresnyc.com/",
+    "booking_url": "https://www.opentable.com/r/5-acres-new-york",
+    "ot_rid": 1251205
   },
   "Mayahuel": {
     "name": "Mayahuel",
@@ -105374,7 +105417,7 @@
   },
   "Mama Mia": {
     "name": "Mama Mia",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "e11727fd-6ac4-379f-bca4-9927c336bd63",
     "address": "621 9th Ave, New York, NY 10036",
@@ -105391,7 +105434,9 @@
     "vibe_tags": [
       "date_night"
     ],
-    "_vibe_confidence": "medium"
+    "_vibe_confidence": "medium",
+    "booking_url": "https://www.opentable.com/mama-mia-44sw",
+    "ot_rid": 144406
   },
   "Via Vai": {
     "name": "Via Vai",
@@ -108843,7 +108888,7 @@
   },
   "Mario's Restaurant": {
     "name": "Mario's Restaurant",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "4e8be0e1-c615-448c-a431-d57214c2d9b6",
     "address": "2342 Arthur Ave, Bronx, NY 10458",
@@ -108861,7 +108906,8 @@
       "lively",
       "trendy",
       "group_friendly"
-    ]
+    ],
+    "booking_url": "https://www.opentable.com/marios-restaurant-arthur-ave"
   },
   "Floridita - Inwood": {
     "name": "Floridita - Inwood",
@@ -111293,7 +111339,7 @@
   },
   "GOSHT Steakhouse": {
     "name": "GOSHT Steakhouse",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "a255918a-5ec8-4263-a743-f6739d82058c",
     "address": "3215 Coney Island Ave, Brooklyn, NY 11235",
@@ -111309,7 +111355,8 @@
     "url": "https://www.gosht.com/",
     "vibe_tags": [
       "date_night"
-    ]
+    ],
+    "booking_url": "https://www.opentable.com/r/gosht-brooklyn"
   },
   "Sushi by Bou Westchester Place": {
     "name": "Sushi by Bou Westchester Place",
@@ -111876,7 +111923,7 @@
   },
   "The Garden": {
     "name": "The Garden",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "f12dd4f9-457c-4d50-a4b2-66c930c39053",
     "address": "331 Morris Ave, Elizabeth, NJ 07208",
@@ -111896,7 +111943,9 @@
       "upscale",
       "brunch"
     ],
-    "_vibe_confidence": "high"
+    "_vibe_confidence": "high",
+    "booking_url": "https://www.opentable.com/the-garden-at-the-four-seasons-reservations-new-york",
+    "ot_rid": 6703
   },
   "Jerkies": {
     "name": "Jerkies",
@@ -114741,7 +114790,7 @@
     "address": "136-59 37th Ave, Flushing, NY 11354, USA"
   },
   "Knickerbocker Bar & Grill": {
-    "platform": "website",
+    "platform": "opentable",
     "url": "http://www.knickerbockerbarandgrill.com/",
     "lat": 40.731944399999996,
     "lng": -73.9941667,
@@ -114757,7 +114806,8 @@
       "date_night",
       "lively"
     ],
-    "address": "33 University Pl, New York, NY 10003, USA"
+    "address": "33 University Pl, New York, NY 10003, USA",
+    "booking_url": "https://www.opentable.com/knickerbocker-bar-and-grill-reservations-new-york"
   },
   "Sevilla Restaurant & Bar": {
     "platform": "website",
