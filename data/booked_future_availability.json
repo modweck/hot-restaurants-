@@ -1,0 +1,6153 @@
+{
+  "checked_at": "2026-03-24T13:27:24.485Z",
+  "party_size": 2,
+  "dates_checked": [
+    {
+      "offset": "+3",
+      "date": "2026-03-27"
+    },
+    {
+      "offset": "+5",
+      "date": "2026-03-29"
+    },
+    {
+      "offset": "+7",
+      "date": "2026-03-31"
+    },
+    {
+      "offset": "+14",
+      "date": "2026-04-07"
+    }
+  ],
+  "total_checked": 197,
+  "results": {
+    "53": {
+      "slug": "53",
+      "venueId": 60303,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 34,
+          "early": 4,
+          "prime": 13,
+          "late": 5,
+          "earliest": "2026-03-27 20:30:00",
+          "latest": "2026-03-27 22:00:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 33,
+          "early": 4,
+          "prime": 12,
+          "late": 5,
+          "earliest": "2026-03-29 18:30:00",
+          "latest": "2026-03-29 22:00:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 33,
+          "early": 4,
+          "prime": 13,
+          "late": 4,
+          "earliest": "2026-03-31 18:30:00",
+          "latest": "2026-03-31 21:45:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 34,
+          "early": 4,
+          "prime": 13,
+          "late": 5,
+          "earliest": "2026-04-07 18:30:00",
+          "latest": "2026-04-07 22:00:00"
+        }
+      }
+    },
+    "dhamaka": {
+      "slug": "dhamaka",
+      "venueId": 48994,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 2,
+          "early": 0,
+          "prime": 0,
+          "late": 2,
+          "earliest": "2026-03-27 21:15:00",
+          "latest": "2026-03-27 21:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 22,
+          "early": 3,
+          "prime": 3,
+          "late": 3,
+          "earliest": "2026-03-29 11:30:00",
+          "latest": "2026-03-29 21:30:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "semma": {
+      "slug": "semma",
+      "venueId": 1263,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "adda": {
+      "slug": "ADDA",
+      "venueId": 89018,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "bonnies": {
+      "slug": "bonnies",
+      "venueId": 54591,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 10,
+          "early": 5,
+          "prime": 1,
+          "late": 4,
+          "earliest": "2026-03-27 17:00:00",
+          "latest": "2026-03-27 21:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 22,
+          "early": 5,
+          "prime": 11,
+          "late": 0,
+          "earliest": "2026-03-29 18:30:00",
+          "latest": "2026-03-29 20:30:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 19,
+          "early": 3,
+          "prime": 12,
+          "late": 4,
+          "earliest": "2026-03-31 18:30:00",
+          "latest": "2026-03-31 21:30:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the four horsemen": {
+      "slug": "the-four-horsemen",
+      "venueId": 2492,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "bungalow": {
+      "slug": "bungalow-ny",
+      "venueId": 80201,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "sofreh": {
+      "slug": "sofreh",
+      "venueId": 27154,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 7,
+          "early": 0,
+          "prime": 4,
+          "late": 3,
+          "earliest": "2026-03-27 19:45:00",
+          "latest": "2026-03-27 21:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 4,
+          "early": 0,
+          "prime": 2,
+          "late": 2,
+          "earliest": "2026-03-29 20:15:00",
+          "latest": "2026-03-29 21:15:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 6,
+          "early": 2,
+          "prime": 2,
+          "late": 2,
+          "earliest": "2026-04-07 17:30:00",
+          "latest": "2026-04-07 21:15:00"
+        }
+      }
+    },
+    "golden diner": {
+      "slug": "golden-diner",
+      "venueId": 9520,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "third falcon": {
+      "slug": "third-falcon",
+      "venueId": 84198,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 47,
+          "early": 12,
+          "prime": 23,
+          "late": 12,
+          "earliest": "2026-03-27 17:00:00",
+          "latest": "2026-03-27 21:45:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 94,
+          "early": 12,
+          "prime": 36,
+          "late": 12,
+          "earliest": "2026-03-29 11:00:00",
+          "latest": "2026-03-29 21:45:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "lilia": {
+      "slug": "lilia",
+      "venueId": 418,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 1,
+          "early": 0,
+          "prime": 0,
+          "late": 0,
+          "earliest": "2026-03-27 16:30:00",
+          "latest": "2026-03-27 16:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 3,
+          "early": 0,
+          "prime": 0,
+          "late": 3,
+          "earliest": "2026-04-07 21:15:00",
+          "latest": "2026-04-07 21:30:00"
+        }
+      }
+    },
+    "misi": {
+      "slug": "misi",
+      "venueId": 3015,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 12,
+          "early": 0,
+          "prime": 0,
+          "late": 0,
+          "earliest": "2026-03-27 11:30:00",
+          "latest": "2026-03-27 14:15:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 2,
+          "early": 0,
+          "prime": 0,
+          "late": 0,
+          "earliest": "2026-03-29 11:30:00",
+          "latest": "2026-03-29 11:30:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 6,
+          "early": 1,
+          "prime": 0,
+          "late": 5,
+          "earliest": "2026-03-31 17:00:00",
+          "latest": "2026-03-31 21:30:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 17,
+          "early": 7,
+          "prime": 3,
+          "late": 7,
+          "earliest": "2026-04-07 17:00:00",
+          "latest": "2026-04-07 21:30:00"
+        }
+      }
+    },
+    "al di la trattoria": {
+      "slug": "al-di-la-trattoria",
+      "venueId": 53693,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 12,
+          "early": 4,
+          "prime": 5,
+          "late": 3,
+          "earliest": "2026-03-27 17:00:00",
+          "latest": "2026-03-27 21:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 17,
+          "early": 4,
+          "prime": 12,
+          "late": 1,
+          "earliest": "2026-03-31 17:00:00",
+          "latest": "2026-03-31 21:00:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 17,
+          "early": 4,
+          "prime": 12,
+          "late": 1,
+          "earliest": "2026-04-07 17:00:00",
+          "latest": "2026-04-07 21:00:00"
+        }
+      }
+    },
+    "swoonys": {
+      "slug": "swoonys",
+      "venueId": 74094,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 7,
+          "early": 3,
+          "prime": 0,
+          "late": 4,
+          "earliest": "2026-03-27 17:00:00",
+          "latest": "2026-03-27 21:45:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 20,
+          "early": 4,
+          "prime": 13,
+          "late": 3,
+          "earliest": "2026-03-31 20:30:00",
+          "latest": "2026-03-31 21:30:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 23,
+          "early": 5,
+          "prime": 15,
+          "late": 3,
+          "earliest": "2026-04-07 17:00:00",
+          "latest": "2026-04-07 21:30:00"
+        }
+      }
+    },
+    "lei": {
+      "slug": "lei",
+      "venueId": 89991,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "smithereens": {
+      "slug": "smithereens",
+      "venueId": 84732,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 8,
+          "early": 0,
+          "prime": 0,
+          "late": 8,
+          "earliest": "2026-03-31 21:15:00",
+          "latest": "2026-03-31 22:00:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "quique crudo": {
+      "slug": "quique-crudo",
+      "venueId": 83129,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "via carota": {
+      "slug": "via-carota",
+      "venueId": 2567,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "i sodi": {
+      "slug": "i-sodi",
+      "venueId": 443,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "torrisi": {
+      "slug": "torrisi",
+      "venueId": 64593,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "gramercy tavern": {
+      "slug": "gramercy-tavern",
+      "venueId": 3731,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 1,
+          "early": 0,
+          "prime": 0,
+          "late": 1,
+          "earliest": "2026-03-29 22:00:00",
+          "latest": "2026-03-29 22:00:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 1,
+          "early": 0,
+          "prime": 0,
+          "late": 1,
+          "earliest": "2026-03-31 22:00:00",
+          "latest": "2026-03-31 22:00:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 3,
+          "early": 0,
+          "prime": 0,
+          "late": 1,
+          "earliest": "2026-04-07 11:30:00",
+          "latest": "2026-04-07 22:00:00"
+        }
+      }
+    },
+    "atomix": {
+      "slug": "atomixnyc",
+      "venueId": 69815,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "rezdora": {
+      "slug": "rezdora",
+      "venueId": 5771,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "dame": {
+      "slug": "dame-new-york",
+      "venueId": 34341,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 2,
+          "early": 0,
+          "prime": 0,
+          "late": 2,
+          "earliest": "2026-03-27 22:15:00",
+          "latest": "2026-03-27 22:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 17,
+          "early": 0,
+          "prime": 2,
+          "late": 15,
+          "earliest": "2026-03-31 19:45:00",
+          "latest": "2026-03-31 22:00:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 20,
+          "early": 4,
+          "prime": 3,
+          "late": 13,
+          "earliest": "2026-04-07 17:30:00",
+          "latest": "2026-04-07 22:00:00"
+        }
+      }
+    },
+    "lord's": {
+      "slug": "lords",
+      "venueId": 65228,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 14,
+          "early": 0,
+          "prime": 2,
+          "late": 12,
+          "earliest": "2026-03-27 20:30:00",
+          "latest": "2026-03-27 22:30:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 34,
+          "early": 4,
+          "prime": 24,
+          "late": 6,
+          "earliest": "2026-03-31 17:30:00",
+          "latest": "2026-03-31 21:30:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "maison pickle": {
+      "slug": "maison-pickle",
+      "venueId": 857,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "tradicionale": {
+      "slug": "tradicionale",
+      "venueId": 92508,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "meju": {
+      "slug": "meju",
+      "venueId": 79842,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "oxomoco": {
+      "slug": "oxomoco",
+      "venueId": 2601,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "thai diner": {
+      "slug": "thai-diner",
+      "venueId": 49453,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "manhatta": {
+      "slug": "manhatta",
+      "venueId": 2801,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "red hook tavern": {
+      "slug": "red-hook-tavern",
+      "venueId": 6377,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "atoboy": {
+      "slug": "atoboy",
+      "venueId": 587,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "hags": {
+      "slug": "hags",
+      "venueId": 59000,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "foxface natural": {
+      "slug": "foxface-natural",
+      "venueId": 71434,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "aunts et uncles": {
+      "slug": "aunts-et-uncles",
+      "venueId": 37628,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 42,
+          "early": 4,
+          "prime": 10,
+          "late": 0,
+          "earliest": "2026-03-27 11:30:00",
+          "latest": "2026-03-27 20:00:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": true,
+          "slots": 38,
+          "early": 4,
+          "prime": 6,
+          "late": 0,
+          "earliest": "2026-03-29 11:30:00",
+          "latest": "2026-03-29 19:00:00"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 38,
+          "early": 4,
+          "prime": 6,
+          "late": 0,
+          "earliest": "2026-03-31 11:30:00",
+          "latest": "2026-03-31 19:00:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 38,
+          "early": 4,
+          "prime": 6,
+          "late": 0,
+          "earliest": "2026-04-07 11:30:00",
+          "latest": "2026-04-07 19:00:00"
+        }
+      }
+    },
+    "bistrot ha": {
+      "slug": "bistrot-ha",
+      "venueId": 93718,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "ha's snack bar": {
+      "slug": "has-snack-bar",
+      "venueId": 85855,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "cove": {
+      "slug": "cove",
+      "venueId": 94252,
+      "hasAnyAvailability": true,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": true,
+          "slots": 23,
+          "early": 5,
+          "prime": 9,
+          "late": 7,
+          "earliest": "2026-03-27 12:15:00",
+          "latest": "2026-03-27 21:45:00"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": true,
+          "slots": 31,
+          "early": 4,
+          "prime": 23,
+          "late": 4,
+          "earliest": "2026-03-31 19:30:00",
+          "latest": "2026-03-31 21:30:00"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": true,
+          "slots": 38,
+          "early": 6,
+          "prime": 28,
+          "late": 4,
+          "earliest": "2026-04-07 17:30:00",
+          "latest": "2026-04-07 21:30:00"
+        }
+      }
+    },
+    "ramen by ra": {
+      "slug": "ramen-by-ra",
+      "venueId": 79848,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "huda": {
+      "slug": "huda",
+      "venueId": 73930,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "inga's bar": {
+      "slug": "ingas-bar",
+      "venueId": 59402,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "4 charles prime rib": {
+      "slug": "4-charles-prime-rib",
+      "venueId": 834,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "maison premiere": {
+      "slug": "maison-premiere",
+      "venueId": 51628,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "chavelas": {
+      "slug": "chavelas",
+      "venueId": 5091,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "una pizza napoletana": {
+      "slug": "una-pizza-napoletana",
+      "venueId": 6066,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "yellow rose": {
+      "slug": "yellow-rose",
+      "venueId": 53048,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "strange delight": {
+      "slug": "strange-delight",
+      "venueId": 93264,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "birds of a feather": {
+      "slug": "birds-of-a-feather",
+      "venueId": 63241,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "jeju noodle bar": {
+      "slug": "jeju-noodle-bar",
+      "venueId": 1543,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "ayat ditmas park": {
+      "slug": "ayat-ditmas-park",
+      "venueId": 78974,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "ivan ramen": {
+      "slug": "ivan-ramen",
+      "venueId": 83501,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "cucina alba": {
+      "slug": "cucina-alba",
+      "venueId": 64842,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sam sunny": {
+      "slug": "sam-sunny",
+      "venueId": 65463,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "chez messy": {
+      "slug": "chez-messy",
+      "venueId": 83660,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "common park slope": {
+      "slug": "the-common-park-slope",
+      "venueId": 73196,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "chili": {
+      "slug": "chili",
+      "venueId": 64822,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "eyval": {
+      "slug": "eyval",
+      "venueId": 59419,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "theodora": {
+      "slug": "theodora",
+      "venueId": 73589,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "tsion": {
+      "slug": "tsion-cafe",
+      "venueId": 5738,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "odd sister": {
+      "slug": "odd-sister",
+      "venueId": 66530,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "rivercrest": {
+      "slug": "rivercrest",
+      "venueId": 50923,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "for all things good bedstuy": {
+      "slug": "for-all-things-good-bed-stuy",
+      "venueId": 89550,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "little egg": {
+      "slug": "little-egg",
+      "venueId": 71265,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "blu ember": {
+      "slug": "blu-ember",
+      "venueId": 91861,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "jacobs pickles": {
+      "slug": "jacobs-pickles",
+      "venueId": 501,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "izakaya mew": {
+      "slug": "izakaya-mew",
+      "venueId": 30189,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nice matin": {
+      "slug": "nice-matin",
+      "venueId": 60367,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "mayfield": {
+      "slug": "mayfield",
+      "venueId": 2238,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "hav and mar": {
+      "slug": "hav-and-mar",
+      "venueId": 90075,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "caf maud": {
+      "slug": "cafe-maud",
+      "venueId": 83050,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "laut": {
+      "slug": "laut",
+      "venueId": 43969,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "hicollar": {
+      "slug": "hi-collar",
+      "venueId": 3631,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "chinese tuxedo": {
+      "slug": "chinese-tuxedo",
+      "venueId": 818,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "uzuki": {
+      "slug": "uzuki",
+      "venueId": 74134,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "borgo": {
+      "slug": "borgo",
+      "venueId": 84290,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "rosella": {
+      "slug": "rosella",
+      "venueId": 65348,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "30 love": {
+      "slug": "30-love",
+      "venueId": 87667,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "adélaïde salon": {
+      "slug": "adelaide-salon",
+      "venueId": 86236,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "akimori brooklyn": {
+      "slug": "akimori-brooklyn",
+      "venueId": 55565,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "akimori omakase bar": {
+      "slug": "akimori-omakase-bar",
+      "venueId": 76959,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "amity hall uptown": {
+      "slug": "amity-hall-uptown",
+      "venueId": 10099,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "async": {
+      "slug": "async",
+      "venueId": 89889,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "at nine restaurant & bar": {
+      "slug": "at-nine-restaurant-and-bar",
+      "venueId": 83890,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "boqueria flatiron": {
+      "slug": "boqueria-flatiron",
+      "venueId": 27218,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "bordeaux steakhouse": {
+      "slug": "bordeaux-steakhouse",
+      "venueId": 91158,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "broken shaker new york": {
+      "slug": "broken-shaker-new-york",
+      "venueId": 70551,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "brooklyn chop house - downtown fidi": {
+      "slug": "brooklyn-chop-house-downtown-fidi",
+      "venueId": 87134,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "brooklyn roots collective": {
+      "slug": "brooklyn-roots-collective",
+      "venueId": 95613,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "brunch me baby": {
+      "slug": "brunch-me-baby",
+      "venueId": 95447,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "buvette nyc": {
+      "slug": "buvette-nyc",
+      "venueId": 4241,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "casasalvo restaurant": {
+      "slug": "casasalvo-restaurant",
+      "venueId": 91916,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "cecchi's": {
+      "slug": "cecchis",
+      "venueId": 65784,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "centurion new york® by american express": {
+      "slug": "centurion-ny",
+      "venueId": 66930,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "chong qing lao zao": {
+      "slug": "chong-qing-lao-zao",
+      "venueId": 95802,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "club please": {
+      "slug": "club-please",
+      "venueId": 87799,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "congee village": {
+      "slug": "congee-village",
+      "venueId": 82339,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "corima": {
+      "slug": "corima",
+      "venueId": 74270,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "cote flatiron": {
+      "slug": "cote-nyc",
+      "venueId": 72271,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "cupid's secret": {
+      "slug": "cupids-secret",
+      "venueId": 95216,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "danny's nyc": {
+      "slug": "dannys-nyc",
+      "venueId": 92620,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "dante aperitivo": {
+      "slug": "dante-aperitivo",
+      "venueId": 89648,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "dashi okume brooklyn": {
+      "slug": "dashi-okume-brooklyn",
+      "venueId": 77666,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "dickson's farmstand meats": {
+      "slug": "dicksons-farmstand-meats",
+      "venueId": 51237,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "elvis": {
+      "slug": "elvis",
+      "venueId": 84584,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "empress room": {
+      "slug": "empress-room",
+      "venueId": 95923,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "estelle’s": {
+      "slug": "estelles-nyc",
+      "venueId": 83916,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "fancyfree": {
+      "slug": "fancyfree",
+      "venueId": 50369,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "fauchon": {
+      "slug": "fauchon",
+      "venueId": 92127,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "fini williamsburg": {
+      "slug": "fini-williamsburg",
+      "venueId": 78353,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "foursome ny": {
+      "slug": "foursome-ny",
+      "venueId": 88493,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "gopchang story bbq": {
+      "slug": "gopchang-story-bbq",
+      "venueId": 90702,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "grey lady nyc": {
+      "slug": "grey-lady-nyc",
+      "venueId": 4871,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "hori": {
+      "slug": "hori",
+      "venueId": 89082,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "hunan slurp": {
+      "slug": "hunan-slurp-nyc",
+      "venueId": 3221,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "javitri": {
+      "slug": "javitri",
+      "venueId": 78794,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "jiang nan - manhattan": {
+      "slug": "jiang-nan-manhattan",
+      "venueId": 93411,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "jōji": {
+      "slug": "joji",
+      "venueId": 62836,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "joo ok": {
+      "slug": "joo-ok",
+      "venueId": 82455,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "jua": {
+      "slug": "jua",
+      "venueId": 8266,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "kidilum": {
+      "slug": "kidilum",
+      "venueId": 95134,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "l’abeille à côté": {
+      "slug": "labeille-a-cote",
+      "venueId": 72971,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "le marais": {
+      "slug": "le-marais",
+      "venueId": 54981,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "little prince": {
+      "slug": "little-prince",
+      "venueId": 54193,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "malka dumbo": {
+      "slug": "malka-dumbo",
+      "venueId": 83875,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "malvan": {
+      "slug": "malvan",
+      "venueId": 95528,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "mắm": {
+      "slug": "mam",
+      "venueId": 80206,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "marseille": {
+      "slug": "marseille",
+      "venueId": 60369,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "mộc mạc": {
+      "slug": "moc-mac",
+      "venueId": 94107,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "montague diner": {
+      "slug": "montague-diner",
+      "venueId": 79987,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "mykonian garden": {
+      "slug": "mykonian-garden",
+      "venueId": 91921,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "naxos": {
+      "slug": "naxos",
+      "venueId": 94077,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nogari": {
+      "slug": "nogari",
+      "venueId": 94494,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nowon east village": {
+      "slug": "nowon-east-village",
+      "venueId": 8541,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nr": {
+      "slug": "nr",
+      "venueId": 39797,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nura": {
+      "slug": "nura",
+      "venueId": 54336,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "odre": {
+      "slug": "odre",
+      "venueId": 83391,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "okdongsik": {
+      "slug": "okdongsik",
+      "venueId": 66350,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "okonomi / yuji ramen manhattan": {
+      "slug": "okonomi-yuji-manhattan",
+      "venueId": 52416,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "omar at la goulue": {
+      "slug": "omar-at-la-goulue",
+      "venueId": 73851,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "ootoya - times square": {
+      "slug": "ootoya-times-square",
+      "venueId": 84398,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "opto": {
+      "slug": "opto",
+      "venueId": 86439,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "pearl box": {
+      "slug": "pearl-box",
+      "venueId": 84585,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "plantmade": {
+      "slug": "plantmade",
+      "venueId": 91798,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "raku east village": {
+      "slug": "raku-east-village",
+      "venueId": 79815,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "raku midtown": {
+      "slug": "raku-midtown",
+      "venueId": 79982,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "raku soho": {
+      "slug": "raku-soho",
+      "venueId": 2026,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "reserve cut broad st.": {
+      "slug": "reserve-cut-broad-st",
+      "venueId": 58431,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "rocco’s sports & rec": {
+      "slug": "roccos-sports-and-rec",
+      "venueId": 65680,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sant ambroeus café at sothebys": {
+      "slug": "sant-ambroeus-cafe-at-sothebys",
+      "venueId": 92862,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "saverne": {
+      "slug": "saverne",
+      "venueId": 95379,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sen sakana": {
+      "slug": "sen-sakana",
+      "venueId": 9896,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sendo": {
+      "slug": "sendo",
+      "venueId": 93329,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "Shabu-Tatsu": {
+      "slug": "shabu-tatsu",
+      "venueId": 36758,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "shaking crab - park slope": {
+      "slug": "shaking-crab-park-slope",
+      "venueId": 65660,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "shanes restaurant": {
+      "slug": "shanes-restaurant",
+      "venueId": 86773,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "skirt steak": {
+      "slug": "skirt-steak",
+      "venueId": 54599,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sora": {
+      "slug": "sora",
+      "venueId": 83084,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "souraji": {
+      "slug": "souraji",
+      "venueId": 82542,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "souraji west": {
+      "slug": "souraji-west",
+      "venueId": 56588,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "stout nyc grand central": {
+      "slug": "stout-grand-central",
+      "venueId": 51536,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "stout nyc penn station": {
+      "slug": "stout-nyc-flagship",
+      "venueId": 1704,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "studio 151": {
+      "slug": "studio-151",
+      "venueId": 53695,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sushi saint": {
+      "slug": "sushi-saint",
+      "venueId": 83234,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sweet catch brooklyn": {
+      "slug": "sweet-catch-brooklyn",
+      "venueId": 68665,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "tabernacle steakhouse": {
+      "slug": "tabernacle-steakhouse",
+      "venueId": 50173,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "taikun sushi nyc": {
+      "slug": "taikun-sushi",
+      "venueId": 50244,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "talia's steakhouse & bar": {
+      "slug": "talias-steakhouse-and-bar",
+      "venueId": 72784,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the chef’s counter at manhatta": {
+      "slug": "the-chefs-counter-at-manhatta",
+      "venueId": 59549,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the copper still - east village": {
+      "slug": "the-copper-still-east-village",
+      "venueId": 49684,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the django": {
+      "slug": "the-django",
+      "venueId": 58129,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the half pint / ernie's": {
+      "slug": "the-half-pint-ernies",
+      "venueId": 3308,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the kitchen table at the modern": {
+      "slug": "the-kitchen-table-at-the-modern",
+      "venueId": 2789,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the loft steakhouse - brooklyn": {
+      "slug": "the-loft-steakhouse-brooklyn",
+      "venueId": 93228,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the restaurant at gilder": {
+      "slug": "the-restaurant-at-gilder",
+      "venueId": 70852,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "the ten bells": {
+      "slug": "the-ten-bells",
+      "venueId": 5748,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "togyushi": {
+      "slug": "togyushi",
+      "venueId": 92553,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "tonchin new york": {
+      "slug": "tonchin-new-york",
+      "venueId": 35883,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "umeko": {
+      "slug": "umeko",
+      "venueId": 94947,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "villard & the gold room": {
+      "slug": "villard-and-the-gold-room",
+      "venueId": 87730,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "virginia's": {
+      "slug": "virginias",
+      "venueId": 5938,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "weill café at carnegie hall": {
+      "slug": "weill-cafe-at-carnegie-hall",
+      "venueId": 75404,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "westmoreland at the frick collection": {
+      "slug": "westmoreland-at-the-frick",
+      "venueId": 89863,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "yellow magnolia café": {
+      "slug": "yellow-magnolia-cafe",
+      "venueId": 70119,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sarava - the modern bistro": {
+      "slug": "sarava-bistro",
+      "venueId": 91859,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "ends meat": {
+      "slug": "meat",
+      "venueId": 7093,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "schilling restaurant & bar": {
+      "slug": "schilling",
+      "venueId": 10392,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "Boulud Sud": {
+      "slug": "boulud-sud",
+      "venueId": 53002,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "raf's": {
+      "slug": "rafs",
+      "venueId": 65679,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "Tatiana By Kwame Onwuachi": {
+      "slug": "tatiana",
+      "venueId": 65452,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "nom wah": {
+      "slug": "nom-wah-tea-parlor",
+      "venueId": 483,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "Huso Nyc": {
+      "slug": "huso-nyc",
+      "venueId": 84818,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "yamada": {
+      "slug": "yamada",
+      "venueId": 77405,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "sushi amane": {
+      "slug": "sushi-amane-fly",
+      "venueId": 3342,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "shota omakase": {
+      "slug": "shota-omakase",
+      "venueId": 73542,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    },
+    "ilili midtown": {
+      "slug": "ilili-midtown",
+      "venueId": 95127,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-27",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+5": {
+          "date": "2026-03-29",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+7": {
+          "date": "2026-03-31",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        },
+        "+14": {
+          "date": "2026-04-07",
+          "available": false,
+          "slots": 0,
+          "error": "Unexpected end of JSON input"
+        }
+      }
+    }
+  }
+}

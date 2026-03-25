@@ -30,12 +30,12 @@ jobs:
       - name: Run weekly rising script
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: node weekly-rising.js
+        run: node scripts/enrichment/weekly-rising.js
 
       - name: Commit and push updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add snapshots/ booking_lookup.json netlify/functions/booking_lookup.json new_and_rising.json netlify/functions/new_and_rising.json 2>/dev/null || true
+          git add snapshots/ data/booking_lookup.json netlify/functions/booking_lookup.json new_and_rising.json netlify/functions/new_and_rising.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "🔥 Weekly rising restaurant update $(date +%Y-%m-%d)"
           git push

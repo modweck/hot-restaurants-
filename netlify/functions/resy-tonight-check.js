@@ -341,7 +341,7 @@ async function main() {
       process.stdout.write(`  💾 Saved progress (${i+1}/${toCheck.length})\n`);
     }
 
-    await sleep(5000);
+    await sleep(4000);
   }
 
   // Final save with metadata

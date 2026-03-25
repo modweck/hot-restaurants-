@@ -1,0 +1,4358 @@
+{
+  "_meta": {
+    "OPERATIONAL": 797,
+    "CLOSED_PERMANENTLY": 32,
+    "CLOSED_TEMPORARILY": 40,
+    "UNKNOWN": 0,
+    "error": 0,
+    "total": 869,
+    "last_run": "2026-03-24T21:37:53.754Z"
+  },
+  "results": {
+    "Northshore Brasserie": {
+      "place_id": "ChIJ8Ym0ZABZwokRPanEDBHn04o",
+      "status": "OPERATIONAL",
+      "google_name": "Grand Brasserie"
+    },
+    "joe allen": {
+      "place_id": "ChIJ0QKr91NYwokRhzehyIw3f0s",
+      "status": "OPERATIONAL",
+      "google_name": "Joe Allen"
+    },
+    "the hunt and fish club": {
+      "place_id": "ChIJR-CHa1VYwokRKTaWr1rLqLc",
+      "status": "OPERATIONAL",
+      "google_name": "Hunt & Fish Club"
+    },
+    "Empire Steak House-Times Square": {
+      "place_id": "ChIJkfrlSBtZwokRLRqMww0Lb5Q",
+      "status": "OPERATIONAL",
+      "google_name": "Empire Steak House Times Square"
+    },
+    "1885 Grill": {
+      "place_id": "ChIJ8UxZqPxYwokRQSC7-Qoeea0",
+      "status": "OPERATIONAL",
+      "google_name": "THE GRILL"
+    },
+    "Old Gilman Grill": {
+      "place_id": "ChIJ8UxZqPxYwokRQSC7-Qoeea0",
+      "status": "OPERATIONAL",
+      "google_name": "THE GRILL"
+    },
+    "Aquavit Restaurant": {
+      "place_id": "ChIJWfonJ_tYwokRwIGb6Im403E",
+      "status": "OPERATIONAL",
+      "google_name": "Aquavit"
+    },
+    "Peter's Steakhouse": {
+      "place_id": "ChIJR_bK295bwokR8gM6QgEdmkY",
+      "status": "OPERATIONAL",
+      "google_name": "Peter Luger Steak House"
+    },
+    "Q Korean Steakhouse": {
+      "place_id": "ChIJQ1R3hKNZwokRQM4wbIrc00o",
+      "status": "OPERATIONAL",
+      "google_name": "COTE Flatiron"
+    },
+    "Topsail": {
+      "place_id": "ChIJWd7fRdZZwokRhru5tn4KsVM",
+      "status": "OPERATIONAL",
+      "google_name": "Torrisi"
+    },
+    "goog": {
+      "place_id": "ChIJvSQIgqFZwokRFYQbJdzceSs",
+      "status": "OPERATIONAL",
+      "google_name": "Gramercy Tavern"
+    },
+    "C Italian Restaurant": {
+      "place_id": "ChIJ_ci7bvdZwokRsL4rlCOqsMk",
+      "status": "OPERATIONAL",
+      "google_name": "Ci Siamo"
+    },
+    "Yoobi": {
+      "place_id": "ChIJ6WTjLENZwokRsU3IurxvnCI",
+      "status": "OPERATIONAL",
+      "google_name": "YOSHINO • NEW YORK"
+    },
+    "trattoria zero otto nove - flatiron": {
+      "place_id": "ChIJx2Iol6NZwokRE2cQll_KLqI",
+      "status": "OPERATIONAL",
+      "google_name": "Zero Otto Nove Manhattan"
+    },
+    "San Carlo Cicchetti": {
+      "place_id": "ChIJ5RzhN4xZwokRp13Jc3DxBOI",
+      "status": "OPERATIONAL",
+      "google_name": "San Carlo Osteria Piemonte"
+    },
+    "Bond Street": {
+      "place_id": "ChIJsbs4VIVZwokR5fVhp_TjSuM",
+      "status": "OPERATIONAL",
+      "google_name": "BONDST"
+    },
+    "Hawksmoor Seven Dials": {
+      "place_id": "ChIJZdEAC9VZwokRsUEVh2RGIoE",
+      "status": "OPERATIONAL",
+      "google_name": "Hawksmoor NYC"
+    },
+    "One World Observatory Restaurant": {
+      "place_id": "ChIJXRDwzxtawokRcQTLdZuAsKY",
+      "status": "OPERATIONAL",
+      "google_name": "ONE Dine at One World Observatory"
+    },
+    "metropolis by marcus samuelsson": {
+      "place_id": "ChIJLbVjDF5bwokRZFE7PRwuRpY",
+      "status": "OPERATIONAL",
+      "google_name": "Metropolis"
+    },
+    "One if by Land, Two if by Sea": {
+      "place_id": "ChIJl8faj5NZwokRubB8kvrZMk4",
+      "status": "OPERATIONAL",
+      "google_name": "One if by Land, Two if by Sea"
+    },
+    "Korali Estiatorio": {
+      "place_id": "ChIJmeM9TKRYwokRP8kkSingkIA",
+      "status": "OPERATIONAL",
+      "google_name": "Korali Estiatorio"
+    },
+    "Christo's Steak House": {
+      "place_id": "ChIJz2taOGlfwokRk4xoDPMRWbQ",
+      "status": "OPERATIONAL",
+      "google_name": "Christos Steak House"
+    },
+    "Carmine's Italian Restaurant - Upper West Side": {
+      "place_id": "ChIJrXva_oJYwokROtv_EdGJgH0",
+      "status": "OPERATIONAL",
+      "google_name": "Carmine's - Upper West Side"
+    },
+    "strip house - greenwich village": {
+      "place_id": "ChIJ99hry5lZwokRlClJt421pzs",
+      "status": "OPERATIONAL",
+      "google_name": "Strip House Steakhouse"
+    },
+    "Vietnaam Restaurant": {
+      "place_id": "ChIJzRCbxRVZwokRDAzYpDpbyG4",
+      "status": "OPERATIONAL",
+      "google_name": "La Dong"
+    },
+    "Sfilatino Italian Gourmet": {
+      "place_id": "ChIJRY0QrR9awokRtnCdmU4ijlM",
+      "status": "OPERATIONAL",
+      "google_name": "Scalini Fedeli"
+    },
+    "megu": {
+      "place_id": "ChIJ__zF2L5ZwokRMbXNYfOoiX8",
+      "status": "OPERATIONAL",
+      "google_name": "Dream Downtown, by Hyatt"
+    },
+    "Pio Pio 8": {
+      "place_id": "ChIJvfVwDFJYwokRtWobbwOMEVM",
+      "status": "OPERATIONAL",
+      "google_name": "Pio Pio 8"
+    },
+    "le botaniste": {
+      "place_id": "ChIJXbvPKe9YwokRroLArCwh2LY",
+      "status": "OPERATIONAL",
+      "google_name": "Le Botaniste"
+    },
+    "ginger sapori & salute": {
+      "place_id": "ChIJeSfHrQtZwokR8fHTQ4dMftc",
+      "status": "OPERATIONAL",
+      "google_name": "Ginger - Ristorante NYC"
+    },
+    "Heirloom Room": {
+      "place_id": "ChIJswKD6X9ZwokRzBuPAc0mo9E",
+      "status": "OPERATIONAL",
+      "google_name": "The Reading Room"
+    },
+    "la piazza new york": {
+      "place_id": "ChIJnURLtHZZwokRxY7HIr2Ecfo",
+      "status": "OPERATIONAL",
+      "google_name": "La Piazza New York"
+    },
+    "DULCINEA": {
+      "place_id": "ChIJ__8PIoNYwokRv6K4zyzgdLs",
+      "status": "OPERATIONAL",
+      "google_name": "Lucciola"
+    },
+    "The Tang - Upper West Side": {
+      "place_id": "ChIJF-agVLv3wokRLDjAuogLDjs",
+      "status": "OPERATIONAL",
+      "google_name": "The Tang"
+    },
+    "Taco Mexicali": {
+      "place_id": "ChIJA12lvtpbwokRx1g73PPypIM",
+      "status": "OPERATIONAL",
+      "google_name": "Mezcali"
+    },
+    "sojourn social": {
+      "place_id": "ChIJl78kIRlZwokR0Pz-hGyp5VQ",
+      "status": "OPERATIONAL",
+      "google_name": "Sojourn Social"
+    },
+    "Amber Steakhouse": {
+      "place_id": "ChIJAXRH6kVZwokRgV_sanKaFCg",
+      "status": "OPERATIONAL",
+      "google_name": "Amber Steak House"
+    },
+    "Hao Noodle Chelsea": {
+      "place_id": "ChIJX0Ki3AtZwokRhHVQdkDBk7o",
+      "status": "OPERATIONAL",
+      "google_name": "Hao Noodle"
+    },
+    "Kephi Greek Kitchen": {
+      "place_id": "ChIJM_-wRFlYwokRGSmTD8TBKAs",
+      "status": "OPERATIONAL",
+      "google_name": "The Greek Kitchen"
+    },
+    "Avra Midtown": {
+      "place_id": "ChIJ_zuGPv1YwokRPdpCK3wYGFg",
+      "status": "OPERATIONAL",
+      "google_name": "Avra 48th Street"
+    },
+    "Rare Chelsea": {
+      "place_id": "ChIJBxb4lltZwokRAbCAUk8NsBo",
+      "status": "OPERATIONAL",
+      "google_name": "Medium Rare"
+    },
+    "park side restaurant": {
+      "place_id": "ChIJi92ZUM5fwokRekBGVkRa6jw",
+      "status": "OPERATIONAL",
+      "google_name": "Park Side Restaurant"
+    },
+    "Antonio's Ristorante Italiano": {
+      "place_id": "ChIJi0UhO4f0wokR_jzG9KlaPQA",
+      "status": "OPERATIONAL",
+      "google_name": "Antonio's Trattoria"
+    },
+    "Amy Ruth's Home Style Southern Cuisine": {
+      "place_id": "ChIJ7V-ZqxH2wokRwaES4IMqwQU",
+      "status": "OPERATIONAL",
+      "google_name": "Amy Ruth's"
+    },
+    "Ariana Afghan Kabab Restaurant": {
+      "place_id": "ChIJK8foWldYwokRnSZrBGhlMyU",
+      "status": "OPERATIONAL",
+      "google_name": "Ariana Afghan Kebab"
+    },
+    "Bazár Tapas Bar & Restaurant": {
+      "place_id": "ChIJ60c5xqVZwokRv6aAYl8hT6s",
+      "status": "OPERATIONAL",
+      "google_name": "Bazár Tapas Bar and Restaurant"
+    },
+    "BG - Bergdorf Goodman": {
+      "place_id": "ChIJvRLkgvpYwokRaTM1OpEzTIY",
+      "status": "OPERATIONAL",
+      "google_name": "BG"
+    },
+    "Aberdeen Barn": {
+      "place_id": "ChIJQZSnWKZZwokRXPNOv9-qWsY",
+      "status": "OPERATIONAL",
+      "google_name": "BLACKBARN"
+    },
+    "Amish Fine Foods": {
+      "place_id": "ChIJQZSnWKZZwokRXPNOv9-qWsY",
+      "status": "OPERATIONAL",
+      "google_name": "BLACKBARN"
+    },
+    "Cecconi's Mayfair": {
+      "place_id": "ChIJO8_KyN9ZwokR98VtWjlBKG4",
+      "status": "OPERATIONAL",
+      "google_name": "Cecconi's Nomad"
+    },
+    "Crab House Seafood All You Can Eat": {
+      "place_id": "ChIJhYEOnLxZwokRFqUFeLdE3Ls",
+      "status": "OPERATIONAL",
+      "google_name": "Crab House NYC"
+    },
+    "Caffe Buon Gusto": {
+      "place_id": "ChIJBUeGmL9YwokRNAX5EhAA74o",
+      "status": "OPERATIONAL",
+      "google_name": "Caffe Buon Gusto"
+    },
+    "Bonanza Social Kitchen & Espresso": {
+      "place_id": "ChIJozuRrlFYwokRDQQBl8uRDKI",
+      "status": "OPERATIONAL",
+      "google_name": "Havana Social"
+    },
+    "Jin Ramen Upper West Side": {
+      "place_id": "ChIJc71Q34VYwokRARHW9df6Zgs",
+      "status": "OPERATIONAL",
+      "google_name": "Jin Ramen Upper West Side"
+    },
+    "kennedy's restaurant": {
+      "place_id": "ChIJf2SWkrRDwokR_JT_AeuEQEM",
+      "status": "OPERATIONAL",
+      "google_name": "Kennedy's"
+    },
+    "l'angeletto": {
+      "place_id": "ChIJQU144WZZwokRks949ol40_Q",
+      "status": "OPERATIONAL",
+      "google_name": "L'Angeletto"
+    },
+    "La Nacional Restaurant": {
+      "place_id": "ChIJLad6cb5ZwokRSVl4rg6sfys",
+      "status": "OPERATIONAL",
+      "google_name": "La Nacional"
+    },
+    "La Tienda Tapas Bar": {
+      "place_id": "ChIJLad6cb5ZwokRSVl4rg6sfys",
+      "status": "OPERATIONAL",
+      "google_name": "La Nacional"
+    },
+    "land, thai kitchen": {
+      "place_id": "ChIJ02dcCoZYwokRBz_6soDtXXA",
+      "status": "OPERATIONAL",
+      "google_name": "Land Thai Kitchen"
+    },
+    "Lido Harlem": {
+      "place_id": "ChIJ2yTMoxb2wokRixfwCY3ltok",
+      "status": "OPERATIONAL",
+      "google_name": "Lido Harlem Restaurant"
+    },
+    "new garden restaurant": {
+      "place_id": "ChIJ68J3tfpYwokROXciwmxe_Hw",
+      "status": "OPERATIONAL",
+      "google_name": "The Garden"
+    },
+    "The North Fork": {
+      "place_id": "ChIJTb3nqbVZwokRSxHi96bv17U",
+      "status": "OPERATIONAL",
+      "google_name": "North Fork"
+    },
+    "Fork And Vine": {
+      "place_id": "ChIJTb3nqbVZwokRSxHi96bv17U",
+      "status": "OPERATIONAL",
+      "google_name": "North Fork"
+    },
+    "bōm": {
+      "place_id": "ChIJRY8CqGJZwokR285BA7eLv5g",
+      "status": "OPERATIONAL",
+      "google_name": "bōm"
+    },
+    "Pho Grand Chinatown": {
+      "place_id": "ChIJVX1wkYdZwokRXMv8q8WVUDk",
+      "status": "OPERATIONAL",
+      "google_name": "Phở Grand"
+    },
+    "The Port House": {
+      "place_id": "ChIJtc2oTDJZwokRQiktCdsm9VE",
+      "status": "OPERATIONAL",
+      "google_name": "Port Sa’id"
+    },
+    "Portale Restaurant": {
+      "place_id": "ChIJ-TuoLitZwokRgQRHmUGEgyY",
+      "status": "OPERATIONAL",
+      "google_name": "Portale"
+    },
+    "Saravanaa Bhavan": {
+      "place_id": "ChIJ6aJywwlZwokR83Rnb7YY1mc",
+      "status": "OPERATIONAL",
+      "google_name": "SARAVANAA BHAVAN"
+    },
+    "Foothills Milling": {
+      "place_id": "ChIJUe3TgIVYwokR5cm1iYg1TAU",
+      "status": "OPERATIONAL",
+      "google_name": "The Milling Room"
+    },
+    "Tuscany Ristorante": {
+      "place_id": "ChIJydqNJv1YwokR22Ag9omkGMk",
+      "status": "OPERATIONAL",
+      "google_name": "Toscana 49"
+    },
+    "turntable chicken & rock": {
+      "place_id": "ChIJWWFYX6hZwokRiVPlneRsibg",
+      "status": "OPERATIONAL",
+      "google_name": "Turntable Chicken Jazz"
+    },
+    "Wok Wok Southeast Asian Kitchen": {
+      "place_id": "ChIJ___DlCZawokRHb_wCTtIQPQ",
+      "status": "OPERATIONAL",
+      "google_name": "Wok Wok Noodle House"
+    },
+    "cka ka qellue": {
+      "place_id": "ChIJJa93rKRZwokRPoOmc_ta6DU",
+      "status": "OPERATIONAL",
+      "google_name": "Çka Ka Qëllue"
+    },
+    "Nelore Grill Brazilian Kitchen": {
+      "place_id": "ChIJ-fRuLFdYwokR0Mcbp21jNsg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Nelore Grill"
+    },
+    "Bamboo Walk Caribbean Restaurant": {
+      "place_id": "ChIJgUNvXv9dwokRKXPry0VbFl0",
+      "status": "OPERATIONAL",
+      "google_name": "Bamboo Walk Caribbean Restaurant"
+    },
+    "Golden Wuish The Duck House": {
+      "place_id": "ChIJWTpRmOFbwokRsLumvic0iY4",
+      "status": "OPERATIONAL",
+      "google_name": "GOLDEN WUISH (THE DUCKHOUSE)"
+    },
+    "Gold Taste": {
+      "place_id": "ChIJWTpRmOFbwokRsLumvic0iY4",
+      "status": "OPERATIONAL",
+      "google_name": "GOLDEN WUISH (THE DUCKHOUSE)"
+    },
+    "Valbella Midtown": {
+      "place_id": "ChIJAzYi0KpZwokRndB0s1-Qnns",
+      "status": "OPERATIONAL",
+      "google_name": "Valbella At The Park"
+    },
+    "west new malaysia restaurant": {
+      "place_id": "ChIJ96ZaW9RZwokR_9w0VNf-5lw",
+      "status": "OPERATIONAL",
+      "google_name": "West New Malaysia"
+    },
+    "Mangia 57th Street": {
+      "place_id": "ChIJ0YBfw1tYwokRzcCcyVoNgh0",
+      "status": "OPERATIONAL",
+      "google_name": "Mangia 57th - Midtown Italian Food & Corporate Catering NYC"
+    },
+    "ER Hot Pot": {
+      "place_id": "ChIJuc_Bq7pZwokR3jrvpzgtagA",
+      "status": "OPERATIONAL",
+      "google_name": "ER HOT POT - 6TH AVE 贰火锅"
+    },
+    "Stella 34 Trattoria": {
+      "place_id": "ChIJ98yXUKlZwokRdb3AjM-Y0zo",
+      "status": "OPERATIONAL",
+      "google_name": "Stella 34 Trattoria"
+    },
+    "MEXiCUE": {
+      "place_id": "ChIJafe8xpxZwokRMi8VezCpLWs",
+      "status": "OPERATIONAL",
+      "google_name": "Mamazul Mexican Grill"
+    },
+    "RA Sushi Bar Restaurant": {
+      "place_id": "ChIJV0lhkFRYwokRnOYz2uD9LN4",
+      "status": "OPERATIONAL",
+      "google_name": "RA Sushi - New York (Times Square)"
+    },
+    "Docks Oyster Bar - Midtown East, Nyc": {
+      "place_id": "ChIJi9zckANZwokRwVvF58erwVc",
+      "status": "OPERATIONAL",
+      "google_name": "Docks Oyster Bar - Midtown East, NYC"
+    },
+    "Gotham Restaurants Llc": {
+      "place_id": "ChIJa9mUEgFZwokRp_ITmhqS8f4",
+      "status": "OPERATIONAL",
+      "google_name": "Gotham Burger Social Club"
+    },
+    "Ponte Modern American": {
+      "place_id": "ChIJW3LA-dxZwokR0WAavt1PXFE",
+      "status": "OPERATIONAL",
+      "google_name": "Little Maven"
+    },
+    "Paul & Jimmy's Restaurant": {
+      "place_id": "ChIJ0-oxwqFZwokRv2bn1QLckaQ",
+      "status": "OPERATIONAL",
+      "google_name": "Paul & Jimmy’s of Gramercy"
+    },
+    "The Flying Trout Restaurant": {
+      "place_id": "ChIJm2Rj91dZwokRLG299K1-7TE",
+      "status": "OPERATIONAL",
+      "google_name": "Flyfish Club"
+    },
+    "Little Basil Thai": {
+      "place_id": "ChIJ0-tj7wlZwokR1Ni_5_dRoX8",
+      "status": "OPERATIONAL",
+      "google_name": "Little Basil Thai"
+    },
+    "Maurizio's Ristorante Italiano": {
+      "place_id": "ChIJR3ge9MOLwokRfCJzadcuTcg",
+      "status": "OPERATIONAL",
+      "google_name": "Maurizio's On The Water"
+    },
+    "Mauricio's Italian Restaurant": {
+      "place_id": "ChIJR3ge9MOLwokRfCJzadcuTcg",
+      "status": "OPERATIONAL",
+      "google_name": "Maurizio's On The Water"
+    },
+    "Connors Steak & Seafood": {
+      "place_id": "ChIJQWFbTABZwokR3iBMVtwx3_o",
+      "status": "OPERATIONAL",
+      "google_name": "Palladino’s Steak & Seafood"
+    },
+    "Yauatcha": {
+      "place_id": "ChIJp3m9hEdZwokReSCOD-X9YNs",
+      "status": "OPERATIONAL",
+      "google_name": "Yum Cha Chinese Kitchen & Bar 姑苏里"
+    },
+    "Harvest Kitchen": {
+      "place_id": "ChIJR3VvyQhZwokRjaNBDvAcCOc",
+      "status": "OPERATIONAL",
+      "google_name": "HARVEST KITCHEN"
+    },
+    "Chotto Matte": {
+      "place_id": "ChIJif9vbABZwokROQbuqj1WHNQ",
+      "status": "OPERATIONAL",
+      "google_name": "Manhatto"
+    },
+    "Bobby Van's Steakhouse - 50th Street": {
+      "place_id": "ChIJR33-vPhYwokRp6MzGzRnS0o",
+      "status": "OPERATIONAL",
+      "google_name": "Bobby Van's Grill"
+    },
+    "Kiki’s": {
+      "place_id": "ChIJD-1a9ChawokRnTSi_Et62x4",
+      "status": "OPERATIONAL",
+      "google_name": "Kiki's"
+    },
+    "Cocoron  & Goemon Curry": {
+      "place_id": "ChIJw1RDWoNZwokRYAFf9LI9bd8",
+      "status": "OPERATIONAL",
+      "google_name": "Benemon"
+    },
+    "Boccaccia": {
+      "place_id": "ChIJAbHSp8NZwokRV56pK23WC_Y",
+      "status": "OPERATIONAL",
+      "google_name": "Bocca di Bacco Theater District"
+    },
+    "Honey Butter's Kitchen": {
+      "place_id": "ChIJC5JFjf9YwokREzJa0siEb8c",
+      "status": "OPERATIONAL",
+      "google_name": "Butter"
+    },
+    "Aticha Thai Cuisine": {
+      "place_id": "ChIJ4xQ2BABZwokRcqlgHVMH9jk",
+      "status": "OPERATIONAL",
+      "google_name": "CHADA NYC"
+    },
+    "Dehesa": {
+      "place_id": "ChIJoxar_y9ZwokRIM6a4HXsuo4",
+      "status": "OPERATIONAL",
+      "google_name": "Debajo"
+    },
+    "Elkmont Station": {
+      "place_id": "ChIJ6-Yvh7xZwokRRwLG8NTqRQY",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Elmo"
+    },
+    "Hiroshi Japanese Asian Fusion": {
+      "place_id": "ChIJXW6IXYxZwokR-i9saEWMIBY",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Hirohisa"
+    },
+    "ISE Japanese Restaurant": {
+      "place_id": "ChIJiW_7kM9bwokR9qMrG4XITL8",
+      "status": "OPERATIONAL",
+      "google_name": "ITO"
+    },
+    "Lost At Sea": {
+      "place_id": "ChIJl5_OCABZwokRkvjEfEkyuZo",
+      "status": "OPERATIONAL",
+      "google_name": "The Otter"
+    },
+    "The Brass Pearl": {
+      "place_id": "ChIJnwaXJABZwokR5ij3cVPRPjU",
+      "status": "OPERATIONAL",
+      "google_name": "Perle Cocktail and Raw Bar"
+    },
+    "Sketch": {
+      "place_id": "ChIJY-AxVQBZwokRQa-hQDzy7o0",
+      "status": "OPERATIONAL",
+      "google_name": "Shirokuro"
+    },
+    "Timna": {
+      "place_id": "ChIJBdMLKZBZwokRJ0tYbQ6nfZ4",
+      "status": "OPERATIONAL",
+      "google_name": "SHMONÉ"
+    },
+    "Spice Palace Indian Restaurant": {
+      "place_id": "ChIJV3EbqCVZwokRTvIiFD-15aA",
+      "status": "OPERATIONAL",
+      "google_name": "Spice Symphony Times Square"
+    },
+    "BRIDGEWATER": {
+      "place_id": "ChIJq9QbXWdZwokRZxXepe4LyWw",
+      "status": "OPERATIONAL",
+      "google_name": "Sweetwater"
+    },
+    "TAZA MKT": {
+      "place_id": "ChIJoVfwQb9awokRjSG-tFeizuY",
+      "status": "OPERATIONAL",
+      "google_name": "Tera Mera"
+    },
+    "Tibits": {
+      "place_id": "ChIJxXrbJaJZwokRAAEnPk3AJh4",
+      "status": "OPERATIONAL",
+      "google_name": "abcV"
+    },
+    "Colonial Pancake House": {
+      "place_id": "ChIJtVcN3BBawokRfYHdSkgPmwY",
+      "status": "OPERATIONAL",
+      "google_name": "George's"
+    },
+    "Black Tap Craft Burgers & Beer": {
+      "place_id": "ChIJn0xfg4xZwokRlPaF8Fknp4k",
+      "status": "OPERATIONAL",
+      "google_name": "Black Tap Craft Burgers & Beer - SoHo"
+    },
+    "Ristorante Il Melograno": {
+      "place_id": "ChIJ2WjAjlBYwokR-EJZW5EpOfg",
+      "status": "OPERATIONAL",
+      "google_name": "Il Melograno"
+    },
+    "The Butcher And Bottle": {
+      "place_id": "ChIJvZus661ZwokRoiVah4ItRhk",
+      "status": "OPERATIONAL",
+      "google_name": "Butcher and Banker NYC"
+    },
+    "Shu Jiao Fu Zhou": {
+      "place_id": "ChIJ3au6oIdZwokRRpuRY9nbgik",
+      "status": "OPERATIONAL",
+      "google_name": "Shu Jiao Fu Zhou"
+    },
+    "Forest Hills Station House": {
+      "place_id": "ChIJV-qgIyFewokR8w1df4qLD6A",
+      "status": "OPERATIONAL",
+      "google_name": "Forest Hills Station House"
+    },
+    "ICHIRAN - Times Square": {
+      "place_id": "ChIJY6CJiVlZwokRUuEZJOmVFY8",
+      "status": "OPERATIONAL",
+      "google_name": "ICHIRAN Ramen NY Times Square"
+    },
+    "Via 13": {
+      "place_id": "ChIJW_42IpZZwokRIUPgfzLhxCg",
+      "status": "OPERATIONAL",
+      "google_name": "Via 13"
+    },
+    "Westville Chelsea": {
+      "place_id": "ChIJfVFqGrxZwokRqva56HtwbRs",
+      "status": "OPERATIONAL",
+      "google_name": "Westville Chelsea"
+    },
+    "Juqi": {
+      "place_id": "ChIJ67IuTYphwokRKrrfD6PvXZ4",
+      "status": "OPERATIONAL",
+      "google_name": "JUQI"
+    },
+    "Meijin Ramen": {
+      "place_id": "ChIJx1q8UrlYwokRjOmzO2_-otA",
+      "status": "OPERATIONAL",
+      "google_name": "Meijin"
+    },
+    "DiWine": {
+      "place_id": "ChIJB8q5hz5fwokRycD7DHYjj7Y",
+      "status": "OPERATIONAL",
+      "google_name": "DiWine Natural Wine Bar & Restaurant"
+    },
+    "Giano Restaurant": {
+      "place_id": "ChIJIQ-tSJ1ZwokRnzgbXzA6coI",
+      "status": "OPERATIONAL",
+      "google_name": "Giano"
+    },
+    "Sigiri": {
+      "place_id": "ChIJeTNZ0pxZwokRg3Z1vnWyTmg",
+      "status": "OPERATIONAL",
+      "google_name": "Sigiri"
+    },
+    "Ginger and Lemongrass": {
+      "place_id": "ChIJaXu7poFZwokR4Yv0pNDek3s",
+      "status": "OPERATIONAL",
+      "google_name": "Ginger and Lemongrass"
+    },
+    "Daesung Korean Noodle": {
+      "place_id": "ChIJ9eM_7DBgwokRj-RfOwEixog",
+      "status": "OPERATIONAL",
+      "google_name": "Daesung Korean Noodle"
+    },
+    "Peng's Noodle Folk": {
+      "place_id": "ChIJp-V3XrpYwokRwqFX-9bZQF8",
+      "status": "OPERATIONAL",
+      "google_name": "Peng's Noodle Folk"
+    },
+    "Hortus NYC": {
+      "place_id": "ChIJyX-WBOZZwokRROjVTDdgeZE",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "HORTUS NYC"
+    },
+    "Old City Barbeque": {
+      "place_id": "ChIJ82C5uURZwokRgCm9U5LSEjk",
+      "status": "OPERATIONAL",
+      "google_name": "Chubby Cattle BBQ | New York"
+    },
+    "Om": {
+      "place_id": "ChIJl74O_7tYwokRZt30xOhtNAQ",
+      "status": "OPERATIONAL",
+      "google_name": "OM"
+    },
+    "Kyuramen - Chinatown": {
+      "place_id": "ChIJ86M4bHZZwokRdo33ALzbSCE",
+      "status": "OPERATIONAL",
+      "google_name": "Kyuramen"
+    },
+    "La Bella Vita": {
+      "place_id": "ChIJWd83UYhZwokRDMwXOWImOlg",
+      "status": "OPERATIONAL",
+      "google_name": "La Bella Vita"
+    },
+    "Ho Foods": {
+      "place_id": "ChIJe4VNN51ZwokROEd_MDhh1mQ",
+      "status": "OPERATIONAL",
+      "google_name": "Ho Foods"
+    },
+    "Davelle": {
+      "place_id": "ChIJk1s5AIFZwokRymNr0rhKWFE",
+      "status": "OPERATIONAL",
+      "google_name": "Davelle"
+    },
+    "Mayan Kitchen": {
+      "place_id": "ChIJ474qnsJYwokRnrZMyvOb5XI",
+      "status": "OPERATIONAL",
+      "google_name": "Maya by Chef Richard Sandoval - NYC"
+    },
+    "Maya by Chef Richard Sandoval - NYC": {
+      "place_id": "ChIJ474qnsJYwokRnrZMyvOb5XI",
+      "status": "OPERATIONAL",
+      "google_name": "Maya by Chef Richard Sandoval - NYC"
+    },
+    "House of Joy": {
+      "place_id": "ChIJ-eS_PhdbwokRjlCFlhmIGdU",
+      "status": "OPERATIONAL",
+      "google_name": "House of Joy"
+    },
+    "Gao's BBQ & Crab": {
+      "place_id": "ChIJwWzuH4phwokR1-It_OVi__4",
+      "status": "OPERATIONAL",
+      "google_name": "Gao's BBQ & Crab"
+    },
+    "Cornbread Brooklyn": {
+      "place_id": "ChIJR_ch0LxbwokRXouTAZGjl7A",
+      "status": "OPERATIONAL",
+      "google_name": "Cornbread Brooklyn"
+    },
+    "Soba Noodle Azuma": {
+      "place_id": "ChIJjZXSAFhYwokR03OdsEup6mo",
+      "status": "OPERATIONAL",
+      "google_name": "Soba Noodle Azuma"
+    },
+    "Ravagh Persian Grill - Madison Avenue": {
+      "place_id": "ChIJa7gEeahZwokRXPN6Y_WqYO0",
+      "status": "OPERATIONAL",
+      "google_name": "Ravagh Persian Grill"
+    },
+    "Okiboru House of Tsukemen": {
+      "place_id": "ChIJLeixHgZZwokRwv5jEjzFPW4",
+      "status": "OPERATIONAL",
+      "google_name": "Okiboru House of Tsukemen"
+    },
+    "Prince Tea House": {
+      "place_id": "ChIJM2XXfaZZwokRJLNjiDOnL9I",
+      "status": "OPERATIONAL",
+      "google_name": "Prince Tea House"
+    },
+    "Massawa": {
+      "place_id": "ChIJizsMQxX2wokRSD5_pzmhaYg",
+      "status": "OPERATIONAL",
+      "google_name": "Massawa"
+    },
+    "Din Soup Dumplings": {
+      "place_id": "ChIJWWAmRa5bwokRrCSDiFtd8-g",
+      "status": "OPERATIONAL",
+      "google_name": "Din Soup Dumplings 鼎泰轩"
+    },
+    "Kyuramen - Park Slope": {
+      "place_id": "ChIJ9XeqB4hbwokRHMaEaY9Qf7M",
+      "status": "OPERATIONAL",
+      "google_name": "KYURAMEN Park Slope, Brooklyn"
+    },
+    "Amura Japanese": {
+      "place_id": "ChIJGyzWWMdZwokRnv8KpT0gFZQ",
+      "status": "OPERATIONAL",
+      "google_name": "Amura Japanese restaurant"
+    },
+    "Dubrovnik Restaurant": {
+      "place_id": "ChIJFdppi6GNwokRniWwhWXgovg",
+      "status": "OPERATIONAL",
+      "google_name": "Dubrovnik"
+    },
+    "Poke Bowl": {
+      "place_id": "ChIJM-7-RwVbwokR13XT4z6WD6M",
+      "status": "OPERATIONAL",
+      "google_name": "Poke Bowl NY"
+    },
+    "Chadwick's": {
+      "place_id": "ChIJ14EA8YpPwokRVLYiltmUulw",
+      "status": "OPERATIONAL",
+      "google_name": "Chadwick's"
+    },
+    "Glur": {
+      "place_id": "ChIJu632TAJZwokR1MMQGGEpFMc",
+      "status": "OPERATIONAL",
+      "google_name": "Glur"
+    },
+    "Medusa The Greek": {
+      "place_id": "ChIJY8TuNwhbwokRLtjOoNBKL-Y",
+      "status": "OPERATIONAL",
+      "google_name": "Medusa The Greek"
+    },
+    "Wahaca": {
+      "place_id": "ChIJ-yUjn9JZwokR7Cq1cegFzZU",
+      "status": "OPERATIONAL",
+      "google_name": "Covacha"
+    },
+    "Opa Greek Restaurants": {
+      "place_id": "ChIJUc3nJZJZwokRUZsOb6rUoRM",
+      "status": "OPERATIONAL",
+      "google_name": "Pappas New York"
+    },
+    "Taqueria Milear": {
+      "place_id": "ChIJyzlyCZ1bwokRlncS3B9Qghs",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria Milear"
+    },
+    "Nan Xiang Soup Dumplings - East Village": {
+      "place_id": "ChIJ0ePwOZ5ZwokRTYn9SLadiRE",
+      "status": "OPERATIONAL",
+      "google_name": "Nan Xiang Soup Dumplings - East Village"
+    },
+    "Prode": {
+      "place_id": "ChIJGxDwkbmJwokRx4te5me7gAY",
+      "status": "OPERATIONAL",
+      "google_name": "Prode Thai Restaurant"
+    },
+    "Izakaya": {
+      "place_id": "ChIJKWfvx5xZwokRpeSAmKP10Sg",
+      "status": "OPERATIONAL",
+      "google_name": "The Izakaya NYC"
+    },
+    "Yopparai": {
+      "place_id": "ChIJDdgxpIFZwokRcv2tlZ-PqqY",
+      "status": "OPERATIONAL",
+      "google_name": "Yopparai"
+    },
+    "Bliss 46 Bistro": {
+      "place_id": "ChIJw9vZ1dhewokRosCyBMil3T4",
+      "status": "OPERATIONAL",
+      "google_name": "Bliss 46 Bistro"
+    },
+    "LaoJie Hotpot Manhattan": {
+      "place_id": "ChIJ76QaGzxZwokRfGxoduYPISA",
+      "status": "OPERATIONAL",
+      "google_name": "LaoJie Hotpot"
+    },
+    "Chamoun’s Way": {
+      "place_id": "ChIJ_7CKrIVZwokRY4ve71tbJWs",
+      "status": "OPERATIONAL",
+      "google_name": "Chamoun's Way"
+    },
+    "Bill's": {
+      "place_id": "ChIJBXCQjxBawokRrxEiP2Idp8U",
+      "status": "OPERATIONAL",
+      "google_name": "Bill's Bar & Burger"
+    },
+    "La Vecina": {
+      "place_id": "ChIJ89r45T5fwokR5f2XdUI3-kE",
+      "status": "OPERATIONAL",
+      "google_name": "La Vecina"
+    },
+    "Le Gigot": {
+      "place_id": "ChIJicZ4uJNZwokR_iq6h-BM3F0",
+      "status": "OPERATIONAL",
+      "google_name": "Le Gigot"
+    },
+    "Forget Me Not": {
+      "place_id": "ChIJiZfNVyhawokR8FNwkLV0FQQ",
+      "status": "OPERATIONAL",
+      "google_name": "Forgtmenot"
+    },
+    "Bistro Vendome": {
+      "place_id": "ChIJHdIQBedYwokRgSk8PYGdkPI",
+      "status": "OPERATIONAL",
+      "google_name": "Bistro Vendôme"
+    },
+    "Dumpling N' Dips": {
+      "place_id": "ChIJYeddOoVZwokRAcdoKrzu5mw",
+      "status": "OPERATIONAL",
+      "google_name": "Dumpling N’ Dips"
+    },
+    "Rickard Ridge BBQ": {
+      "place_id": "ChIJNe_8fqtz5okR_V-vTEVkjqs",
+      "status": "OPERATIONAL",
+      "google_name": "Virgil's Real BBQ - NYC"
+    },
+    "Sawmill BBQ": {
+      "place_id": "ChIJNe_8fqtz5okR_V-vTEVkjqs",
+      "status": "OPERATIONAL",
+      "google_name": "Virgil's Real BBQ - NYC"
+    },
+    "Virgil's Real BBQ - NYC": {
+      "place_id": "ChIJNe_8fqtz5okR_V-vTEVkjqs",
+      "status": "OPERATIONAL",
+      "google_name": "Virgil's Real BBQ - NYC"
+    },
+    "Boon Dee Moo Ka Ta": {
+      "place_id": "ChIJrbX_EPxgwokRZ800YsGUWnM",
+      "status": "OPERATIONAL",
+      "google_name": "Boon Dee Moo Ka Ta Thai B.B.Q."
+    },
+    "Kajiken": {
+      "place_id": "ChIJ74sY7KxZwokROoJJWx2zrEE",
+      "status": "OPERATIONAL",
+      "google_name": "Kajiken Ramen"
+    },
+    "Kitchen Co Ut": {
+      "place_id": "ChIJHaGCfZ1ZwokR_9grFCwevx8",
+      "status": "OPERATIONAL",
+      "google_name": "Kitchen Cô Út"
+    },
+    "Not Another Pancake House": {
+      "place_id": "ChIJpWRCrahZwokRzy_4smRsd3Y",
+      "status": "OPERATIONAL",
+      "google_name": "Elcielo Restaurant New York City"
+    },
+    "Italianissimo Ristorante": {
+      "place_id": "ChIJlyLDwbtYwokR6NETtzFFkjU",
+      "status": "OPERATIONAL",
+      "google_name": "Italianissimo Ristorante"
+    },
+    "Anand Indian Cuisine": {
+      "place_id": "ChIJCcOpFb9YwokRWviNOlAg5qU",
+      "status": "OPERATIONAL",
+      "google_name": "Anand"
+    },
+    "Rodizio Grill Chattanooga Hamilton Place": {
+      "place_id": "ChIJP9idxlZYwokRLH-I1mNfzYQ",
+      "status": "OPERATIONAL",
+      "google_name": "Churrascaria Plataforma Steakhouse"
+    },
+    "Churrascaria Plataforma": {
+      "place_id": "ChIJP9idxlZYwokRLH-I1mNfzYQ",
+      "status": "OPERATIONAL",
+      "google_name": "Churrascaria Plataforma Steakhouse"
+    },
+    "Seasons 101": {
+      "place_id": "ChIJ68J3tfpYwokRz2cAXs-5aC4",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "The Four Seasons Restaurant"
+    },
+    "Four Four South Village": {
+      "place_id": "ChIJl9ASo3JZwokR7F7CAk0Souo",
+      "status": "OPERATIONAL",
+      "google_name": "Four Four South Village 四四南村 - 46th Street"
+    },
+    "Gaucho": {
+      "place_id": "ChIJqwQssrVfwokR9FuqCI2Tud4",
+      "status": "OPERATIONAL",
+      "google_name": "El Gauchito 1"
+    },
+    "SOBOKU": {
+      "place_id": "ChIJa-zLSldawokRYRxjLt6h3zc",
+      "status": "OPERATIONAL",
+      "google_name": "SOBOKU"
+    },
+    "Farida": {
+      "place_id": "ChIJT6iakMdbwokRr7eIzot7L5Y",
+      "status": "OPERATIONAL",
+      "google_name": "FARIDA - Finest World Dishes"
+    },
+    "Tiptara": {
+      "place_id": "ChIJl0gchkBbwokRL_R83q_7a0o",
+      "status": "OPERATIONAL",
+      "google_name": "Tiptara : Thai Food"
+    },
+    "Gene's Restaurant": {
+      "place_id": "ChIJ6-ZnU5ZZwokRLq6GRJiQLNc",
+      "status": "OPERATIONAL",
+      "google_name": "Gene's"
+    },
+    "Frangos Peri Peri": {
+      "place_id": "ChIJs5P_CpdZwokRCjxoucaDcog",
+      "status": "OPERATIONAL",
+      "google_name": "Frangos Peri Peri"
+    },
+    "Nando's": {
+      "place_id": "ChIJs5P_CpdZwokRCjxoucaDcog",
+      "status": "OPERATIONAL",
+      "google_name": "Frangos Peri Peri"
+    },
+    "Mama’s Cupboard": {
+      "place_id": "ChIJ-wu97MhZwokRu4kIikqRavI",
+      "status": "OPERATIONAL",
+      "google_name": "Mama's Cupboard"
+    },
+    "Lanna Thai Cuisine": {
+      "place_id": "ChIJzdVRpolZwokRD0zM5dURxsQ",
+      "status": "OPERATIONAL",
+      "google_name": "Lan Larb Chiang Mai, Soho"
+    },
+    "Jiang's Kitchen": {
+      "place_id": "ChIJgyWQFk1ZwokR4m7T_hNLDFI",
+      "status": "OPERATIONAL",
+      "google_name": "Jiang's Kitchen 疆湖 - Halal Chinese Food"
+    },
+    "Margie's": {
+      "place_id": "ChIJvzVf789pwokRiG6uAryLPN0",
+      "status": "OPERATIONAL",
+      "google_name": "Margie's"
+    },
+    "Izakaya Seasun": {
+      "place_id": "ChIJaQVrl9FZwokR_DQfzX8iiLA",
+      "status": "OPERATIONAL",
+      "google_name": "IZAKAYA SEASUN"
+    },
+    "Jinjuu": {
+      "place_id": "ChIJvSw_uuxZwokRwESVzh5G33s",
+      "status": "OPERATIONAL",
+      "google_name": "Jeju Noodle Bar"
+    },
+    "Taberu Nomu": {
+      "place_id": "ChIJz9YDytBZwokReZfAgJ1KlqE",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "TABERU NOMU"
+    },
+    "LENOXTHAI": {
+      "place_id": "ChIJp3H4LVJZwokRymOkMRP-PMA",
+      "status": "OPERATIONAL",
+      "google_name": "LENOXTHAI"
+    },
+    "Goku Kitchen": {
+      "place_id": "ChIJ07dR-WFbwokRTJU4yvqQYeY",
+      "status": "OPERATIONAL",
+      "google_name": "Goku Kitchen NYC"
+    },
+    "Tea and Tattle": {
+      "place_id": "ChIJxwZIH75ZwokR_A9YYNU38os",
+      "status": "OPERATIONAL",
+      "google_name": "Tea & Sympathy"
+    },
+    "Forno Grill": {
+      "place_id": "ChIJseQHd1RYwokRyF92JP0xY6c",
+      "status": "OPERATIONAL",
+      "google_name": "IL FORNO NYC - HELL'S KITCHEN"
+    },
+    "Phoshime": {
+      "place_id": "ChIJM6qAUEdZwokRjjuPrfu8A2I",
+      "status": "OPERATIONAL",
+      "google_name": "Phoshime"
+    },
+    "Amata": {
+      "place_id": "ChIJb-HkRuRYwokRjeJJQWfSQhU",
+      "status": "OPERATIONAL",
+      "google_name": "Amata"
+    },
+    "Spice 55 Thai & Sushi": {
+      "place_id": "ChIJRaX5VZhZwokR_jt_WR_8GSU",
+      "status": "OPERATIONAL",
+      "google_name": "Spice Thai"
+    },
+    "The Spice Of Life": {
+      "place_id": "ChIJRaX5VZhZwokR_jt_WR_8GSU",
+      "status": "OPERATIONAL",
+      "google_name": "Spice Thai"
+    },
+    "The View": {
+      "place_id": "ChIJOW7ATVRYwokRV0xbbYDZNm4",
+      "status": "OPERATIONAL",
+      "google_name": "The View"
+    },
+    "SPIN": {
+      "place_id": "ChIJOW7ATVRYwokRV0xbbYDZNm4",
+      "status": "OPERATIONAL",
+      "google_name": "The View"
+    },
+    "Sushi Hatsune": {
+      "place_id": "ChIJaUL6oqlbwokRJicLoAka3-0",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi Hatsune"
+    },
+    "Lilou": {
+      "place_id": "ChIJLT_ZhspZwokR5p4Rn-hVEeQ",
+      "status": "OPERATIONAL",
+      "google_name": "LOULOU"
+    },
+    "Fontanas's": {
+      "place_id": "ChIJZ_X6yUBDwokRPqst6Ov8sYU",
+      "status": "OPERATIONAL",
+      "google_name": "FONTANAS ITALIAN RESTAURANT"
+    },
+    "Terra Mediterrania": {
+      "place_id": "ChIJu1T8lkxZwokRkHn4iykqt24",
+      "status": "OPERATIONAL",
+      "google_name": "Terra - Eat Better Food"
+    },
+    "Bancone": {
+      "place_id": "ChIJAQDcUIxZwokRf4NsdbDJ32A",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Bandone"
+    },
+    "Young And Rich": {
+      "place_id": "ChIJ75_Nga1hwokRwb_lNQgLW50",
+      "status": "OPERATIONAL",
+      "google_name": "湘当有料Young and Rich NY"
+    },
+    "Makan House": {
+      "place_id": "ChIJUTgWYgBFwokRQ7o78mrgcKU",
+      "status": "OPERATIONAL",
+      "google_name": "Makan House"
+    },
+    "J’s Kitchen New York": {
+      "place_id": "ChIJ-dinwDZZwokR_PTK0UPn-9E",
+      "status": "OPERATIONAL",
+      "google_name": "J's Kitchen New York"
+    },
+    "The Duck and Rice": {
+      "place_id": "ChIJOd2Y7yZawokRZrmsAw8Y_U4",
+      "status": "OPERATIONAL",
+      "google_name": "Peking Duck House"
+    },
+    "Woori Korean": {
+      "place_id": "ChIJEWXdJ2JbwokRmKNA-mJx7QE",
+      "status": "OPERATIONAL",
+      "google_name": "Woori Korean Restaurant"
+    },
+    "TriniJam BK": {
+      "place_id": "ChIJ171KkZxdwokR2-v8Xlo249w",
+      "status": "OPERATIONAL",
+      "google_name": "TriniJam Bk Roti Bar & Grill"
+    },
+    "Lava Shawarma": {
+      "place_id": "ChIJTTfzLtRZwokR0mfPGAXfBhM",
+      "status": "OPERATIONAL",
+      "google_name": "Lava Shawarma NYC"
+    },
+    "Safina": {
+      "place_id": "ChIJU4Y5bNNbwokRu8Y53Q4_PdY",
+      "status": "OPERATIONAL",
+      "google_name": "Serafina Financial District"
+    },
+    "Koo Thai": {
+      "place_id": "ChIJ1TwhkoFZwokRfbMy93VlkNk",
+      "status": "OPERATIONAL",
+      "google_name": "Koo Thai"
+    },
+    "Easy Joy Dim Sum & AYCE Hot Pot": {
+      "place_id": "ChIJhRc3tYlZwokRbR4dwpc-0qI",
+      "status": "OPERATIONAL",
+      "google_name": "Easy Joy Dim Sum & AYCE Hot Pot 意中人点心和自助火锅"
+    },
+    "Omakaseed Vegan by Sushi by Bou": {
+      "place_id": "ChIJo5gKgoJZwokRRvQUij2R7T8",
+      "status": "OPERATIONAL",
+      "google_name": "Omakaseed Vegan by Sushi by Bou"
+    },
+    "Salvi": {
+      "place_id": "ChIJ_X6ju1lDwokRE2VYr-zD0ss",
+      "status": "OPERATIONAL",
+      "google_name": "Salvi"
+    },
+    "Bunny": {
+      "place_id": "ChIJmQ_VbpBbwokRZfBhNKWigEc",
+      "status": "OPERATIONAL",
+      "google_name": "Bunny"
+    },
+    "Rudraks": {
+      "place_id": "ChIJqw3zp-T3wokRXgtfUsF0agU",
+      "status": "OPERATIONAL",
+      "google_name": "Rudraks"
+    },
+    "SUKIYA Ramen & Poke": {
+      "place_id": "ChIJZ09HTNqLwokRkXfKnhF3h20",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Sukiya Ramen & Poke"
+    },
+    "Il Nonno": {
+      "place_id": "ChIJPQSqAQBfwokRkCRWBn84M4Q",
+      "status": "OPERATIONAL",
+      "google_name": "Il Nonno"
+    },
+    "Ramen Misoya": {
+      "place_id": "ChIJ3XHVpEtZwokRdiVb19vfuNE",
+      "status": "OPERATIONAL",
+      "google_name": "Ramen Misoya West Village"
+    },
+    "Tasty Hand - Pulled Noodles": {
+      "place_id": "ChIJmZTuWtBbwokRWxbraRwj8xA",
+      "status": "OPERATIONAL",
+      "google_name": "Tasty Hand - Pulled Noodles"
+    },
+    "Sardi's Restaurant": {
+      "place_id": "ChIJFfZLSpZZwokRGHQyku5QprM",
+      "status": "OPERATIONAL",
+      "google_name": "Sardi's"
+    },
+    "Bareburger - Hell's Kitchen": {
+      "place_id": "ChIJhTdv51NYwokR7V105uVzf8g",
+      "status": "OPERATIONAL",
+      "google_name": "Bareburger"
+    },
+    "The Perfect Pint": {
+      "place_id": "ChIJNynavQJZwokRaZVXO55O1FQ",
+      "status": "OPERATIONAL",
+      "google_name": "The Perfect Pint"
+    },
+    "Emilio's Ballato": {
+      "place_id": "ChIJRQqJgYVZwokRfJB16sxh1Pg",
+      "status": "OPERATIONAL",
+      "google_name": "Emilio's Ballato"
+    },
+    "Benito One": {
+      "place_id": "ChIJxQwDWIhZwokRcpNsZDiMwak",
+      "status": "OPERATIONAL",
+      "google_name": "Benito One"
+    },
+    "Rossini's Restaurant": {
+      "place_id": "ChIJV6mJyQZZwokRPoUsJJjsgoI",
+      "status": "OPERATIONAL",
+      "google_name": "Rossini's"
+    },
+    "Trinity Place": {
+      "place_id": "ChIJ4_AAQhdawokRzbYlVLyzKlk",
+      "status": "OPERATIONAL",
+      "google_name": "Trinity Place restaurant and bar"
+    },
+    "Jackson Hole Burgers": {
+      "place_id": "ChIJxy1zcQZZwokRmuPUv0M9GjA",
+      "status": "OPERATIONAL",
+      "google_name": "Jackson Hole Burgers"
+    },
+    "An'nam Vietnamese & Japanese Kitchen": {
+      "place_id": "ChIJq7H1gVZYwokRCXH2_gyIMIU",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "An'nam"
+    },
+    "Le Relais de Venise L'Entrecote Midtown East": {
+      "place_id": "ChIJU9Cyf4tZwokRGAjIdCgb748",
+      "status": "OPERATIONAL",
+      "google_name": "Le Relais de Venise L'Entrecôte"
+    },
+    "Kung Fu Kitchen": {
+      "place_id": "ChIJ2_UcxqxZwokRf5dbeh2oSe8",
+      "status": "OPERATIONAL",
+      "google_name": "Kung Fu Kitchen"
+    },
+    "Joe's (home Of Soup Dumplings)": {
+      "place_id": "ChIJte11-otZwokRe9hwGk12QkU",
+      "status": "OPERATIONAL",
+      "google_name": "Joe's Home of Soup Dumplings"
+    },
+    "Puglia Restaurant": {
+      "place_id": "ChIJfencLIhZwokRWDV5hTpFU74",
+      "status": "OPERATIONAL",
+      "google_name": "Puglia"
+    },
+    "Osteria Laguna Restaurant": {
+      "place_id": "ChIJ3V3FDgNZwokR2_McCvr-IOg",
+      "status": "OPERATIONAL",
+      "google_name": "Osteria Laguna"
+    },
+    "La Pecora Bianca Nomad": {
+      "place_id": "ChIJPf0L06VZwokRD6L-7RV-7Yg",
+      "status": "OPERATIONAL",
+      "google_name": "La Pecora Bianca NoMad"
+    },
+    "Masseria Dei Vini": {
+      "place_id": "ChIJeVfr_FhYwokRVM1IjwyvQpE",
+      "status": "OPERATIONAL",
+      "google_name": "Masseria Dei Vini"
+    },
+    "Zoob Zib Thai Authentic Noodle Bar": {
+      "place_id": "ChIJpxPZh7JZwokR5c6ormUQ7kE",
+      "status": "OPERATIONAL",
+      "google_name": "Zoob Zib Thai Authentic Noodle Bar"
+    },
+    "Ted's Montana Grill": {
+      "place_id": "ChIJl6MelfhYwokRNhaP-oGEHSI",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Ted's Montana Grill"
+    },
+    "Topaz Thai Restaurant": {
+      "place_id": "ChIJA8LkYfdYwokRyPWfIKO10ac",
+      "status": "OPERATIONAL",
+      "google_name": "Topaz Thai Authentic"
+    },
+    "Il Cantinori": {
+      "place_id": "ChIJH9mMjZlZwokRuIt5KXWOZMw",
+      "status": "OPERATIONAL",
+      "google_name": "Il Cantinori"
+    },
+    "Russian Samovar": {
+      "place_id": "ChIJSeT4tldYwokRxanaa6CWf0U",
+      "status": "OPERATIONAL",
+      "google_name": "Russian Samovar Restaurant and Piano Bar"
+    },
+    "Abcv At Tin Building": {
+      "place_id": "ChIJ-fwYtzdbwokREcJm1DEhc_Y",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "abcV at Tin Building"
+    },
+    "Uncle Jack’s Steakhouse Westside": {
+      "place_id": "ChIJB-nDaLJZwokR1eqe81Kssxo",
+      "status": "OPERATIONAL",
+      "google_name": "Uncle Jack's Steakhouse - Westside"
+    },
+    "Smithfield Hall": {
+      "place_id": "ChIJkzk9I6VZwokRJpievwzdRu0",
+      "status": "OPERATIONAL",
+      "google_name": "Smithfield Hall NYC"
+    },
+    "Ajisen Ramen": {
+      "place_id": "ChIJ8Vp47SZawokRcgG7mrbDnPQ",
+      "status": "OPERATIONAL",
+      "google_name": "Ajisen Ramen"
+    },
+    "PJ Carney's": {
+      "place_id": "ChIJD81nnvdYwokRbq9qfuo-L-0",
+      "status": "OPERATIONAL",
+      "google_name": "P.J. Carney’s Pub"
+    },
+    "Walker's": {
+      "place_id": "ChIJg7lHTvVZwokRh0iWDed8BKw",
+      "status": "OPERATIONAL",
+      "google_name": "Walker's"
+    },
+    "Ricardo Steakhouse": {
+      "place_id": "ChIJNT3RSgH2wokR2ZqvHjeklRk",
+      "status": "OPERATIONAL",
+      "google_name": "Ricardo Steakhouse"
+    },
+    "Wolfgang's Steakhouse - Tribeca": {
+      "place_id": "ChIJ7cmhqPVZwokRcWzLzM5e-5A",
+      "status": "OPERATIONAL",
+      "google_name": "Wolfgang's Steakhouse"
+    },
+    "Yum Yum Too": {
+      "place_id": "ChIJu0Cd31NYwokR2sxw_Y6xbJE",
+      "status": "OPERATIONAL",
+      "google_name": "Yum Yum Too"
+    },
+    "Nino's 46": {
+      "place_id": "ChIJIbr9rv9YwokR5DofyPjnNjg",
+      "status": "OPERATIONAL",
+      "google_name": "Nino's 46"
+    },
+    "Cellini Italian Restaurant": {
+      "place_id": "ChIJf1DeFftYwokRC5f0vQOjoR8",
+      "status": "OPERATIONAL",
+      "google_name": "Cellini Italian Restaurant in Midtown Manhattan"
+    },
+    "Hold Fast": {
+      "place_id": "ChIJt-yQKq9ZwokR9e4gTPrxEsg",
+      "status": "OPERATIONAL",
+      "google_name": "Hold Fast Kitchen and Spirits"
+    },
+    "Sticky Rice": {
+      "place_id": "ChIJTzmQFYdZwokRGSgaa-CqXRk",
+      "status": "OPERATIONAL",
+      "google_name": "Sticky Rice"
+    },
+    "Blue Maiz": {
+      "place_id": "ChIJwVKHxqxZwokRUp6oIsNyb6Y",
+      "status": "OPERATIONAL",
+      "google_name": "Maiz"
+    },
+    "Joe G's Restaurant Italiano": {
+      "place_id": "ChIJV46E4vdYwokRqdDYcJoJUFc",
+      "status": "OPERATIONAL",
+      "google_name": "Joe G Pizza & Restaurant"
+    },
+    "Trattoria Bianca": {
+      "place_id": "ChIJGwGp6q1ZwokRZAEGF2dtd9c",
+      "status": "OPERATIONAL",
+      "google_name": "Trattoria Bianca"
+    },
+    "Le Zie": {
+      "place_id": "ChIJw5ZDfLtZwokRIq-gubtn53c",
+      "status": "OPERATIONAL",
+      "google_name": "Le Zie"
+    },
+    "Cha Pa's Noodles & Grill": {
+      "place_id": "ChIJkwHmCVdYwokRb0BLOm__a2I",
+      "status": "OPERATIONAL",
+      "google_name": "Cha Pa's Noodles and Grill"
+    },
+    "Sam's Place": {
+      "place_id": "ChIJ1XtiVAFZwokRhRSA2bnhJs8",
+      "status": "OPERATIONAL",
+      "google_name": "Sam's Place"
+    },
+    "Caravaggio Restaurant": {
+      "place_id": "ChIJ9aRJopRYwokRTTPRXTCYgLE",
+      "status": "OPERATIONAL",
+      "google_name": "Caravaggio"
+    },
+    "Novita": {
+      "place_id": "ChIJQQwA46BZwokRSK41tPIemGA",
+      "status": "OPERATIONAL",
+      "google_name": "Novitá"
+    },
+    "Sobaya": {
+      "place_id": "ChIJVUXabZxZwokRh-_g7s0HxVI",
+      "status": "OPERATIONAL",
+      "google_name": "Sobaya"
+    },
+    "Alcala Restaurant": {
+      "place_id": "ChIJUYmB3AJZwokRzgNQTo4a-oo",
+      "status": "OPERATIONAL",
+      "google_name": "Alcala"
+    },
+    "Il Piccolo Bufalo": {
+      "place_id": "ChIJS8SKNYhZwokRa9GrZsFObJ8",
+      "status": "OPERATIONAL",
+      "google_name": "Il Piccolo Bufalo"
+    },
+    "A la Turka": {
+      "place_id": "ChIJdTrzacBYwokR6DHjw1ICQ7k",
+      "status": "OPERATIONAL",
+      "google_name": "A la Turka"
+    },
+    "Uskudar": {
+      "place_id": "ChIJdTrzacBYwokR6DHjw1ICQ7k",
+      "status": "OPERATIONAL",
+      "google_name": "A la Turka"
+    },
+    "Tasty Hand-Pulled Noodles II": {
+      "place_id": "ChIJvfIJhMNZwokRG8GJe6a3z7c",
+      "status": "OPERATIONAL",
+      "google_name": "Tasty Hand-Pulled Noodles II"
+    },
+    "Bodhi Kosher Vegan Sushi & Dim Sum Restaurant": {
+      "place_id": "ChIJ9zpnPidawokRdhxyso6KXKw",
+      "status": "OPERATIONAL",
+      "google_name": "Bodhi Kosher Vegetarian Restaurant"
+    },
+    "Tuscany Steakhouse": {
+      "place_id": "ChIJJXFyNfdYwokRl1lYWjg_GVc",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Tuscany Steakhouse"
+    },
+    "Wa Jeal Sicuan Chili House": {
+      "place_id": "ChIJa4KK_LtYwokRXcEb5Yrs0JQ",
+      "status": "OPERATIONAL",
+      "google_name": "Wa Jeal"
+    },
+    "Tri Dim Shanghai": {
+      "place_id": "ChIJ9WCDTL5YwokRhBUL20yZeso",
+      "status": "OPERATIONAL",
+      "google_name": "Tri Dim Shanghai [UES] Restaurant and Bar 鼎豐"
+    },
+    "The Bao": {
+      "place_id": "ChIJY_AGiJtZwokRMkVfS6vDfw8",
+      "status": "OPERATIONAL",
+      "google_name": "The Bao"
+    },
+    "Wu's Wonton King": {
+      "place_id": "ChIJT5GkdilawokRy9yB3jEG_3Q",
+      "status": "OPERATIONAL",
+      "google_name": "Wu's Wonton King"
+    },
+    "Amsterdam Ale House": {
+      "place_id": "ChIJuxMTB4lYwokRzfHnU2YRcsM",
+      "status": "OPERATIONAL",
+      "google_name": "Amsterdam Ale House"
+    },
+    "The Greek Tribeca": {
+      "place_id": "ChIJf4befPRZwokRH2WqZhtiGuo",
+      "status": "OPERATIONAL",
+      "google_name": "The Greek tribeca"
+    },
+    "Persepolis": {
+      "place_id": "ChIJ68H4QMBYwokR42l6M4OIUCM",
+      "status": "OPERATIONAL",
+      "google_name": "Persepolis"
+    },
+    "Sushi of Gari 46": {
+      "place_id": "ChIJxbq5_FNYwokRwWVy7B9Kwrc",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi of Gari 46"
+    },
+    "Bistango at the Kimberly Hotel": {
+      "place_id": "ChIJr2lx0_xYwokR8TKjMpDfSKI",
+      "status": "OPERATIONAL",
+      "google_name": "Bistango"
+    },
+    "Row House": {
+      "place_id": "ChIJCWY85Rb2wokRWwG7PhPCE8U",
+      "status": "OPERATIONAL",
+      "google_name": "Row House"
+    },
+    "Darbar Grill": {
+      "place_id": "ChIJA05vjeRYwokRqtPQ6YhAnY4",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Darbar Grill"
+    },
+    "Ukrainian East Village Restaurant": {
+      "place_id": "ChIJ1drDXZxZwokReMnq1ogIjzY",
+      "status": "OPERATIONAL",
+      "google_name": "Ukrainian East Village Restaurant"
+    },
+    "Bobby Van's 230 Park": {
+      "place_id": "ChIJSW0wjf1YwokRSDmX1_gp5FI",
+      "status": "OPERATIONAL",
+      "google_name": "Bobby Van's 230Park"
+    },
+    "Hop Lee": {
+      "place_id": "ChIJ4xlG7CZawokRCHn1c3MJlc0",
+      "status": "OPERATIONAL",
+      "google_name": "Hop Lee"
+    },
+    "Mole Mexican Restaurant & Tequileria": {
+      "place_id": "ChIJyYGhXpVZwokRw7DwKq3QcJA",
+      "status": "OPERATIONAL",
+      "google_name": "Móle Mexican Bar & Grill - West Village"
+    },
+    "Bottino | Modern Italian Dining": {
+      "place_id": "ChIJ1cNYebdZwokRKz1AZTh5wVE",
+      "status": "OPERATIONAL",
+      "google_name": "BOTTINO | modern italian dining"
+    },
+    "Racines": {
+      "place_id": "ChIJ7Wu8zWtbwokRMfQr42ZjjN0",
+      "status": "OPERATIONAL",
+      "google_name": "Raíces Argentinas"
+    },
+    "Club Macanudo": {
+      "place_id": "ChIJey0cTO5YwokRIWhN3xZgqc8",
+      "status": "OPERATIONAL",
+      "google_name": "Club Macanudo"
+    },
+    "Panineria": {
+      "place_id": "ChIJgXkty5BZwokRMax9voKdLPM",
+      "status": "OPERATIONAL",
+      "google_name": "Panineria NYC"
+    },
+    "Il Violino": {
+      "place_id": "ChIJZZbGz4pYwokRlYZjTMMv5QU",
+      "status": "OPERATIONAL",
+      "google_name": "Il Violino"
+    },
+    "Villa Mosconi Ristorante": {
+      "place_id": "ChIJdTlCDJJZwokRsWk0mTd4oV8",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Villa Mosconi Restaurant"
+    },
+    "Babbalucci": {
+      "place_id": "ChIJKSbSKg32wokRtNVq1dEKE-8",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Babbalucci"
+    },
+    "JR Restaurant": {
+      "place_id": "ChIJv8YTWFRYwokRkTUSNDg04Y4",
+      "status": "OPERATIONAL",
+      "google_name": "Junior's Restaurant & Bakery"
+    },
+    "Raku - Its Japanese 2": {
+      "place_id": "ChIJ1S4Bt45YwokRrLS1-axV2_Q",
+      "status": "OPERATIONAL",
+      "google_name": "Raku It’s Japanese ll"
+    },
+    "Agora Turkish Restaurant": {
+      "place_id": "ChIJxVg0LLlYwokRT4NyZ5Dcfko",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "AGORA TURKISH RESTAURANT"
+    },
+    "Da Umberto": {
+      "place_id": "ChIJPbpC37xZwokRIsT-jIuHUr8",
+      "status": "OPERATIONAL",
+      "google_name": "da Umberto"
+    },
+    "San Marino Ristorante soho": {
+      "place_id": "ChIJNfKP5xdawokRh-ZNvs9TklE",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "San Marino"
+    },
+    "Wolf & Lamb Steakhouse": {
+      "place_id": "ChIJPya9gP5YwokRBiSdQz1WZTQ",
+      "status": "OPERATIONAL",
+      "google_name": "Wolf & Lamb Steakhouse"
+    },
+    "Tito Murphy's Cantina & Kitchen": {
+      "place_id": "ChIJT-jTtv5ZwokRel2WD0-e-_M",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Tito Murphy's"
+    },
+    "thai son": {
+      "place_id": "ChIJe5DgRidawokRLbT4Eer98rg",
+      "status": "OPERATIONAL",
+      "google_name": "Thái Sơn"
+    },
+    "99 Favor Taste": {
+      "place_id": "ChIJ6cK8modZwokRTHEfaD9uzAY",
+      "status": "OPERATIONAL",
+      "google_name": "99 Favor Taste"
+    },
+    "Toledo Restaurant": {
+      "place_id": "ChIJJ2Ug4qlZwokRMu3UDWpfm2c",
+      "status": "OPERATIONAL",
+      "google_name": "Toledo Restaurant"
+    },
+    "Perfect Picnic": {
+      "place_id": "ChIJrViEM4FZwokR81etLl343Vo",
+      "status": "OPERATIONAL",
+      "google_name": "Perfect Picnic NYC"
+    },
+    "Pho Pasteur": {
+      "place_id": "ChIJAUp4RydawokRe_l8QwbGMdo",
+      "status": "OPERATIONAL",
+      "google_name": "Pasteur Grill & Noodles"
+    },
+    "Loreley Beer Garden": {
+      "place_id": "ChIJhV1tboZZwokRCNghkde1e2w",
+      "status": "OPERATIONAL",
+      "google_name": "Loreley Beer Garden"
+    },
+    "Galli": {
+      "place_id": "ChIJj8-UAXdZwokRehJjltmtP7M",
+      "status": "OPERATIONAL",
+      "google_name": "Desi Galli"
+    },
+    "Polpette 71": {
+      "place_id": "ChIJAUDNC4tYwokR1Zt6h4fzJNM",
+      "status": "OPERATIONAL",
+      "google_name": "Polpette 71"
+    },
+    "Barawine": {
+      "place_id": "ChIJ_WGAABL2wokRNthCl_PuyFc",
+      "status": "OPERATIONAL",
+      "google_name": "Barawine"
+    },
+    "XO Kitchen": {
+      "place_id": "ChIJY1x_qSBawokRXqyo_SSgUXQ",
+      "status": "OPERATIONAL",
+      "google_name": "XO Taste"
+    },
+    "Takahachi Tribeca Restaurant": {
+      "place_id": "ChIJaVgbdR9awokRqxIwG9AywT4",
+      "status": "OPERATIONAL",
+      "google_name": "Takahachi"
+    },
+    "Marumi": {
+      "place_id": "ChIJM_hKtpFZwokRBMH-ozSrBNQ",
+      "status": "OPERATIONAL",
+      "google_name": "Marumi"
+    },
+    "Nai Tapas Bar": {
+      "place_id": "ChIJ01Ckk51ZwokRVkdfmRgkFA0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Nai"
+    },
+    "Restaurant Nippon": {
+      "place_id": "ChIJ88QfReNYwokRDwlvNwkIFVQ",
+      "status": "OPERATIONAL",
+      "google_name": "Restaurant Nippon"
+    },
+    "China Xiang": {
+      "place_id": "ChIJy_VZ8lJYwokReEjsL_7AtpE",
+      "status": "OPERATIONAL",
+      "google_name": "China Xiang"
+    },
+    "Meskerem Ethiopian Cuisine": {
+      "place_id": "ChIJsU0rhJFZwokRFWpq6n3GneM",
+      "status": "OPERATIONAL",
+      "google_name": "Meskerem"
+    },
+    "American Cut Steakhouse Midtown": {
+      "place_id": "ChIJH2gGKOVYwokRfNSZtS5GH7E",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "American Cut Steakhouse Midtown"
+    },
+    "Zerza": {
+      "place_id": "ChIJN4tQRExZwokRxJDkc7_g5yU",
+      "status": "OPERATIONAL",
+      "google_name": "Zerza Mediterrano"
+    },
+    "The Black Ant": {
+      "place_id": "ChIJeXX3pYRZwokR-xjPszfpGm4",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "The Black Ant"
+    },
+    "Amber Upper West": {
+      "place_id": "ChIJqdmU34pYwokR8IaCbL9rb4M",
+      "status": "OPERATIONAL",
+      "google_name": "Amber"
+    },
+    "The Pembroke Room": {
+      "place_id": "ChIJb9nOTe5YwokRJvpKNoZRyN8",
+      "status": "OPERATIONAL",
+      "google_name": "Pembroke Room"
+    },
+    "Gracie Mews Restaurant Corporation": {
+      "place_id": "ChIJAS2EC-JYwokRnODSAgVo0_8",
+      "status": "OPERATIONAL",
+      "google_name": "Gracie Mews Diner"
+    },
+    "Jasper's Taphouse": {
+      "place_id": "ChIJqcbaIkZhiIgRwRE_C311niQ",
+      "status": "OPERATIONAL",
+      "google_name": "Jasper's Taphouse & Kitchen"
+    },
+    "Luanne's Wild Ginger": {
+      "place_id": "ChIJB-pK8ohZwokRWbnoTJHg0sM",
+      "status": "OPERATIONAL",
+      "google_name": "LuAnne's Wild Ginger"
+    },
+    "Bonchon 32nd st": {
+      "place_id": "ChIJQzFkRahZwokRxMJjMYIbmow",
+      "status": "OPERATIONAL",
+      "google_name": "Bonchon 32nd st"
+    },
+    "Mee Noodle Shop Hell's Kitchen": {
+      "place_id": "ChIJfYnVTsFZwokRety0y0oIdh0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Mee Noodle Shop"
+    },
+    "Pippali": {
+      "place_id": "ChIJ1-6JfKdZwokRP7tpR6rtzeo",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Pippali"
+    },
+    "Gari Columbus": {
+      "place_id": "ChIJRf0k0Y5YwokR7hh2IBTl3LY",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi of Gari UWS (Gari Columbus)"
+    },
+    "Old Tbilisi Garden": {
+      "place_id": "ChIJl9dSHJJZwokR57fvL_PTyeo",
+      "status": "OPERATIONAL",
+      "google_name": "Old Tbilisi Garden"
+    },
+    "Barbaresco": {
+      "place_id": "ChIJMQwt0u5YwokREAVUtFE4cq8",
+      "status": "OPERATIONAL",
+      "google_name": "Barbaresco"
+    },
+    "Der Krung Thai Cusine": {
+      "place_id": "ChIJi6CTykZZwokRrZfN38zw0ww",
+      "status": "OPERATIONAL",
+      "google_name": "Der Krung Thai Cuisine"
+    },
+    "Eli's Table Restaurant": {
+      "place_id": "ChIJ641tYr5YwokR2FJhVvTFCtc",
+      "status": "OPERATIONAL",
+      "google_name": "Eli's Table"
+    },
+    "Mediterraneo": {
+      "place_id": "ChIJF_T6x-lYwokR4NQQK1Vt0rM",
+      "status": "OPERATIONAL",
+      "google_name": "Mediterraneo Restaurant"
+    },
+    "Carroll Place": {
+      "place_id": "ChIJ53TP75FZwokRSlw1VwT_zHM",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Carroll Place"
+    },
+    "Tulcingo Del Valle": {
+      "place_id": "ChIJ5wmB6lFYwokRFG6SyPq-jXw",
+      "status": "OPERATIONAL",
+      "google_name": "Tulcingo Del Valle Restaurant"
+    },
+    "Zaika NYC": {
+      "place_id": "ChIJjV-YTgBZwokRVeWJgF_z7eE",
+      "status": "OPERATIONAL",
+      "google_name": "HYDERABADI ZAIQA"
+    },
+    "Luna Rossa Ristorante": {
+      "place_id": "ChIJO9tKSrpYwokRZQ9lHjvqcfg",
+      "status": "OPERATIONAL",
+      "google_name": "Luna Rossa"
+    },
+    "Ramen Takumi": {
+      "place_id": "ChIJp9EQuJlZwokRFug-HWH5tr8",
+      "status": "OPERATIONAL",
+      "google_name": "Ramen Takumi"
+    },
+    "Amor Cubano": {
+      "place_id": "ChIJbzPpGQT2wokRW5Zsbs44Gis",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Amor Cubano"
+    },
+    "Eros Greek Restuarant": {
+      "place_id": "ChIJkYVnm_FZwokRVZQif8sLVv0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "EROS GREEK CUISINE"
+    },
+    "Pondicheri": {
+      "place_id": "ChIJl69BcqZZwokRmRQ4API_V_E",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Pondicheri"
+    },
+    "Burrito Loco Restaurant": {
+      "place_id": "ChIJx-Dt6JNZwokRhs8twLKl1wM",
+      "status": "OPERATIONAL",
+      "google_name": "Burrito Loco"
+    },
+    "Azuki Japanese Restaurant": {
+      "place_id": "ChIJrThdq61ZwokRgBD-Q7RkfOo",
+      "status": "OPERATIONAL",
+      "google_name": "Azuki"
+    },
+    "Coarse": {
+      "place_id": "ChIJUySlzL9ZwokRKYvbi50ngM0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Coarse NY"
+    },
+    "The Organic Grill": {
+      "place_id": "ChIJs4p8Hp1ZwokRoN9mcRKrDNc",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "The Organic Grill"
+    },
+    "Souen Restaurant": {
+      "place_id": "ChIJfeyHxZxZwokRbKdlbH2qReQ",
+      "status": "OPERATIONAL",
+      "google_name": "Souen"
+    },
+    "Sachi Asian Bistro": {
+      "place_id": "ChIJh0SsigRZwokRiqKzt1-TL_k",
+      "status": "OPERATIONAL",
+      "google_name": "Sachi Asian Bistro"
+    },
+    "Fools Gold": {
+      "place_id": "ChIJYzdjboRZwokR-WVAArYMQmk",
+      "status": "OPERATIONAL",
+      "google_name": "Fools Gold NYC"
+    },
+    "Cheese Grille": {
+      "place_id": "ChIJRehJ9oNZwokRY65T0IFkTu0",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Cheese Grille"
+    },
+    "Thai @ Lex": {
+      "place_id": "ChIJZ-T1rL1YwokRFUejOu-J58g",
+      "status": "OPERATIONAL",
+      "google_name": "Thai At Lex"
+    },
+    "Cafetal Social Club": {
+      "place_id": "ChIJYy2rhoVZwokRUH9eHCAkCgM",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Cafetal Social Club"
+    },
+    "Tataki Japanese Restaurant": {
+      "place_id": "ChIJJ-tWMG1ZwokRUXxf5WaxIQ4",
+      "status": "OPERATIONAL",
+      "google_name": "Tataki Japanese Restaurant"
+    },
+    "Peak Thai Restaurant": {
+      "place_id": "ChIJL3szjOJYwokRaHEXOr3kFHo",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Peak Thai"
+    },
+    "Paratha Wala": {
+      "place_id": "ChIJf-ZiR39fwokRXVblxeD7i74",
+      "status": "OPERATIONAL",
+      "google_name": "Paratha Wala Inc."
+    },
+    "Em Vietnamese Bistro": {
+      "place_id": "ChIJDQJJHAtbwokR6Ljf1I9DUFA",
+      "status": "OPERATIONAL",
+      "google_name": "Em Vietnamese Bistro"
+    },
+    "Suzume": {
+      "place_id": "ChIJ7RscS1hZwokRyH3c7IILpOY",
+      "status": "OPERATIONAL",
+      "google_name": "Suzume"
+    },
+    "Kyuramen - Bayside": {
+      "place_id": "ChIJiTRoX6SLwokRwZjIKFrR67Y",
+      "status": "OPERATIONAL",
+      "google_name": "KYURAMEN - Bayside"
+    },
+    "Tri Dim Shanghai West": {
+      "place_id": "ChIJW4bcFvNZwokRK3DMQUgnm-c",
+      "status": "OPERATIONAL",
+      "google_name": "Tri Dim Shanghai West [UWS] Restaurant and Bar 鼎豐"
+    },
+    "E.A.K. RAMEN": {
+      "place_id": "ChIJV2lhrw9ZwokRUjH9Eu76DY8",
+      "status": "OPERATIONAL",
+      "google_name": "E.A.K. RAMEN and IZAKAYA by Machida Shoten Hell’s Kitchen"
+    },
+    "Perros y Vainas - The Battery": {
+      "place_id": "ChIJ05e5fdlbwokR_EuTibtiEQY",
+      "status": "OPERATIONAL",
+      "google_name": "Perros y Vainas - The Battery"
+    },
+    "MakiMaki Sushi - 1 NY Plaza": {
+      "place_id": "ChIJrYI9egBbwokRkBbdhFoyIrI",
+      "status": "OPERATIONAL",
+      "google_name": "MakiMaki Sushi - 1 NY Plaza"
+    },
+    "Brasa Peruvian Kitchen": {
+      "place_id": "ChIJV5aBHehbwokR8aSuiWn_IXg",
+      "status": "OPERATIONAL",
+      "google_name": "Brasa Peruvian Kitchen"
+    },
+    "L&B Spumoni Gardens": {
+      "place_id": "ChIJ67MPr4JbwokRkmqWUXvYyTY",
+      "status": "OPERATIONAL",
+      "google_name": "L&B Spumoni Gardens"
+    },
+    "MeatUp Mediterranean Restaurant": {
+      "place_id": "ChIJHdQt1hpbwokR63shN2Iv4jE",
+      "status": "OPERATIONAL",
+      "google_name": "MeatUp Mediterranean Restaurant"
+    },
+    "Hanki": {
+      "place_id": "ChIJR2_aYehbwokRkX3RXfS3Bac",
+      "status": "OPERATIONAL",
+      "google_name": "Hanki"
+    },
+    "El Toro mexican grill": {
+      "place_id": "ChIJyYO7tBZawokR3caVYcwcX5w",
+      "status": "OPERATIONAL",
+      "google_name": "El Toro mexican grill"
+    },
+    "Luke's Lobster FiDi": {
+      "place_id": "ChIJEdxJIBRawokRK4AqcCIkKbA",
+      "status": "OPERATIONAL",
+      "google_name": "Luke's Lobster FiDi"
+    },
+    "Killarney Rose": {
+      "place_id": "ChIJQalvcBZawokRGSuWUh6cZiI",
+      "status": "OPERATIONAL",
+      "google_name": "Killarney Rose"
+    },
+    "Pita Yeero": {
+      "place_id": "ChIJATED-k9ZwokR3tWBQgpuYCQ",
+      "status": "OPERATIONAL",
+      "google_name": "Pita Yeero"
+    },
+    "Cobble Fish": {
+      "place_id": "ChIJX5C1o-9bwokR_m9JSiKFuDg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Cobble Fish"
+    },
+    "Okiboru House of Tan Tan": {
+      "place_id": "ChIJx829YSBbwokRFVnvb_lfXig",
+      "status": "OPERATIONAL",
+      "google_name": "Okiboru House of Tan Tan"
+    },
+    "The Rogue Panda": {
+      "place_id": "ChIJWSPUsiK12YgRwOnowcjyRgM",
+      "status": "OPERATIONAL",
+      "google_name": "The Rogue Panda"
+    },
+    "SMASHED NYC": {
+      "place_id": "ChIJ55iL3J1bwokRSPn3LpYFOWA",
+      "status": "OPERATIONAL",
+      "google_name": "SMASHED NYC"
+    },
+    "Dawn’s Til Dusk": {
+      "place_id": "ChIJFTVDEzFawokRp53c_hL03Bg",
+      "status": "OPERATIONAL",
+      "google_name": "Dawn’s Til Dusk"
+    },
+    "Aloha Alley": {
+      "place_id": "ChIJWaB7PDFawokRk7UwFRiY5kI",
+      "status": "OPERATIONAL",
+      "google_name": "Aloha Alley"
+    },
+    "Tajin": {
+      "place_id": "ChIJH4yL3hBawokR8siBXvZFWYM",
+      "status": "OPERATIONAL",
+      "google_name": "Tajin"
+    },
+    "Bean & Bean Wall St": {
+      "place_id": "ChIJ8eUFKhdawokRFjMYpdzFwVk",
+      "status": "OPERATIONAL",
+      "google_name": "Bean & Bean Wall St"
+    },
+    "Greenwich and Delancey": {
+      "place_id": "ChIJPRfjl6RbwokR9D5FhKKyGZs",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Greenwich and Delancey"
+    },
+    "Yeh’s Bao": {
+      "place_id": "ChIJPwLeYgBbwokRu5nXLxOj3XY",
+      "status": "OPERATIONAL",
+      "google_name": "Yeh’s Bao"
+    },
+    "REGULAR NYC": {
+      "place_id": "ChIJwbmbdGRbwokRpdV5H4afCEc",
+      "status": "OPERATIONAL",
+      "google_name": "REGULAR NYC"
+    },
+    "ZAZA": {
+      "place_id": "ChIJRVYm7f1ZwokR2DcmGOSHUFc",
+      "status": "OPERATIONAL",
+      "google_name": "ZAZA"
+    },
+    "d Elici": {
+      "place_id": "ChIJB1h7JBhawokRSlnoXJbK-Kw",
+      "status": "OPERATIONAL",
+      "google_name": "d Elici"
+    },
+    "Aroydee Thai Kitchen": {
+      "place_id": "ChIJv-EALxhawokR9oeGPdShFLo",
+      "status": "OPERATIONAL",
+      "google_name": "Aroydee Thai Kitchen"
+    },
+    "Maya Mexican Grill": {
+      "place_id": "ChIJVVNXVadbwokRmE3Neu2ppp0",
+      "status": "OPERATIONAL",
+      "google_name": "Maya Mexican Grill"
+    },
+    "Jury Duty": {
+      "place_id": "ChIJ_ZS9zLRbwokRgGx9XVGr3iY",
+      "status": "OPERATIONAL",
+      "google_name": "Jury Duty"
+    },
+    "Omars Mediterranean Cuisine": {
+      "place_id": "ChIJUYKR4BFbwokRjqZagPj6Khw",
+      "status": "OPERATIONAL",
+      "google_name": "Omars Mediterranean Cuisine"
+    },
+    "Once More Zaipin": {
+      "place_id": "ChIJydWhLQBbwokRhZ-fSuxN68w",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Once More Zaipin"
+    },
+    "Pinklady Cheese Tart": {
+      "place_id": "ChIJVSw7ErJbwokRbEGYByeINDk",
+      "status": "OPERATIONAL",
+      "google_name": "Pinklady Cheese Tart"
+    },
+    "Wo Hop Next Door": {
+      "place_id": "ChIJ_2GkXcdbwokR07cBLmAz1ok",
+      "status": "OPERATIONAL",
+      "google_name": "Wo Hop Next Door"
+    },
+    "Sun Hing Lung": {
+      "place_id": "ChIJGeaRAyZawokRbvxqEiLDw8g",
+      "status": "OPERATIONAL",
+      "google_name": "Sun Hing Lung"
+    },
+    "Fu Zhou Wei Zhong Wei Jia Xiang Feng Wei": {
+      "place_id": "ChIJq3ALmyhawokR_HZZ8u-kUK0",
+      "status": "OPERATIONAL",
+      "google_name": "Fu Zhou Wei Zhong Wei Jia Xiang Feng Wei"
+    },
+    "Fong On": {
+      "place_id": "ChIJQaJeJexbwokR3tRvK_apU4A",
+      "status": "OPERATIONAL",
+      "google_name": "Fong On"
+    },
+    "Carol's Bun": {
+      "place_id": "ChIJbb-1BilawokRU_jdJ4pt7a8",
+      "status": "OPERATIONAL",
+      "google_name": "Carol's Bun"
+    },
+    "Sen Saigon": {
+      "place_id": "ChIJ7-tdxqNbwokRVzw_Y5SMYKk",
+      "status": "OPERATIONAL",
+      "google_name": "Sen Saigon"
+    },
+    "{petite} maman": {
+      "place_id": "ChIJVxpH38xbwokRRcqSwuRVwW4",
+      "status": "OPERATIONAL",
+      "google_name": "{petite} maman"
+    },
+    "Hutch and Waldo": {
+      "place_id": "ChIJ8aqrBDtbwokRXxc1stzf8js",
+      "status": "OPERATIONAL",
+      "google_name": "Hutch and Waldo"
+    },
+    "Nish Nush": {
+      "place_id": "ChIJ0zTkax9awokRgH4QnXxcRSc",
+      "status": "OPERATIONAL",
+      "google_name": "Nish Nush"
+    },
+    "Nha Trang One": {
+      "place_id": "ChIJpZ8NRydawokRXYCtGefF0Nc",
+      "status": "OPERATIONAL",
+      "google_name": "Nha Trang One"
+    },
+    "Mango Mango Dessert": {
+      "place_id": "ChIJmZuIASdawokRYQ3HyMkks0M",
+      "status": "OPERATIONAL",
+      "google_name": "Mango Mango Dessert"
+    },
+    "El Sazón R.D.": {
+      "place_id": "ChIJpckseABbwokRptqNdY2-bgk",
+      "status": "OPERATIONAL",
+      "google_name": "El Sazón R.D."
+    },
+    "Bayard Sushi": {
+      "place_id": "ChIJuxFpJjVbwokR6Y47VCV0z9Q",
+      "status": "OPERATIONAL",
+      "google_name": "Bayard Sushi"
+    },
+    "Super Taste": {
+      "place_id": "ChIJoR3RZyhawokRwR91d6hJvvY",
+      "status": "OPERATIONAL",
+      "google_name": "Super Taste"
+    },
+    "Sweet Moment": {
+      "place_id": "ChIJ01nLKYhZwokR59aeGeGrmq0",
+      "status": "OPERATIONAL",
+      "google_name": "Sweet Moment"
+    },
+    "West Rice Roll King 西关肠粉王": {
+      "place_id": "ChIJv8ppS0dbwokRrn2vYIST7U4",
+      "status": "OPERATIONAL",
+      "google_name": "West Rice Roll King 西关肠粉王"
+    },
+    "Chubby Crab - Asian Wok & Cajun Kitchen": {
+      "place_id": "ChIJCZGrr2lZwokRKfo00t2YM14",
+      "status": "OPERATIONAL",
+      "google_name": "Chubby Crab - Asian Wok & Cajun Kitchen"
+    },
+    "Cheeky Sandwiches": {
+      "place_id": "ChIJCUBtyylawokRxSQdG7CLg4g",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Cheeky Sandwiches"
+    },
+    "Nordic Preserves Fish and Wildlife Company": {
+      "place_id": "ChIJ-Z3QJoFZwokRRbZwSHgpJ-Y",
+      "status": "OPERATIONAL",
+      "google_name": "Nordic Preserves Fish and Wildlife Company"
+    },
+    "Factory Tamal": {
+      "place_id": "ChIJka6YlSlawokRE-rjWC-iy9s",
+      "status": "OPERATIONAL",
+      "google_name": "Factory Tamal"
+    },
+    "El Cabron Taqueria": {
+      "place_id": "ChIJAZ2eUZtbwokRuRJIUC33LCw",
+      "status": "OPERATIONAL",
+      "google_name": "El Cabron Taqueria"
+    },
+    "North Dumplings Essex": {
+      "place_id": "ChIJib907ylawokRR9VRduNlws0",
+      "status": "OPERATIONAL",
+      "google_name": "North Dumplings Essex"
+    },
+    "King Dumplings": {
+      "place_id": "ChIJwUWtpVNbwokRFXYqGsP5tyQ",
+      "status": "OPERATIONAL",
+      "google_name": "King Dumplings"
+    },
+    "Chipilo": {
+      "place_id": "ChIJW92s3iZawokRdhmZMDTqNIw",
+      "status": "OPERATIONAL",
+      "google_name": "Chipilo"
+    },
+    "Taiwan Pork Chop House": {
+      "place_id": "ChIJzaUdIOpbwokRgrVeM4cBDOI",
+      "status": "OPERATIONAL",
+      "google_name": "Taiwan Pork Chop House"
+    },
+    "7 Elephants": {
+      "place_id": "ChIJD1skg_BbwokRjFBu9VHsDLw",
+      "status": "OPERATIONAL",
+      "google_name": "7 Elephants"
+    },
+    "Manousheh Grand": {
+      "place_id": "ChIJOQXR4U1bwokRfhkCnTG8Obo",
+      "status": "OPERATIONAL",
+      "google_name": "Manousheh Grand"
+    },
+    "Mostrador NYC": {
+      "place_id": "ChIJ5zrk6OdbwokRmCcl_dYLEiQ",
+      "status": "OPERATIONAL",
+      "google_name": "Mostrador NYC"
+    },
+    "Betong - Khao Man Gai": {
+      "place_id": "ChIJnRofPqFZwokRDqa8_1Vmdw4",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Betong - Khao Man Gai"
+    },
+    "DAHON VEGAN": {
+      "place_id": "ChIJPX26WwBZwokRuMnxqcESocg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "DAHON VEGAN"
+    },
+    "La Mela": {
+      "place_id": "ChIJEw1TVohZwokRA2vBXEexlVY",
+      "status": "OPERATIONAL",
+      "google_name": "La Mela"
+    },
+    "Bánh Mì Saigon": {
+      "place_id": "ChIJLZ_KRIhZwokRUanDSCyp1x4",
+      "status": "OPERATIONAL",
+      "google_name": "Bánh Mì Saigon"
+    },
+    "Yiwanmen": {
+      "place_id": "ChIJP2WrQohZwokR0bI_d6vJlmw",
+      "status": "OPERATIONAL",
+      "google_name": "Yiwanmen"
+    },
+    "Lunella": {
+      "place_id": "ChIJCcDXV4hZwokRhHninUj94_o",
+      "status": "OPERATIONAL",
+      "google_name": "Lunella"
+    },
+    "Simple NYC": {
+      "place_id": "ChIJCeMkoodZwokRlEDiFH4DFFg",
+      "status": "OPERATIONAL",
+      "google_name": "Simple NYC"
+    },
+    "Bánh Mì Cô Út 2": {
+      "place_id": "ChIJ08h5tnxZwokRosbTTXQZz-A",
+      "status": "OPERATIONAL",
+      "google_name": "Bánh Mì Cô Út 2"
+    },
+    "BLAZE BBQ & HIBACHI": {
+      "place_id": "ChIJKa2oHkxZwokR0KiSvEfYUCU",
+      "status": "OPERATIONAL",
+      "google_name": "BLAZE BBQ & HIBACHI"
+    },
+    "Wolfnights®": {
+      "place_id": "ChIJB_sASoFZwokR59HcfjWcO-Q",
+      "status": "OPERATIONAL",
+      "google_name": "Wolfnights®"
+    },
+    "Kotti Berliner Döner Kebab": {
+      "place_id": "ChIJETfDCpBZwokRWCPROPqs8SM",
+      "status": "OPERATIONAL",
+      "google_name": "Kotti Berliner Döner Kebab"
+    },
+    "Soho Thai": {
+      "place_id": "ChIJQ_Q6nIlZwokRNUYZewVq7Hs",
+      "status": "OPERATIONAL",
+      "google_name": "Soho Thai"
+    },
+    "Pi Bakerie": {
+      "place_id": "ChIJWQEKf4xZwokRJVeIXK1GcQE",
+      "status": "OPERATIONAL",
+      "google_name": "Pi Bakerie"
+    },
+    "The Ruby": {
+      "place_id": "ChIJiTJtVo1ZwokReN9rV0zCWU0",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "The Ruby"
+    },
+    "Taste Point Dim Sum House": {
+      "place_id": "ChIJPYsWks1ZwokROz4va0YL0OA",
+      "status": "OPERATIONAL",
+      "google_name": "Taste Point Dim Sum House"
+    },
+    "YUBU SoHo": {
+      "place_id": "ChIJCzymus9ZwokRwUnRIM76cKU",
+      "status": "OPERATIONAL",
+      "google_name": "YUBU SoHo"
+    },
+    "Mikaku Sushi": {
+      "place_id": "ChIJp94Aw4hZwokRPTLbr8Vw5t8",
+      "status": "OPERATIONAL",
+      "google_name": "Mikaku Sushi"
+    },
+    "Quan Sushi Grill": {
+      "place_id": "ChIJJ_Ds9IhZwokR8XeMND8QimU",
+      "status": "OPERATIONAL",
+      "google_name": "Quan Sushi Grill"
+    },
+    "USHIWAKAMARU Sushi Omakase": {
+      "place_id": "ChIJG_vLjrlZwokRI0wWzhHatVE",
+      "status": "OPERATIONAL",
+      "google_name": "USHIWAKAMARU Sushi Omakase"
+    },
+    "Mary O's": {
+      "place_id": "ChIJg_qA-IJZwokRywpUqo35cz8",
+      "status": "OPERATIONAL",
+      "google_name": "Mary O's"
+    },
+    "Casa Adela": {
+      "place_id": "ChIJ5xneO3FZwokRyyN-P0ch-Wo",
+      "status": "OPERATIONAL",
+      "google_name": "Casa Adela"
+    },
+    "Carnitas Ramirez": {
+      "place_id": "ChIJ41HSUABZwokRhbUqk4qDotA",
+      "status": "OPERATIONAL",
+      "google_name": "Carnitas Ramirez"
+    },
+    "Venhue": {
+      "place_id": "ChIJbzLdhstZwokRXV0VHS5XSqg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Venhue"
+    },
+    "Potenza Centrale": {
+      "place_id": "ChIJlY-4aM1ZwokRKLGyqlIOGl4",
+      "status": "OPERATIONAL",
+      "google_name": "Potenza Centrale"
+    },
+    "Cuts & Slices": {
+      "place_id": "ChIJh-7RGQBZwokR219TB_qWj2Y",
+      "status": "OPERATIONAL",
+      "google_name": "Cuts & Slices"
+    },
+    "DupBopBro": {
+      "place_id": "ChIJe-toye1ZwokRPoos9jkPkWM",
+      "status": "OPERATIONAL",
+      "google_name": "DupBopBro - Korean Rice Bowl"
+    },
+    "G’s Cheesesteaks": {
+      "place_id": "ChIJd1YxrANZwokRwIqt08GEgVU",
+      "status": "OPERATIONAL",
+      "google_name": "G’s Cheesesteaks"
+    },
+    "Biga Bite": {
+      "place_id": "ChIJ03dJtt9ZwokRZAlQCpcSMO4",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Biga Bite"
+    },
+    "Grillify-NYC": {
+      "place_id": "ChIJrzWdmaFZwokRw3PW3r39K-8",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Grillify-NYC"
+    },
+    "Tomo21 Sushi": {
+      "place_id": "ChIJ4WXDA45ZwokRiYUKlIucxxU",
+      "status": "OPERATIONAL",
+      "google_name": "Tomo21 Sushi"
+    },
+    "Milady's": {
+      "place_id": "ChIJ_2Qbzo1ZwokRVPBrvp-a9qk",
+      "status": "OPERATIONAL",
+      "google_name": "Milady's"
+    },
+    "ALIDORO": {
+      "place_id": "ChIJBV8OTYxZwokRDQVhS8BE6qw",
+      "status": "OPERATIONAL",
+      "google_name": "ALIDORO"
+    },
+    "Local": {
+      "place_id": "ChIJZ4UT7o1ZwokRpAOpubL6UC4",
+      "status": "OPERATIONAL",
+      "google_name": "Local"
+    },
+    "Les Capucines": {
+      "place_id": "ChIJxWVjo0FZwokR2rrCZhWKYe0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Les Capucines"
+    },
+    "La Churreria": {
+      "place_id": "ChIJ6UHHfo9ZwokR3J2S2jupAbE",
+      "status": "OPERATIONAL",
+      "google_name": "La Churreria"
+    },
+    "Matter": {
+      "place_id": "ChIJaXO9TGJZwokRqgH59EL2o2Y",
+      "status": "OPERATIONAL",
+      "google_name": "Matter"
+    },
+    "Pura Vida Miami": {
+      "place_id": "ChIJAfW0wp1ZwokRkpOoziXbRcs",
+      "status": "OPERATIONAL",
+      "google_name": "Pura Vida Miami"
+    },
+    "DokoDemo": {
+      "place_id": "ChIJRbe0soRZwokR7G__0Wvl-bg",
+      "status": "OPERATIONAL",
+      "google_name": "DokoDemo"
+    },
+    "Ogawa": {
+      "place_id": "ChIJg0ew0JpZwokRtsrjIf3VpPM",
+      "status": "OPERATIONAL",
+      "google_name": "Ogawa"
+    },
+    "Shifka NYC": {
+      "place_id": "ChIJmWbRY4VZwokRLjk-fzYGoVE",
+      "status": "OPERATIONAL",
+      "google_name": "Shifka NYC"
+    },
+    "Twig'm": {
+      "place_id": "ChIJA294T_hZwokRZ9fZHqJ0cPk",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Twig'm"
+    },
+    "Kazuza": {
+      "place_id": "ChIJg3MwTp1ZwokRR09egp9Xo-c",
+      "status": "OPERATIONAL",
+      "google_name": "Kazuza"
+    },
+    "The Grafton": {
+      "place_id": "ChIJd3-uGZ1ZwokR2fCvxWdgWqY",
+      "status": "OPERATIONAL",
+      "google_name": "The Grafton"
+    },
+    "Banh Mi Zon": {
+      "place_id": "ChIJObMZS51ZwokRSMv-pFebVnA",
+      "status": "OPERATIONAL",
+      "google_name": "Banh Mi Zon"
+    },
+    "BATSU!": {
+      "place_id": "ChIJ4QKVd5xZwokRKNIH6nKJPAE",
+      "status": "OPERATIONAL",
+      "google_name": "BATSU!"
+    },
+    "Taqueria St. Marks Place": {
+      "place_id": "ChIJL5F0BJ1ZwokRGlf-5766UVM",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria St. Marks Place"
+    },
+    "Downtown Burritos": {
+      "place_id": "ChIJE1XwOYNZwokRcYDtIEZV8e8",
+      "status": "OPERATIONAL",
+      "google_name": "Downtown Burritos"
+    },
+    "B&H Dairy": {
+      "place_id": "ChIJdWXGiJxZwokRe_kzF8QTPJY",
+      "status": "OPERATIONAL",
+      "google_name": "B&H Dairy"
+    },
+    "Ray's Candy Store": {
+      "place_id": "ChIJzWP0UJ1ZwokR99xSXUOZZ08",
+      "status": "OPERATIONAL",
+      "google_name": "Ray's Candy Store"
+    },
+    "Terra Thai": {
+      "place_id": "ChIJlROiooRZwokRr4Vvd8IlKuo",
+      "status": "OPERATIONAL",
+      "google_name": "Terra Thai"
+    },
+    "Titi's Empanadas": {
+      "place_id": "ChIJO-Tvwi1ZwokRrWBKqzIqgRs",
+      "status": "OPERATIONAL",
+      "google_name": "Titi's Empanadas"
+    },
+    "BKLYN MACS": {
+      "place_id": "ChIJ_WQL3I5ZwokRsav3mgLtGQA",
+      "status": "OPERATIONAL",
+      "google_name": "BKLYN MACS"
+    },
+    "Jerrell's BETR BRGR": {
+      "place_id": "ChIJF6B55SxZwokRNvst8akDMi0",
+      "status": "OPERATIONAL",
+      "google_name": "Jerrell's BETR BRGR"
+    },
+    "SUGARFISH by sushi nozawa": {
+      "place_id": "ChIJjyE3Z-9ZwokRuTEUrSQhjCo",
+      "status": "OPERATIONAL",
+      "google_name": "SUGARFISH by sushi nozawa"
+    },
+    "Rice Kitchen": {
+      "place_id": "ChIJt17HKHBZwokRsMqk3AtyZuk",
+      "status": "OPERATIONAL",
+      "google_name": "Rice Kitchen"
+    },
+    "Sullivan Taqueria": {
+      "place_id": "ChIJr84pQxxZwokRMj3XapRNyz0",
+      "status": "OPERATIONAL",
+      "google_name": "Sullivan Taqueria"
+    },
+    "Tender Crush": {
+      "place_id": "ChIJH1GvJ9JZwokRSoli0wmPdxA",
+      "status": "OPERATIONAL",
+      "google_name": "Tender Crush"
+    },
+    "Kobano": {
+      "place_id": "ChIJmzhRz-ZZwokRDTcAyM8TSWo",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Kobano"
+    },
+    "Birria-Landia NYC": {
+      "place_id": "ChIJafErewZZwokR4G9MfA9CsbY",
+      "status": "OPERATIONAL",
+      "google_name": "Birria-Landia NYC"
+    },
+    "Nón Lá": {
+      "place_id": "ChIJCVxiyoNZwokRwISr8egZChs",
+      "status": "OPERATIONAL",
+      "google_name": "Nón Lá"
+    },
+    "Cho-Ko": {
+      "place_id": "ChIJfZkgF8tZwokRHUHtRx_JLJ8",
+      "status": "OPERATIONAL",
+      "google_name": "Cho-Ko"
+    },
+    "Bobwhite Counter": {
+      "place_id": "ChIJhb1Sx3lZwokR7-zaifOkCwo",
+      "status": "OPERATIONAL",
+      "google_name": "Bobwhite Counter"
+    },
+    "Alphabet City Beer Co.": {
+      "place_id": "ChIJWaWbwHlZwokRj1wHkvB84zE",
+      "status": "OPERATIONAL",
+      "google_name": "Alphabet City Beer Co."
+    },
+    "Bobby's Night Out": {
+      "place_id": "ChIJXxVeoOxZwokRQmeffWUTe3c",
+      "status": "OPERATIONAL",
+      "google_name": "Bobby's Night Out"
+    },
+    "MakiMaki Sushi - 350 Hudson St": {
+      "place_id": "ChIJRT4vY7JZwokRq9i_s-rI0ig",
+      "status": "OPERATIONAL",
+      "google_name": "MakiMaki Sushi - 350 Hudson St"
+    },
+    "Saigon Shack": {
+      "place_id": "ChIJp7CcJ5JZwokRCZHeOFZwxkc",
+      "status": "OPERATIONAL",
+      "google_name": "Saigon Shack"
+    },
+    "Masala Times": {
+      "place_id": "ChIJVZYjFpJZwokRGFZhvPxmPGI",
+      "status": "OPERATIONAL",
+      "google_name": "Masala Times"
+    },
+    "Okinii": {
+      "place_id": "ChIJJQr1wJFZwokRD08Dy1xV9E8",
+      "status": "OPERATIONAL",
+      "google_name": "Okinii"
+    },
+    "Springbone Kitchen": {
+      "place_id": "ChIJo57dmJFZwokRBm37jca0gak",
+      "status": "OPERATIONAL",
+      "google_name": "Springbone Kitchen"
+    },
+    "Habanero Pibil": {
+      "place_id": "ChIJMQEPcj1ZwokRo_7VkHYwLI0",
+      "status": "OPERATIONAL",
+      "google_name": "Habanero Pibil"
+    },
+    "Hampton Chutney Astor Place": {
+      "place_id": "ChIJMexZOwBZwokRdq0zmRG06BA",
+      "status": "OPERATIONAL",
+      "google_name": "Hampton Chutney Astor Place"
+    },
+    "Matto Espresso": {
+      "place_id": "ChIJt0q-2hpZwokRKqJybR4-jKM",
+      "status": "OPERATIONAL",
+      "google_name": "Matto Espresso"
+    },
+    "Sushi 295 Mercer": {
+      "place_id": "ChIJtU0LfdlZwokRc_AMicM3Jec",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi 295 Mercer"
+    },
+    "The Potato Bros Nyc": {
+      "place_id": "ChIJe2mUdgBZwokRft3Waaf4sOU",
+      "status": "OPERATIONAL",
+      "google_name": "The Potato Bros Nyc"
+    },
+    "Next Door by Wegmans": {
+      "place_id": "ChIJZ3llzptZwokRSriFBJr3URE",
+      "status": "OPERATIONAL",
+      "google_name": "Next Door by Wegmans"
+    },
+    "Udon St Marks": {
+      "place_id": "ChIJb9NShptZwokRa7FMBWaj57s",
+      "status": "OPERATIONAL",
+      "google_name": "Udon St Marks"
+    },
+    "Pangea": {
+      "place_id": "ChIJnyFa051ZwokRv7V1iRyOZss",
+      "status": "OPERATIONAL",
+      "google_name": "Pangea"
+    },
+    "Rai Rai Ken + Curry Ya + Otafuku": {
+      "place_id": "ChIJrY6UTJxZwokRmL7yKAaqmKQ",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Rai Rai Ken + Curry Ya + Otafuku"
+    },
+    "Proletariat": {
+      "place_id": "ChIJgYBqap1ZwokR3gJt8gxAwuQ",
+      "status": "OPERATIONAL",
+      "google_name": "Proletariat"
+    },
+    "Love Mama": {
+      "place_id": "ChIJcxPkLJxZwokR7blp76Vu2qY",
+      "status": "OPERATIONAL",
+      "google_name": "Love Mama"
+    },
+    "MUD": {
+      "place_id": "ChIJ__DxT5xZwokRuMRCGAmQ9-E",
+      "status": "OPERATIONAL",
+      "google_name": "MUD"
+    },
+    "Happy Bowls": {
+      "place_id": "ChIJQQOvwptZwokRNajaJCC5Yu0",
+      "status": "OPERATIONAL",
+      "google_name": "Happy Bowls"
+    },
+    "Sahara East": {
+      "place_id": "ChIJn1VL7J1ZwokRYSF8iqTh8Go",
+      "status": "OPERATIONAL",
+      "google_name": "Sahara East"
+    },
+    "Joe & Pat's NYC": {
+      "place_id": "ChIJxaI7kZ1ZwokR0Mjh_cJc5jI",
+      "status": "OPERATIONAL",
+      "google_name": "Joe & Pat's NYC"
+    },
+    "Brodo - East Village": {
+      "place_id": "ChIJJfnw-51ZwokRBvuXgU0uhMo",
+      "status": "OPERATIONAL",
+      "google_name": "Brodo - East Village"
+    },
+    "Paquitos": {
+      "place_id": "ChIJTZ3qB51ZwokRkwA_Gp2oN70",
+      "status": "OPERATIONAL",
+      "google_name": "Paquitos"
+    },
+    "Emilia by Nai": {
+      "place_id": "ChIJ64xsU0VZwokRiSwIOBF96Qw",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Emilia by Nai"
+    },
+    "Pastasole": {
+      "place_id": "ChIJdcva7sdZwokRItkUEXwsf5Q",
+      "status": "OPERATIONAL",
+      "google_name": "Pastasole"
+    },
+    "Pavlo Mochi": {
+      "place_id": "ChIJdawvbUhZwokRIeISOkKNJbY",
+      "status": "OPERATIONAL",
+      "google_name": "Pavlo Mochi"
+    },
+    "Dua Kafe": {
+      "place_id": "ChIJp5s1rChZwokRfZ2gPYO9h3E",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Dua Kafe"
+    },
+    "Boris & Horton": {
+      "place_id": "ChIJG6_BbHZZwokRS6lKU3rCUtk",
+      "status": "OPERATIONAL",
+      "google_name": "Boris & Horton"
+    },
+    "Sanpanino": {
+      "place_id": "ChIJmzZnTJNZwokRvQyhWJ3TG8k",
+      "status": "OPERATIONAL",
+      "google_name": "Sanpanino"
+    },
+    "Golden Woks": {
+      "place_id": "ChIJ_4KXlOxZwokRSgd0gwQWrZw",
+      "status": "OPERATIONAL",
+      "google_name": "Golden Woks"
+    },
+    "Sho Tse": {
+      "place_id": "ChIJC17scuRZwokRedUnMCpNDus",
+      "status": "OPERATIONAL",
+      "google_name": "Sho Tse"
+    },
+    "Caliente Cab Co.": {
+      "place_id": "ChIJ39BEdZNZwokRwjlY27mF_V8",
+      "status": "OPERATIONAL",
+      "google_name": "Caliente Cab Co."
+    },
+    "8th Street Winecellar": {
+      "place_id": "ChIJSdxe1JZZwokR7yjbqD8Fydc",
+      "status": "OPERATIONAL",
+      "google_name": "8th Street Winecellar"
+    },
+    "Eva's x Cinco de Mayo": {
+      "place_id": "ChIJ3yuCLZdZwokRrjztwErCdtU",
+      "status": "OPERATIONAL",
+      "google_name": "Eva's x Cinco de Mayo"
+    },
+    "North Square": {
+      "place_id": "ChIJ4_MONJFZwokRzfxEX_oc-eg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "North Square"
+    },
+    "TUE THAI FOOD": {
+      "place_id": "ChIJZ50YxRtZwokRw0x44RlxUok",
+      "status": "OPERATIONAL",
+      "google_name": "TUE THAI FOOD"
+    },
+    "Taboonette": {
+      "place_id": "ChIJN5nlTphZwokR7RA6DCX141Q",
+      "status": "OPERATIONAL",
+      "google_name": "Taboonette"
+    },
+    "Chef Cozzolino": {
+      "place_id": "ChIJB1QICZlZwokRAF_1JRyOprg",
+      "status": "OPERATIONAL",
+      "google_name": "Chef Cozzolino"
+    },
+    "Luke's Lobster Union Square": {
+      "place_id": "ChIJKU5rWphZwokRs_qRz45m37k",
+      "status": "OPERATIONAL",
+      "google_name": "Luke's Lobster Union Square"
+    },
+    "Sophie's Cuban Cuisine - Union Square": {
+      "place_id": "ChIJR86iWupZwokRvSzxe1_R7cY",
+      "status": "OPERATIONAL",
+      "google_name": "Sophie's Cuban Cuisine - Union Square"
+    },
+    "P.F. Chang's": {
+      "place_id": "ChIJo38KVJhZwokRE2rgx66zurQ",
+      "status": "OPERATIONAL",
+      "google_name": "P.F. Chang's"
+    },
+    "The Stand": {
+      "place_id": "ChIJgWBWFaBZwokRfOWdBPY5Y0o",
+      "status": "OPERATIONAL",
+      "google_name": "The Stand"
+    },
+    "The Winslow": {
+      "place_id": "ChIJY7FAUJ5ZwokRQvbvk2eaJIE",
+      "status": "OPERATIONAL",
+      "google_name": "The Winslow"
+    },
+    "Frenchie Bites": {
+      "place_id": "ChIJZ_rc_p5ZwokRG9_5UgxM33c",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Frenchie Bites"
+    },
+    "Farook Halal Food": {
+      "place_id": "ChIJmegFKJ9ZwokR5jChfy1f5P0",
+      "status": "OPERATIONAL",
+      "google_name": "Farook Halal Food"
+    },
+    "MooMooChaa": {
+      "place_id": "ChIJ0-vyVZ5ZwokR2ocg6RghzvM",
+      "status": "OPERATIONAL",
+      "google_name": "MooMooChaa"
+    },
+    "Joe Jr.": {
+      "place_id": "ChIJkZCadZ9ZwokRuRHmVq9ZicQ",
+      "status": "OPERATIONAL",
+      "google_name": "Joe Jr."
+    },
+    "SMASHED NYC - EAST VILLAGE": {
+      "place_id": "ChIJYwU9tgZZwokRI1ZduNtncvY",
+      "status": "OPERATIONAL",
+      "google_name": "SMASHED NYC - EAST VILLAGE"
+    },
+    "Sauerkraut Fish": {
+      "place_id": "ChIJnfS102hZwokRlbfyjqlpEEw",
+      "status": "OPERATIONAL",
+      "google_name": "Sauerkraut Fish"
+    },
+    "YGF Malatang": {
+      "place_id": "ChIJDVHGG4tZwokRIByvqBESCuE",
+      "status": "OPERATIONAL",
+      "google_name": "YGF Malatang"
+    },
+    "O'Hanlon's": {
+      "place_id": "ChIJbYO6inVZwokRdJFKZFGP_l8",
+      "status": "OPERATIONAL",
+      "google_name": "O'Hanlon's"
+    },
+    "Baohub": {
+      "place_id": "ChIJhZ6v21RZwokR5AoxSOxt46Y",
+      "status": "OPERATIONAL",
+      "google_name": "Baohub"
+    },
+    "Rockmeisha": {
+      "place_id": "ChIJwfyh72BZwokRrGyjxw_8sMs",
+      "status": "OPERATIONAL",
+      "google_name": "Rockmeisha"
+    },
+    "Fat Boys Burgers": {
+      "place_id": "ChIJP0eAy5BZwokRkdcxlYljjDM",
+      "status": "OPERATIONAL",
+      "google_name": "Fat Boys Burgers"
+    },
+    "Fattoush": {
+      "place_id": "ChIJIZVAJIBZwokRhjDMJaCXG3Y",
+      "status": "OPERATIONAL",
+      "google_name": "Fattoush"
+    },
+    "Baos and Bowls": {
+      "place_id": "ChIJQ9MPPMVZwokR6918grpy-gE",
+      "status": "OPERATIONAL",
+      "google_name": "Baos and Bowls"
+    },
+    "Poulet Sans Tete": {
+      "place_id": "ChIJwedU-yxZwokRlgg3vY0s2ig",
+      "status": "OPERATIONAL",
+      "google_name": "Poulet Sans Tete"
+    },
+    "La Bonbonniere": {
+      "place_id": "ChIJj1NmZZVZwokRZ7t6RkyDV0o",
+      "status": "OPERATIONAL",
+      "google_name": "La Bonbonniere"
+    },
+    "Kawa Sushi": {
+      "place_id": "ChIJPSuOb5VZwokRbHBUWnS6KNw",
+      "status": "OPERATIONAL",
+      "google_name": "Kawa Sushi"
+    },
+    "Bonsignour": {
+      "place_id": "ChIJXXXUYpVZwokRcbuuqCbJ_Dw",
+      "status": "OPERATIONAL",
+      "google_name": "Bonsignour"
+    },
+    "RamenYa West Village": {
+      "place_id": "ChIJB9u6UgBZwokRxMaHHYdH3d4",
+      "status": "OPERATIONAL",
+      "google_name": "RamenYa West Village"
+    },
+    "Il Totano": {
+      "place_id": "ChIJt9eAsShZwokRrtTGD8e8b_0",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Il Totano"
+    },
+    "WOW": {
+      "place_id": "ChIJwVtahhtZwokRohwHQaGo_fc",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "WOW"
+    },
+    "Pho Dragon Restaurant": {
+      "place_id": "ChIJNaDmtlBZwokRG9yhC2a1ft0",
+      "status": "OPERATIONAL",
+      "google_name": "Pho Dragon Restaurant"
+    },
+    "Pokeworks": {
+      "place_id": "ChIJ0RNmfphZwokRfAwRyyHuaWk",
+      "status": "OPERATIONAL",
+      "google_name": "Pokeworks"
+    },
+    "Triona's On Third": {
+      "place_id": "ChIJu1ihgZ9ZwokRPvmn_Z9U84Q",
+      "status": "OPERATIONAL",
+      "google_name": "Triona's On Third"
+    },
+    "La Tazza D'Oro NYC": {
+      "place_id": "ChIJBfyM9rxZwokRX8Edkjogarw",
+      "status": "OPERATIONAL",
+      "google_name": "La Tazza D'Oro NYC"
+    },
+    "Ampersand": {
+      "place_id": "ChIJa06hm6BZwokRzyR2qi1LTMw",
+      "status": "OPERATIONAL",
+      "google_name": "Ampersand"
+    },
+    "Sandwell": {
+      "place_id": "ChIJe8QJdJpZwokR1AQ7Aw-MlUE",
+      "status": "OPERATIONAL",
+      "google_name": "Sandwell"
+    },
+    "Lucia of Gramercy": {
+      "place_id": "ChIJ083TOwBZwokRuDx6m-g2sJA",
+      "status": "OPERATIONAL",
+      "google_name": "Lucia of Gramercy"
+    },
+    "Bonchon New York - 1st Ave": {
+      "place_id": "ChIJa-g8CyBZwokRwog-kHvwBvk",
+      "status": "OPERATIONAL",
+      "google_name": "Bonchon New York - 1st Ave"
+    },
+    "Gnocchi on 9th": {
+      "place_id": "ChIJ8xV3KgBZwokRQ1nXDHdx9dQ",
+      "status": "OPERATIONAL",
+      "google_name": "Gnocchi on 9th"
+    },
+    "Julius'": {
+      "place_id": "ChIJJ0KwSzBZwokRZBEwqbaFtjU",
+      "status": "OPERATIONAL",
+      "google_name": "Julius'"
+    },
+    "musubin’": {
+      "place_id": "ChIJ1dQk3mtZwokRUT3sImxARts",
+      "status": "OPERATIONAL",
+      "google_name": "musubin’"
+    },
+    "Thai Delight": {
+      "place_id": "ChIJCxXPqmNZwokRg9mxyf8x7aw",
+      "status": "OPERATIONAL",
+      "google_name": "Thai Delight"
+    },
+    "Banter NYC - West Village": {
+      "place_id": "ChIJY51bxcFZwokRiIS_lmEqeSE",
+      "status": "OPERATIONAL",
+      "google_name": "Banter NYC - West Village"
+    },
+    "La sandwicherie chelsea": {
+      "place_id": "ChIJSa6p5fJZwokRxrYxg24HujI",
+      "status": "OPERATIONAL",
+      "google_name": "La sandwicherie chelsea"
+    },
+    "Oramen": {
+      "place_id": "ChIJiZ6kPL1ZwokRhMEWRxvSnVc",
+      "status": "OPERATIONAL",
+      "google_name": "Oramen"
+    },
+    "AMA LA VITA": {
+      "place_id": "ChIJ3TeIvYZZwokRbOi6eKhTbXg",
+      "status": "OPERATIONAL",
+      "google_name": "AMA LA VITA"
+    },
+    "Sophie's Cuban Cuisine - Flatiron": {
+      "place_id": "ChIJTVmPSsdZwokRUM3t-AeM0hA",
+      "status": "OPERATIONAL",
+      "google_name": "Sophie's Cuban Cuisine - Flatiron"
+    },
+    "Bis Bas Mediterranean Grill (Gramercy)": {
+      "place_id": "ChIJXysRhilZwokRLADlIDedeXY",
+      "status": "OPERATIONAL",
+      "google_name": "Bis Bas Mediterranean Grill (Gramercy)"
+    },
+    "TEAPULSE - Madison Square Park": {
+      "place_id": "ChIJkaAmDwBZwokRQ_HkdyhcLH0",
+      "status": "OPERATIONAL",
+      "google_name": "TEAPULSE - Madison Square Park"
+    },
+    "ONGI (23rd St/Park Ave)": {
+      "place_id": "ChIJiSvB7hJZwokRaSiOqKLW8aw",
+      "status": "OPERATIONAL",
+      "google_name": "ONGI (23rd St/Park Ave)"
+    },
+    "Flavor House": {
+      "place_id": "ChIJr1cJ3I1ZwokRAKws0j_VWHE",
+      "status": "OPERATIONAL",
+      "google_name": "Flavor House"
+    },
+    "1915 Lanzhou Hand Pulled Noodles": {
+      "place_id": "ChIJRb4LvfZZwokRSd08dYOsBZo",
+      "status": "OPERATIONAL",
+      "google_name": "1915 Lanzhou Hand Pulled Noodles"
+    },
+    "Green Mandala": {
+      "place_id": "ChIJRSTmdVZZwokReq8mjoku3MU",
+      "status": "OPERATIONAL",
+      "google_name": "Green Mandala"
+    },
+    "Mala Town 自选麻辣烫": {
+      "place_id": "ChIJmUiniWNZwokRvuFmX0vSl9I",
+      "status": "OPERATIONAL",
+      "google_name": "Mala Town 自选麻辣烫"
+    },
+    "Flame Hibachi": {
+      "place_id": "ChIJyTuavAlZwokRVX4Av-8RbJ8",
+      "status": "OPERATIONAL",
+      "google_name": "Flame Hibachi"
+    },
+    "Little River": {
+      "place_id": "ChIJx-Ybig5ZwokRgHIBe_kSB0Q",
+      "status": "OPERATIONAL",
+      "google_name": "Little River"
+    },
+    "La Bergamote (Chelsea)": {
+      "place_id": "ChIJydHFGblZwokRd39Hs0utAAk",
+      "status": "OPERATIONAL",
+      "google_name": "La Bergamote (Chelsea)"
+    },
+    "Filaga": {
+      "place_id": "ChIJ81QWXL9ZwokRse_zeq7DHrQ",
+      "status": "OPERATIONAL",
+      "google_name": "Filaga"
+    },
+    "Los Mariscos": {
+      "place_id": "ChIJ-eXwaL9ZwokRZJlyiOc2bf4",
+      "status": "OPERATIONAL",
+      "google_name": "Los Mariscos"
+    },
+    "Star On 18": {
+      "place_id": "ChIJAe06obhZwokRaFBSFZLoVvs",
+      "status": "OPERATIONAL",
+      "google_name": "Star On 18"
+    },
+    "Eat Offbeat": {
+      "place_id": "ChIJM59-eVxZwokRr1O9qadzTDw",
+      "status": "OPERATIONAL",
+      "google_name": "Eat Offbeat"
+    },
+    "Kimbap Lab": {
+      "place_id": "ChIJ6yZKfw5ZwokROY7_DwZbGFk",
+      "status": "OPERATIONAL",
+      "google_name": "Kimbap Lab"
+    },
+    "Tings": {
+      "place_id": "ChIJP5_6Cc5ZwokRLCA_ALhOaeQ",
+      "status": "OPERATIONAL",
+      "google_name": "Tings"
+    },
+    "Locanut": {
+      "place_id": "ChIJXQl9QXtZwokRRtfx5KbGFfc",
+      "status": "OPERATIONAL",
+      "google_name": "Locanut"
+    },
+    "BIG TINGS MENU": {
+      "place_id": "ChIJAQAsXr9ZwokRwtSwHZsr_Vw",
+      "status": "OPERATIONAL",
+      "google_name": "BIG TINGS MENU"
+    },
+    "Maki a Mano": {
+      "place_id": "ChIJaTsEbABZwokRe1bnTBmGwrs",
+      "status": "OPERATIONAL",
+      "google_name": "Maki a Mano"
+    },
+    "Pastasole Chelsea": {
+      "place_id": "ChIJ_1O4PxhZwokRKkOwJHsWxBA",
+      "status": "OPERATIONAL",
+      "google_name": "Pastasole Chelsea"
+    },
+    "Fumo Chelsea": {
+      "place_id": "ChIJqygn9wpZwokRBj2w10RZbgY",
+      "status": "OPERATIONAL",
+      "google_name": "Fumo Chelsea"
+    },
+    "Rangoon - Chelsea": {
+      "place_id": "ChIJq6p3HbxZwokRI3_vIn-13QI",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Rangoon - Chelsea"
+    },
+    "Electric Burrito": {
+      "place_id": "ChIJmxQzYE1ZwokRdwr1pY94hoo",
+      "status": "OPERATIONAL",
+      "google_name": "Electric Burrito"
+    },
+    "KoFoo": {
+      "place_id": "ChIJpVwii6RZwokRPhCANQzwQnA",
+      "status": "OPERATIONAL",
+      "google_name": "KoFoo"
+    },
+    "Johny's Luncheonette": {
+      "place_id": "ChIJfXcTGaVZwokR39zBQebMq3w",
+      "status": "OPERATIONAL",
+      "google_name": "Johny's Luncheonette"
+    },
+    "Tziki": {
+      "place_id": "ChIJIZypB8lZwokRcEqS4YiTR3s",
+      "status": "OPERATIONAL",
+      "google_name": "Tziki"
+    },
+    "8-Bit Bites": {
+      "place_id": "ChIJF_2RaxxZwokRGrYaMNYdwvc",
+      "status": "OPERATIONAL",
+      "google_name": "8-Bit Bites"
+    },
+    "ZaZu Mediterranean Street Food": {
+      "place_id": "ChIJR4My83tZwokRyYam-DuM7dc",
+      "status": "OPERATIONAL",
+      "google_name": "ZaZu Mediterranean Street Food"
+    },
+    "Cha Cha Matcha (NoMad)": {
+      "place_id": "ChIJAWQ_dKZZwokRLneNLjlK_8A",
+      "status": "OPERATIONAL",
+      "google_name": "Cha Cha Matcha (NoMad)"
+    },
+    "Lady M Cake Boutique - NYC": {
+      "place_id": "ChIJ4dOzCKZZwokRTDZm4yrHq7E",
+      "status": "OPERATIONAL",
+      "google_name": "Lady M Cake Boutique - NYC"
+    },
+    "Impact Kitchen": {
+      "place_id": "ChIJPVcK2tVZwokRRfVSdQGtQ9s",
+      "status": "OPERATIONAL",
+      "google_name": "Impact Kitchen"
+    },
+    "Anjappar Indian Cuisine": {
+      "place_id": "ChIJaR391AlZwokR2r3H1Cf4gik",
+      "status": "OPERATIONAL",
+      "google_name": "Anjappar Indian Cuisine"
+    },
+    "Tarallucci e Vino NoMad": {
+      "place_id": "ChIJ4zfZAKdZwokRrsYhDxNqGEo",
+      "status": "OPERATIONAL",
+      "google_name": "Tarallucci e Vino NoMad"
+    },
+    "Maguro": {
+      "place_id": "ChIJQYP_tglZwokRK5h8ncPnZ34",
+      "status": "OPERATIONAL",
+      "google_name": "Maguro"
+    },
+    "Lena's Italian Kitchen": {
+      "place_id": "ChIJ8TzazwhZwokRUacdVHD8CBg",
+      "status": "OPERATIONAL",
+      "google_name": "Lena's Italian Kitchen"
+    },
+    "Meze Mazi": {
+      "place_id": "ChIJiWsRTPtZwokRpwGrj5yD_94",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Meze Mazi"
+    },
+    "Surreal Creamery": {
+      "place_id": "ChIJm9q7JRNZwokRPiwHhrIukd0",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Surreal Creamery"
+    },
+    "Blank Street": {
+      "place_id": "ChIJvc8BcQBZwokRcBOMb44xOMc",
+      "status": "OPERATIONAL",
+      "google_name": "Blank Street"
+    },
+    "Wayback Burgers": {
+      "place_id": "ChIJCzbdHgBZwokRnylxN32wO_0",
+      "status": "OPERATIONAL",
+      "google_name": "Wayback Burgers"
+    },
+    "Tiberias": {
+      "place_id": "ChIJGcdkdwdZwokRbnXXjTItFDE",
+      "status": "OPERATIONAL",
+      "google_name": "Tiberias"
+    },
+    "Football Factory at Legends": {
+      "place_id": "ChIJK1_3VKhZwokR38t_QiKUQgQ",
+      "status": "OPERATIONAL",
+      "google_name": "Football Factory at Legends"
+    },
+    "Scandinavia House": {
+      "place_id": "ChIJ7QYh1gZZwokRQgSBBv50DdI",
+      "status": "OPERATIONAL",
+      "google_name": "Scandinavia House"
+    },
+    "Pio Pio 7": {
+      "place_id": "ChIJnXFVDgZZwokRWyjYGSq5K38",
+      "status": "OPERATIONAL",
+      "google_name": "Pio Pio 7"
+    },
+    "Shokudo 34": {
+      "place_id": "ChIJY1vbsBNZwokRr2xj-586naA",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Shokudo 34"
+    },
+    "One Two Thai": {
+      "place_id": "ChIJF-74YnFZwokRzk9CRgTs8MI",
+      "status": "OPERATIONAL",
+      "google_name": "One Two Thai"
+    },
+    "Delectica": {
+      "place_id": "ChIJNWlUIgRZwokRUkQz7u2ROdo",
+      "status": "OPERATIONAL",
+      "google_name": "Delectica"
+    },
+    "EONS Mediterranean": {
+      "place_id": "ChIJ1ait6wVZwokRIEANhqK3TaE",
+      "status": "OPERATIONAL",
+      "google_name": "EONS Mediterranean"
+    },
+    "Montagu's Gusto": {
+      "place_id": "ChIJBfDVuAVZwokRjNRasFnJr5E",
+      "status": "OPERATIONAL",
+      "google_name": "Montagu's Gusto"
+    },
+    "Sushi Ryusei": {
+      "place_id": "ChIJqTLS3nJZwokRGdkiM6Hj-BU",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi Ryusei"
+    },
+    "251 Ginza Sushi": {
+      "place_id": "ChIJRWJvdftZwokRNBqnrFHbjZM",
+      "status": "OPERATIONAL",
+      "google_name": "251 Ginza Sushi"
+    },
+    "Bento NYC": {
+      "place_id": "ChIJWzk-KglZwokRQ0h3PB4Q94M",
+      "status": "OPERATIONAL",
+      "google_name": "Bento NYC"
+    },
+    "City Beer": {
+      "place_id": "ChIJM6gmzT5ZwokRwDBzCGH4hLI",
+      "status": "OPERATIONAL",
+      "google_name": "City Beer"
+    },
+    "Ziggle Tofu & Grill": {
+      "place_id": "ChIJWbS7YXBZwokR6MUHjzagTrY",
+      "status": "OPERATIONAL",
+      "google_name": "Ziggle Tofu & Grill"
+    },
+    "Bubo": {
+      "place_id": "ChIJE5h5cQZZwokR-Gi2BfLvPvg",
+      "status": "OPERATIONAL",
+      "google_name": "Bubo"
+    },
+    "EJ BBQ & Sushi": {
+      "place_id": "ChIJK7_ZHdpZwokRm-4_KJNgP78",
+      "status": "OPERATIONAL",
+      "google_name": "EJ BBQ & Sushi"
+    },
+    "Lin & Daughters - Flatiron": {
+      "place_id": "ChIJwZvpA3pZwokRM2P6uYIO_DU",
+      "status": "OPERATIONAL",
+      "google_name": "Lin & Daughters - Flatiron"
+    },
+    "iTaste Express": {
+      "place_id": "ChIJX93eLn9ZwokRcGQ9k6DW3iE",
+      "status": "OPERATIONAL",
+      "google_name": "iTaste Express"
+    },
+    "Bazaar Meat": {
+      "place_id": "ChIJK1l3akxZwokR_kpaBwuT8rk",
+      "status": "OPERATIONAL",
+      "google_name": "Bazaar Meat"
+    },
+    "Handsome Rice": {
+      "place_id": "ChIJPYZsDhFZwokRMMRoYT7c2Uk",
+      "status": "OPERATIONAL",
+      "google_name": "Handsome Rice"
+    },
+    "B&D Halal Food": {
+      "place_id": "ChIJOZIuwydZwokRZtyPAnQPSKc",
+      "status": "OPERATIONAL",
+      "google_name": "B&D Halal Food"
+    },
+    "Green Blend / Balanced Food / 8th ave": {
+      "place_id": "ChIJeZ1HUX1ZwokRUe_Xv52laLI",
+      "status": "OPERATIONAL",
+      "google_name": "Green Blend / Balanced Food / 8th ave"
+    },
+    "Rowdy Rooster - Penn": {
+      "place_id": "ChIJ4dHrDSNZwokRAos_Vn0qVAY",
+      "status": "OPERATIONAL",
+      "google_name": "Rowdy Rooster - Penn"
+    },
+    "Le Botaniste Penn Plaza": {
+      "place_id": "ChIJpfalTABZwokRfdnKtcGz1s0",
+      "status": "OPERATIONAL",
+      "google_name": "Le Botaniste Penn Plaza"
+    },
+    "Ichiran": {
+      "place_id": "ChIJAduJGa9ZwokR5p0GowLG9P8",
+      "status": "OPERATIONAL",
+      "google_name": "Ichiran"
+    },
+    "Peter Dillon's 36th": {
+      "place_id": "ChIJq-zV5KlZwokRyriwYG-I8rs",
+      "status": "OPERATIONAL",
+      "google_name": "Peter Dillon's 36th"
+    },
+    "The Shakespeare": {
+      "place_id": "ChIJI7jw2ABZwokR_N3wkrCRL0A",
+      "status": "OPERATIONAL",
+      "google_name": "The Shakespeare"
+    },
+    "The Original Little Italy": {
+      "place_id": "ChIJBWWCLQBZwokRBrGegvRm9qg",
+      "status": "OPERATIONAL",
+      "google_name": "The Original Little Italy"
+    },
+    "Sinigual": {
+      "place_id": "ChIJfzIvuANZwokRqytv5KEVvyM",
+      "status": "OPERATIONAL",
+      "google_name": "Sinigual"
+    },
+    "International Burgers": {
+      "place_id": "ChIJW5KYWRVZwokR0g_yyfETuT4",
+      "status": "OPERATIONAL",
+      "google_name": "International Burgers"
+    },
+    "Sergimmo Salumeria": {
+      "place_id": "ChIJwWgpfbJZwokRjhUUSx081xA",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Sergimmo Salumeria"
+    },
+    "Sushi Star": {
+      "place_id": "ChIJew9qh7JZwokRdL2Sign-bL0",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi Star"
+    },
+    "The Best Sichuan 一品成都39": {
+      "place_id": "ChIJSzY_qqtZwokRiLyLL2_upv0",
+      "status": "OPERATIONAL",
+      "google_name": "The Best Sichuan 一品成都39"
+    },
+    "The Picnic Basket": {
+      "place_id": "ChIJ2bKsNKpZwokRZyTuwt_YAqA",
+      "status": "OPERATIONAL",
+      "google_name": "The Picnic Basket"
+    },
+    "Wafels & Dinges": {
+      "place_id": "ChIJ4V0guqpZwokR6r3NeCxc-EA",
+      "status": "OPERATIONAL",
+      "google_name": "Wafels & Dinges"
+    },
+    "Tabletime": {
+      "place_id": "ChIJK3avtAFZwokRe5Re7ij8Vi8",
+      "status": "OPERATIONAL",
+      "google_name": "Tabletime"
+    },
+    "Joy Curry & Tandoor": {
+      "place_id": "ChIJAT2cgwJZwokRChl40uD5VjU",
+      "status": "OPERATIONAL",
+      "google_name": "Joy Curry & Tandoor"
+    },
+    "Little Collins": {
+      "place_id": "ChIJuU3yhK9ZwokRVls7Mp3XqLY",
+      "status": "OPERATIONAL",
+      "google_name": "Little Collins"
+    },
+    "Jameson's": {
+      "place_id": "ChIJo9U3r-NYwokRDRcWezR_iNM",
+      "status": "OPERATIONAL",
+      "google_name": "Jameson's"
+    },
+    "Hokey Poké": {
+      "place_id": "ChIJFd0r1-JYwokRcOVqKCyyBV4",
+      "status": "OPERATIONAL",
+      "google_name": "Hokey Poké"
+    },
+    "Red Oyster USA": {
+      "place_id": "ChIJ__8jzwJZwokR5GQIikxlOm8",
+      "status": "OPERATIONAL",
+      "google_name": "Red Oyster USA"
+    },
+    "Kaoru": {
+      "place_id": "ChIJ-QOcah1ZwokRQA2iJwrQYoM",
+      "status": "OPERATIONAL",
+      "google_name": "Kaoru"
+    },
+    "Mama Pho": {
+      "place_id": "ChIJZyCVB5tZwokRjYjbI4fyHq8",
+      "status": "OPERATIONAL",
+      "google_name": "Mama Pho"
+    },
+    "Fyahbun Creative": {
+      "place_id": "ChIJib3-DrVZwokRpQqAy8Xs34g",
+      "status": "OPERATIONAL",
+      "google_name": "Fyahbun Creative"
+    },
+    "Pollo Campero": {
+      "place_id": "ChIJswU4eK5ZwokRjEOMGQUmww4",
+      "status": "OPERATIONAL",
+      "google_name": "Pollo Campero"
+    },
+    "BentOn": {
+      "place_id": "ChIJZWD8kQJZwokRkOAQ2TJxNd8",
+      "status": "OPERATIONAL",
+      "google_name": "BentOn"
+    },
+    "Norma Turtle Bay": {
+      "place_id": "ChIJ6WDSlGZZwokRXQNpKHrx4fE",
+      "status": "OPERATIONAL",
+      "google_name": "Norma Turtle Bay"
+    },
+    "DONGBEI Restaurant & Bar东北餐厅&酒吧": {
+      "place_id": "ChIJ04zZeXFZwokRunHmQy_LRno",
+      "status": "OPERATIONAL",
+      "google_name": "DONGBEI Restaurant & Bar东北餐厅&酒吧"
+    },
+    "Posh Pop Bakeshop": {
+      "place_id": "ChIJOwDQ8ENZwokRDi3mvX-MKTM",
+      "status": "OPERATIONAL",
+      "google_name": "Posh Pop Bakeshop"
+    },
+    "Green Symphony": {
+      "place_id": "ChIJ1VR_m1RYwokRGqUM_C_WSZc",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Green Symphony"
+    },
+    "Margon": {
+      "place_id": "ChIJ28_VhFVYwokRigKkUoPI6Ec",
+      "status": "OPERATIONAL",
+      "google_name": "Margon"
+    },
+    "Kwik Meal NYC": {
+      "place_id": "ChIJNUU4fVVYwokRgAzrpxwQGeY",
+      "status": "OPERATIONAL",
+      "google_name": "Kwik Meal NYC"
+    },
+    "Sushi Fussion NYC": {
+      "place_id": "ChIJe5BJVf5YwokRN5jR5d8RwYI",
+      "status": "OPERATIONAL",
+      "google_name": "Sushi Fussion NYC"
+    },
+    "JoJu": {
+      "place_id": "ChIJ_cDaa19ZwokRzKy90rKcWG4",
+      "status": "OPERATIONAL",
+      "google_name": "JoJu"
+    },
+    "Uncle Gussy's": {
+      "place_id": "ChIJheD4kfxYwokR-5X6NNDNYnk",
+      "status": "OPERATIONAL",
+      "google_name": "Uncle Gussy's"
+    },
+    "Little Beet": {
+      "place_id": "ChIJV2MvYPxYwokRMArUxVUbS5c",
+      "status": "OPERATIONAL",
+      "google_name": "Little Beet"
+    },
+    "fresh&co": {
+      "place_id": "ChIJ0xjsAL5ZwokRpaLJvPWkQus",
+      "status": "OPERATIONAL",
+      "google_name": "fresh&co"
+    },
+    "Brasserie Cognac Midtown East": {
+      "place_id": "ChIJAQBcFv1YwokRn7zc7K1d9Jc",
+      "status": "OPERATIONAL",
+      "google_name": "Brasserie Cognac Midtown East"
+    },
+    "Chef Guo - 小国宴": {
+      "place_id": "ChIJE3SO9C5ZwokRrA04gkUVIyQ",
+      "status": "OPERATIONAL",
+      "google_name": "Chef Guo - 小国宴"
+    },
+    "Hudson Malone: A New York Joint": {
+      "place_id": "ChIJBQjLcONYwokRUcTvprVQGEY",
+      "status": "OPERATIONAL",
+      "google_name": "Hudson Malone: A New York Joint"
+    },
+    "Lucky Cheng's Drag Queen Show Place": {
+      "place_id": "ChIJORjnnYNZwokR1uP2odXPR_I",
+      "status": "OPERATIONAL",
+      "google_name": "Lucky Cheng's Drag Queen Show Place"
+    },
+    "Amy's Bread": {
+      "place_id": "ChIJtUaeYFFYwokR691nhqI4b1k",
+      "status": "OPERATIONAL",
+      "google_name": "Amy's Bread"
+    },
+    "Fresh From Hell": {
+      "place_id": "ChIJJd-4_1NYwokRegME8dO2Dlw",
+      "status": "OPERATIONAL",
+      "google_name": "Fresh From Hell"
+    },
+    "Toasties": {
+      "place_id": "ChIJ4x85h_5YwokR_vEB_tdq2cI",
+      "status": "OPERATIONAL",
+      "google_name": "Toasties"
+    },
+    "Certé": {
+      "place_id": "ChIJM--f3uRYwokR6KcCDi-0zrI",
+      "status": "OPERATIONAL",
+      "google_name": "Certé"
+    },
+    "Toasties E. 51st": {
+      "place_id": "ChIJC3BgdPxYwokRBh_I9nN1TaU",
+      "status": "OPERATIONAL",
+      "google_name": "Toasties E. 51st"
+    },
+    "Omar Mediterranean Cuisine": {
+      "place_id": "ChIJU2zak-RYwokRNvszpehgiIs",
+      "status": "OPERATIONAL",
+      "google_name": "Omar Mediterranean Cuisine"
+    },
+    "The Blasket": {
+      "place_id": "ChIJXWrcKeRYwokRn1Xpv9wUiHQ",
+      "status": "OPERATIONAL",
+      "google_name": "The Blasket"
+    },
+    "בית הכנסת שובה ישראל , הרב פינטו. Shuva Israel NYC Manhattan Rabbi Pinto Kosher restaurant": {
+      "place_id": "ChIJo1GEFOVYwokRUnOD9_o455Y",
+      "status": "OPERATIONAL",
+      "google_name": "בית הכנסת שובה ישראל , הרב פינטו. Shuva Israel NYC Manhattan Rabbi Pinto Kosher restaurant"
+    },
+    "Juicy Cube": {
+      "place_id": "ChIJB1x25-RYwokR_Pn4qyxWvlo",
+      "status": "OPERATIONAL",
+      "google_name": "Juicy Cube"
+    },
+    "Side Door": {
+      "place_id": "ChIJ1XcODlRZwokRK_Qaorw4whc",
+      "status": "OPERATIONAL",
+      "google_name": "Side Door"
+    },
+    "KOBA Korean BBQ": {
+      "place_id": "ChIJxz7zVWhZwokRdBUzZQzde0A",
+      "status": "OPERATIONAL",
+      "google_name": "KOBA Korean BBQ"
+    },
+    "Kati Shop": {
+      "place_id": "ChIJ2wL-asVZwokRrSZ6SA-kMsg",
+      "status": "OPERATIONAL",
+      "google_name": "Kati Shop"
+    },
+    "Big Apple Brunch": {
+      "place_id": "ChIJq6paxk9YwokRNAoH2AFJCcU",
+      "status": "OPERATIONAL",
+      "google_name": "Big Apple Brunch"
+    },
+    "Kare Thai": {
+      "place_id": "ChIJx4cQkFBYwokRbAip-iCqVD8",
+      "status": "OPERATIONAL",
+      "google_name": "Kare Thai"
+    },
+    "As Is NYC": {
+      "place_id": "ChIJN9f99VBYwokRnOoeo6lLZCI",
+      "status": "OPERATIONAL",
+      "google_name": "As Is NYC"
+    },
+    "Parada 47": {
+      "place_id": "ChIJM6Ga3lFYwokRneVhKQLLpUE",
+      "status": "OPERATIONAL",
+      "google_name": "Parada 47"
+    },
+    "Zoralie": {
+      "place_id": "ChIJ7816vlBYwokRBNAOaSJbh4s",
+      "status": "OPERATIONAL",
+      "google_name": "Zoralie"
+    },
+    "The Harrow New York": {
+      "place_id": "ChIJNwKq-VBYwokR_j9BzG-OvgM",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "The Harrow New York"
+    },
+    "Bartolo's Contemporary Mexican Cuisine": {
+      "place_id": "ChIJN2Gx9bJZwokRZamX5Pwvwi0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Bartolo's Contemporary Mexican Cuisine"
+    },
+    "Basta Middle Eastern Grill": {
+      "place_id": "ChIJFyZREUtZwokRfIvRGdJVi94",
+      "status": "OPERATIONAL",
+      "google_name": "Basta Middle Eastern Grill"
+    },
+    "HK Cantina": {
+      "place_id": "ChIJy_YXMeFZwokRKV6NRfKvrEw",
+      "status": "OPERATIONAL",
+      "google_name": "HK Cantina"
+    },
+    "Wondee Siam": {
+      "place_id": "ChIJj5dV51lYwokRbXx-MhBdMWA",
+      "status": "OPERATIONAL",
+      "google_name": "Wondee Siam"
+    },
+    "Tina's Cuban": {
+      "place_id": "ChIJ5wr5FPpYwokRrkM8d-9l8wM",
+      "status": "OPERATIONAL",
+      "google_name": "Tina's Cuban"
+    },
+    "Tony Dragon's Grille": {
+      "place_id": "ChIJ3_-jzO9YwokR25lCKMuqvxc",
+      "status": "OPERATIONAL",
+      "google_name": "Tony Dragon's Grille"
+    },
+    "YUGIN": {
+      "place_id": "ChIJ9wuzp1lZwokRMf_mNcelo0s",
+      "status": "OPERATIONAL",
+      "google_name": "YUGIN"
+    },
+    "Cucina 8 1/2": {
+      "place_id": "ChIJjyqqzb1ZwokR-0sLirb2ZIA",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Cucina 8 1/2"
+    },
+    "Metro Marche": {
+      "place_id": "ChIJnYepyIxZwokRwg4gU7BWm3g",
+      "status": "OPERATIONAL",
+      "google_name": "Metro Marche"
+    },
+    "All'Antico Vinaio": {
+      "place_id": "ChIJSY0ILKRZwokReSs5pcTYMDU",
+      "status": "OPERATIONAL",
+      "google_name": "All'Antico Vinaio"
+    },
+    "Thai Pavilion NYC": {
+      "place_id": "ChIJt1JYGVpZwokRAGpXDSYuq1A",
+      "status": "OPERATIONAL",
+      "google_name": "Thai Pavilion NYC"
+    },
+    "IL Postino": {
+      "place_id": "ChIJaUXWaOJYwokR2Nh2HZDYYAQ",
+      "status": "OPERATIONAL",
+      "google_name": "IL Postino"
+    },
+    "Fotia Mediterranean": {
+      "place_id": "ChIJ59T_cplZwokRx887drw9pUc",
+      "status": "OPERATIONAL",
+      "google_name": "Fotia Mediterranean"
+    },
+    "IL BARETTO TO GO": {
+      "place_id": "ChIJ10pd-VpYwokRXLdIbX45jKc",
+      "status": "OPERATIONAL",
+      "google_name": "IL BARETTO TO GO"
+    },
+    "El Burrito Box": {
+      "place_id": "ChIJZ-1h-1hYwokRSIEBjADBg6A",
+      "status": "OPERATIONAL",
+      "google_name": "El Burrito Box"
+    },
+    "Plant-Blossom": {
+      "place_id": "ChIJub-cMlVZwokReHxiSKmB02E",
+      "status": "OPERATIONAL",
+      "google_name": "Plant-Blossom"
+    },
+    "Jerk House Caribbean Restaurant": {
+      "place_id": "ChIJJ65Ao4pZwokRwVZNDyN6Ldo",
+      "status": "OPERATIONAL",
+      "google_name": "Jerk House Caribbean Restaurant"
+    },
+    "Oh K-Dog Hell's Kitchen": {
+      "place_id": "ChIJI8tWLXRZwokR6l3Wq5J4Avw",
+      "status": "OPERATIONAL",
+      "google_name": "Oh K-Dog Hell's Kitchen"
+    },
+    "Masseria Caffè": {
+      "place_id": "ChIJy2XJvz5ZwokRxkBeyQCfRM8",
+      "status": "OPERATIONAL",
+      "google_name": "Masseria Caffè"
+    },
+    "Kim & Bob Shop": {
+      "place_id": "ChIJt7uh2NhZwokR6GV0cQYSII4",
+      "status": "OPERATIONAL",
+      "google_name": "Kim & Bob Shop"
+    },
+    "Karahi Indian Cuisine": {
+      "place_id": "ChIJ54yQx3dZwokRP57UalPZ64U",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Karahi Indian Cuisine"
+    },
+    "Mr.Liu Hot Pot": {
+      "place_id": "ChIJtcOf_kxZwokRgwa-LfD-v4c",
+      "status": "OPERATIONAL",
+      "google_name": "Mr.Liu Hot Pot"
+    },
+    "Lions Gate Grill": {
+      "place_id": "ChIJbyHH6SFZwokRuGaH7RHbLgc",
+      "status": "OPERATIONAL",
+      "google_name": "Lions Gate Grill"
+    },
+    "Nittis Italian Restaurant in Hell's Kitchen": {
+      "place_id": "ChIJ5-b7dsFZwokRfHcx3GCdpPs",
+      "status": "OPERATIONAL",
+      "google_name": "Nittis Italian Restaurant in Hell's Kitchen"
+    },
+    "Shah’s Halal Food": {
+      "place_id": "ChIJj7WnutJZwokRNR-PkOfGpg4",
+      "status": "OPERATIONAL",
+      "google_name": "Shah’s Halal Food"
+    },
+    "Happy Tuna Sushi & Crispy Rice - Hudson Yards": {
+      "place_id": "ChIJHTVTG0VZwokRh2vD-yb-ANs",
+      "status": "OPERATIONAL",
+      "google_name": "Happy Tuna Sushi & Crispy Rice - Hudson Yards"
+    },
+    "Burgermania": {
+      "place_id": "ChIJw-FUB3pZwokROaAFxzqHzp4",
+      "status": "OPERATIONAL",
+      "google_name": "Burgermania"
+    },
+    "Cubby's": {
+      "place_id": "ChIJrX0iSu5ZwokRYg6me9J5obs",
+      "status": "OPERATIONAL",
+      "google_name": "Cubby's"
+    },
+    "Ari Sushi": {
+      "place_id": "ChIJIbso2M1ZwokRKg4gwhuqj1I",
+      "status": "OPERATIONAL",
+      "google_name": "Ari Sushi"
+    },
+    "Monkey Sushi & 3 Chick Sushi": {
+      "place_id": "ChIJEbJF3KRZwokRTVkhAl7n37U",
+      "status": "OPERATIONAL",
+      "google_name": "Monkey Sushi & 3 Chick Sushi"
+    },
+    "Fogon": {
+      "place_id": "ChIJbYUPQ01ZwokRSWQCi1mdDuE",
+      "status": "OPERATIONAL",
+      "google_name": "Fogon"
+    },
+    "Primola": {
+      "place_id": "ChIJp72RT-hYwokRfKi2m0hLl-o",
+      "status": "OPERATIONAL",
+      "google_name": "Primola"
+    },
+    "Java Girl": {
+      "place_id": "ChIJ3zLEf8JYwokRtpxUyXETQ2w",
+      "status": "OPERATIONAL",
+      "google_name": "Java Girl"
+    },
+    "Vegan Ginger Root": {
+      "place_id": "ChIJ_auWHehYwokROYvjW5FSPOg",
+      "status": "OPERATIONAL",
+      "google_name": "Vegan Ginger Root"
+    },
+    "Culture In A Bowl LLC": {
+      "place_id": "ChIJe5ciealZwokRJQCsIvWxY4M",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Culture In A Bowl LLC"
+    },
+    "Cha Dimsum & Chinese Cuisine": {
+      "place_id": "ChIJwVqKbABZwokRxwOJvOP7KQk",
+      "status": "OPERATIONAL",
+      "google_name": "Cha Dimsum & Chinese Cuisine"
+    },
+    "Marwin": {
+      "place_id": "ChIJT_8UOVBZwokR0erI7JeJ9zk",
+      "status": "OPERATIONAL",
+      "google_name": "Marwin"
+    },
+    "Le Gourmet": {
+      "place_id": "ChIJa6J_PsJYwokR2WVHJYRK-T0",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Le Gourmet"
+    },
+    "Quantum Leap": {
+      "place_id": "ChIJk933-EVZwokRVNotYMG_IFY",
+      "status": "OPERATIONAL",
+      "google_name": "Quantum Leap"
+    },
+    "ME Mediterranean Eatery": {
+      "place_id": "ChIJoaJKT6lZwokRhhuJIS2Rcug",
+      "status": "OPERATIONAL",
+      "google_name": "ME Mediterranean Eatery"
+    },
+    "PJ Bernstein": {
+      "place_id": "ChIJSeZ4ROpYwokRQtjtlj5Phuw",
+      "status": "OPERATIONAL",
+      "google_name": "PJ Bernstein"
+    },
+    "goodsugar": {
+      "place_id": "ChIJl93TpPhZwokRTlrz8-os9ZM",
+      "status": "OPERATIONAL",
+      "google_name": "goodsugar"
+    },
+    "Chez les Frenchies": {
+      "place_id": "ChIJA6-QN0xZwokRtq9PQPS54L8",
+      "status": "OPERATIONAL",
+      "google_name": "Chez les Frenchies"
+    },
+    "Come Prima": {
+      "place_id": "ChIJmyy-U-tYwokRc5-kgu-G_N4",
+      "status": "OPERATIONAL",
+      "google_name": "Come Prima"
+    },
+    "William Poll": {
+      "place_id": "ChIJUWwXSZVYwokRoQc_-nzXc_0",
+      "status": "OPERATIONAL",
+      "google_name": "William Poll"
+    },
+    "Sable's Smoked Fish": {
+      "place_id": "ChIJ77bqDb9YwokRJNMk9UvbB58",
+      "status": "OPERATIONAL",
+      "google_name": "Sable's Smoked Fish"
+    },
+    "Sashimi Express II": {
+      "place_id": "ChIJY50EDsBYwokR0Y-IHvUpxys",
+      "status": "OPERATIONAL",
+      "google_name": "Sashimi Express II"
+    },
+    "Eighteen": {
+      "place_id": "ChIJbQYrur5YwokRGrkyjinbNQc",
+      "status": "OPERATIONAL",
+      "google_name": "Eighteen"
+    },
+    "AOC East": {
+      "place_id": "ChIJx0CjgrlYwokRhIETr-qxrZQ",
+      "status": "OPERATIONAL",
+      "google_name": "AOC East"
+    },
+    "Famous Famiglia": {
+      "place_id": "ChIJwZgkq71YwokR1HTG3-C_hSI",
+      "status": "OPERATIONAL",
+      "google_name": "Famous Famiglia"
+    },
+    "Brady's": {
+      "place_id": "ChIJwXsOq75YwokR-a3vffsB8gM",
+      "status": "OPERATIONAL",
+      "google_name": "Brady's"
+    },
+    "Tiramisu": {
+      "place_id": "ChIJcV9QYb5YwokR5onE4zjFoq8",
+      "status": "OPERATIONAL",
+      "google_name": "Tiramisu"
+    },
+    "The Gaf": {
+      "place_id": "ChIJ5_f9g6VYwokRfdkkhk6TUJc",
+      "status": "OPERATIONAL",
+      "google_name": "The Gaf"
+    },
+    "Le Viêt Thai": {
+      "place_id": "ChIJ41_RQaVYwokRkwcRm2jdhwg",
+      "status": "OPERATIONAL",
+      "google_name": "Le Viêt Thai"
+    },
+    "IL Carino Restaurant": {
+      "place_id": "ChIJiTxP17pYwokR0Gj0Wrd5cOg",
+      "status": "OPERATIONAL",
+      "google_name": "IL Carino Restaurant"
+    },
+    "Thai Hot Box": {
+      "place_id": "ChIJpzexj3VZwokR5Lc7gtlP5_Y",
+      "status": "OPERATIONAL",
+      "google_name": "Thai Hot Box"
+    },
+    "Bread N Wine": {
+      "place_id": "ChIJNytUk8hZwokR3ujqnpxOJTI",
+      "status": "OPERATIONAL",
+      "google_name": "Bread N Wine"
+    },
+    "Eshel": {
+      "place_id": "ChIJDRf0YABZwokRIQNYGUiPn-8",
+      "status": "OPERATIONAL",
+      "google_name": "Eshel"
+    },
+    "Burritos Y Mas NY": {
+      "place_id": "ChIJ9Qaa6KdYwokRJMTGbfJoU3A",
+      "status": "OPERATIONAL",
+      "google_name": "Burritos Y Mas NY"
+    },
+    "El Tepeyac Taqueria": {
+      "place_id": "ChIJXzsvVjpZwokRvUmVEVMVksI",
+      "status": "OPERATIONAL",
+      "google_name": "El Tepeyac Taqueria"
+    },
+    "EJ Kitchen": {
+      "place_id": "ChIJL080e8ZZwokRm5el0cgL-x4",
+      "status": "OPERATIONAL",
+      "google_name": "EJ Kitchen"
+    },
+    "Gebhard's Beer Culture": {
+      "place_id": "ChIJUXw24mFYwokRJOLOwPHe0fg",
+      "status": "OPERATIONAL",
+      "google_name": "Gebhard's Beer Culture"
+    },
+    "Birria Landia UWS": {
+      "place_id": "ChIJEQTRMQBZwokRydt_xNjqODM",
+      "status": "OPERATIONAL",
+      "google_name": "Birria Landia UWS"
+    },
+    "Simply Noodles": {
+      "place_id": "ChIJacAht4FZwokRpwfTdI-IFiw",
+      "status": "OPERATIONAL",
+      "google_name": "Simply Noodles"
+    },
+    "Freddie & Pepper's": {
+      "place_id": "ChIJhaWpnIlYwokRd67HWz_uqic",
+      "status": "OPERATIONAL",
+      "google_name": "Freddie & Pepper's"
+    },
+    "Beard Papa's": {
+      "place_id": "ChIJ3-hCTIhYwokRteYINKrFvKg",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Beard Papa's"
+    },
+    "The Dead Poet": {
+      "place_id": "ChIJ02dcCoZYwokReJRvMFYrq-8",
+      "status": "OPERATIONAL",
+      "google_name": "The Dead Poet"
+    },
+    "Luke's Lobster Upper West Side": {
+      "place_id": "ChIJpYc5A4ZYwokRje66spS-ixU",
+      "status": "OPERATIONAL",
+      "google_name": "Luke's Lobster Upper West Side"
+    },
+    "Senn Thai Comfort Food": {
+      "place_id": "ChIJdfrhCoZYwokRWxg9Yhdxz04",
+      "status": "OPERATIONAL",
+      "google_name": "Senn Thai Comfort Food"
+    },
+    "Dublin House": {
+      "place_id": "ChIJM4BXhYhYwokR8Wcr6PIqz-4",
+      "status": "OPERATIONAL",
+      "google_name": "Dublin House"
+    },
+    "Kasbah Grill": {
+      "place_id": "ChIJz6FFoYZYwokRt03EmEnqlhQ",
+      "status": "OPERATIONAL",
+      "google_name": "Kasbah Grill"
+    },
+    "George Keeley": {
+      "place_id": "ChIJN0JByYVYwokRahUWREPbw5Q",
+      "status": "OPERATIONAL",
+      "google_name": "George Keeley"
+    },
+    "Uptown Poké": {
+      "place_id": "ChIJqRuGnt1ZwokREA-z-C-u-1Y",
+      "status": "OPERATIONAL",
+      "google_name": "Uptown Poké"
+    },
+    "Flor de Mayo Restaurant": {
+      "place_id": "ChIJccb94CX2wokRETIajBqC4tE",
+      "status": "OPERATIONAL",
+      "google_name": "Flor de Mayo Restaurant"
+    },
+    "Mido": {
+      "place_id": "ChIJ7cS0D4NYwokRSy7Zb5tUlOQ",
+      "status": "OPERATIONAL",
+      "google_name": "Mido"
+    },
+    "TAKEDA": {
+      "place_id": "ChIJT4-zRP9ZwokRph9ydWRuqTU",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "TAKEDA"
+    },
+    "Taqueria 86": {
+      "place_id": "ChIJXVI0sYhZwokRWU84nshhSyE",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria 86"
+    },
+    "Holy Schnitzel": {
+      "place_id": "ChIJRdRVJ5NZwokR6VHVI3j_4-s",
+      "status": "OPERATIONAL",
+      "google_name": "Holy Schnitzel"
+    },
+    "Broadway Dive": {
+      "place_id": "ChIJ9T8N2iX2wokRELO5fBJP8sM",
+      "status": "OPERATIONAL",
+      "google_name": "Broadway Dive"
+    },
+    "Moon Kee Restaurant": {
+      "place_id": "ChIJMepninf3wokRWULnnSKXiaw",
+      "status": "OPERATIONAL",
+      "google_name": "Moon Kee Restaurant"
+    },
+    "Adobo Mexican Grill": {
+      "place_id": "ChIJn716mhf3wokRr7oJmczHBm4",
+      "status": "OPERATIONAL",
+      "google_name": "Adobo Mexican Grill"
+    },
+    "Abigail's": {
+      "place_id": "ChIJWTyLUQD3wokRWfi84AHh8-8",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Abigail's"
+    },
+    "Saiguette": {
+      "place_id": "ChIJg-WOqSP2wokR7ajr8S2mnqM",
+      "status": "OPERATIONAL",
+      "google_name": "Saiguette"
+    },
+    "Mangetsu Sushi": {
+      "place_id": "ChIJF_XXxHL3wokRR3TLdvl-zGg",
+      "status": "OPERATIONAL",
+      "google_name": "Mangetsu Sushi"
+    },
+    "Koo Thai (Upper West Side)": {
+      "place_id": "ChIJ6fwSEmv3wokRHTduHKDOtBU",
+      "status": "OPERATIONAL",
+      "google_name": "Koo Thai (Upper West Side)"
+    },
+    "DONGBEI 东北(Upper West Side)": {
+      "place_id": "ChIJJffeu2r3wokRk24EZtx8-pk",
+      "status": "OPERATIONAL",
+      "google_name": "DONGBEI 东北(Upper West Side)"
+    },
+    "K-Street Food 5th ave": {
+      "place_id": "ChIJtY1bZAD3wokR7QS5gAkPurM",
+      "status": "OPERATIONAL",
+      "google_name": "K-Street Food 5th ave"
+    },
+    "El Valle 46 Restaurante": {
+      "place_id": "ChIJ_UFSFS73wokRYw5ofJ0524U",
+      "status": "OPERATIONAL",
+      "google_name": "El Valle 46 Restaurante"
+    },
+    "Los 3 Charros": {
+      "place_id": "ChIJnVLW9Pv3wokRbJiZyOEpaUE",
+      "status": "OPERATIONAL",
+      "google_name": "Los 3 Charros"
+    },
+    "Taqueria Al Pastor": {
+      "place_id": "ChIJ3-Ixwm73wokRGvOp2TFg83c",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria Al Pastor"
+    },
+    "Cravin Crispy": {
+      "place_id": "ChIJBdaRsd33wokRkLez4B75bYo",
+      "status": "OPERATIONAL",
+      "google_name": "Cravin Crispy"
+    },
+    "Black Rican Vegan Pop-Up": {
+      "place_id": "ChIJS-Iae9nzwokRZ7BRU4OmY-8",
+      "status": "OPERATIONAL",
+      "google_name": "Black Rican Vegan Pop-Up"
+    },
+    "Nocciola Ristorante": {
+      "place_id": "ChIJG3Ux0Af2wokRTVZ-phoptd8",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Nocciola Ristorante"
+    },
+    "El Kallejon": {
+      "place_id": "ChIJKUnbfQj2wokRUvzwYGqTBQI",
+      "status": "OPERATIONAL",
+      "google_name": "El Kallejon"
+    },
+    "Las Panteras Negras": {
+      "place_id": "ChIJa-Y5RgH2wokR1LjuFNMzVog",
+      "status": "OPERATIONAL",
+      "google_name": "Las Panteras Negras"
+    },
+    "Cascalote": {
+      "place_id": "ChIJ7yuPRgH2wokRsNJqsaAqjU4",
+      "status": "OPERATIONAL",
+      "google_name": "Cascalote"
+    },
+    "Polash": {
+      "place_id": "ChIJdT6sXgj2wokR8OZiKQUJN54",
+      "status": "OPERATIONAL",
+      "google_name": "Polash"
+    },
+    "Spaha Soul": {
+      "place_id": "ChIJwWtsav31wokRxEWigV3aUjM",
+      "status": "OPERATIONAL",
+      "google_name": "Spaha Soul"
+    },
+    "Crepes On Columbus": {
+      "place_id": "ChIJ5wPq0SL2wokRWumRNSRyUis",
+      "status": "CLOSED_PERMANENTLY",
+      "google_name": "Crepes On Columbus"
+    },
+    "Homemade Taqueria Columbus": {
+      "place_id": "ChIJ70esFpv3wokRjx3gE3ifY2E",
+      "status": "OPERATIONAL",
+      "google_name": "Homemade Taqueria Columbus"
+    },
+    "Taqueria Allende": {
+      "place_id": "ChIJRwcuWQz3wokRoGRaHPyPem8",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria Allende"
+    },
+    "Mustard Indian Eatery": {
+      "place_id": "ChIJGU10WlD3wokRZuKKm8CTsEM",
+      "status": "OPERATIONAL",
+      "google_name": "Mustard Indian Eatery"
+    },
+    "Il Caffe Latte": {
+      "place_id": "ChIJmQZU-BH2wokR77fs9FoxIrg",
+      "status": "OPERATIONAL",
+      "google_name": "Il Caffe Latte"
+    },
+    "Make My Fish": {
+      "place_id": "ChIJOdtYAhH2wokR_BPOXyBNYGM",
+      "status": "OPERATIONAL",
+      "google_name": "Make My Fish"
+    },
+    "El Mariachi Mexican Cuisine 🇲🇽": {
+      "place_id": "ChIJb8TQVHL3wokR4g3pXcOX0Yw",
+      "status": "OPERATIONAL",
+      "google_name": "El Mariachi Mexican Cuisine 🇲🇽"
+    },
+    "FIELDTRIP": {
+      "place_id": "ChIJHTUt_L73wokRBkywY68ePoY",
+      "status": "OPERATIONAL",
+      "google_name": "FIELDTRIP"
+    },
+    "Greedy Pot": {
+      "place_id": "ChIJ0d_0EQL3wokRlyHE0MH7R_o",
+      "status": "OPERATIONAL",
+      "google_name": "Greedy Pot"
+    },
+    "Armonie": {
+      "place_id": "ChIJAegfRg_2wokRroyIUtH76Ww",
+      "status": "OPERATIONAL",
+      "google_name": "Armonie"
+    },
+    "Kaafi by Chaiguy": {
+      "place_id": "ChIJvSkaCQD3wokRtD9VHu_zKsY",
+      "status": "OPERATIONAL",
+      "google_name": "Kaafi by Chaiguy"
+    },
+    "Uptown Veg": {
+      "place_id": "ChIJS2rxgQv2wokRx0p2pg5NE9U",
+      "status": "OPERATIONAL",
+      "google_name": "Uptown Veg"
+    },
+    "Accra Express Restaurant": {
+      "place_id": "ChIJDQWflBL2wokRiLXCawXJJdU",
+      "status": "OPERATIONAL",
+      "google_name": "Accra Express Restaurant"
+    },
+    "El Patio De Fela": {
+      "place_id": "ChIJd9686SX3wokRO1vDYbXpANg",
+      "status": "OPERATIONAL",
+      "google_name": "El Patio De Fela"
+    },
+    "Pipo's Restaurant": {
+      "place_id": "ChIJ4QcXkwj2wokRdSgql6w1N9E",
+      "status": "OPERATIONAL",
+      "google_name": "Pipo's Restaurant"
+    },
+    "Arts and Crafts Beer Parlor": {
+      "place_id": "ChIJ_WSvdD72wokROnegxbxj37I",
+      "status": "OPERATIONAL",
+      "google_name": "Arts and Crafts Beer Parlor"
+    },
+    "Ban Ban Shop": {
+      "place_id": "ChIJce0NdYf3wokR1D8bIrOgeVQ",
+      "status": "OPERATIONAL",
+      "google_name": "Ban Ban Shop"
+    },
+    "Junzi Kitchen 君子食堂哥大店 Columbia University, New York NY｜ Healthy Authentic Chinese": {
+      "place_id": "ChIJ92N9DDz2wokR38VWvxg3qrE",
+      "status": "OPERATIONAL",
+      "google_name": "Junzi Kitchen 君子食堂哥大店 Columbia University, New York NY｜ Healthy Authentic Chinese"
+    },
+    "A1 Asian Fusion": {
+      "place_id": "ChIJYbl1lBL2wokR3Pw0NejRRvM",
+      "status": "OPERATIONAL",
+      "google_name": "A1 Asian Fusion"
+    },
+    "Awaze": {
+      "place_id": "ChIJMbUxIgb3wokR6sR3EPf4u4k",
+      "status": "OPERATIONAL",
+      "google_name": "Awaze"
+    },
+    "Yemeni Restaurant": {
+      "place_id": "ChIJuyAK3073wokR1X2sCM0t_Do",
+      "status": "OPERATIONAL",
+      "google_name": "Yemeni Restaurant"
+    },
+    "Jacob Soul Food Restaurant": {
+      "place_id": "ChIJnxjnEHP2wokR-Dgf5gfBf50",
+      "status": "OPERATIONAL",
+      "google_name": "Jacob Soul Food Restaurant"
+    },
+    "Teriyaki One Japanese Grill (Teriyaki & Sushi)": {
+      "place_id": "ChIJBQBHDin3wokRIopJfz5SCB0",
+      "status": "OPERATIONAL",
+      "google_name": "Teriyaki One Japanese Grill (Teriyaki & Sushi)"
+    },
+    "Azara Kitchen LLC": {
+      "place_id": "ChIJz3h9_zn3wokRGIG3gczgc1E",
+      "status": "OPERATIONAL",
+      "google_name": "Azara Kitchen LLC"
+    },
+    "Saint Louis Restaurant Keur Yayou Dara": {
+      "place_id": "ChIJQdns_aP3wokRBOTN5UN9zOo",
+      "status": "OPERATIONAL",
+      "google_name": "Saint Louis Restaurant Keur Yayou Dara"
+    },
+    "El Tina Harlem Restaurant": {
+      "place_id": "ChIJMRtWS2r2wokRu_wtCMfge6Y",
+      "status": "OPERATIONAL",
+      "google_name": "El Tina Harlem Restaurant"
+    },
+    "Island Grill Harlem Modern Caribbean Kitchen": {
+      "place_id": "ChIJOwFdGGr2wokR6fZEzR95eBg",
+      "status": "OPERATIONAL",
+      "google_name": "Island Grill Harlem Modern Caribbean Kitchen"
+    },
+    "Uptown Wingz": {
+      "place_id": "ChIJHfoyIFv3wokRvDHJ7fmpHXE",
+      "status": "OPERATIONAL",
+      "google_name": "Uptown Wingz"
+    },
+    "Halal Flamez": {
+      "place_id": "ChIJZZ3OtwD3wokRZzkhIVkaxcI",
+      "status": "OPERATIONAL",
+      "google_name": "Halal Flamez"
+    },
+    "Clove": {
+      "place_id": "ChIJ7Rqdp2X2wokR-Tmjs3ewrpc",
+      "status": "OPERATIONAL",
+      "google_name": "Clove"
+    },
+    "Frijolito's Restaurant Broadway": {
+      "place_id": "ChIJvTABP2T2wokRtBSCsNWE1qo",
+      "status": "OPERATIONAL",
+      "google_name": "Frijolito's Restaurant Broadway"
+    },
+    "Trufa Restaurant": {
+      "place_id": "ChIJu8YNJWT2wokRtKTDat-zTJ4",
+      "status": "OPERATIONAL",
+      "google_name": "Trufa Restaurant"
+    },
+    "La Lonchera": {
+      "place_id": "ChIJS-N6huP3wokRP-aJB_1FCl0",
+      "status": "OPERATIONAL",
+      "google_name": "La Lonchera"
+    },
+    "Taqueria El Chiltepin #3": {
+      "place_id": "ChIJ5Rr3cFH3wokRHCP-mKQ0DuI",
+      "status": "OPERATIONAL",
+      "google_name": "Taqueria El Chiltepin #3"
+    },
+    "At The Wallace": {
+      "place_id": "ChIJR6Y-pWL2wokR2L7b5pdH1DY",
+      "status": "OPERATIONAL",
+      "google_name": "At The Wallace"
+    },
+    "Chopped Parsley": {
+      "place_id": "ChIJM3HWz3z2wokR0ktkaSf5gSw",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Chopped Parsley"
+    },
+    "Jumbo": {
+      "place_id": "ChIJe4ujVyP2wokRukFP2hyg_co",
+      "status": "OPERATIONAL",
+      "google_name": "Jumbo"
+    },
+    "Patrick's Place": {
+      "place_id": "ChIJe_9PyWf3wokRECxEZpyZzuQ",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Patrick's Place"
+    },
+    "JuiceWorx": {
+      "place_id": "ChIJtf5DCHz3wokRLmZPe5qKyOU",
+      "status": "OPERATIONAL",
+      "google_name": "JuiceWorx"
+    },
+    "El Linaje": {
+      "place_id": "ChIJATHJXp33wokRWkTOlzHeWzQ",
+      "status": "OPERATIONAL",
+      "google_name": "El Linaje"
+    },
+    "Ichi Hibachi": {
+      "place_id": "ChIJ4wKB1Sv1wokRF3Y1z_lXfoM",
+      "status": "OPERATIONAL",
+      "google_name": "Ichi Hibachi"
+    },
+    "Suyo Gastrofusion": {
+      "place_id": "ChIJvRXKoD70wokRgXaViMBas0Q",
+      "status": "OPERATIONAL",
+      "google_name": "Suyo Gastrofusion"
+    },
+    "Los Munchies": {
+      "place_id": "ChIJ52rg8CP1wokRAuqsu0VAw-4",
+      "status": "OPERATIONAL",
+      "google_name": "Los Munchies"
+    },
+    "Blazin Treatz": {
+      "place_id": "ChIJCV9VHOf1wokRP3WPKXNEK30",
+      "status": "OPERATIONAL",
+      "google_name": "Blazin Treatz"
+    },
+    "Cabrini Juicery": {
+      "place_id": "ChIJlW6Wbj_3wokR8bEbsyRYrEo",
+      "status": "OPERATIONAL",
+      "google_name": "Cabrini Juicery"
+    },
+    "Tampopo Kitchen": {
+      "place_id": "ChIJM3gySND3wokRESUm1OOHcG4",
+      "status": "OPERATIONAL",
+      "google_name": "Tampopo Kitchen"
+    },
+    "Addey Ababa": {
+      "place_id": "ChIJt7Km4kT3wokR9MsYs70XF4A",
+      "status": "OPERATIONAL",
+      "google_name": "Addey Ababa"
+    },
+    "El Rinconcito Serie 56": {
+      "place_id": "ChIJQZN_xQT0wokR2cCNsmGuOK8",
+      "status": "OPERATIONAL",
+      "google_name": "El Rinconcito Serie 56"
+    },
+    "BURGERS & GRILL": {
+      "place_id": "ChIJMwMe3Bv0wokRcgTSg4RGOIM",
+      "status": "OPERATIONAL",
+      "google_name": "BURGERS & GRILL"
+    },
+    "El Pirata Street Food": {
+      "place_id": "ChIJX1G5vW31wokRoPLHKdPSBqo",
+      "status": "OPERATIONAL",
+      "google_name": "El Pirata Street Food"
+    },
+    "Cheezy Meltz": {
+      "place_id": "ChIJST6lpZn1wokR8g1TUGXixrc",
+      "status": "OPERATIONAL",
+      "google_name": "Cheezy Meltz"
+    },
+    "Tornado Crepes": {
+      "place_id": "ChIJHzKHBMrzwokRaejJ9qcTEkQ",
+      "status": "OPERATIONAL",
+      "google_name": "Tornado Crepes"
+    },
+    "Restaurante Ecuatoriano Genesis": {
+      "place_id": "ChIJRcO5P_bzwokR7V0Ww88c-Io",
+      "status": "OPERATIONAL",
+      "google_name": "Restaurante Ecuatoriano Genesis"
+    },
+    "Guadalupe Restaurant": {
+      "place_id": "ChIJv-bh-PbzwokR-AR_g9KRXLY",
+      "status": "OPERATIONAL",
+      "google_name": "Guadalupe Restaurant"
+    },
+    "phe": {
+      "place_id": "ChIJpSwdcwBZwokRedEPjLpqYXg",
+      "status": "OPERATIONAL",
+      "google_name": "Phê"
+    },
+    "spicy nepal": {
+      "place_id": "ChIJ2TWSW5xfwokRsQRWIoCR7xE",
+      "status": "OPERATIONAL",
+      "google_name": "Spicy Nepal"
+    },
+    "ALLURE": {
+      "place_id": "ChIJoXG3Jy1ZwokRundrMVRxueM",
+      "status": "OPERATIONAL",
+      "google_name": "Allure Cocktail Lounge"
+    },
+    "ATELIER DECEMBER": {
+      "place_id": "ChIJSQ-M_RdbwokRFt1QfkBu-84",
+      "status": "OPERATIONAL",
+      "google_name": "Atelier December"
+    },
+    "BANH": {
+      "place_id": "ChIJs_09yZ73wokRD-K3t2y0nH8",
+      "status": "OPERATIONAL",
+      "google_name": "Bánh"
+    },
+    "DANUBIUS": {
+      "place_id": "ChIJoRZhs_xfwokREU4NWDLMjt8",
+      "status": "OPERATIONAL",
+      "google_name": "Danubius"
+    },
+    "DARNA FALAFEL": {
+      "place_id": "ChIJ7yKrBFBawokRAdrvBUUCbZs",
+      "status": "OPERATIONAL",
+      "google_name": "Darna Falafel"
+    },
+    "Erawan": {
+      "place_id": "ChIJ5cNKXuBhwokRgOA_ezF1lq4",
+      "status": "OPERATIONAL",
+      "google_name": "Erawan Thai Cuisine"
+    },
+    "KOBA": {
+      "place_id": "ChIJPaPPEQJZwokRA0vwS8VcfqU",
+      "status": "OPERATIONAL",
+      "google_name": "KOBA Korean BBQ"
+    },
+    "KYO": {
+      "place_id": "ChIJ1yntZwBbwokRS2nY0BVewGA",
+      "status": "OPERATIONAL",
+      "google_name": "KYO Brooklyn"
+    },
+    "MARAKAND": {
+      "place_id": "ChIJv8O_NLdfwokRlKd7hSXlaes",
+      "status": "OPERATIONAL",
+      "google_name": "Marakand"
+    },
+    "MERV'S": {
+      "place_id": "ChIJ561dGRlcwokRtRw8jZpJh5M",
+      "status": "OPERATIONAL",
+      "google_name": "Merv’s Bar"
+    },
+    "MINT BAY INDIAN CUISINE": {
+      "place_id": "ChIJu6SgUAFFwokRmz19ktxARrs",
+      "status": "OPERATIONAL",
+      "google_name": "Mint Bay Indian Cuisine"
+    },
+    "MIXTAPE": {
+      "place_id": "ChIJ9zM86xhcwokRNsZ6GptnmZ0",
+      "status": "OPERATIONAL",
+      "google_name": "Mixtape Bushwick"
+    },
+    "MR. LEE'S": {
+      "place_id": "ChIJOzHI2CdbwokRETqTFIsv06o",
+      "status": "OPERATIONAL",
+      "google_name": "Mr. Lee’s"
+    },
+    "NEW CITY ASIAN CUISINE": {
+      "place_id": "ChIJ3VgkdkJdwokR0hKBQr61U-4",
+      "status": "OPERATIONAL",
+      "google_name": "New city"
+    },
+    "RIVIERA CATERERS": {
+      "place_id": "ChIJORtGIUtEwokRRkJrOQDvZPM",
+      "status": "OPERATIONAL",
+      "google_name": "Riviera Hospitality Group"
+    },
+    "SADIE'S WARD": {
+      "place_id": "ChIJkYrFXQBZwokRZDqR-gXdgSg",
+      "status": "OPERATIONAL",
+      "google_name": "Sadie’s Ward"
+    },
+    "SAMYAN": {
+      "place_id": "ChIJ93ENSbJbwokR1YxS7QYOk5A",
+      "status": "OPERATIONAL",
+      "google_name": "Samyan"
+    },
+    "STAGE 42": {
+      "place_id": "ChIJOS5qiVJYwokRyUvi53NWuTc",
+      "status": "OPERATIONAL",
+      "google_name": "Stage 42"
+    },
+    "TEN DEGREES": {
+      "place_id": "ChIJI1FMYZ1ZwokRhOThOdTMOgA",
+      "status": "OPERATIONAL",
+      "google_name": "Ten Degrees"
+    },
+    "TERIYAKI 99": {
+      "place_id": "ChIJr3tiEXVdwokRS-ZtyQxuJBY",
+      "status": "OPERATIONAL",
+      "google_name": "Teriyaki 99"
+    },
+    "THE GOAT": {
+      "place_id": "ChIJi_XEgedfwokRYCequglps2g",
+      "status": "OPERATIONAL",
+      "google_name": "The Goat Bar"
+    },
+    "THE PENN CLUB": {
+      "place_id": "ChIJ3VPc5v9YwokRDJWBNgYX_08",
+      "status": "OPERATIONAL",
+      "google_name": "Penn Club of New York"
+    },
+    "WAYS & MEANS": {
+      "place_id": "ChIJHzLX85FZwokRxM9KZpgq6Qk",
+      "status": "OPERATIONAL",
+      "google_name": "Ways and Means"
+    },
+    "WERKSTATT": {
+      "place_id": "ChIJ8QR3uzpbwokRS6jD-jk9BWc",
+      "status": "OPERATIONAL",
+      "google_name": "Werkstatt"
+    },
+    "Wetzel's Pretzels": {
+      "place_id": "ChIJC7nRyq5ZwokRSeOrGzVZimc",
+      "status": "OPERATIONAL",
+      "google_name": "Wetzel's Pretzels"
+    },
+    "Taverna East Village": {
+      "place_id": "ChIJhXfp8HVZwokRKCGfuDsTj9Y",
+      "status": "CLOSED_TEMPORARILY",
+      "google_name": "Taverna East Village"
+    },
+    "Village Taverna": {
+      "place_id": "ChIJCzeavZlZwokR2QIwtpnoa-M",
+      "status": "OPERATIONAL",
+      "google_name": "Village Taverna"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "last_run": "2026-03-25T12:42:01.045Z",
+    "total_website_restaurants": 1229,
+    "processed": 30,
+    "found": 4,
+    "not_found": 26,
+    "errors": 0
+  },
+  "found": [
+    {
+      "name": "joe allen",
+      "otName": "Joe Allen Restaurant",
+      "otUrl": "https://www.opentable.com/joe-allen-reservations-new-york",
+      "slug": null,
+      "rid": 107137,
+      "method": "puppeteer_page",
+      "website": "http://www.joeallenrestaurant.com/",
+      "validationStatus": 200
+    },
+    {
+      "name": "sparks steak house",
+      "otName": "Sparks Steak House Restaurant",
+      "otUrl": "https://www.opentable.com/sparks-steak-house",
+      "slug": null,
+      "rid": 78106,
+      "method": "puppeteer_page",
+      "website": "https://sparkssteakhouse.com/",
+      "validationStatus": 200
+    },
+    {
+      "name": "One if by Land, Two if by Sea",
+      "otName": "One if by Land, Two if by Sea Restaurant",
+      "otUrl": "https://www.opentable.com/one-if-by-land-two-if-by-sea-reservations-new-york",
+      "slug": null,
+      "rid": 336,
+      "method": "puppeteer_page",
+      "website": "http://www.oneifbyland.com/",
+      "validationStatus": 200
+    },
+    {
+      "name": "mike's bistro",
+      "otName": "Mike's Bistro",
+      "otUrl": "https://www.opentable.com/mikes-bistro-ues",
+      "slug": null,
+      "rid": null,
+      "method": "puppeteer_page",
+      "website": "http://www.mikesbistro.com/",
+      "validationStatus": 200
+    }
+  ],
+  "notFound": [
+    "Northshore Brasserie",
+    "ocean prime",
+    "the hunt and fish club",
+    "the capital grille",
+    "maialino mare",
+    "barbetta",
+    "1885 Grill",
+    "Old Gilman Grill",
+    "Aquavit Restaurant",
+    "tastings",
+    "michael's of brooklyn",
+    "Peter's Steakhouse",
+    "ha's đặc biệt",
+    "Lucien Restaurant",
+    "C Italian Restaurant",
+    "trattoria zero otto nove - flatiron",
+    "San Carlo Cicchetti",
+    "bacàn",
+    "Bond Street",
+    "Hawksmoor Seven Dials",
+    "One World Observatory Restaurant",
+    "metropolis by marcus samuelsson",
+    "villaggio ristorante",
+    "peruviana restaurant",
+    "new york luncheonette",
+    "ichimura"
+  ],
+  "errors": []
+}

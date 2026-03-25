@@ -1,0 +1,441 @@
+{
+  "good_matches": [
+    {
+      "name": "cote korean steakhouse",
+      "oldUrl": "https://resy.com/cities/ny/cote",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
+      "score": 0.85,
+      "slug": "cote-nyc",
+      "verified_name": "COTE Flatiron",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sunns",
+      "oldUrl": "https://resy.com/cities/ny/sunns",
+      "newName": "Book Your Sunn's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sunns",
+      "score": 0.85,
+      "slug": "sunns"
+    },
+    {
+      "name": "l'artusi",
+      "oldUrl": "https://resy.com/cities/ny/lartusi",
+      "newName": "Book Your L'Artusi Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/lartusi-ny",
+      "score": 0.85,
+      "slug": "lartusi-ny",
+      "verified_name": "L'Artusi",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "raouls",
+      "oldUrl": "https://resy.com/cities/ny/raouls-new-york",
+      "newName": "Book Your Raoul's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/raoulsrestaurant",
+      "score": 0.85,
+      "slug": "raoulsrestaurant",
+      "verified_name": "Raoul's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sami and susu",
+      "oldUrl": "https://resy.com/cities/ny/sami-and-susu-new-york",
+      "newName": "Book Your Sami & Susu Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sami-and-susu",
+      "score": 1,
+      "slug": "sami-and-susu",
+      "verified_name": "Sami & Susu",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sal tangs",
+      "oldUrl": "https://resy.com/cities/ny/sal-tangs-new-york",
+      "newName": "Book Your Sal Tang's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sal-tangs",
+      "score": 1,
+      "slug": "sal-tangs",
+      "verified_name": "Sal Tang's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "le chene",
+      "oldUrl": "https://resy.com/cities/ny/le-chene-new-york",
+      "newName": "Book Your Le Ch\u00eane Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/le-chene",
+      "score": 1,
+      "slug": "le-chene",
+      "verified_name": "Le Ch\u00eane",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "ingas bar",
+      "oldUrl": "https://resy.com/cities/ny/ingas-bar-new-york",
+      "newName": "Book Your Inga's Bar Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/ingas-bar",
+      "score": 1,
+      "slug": "ingas-bar",
+      "verified_name": "Inga's Bar",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "mrs georgia",
+      "oldUrl": "https://resy.com/cities/ny/mrs-georgia-new-york",
+      "newName": "Book Your Mrs. Georgia Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/mrs-georgia",
+      "score": 1,
+      "slug": "mrs-georgia",
+      "verified_name": "Mrs. Georgia",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "place des fetes",
+      "oldUrl": "https://resy.com/cities/ny/place-des-fetes-new-york",
+      "newName": "Book Your Place des F\u00eates Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/place-des-fetes",
+      "score": 1,
+      "slug": "place-des-fetes",
+      "verified_name": "Place des F\u00eates",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "rolos",
+      "oldUrl": "https://resy.com/cities/ny/rolos-new-york",
+      "newName": "Book Your Rolo's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/rolos",
+      "score": 1,
+      "slug": "rolos",
+      "verified_name": "Rolo's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "robertas",
+      "oldUrl": "https://resy.com/cities/ny/robertas-new-york",
+      "newName": "Resy | Your Guide to the World's Best Restaurants",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/robertas-restaurant",
+      "score": 0.85,
+      "slug": "robertas-restaurant"
+    },
+    {
+      "name": "larina",
+      "oldUrl": "https://resy.com/cities/ny/la-rina-new-york",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/larina",
+      "score": 1,
+      "slug": "larina",
+      "verified_name": "LaRina Pastificio & Vino",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "cafe spaghetti",
+      "oldUrl": "https://resy.com/cities/ny/cafe-spaghetti-new-york",
+      "newName": "Book Your Cafe Spaghetti Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/cafe-spaghetti",
+      "score": 1,
+      "slug": "cafe-spaghetti",
+      "verified_name": "Cafe Spaghetti",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sylvias",
+      "oldUrl": "https://resy.com/cities/ny/sylvias-new-york",
+      "newName": "Book Your Sylvia's Restaurant Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sylvias-restaurant",
+      "score": 0.85,
+      "slug": "sylvias-restaurant",
+      "verified_name": "Sylvia\u2019s Restaurant",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "labeille",
+      "oldUrl": "https://resy.com/cities/ny/labeille",
+      "newName": "Book Your l'abeille Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/labielle",
+      "score": 0.85,
+      "slug": "labielle",
+      "verified_name": "l'abeille",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "briscola trattoria",
+      "oldUrl": "https://resy.com/cities/ny/briscola-trattoria",
+      "newName": "Book Your Briscola Trattoria Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/briscola-trattoria",
+      "score": 1,
+      "slug": "briscola-trattoria",
+      "verified_name": "Briscola Trattoria",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "queen\u2019s room",
+      "oldUrl": "https://resy.com/cities/ny/queens-room",
+      "newName": "Book Your Queen Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/queen",
+      "score": 0.85,
+      "slug": "queen",
+      "verified_name": "Queen",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "bkb brooklyn brasserie",
+      "oldUrl": "https://resy.com/cities/new-york-ny/venues/bkb-brooklyn-brasserie",
+      "newName": "Book Your BKB Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/bkb",
+      "score": 0.85,
+      "slug": "bkb",
+      "verified_name": "BKB",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "ssam bar",
+      "oldUrl": "https://resy.com/cities/new-york-ny/venues/momofuku-ssam-bar",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/ssam-bar",
+      "score": 1,
+      "slug": "ssam-bar"
+    }
+  ],
+  "maybe": [
+    {
+      "name": "hometown bar b que new york",
+      "oldUrl": "https://resy.com/cities/ny/hometown-bar-b-que",
+      "candidateName": "Book Your Ray's Hometown Bar Reservation Now on Resy",
+      "candidateUrl": "https://resy.com/cities/new-york-ny/venues/rays-hometown-bar",
+      "score": 0.375
+    }
+  ],
+  "dead": [
+    {
+      "name": "julianas pizza",
+      "oldUrl": "https://resy.com/cities/ny/julianas-pizza-new-york",
+      "googleTop": "Book Your Ci Siamo Reservation Now on Resy",
+      "googleTopUrl": "https://resy.com/cities/new-york-ny/venues/ci-siamo"
+    },
+    {
+      "name": "katzs",
+      "oldUrl": "https://resy.com/cities/ny/katzs-delicatessen",
+      "googleTop": "The Private Dining Rooms of New York - Resy",
+      "googleTopUrl": "https://resy.com/cities/new-york-ny/list/the-private-dining-rooms-of-new-york"
+    },
+    {
+      "name": "lindustrie pizzeria",
+      "oldUrl": "https://resy.com/cities/ny/lindustrie-pizzeria",
+      "googleTop": "Book Your L'Artusi Reservation Now on Resy",
+      "googleTopUrl": "https://resy.com/cities/new-york-ny/venues/lartusi-ny"
+    },
+    {
+      "name": "has dac biet",
+      "reason": "wrong match from search"
+    },
+    {
+      "name": "beauty and essex",
+      "reason": "wrong match from search"
+    },
+    {
+      "name": "gordos cantina",
+      "reason": "wrong match from search"
+    },
+    {
+      "name": "le b",
+      "reason": "wrong match from search"
+    }
+  ],
+  "verified": [
+    {
+      "name": "cote korean steakhouse",
+      "oldUrl": "https://resy.com/cities/ny/cote",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
+      "score": 0.85,
+      "slug": "cote-nyc",
+      "verified_name": "COTE Flatiron",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "l'artusi",
+      "oldUrl": "https://resy.com/cities/ny/lartusi",
+      "newName": "Book Your L'Artusi Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/lartusi-ny",
+      "score": 0.85,
+      "slug": "lartusi-ny",
+      "verified_name": "L'Artusi",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "raouls",
+      "oldUrl": "https://resy.com/cities/ny/raouls-new-york",
+      "newName": "Book Your Raoul's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/raoulsrestaurant",
+      "score": 0.85,
+      "slug": "raoulsrestaurant",
+      "verified_name": "Raoul's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sami and susu",
+      "oldUrl": "https://resy.com/cities/ny/sami-and-susu-new-york",
+      "newName": "Book Your Sami & Susu Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sami-and-susu",
+      "score": 1,
+      "slug": "sami-and-susu",
+      "verified_name": "Sami & Susu",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sal tangs",
+      "oldUrl": "https://resy.com/cities/ny/sal-tangs-new-york",
+      "newName": "Book Your Sal Tang's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sal-tangs",
+      "score": 1,
+      "slug": "sal-tangs",
+      "verified_name": "Sal Tang's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "le chene",
+      "oldUrl": "https://resy.com/cities/ny/le-chene-new-york",
+      "newName": "Book Your Le Ch\u00eane Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/le-chene",
+      "score": 1,
+      "slug": "le-chene",
+      "verified_name": "Le Ch\u00eane",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "ingas bar",
+      "oldUrl": "https://resy.com/cities/ny/ingas-bar-new-york",
+      "newName": "Book Your Inga's Bar Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/ingas-bar",
+      "score": 1,
+      "slug": "ingas-bar",
+      "verified_name": "Inga's Bar",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "mrs georgia",
+      "oldUrl": "https://resy.com/cities/ny/mrs-georgia-new-york",
+      "newName": "Book Your Mrs. Georgia Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/mrs-georgia",
+      "score": 1,
+      "slug": "mrs-georgia",
+      "verified_name": "Mrs. Georgia",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "place des fetes",
+      "oldUrl": "https://resy.com/cities/ny/place-des-fetes-new-york",
+      "newName": "Book Your Place des F\u00eates Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/place-des-fetes",
+      "score": 1,
+      "slug": "place-des-fetes",
+      "verified_name": "Place des F\u00eates",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "rolos",
+      "oldUrl": "https://resy.com/cities/ny/rolos-new-york",
+      "newName": "Book Your Rolo's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/rolos",
+      "score": 1,
+      "slug": "rolos",
+      "verified_name": "Rolo's",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "larina",
+      "oldUrl": "https://resy.com/cities/ny/la-rina-new-york",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/larina",
+      "score": 1,
+      "slug": "larina",
+      "verified_name": "LaRina Pastificio & Vino",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "cafe spaghetti",
+      "oldUrl": "https://resy.com/cities/ny/cafe-spaghetti-new-york",
+      "newName": "Book Your Cafe Spaghetti Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/cafe-spaghetti",
+      "score": 1,
+      "slug": "cafe-spaghetti",
+      "verified_name": "Cafe Spaghetti",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "sylvias",
+      "oldUrl": "https://resy.com/cities/ny/sylvias-new-york",
+      "newName": "Book Your Sylvia's Restaurant Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sylvias-restaurant",
+      "score": 0.85,
+      "slug": "sylvias-restaurant",
+      "verified_name": "Sylvia\u2019s Restaurant",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "labeille",
+      "oldUrl": "https://resy.com/cities/ny/labeille",
+      "newName": "Book Your l'abeille Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/labielle",
+      "score": 0.85,
+      "slug": "labielle",
+      "verified_name": "l'abeille",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "briscola trattoria",
+      "oldUrl": "https://resy.com/cities/ny/briscola-trattoria",
+      "newName": "Book Your Briscola Trattoria Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/briscola-trattoria",
+      "score": 1,
+      "slug": "briscola-trattoria",
+      "verified_name": "Briscola Trattoria",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "queen\u2019s room",
+      "oldUrl": "https://resy.com/cities/ny/queens-room",
+      "newName": "Book Your Queen Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/queen",
+      "score": 0.85,
+      "slug": "queen",
+      "verified_name": "Queen",
+      "verified_loc": "new-york-ny"
+    },
+    {
+      "name": "bkb brooklyn brasserie",
+      "oldUrl": "https://resy.com/cities/new-york-ny/venues/bkb-brooklyn-brasserie",
+      "newName": "Book Your BKB Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/bkb",
+      "score": 0.85,
+      "slug": "bkb",
+      "verified_name": "BKB",
+      "verified_loc": "new-york-ny"
+    }
+  ],
+  "verify_failed": [
+    {
+      "name": "sunns",
+      "oldUrl": "https://resy.com/cities/ny/sunns",
+      "newName": "Book Your Sunn's Reservation Now on Resy",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/sunns",
+      "score": 0.85,
+      "slug": "sunns"
+    },
+    {
+      "name": "robertas",
+      "oldUrl": "https://resy.com/cities/ny/robertas-new-york",
+      "newName": "Resy | Your Guide to the World's Best Restaurants",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/robertas-restaurant",
+      "score": 0.85,
+      "slug": "robertas-restaurant"
+    },
+    {
+      "name": "ssam bar",
+      "oldUrl": "https://resy.com/cities/new-york-ny/venues/momofuku-ssam-bar",
+      "newName": "Resy | Right This Way",
+      "newUrl": "https://resy.com/cities/new-york-ny/venues/ssam-bar",
+      "score": 1,
+      "slug": "ssam-bar"
+    }
+  ]
+}
