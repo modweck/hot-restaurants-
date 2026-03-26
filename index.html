@@ -256,6 +256,7 @@
           <button class="fchip" onclick="setTrendFilter('bib',this)">🍽️ Bib Gourmand</button>
           <button class="fchip" onclick="setTrendFilter('nyt',this)">📰 NYT Reviewed</button>
           <button class="fchip" onclick="setTrendFilter('press',this)">📰 Eater / Infa</button>
+          <button class="fchip" onclick="setTrendFilter('timeout',this)">⏱️ Time Out</button>
           <button class="fchip" onclick="setTrendFilter('instagram',this)">🎯 Instagram Influencers</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">🔥 Amazing Reviews</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">✨ New &amp; Rising</button>
@@ -1645,8 +1646,12 @@ function renderCard(r, isRadar) {
 
     if (isRadar) {
       availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
+    } else if ((tier === 'booked' || allBooked) && r.opens_in) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+    } else if ((tier === 'booked' || allBooked) && r.fully_locked) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;
     } else if (tier === 'booked' || allBooked) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Fully Booked Tonight</span></div>`;
     } else if (allAvailable) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
     } else {
@@ -1655,8 +1660,12 @@ function renderCard(r, isRadar) {
     }
   } else if (isRadar) {
     availHtml = `<div><span class="avail radar">🔥 On the Radar — Hard to Book</span></div>`;
+  } else if (tier === 'booked' && r.opens_in) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+  } else if (tier === 'booked' && r.fully_locked) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;
   } else if (tier === 'booked') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">⚫ Fully Booked Tonight</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Fully Booked Tonight</span></div>`;
   } else if (tier === 'available') {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
   } else if (tier === 'limited') {

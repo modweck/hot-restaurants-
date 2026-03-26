@@ -120,14 +120,20 @@ async function main() {
   const avail = JSON.parse(fs.readFileSync(AVAIL_PATH, 'utf8'));
 
   // Get fully booked Resy restaurants
+  // Build case-insensitive master lookup
+  const masterLower = {};
+  for (const [k, v] of Object.entries(master)) masterLower[k.toLowerCase()] = v;
+
   const booked = [];
   for (const [name, data] of Object.entries(avail)) {
     if (name.startsWith('_')) continue;
     if (data.tier !== 'booked') continue;
-    const entry = master[name];
-    if (entry && entry.platform === 'resy' && entry.url) {
-      booked.push({ name, url: entry.url, slug: extractSlug(entry.url) });
-    }
+    const entry = masterLower[name.toLowerCase()] || master[name];
+    if (!entry) continue;
+    if (entry.platform !== 'resy') continue;
+    const url = entry.booking_url || entry.url || entry.resy_url;
+    if (!url) continue;
+    booked.push({ name, url, slug: extractSlug(url) });
   }
 
   console.log(`\n🔍 FULLY BOOKED AVAILABILITY SCANNER`);

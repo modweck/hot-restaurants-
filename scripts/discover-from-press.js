@@ -191,40 +191,49 @@ async function scrapeEater(page) {
   return allRestaurants;
 }
 
-// ── Google Places enrichment ────────────────────────────────────────────────
+// ── Google Places enrichment (New API) ───────────────────────────────────────
+const FIELDS_MASK = 'places.id,places.displayName,places.rating,places.userRatingCount,places.location,places.websiteUri,places.priceLevel,places.formattedAddress,places.types,places.primaryType';
+
+const typeMap = {
+  japanese_restaurant: 'Japanese', italian_restaurant: 'Italian', mexican_restaurant: 'Mexican',
+  chinese_restaurant: 'Chinese', indian_restaurant: 'Indian', thai_restaurant: 'Thai',
+  korean_restaurant: 'Korean', french_restaurant: 'French', vietnamese_restaurant: 'Vietnamese',
+  mediterranean_restaurant: 'Mediterranean', greek_restaurant: 'Greek', turkish_restaurant: 'Turkish',
+  pizza_restaurant: 'Pizza', seafood_restaurant: 'Seafood', steak_house: 'Steakhouse',
+  sushi_restaurant: 'Sushi', ramen_restaurant: 'Ramen', barbecue_restaurant: 'BBQ',
+  vegan_restaurant: 'Vegan', vegetarian_restaurant: 'Vegetarian', american_restaurant: 'American',
+  spanish_restaurant: 'Spanish',
+};
+
+const priceLevels = { PRICE_LEVEL_FREE: 0, PRICE_LEVEL_INEXPENSIVE: 1, PRICE_LEVEL_MODERATE: 2, PRICE_LEVEL_EXPENSIVE: 3, PRICE_LEVEL_VERY_EXPENSIVE: 4 };
+
 async function enrichGoogle(name, neighborhood) {
   try {
     const query = `${name} restaurant ${neighborhood || 'NYC'}`;
-    const sr = await fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(query)}&inputtype=textquery&fields=place_id,name,formatted_address&key=${GOOGLE_API_KEY}`);
-    const sd = await sr.json();
-    if (!sd.candidates?.length) return null;
+    const resp = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': GOOGLE_API_KEY,
+        'X-Goog-FieldMask': FIELDS_MASK,
+      },
+      body: JSON.stringify({ textQuery: query, maxResultCount: 1 }),
+    });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const p = data.places?.[0];
+    if (!p) return null;
 
-    const pid = sd.candidates[0].place_id;
-    const dr = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${pid}&fields=name,rating,user_ratings_total,geometry,website,price_level,formatted_address,types&key=${GOOGLE_API_KEY}`);
-    const { result: r } = await dr.json();
-    if (!r) return null;
-
-    // Extract cuisine from Google types
-    const typeMap = {
-      japanese_restaurant: 'Japanese', italian_restaurant: 'Italian', mexican_restaurant: 'Mexican',
-      chinese_restaurant: 'Chinese', indian_restaurant: 'Indian', thai_restaurant: 'Thai',
-      korean_restaurant: 'Korean', french_restaurant: 'French', vietnamese_restaurant: 'Vietnamese',
-      mediterranean_restaurant: 'Mediterranean', greek_restaurant: 'Greek', turkish_restaurant: 'Turkish',
-      pizza_restaurant: 'Pizza', seafood_restaurant: 'Seafood', steak_house: 'Steakhouse',
-      sushi_restaurant: 'Sushi', ramen_restaurant: 'Ramen', barbecue_restaurant: 'BBQ',
-      vegan_restaurant: 'Vegan', vegetarian_restaurant: 'Vegetarian',
-    };
     let cuisine = '';
-    for (const t of (r.types || [])) {
-      if (typeMap[t]) { cuisine = typeMap[t]; break; }
-    }
+    for (const t of (p.types || [])) { if (typeMap[t]) { cuisine = typeMap[t]; break; } }
+    if (!cuisine && p.primaryType && typeMap[p.primaryType]) cuisine = typeMap[p.primaryType];
 
     return {
-      place_id: pid, google_name: r.name,
-      google_rating: r.rating || 0, google_reviews: r.user_ratings_total || 0,
-      lat: r.geometry?.location?.lat, lng: r.geometry?.location?.lng,
-      website: r.website || null, address: r.formatted_address || '',
-      price: r.price_level || null, cuisine,
+      place_id: p.id || null, google_name: p.displayName?.text || '',
+      google_rating: p.rating || 0, google_reviews: p.userRatingCount || 0,
+      lat: p.location?.latitude || null, lng: p.location?.longitude || null,
+      website: p.websiteUri || null, address: p.formattedAddress || '',
+      price: priceLevels[p.priceLevel] ?? null, cuisine,
     };
   } catch { return null; }
 }

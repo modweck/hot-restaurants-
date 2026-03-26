@@ -287,6 +287,11 @@ function display(restaurants) {
         const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
         return hasEaterOrInfat || BUZZ_SET.has((r.name||'').toLowerCase().trim());
       }
+      if (bf==='timeout') {
+        if (r.buzz_sources && r.buzz_sources.some(s => s === 'Time Out' || s === 'TimeOut')) return true;
+        const bdata = getBuzzLinks(r.name);
+        return bdata?.links?.some(l => l.source==='timeout' || l.source==='Time Out');
+      }
       if (bf==='nyt') return hasNYTCoverage(r);
       if (bf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;

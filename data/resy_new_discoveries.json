@@ -1,0 +1,709 @@
+{
+  "_meta": {
+    "last_run": "2026-03-25T23:10:01.129Z",
+    "neighborhoods_searched": 5,
+    "new_found": 70
+  },
+  "found": [
+    {
+      "name": "The Bar Room at The Beekman",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.123Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-bar-room-at-the-beekman",
+      "lat": 40.711261,
+      "lng": -74.006851
+    },
+    {
+      "name": "Goldstrology by American Express® Gold Card",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/goldstrology-by-american-express-gold-card",
+      "lat": 40.714386015207126,
+      "lng": -74.00503715581986
+    },
+    {
+      "name": "Da Claudio",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/da-claudio-ny",
+      "lat": 40.7110487225885,
+      "lng": -74.0075218031732
+    },
+    {
+      "name": "Laissez Faire",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/laissez-faire-ny",
+      "lat": 40.710794,
+      "lng": -74.007661
+    },
+    {
+      "name": "1803",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/1803",
+      "lat": 40.7151916539295,
+      "lng": -74.0065802759972
+    },
+    {
+      "name": "CUT - New York",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/cut-new-york",
+      "lat": 40.713218562062,
+      "lng": -74.0094638338578
+    },
+    {
+      "name": "VINTNERS",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/vintners",
+      "lat": 40.713217784867446,
+      "lng": -74.00957721730347
+    },
+    {
+      "name": "Kesté Pizza & Vino",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/keste-pizza-and-vino",
+      "lat": 40.7099510833961,
+      "lng": -74.0049689153415
+    },
+    {
+      "name": "Galerie Bar",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/galerie-bar",
+      "lat": 40.71521,
+      "lng": -74.00913
+    },
+    {
+      "name": "Smyth Tavern",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/smyth-tavern",
+      "lat": 40.7153913519528,
+      "lng": -74.0091095441207
+    },
+    {
+      "name": "Holywater",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/holywater",
+      "lat": 40.7160119,
+      "lng": -74.0085892
+    },
+    {
+      "name": "Ol' Days Coffee - Tribeca",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/ol-days-coffee",
+      "lat": 40.7149828,
+      "lng": -74.0102094
+    },
+    {
+      "name": "Primo's",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/primos",
+      "lat": 40.7163068756818,
+      "lng": -74.0086426079473
+    },
+    {
+      "name": "Āne Restaurant & Bar - Wall St",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/ane-restaurant-and-bar-wall-st",
+      "lat": 40.709375490552375,
+      "lng": -74.00917503247187
+    },
+    {
+      "name": "Forgione",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/marc-forgione",
+      "lat": 40.7165182,
+      "lng": -74.0095131
+    },
+    {
+      "name": "Stout NYC Financial District",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/stout-nyc-fidi",
+      "lat": 40.7079836,
+      "lng": -74.0064861
+    },
+    {
+      "name": "ZiZi Wine Bar FIDI",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/zizi-wine-bar-fidi",
+      "lat": 40.7093234,
+      "lng": -74.0104911
+    },
+    {
+      "name": "69 Leonard Street",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/69leonardstreet",
+      "lat": 40.7176901,
+      "lng": -74.0053795
+    },
+    {
+      "name": "Two Hands Tribeca",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/two-hands-tribeca",
+      "lat": 40.717815,
+      "lng": -74.005469
+    },
+    {
+      "name": "Highkey Rainforest Rooftop",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/highkey-rainforest-rooftop",
+      "lat": 40.7075332961821,
+      "lng": -74.0063069302546
+    },
+    {
+      "name": "Bliss Terasu",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/bliss-terasu",
+      "lat": 40.70750889712276,
+      "lng": -74.00645713444689
+    },
+    {
+      "name": "Giardino D'oro",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/giardino-doro",
+      "lat": 40.70755252912051,
+      "lng": -74.0073561882385
+    },
+    {
+      "name": "Golden Wuish",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/wuish-kitchen-and-bar",
+      "lat": 40.7074576,
+      "lng": -74.0064548
+    },
+    {
+      "name": "Mezcali",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/mezcali-new-york",
+      "lat": 40.707539,
+      "lng": -74.007362
+    },
+    {
+      "name": "Quick Eternity",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "Lower Manhattan",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/quick-eternity",
+      "lat": 40.70825759397158,
+      "lng": -74.00215400560707
+    },
+    {
+      "name": "Arthur's Tavern",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/arthurs-tavern",
+      "lat": 40.7333841356365,
+      "lng": -74.0035041178779
+    },
+    {
+      "name": "St. Jardim",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/st-jardim",
+      "lat": 40.73437,
+      "lng": -74.00277
+    },
+    {
+      "name": "Binx",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/binx",
+      "lat": 40.73413783383209,
+      "lng": -74.00160904748917
+    },
+    {
+      "name": "Suprema Provisions",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/suprema-provisions",
+      "lat": 40.732671,
+      "lng": -74.003598
+    },
+    {
+      "name": "The Garret West",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-garret-west",
+      "lat": 40.7324095676111,
+      "lng": -74.0037793890923
+    },
+    {
+      "name": "Saint Theo's - West Village",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/saint-theos",
+      "lat": 40.7339609127337,
+      "lng": -74.0047167597243
+    },
+    {
+      "name": "Mixteca",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/mixteca",
+      "lat": 40.73198577130743,
+      "lng": -74.00139030311537
+    },
+    {
+      "name": "Little Charli",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/little-charlis",
+      "lat": 40.731713340026,
+      "lng": -74.0029411444266
+    },
+    {
+      "name": "Donna",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/donna-ny",
+      "lat": 40.7317861,
+      "lng": -74.0016013
+    },
+    {
+      "name": "Askili Orchard",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/askili-orchard",
+      "lat": 40.73373124597543,
+      "lng": -74.00006664793372
+    },
+    {
+      "name": "Dandelion",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/dandelion-ny",
+      "lat": 40.733633805913676,
+      "lng": -74.0054893478578
+    },
+    {
+      "name": "American Bar - West Village",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/american-bar",
+      "lat": 40.734925,
+      "lng": -74.000411
+    },
+    {
+      "name": "WEST10WEST",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/west10west",
+      "lat": 40.7336778,
+      "lng": -74.0056955
+    },
+    {
+      "name": "Sushi Nakazawa NY",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.128Z",
+      "neighborhood": "West Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/sushi-nakazawa",
+      "lat": 40.73179,
+      "lng": -74.00453
+    },
+    {
+      "name": "Long Count",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/long-count",
+      "lat": 40.7264856,
+      "lng": -73.9797492
+    },
+    {
+      "name": "Please Don't Tell (PDT)",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/pdt",
+      "lat": 40.727129,
+      "lng": -73.983763
+    },
+    {
+      "name": "Ruffian",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/ruffian",
+      "lat": 40.726479,
+      "lng": -73.98426
+    },
+    {
+      "name": "Red Onion",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/red-onion",
+      "lat": 40.72844924962587,
+      "lng": -73.98270440367928
+    },
+    {
+      "name": "Cafe Mogador - East Village",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/cafe-mogador-east-village",
+      "lat": 40.727374,
+      "lng": -73.984356
+    },
+    {
+      "name": "Oddball",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/oddball",
+      "lat": 40.7282370902154,
+      "lng": -73.97934782461358
+    },
+    {
+      "name": "Death & Co East Village",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/death-and-co-east-village",
+      "lat": 40.726058193708674,
+      "lng": -73.9846237459085
+    },
+    {
+      "name": "Poppy",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/poppy-ny",
+      "lat": 40.729079511808656,
+      "lng": -73.98086517696524
+    },
+    {
+      "name": "Miracle on Ninth Street",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/miracle-on-9th-street",
+      "lat": 40.7254627,
+      "lng": -73.9781635
+    },
+    {
+      "name": "The Cabinet Mezcal Bar",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-cabinet-mezcal-bar",
+      "lat": 40.725463,
+      "lng": -73.978163
+    },
+    {
+      "name": "Madeline's Martini",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "East Village",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/madelines-martini",
+      "lat": 40.72625,
+      "lng": -73.977408
+    },
+    {
+      "name": "Crazy Pizza",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/crazy-pizza",
+      "lat": 40.7221830576825,
+      "lng": -73.9977869741203
+    },
+    {
+      "name": "Sant Ambroeus - Soho",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/sant-ambroeus-soho",
+      "lat": 40.7233997,
+      "lng": -73.9965186
+    },
+    {
+      "name": "Champers Social Club",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/champers-social-club",
+      "lat": 40.7215357,
+      "lng": -73.9987798
+    },
+    {
+      "name": "Eataly SOHO",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/eataly",
+      "lat": 40.72142,
+      "lng": -73.998268
+    },
+    {
+      "name": "La Esquina - Soho Cantina",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/la-esquina-cantina-soho",
+      "lat": 40.7215745231216,
+      "lng": -73.9976162773393
+    },
+    {
+      "name": "Bibliotheque",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/bibliotheque",
+      "lat": 40.72185,
+      "lng": -74.00082
+    },
+    {
+      "name": "La Compagnie, Centre St",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/la-compagnie-centre-st",
+      "lat": 40.7205188,
+      "lng": -73.9981319
+    },
+    {
+      "name": "Boqueria Soho",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/boqueria-soho",
+      "lat": 40.724868,
+      "lng": -74.002168
+    },
+    {
+      "name": "Ladurée Soho",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/laduree-soho",
+      "lat": 40.7244768897762,
+      "lng": -74.0025385894896
+    },
+    {
+      "name": "Old Fashion Cafe - SoHo",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/old-fashion-cafe-soho",
+      "lat": 40.7257014,
+      "lng": -74.0017007
+    },
+    {
+      "name": "Ma·dé",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/ma-de-nyc",
+      "lat": 40.7213049302693,
+      "lng": -73.9951975392721
+    },
+    {
+      "name": "Wayan NYC",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "SoHo/NoLIta",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/wayan",
+      "lat": 40.7213692,
+      "lng": -73.9950855
+    },
+    {
+      "name": "Pier 23 Nha",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/pier-23-nha",
+      "lat": 40.745910735585625,
+      "lng": -73.99856294699615
+    },
+    {
+      "name": "Anixi",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/anixi",
+      "lat": 40.7462152,
+      "lng": -73.9973696
+    },
+    {
+      "name": "Bathtub Gin",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/bathtub-gin",
+      "lat": 40.743566,
+      "lng": -74.003184
+    },
+    {
+      "name": "Bar Bonobo",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/bar-bonobo",
+      "lat": 40.7431287728467,
+      "lng": -73.9997830590177
+    },
+    {
+      "name": "JungleBird",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/junglebird",
+      "lat": 40.742621,
+      "lng": -74.000198
+    },
+    {
+      "name": "LOULOU",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/loulou",
+      "lat": 40.742632,
+      "lng": -74.000053
+    },
+    {
+      "name": "Kahlo",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/kahlo",
+      "lat": 40.749718,
+      "lng": -73.997325
+    },
+    {
+      "name": "G Lounge",
+      "source": "Resy (new)",
+      "discovered_at": "2026-03-25T23:10:01.129Z",
+      "neighborhood": "Chelsea",
+      "platform": "resy",
+      "url": "https://resy.com/cities/new-york-ny/venues/g-lounge",
+      "lat": 40.74249716065219,
+      "lng": -73.99842697399647
+    }
+  ]
+}

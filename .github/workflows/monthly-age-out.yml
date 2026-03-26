@@ -1,0 +1,33 @@
+name: Monthly Age Out New & Rising
+
+on:
+  schedule:
+    - cron: '0 15 1 * *'   # 1st of every month, 11am EDT (UTC-4)
+  workflow_dispatch:        # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  age-out:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh review counts and age out 50+ reviews
+        run: node scripts/age-out-new-rising.js
+        timeout-minutes: 10
+
+      - name: Commit and push
+        run: |
+          git config user.name "SeatWize Bot"
+          git config user.email "bot@seatwize.com"
+          git add netlify/functions/BOOKING_MASTER.json
+          git diff --staged --quiet || git commit -m "📈 monthly new & rising age-out $(date +'%Y-%m-%d')"
+          git push

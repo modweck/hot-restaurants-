@@ -144,7 +144,7 @@
   },
   "brooklyn chop house - downtown fidi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/brooklyn-chop-house-downtown-fidi",
+    "url": "https://resy.com/cities/new-york-ny/venues/brooklyn-chop-house-downtown-fidi",
     "lat": 40.71164941860875,
     "lng": -74.00596236132077,
     "google_rating": 4.2,
@@ -164,7 +164,8 @@
     "buzz_sources": [
       "Eater",
       "Infatuation"
-    ]
+    ],
+    "venue_id": 87134
   },
   "peking duck house": {
     "platform": "opentable",
@@ -2859,7 +2860,7 @@
   },
   "peter luger steak house": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/peter-luger-steak-house",
+    "url": "https://resy.com/cities/new-york-ny/venues/peter-luger-steak-house",
     "lat": 40.7098774,
     "lng": -73.9625052,
     "google_rating": 4.4,
@@ -2881,7 +2882,8 @@
     "price": 4,
     "neighborhood": "Williamsburg",
     "inkind": true,
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "venue_id": 4287
   },
   "Peter's Steakhouse": {
     "url": "https://peterluger.com/",
@@ -2905,7 +2907,7 @@
   },
   "Tatiana By Kwame Onwuachi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/tatiana",
+    "url": "https://resy.com/cities/new-york-ny/venues/tatiana",
     "lat": 40.77278620000001,
     "lng": -73.983104,
     "google_rating": 4.3,
@@ -2926,10 +2928,11 @@
     ],
     "instagram": "tatianabychefkwame",
     "price": 4,
-    "resy_url": "https://resy.com/cities/ny/tatiana",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/tatiana",
     "resy_slug": "tatiana",
     "ot_slug": "tatiana-by-kwame-onwuachi",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 65452
   },
   "eleven madison park": {
     "platform": "resy",
@@ -3009,7 +3012,7 @@
   },
   "the four horsemen": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-four-horsemen",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-four-horsemen",
     "lat": 40.7130445,
     "lng": -73.957325,
     "google_rating": 4.6,
@@ -3028,14 +3031,15 @@
       "upscale"
     ],
     "price": 2,
-    "resy_url": "https://resy.com/cities/ny/the-four-horsemen",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/the-four-horsemen",
     "resy_slug": "the-four-horsemen",
     "last_availability_check": "2026-03-06",
     "michelin_stars": 1,
     "michelin_recommended": true,
     "nyt_stars": 2,
     "pete_wells": true,
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 2492
   },
   "i cavallini": {
     "platform": "resy",
@@ -3170,7 +3174,7 @@
   },
   "keens steakhouse": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/keens-steakhouse",
+    "url": "https://resy.com/cities/new-york-ny/venues/keens-steakhouse",
     "lat": 40.75066,
     "lng": -73.98649,
     "google_rating": 4.6,
@@ -3193,7 +3197,8 @@
     "address": "72 W 36th St., New York, NY 10018, United States",
     "inkind": true,
     "last_availability_check": "2026-03-06",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 3413
   },
   "fish cheeks noho": {
     "platform": "resy",
@@ -3252,7 +3257,7 @@
   },
   "golden diner": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/golden-diner",
+    "url": "https://resy.com/cities/new-york-ny/venues/golden-diner",
     "lat": 40.7124398,
     "lng": -73.9940222,
     "google_rating": 4.4,
@@ -3274,7 +3279,8 @@
     "instagram": "goldendinerny",
     "price": 2,
     "last_availability_check": "2026-03-06",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 9520
   },
   "kiko": {
     "platform": "resy",
@@ -3353,7 +3359,7 @@
   },
   "ha's snack bar": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/has-snack-bar",
+    "url": "https://resy.com/cities/new-york-ny/venues/has-snack-bar",
     "lat": 40.7187717251279,
     "lng": -73.9922313184774,
     "google_rating": 4.3,
@@ -3376,11 +3382,12 @@
     "website": "https://www.instagram.com/has_dac_biet",
     "nyt_stars": 2,
     "address": "297 Broome St, New York, NY 10002, United States",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 85855
   },
   "lysée": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/lysee",
+    "url": "https://resy.com/cities/new-york-ny/venues/lysee",
     "lat": 40.7391283,
     "lng": -73.9881953,
     "google_rating": 4.4,
@@ -3390,7 +3397,8 @@
     "address": "44 E 21st St, New York, NY 10010, United States",
     "vibe_tags": [
       "upscale"
-    ]
+    ],
+    "venue_id": 64549
   },
   "houseman": {
     "platform": "resy",
@@ -3602,7 +3610,7 @@
   },
   "smithereens": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/smithereens",
+    "url": "https://resy.com/cities/new-york-ny/venues/smithereens",
     "lat": 40.7278963814251,
     "lng": -73.9842333166657,
     "google_rating": 4.5,
@@ -3626,7 +3634,8 @@
     ],
     "nyt_stars": 3,
     "pete_wells": true,
-    "address": "414 E 9th St, New York, NY 10009, USA"
+    "address": "414 E 9th St, New York, NY 10009, USA",
+    "venue_id": 84732
   },
   "sunn's": {
     "platform": "opentable",
@@ -3735,7 +3744,7 @@
   },
   "via carota": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/via-carota",
+    "url": "https://resy.com/cities/new-york-ny/venues/via-carota",
     "lat": 40.7331437,
     "lng": -74.0036671,
     "google_rating": 4.4,
@@ -3758,11 +3767,12 @@
     "inkind": true,
     "last_availability_check": "2026-03-06",
     "michelin_recommended": true,
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 2567
   },
   "i sodi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/i-sodi",
+    "url": "https://resy.com/cities/new-york-ny/venues/i-sodi",
     "lat": 40.7327965,
     "lng": -74.004058,
     "google_rating": 4.2,
@@ -3788,7 +3798,8 @@
     "last_availability_check": "2026-03-06",
     "michelin_recommended": true,
     "nyt_stars": 2,
-    "pete_wells": true
+    "pete_wells": true,
+    "venue_id": 443
   },
   "dante west village": {
     "platform": "resy",
@@ -3844,7 +3855,7 @@
   },
   "carbone": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/carbone",
+    "url": "https://resy.com/cities/new-york-ny/venues/carbone",
     "lat": 40.72798909999999,
     "lng": -74.0002414,
     "google_rating": 4.3,
@@ -3870,11 +3881,12 @@
     "bilt_id": "29259592-609b-3931-86f3-c09765219149",
     "inkind": true,
     "last_availability_check": "2026-03-06",
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "venue_id": 6194
   },
   "torrisi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/torrisi",
+    "url": "https://resy.com/cities/new-york-ny/venues/torrisi",
     "lat": 40.7242743,
     "lng": -73.9954023,
     "google_rating": 4.6,
@@ -3902,7 +3914,8 @@
     "michelin_recommended": true,
     "nyt_stars": 3,
     "pete_wells": true,
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 64593
   },
   "beauty and essex": {
     "platform": "opentable",
@@ -3978,7 +3991,7 @@
   },
   "the kitchen table at the modern": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-kitchen-table-at-the-modern",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-kitchen-table-at-the-modern",
     "lat": 40.760948,
     "lng": -73.976832,
     "google_rating": 4.6,
@@ -4001,7 +4014,8 @@
     "michelin_stars": 1,
     "inkind": true,
     "last_availability_check": "2026-03-06",
-    "address": "9 W 53rd St, New York, NY 10019, USA"
+    "address": "9 W 53rd St, New York, NY 10019, USA",
+    "venue_id": 2789
   },
   "blue hill at stone barns": {
     "platform": "opentable",
@@ -4100,7 +4114,7 @@
   },
   "sadelles": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sadelles",
+    "url": "https://resy.com/cities/new-york-ny/venues/sadelles",
     "lat": 40.7263129,
     "lng": -74.0002679,
     "google_rating": 4.2,
@@ -4116,7 +4130,8 @@
       "brunch"
     ],
     "price": 3,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 29967
   },
   "jack's wife freda - chelsea": {
     "platform": "resy",
@@ -4170,7 +4185,7 @@
   },
   "atomix": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/atomixnyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/atomixnyc",
     "lat": 40.744222,
     "lng": -73.982846,
     "google_rating": 4.7,
@@ -4195,11 +4210,12 @@
     "nyt_stars": 3,
     "pete_wells": true,
     "address": "104 E 30th St, New York, NY 10016, USA",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 69815
   },
   "rezdora": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/rezdora",
+    "url": "https://resy.com/cities/new-york-ny/venues/rezdora",
     "lat": 40.7390966,
     "lng": -73.98903109999999,
     "google_rating": 4.2,
@@ -4224,7 +4240,8 @@
     "michelin_stars": 1,
     "michelin_recommended": true,
     "nyt_stars": 3,
-    "pete_wells": true
+    "pete_wells": true,
+    "venue_id": 5771
   },
   "ras plant based": {
     "platform": "resy",
@@ -4398,7 +4415,7 @@
   },
   "meju": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/meju",
+    "url": "https://resy.com/cities/new-york-ny/venues/meju",
     "lat": 40.7436684857107,
     "lng": -73.9552482031945,
     "google_rating": 4.8,
@@ -4418,7 +4435,8 @@
     "buzz_sources": [
       "Infatuation"
     ],
-    "address": "5-28 49th Ave, Long Island City, NY 11101, USA"
+    "address": "5-28 49th Ave, Long Island City, NY 11101, USA",
+    "venue_id": 79842
   },
   "lavo italian restaurant": {
     "platform": "opentable",
@@ -4833,7 +4851,7 @@
   },
   "nom wah": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/nom-wah-tea-parlor",
+    "url": "https://resy.com/cities/new-york-ny/venues/nom-wah-tea-parlor",
     "lat": 40.7145089,
     "lng": -73.998188,
     "google_rating": 4.2,
@@ -4849,7 +4867,8 @@
     "instagram": "nomwah",
     "price": 1,
     "inkind": true,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 483
   },
   "pig and khao - uws": {
     "platform": "resy",
@@ -4928,7 +4947,7 @@
   },
   "foxface natural": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/foxface-natural",
+    "url": "https://resy.com/cities/new-york-ny/venues/foxface-natural",
     "lat": 40.728955,
     "lng": -73.9816036,
     "google_rating": 4.6,
@@ -4947,7 +4966,8 @@
     ],
     "cuisine": "American",
     "nyt_stars": 3,
-    "pete_wells": true
+    "pete_wells": true,
+    "venue_id": 71434
   },
   "moono": {
     "platform": "resy",
@@ -5038,7 +5058,7 @@
   },
   "bistrot ha": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bistrot-ha",
+    "url": "https://resy.com/cities/new-york-ny/venues/bistrot-ha",
     "lat": 40.718987138598244,
     "lng": -73.99231717031607,
     "google_rating": 4.6,
@@ -5061,7 +5081,8 @@
     "website": "https://www.instagram.com/reel/DRc5UB1D92j",
     "last_availability_check": "2026-03-06",
     "address": "137 Eldridge St, New York, NY 10002, USA",
-    "new_rising": true
+    "new_rising": true,
+    "venue_id": 93718
   },
   "kashi": {
     "platform": "resy",
@@ -5361,7 +5382,7 @@
   },
   "yamada": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/yamada",
+    "url": "https://resy.com/cities/new-york-ny/venues/yamada",
     "lat": 40.715931,
     "lng": -73.9972585,
     "google_rating": 4.9,
@@ -5383,7 +5404,8 @@
       "NYT"
     ],
     "nyt_stars": 4,
-    "pete_wells": true
+    "pete_wells": true,
+    "venue_id": 77405
   },
   "sushi amane": {
     "platform": "resy",
@@ -5860,7 +5882,7 @@
   },
   "local 92 - soho": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/local-92-soho",
+    "url": "https://resy.com/cities/new-york-ny/venues/local-92-soho",
     "lat": 40.72301239999999,
     "lng": -73.995756,
     "google_rating": 4.2,
@@ -5876,8 +5898,9 @@
     "bilt_dining": true,
     "bilt_id": "5e748fa6-7cbc-496a-879b-11ad0c9a0c21",
     "address": "244 Mulberry St, New York, NY 10012",
-    "resy_url": "https://resy.com/cities/ny/local-92-soho",
-    "resy_slug": "local-92-soho"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/local-92-soho",
+    "resy_slug": "local-92-soho",
+    "venue_id": 85258
   },
   "bacàn": {
     "url": "http://bacan-experience.com/",
@@ -6012,7 +6035,7 @@
   },
   "ilili midtown": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ilili-midtown",
+    "url": "https://resy.com/cities/new-york-ny/venues/ilili-midtown",
     "lat": 40.7580782,
     "lng": -73.9700009,
     "google_rating": 4.4,
@@ -6033,7 +6056,8 @@
     "instagram": "ililirestaurants",
     "price": 2,
     "price_estimated": true,
-    "address": "157 E 53rd St, New York, NY 10022, USA"
+    "address": "157 E 53rd St, New York, NY 10022, USA",
+    "venue_id": 95127
   },
   "ilili restaurant": {
     "platform": "opentable",
@@ -6907,7 +6931,7 @@
   },
   "ramen by ra": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ramen-by-ra",
+    "url": "https://resy.com/cities/new-york-ny/venues/ramen-by-ra",
     "lat": 40.7235702,
     "lng": -73.991381,
     "google_rating": 4.7,
@@ -6926,7 +6950,8 @@
     "buzz_sources": [
       "Infatuation"
     ],
-    "address": "70 E 1st St, New York, NY 10003, USA"
+    "address": "70 E 1st St, New York, NY 10003, USA",
+    "venue_id": 79848
   },
   "vato": {
     "platform": "resy",
@@ -7006,7 +7031,7 @@
   },
   "kru": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/kru",
+    "url": "https://resy.com/cities/new-york-ny/venues/kru",
     "lat": 40.722809,
     "lng": -73.955772,
     "google_rating": 4.3,
@@ -7027,7 +7052,8 @@
     "website": "https://www.instagram.com/kru.bk",
     "michelin_recommended": true,
     "nyt_top_100": true,
-    "address": "190 N 14th St, Brooklyn, NY 11249, USA"
+    "address": "190 N 14th St, Brooklyn, NY 11249, USA",
+    "venue_id": 63994
   },
   "huda": {
     "platform": "resy",
@@ -8951,7 +8977,7 @@
     "ot_slug": "labeille-new-york"
   },
   "Oiji Mi": {
-    "url": "https://resy.com/cities/ny/oiji-mi",
+    "url": "https://resy.com/cities/new-york-ny/venues/oiji-mi",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/oiji-mi",
     "resy_slug": "oiji-mi",
@@ -9671,7 +9697,7 @@
   },
   "Pranakhon Thai Restaurant": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/pranakhon",
+    "url": "https://resy.com/cities/new-york-ny/venues/pranakhon",
     "lat": 40.733751,
     "lng": -73.9932623,
     "google_rating": 4.7,
@@ -9691,11 +9717,12 @@
       "lively"
     ],
     "ot_slug": "pranakhon-thai",
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "venue_id": 66711
   },
   "runner up": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/runner-up",
+    "url": "https://resy.com/cities/new-york-ny/venues/runner-up",
     "lat": 40.6656268,
     "lng": -73.98227390000001,
     "google_rating": 4.6,
@@ -9716,7 +9743,8 @@
       "casual"
     ],
     "instagram": "winnernyc",
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "venue_id": 59994
   },
   "sagara": {
     "platform": "resy",
@@ -11479,7 +11507,7 @@
   },
   "FREE RANGE at Double Chicken Please": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/double-chicken-please",
+    "url": "https://resy.com/cities/new-york-ny/venues/double-chicken-please",
     "lat": 40.7196074,
     "lng": -73.99046729999999,
     "google_rating": 4.4,
@@ -11501,8 +11529,9 @@
     "price_estimated": true,
     "neighborhood": "New York",
     "opentable_url": null,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/free-range-at-double-chicken-please",
-    "resy_slug": "free-range-at-double-chicken-please"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/double-chicken-please",
+    "resy_slug": "free-range-at-double-chicken-please",
+    "venue_id": 42534
   },
   "superiority burger": {
     "platform": "resy",
@@ -12166,7 +12195,7 @@
   },
   "jongro bbq": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/jongro-bbq",
+    "url": "https://resy.com/cities/new-york-ny/venues/jongro-bbq",
     "lat": 40.7476718,
     "lng": -73.9869686,
     "google_rating": 4.5,
@@ -12180,7 +12209,8 @@
     ],
     "price": 2,
     "website": "https://www.jongrobbqny.com",
-    "address": "22 W 32nd St 2nd floor, New York, NY 10001, USA"
+    "address": "22 W 32nd St 2nd floor, New York, NY 10001, USA",
+    "venue_id": 80115
   },
   "miss korea": {
     "platform": "opentable",
@@ -12524,7 +12554,7 @@
   },
   "the reading room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-reading-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-reading-room",
     "lat": 40.7554107,
     "lng": -73.9781283,
     "google_rating": 4.4,
@@ -12541,7 +12571,8 @@
     "website": "https://readingroomnyc.com",
     "bilt_dining": true,
     "bilt_id": "21823fe8-ad06-320c-a79c-7b662d3ae77f",
-    "address": "16 E 46th St, New York, NY 10017, USA"
+    "address": "16 E 46th St, New York, NY 10017, USA",
+    "venue_id": 65217
   },
   "Heirloom Room": {
     "url": "https://readingroomnyc.com/",
@@ -13472,7 +13503,7 @@
   },
   "Al Badawi - Upper East Side": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/al-badawi",
+    "url": "https://resy.com/cities/new-york-ny/venues/al-badawi",
     "lat": 40.7799915,
     "lng": -73.95050549999999,
     "google_rating": 4.3,
@@ -13489,8 +13520,9 @@
     "instagram": "albadawi.nyc",
     "price": 2,
     "neighborhood": "New York",
-    "resy_url": "https://resy.com/cities/ny/albadawi-upper-east-side",
-    "resy_slug": "albadawi-upper-east-side"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/al-badawi",
+    "resy_slug": "albadawi-upper-east-side",
+    "venue_id": 58404
   },
   "evelina": {
     "platform": "resy",
@@ -13746,7 +13778,7 @@
   },
   "chez messy": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/chez-messy",
+    "url": "https://resy.com/cities/new-york-ny/venues/chez-messy",
     "lat": 40.8346358964909,
     "lng": -73.9451252878259,
     "google_rating": 4.7,
@@ -13764,11 +13796,12 @@
     ],
     "website": "http://www.chezmessy.com",
     "last_availability_check": "2026-03-06",
-    "address": "5 Edward M Morgan Pl, New York, NY 10032, USA"
+    "address": "5 Edward M Morgan Pl, New York, NY 10032, USA",
+    "venue_id": 83660
   },
   "common park slope": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-common-park-slope",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-common-park-slope",
     "lat": 40.66696710000001,
     "lng": -73.9918807,
     "google_rating": 4.7,
@@ -13784,7 +13817,8 @@
     ],
     "instagram": "thecommonbrooklyn",
     "price": 2,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 73196
   },
   "el pinguino": {
     "platform": "opentable",
@@ -13888,7 +13922,7 @@
   },
   "chili": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/chili",
+    "url": "https://resy.com/cities/new-york-ny/venues/chili",
     "lat": 40.7501259,
     "lng": -73.9820676,
     "google_rating": 4.6,
@@ -13903,7 +13937,8 @@
     ],
     "instagram": "chilimeili",
     "price": 2,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 64822
   },
   "meadowsweet": {
     "platform": "resy",
@@ -14131,7 +14166,7 @@
   },
   "tsion": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/tsion-cafe",
+    "url": "https://resy.com/cities/new-york-ny/venues/tsion-cafe",
     "lat": 40.826321,
     "lng": -73.943403,
     "google_rating": 4.6,
@@ -14146,7 +14181,8 @@
     ],
     "instagram": "tsioncafe",
     "price": 2,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 5738
   },
   "chez nick": {
     "platform": "resy",
@@ -14247,7 +14283,7 @@
   },
   "for all things good bedstuy": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/for-all-things-good-bed-stuy",
+    "url": "https://resy.com/cities/new-york-ny/venues/for-all-things-good-bed-stuy",
     "lat": 40.6876246,
     "lng": -73.9568372,
     "google_rating": 4.6,
@@ -14267,7 +14303,8 @@
     "last_availability_check": "2026-03-06",
     "buzz_sources": [
       "Infatuation"
-    ]
+    ],
+    "venue_id": 89550
   },
   "betty": {
     "platform": "opentable",
@@ -14372,7 +14409,7 @@
   },
   "little egg": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/little-egg",
+    "url": "https://resy.com/cities/new-york-ny/venues/little-egg",
     "lat": 40.6776991,
     "lng": -73.9635218,
     "google_rating": 4.6,
@@ -14390,7 +14427,8 @@
     ],
     "instagram": "eggrestaurant",
     "last_availability_check": "2026-03-06",
-    "address": "657 Washington Ave, Brooklyn, NY 11238, USA"
+    "address": "657 Washington Ave, Brooklyn, NY 11238, USA",
+    "venue_id": 71265
   },
   "cotra": {
     "platform": "resy",
@@ -14521,7 +14559,7 @@
   },
   "izakaya mew": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/izakaya-mew",
+    "url": "https://resy.com/cities/new-york-ny/venues/izakaya-mew",
     "cuisine": "Japanese",
     "rating": "",
     "price_level": "",
@@ -14544,7 +14582,8 @@
       "casual"
     ],
     "price": 1,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/izakaya-mew"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/izakaya-mew",
+    "venue_id": 30189
   },
   "au za’atar midtown east - 58th street": {
     "platform": "opentable",
@@ -14587,7 +14626,7 @@
   },
   "heidelberg restaurant": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/heidelberg-restaurant",
+    "url": "https://resy.com/cities/new-york-ny/venues/heidelberg-restaurant",
     "lat": 40.7774536,
     "lng": -73.9517565,
     "google_rating": 4.5,
@@ -14603,11 +14642,12 @@
     ],
     "website": "http://www.heidelberg-nyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "1648 2nd Ave, New York, NY 10028, United States"
+    "address": "1648 2nd Ave, New York, NY 10028, United States",
+    "venue_id": 6113
   },
   "raku midtown": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/raku-midtown",
+    "url": "https://resy.com/cities/new-york-ny/venues/raku-midtown",
     "lat": 40.7646156176855,
     "lng": -73.9878115453453,
     "google_rating": 4.4,
@@ -14627,7 +14667,8 @@
     ],
     "last_availability_check": "2026-03-06",
     "nyt_top_100": true,
-    "address": "776 9th Ave, New York, NY 10019, USA"
+    "address": "776 9th Ave, New York, NY 10019, USA",
+    "venue_id": 79982
   },
   "pisticci": {
     "platform": "resy",
@@ -14934,7 +14975,7 @@
   },
   "greenpoint fish and lobster co": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/greenpoint-fish-and-lobster-co",
+    "url": "https://resy.com/cities/new-york-ny/venues/greenpoint-fish-and-lobster-co",
     "lat": 40.7242202,
     "lng": -73.94915809999999,
     "google_rating": 4.5,
@@ -14950,7 +14991,8 @@
     ],
     "instagram": "greenpointfish",
     "price": 2,
-    "neighborhood": "Greenpoint"
+    "neighborhood": "Greenpoint",
+    "venue_id": 52205
   },
   "glasserie": {
     "platform": "resy",
@@ -14975,7 +15017,7 @@
   },
   "mayfield": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/mayfield",
+    "url": "https://resy.com/cities/new-york-ny/venues/mayfield",
     "lat": 40.674912,
     "lng": -73.95667,
     "google_rating": 4.5,
@@ -14994,7 +15036,8 @@
     "bilt_dining": true,
     "bilt_id": "b51b27b2-1d48-36eb-ad8d-8315fd62bcbd",
     "last_availability_check": "2026-03-06",
-    "address": "688 Franklin Ave, Brooklyn, NY 11238, USA"
+    "address": "688 Franklin Ave, Brooklyn, NY 11238, USA",
+    "venue_id": 2238
   },
   "vineapple": {
     "platform": "resy",
@@ -15322,7 +15365,7 @@
   },
   "ursula brooklyn": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ursula-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/ursula-brooklyn",
     "lat": 40.6845284,
     "lng": -73.9501837,
     "google_rating": 4.5,
@@ -15340,7 +15383,8 @@
     ],
     "website": "http://www.ursulabk.com",
     "inkind": true,
-    "address": "387A Nostrand Ave, Brooklyn, NY 11216, USA"
+    "address": "387A Nostrand Ave, Brooklyn, NY 11216, USA",
+    "venue_id": 75275
   },
   "hav and mar": {
     "platform": "resy",
@@ -15427,7 +15471,7 @@
   },
   "velvet room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/velvet-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/velvet-room",
     "lat": 40.6657813,
     "lng": -73.92016079999999,
     "google_rating": 4.5,
@@ -15443,7 +15487,8 @@
     ],
     "instagram": "velvetroombk",
     "neighborhood": "Brooklyn",
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 84781
   },
   "l'antagoniste": {
     "platform": "resy",
@@ -15572,7 +15617,7 @@
   },
   "post": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/post",
+    "url": "https://resy.com/cities/new-york-ny/venues/post",
     "lat": 40.722969,
     "lng": -73.98304,
     "google_rating": 4.5,
@@ -15590,7 +15635,8 @@
     "website": "http://www.post-nyc.com",
     "bilt_dining": true,
     "bilt_id": "c68fa7c1-ebc5-3f2c-ba78-e86e19c79a58",
-    "address": "217 E 3rd St, New York, NY 10009, USA"
+    "address": "217 E 3rd St, New York, NY 10009, USA",
+    "venue_id": 58469
   },
   "gertrude's": {
     "platform": "opentable",
@@ -15762,7 +15808,7 @@
   },
   "the snail": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-snail",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-snail",
     "lat": 40.72218382658903,
     "lng": -73.94932601616466,
     "google_rating": 4.5,
@@ -15783,7 +15829,8 @@
     ],
     "website": "http://www.thesnail.nyc",
     "last_availability_check": "2026-03-06",
-    "address": "544 Manhattan Ave, Brooklyn, NY 11222, United States"
+    "address": "544 Manhattan Ave, Brooklyn, NY 11222, United States",
+    "venue_id": 87376
   },
   "playa bettys": {
     "platform": "resy",
@@ -16009,7 +16056,7 @@
   },
   "hicollar": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hi-collar",
+    "url": "https://resy.com/cities/new-york-ny/venues/hi-collar",
     "lat": 40.7295607,
     "lng": -73.98785099999999,
     "google_rating": 4.4,
@@ -16023,7 +16070,8 @@
       "trendy"
     ],
     "instagram": "hi_collar",
-    "price": 2
+    "price": 2,
+    "venue_id": 3631
   },
   "chinese tuxedo": {
     "platform": "resy",
@@ -21422,7 +21470,7 @@
   },
   "rosella": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/rosella",
+    "url": "https://resy.com/cities/new-york-ny/venues/rosella",
     "lat": 40.72709,
     "lng": -73.98296,
     "google_rating": 4.7,
@@ -21440,7 +21488,8 @@
     "last_availability_check": "2026-03-06",
     "michelin_recommended": true,
     "buzz_sources": [],
-    "address": "137 Avenue A, New York, NY 10009, USA"
+    "address": "137 Avenue A, New York, NY 10009, USA",
+    "venue_id": 65348
   },
   "joomak": {
     "platform": "website",
@@ -22197,7 +22246,7 @@
   },
   "gertie": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/gertie",
+    "url": "https://resy.com/cities/new-york-ny/venues/gertie",
     "lat": 40.71242669999999,
     "lng": -73.95554179999999,
     "google_rating": 4.4,
@@ -22216,7 +22265,8 @@
     "buzz_sources": [
       "Infatuation",
       "Eater"
-    ]
+    ],
+    "venue_id": 94484
   },
   "forsythia": {
     "platform": "resy",
@@ -29884,7 +29934,7 @@
   },
   "okonomi / yuji ramen manhattan": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/okonomi-yuji-manhattan",
+    "url": "https://resy.com/cities/new-york-ny/venues/okonomi-yuji-manhattan",
     "lat": 40.7442476,
     "lng": -73.9906333,
     "google_rating": 4.5,
@@ -29902,7 +29952,8 @@
     ],
     "website": "https://www.okonomi.us",
     "inkind": true,
-    "address": "36 W 26th St, New York, NY 10010, USA"
+    "address": "36 W 26th St, New York, NY 10010, USA",
+    "venue_id": 52416
   },
   "oligarch": {
     "platform": "opentable",
@@ -29998,7 +30049,7 @@
   },
   "ootoya - times square": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ootoya-times-square",
+    "url": "https://resy.com/cities/new-york-ny/venues/ootoya-times-square",
     "lat": 40.7554102834394,
     "lng": -73.985805914576,
     "google_rating": 4.3,
@@ -30014,7 +30065,8 @@
     ],
     "website": "http://ootoya.us",
     "address": "141 W 41st St, New York, NY 10036, USA",
-    "_vibe_confidence": "low"
+    "_vibe_confidence": "low",
+    "venue_id": 84398
   },
   "orale tacos": {
     "platform": "opentable",
@@ -33023,7 +33075,7 @@
   },
   "the fulton by jean-georges": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-fulton-by-jean-georges",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-fulton-by-jean-georges",
     "lat": 40.7053679,
     "lng": -74.0010551,
     "google_rating": 4.2,
@@ -33041,7 +33093,8 @@
       "group_friendly"
     ],
     "website": "https://www.thefulton.nyc",
-    "address": "Northeast corner of Pier 17, 89 South St, New York, NY 10038, USA"
+    "address": "Northeast corner of Pier 17, 89 South St, New York, NY 10038, USA",
+    "venue_id": 5932
   },
   "the grounds of brooklyn": {
     "platform": "opentable",
@@ -34335,7 +34388,7 @@
   },
   "genesis house restaurant": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/genesis-house-restaurant",
+    "url": "https://resy.com/cities/new-york-ny/venues/genesis-house-restaurant",
     "lat": 40.7415,
     "lng": -74.00817,
     "google_rating": 4.5,
@@ -34351,7 +34404,8 @@
     ],
     "website": "https://www.genesishouse.com/us/en/nyc/index.html",
     "address": "40A 10th Ave, New York, NY 10014, United States",
-    "michelin_recommended": true
+    "michelin_recommended": true,
+    "venue_id": 53974
   },
   "sunday to sunday": {
     "platform": "opentable",
@@ -40709,7 +40763,7 @@
   },
   "mắm": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/mam",
+    "url": "https://resy.com/cities/new-york-ny/venues/mam",
     "lat": 40.7172297711143,
     "lng": -73.9932542452082,
     "google_rating": 4.2,
@@ -40731,7 +40785,8 @@
     "website": "https://instagram.com/mam.nyc",
     "michelin_recommended": true,
     "nyt_top_100": true,
-    "address": "70 Forsyth St, New York, NY 10002, USA"
+    "address": "70 Forsyth St, New York, NY 10002, USA",
+    "venue_id": 80206
   },
   "le chai": {
     "platform": "opentable",
@@ -43220,7 +43275,7 @@
   },
   "massara": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/massara",
+    "url": "https://resy.com/cities/new-york-ny/venues/massara",
     "lat": 40.7396367,
     "lng": -73.9898615,
     "google_rating": 4,
@@ -43237,9 +43292,10 @@
     "price": 2,
     "price_estimated": true,
     "michelin_recommended": true,
-    "resy_url": "https://resy.com/cities/ny/massara",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/massara",
     "resy_slug": "massara",
-    "address": "913 Broadway, New York, NY 10010, USA"
+    "address": "913 Broadway, New York, NY 10010, USA",
+    "venue_id": 80153
   },
   "l'incontro by rocco": {
     "platform": "opentable",
@@ -45320,7 +45376,7 @@
   },
   "lélé": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/lele",
+    "url": "https://resy.com/cities/new-york-ny/venues/lele",
     "lat": 40.750001694153426,
     "lng": -73.98105810331137,
     "google_rating": 4.2,
@@ -45337,7 +45393,8 @@
       "lively",
       "outdoor"
     ],
-    "address": "237 Madison Ave, New York, NY 10016, USA"
+    "address": "237 Madison Ave, New York, NY 10016, USA",
+    "venue_id": 89712
   },
   "sushi beauu": {
     "platform": "opentable",
@@ -50507,7 +50564,7 @@
   },
   "simone's": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/simon",
+    "url": "https://resy.com/cities/new-york-ny/venues/simon",
     "lat": 40.74919248197603,
     "lng": -73.99310973066366,
     "google_rating": 5,
@@ -50522,7 +50579,8 @@
       "date_night"
     ],
     "website": "https://www.chef-simon.com",
-    "address": "208 W 30th St Suite 801, New York, NY 10001, United States"
+    "address": "208 W 30th St Suite 801, New York, NY 10001, United States",
+    "venue_id": 92995
   },
   "prime time": {
     "platform": "opentable",
@@ -50578,7 +50636,7 @@
   },
   "las' lap nyc": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/2886",
+    "url": "https://resy.com/cities/new-york-ny/venues/2886",
     "lat": 40.7169661,
     "lng": -73.9903217,
     "google_rating": 4.1,
@@ -50595,7 +50653,8 @@
       "trendy"
     ],
     "website": "http://www.laslapnewyork.com",
-    "address": "74 Orchard St, New York, NY 10002, USA"
+    "address": "74 Orchard St, New York, NY 10002, USA",
+    "venue_id": 2886
   },
   "3 times williamsburg": {
     "platform": "resy",
@@ -50618,7 +50677,7 @@
   },
   "30 love": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/30-love",
+    "url": "https://resy.com/cities/new-york-ny/venues/30-love",
     "lat": 40.73297696901023,
     "lng": -73.98789446142561,
     "google_rating": 4.4,
@@ -50635,7 +50694,8 @@
     ],
     "website": "http://30lovenyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "106 3rd Ave, New York, NY 10003, USA"
+    "address": "106 3rd Ave, New York, NY 10003, USA",
+    "venue_id": 87667
   },
   "44 & x hell's kitchen": {
     "platform": "opentable",
@@ -51078,7 +51138,7 @@
   },
   "akoya": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/akoya",
+    "url": "https://resy.com/cities/new-york-ny/venues/akoya",
     "lat": 40.755737412481835,
     "lng": -73.98629157811106,
     "google_rating": 4.7,
@@ -51095,7 +51155,8 @@
     ],
     "website": "https://www.theknickerbocker.com/dine-drink/akoya",
     "last_availability_check": "2026-03-06",
-    "address": "6 Times Sq, New York, NY 10036, USA"
+    "address": "6 Times Sq, New York, NY 10036, USA",
+    "venue_id": 87798
   },
   "al andalus": {
     "platform": "resy",
@@ -51157,7 +51218,7 @@
   },
   "alma": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/alma-ny",
+    "url": "https://resy.com/cities/new-york-ny/venues/alma-ny",
     "lat": 40.685565,
     "lng": -74.002147,
     "google_rating": 4.3,
@@ -51172,7 +51233,8 @@
       "lively"
     ],
     "website": "https://www.almabk.com",
-    "address": "187 Columbia St, Brooklyn, NY 11231, USA"
+    "address": "187 Columbia St, Brooklyn, NY 11231, USA",
+    "venue_id": 8424
   },
   "amami sushi": {
     "platform": "resy",
@@ -51238,7 +51300,7 @@
   },
   "ambassadors clubhouse new york": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ambassadors-clubhouse-new-york",
+    "url": "https://resy.com/cities/new-york-ny/venues/ambassadors-clubhouse-new-york",
     "lat": 40.747624961307054,
     "lng": -73.98859613258881,
     "google_rating": 4.8,
@@ -51260,7 +51322,8 @@
       "Eater"
     ],
     "address": "1245 Broadway, New York, NY 10001, United States",
-    "new_rising": true
+    "new_rising": true,
+    "venue_id": 94741
   },
   "amélie west village": {
     "platform": "resy",
@@ -51343,7 +51406,7 @@
   },
   "amity hall uptown": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/amity-hall-uptown",
+    "url": "https://resy.com/cities/new-york-ny/venues/amity-hall-uptown",
     "lat": 40.80229,
     "lng": -73.96474,
     "google_rating": 4.3,
@@ -51359,11 +51422,12 @@
     ],
     "website": "https://amityhalluptown.com",
     "last_availability_check": "2026-03-06",
-    "address": "982 Amsterdam Ave, New York, NY 10025, USA"
+    "address": "982 Amsterdam Ave, New York, NY 10025, USA",
+    "venue_id": 10099
   },
   "anemi modern greek": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/anemi-modern-greek",
+    "url": "https://resy.com/cities/new-york-ny/venues/anemi-modern-greek",
     "lat": 40.7663866873255,
     "lng": -73.92157513250864,
     "google_rating": 4.9,
@@ -51379,7 +51443,8 @@
       "foodie"
     ],
     "website": "https://www.anemigreek.com",
-    "address": "30-17 31st St, Astoria, NY 11102, USA"
+    "address": "30-17 31st St, Astoria, NY 11102, USA",
+    "venue_id": 92507
   },
   "angel indian restaurant": {
     "platform": "resy",
@@ -52380,7 +52445,7 @@
   },
   "boqueria flatiron": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/boqueria-flatiron",
+    "url": "https://resy.com/cities/new-york-ny/venues/boqueria-flatiron",
     "lat": 40.740303,
     "lng": -73.993736,
     "google_rating": 4.6,
@@ -52400,11 +52465,12 @@
     "bilt_dining": true,
     "bilt_id": "48fe80f6-7330-3b52-9d3f-2856a26cc2a1",
     "inkind": true,
-    "address": "53 W 19th St, New York, NY 10011, USA"
+    "address": "53 W 19th St, New York, NY 10011, USA",
+    "venue_id": 27218
   },
   "Boqueria Tapas Bar": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/boqueria-soho",
+    "url": "https://resy.com/cities/new-york-ny/venues/boqueria-soho",
     "lat": 40.724868,
     "lng": -74.002168,
     "google_rating": 4.6,
@@ -52423,7 +52489,8 @@
     "website": "https://boqueriarestaurant.com/location/nyc/soho",
     "address": "171 Spring St, New York, NY 10012, USA",
     "ot_slug": "boqueria-tapas-bar",
-    "inkind": true
+    "inkind": true,
+    "venue_id": 27219
   },
   "boqueria w40th st": {
     "platform": "resy",
@@ -52552,7 +52619,7 @@
   },
   "broken shaker new york": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/broken-shaker-new-york",
+    "url": "https://resy.com/cities/new-york-ny/venues/broken-shaker-new-york",
     "lat": 40.7399793,
     "lng": -73.9841814,
     "google_rating": 4.2,
@@ -52568,7 +52635,8 @@
     ],
     "website": "https://www.brokenshaker.com",
     "last_availability_check": "2026-03-06",
-    "address": "23 Lexington Ave 18th Floor, New York, NY 10010, USA"
+    "address": "23 Lexington Ave 18th Floor, New York, NY 10010, USA",
+    "venue_id": 70551
   },
   "brooklyn chop house - times square": {
     "platform": "resy",
@@ -52611,7 +52679,7 @@
   },
   "brooklyn roots collective": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/brooklyn-roots-collective",
+    "url": "https://resy.com/cities/new-york-ny/venues/brooklyn-roots-collective",
     "lat": 40.710997457559465,
     "lng": -73.9224232746596,
     "google_rating": 5,
@@ -52627,11 +52695,12 @@
     ],
     "website": "http://www.brooklynrootsco.com",
     "last_availability_check": "2026-03-06",
-    "address": "255 Randolph St, Brooklyn, NY 11237, USA"
+    "address": "255 Randolph St, Brooklyn, NY 11237, USA",
+    "venue_id": 95613
   },
   "brunch me baby": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/brunch-me-baby",
+    "url": "https://resy.com/cities/new-york-ny/venues/brunch-me-baby",
     "lat": 40.70201277832845,
     "lng": -73.93656927474517,
     "google_rating": 5,
@@ -52646,7 +52715,8 @@
       "trendy"
     ],
     "website": "http://brunchmebaby.eventbrite.com",
-    "address": "880 Flushing Ave, Brooklyn, NY 11206, USA"
+    "address": "880 Flushing Ave, Brooklyn, NY 11206, USA",
+    "venue_id": 95447
   },
   "bryant park grill": {
     "platform": "resy",
@@ -53080,7 +53150,7 @@
   },
   "centurion new york® by american express": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/centurion-ny",
+    "url": "https://resy.com/cities/new-york-ny/venues/centurion-ny",
     "lat": 40.7530825,
     "lng": -73.9786543,
     "google_rating": 4.4,
@@ -53095,7 +53165,8 @@
       "date_night"
     ],
     "instagram": "live_centurion",
-    "address": "1 Vanderbilt Ave, New York, NY 10017, USA"
+    "address": "1 Vanderbilt Ave, New York, NY 10017, USA",
+    "venue_id": 66930
   },
   "chada": {
     "platform": "resy",
@@ -53311,7 +53382,7 @@
   },
   "chong qing lao zao": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/chong-qing-lao-zao",
+    "url": "https://resy.com/cities/new-york-ny/venues/chong-qing-lao-zao",
     "lat": 40.76091756551143,
     "lng": -73.83301277481681,
     "google_rating": 4.6,
@@ -53330,7 +53401,8 @@
       "Infatuation"
     ],
     "address": "37-04 Prince St, Flushing, NY 11354, USA",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 95802
   },
   "chote nawab": {
     "platform": "resy",
@@ -53456,7 +53528,7 @@
   },
   "club please": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/club-please",
+    "url": "https://resy.com/cities/new-york-ny/venues/club-please",
     "lat": 40.712170517145005,
     "lng": -73.92348318775699,
     "google_rating": 4.3,
@@ -53472,7 +53544,8 @@
     ],
     "website": "http://www.pdtnyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "113 St Marks Pl, New York, NY 10009, USA"
+    "address": "113 St Marks Pl, New York, NY 10009, USA",
+    "venue_id": 87799
   },
   "club room": {
     "platform": "resy",
@@ -53546,7 +53619,7 @@
   },
   "congee village": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/congee-village",
+    "url": "https://resy.com/cities/new-york-ny/venues/congee-village",
     "lat": 40.7188208403626,
     "lng": -73.9903694031729,
     "google_rating": 4.1,
@@ -53560,7 +53633,8 @@
       "trendy",
       "foodie"
     ],
-    "address": "100 Allen St, New York, NY 10002, USA"
+    "address": "100 Allen St, New York, NY 10002, USA",
+    "venue_id": 82339
   },
   "conmigo first ave": {
     "platform": "resy",
@@ -53818,7 +53892,7 @@
   },
   "czen restaurant englewood": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/czen-restaurant-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/czen-restaurant-brooklyn",
     "lat": 40.63229,
     "lng": -73.93367,
     "google_rating": 4.5,
@@ -53835,7 +53909,8 @@
     "website": "http://czennyc.com",
     "bilt_dining": true,
     "bilt_id": "9b36ebca-9752-4545-a9d7-6baace54db85",
-    "address": "4410 Avenue H, Brooklyn, NY 11234, USA"
+    "address": "4410 Avenue H, Brooklyn, NY 11234, USA",
+    "venue_id": 83304
   },
   "dahla": {
     "platform": "resy",
@@ -53938,7 +54013,7 @@
   },
   "dashi okume brooklyn": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/dashi-okume-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/dashi-okume-brooklyn",
     "lat": 40.7248937358198,
     "lng": -73.9537083453407,
     "google_rating": 4.5,
@@ -53954,7 +54029,8 @@
     ],
     "website": "https://www.50norman.com",
     "last_availability_check": "2026-03-06",
-    "address": "50 Norman Ave, Brooklyn, NY 11222, USA"
+    "address": "50 Norman Ave, Brooklyn, NY 11222, USA",
+    "venue_id": 77666
   },
   "ddobar": {
     "platform": "resy",
@@ -54016,7 +54092,7 @@
   },
   "despaña": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/despana",
+    "url": "https://resy.com/cities/new-york-ny/venues/despana",
     "lat": 40.721073,
     "lng": -73.997856,
     "google_rating": 4.7,
@@ -54033,11 +54109,12 @@
     "website": "http://www.despananyc.com",
     "bilt_dining": true,
     "bilt_id": "6608d288-b67a-34e2-9773-ca8dedefd7f5",
-    "address": "408 Broome St, New York, NY 10013, USA"
+    "address": "408 Broome St, New York, NY 10013, USA",
+    "venue_id": 34823
   },
   "dickson's farmstand meats": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/dicksons-farmstand-meats",
+    "url": "https://resy.com/cities/new-york-ny/venues/dicksons-farmstand-meats",
     "lat": 40.742022,
     "lng": -74.004954,
     "google_rating": 4.5,
@@ -54051,7 +54128,8 @@
       "chill"
     ],
     "website": "http://www.dicksonsfarmstand.com",
-    "address": "75 9th Ave, New York, NY 10011, USA"
+    "address": "75 9th Ave, New York, NY 10011, USA",
+    "venue_id": 51237
   },
   "dilly dally": {
     "platform": "resy",
@@ -54593,7 +54671,7 @@
   },
   "empress room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/empress-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/empress-room",
     "lat": 40.756560911233514,
     "lng": -73.96780291830152,
     "google_rating": 4.4,
@@ -54610,7 +54688,8 @@
     ],
     "instagram": "thelongroomnyc",
     "last_availability_check": "2026-03-06",
-    "address": "120 W 44th St, New York, NY 10036, USA"
+    "address": "120 W 44th St, New York, NY 10036, USA",
+    "venue_id": 95923
   },
   "endswell": {
     "platform": "resy",
@@ -54823,7 +54902,7 @@
   },
   "fauchon": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/fauchon",
+    "url": "https://resy.com/cities/new-york-ny/venues/fauchon",
     "lat": 40.7547,
     "lng": -73.98331,
     "google_rating": 4.1,
@@ -54839,7 +54918,8 @@
     ],
     "instagram": "fauchon_nyc.usa",
     "last_availability_check": "2026-03-06",
-    "address": "Two Bryant Park, New York, NY 10036, USA"
+    "address": "Two Bryant Park, New York, NY 10036, USA",
+    "venue_id": 92127
   },
   "fava": {
     "platform": "resy",
@@ -54926,7 +55006,7 @@
   },
   "fini williamsburg": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/fini-williamsburg",
+    "url": "https://resy.com/cities/new-york-ny/venues/fini-williamsburg",
     "lat": 40.713496461265,
     "lng": -73.9617638177909,
     "google_rating": 4.3,
@@ -54942,7 +55022,8 @@
     ],
     "website": "https://www.finipizza.com",
     "last_availability_check": "2026-03-06",
-    "address": "305 Bedford Ave, Brooklyn, NY 11211, USA"
+    "address": "305 Bedford Ave, Brooklyn, NY 11211, USA",
+    "venue_id": 78353
   },
   "fish cheeks williamsburg": {
     "platform": "resy",
@@ -55408,7 +55489,7 @@
   },
   "gugu room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/gugu-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/gugu-room",
     "lat": 40.7203446963354,
     "lng": -73.9894437886448,
     "google_rating": 4.4,
@@ -55424,7 +55505,8 @@
     ],
     "website": "http://guguroomnyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "143 Orchard St, New York, NY 10002, USA"
+    "address": "143 Orchard St, New York, NY 10002, USA",
+    "venue_id": 60350
   },
   "gurumé": {
     "platform": "resy",
@@ -55557,7 +55639,7 @@
   },
   "hana makgeolli": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hana-makgeolli",
+    "url": "https://resy.com/cities/new-york-ny/venues/hana-makgeolli",
     "lat": 40.73641,
     "lng": -73.9515,
     "google_rating": 4.5,
@@ -55573,7 +55655,8 @@
       "casual"
     ],
     "website": "http://hanamakgeolli.com",
-    "address": "201 Dupont St, Brooklyn, NY 11222, USA"
+    "address": "201 Dupont St, Brooklyn, NY 11222, USA",
+    "venue_id": 68754
   },
   "hanaya omakase": {
     "platform": "resy",
@@ -55679,7 +55762,7 @@
   },
   "hasalon nyc": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hasalon-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/hasalon-nyc",
     "lat": 40.764518,
     "lng": -73.992139,
     "google_rating": 3.8,
@@ -55697,7 +55780,8 @@
     ],
     "website": "https://www.hasalonnyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "735 10th Ave, New York, NY 10019, United States"
+    "address": "735 10th Ave, New York, NY 10019, United States",
+    "venue_id": 5501
   },
   "Hatsu Omakase": {
     "platform": "resy",
@@ -55872,7 +55956,7 @@
   },
   "hori": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hori",
+    "url": "https://resy.com/cities/new-york-ny/venues/hori",
     "lat": 40.75570042192346,
     "lng": -73.9694565609445,
     "google_rating": 4.3,
@@ -55888,7 +55972,8 @@
     "instagram": "chef_hori",
     "last_availability_check": "2026-03-06",
     "address": "231 E 50th St Lower Level, New York, NY 10022, USA",
-    "_vibe_confidence": "low"
+    "_vibe_confidence": "low",
+    "venue_id": 89082
   },
   "hōseki": {
     "platform": "resy",
@@ -56001,7 +56086,7 @@
   },
   "ikon new york": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/ikon-new-york",
+    "url": "https://resy.com/cities/new-york-ny/venues/ikon-new-york",
     "lat": 40.8665348490797,
     "lng": -73.91973350737244,
     "google_rating": 4.5,
@@ -56017,7 +56102,8 @@
       "late_night"
     ],
     "website": "https://www.ikonnyc.com",
-    "address": "238 Sherman Ave, New York, NY 10034, USA"
+    "address": "238 Sherman Ave, New York, NY 10034, USA",
+    "venue_id": 92585
   },
   "ilili nomad": {
     "platform": "resy",
@@ -56727,7 +56813,7 @@
   },
   "joo ok": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/joo-ok",
+    "url": "https://resy.com/cities/new-york-ny/venues/joo-ok",
     "lat": 40.7478410415522,
     "lng": -73.9869559185141,
     "google_rating": 4.7,
@@ -56750,7 +56836,8 @@
     "last_availability_check": "2026-03-06",
     "michelin_stars": 1,
     "michelin_recommended": true,
-    "address": "22 W 32nd St 16th flr, New York, NY 10001, USA"
+    "address": "22 W 32nd St 16th flr, New York, NY 10001, USA",
+    "venue_id": 82455
   },
   "jora": {
     "platform": "resy",
@@ -57029,7 +57116,7 @@
   },
   "kettl tea - greenpoint": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/kettl-tea-greenpoint",
+    "url": "https://resy.com/cities/new-york-ny/venues/kettl-tea-greenpoint",
     "lat": 40.72969650731331,
     "lng": -73.95821567584568,
     "google_rating": 4.6,
@@ -57044,7 +57131,8 @@
       "hidden_gem"
     ],
     "website": "http://kettl.co",
-    "address": "70 Greenpoint Ave, Brooklyn, NY 11222, USA"
+    "address": "70 Greenpoint Ave, Brooklyn, NY 11222, USA",
+    "venue_id": 93210
   },
   "ki omakase": {
     "platform": "resy",
@@ -57067,7 +57155,7 @@
   },
   "kidilum": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/kidilum",
+    "url": "https://resy.com/cities/new-york-ny/venues/kidilum",
     "lat": 40.74136073499677,
     "lng": -73.99221377671401,
     "google_rating": 5,
@@ -57084,7 +57172,8 @@
     ],
     "website": "https://kidilumnyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "31 W 21st St, New York, NY 10010, USA"
+    "address": "31 W 21st St, New York, NY 10010, USA",
+    "venue_id": 95134
   },
   "kimura": {
     "platform": "resy",
@@ -57840,7 +57929,7 @@
   },
   "leroy's american bistro": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/leroys-american-bistro",
+    "url": "https://resy.com/cities/new-york-ny/venues/leroys-american-bistro",
     "lat": 40.7336563363404,
     "lng": -73.9585458306918,
     "google_rating": 4.5,
@@ -57855,7 +57944,8 @@
       "lively"
     ],
     "website": "https://www.leroysbk.com",
-    "address": "195 Franklin St, Brooklyn, NY 11222, USA"
+    "address": "195 Franklin St, Brooklyn, NY 11222, USA",
+    "venue_id": 60413
   },
   "linen hall": {
     "platform": "resy",
@@ -57879,7 +57969,7 @@
   },
   "little hen - new york": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/little-hen-new-york",
+    "url": "https://resy.com/cities/new-york-ny/venues/little-hen-new-york",
     "lat": 40.7287477880028,
     "lng": -73.9996671452761,
     "google_rating": 4.2,
@@ -57895,11 +57985,12 @@
       "group_friendly"
     ],
     "website": "https://www.littlehen.com",
-    "address": "155 Bleecker St, New York, NY 10012, USA"
+    "address": "155 Bleecker St, New York, NY 10012, USA",
+    "venue_id": 83780
   },
   "little prince": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/little-prince",
+    "url": "https://resy.com/cities/new-york-ny/venues/little-prince",
     "lat": 40.7277708617638,
     "lng": -74.0028503460264,
     "google_rating": 4.3,
@@ -57917,7 +58008,8 @@
     ],
     "website": "http://littleprince.nyc",
     "last_availability_check": "2026-03-06",
-    "address": "199 Prince St, New York, NY 10012, USA"
+    "address": "199 Prince St, New York, NY 10012, USA",
+    "venue_id": 54193
   },
   "little rascal - greenpoint": {
     "platform": "resy",
@@ -58549,7 +58641,7 @@
   },
   "marseille": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/marseille",
+    "url": "https://resy.com/cities/new-york-ny/venues/marseille",
     "lat": 40.7602389024065,
     "lng": -73.9911801579581,
     "google_rating": 4.7,
@@ -58568,7 +58660,8 @@
     ],
     "website": "https://marseillenyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "630 9th Ave, New York, NY 10036, USA"
+    "address": "630 9th Ave, New York, NY 10036, USA",
+    "venue_id": 60369
   },
   "Martha’s": {
     "platform": "resy",
@@ -59389,7 +59482,7 @@
   },
   "naxos": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/naxos",
+    "url": "https://resy.com/cities/new-york-ny/venues/naxos",
     "lat": 40.71921026051976,
     "lng": -73.95474401817505,
     "google_rating": 4.4,
@@ -59404,7 +59497,8 @@
       "date_night"
     ],
     "website": "https://naxosbk.com",
-    "address": "470 Driggs Ave, Brooklyn, NY 11211, USA"
+    "address": "470 Driggs Ave, Brooklyn, NY 11211, USA",
+    "venue_id": 94077
   },
   "n'between": {
     "platform": "resy",
@@ -59446,7 +59540,7 @@
   },
   "nsv kitchen by next stop vegan": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/next-stop-vegan",
+    "url": "https://resy.com/cities/new-york-ny/venues/next-stop-vegan",
     "lat": 40.69140704540759,
     "lng": -73.99079541807917,
     "google_rating": 4.8,
@@ -59461,7 +59555,8 @@
       "group_friendly",
       "foodie"
     ],
-    "address": "88 Livingston St, Brooklyn, NY 11201, United States"
+    "address": "88 Livingston St, Brooklyn, NY 11201, United States",
+    "venue_id": 92186
   },
   "nino's beach": {
     "platform": "resy",
@@ -59670,7 +59765,7 @@
   },
   "nura": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/nura",
+    "url": "https://resy.com/cities/new-york-ny/venues/nura",
     "lat": 40.724892193019,
     "lng": -73.9535022021451,
     "google_rating": 4.5,
@@ -59687,7 +59782,8 @@
     ],
     "website": "http://www.nurabk.com",
     "last_availability_check": "2026-03-06",
-    "address": "46 Norman Ave, Brooklyn, NY 11222, USA"
+    "address": "46 Norman Ave, Brooklyn, NY 11222, USA",
+    "venue_id": 54336
   },
   "ocabanon": {
     "platform": "resy",
@@ -59788,7 +59884,7 @@
   },
   "okdongsik": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/okdongsik",
+    "url": "https://resy.com/cities/new-york-ny/venues/okdongsik",
     "lat": 40.74567,
     "lng": -73.9854,
     "google_rating": 4.3,
@@ -59809,7 +59905,8 @@
     "last_availability_check": "2026-03-06",
     "nyt_stars": 2,
     "pete_wells": true,
-    "address": "13 E 30th St 1st floor, New York, NY 10016, USA"
+    "address": "13 E 30th St 1st floor, New York, NY 10016, USA",
+    "venue_id": 66350
   },
   "okonomi brooklyn": {
     "platform": "resy",
@@ -60091,7 +60188,7 @@
   },
   "omar at la goulue": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/omar-at-la-goulue",
+    "url": "https://resy.com/cities/new-york-ny/venues/omar-at-la-goulue",
     "lat": 40.7648252,
     "lng": -73.9698644,
     "google_rating": 4.4,
@@ -60108,7 +60205,8 @@
       "foodie"
     ],
     "instagram": "lagouluenewyork",
-    "address": "29 E 61st St, New York, NY 10065, USA"
+    "address": "29 E 61st St, New York, NY 10065, USA",
+    "venue_id": 73851
   },
   "omen azen": {
     "platform": "resy",
@@ -60513,7 +60611,7 @@
   },
   "pearl box": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/pearl-box",
+    "url": "https://resy.com/cities/new-york-ny/venues/pearl-box",
     "lat": 40.7231000552225,
     "lng": -74.0030788473085,
     "google_rating": 4,
@@ -60529,7 +60627,8 @@
       "group_friendly"
     ],
     "instagram": "pearlboxtownhouse",
-    "address": "357 W Broadway, New York, NY 10013, USA"
+    "address": "357 W Broadway, New York, NY 10013, USA",
+    "venue_id": 84585
   },
   "pearl's dive": {
     "platform": "resy",
@@ -60696,7 +60795,7 @@
   },
   "plantmade": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/plantmade",
+    "url": "https://resy.com/cities/new-york-ny/venues/plantmade",
     "lat": 40.726293908172714,
     "lng": -73.98985344782751,
     "google_rating": 4.5,
@@ -60713,7 +60812,8 @@
     "website": "http://plantmadenyc.com",
     "bilt_dining": true,
     "bilt_id": "39c60f37-8ab8-4294-9fe2-f6ede33b23ac",
-    "address": "65 2nd Ave, New York, NY 10003, USA"
+    "address": "65 2nd Ave, New York, NY 10003, USA",
+    "venue_id": 91798
   },
   "plum restaurant": {
     "platform": "resy",
@@ -60757,7 +60857,7 @@
   },
   "popular": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/popular",
+    "url": "https://resy.com/cities/new-york-ny/venues/popular",
     "lat": 40.7231104,
     "lng": -73.9920935,
     "google_rating": 4.1,
@@ -60779,7 +60879,8 @@
     ],
     "website": "https://www.popularnyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "215 Chrystie St, New York, NY 10002, USA"
+    "address": "215 Chrystie St, New York, NY 10002, USA",
+    "venue_id": 5295
   },
   "posx asian bistro": {
     "platform": "resy",
@@ -60968,7 +61069,7 @@
   },
   "raku soho": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/raku-soho",
+    "url": "https://resy.com/cities/new-york-ny/venues/raku-soho",
     "lat": 40.727268,
     "lng": -74.002558,
     "google_rating": 4.5,
@@ -60984,7 +61085,8 @@
     ],
     "website": "http://rakunyc.com",
     "last_availability_check": "2026-03-06",
-    "address": "48 MacDougal St, New York, NY 10012, USA"
+    "address": "48 MacDougal St, New York, NY 10012, USA",
+    "venue_id": 2026
   },
   "raon nyc": {
     "platform": "resy",
@@ -61129,7 +61231,7 @@
   },
   "rocco’s sports & rec": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/roccos-sports-and-rec",
+    "url": "https://resy.com/cities/new-york-ny/venues/roccos-sports-and-rec",
     "lat": 40.727819,
     "lng": -73.994751,
     "google_rating": 3.9,
@@ -61143,7 +61245,8 @@
       "late_night",
       "date_night"
     ],
-    "address": "1 W 3rd St, New York, NY 10012, USA"
+    "address": "1 W 3rd St, New York, NY 10012, USA",
+    "venue_id": 65680
   },
   "rokunana": {
     "platform": "resy",
@@ -61454,7 +61557,7 @@
   },
   "sant ambroeus café at sothebys": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sant-ambroeus-cafe-at-sothebys",
+    "url": "https://resy.com/cities/new-york-ny/venues/sant-ambroeus-cafe-at-sothebys",
     "lat": 40.76654214487409,
     "lng": -73.95370477484153,
     "google_rating": 4.5,
@@ -61470,11 +61573,12 @@
     ],
     "instagram": "santambroeus",
     "inkind": true,
-    "address": "1334 York Ave, New York, NY 10021, USA"
+    "address": "1334 York Ave, New York, NY 10021, USA",
+    "venue_id": 92862
   },
   "saverne": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/saverne",
+    "url": "https://resy.com/cities/new-york-ny/venues/saverne",
     "lat": 40.75521850000001,
     "lng": -74.0001549,
     "place_id": "ChIJq39Nb9ZZwokR79EUeI3uoXQ",
@@ -61493,7 +61597,8 @@
       "Infatuation"
     ],
     "google_rating": 5,
-    "google_reviews": 6
+    "google_reviews": 6,
+    "venue_id": 95379
   },
   "sea thai restaurant": {
     "platform": "resy",
@@ -61585,7 +61690,7 @@
   },
   "sendo": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sendo",
+    "url": "https://resy.com/cities/new-york-ny/venues/sendo",
     "lat": 40.748165772062706,
     "lng": -73.98890734600674,
     "google_rating": 4.6,
@@ -61601,7 +61706,8 @@
     ],
     "website": "https://sendo.nyc",
     "last_availability_check": "2026-03-06",
-    "address": "876 6th Ave 2nd Floor, New York, NY 10001, USA"
+    "address": "876 6th Ave 2nd Floor, New York, NY 10001, USA",
+    "venue_id": 93329
   },
   "sentir": {
     "platform": "resy",
@@ -61684,7 +61790,7 @@
   },
   "shaking crab - park slope": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/shaking-crab-park-slope",
+    "url": "https://resy.com/cities/new-york-ny/venues/shaking-crab-park-slope",
     "lat": 40.6757312,
     "lng": -73.9810959,
     "google_rating": 4.1,
@@ -61700,7 +61806,8 @@
       "group_friendly"
     ],
     "website": "http://www.shakingcrab.com/parkslope",
-    "address": "230 5th Ave, Brooklyn, NY 11215"
+    "address": "230 5th Ave, Brooklyn, NY 11215",
+    "venue_id": 65660
   },
   "shaking crab - williamsburg": {
     "platform": "resy",
@@ -61720,7 +61827,7 @@
   },
   "shanes restaurant": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/shanes-restaurant",
+    "url": "https://resy.com/cities/new-york-ny/venues/shanes-restaurant",
     "lat": 40.674405834345166,
     "lng": -73.96340068962763,
     "google_rating": 4.3,
@@ -61738,7 +61845,8 @@
     ],
     "website": "https://shanes-brooklyn.shop",
     "last_availability_check": "2026-03-06",
-    "address": "794 Washington Ave, Brooklyn, NY 11238, USA"
+    "address": "794 Washington Ave, Brooklyn, NY 11238, USA",
+    "venue_id": 86773
   },
   "shin takumi omakase": {
     "platform": "resy",
@@ -62002,7 +62110,7 @@
   },
   "skirt steak": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/skirt-steak",
+    "url": "https://resy.com/cities/new-york-ny/venues/skirt-steak",
     "lat": 40.7468785,
     "lng": -73.9902168,
     "google_rating": 4.2,
@@ -62018,11 +62126,12 @@
       "trendy"
     ],
     "website": "https://www.skirtsteaknyc.com",
-    "address": "835 6th Ave, New York, NY 10001, USA"
+    "address": "835 6th Ave, New York, NY 10001, USA",
+    "venue_id": 54599
   },
   "sloane's": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sloanes-ny",
+    "url": "https://resy.com/cities/new-york-ny/venues/sloanes-ny",
     "lat": 40.72396,
     "lng": -74.00312,
     "google_rating": 4.4,
@@ -62038,7 +62147,8 @@
       "date_night"
     ],
     "website": "https://www.sloanes.nyc",
-    "address": "58 Thompson St Second Floor, New York, NY 10012, USA"
+    "address": "58 Thompson St Second Floor, New York, NY 10012, USA",
+    "venue_id": 83658
   },
   "so & so's": {
     "platform": "resy",
@@ -62165,7 +62275,7 @@
   },
   "sora": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sora",
+    "url": "https://resy.com/cities/new-york-ny/venues/sora",
     "lat": 40.6362078553926,
     "lng": -74.0117699610243,
     "google_rating": 4.6,
@@ -62180,7 +62290,8 @@
       "date_night"
     ],
     "website": "https://www.soranewyork.co",
-    "address": "713 61st St, Brooklyn, NY 11220, USA"
+    "address": "713 61st St, Brooklyn, NY 11220, USA",
+    "venue_id": 83084
   },
   "souraji": {
     "platform": "resy",
@@ -62772,7 +62883,7 @@
   },
   "sushi oku nyc": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sushi-oku",
+    "url": "https://resy.com/cities/new-york-ny/venues/sushi-oku",
     "lat": 40.7153616,
     "lng": -73.991525,
     "google_rating": 4.8,
@@ -62788,11 +62899,12 @@
       "trendy",
       "foodie"
     ],
-    "address": "22 Orchard St, New York, NY 10002, United States"
+    "address": "22 Orchard St, New York, NY 10002, United States",
+    "venue_id": 69012
   },
   "sushi saint": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sushi-saint",
+    "url": "https://resy.com/cities/new-york-ny/venues/sushi-saint",
     "lat": 40.7520766,
     "lng": -73.9521921,
     "google_rating": 4.8,
@@ -62808,7 +62920,8 @@
     ],
     "website": "https://www.sushisaintny.com",
     "last_availability_check": "2026-03-06",
-    "address": "11-01 43rd Ave Lower Level, Long Island City, NY 11101, USA"
+    "address": "11-01 43rd Ave Lower Level, Long Island City, NY 11101, USA",
+    "venue_id": 83234
   },
   "sushi seki chelsea": {
     "platform": "resy",
@@ -63545,7 +63658,7 @@
   },
   "the chef’s counter at manhatta": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-chefs-counter-at-manhatta",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-chefs-counter-at-manhatta",
     "lat": 40.7077585,
     "lng": -74.0088503,
     "google_rating": 4.7,
@@ -63562,7 +63675,8 @@
     ],
     "website": "https://www.manhattarestaurant.com",
     "inkind": true,
-    "address": "28 Liberty St 60th floor, New York, NY 10005, USA"
+    "address": "28 Liberty St 60th floor, New York, NY 10005, USA",
+    "venue_id": 59549
   },
   "the chemistry room": {
     "platform": "resy",
@@ -63626,7 +63740,7 @@
   },
   "the copper still - east village": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-copper-still-east-village",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-copper-still-east-village",
     "lat": 40.72963,
     "lng": -73.98736,
     "google_rating": 4.4,
@@ -63643,7 +63757,8 @@
       "late_night"
     ],
     "website": "http://www.thecopperstillnyc.com",
-    "address": "151 2nd Ave, New York, NY 10003, USA"
+    "address": "151 2nd Ave, New York, NY 10003, USA",
+    "venue_id": 49684
   },
   "the corner (bay ridge)": {
     "platform": "resy",
@@ -63708,7 +63823,7 @@
   },
   "the dynamo room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-dynamo-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-dynamo-room",
     "lat": 40.75028695446792,
     "lng": -73.99221435946784,
     "google_rating": 4.6,
@@ -63726,7 +63841,8 @@
     "buzz_sources": [
       "Eater"
     ],
-    "address": "2 Pennsylvania Plaza, New York, NY 10121, USA"
+    "address": "2 Pennsylvania Plaza, New York, NY 10121, USA",
+    "venue_id": 87000
   },
   "the ellington": {
     "platform": "resy",
@@ -63792,7 +63908,7 @@
   },
   "the half pint / ernie's": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-half-pint-ernies",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-half-pint-ernies",
     "lat": 40.72947,
     "lng": -73.99854,
     "google_rating": 4.2,
@@ -63808,7 +63924,8 @@
       "group_friendly"
     ],
     "website": "https://thehalfpint.com",
-    "address": "76 W 3rd St, New York, NY 10012, USA"
+    "address": "76 W 3rd St, New York, NY 10012, USA",
+    "venue_id": 3308
   },
   "the honey well": {
     "platform": "resy",
@@ -63936,7 +64053,7 @@
   },
   "the restaurant at gilder": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-restaurant-at-gilder",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-restaurant-at-gilder",
     "lat": 40.7813974,
     "lng": -73.9733215,
     "google_rating": 3.5,
@@ -63951,7 +64068,8 @@
     ],
     "last_availability_check": "2026-03-06",
     "address": "200 Central Prk W, New York, NY 10024, USA",
-    "_vibe_confidence": "medium"
+    "_vibe_confidence": "medium",
+    "venue_id": 70852
   },
   "the ribbon": {
     "platform": "resy",
@@ -64101,7 +64219,7 @@
   },
   "the ten bells": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-ten-bells",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-ten-bells",
     "lat": 40.7179085,
     "lng": -73.9898079,
     "google_rating": 4.4,
@@ -64122,7 +64240,8 @@
     "buzz_sources": [
       "Infatuation"
     ],
-    "address": "247 Broome St, New York, NY 10002, USA"
+    "address": "247 Broome St, New York, NY 10002, USA",
+    "venue_id": 5748
   },
   "the ten bells- bk": {
     "platform": "resy",
@@ -64146,7 +64265,7 @@
   },
   "the vaux social": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-vaux-social",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-vaux-social",
     "lat": 40.67975066262561,
     "lng": -73.96840354516354,
     "google_rating": 4.8,
@@ -64161,7 +64280,8 @@
       "upscale",
       "group_friendly"
     ],
-    "address": "570 Vanderbilt Ave, Brooklyn, NY 11238, USA"
+    "address": "570 Vanderbilt Ave, Brooklyn, NY 11238, USA",
+    "venue_id": 94230
   },
   "the waiting room": {
     "platform": "resy",
@@ -64283,7 +64403,7 @@
   },
   "thirteen water west": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/thirteen-water-west",
+    "url": "https://resy.com/cities/new-york-ny/venues/thirteen-water-west",
     "lat": 40.7505764,
     "lng": -74.0003866,
     "google_rating": 4.7,
@@ -64299,7 +64419,8 @@
       "date_night"
     ],
     "website": "https://thirteenwater.com",
-    "address": "366 W 30th St, New York, NY 10001, USA"
+    "address": "366 W 30th St, New York, NY 10001, USA",
+    "venue_id": 83462
   },
   "thonglor thai restaurant": {
     "platform": "resy",
@@ -64380,7 +64501,7 @@
   },
   "togyushi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/togyushi",
+    "url": "https://resy.com/cities/new-york-ny/venues/togyushi",
     "lat": 40.751513206455364,
     "lng": -73.98500604650411,
     "google_rating": 4.4,
@@ -64397,7 +64518,8 @@
     ],
     "website": "http://www.togyushi.com",
     "last_availability_check": "2026-03-06",
-    "address": "37 W 37th St, New York, NY 10018, USA"
+    "address": "37 W 37th St, New York, NY 10018, USA",
+    "venue_id": 92553
   },
   "toloache 50th st": {
     "platform": "resy",
@@ -64676,7 +64798,7 @@
   },
   "umeko": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/umeko",
+    "url": "https://resy.com/cities/new-york-ny/venues/umeko",
     "lat": 40.72946065953713,
     "lng": -74.00477406125012,
     "google_rating": 4.3,
@@ -64691,7 +64813,8 @@
     ],
     "website": "https://www.umekony.com",
     "last_availability_check": "2026-03-06",
-    "address": "63 Downing St, New York, NY 10014, USA"
+    "address": "63 Downing St, New York, NY 10014, USA",
+    "venue_id": 94947
   },
   "urban cove society & kitchen": {
     "platform": "resy",
@@ -64824,7 +64947,7 @@
   },
   "villard & the gold room": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/villard-and-the-gold-room",
+    "url": "https://resy.com/cities/new-york-ny/venues/villard-and-the-gold-room",
     "lat": 40.75715617153292,
     "lng": -73.9731774475517,
     "google_rating": 3.9,
@@ -64841,7 +64964,8 @@
       "foodie"
     ],
     "website": "https://www.villardnyc.com",
-    "address": "455 Madison Avenue at, E 50th St, New York, NY 10022, USA"
+    "address": "455 Madison Avenue at, E 50th St, New York, NY 10022, USA",
+    "venue_id": 87730
   },
   "vinile chophouse": {
     "platform": "resy",
@@ -64968,7 +65092,7 @@
   },
   "wasabi": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/wasabi",
+    "url": "https://resy.com/cities/new-york-ny/venues/wasabi",
     "lat": 40.72437283748406,
     "lng": -73.95077536161176,
     "google_rating": 4.1,
@@ -64985,7 +65109,8 @@
     "bilt_dining": true,
     "bilt_id": "073bc188-18bb-4d82-ae46-dffb0d870299",
     "address": "561 7th Ave, New York, NY 10018, USA",
-    "_vibe_confidence": "medium"
+    "_vibe_confidence": "medium",
+    "venue_id": 94646
   },
   "wasan brooklyn": {
     "platform": "resy",
@@ -65008,7 +65133,7 @@
   },
   "weill café at carnegie hall": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/weill-cafe-at-carnegie-hall",
+    "url": "https://resy.com/cities/new-york-ny/venues/weill-cafe-at-carnegie-hall",
     "lat": 40.7653272380502,
     "lng": -73.9795572164071,
     "google_rating": 4.9,
@@ -65024,7 +65149,8 @@
       "hidden_gem"
     ],
     "website": "https://www.carnegiehall.org/About/Building-Overview/Weill-Cafe",
-    "address": "154 W 57th St, New York, NY 10019, USA"
+    "address": "154 W 57th St, New York, NY 10019, USA",
+    "venue_id": 75404
   },
   "west side steakhouse": {
     "platform": "resy",
@@ -65047,7 +65173,7 @@
   },
   "westmoreland at the frick collection": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/westmoreland-at-the-frick",
+    "url": "https://resy.com/cities/new-york-ny/venues/westmoreland-at-the-frick",
     "lat": 40.7713438,
     "lng": -73.96725409999999,
     "google_rating": 4.3,
@@ -65063,7 +65189,8 @@
     ],
     "instagram": "frickcollection",
     "last_availability_check": "2026-03-06",
-    "address": "1 E 70th St, New York, NY 10021, USA"
+    "address": "1 E 70th St, New York, NY 10021, USA",
+    "venue_id": 89863
   },
   "Westville East": {
     "platform": "resy",
@@ -65345,7 +65472,7 @@
   },
   "yellow magnolia café": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/yellow-magnolia-cafe",
+    "url": "https://resy.com/cities/new-york-ny/venues/yellow-magnolia-cafe",
     "lat": 40.6651476,
     "lng": -73.9614326,
     "google_rating": 4.2,
@@ -65360,7 +65487,8 @@
       "date_night"
     ],
     "instagram": "brooklynbotanic",
-    "address": "Botanic Garden, 990 Washington Ave, Brooklyn, NY 11225, USA"
+    "address": "Botanic Garden, 990 Washington Ave, Brooklyn, NY 11225, USA",
+    "venue_id": 70119
   },
   "yoon haeundae galbi": {
     "platform": "resy",
@@ -65599,7 +65727,7 @@
   },
   "bella blue": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bella-blu",
+    "url": "https://resy.com/cities/new-york-ny/venues/bella-blu",
     "lat": 40.7692221,
     "lng": -73.96281970000001,
     "google_rating": 4.4,
@@ -65614,7 +65742,8 @@
     ],
     "instagram": "bellablunyc",
     "price": 3,
-    "last_availability_check": "2026-03-06"
+    "last_availability_check": "2026-03-06",
+    "venue_id": 86535
   },
   "la donna re's": {
     "platform": "resy",
@@ -66336,7 +66465,7 @@
   },
   "Sonnyboy": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sonnyboy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sonnyboy",
     "lat": 40.7205154,
     "lng": -73.9901841,
     "google_rating": 4.5,
@@ -66350,7 +66479,8 @@
       "casual"
     ],
     "instagram": "sonnyboy_nyc",
-    "price": 2
+    "price": 2,
+    "venue_id": 4530
   },
   "Nocello": {
     "platform": "resy",
@@ -66801,7 +66931,7 @@
   },
   "Boulud Sud": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/boulud-sud",
+    "url": "https://resy.com/cities/new-york-ny/venues/boulud-sud",
     "lat": 40.771788799999996,
     "lng": -73.9814454,
     "google_rating": 4.5,
@@ -66816,7 +66946,8 @@
       "foodie"
     ],
     "price": 3,
-    "inkind": true
+    "inkind": true,
+    "venue_id": 53002
   },
   "Amarone": {
     "platform": "resy",
@@ -66843,7 +66974,7 @@
   },
   "Il Brigante": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/il-brigante",
+    "url": "https://resy.com/cities/new-york-ny/venues/il-brigante",
     "lat": 40.707451,
     "lng": -74.002642,
     "google_rating": 4.4,
@@ -66857,7 +66988,8 @@
       "date_night"
     ],
     "instagram": "ilbrigantenyc",
-    "price": 2
+    "price": 2,
+    "venue_id": 87088
   },
   "Giorgio's of Gramercy": {
     "platform": "resy",
@@ -73933,7 +74065,7 @@
   },
   "15 East at Tocqueville": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/15-east-at-tocqueville",
+    "url": "https://resy.com/cities/new-york-ny/venues/15-east-at-tocqueville",
     "lat": 40.7366272,
     "lng": -73.9926504,
     "google_rating": 4.4,
@@ -73950,8 +74082,9 @@
     "price": 4,
     "ot_slug": "15-east-tocqueville",
     "resy_slug": "15-east-at-tocqueville",
-    "resy_url": "https://resy.com/cities/ny/15-east-at-tocqueville",
-    "neighborhood": "New York"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/15-east-at-tocqueville",
+    "neighborhood": "New York",
+    "venue_id": 37591
   },
   "Ukrainian East Village Restaurant": {
     "url": "https://www.ukrainianeastvillagerestaurant.com/",
@@ -81408,7 +81541,7 @@
   },
   "The Irish Exit": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-irish-exit",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-irish-exit",
     "lat": 40.751702,
     "lng": -73.9960992,
     "google_rating": 4.6,
@@ -81423,8 +81556,9 @@
     ],
     "ot_slug": "the-irish-exit",
     "resy_slug": "the-irish-exit",
-    "resy_url": "https://resy.com/cities/ny/the-irish-exit",
-    "website": "https://www.irishexit.com"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/the-irish-exit",
+    "website": "https://www.irishexit.com",
+    "venue_id": 83123
   },
   "Cha Cha Matcha": {
     "platform": "resy",
@@ -81664,7 +81798,7 @@
   },
   "Maggie's Place": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/maggies-place",
+    "url": "https://resy.com/cities/new-york-ny/venues/maggies-place",
     "lat": 40.7562972,
     "lng": -73.97711450000001,
     "google_rating": 4.4,
@@ -81679,8 +81813,9 @@
     ],
     "ot_slug": "maggies-place",
     "resy_slug": "maggies-place",
-    "resy_url": "https://resy.com/cities/ny/maggies-place",
-    "website": "http://maggiesnyc.com"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/maggies-place",
+    "website": "http://maggiesnyc.com",
+    "venue_id": 54657
   },
   "JoJu": {
     "url": "https://www.jojuny.com",
@@ -85865,7 +86000,7 @@
     "_vibe_confidence": "low"
   },
   "Crispy Heaven": {
-    "url": "https://resy.com/cities/ny/crispy-heaven",
+    "url": "https://resy.com/cities/new-york-ny/venues/crispy-heaven",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/crispy-heaven",
     "resy_slug": "crispy-heaven",
@@ -86369,7 +86504,7 @@
     ]
   },
   "Two Hands Williamsburg": {
-    "url": "https://resy.com/cities/ny/42913",
+    "url": "https://resy.com/cities/new-york-ny/venues/42913",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/42913",
     "resy_slug": "42913",
@@ -86440,9 +86575,9 @@
     ]
   },
   "Misipasta": {
-    "url": "https://resy.com/cities/ny/misipasta",
+    "url": "https://resy.com/cities/new-york-ny/venues/misipasta",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/misipasta",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/misipasta",
     "resy_slug": "misipasta",
     "lat": 40.715875,
     "lng": -73.9655685,
@@ -86801,7 +86936,7 @@
     ]
   },
   "ILIS": {
-    "url": "https://resy.com/cities/ny/ilis",
+    "url": "https://resy.com/cities/new-york-ny/venues/ilis",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/ilis",
     "resy_slug": "ilis",
@@ -87039,9 +87174,9 @@
     ]
   },
   "Blue Box Café by Daniel Boulud": {
-    "url": "https://resy.com/cities/ny/bluebox-cafe-by-daniel-boulud",
+    "url": "https://resy.com/cities/new-york-ny/venues/bluebox-cafe-by-daniel-boulud",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/bluebox-cafe-by-daniel-boulud",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/bluebox-cafe-by-daniel-boulud",
     "resy_slug": "bluebox-cafe-by-daniel-boulud",
     "lat": 40.7626931,
     "lng": -73.9739144,
@@ -87198,7 +87333,7 @@
     "address": "45-04 Pearson St, Queens, NY 11101, USA"
   },
   "Pitanga Bushwick": {
-    "url": "https://resy.com/cities/ny/pitanga-bushwick",
+    "url": "https://resy.com/cities/new-york-ny/venues/pitanga-bushwick",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/pitanga-bushwick",
     "resy_slug": "pitanga-bushwick",
@@ -87402,7 +87537,7 @@
     ]
   },
   "Ramro": {
-    "url": "https://resy.com/cities/ny/ramro",
+    "url": "https://resy.com/cities/new-york-ny/venues/ramro",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/ramro",
     "resy_slug": "ramro",
@@ -87741,7 +87876,7 @@
     ]
   },
   "Marc179": {
-    "url": "https://resy.com/cities/ny/marc179",
+    "url": "https://resy.com/cities/new-york-ny/venues/marc179",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/marc179",
     "resy_slug": "marc179",
@@ -87789,7 +87924,7 @@
     ]
   },
   "Kimika": {
-    "url": "https://resy.com/cities/ny/kimika",
+    "url": "https://resy.com/cities/new-york-ny/venues/kimika",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/kimika",
     "resy_slug": "kimika",
@@ -87814,7 +87949,7 @@
     ]
   },
   "TASHCA NYC": {
-    "url": "https://resy.com/cities/ny/tashca-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/tashca-nyc",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/tashca-nyc",
     "resy_slug": "tashca-nyc",
@@ -87882,9 +88017,9 @@
     ]
   },
   "Casa La Femme": {
-    "url": "https://resy.com/cities/ny/casa-la-femme",
+    "url": "https://resy.com/cities/new-york-ny/venues/casa-la-femme",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/casa-la-femme",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/casa-la-femme",
     "resy_slug": "casa-la-femme",
     "lat": 40.734242014490775,
     "lng": -74.00819050316217,
@@ -87949,9 +88084,9 @@
     "_vibe_confidence": "high"
   },
   "Studio Tropical": {
-    "url": "https://resy.com/cities/ny/studio-tropical",
+    "url": "https://resy.com/cities/new-york-ny/venues/studio-tropical",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/studio-tropical",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/studio-tropical",
     "resy_slug": "studio-tropical",
     "lat": 40.69752,
     "lng": -73.96497,
@@ -88039,9 +88174,9 @@
     "address": "89 East 42nd Street West Balcony, #002 Space R, New York, NY 10017, USA"
   },
   "Winona's": {
-    "url": "https://resy.com/cities/ny/winonas",
+    "url": "https://resy.com/cities/new-york-ny/venues/winonas",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/winonas",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/winonas",
     "resy_slug": "winonas",
     "lat": 40.700038,
     "lng": -73.945787,
@@ -88061,7 +88196,7 @@
     "address": "676 Flushing Ave, Brooklyn, NY 11206, USA"
   },
   "Baretto at Fasano": {
-    "url": "https://resy.com/cities/ny/baretto-at-fasano",
+    "url": "https://resy.com/cities/new-york-ny/venues/baretto-at-fasano",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/baretto-at-fasano",
     "resy_slug": "baretto-at-fasano",
@@ -88107,7 +88242,7 @@
     ]
   },
   "Le Café Louis Vuitton": {
-    "url": "https://resy.com/cities/ny/le-cafe-louis-vuitton",
+    "url": "https://resy.com/cities/new-york-ny/venues/le-cafe-louis-vuitton",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/le-cafe-louis-vuitton",
     "resy_slug": "le-cafe-louis-vuitton",
@@ -89303,7 +89438,7 @@
   },
   "Two Hands Noho": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/two-hands-noho",
+    "url": "https://resy.com/cities/new-york-ny/venues/two-hands-noho",
     "cuisine": "Australian",
     "rating": "",
     "price_level": "PRICE_LEVEL_MODERATE",
@@ -89326,7 +89461,8 @@
     "vibe_tags": [
       "date_night",
       "lively"
-    ]
+    ],
+    "venue_id": 8630
   },
   "txula steak": {
     "platform": "opentable",
@@ -96323,7 +96459,7 @@
   },
   "bungalow": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bungalow-ny",
+    "url": "https://resy.com/cities/new-york-ny/venues/bungalow-ny",
     "lat": 40.7238544843171,
     "lng": -73.9880386758948,
     "google_rating": 4.4,
@@ -96351,7 +96487,8 @@
     "pete_wells": true,
     "place_id": "ChIJxUPhRABZwokRWTa40zp_N10",
     "address": "24 1st Ave, New York, NY 10009, United States",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 80201
   },
   "junoon": {
     "platform": "resy",
@@ -96381,7 +96518,7 @@
   },
   "riverpark": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/riverpark-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/riverpark-nyc",
     "lat": 40.739898,
     "lng": -73.973444,
     "google_rating": 4.6,
@@ -96401,7 +96538,8 @@
     "website": "https://riverparknyc.com",
     "last_availability_check": "2026-03-06",
     "place_id": "ChIJ5UozYw5ZwokRO4HaCJGvRPY",
-    "address": "440-450 E 29th St, New York, NY 10016, United States"
+    "address": "440-450 E 29th St, New York, NY 10016, United States",
+    "venue_id": 37437
   },
   "sofreh": {
     "platform": "resy",
@@ -96720,7 +96858,7 @@
   },
   "thai diner": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/thai-diner",
+    "url": "https://resy.com/cities/new-york-ny/venues/thai-diner",
     "lat": 40.7207383242216,
     "lng": -73.995602937146,
     "google_rating": 4.4,
@@ -96746,7 +96884,8 @@
     "michelin_recommended": true,
     "nyt_top_100": true,
     "place_id": "ChIJQyFr6-FZwokRr23JK7BC7_g",
-    "address": "186 Mott St, New York, NY 10012, United States"
+    "address": "186 Mott St, New York, NY 10012, United States",
+    "venue_id": 49453
   },
   "manhatta": {
     "platform": "resy",
@@ -96985,7 +97124,7 @@
   },
   "4 charles prime rib": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/4-charles-prime-rib",
+    "url": "https://resy.com/cities/new-york-ny/venues/4-charles-prime-rib",
     "lat": 40.735144,
     "lng": -74.000652,
     "google_rating": 4.7,
@@ -97006,7 +97145,8 @@
     "last_availability_check": "2026-03-06",
     "michelin_recommended": true,
     "place_id": "ChIJ-7AOKpRZwokRMq0XnG_eehU",
-    "address": "4 Charles St, New York, NY 10014, United States"
+    "address": "4 Charles St, New York, NY 10014, United States",
+    "venue_id": 834
   },
   "rule of thirds": {
     "platform": "resy",
@@ -97114,7 +97254,7 @@
   },
   "one white street": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/one-white-street",
+    "url": "https://resy.com/cities/new-york-ny/venues/one-white-street",
     "lat": 40.7193224708007,
     "lng": -74.0059571494668,
     "google_rating": 4.4,
@@ -97135,7 +97275,8 @@
     "michelin_stars": 1,
     "michelin_recommended": true,
     "place_id": "ChIJISXTwWJZwokRIok4xyMeb6g",
-    "address": "1 White St, New York, NY 10013, United States"
+    "address": "1 White St, New York, NY 10013, United States",
+    "venue_id": 49137
   },
   "c as in charlie": {
     "platform": "resy",
@@ -97336,7 +97477,7 @@
   },
   "yellow rose": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/yellow-rose",
+    "url": "https://resy.com/cities/new-york-ny/venues/yellow-rose",
     "lat": 40.73253,
     "lng": -73.98807,
     "google_rating": 4.3,
@@ -97357,7 +97498,8 @@
     ],
     "michelin_recommended": true,
     "place_id": "ChIJ86Q39ndZwokRJTOUVW7RD-I",
-    "address": "102 3rd Ave, New York, NY 10003, United States"
+    "address": "102 3rd Ave, New York, NY 10003, United States",
+    "venue_id": 53048
   },
   "strange delight": {
     "platform": "resy",
@@ -97406,7 +97548,7 @@
   },
   "jeju noodle bar": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/jeju-noodle-bar",
+    "url": "https://resy.com/cities/new-york-ny/venues/jeju-noodle-bar",
     "lat": 40.732989,
     "lng": -74.007358,
     "google_rating": 4.6,
@@ -97431,7 +97573,8 @@
     "pete_wells": true,
     "place_id": "ChIJvSw_uuxZwokRwESVzh5G33s",
     "address": "679 Greenwich St, New York, NY 10014, United States",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 1543
   },
   "wayla": {
     "platform": "resy",
@@ -97630,7 +97773,7 @@
   },
   "the horny ram": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-horny-ram",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-horny-ram",
     "lat": 40.755268,
     "lng": -73.968521,
     "google_rating": 4.8,
@@ -97645,7 +97788,8 @@
     ],
     "website": "https://www.thehornyramnyc.com",
     "place_id": "ChIJvaEY_-JYwokRfMz4scJkI9k",
-    "address": "951 2nd Ave, New York, NY 10022, United States"
+    "address": "951 2nd Ave, New York, NY 10022, United States",
+    "venue_id": 55728
   },
   "when in bangkok": {
     "platform": "resy",
@@ -97668,7 +97812,7 @@
   },
   "antidote": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/antidote",
+    "url": "https://resy.com/cities/new-york-ny/venues/antidote",
     "lat": 40.7144319864735,
     "lng": -73.9654481020274,
     "google_rating": 4.8,
@@ -97681,7 +97825,8 @@
       "lively"
     ],
     "place_id": "ChIJN7sVKcJZwokRZp59H74tSFg",
-    "address": "66 S 2nd St, Brooklyn, NY 11249, United States"
+    "address": "66 S 2nd St, Brooklyn, NY 11249, United States",
+    "venue_id": 60192
   },
   "malii gramercy": {
     "platform": "resy",
@@ -97839,7 +97984,7 @@
   },
   "hungry thirsty": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hungry-thirsty",
+    "url": "https://resy.com/cities/new-york-ny/venues/hungry-thirsty",
     "lat": 40.67829683176547,
     "lng": -73.99613447628981,
     "google_rating": 4.8,
@@ -97858,7 +98003,8 @@
       "Infatuation"
     ],
     "place_id": "ChIJMRzjDuVbwokRXPeo4rKGGjQ",
-    "address": "407 Smith St, Brooklyn, NY 11231, United States"
+    "address": "407 Smith St, Brooklyn, NY 11231, United States",
+    "venue_id": 89465
   },
   "fortuna nyc": {
     "platform": "resy",
@@ -98067,7 +98213,7 @@
   },
   "sam sunny": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sam-sunny",
+    "url": "https://resy.com/cities/new-york-ny/venues/sam-sunny",
     "lat": 40.741589,
     "lng": -73.978492,
     "google_rating": 4.7,
@@ -98082,7 +98228,8 @@
     ],
     "website": "https://www.samsunnynyc.com",
     "place_id": "ChIJG8WWttZZwokRBkeFkHkoFv4",
-    "address": "517 2nd Ave, New York, NY 10016, United States"
+    "address": "517 2nd Ave, New York, NY 10016, United States",
+    "venue_id": 65463
   },
   "alma negra": {
     "platform": "resy",
@@ -98208,7 +98355,7 @@
   },
   "gitano nyc": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/gitano-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/gitano-nyc",
     "lat": 40.70647,
     "lng": -74.003738,
     "google_rating": 4.6,
@@ -98223,11 +98370,12 @@
     ],
     "website": "https://www.gitano.com/nyc",
     "place_id": "ChIJ3wf-UdhbwokRa1S-CsetDUM",
-    "address": "89 South St, New York, NY 10038, United States"
+    "address": "89 South St, New York, NY 10038, United States",
+    "venue_id": 61029
   },
   "eyval": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/eyval",
+    "url": "https://resy.com/cities/new-york-ny/venues/eyval",
     "lat": 40.7041,
     "lng": -73.93323,
     "google_rating": 4.6,
@@ -98249,7 +98397,8 @@
     "pete_wells": true,
     "nyt_top_100": true,
     "place_id": "ChIJR9OEk_BdwokR9Qxlpi3I1ro",
-    "address": "25 Bogart St, Brooklyn, NY 11206, United States"
+    "address": "25 Bogart St, Brooklyn, NY 11206, United States",
+    "venue_id": 59419
   },
   "hyderabadi zaiqa": {
     "platform": "resy",
@@ -98278,7 +98427,7 @@
   },
   "theodora": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/theodora",
+    "url": "https://resy.com/cities/new-york-ny/venues/theodora",
     "lat": 40.6860462,
     "lng": -73.9730464,
     "google_rating": 4.6,
@@ -98302,7 +98451,8 @@
     "nyt_stars": 2,
     "pete_wells": true,
     "place_id": "ChIJJye7jZBbwokRtioAck7uEIg",
-    "address": "7 Greene Ave, Brooklyn, NY 11238, United States"
+    "address": "7 Greene Ave, Brooklyn, NY 11238, United States",
+    "venue_id": 73589
   },
   "paisley": {
     "platform": "resy",
@@ -98502,7 +98652,7 @@
   },
   "cote flatiron": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/cote-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
     "lat": 40.7411848,
     "lng": -73.991313,
     "google_rating": 4.6,
@@ -98519,7 +98669,8 @@
     "website": "https://www.cotekoreansteakhouse.com",
     "last_availability_check": "2026-03-06",
     "place_id": "ChIJQ1R3hKNZwokRQM4wbIrc00o",
-    "address": "16 W 22nd St, New York, NY 10010, United States"
+    "address": "16 W 22nd St, New York, NY 10010, United States",
+    "venue_id": 72271
   },
   "harvey's at union station": {
     "platform": "resy",
@@ -98611,7 +98762,7 @@
   },
   "tonchin new york": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/tonchin-new-york",
+    "url": "https://resy.com/cities/new-york-ny/venues/tonchin-new-york",
     "lat": 40.750328,
     "lng": -73.984473,
     "google_rating": 4.6,
@@ -98626,7 +98777,8 @@
     "website": "https://www.tonchinnewyork.com",
     "last_availability_check": "2026-03-06",
     "place_id": "ChIJBwGziqlZwokRb3MTH3xUt0Y",
-    "address": "13 W 36th St., New York, NY 10018, United States"
+    "address": "13 W 36th St., New York, NY 10018, United States",
+    "venue_id": 35883
   },
   "westville lic": {
     "platform": "resy",
@@ -98692,7 +98844,7 @@
   },
   "69Leonardstreet": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/69leonardstreet",
+    "url": "https://resy.com/cities/new-york-ny/venues/69leonardstreet",
     "lat": 40.7176901,
     "lng": -74.0053795,
     "google_rating": 4.5,
@@ -98707,7 +98859,8 @@
       "date_night",
       "upscale"
     ],
-    "address": "69 Leonard St, New York, NY 10013, United States"
+    "address": "69 Leonard St, New York, NY 10013, United States",
+    "venue_id": 888
   },
   "83 1 2": {
     "platform": "resy",
@@ -99062,7 +99215,7 @@
   },
   "Barbuto Brooklyn": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/barbuto-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/barbuto-brooklyn",
     "lat": 40.7024367,
     "lng": -73.99552,
     "google_rating": 4.5,
@@ -99077,7 +99230,8 @@
       "date_night",
       "outdoor"
     ],
-    "address": "60 Furman St, Brooklyn, NY 11201, USA"
+    "address": "60 Furman St, Brooklyn, NY 11201, USA",
+    "venue_id": 65580
   },
   "Baro": {
     "platform": "resy",
@@ -99119,7 +99273,7 @@
   },
   "Bong": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bong",
+    "url": "https://resy.com/cities/new-york-ny/venues/bong",
     "lat": 40.6726773,
     "lng": -73.9548334,
     "google_rating": 4.7,
@@ -99144,7 +99298,8 @@
     ],
     "nyt_stars": 1,
     "pete_wells": true,
-    "address": "724 Sterling Pl, Brooklyn, NY 11216, United States"
+    "address": "724 Sterling Pl, Brooklyn, NY 11216, United States",
+    "venue_id": 86413
   },
   "Cafe Chili": {
     "platform": "resy",
@@ -99218,7 +99373,7 @@
   },
   "Cafe Mado": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/cafe-mado",
+    "url": "https://resy.com/cities/new-york-ny/venues/cafe-mado",
     "lat": 40.6729032,
     "lng": -73.9626767,
     "google_rating": 4.7,
@@ -99240,7 +99395,8 @@
     "nyt_stars": 2,
     "pete_wells": true,
     "nyt_top_100": true,
-    "address": "791 Washington Ave, Brooklyn, NY 11238, USA"
+    "address": "791 Washington Ave, Brooklyn, NY 11238, USA",
+    "venue_id": 81909
   },
   "Cafe Mogador Williamsburg": {
     "platform": "resy",
@@ -99436,7 +99592,7 @@
   },
   "Caviar Cafe": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/caviar-cafe",
+    "url": "https://resy.com/cities/new-york-ny/venues/caviar-cafe",
     "lat": 40.7329932,
     "lng": -74.0099899,
     "google_rating": 4.7,
@@ -99453,7 +99609,8 @@
       "upscale",
       "lively"
     ],
-    "address": "394/A West St, New York, NY 10014, USA"
+    "address": "394/A West St, New York, NY 10014, USA",
+    "venue_id": 94731
   },
   "Chefs Table At Brooklyn Fare": {
     "platform": "resy",
@@ -99478,7 +99635,7 @@
   },
   "Citizens Of Chelsea": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/citizens-of-chelsea",
+    "url": "https://resy.com/cities/new-york-ny/venues/citizens-of-chelsea",
     "lat": 40.7480921,
     "lng": -74.0005666,
     "google_rating": 4.7,
@@ -99494,11 +99651,12 @@
       "chill",
       "trendy"
     ],
-    "address": "401 W 25th St, New York, NY 10001, United States"
+    "address": "401 W 25th St, New York, NY 10001, United States",
+    "venue_id": 75524
   },
   "Citizens Of Soho": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/citizens-of-soho",
+    "url": "https://resy.com/cities/new-york-ny/venues/citizens-of-soho",
     "lat": 40.7213636,
     "lng": -73.99776729999999,
     "google_rating": 4.7,
@@ -99514,7 +99672,8 @@
       "casual",
       "group_friendly"
     ],
-    "address": "201 Lafayette St, New York, NY 10012, USA"
+    "address": "201 Lafayette St, New York, NY 10012, USA",
+    "venue_id": 60841
   },
   "Claw Daddys Brooklyn": {
     "platform": "resy",
@@ -99556,7 +99715,7 @@
   },
   "Concrete Shoals": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/concrete-shoals",
+    "url": "https://resy.com/cities/new-york-ny/venues/concrete-shoals",
     "lat": 40.697697,
     "lng": -73.9368276,
     "google_rating": 4.7,
@@ -99568,7 +99727,8 @@
     "cuisine": null,
     "price": 3,
     "vibe_tags": [],
-    "address": "906 Broadway, Brooklyn, NY 11206, USA"
+    "address": "906 Broadway, Brooklyn, NY 11206, USA",
+    "venue_id": 92100
   },
   "Cuerno": {
     "platform": "opentable",
@@ -99640,7 +99800,7 @@
   },
   "Dejavu": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/dejavu",
+    "url": "https://resy.com/cities/new-york-ny/venues/dejavu",
     "lat": 40.7330358,
     "lng": -74.0100104,
     "google_rating": 4.7,
@@ -99655,11 +99815,12 @@
       "lively",
       "date_night"
     ],
-    "address": "394 West St, New York, NY 10014, USA"
+    "address": "394 West St, New York, NY 10014, USA",
+    "venue_id": 93097
   },
   "Dept Of Culture Brooklyn": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/dept-of-culture-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/dept-of-culture-brooklyn",
     "lat": 40.6871916,
     "lng": -73.9508013,
     "google_rating": 4.7,
@@ -99674,7 +99835,8 @@
       "date_night",
       "lively"
     ],
-    "address": "327 Nostrand Ave, Brooklyn, NY 11216, USA"
+    "address": "327 Nostrand Ave, Brooklyn, NY 11216, USA",
+    "venue_id": 60036
   },
   "Double Zero": {
     "platform": "resy",
@@ -99777,7 +99939,7 @@
   },
   "Family Meal At Blue Hill": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/family-meal-at-blue-hill",
+    "url": "https://resy.com/cities/new-york-ny/venues/family-meal-at-blue-hill",
     "lat": 40.7320465,
     "lng": -73.9996685,
     "google_rating": 4.6,
@@ -99794,7 +99956,8 @@
     ],
     "michelin_stars": 1,
     "michelin_recommended": true,
-    "address": "75 Washington Pl, New York, NY 10011, United States"
+    "address": "75 Washington Pl, New York, NY 10011, United States",
+    "venue_id": 73513
   },
   "Fiat Cafe": {
     "platform": "resy",
@@ -99818,7 +99981,7 @@
   },
   "Food Education Fund": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/food-education-fund",
+    "url": "https://resy.com/cities/new-york-ny/venues/food-education-fund",
     "lat": 40.70578099999999,
     "lng": -74.013972,
     "google_rating": 4.9,
@@ -99832,7 +99995,8 @@
     "vibe_tags": [
       "foodie"
     ],
-    "address": "25 Broadway 12th floor, New York, NY 10004, USA"
+    "address": "25 Broadway 12th floor, New York, NY 10004, USA",
+    "venue_id": 65036
   },
   "Frank": {
     "platform": "opentable",
@@ -99912,7 +100076,7 @@
   },
   "Haven": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/haven",
+    "url": "https://resy.com/cities/new-york-ny/venues/haven",
     "lat": 40.7833845,
     "lng": -73.97955309999999,
     "google_rating": 4.5,
@@ -99927,11 +100091,12 @@
       "lively",
       "date_night"
     ],
-    "address": "226 W 79th St, New York, NY 10024, USA"
+    "address": "226 W 79th St, New York, NY 10024, USA",
+    "venue_id": 77722
   },
   "Hill Country Barbecue Market": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/hill-country-barbecue-market",
+    "url": "https://resy.com/cities/new-york-ny/venues/hill-country-barbecue-market",
     "lat": 40.7442077,
     "lng": -73.99043209999999,
     "google_rating": 4.3,
@@ -99946,7 +100111,8 @@
       "lively",
       "date_night"
     ],
-    "address": "30 W 26th St, New York, NY 10010, USA"
+    "address": "30 W 26th St, New York, NY 10010, USA",
+    "venue_id": 86934
   },
   "Hummus Kitchen Ues": {
     "platform": "resy",
@@ -100011,7 +100177,7 @@
   },
   "Jaba": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/jaba",
+    "url": "https://resy.com/cities/new-york-ny/venues/jaba",
     "lat": 40.7601883,
     "lng": -73.9658941,
     "google_rating": 4.4,
@@ -100026,7 +100192,8 @@
       "lively",
       "hidden_gem"
     ],
-    "address": "230 E 58th St, New York, NY 10022, USA"
+    "address": "230 E 58th St, New York, NY 10022, USA",
+    "venue_id": 87585
   },
   "Jack And Charlies 118": {
     "platform": "resy",
@@ -100070,7 +100237,7 @@
   },
   "Kettl Tea Norman Ave": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/kettl-tea-norman-ave",
+    "url": "https://resy.com/cities/new-york-ny/venues/kettl-tea-norman-ave",
     "lat": 40.724582,
     "lng": -73.95396889999999,
     "google_rating": 4.2,
@@ -100085,7 +100252,8 @@
       "upscale",
       "trendy"
     ],
-    "address": "38 Norman Ave, Brooklyn, NY 11222, USA"
+    "address": "38 Norman Ave, Brooklyn, NY 11222, USA",
+    "venue_id": 93184
   },
   "Kfar Brooklyn": {
     "platform": "resy",
@@ -100248,7 +100416,7 @@
   },
   "Little Fino": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/little-fino",
+    "url": "https://resy.com/cities/new-york-ny/venues/little-fino",
     "lat": 40.7220606,
     "lng": -73.9568097,
     "google_rating": 4.1,
@@ -100268,7 +100436,8 @@
       "Eater"
     ],
     "address": "111 N 12th St, Brooklyn, NY 11249, USA",
-    "new_rising": true
+    "new_rising": true,
+    "venue_id": 89337
   },
   "Lore Brooklyn": {
     "platform": "resy",
@@ -100291,7 +100460,7 @@
   },
   "Lucali Ny": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/lucali-ny",
+    "url": "https://resy.com/cities/new-york-ny/venues/lucali-ny",
     "lat": 40.681826,
     "lng": -74.0003184,
     "google_rating": 4.2,
@@ -100310,11 +100479,12 @@
       "Infatuation",
       "Eater"
     ],
-    "address": "575 Henry St, Brooklyn, NY 11231, United States"
+    "address": "575 Henry St, Brooklyn, NY 11231, United States",
+    "venue_id": 54876
   },
   "Lucky Charlie": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/lucky-charlie",
+    "url": "https://resy.com/cities/new-york-ny/venues/lucky-charlie",
     "lat": 40.6998399,
     "lng": -73.9163025,
     "google_rating": 4.8,
@@ -100336,7 +100506,8 @@
       "Infatuation",
       "Eater"
     ],
-    "address": "254 Irving Ave, Brooklyn, NY 11237, USA"
+    "address": "254 Irving Ave, Brooklyn, NY 11237, USA",
+    "venue_id": 92356
   },
   "Lure Fishbar Mercer St": {
     "platform": "resy",
@@ -100715,7 +100886,7 @@
   },
   "Paquita": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/paquita",
+    "url": "https://resy.com/cities/new-york-ny/venues/paquita",
     "lat": 40.7336769,
     "lng": -74.0057112,
     "google_rating": 4.4,
@@ -100730,7 +100901,8 @@
       "date_night",
       "casual"
     ],
-    "address": "242 West 10th Street Storefront 2, New York"
+    "address": "242 West 10th Street Storefront 2, New York",
+    "venue_id": 83502
   },
   "Park Terrace Hotel": {
     "platform": "resy",
@@ -100952,7 +101124,7 @@
   },
   "Rubirosa": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/rubirosa",
+    "url": "https://resy.com/cities/new-york-ny/venues/rubirosa",
     "lat": 40.7227383,
     "lng": -73.99613470000001,
     "google_rating": 4.6,
@@ -100970,11 +101142,12 @@
     "buzz_sources": [
       "Infatuation"
     ],
-    "address": "235 Mulberry St, New York, NY 10012, United States"
+    "address": "235 Mulberry St, New York, NY 10012, United States",
+    "venue_id": 466
   },
   "Russ And Daughters Cafe": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/russ-and-daughters-cafe",
+    "url": "https://resy.com/cities/new-york-ny/venues/russ-and-daughters-cafe",
     "lat": 40.7196181,
     "lng": -73.9895779,
     "google_rating": 4.6,
@@ -100991,7 +101164,8 @@
     ],
     "bib_gourmand": true,
     "michelin_recommended": true,
-    "address": "127 Orchard St, New York, NY 10002, United States"
+    "address": "127 Orchard St, New York, NY 10002, United States",
+    "venue_id": 4600
   },
   "Saga Ny": {
     "platform": "resy",
@@ -101159,7 +101333,7 @@
   },
   "Sea": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sea",
+    "url": "https://resy.com/cities/new-york-ny/venues/sea",
     "lat": 40.7483352,
     "lng": -73.99186949999999,
     "google_rating": 4.3,
@@ -101175,7 +101349,8 @@
       "lively",
       "foodie"
     ],
-    "address": "151 W 30th St, New York, NY 10001, USA"
+    "address": "151 W 30th St, New York, NY 10001, USA",
+    "venue_id": 80440
   },
   "Sea Salt": {
     "platform": "resy",
@@ -101555,7 +101730,7 @@
   },
   "The Astarita": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-astarita",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-astarita",
     "lat": 40.6559371,
     "lng": -73.9992912,
     "google_rating": 4.8,
@@ -101571,7 +101746,8 @@
       "casual",
       "foodie"
     ],
-    "address": "797 5th Ave, Brooklyn, NY 11232, USA"
+    "address": "797 5th Ave, Brooklyn, NY 11232, USA",
+    "venue_id": 85156
   },
   "The Boil Brooklyn": {
     "platform": "opentable",
@@ -101633,7 +101809,7 @@
   },
   "The Modern": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/the-modern",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-modern",
     "lat": 40.761081,
     "lng": -73.976753,
     "google_rating": 4.6,
@@ -101650,7 +101826,8 @@
     ],
     "michelin_stars": 1,
     "michelin_recommended": true,
-    "address": "9 W 53rd St, New York, NY 10019, USA"
+    "address": "9 W 53rd St, New York, NY 10019, USA",
+    "venue_id": 7369
   },
   "The Mulberry": {
     "platform": "resy",
@@ -101715,7 +101892,7 @@
   },
   "Thirst Series A New Perspective On Wine Presented By Pressoir And American Express": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/thirst-series-a-new-perspective-on-wine-presented-by-pressoir-and-american-express",
+    "url": "https://resy.com/cities/new-york-ny/venues/thirst-series-a-new-perspective-on-wine-presented-by-pressoir-and-american-express",
     "lat": 40.7532108,
     "lng": -73.9788155,
     "google_rating": 4.4,
@@ -101730,11 +101907,12 @@
       "date_night",
       "outdoor"
     ],
-    "address": "1 Vanderbilt Ave, New York, NY 10017, USA"
+    "address": "1 Vanderbilt Ave, New York, NY 10017, USA",
+    "venue_id": 74426
   },
   "Tonchin Brooklyn": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/tonchin-brooklyn",
+    "url": "https://resy.com/cities/new-york-ny/venues/tonchin-brooklyn",
     "lat": 40.716755,
     "lng": -73.9616957,
     "google_rating": 4.5,
@@ -101748,7 +101926,8 @@
     "vibe_tags": [
       "lively"
     ],
-    "address": "109 N 3rd St, Brooklyn, NY 11249, USA"
+    "address": "109 N 3rd St, Brooklyn, NY 11249, USA",
+    "venue_id": 59933
   },
   "Torishin": {
     "platform": "resy",
@@ -115015,7 +115194,7 @@
   },
   "côte": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/cote-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
     "lat": 40.7413041,
     "lng": -73.99125269999999,
     "google_rating": 4.6,
@@ -115036,7 +115215,8 @@
     "buzz_sources": [
       "Infatuation"
     ],
-    "resy_url": "https://resy.com/cities/ny/cote-nyc"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/cote-nyc",
+    "venue_id": 72271
   },
   "the good good": {
     "platform": "resy",
@@ -115347,7 +115527,7 @@
   },
   "Sunsets at La Cantine": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/sunsets-at-la-cantine",
+    "url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
     "lat": 40.7066805,
     "lng": -73.9205728,
     "google_rating": 4.6,
@@ -115364,8 +115544,9 @@
     "price": 2,
     "ot_slug": "la-cantine",
     "resy_slug": "sunsets-at-la-cantine",
-    "resy_url": "https://resy.com/cities/ny/sunsets-at-la-cantine",
-    "neighborhood": "New York"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
+    "neighborhood": "New York",
+    "venue_id": 76796
   },
   "Westville Hudson": {
     "platform": "resy",
@@ -116213,7 +116394,7 @@
   },
   "agora taverna": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/agora-taverna",
+    "url": "https://resy.com/cities/new-york-ny/venues/agora-taverna",
     "lat": 40.721,
     "lng": -73.84734,
     "google_rating": 4.3,
@@ -116229,7 +116410,8 @@
     "website": "http://www.agora-taverna.com",
     "bilt_dining": true,
     "bilt_id": "9f5f87bb-1550-3c98-ab65-2aaa841b3189",
-    "address": "70-09 Austin St, Forest Hills, NY 11375, USA"
+    "address": "70-09 Austin St, Forest Hills, NY 11375, USA",
+    "venue_id": 41207
   },
   "anatoli 56 greek taverna": {
     "platform": "resy",
@@ -116342,8 +116524,8 @@
     "platform": "resy",
     "resy_slug": "gramercy-tavern",
     "venue_id": 3731,
-    "url": "https://resy.com/cities/ny/gramercy-tavern",
-    "resy_url": "https://resy.com/cities/ny/gramercy-tavern",
+    "url": "https://resy.com/cities/new-york-ny/venues/gramercy-tavern",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/gramercy-tavern",
     "michelin_stars": 1,
     "michelin_recommended": true,
     "lat": 40.7391,
@@ -116921,7 +117103,7 @@
   },
   "Bottega Supper Club": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bottega-supper-club",
+    "url": "https://resy.com/cities/new-york-ny/venues/bottega-supper-club",
     "lat": 40.669226839191985,
     "lng": -73.95321281632854,
     "google_rating": 4.8,
@@ -116937,11 +117119,12 @@
       "trendy",
       "foodie"
     ],
-    "address": "215 Rogers Ave, Brooklyn, NY 11225, USA"
+    "address": "215 Rogers Ave, Brooklyn, NY 11225, USA",
+    "venue_id": 94065
   },
   "Jongro Bbq Market": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/jongro-bbq-market",
+    "url": "https://resy.com/cities/new-york-ny/venues/jongro-bbq-market",
     "lat": 40.7481614,
     "lng": -73.9872958,
     "google_rating": 4.5,
@@ -116956,7 +117139,8 @@
       "lively",
       "casual"
     ],
-    "address": "39 W 32nd St 1st Fl, New York, NY 10001, USA"
+    "address": "39 W 32nd St 1st Fl, New York, NY 10001, USA",
+    "venue_id": 92541
   },
   "Gaonnuri Restaurant": {
     "platform": "resy",
@@ -117798,7 +117982,7 @@
   },
   "Bubbys Tribeca": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bubbys-tribeca",
+    "url": "https://resy.com/cities/new-york-ny/venues/bubbys-tribeca",
     "lat": 40.719819,
     "lng": -74.0083829,
     "google_rating": 4.4,
@@ -117813,7 +117997,8 @@
       "date_night",
       "lively"
     ],
-    "address": "120 Hudson St, New York, NY 10013, USA"
+    "address": "120 Hudson St, New York, NY 10013, USA",
+    "venue_id": 93082
   },
   "Don's Bogam BBQ & Wine Bar": {
     "platform": "resy",
@@ -117853,7 +118038,7 @@
   },
   "bar oliver": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/bar-oliver",
+    "url": "https://resy.com/cities/new-york-ny/venues/bar-oliver",
     "lat": 40.7132231109936,
     "lng": -73.9981978452847,
     "google_rating": 4.4,
@@ -117868,7 +118053,8 @@
       "trendy",
       "casual"
     ],
-    "address": "1 Oliver St, New York, NY 10038, USA"
+    "address": "1 Oliver St, New York, NY 10038, USA",
+    "venue_id": 85407
   },
   "bangkok supper club": {
     "platform": "resy",
@@ -118178,7 +118364,7 @@
   },
   "red hook tavern": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/red-hook-tavern",
+    "url": "https://resy.com/cities/new-york-ny/venues/red-hook-tavern",
     "address": "329 Van Brunt St, Brooklyn, NY 11231",
     "neighborhood": "Red Hook",
     "cuisine": "American",
@@ -118199,7 +118385,8 @@
     "nyt_stars": 1,
     "pete_wells": true,
     "website": "http://www.redhooktavern.com/",
-    "place_id": "ChIJv0LelZRbwokRrUvqWn_7o98"
+    "place_id": "ChIJv0LelZRbwokRrUvqWn_7o98",
+    "venue_id": 6377
   },
   "lenny's clam bar": {
     "platform": "website",
@@ -118376,7 +118563,7 @@
   },
   "una pizza napoletana": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/una-pizza-napoletana",
+    "url": "https://resy.com/cities/new-york-ny/venues/una-pizza-napoletana",
     "address": "175 Orchard St, New York, NY 10002",
     "neighborhood": "Lower East Side",
     "cuisine": "Pizza",
@@ -118397,7 +118584,8 @@
     "google_reviews": 881,
     "website": "https://unapizza.com/",
     "place_id": "ChIJAbYL-YNZwokRIfs6jgmbXqg",
-    "nyt_top_100": true
+    "nyt_top_100": true,
+    "venue_id": 6066
   },
   "lucia pizza of soho": {
     "platform": "website",
@@ -118901,7 +119089,7 @@
   },
   "potluck club": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/potluck-club",
+    "url": "https://resy.com/cities/new-york-ny/venues/potluck-club",
     "address": "145 Orchard Street, New York, NY 10002",
     "neighborhood": "Lower East Side",
     "cuisine": "Chinese",
@@ -118922,7 +119110,8 @@
     "google_rating": 4.6,
     "google_reviews": 817,
     "website": "https://thepotluckclubny.com/",
-    "place_id": "ChIJ7yN3d6tZwokRATR9U3lAqLg"
+    "place_id": "ChIJ7yN3d6tZwokRATR9U3lAqLg",
+    "venue_id": 63514
   },
   "tobala": {
     "platform": "resy",
@@ -119928,10 +120117,11 @@
       "Instagram"
     ],
     "michelin_recommended": false,
-    "url": "https://resy.com/cities/ny/drais-supper-club",
+    "url": "https://resy.com/cities/new-york-ny/venues/drais-supper-club",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/drais-supper-club",
-    "resy_slug": "drais-supper-club"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/drais-supper-club",
+    "resy_slug": "drais-supper-club",
+    "venue_id": 79963
   },
   "kura revolving sushi bar": {
     "name": "Kura Revolving Sushi Bar",
@@ -119978,10 +120168,11 @@
       "Instagram"
     ],
     "michelin_recommended": false,
-    "url": "https://resy.com/cities/ny/monkey-bar-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/monkey-bar-nyc",
     "platform": "resy",
-    "resy_url": "https://resy.com/cities/ny/monkey-bar-nyc",
-    "resy_slug": "monkey-bar-nyc"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/monkey-bar-nyc",
+    "resy_slug": "monkey-bar-nyc",
+    "venue_id": 60058
   },
   "coby club": {
     "name": "Coby Club",
@@ -121095,7 +121286,7 @@
   },
   "cupid's secret": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/cupids-secret",
+    "url": "https://resy.com/cities/new-york-ny/venues/cupids-secret",
     "lat": 40.76875845808563,
     "lng": -73.98313187472858,
     "google_rating": 3.6,
@@ -121107,7 +121298,8 @@
     "price": 1,
     "vibe_tags": [],
     "website": "https://www.vossevents.com/residency/cupids-secret-new-york",
-    "address": "10 Columbus Cir Floor 4, New York, NY 10019, USA"
+    "address": "10 Columbus Cir Floor 4, New York, NY 10019, USA",
+    "venue_id": 95216
   },
   "ding a ling": {
     "platform": "resy",
@@ -121209,7 +121401,7 @@
   },
   "private room nyc": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/private-room-nyc",
+    "url": "https://resy.com/cities/new-york-ny/venues/private-room-nyc",
     "lat": 40.77154521897568,
     "lng": -73.90801077020915,
     "google_rating": 3.9,
@@ -121226,7 +121418,8 @@
     ],
     "website": "http://privateroomnewyork.com",
     "address": "22-79 Steinway St, Astoria, NY 11105, USA",
-    "_vibe_confidence": "medium"
+    "_vibe_confidence": "medium",
+    "venue_id": 94647
   },
   "Village Café": {
     "platform": "website",
@@ -121351,7 +121544,7 @@
   },
   "highball ltd": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/highball-limited",
+    "url": "https://resy.com/cities/new-york-ny/venues/highball-limited",
     "lat": 40.7523371,
     "lng": -73.973606,
     "google_rating": 5,
@@ -121368,7 +121561,8 @@
       "trendy"
     ],
     "price": 0,
-    "resy_url": "https://resy.com/cities/ny/highball-limited"
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/highball-limited",
+    "venue_id": 94981
   },
   "tenon": {
     "platform": "website",
