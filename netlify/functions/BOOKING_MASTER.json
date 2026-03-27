@@ -116367,7 +116367,7 @@
     "address": "1 Central Prk W, New York, NY 10023, United States"
   },
   "l'abeille": {
-    "platform": "opentable",
+    "platform": "resy",
     "url": "https://resy.com/cities/ny/labielle",
     "lat": 40.7332,
     "lng": -74.0064,
@@ -116945,8 +116945,8 @@
     "place_id": "ChIJHRcAaABbwokRcdnFupcwIus"
   },
   "barker cafeteria": {
-    "platform": "website",
-    "url": null,
+    "platform": "walk_in",
+    "url": "",
     "address": "395 Nostrand Avenue, Brooklyn, NY 11216",
     "neighborhood": "Bed-Stuy",
     "cuisine": "American",
@@ -117304,8 +117304,8 @@
     "place_id": "ChIJzanGjhBfwokRJtRGf7B3PcE"
   },
   "dar yemma": {
-    "platform": "website",
-    "url": null,
+    "platform": "walk_in",
+    "url": "",
     "address": "25-22 Steinway Street, Astoria, NY 11103",
     "neighborhood": "Astoria",
     "cuisine": "Moroccan",
@@ -117464,8 +117464,8 @@
     "place_id": "ChIJCURgyldfwokRvBpy5nCp7qY"
   },
   "banh vietnamese shop house": {
-    "platform": "website",
-    "url": null,
+    "platform": "walk_in",
+    "url": "",
     "address": "2270 Broadway, New York, NY 10024",
     "neighborhood": "Upper West Side",
     "cuisine": "Vietnamese",
@@ -117722,11 +117722,12 @@
     ],
     "lat": 40.7001,
     "lng": -73.9063,
-    "platform": "website",
+    "platform": "walk_in",
     "google_rating": 4.5,
     "google_reviews": 263,
     "website": "http://saltylunchlady.com/",
-    "place_id": "ChIJd1wnL-dfwokRlYBRhDQwS80"
+    "place_id": "ChIJd1wnL-dfwokRlYBRhDQwS80",
+    "url": ""
   },
   "old sport": {
     "address": "Forest Hills, Queens, NY",
