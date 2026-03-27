@@ -666,7 +666,7 @@
     "address": "538 Madison Ave, New York, NY 10022, USA"
   },
   "Northshore Brasserie": {
-    "url": "https://www.grandbrasserie.com/",
+    "url": "https://www.opentable.com/r/tbd-reservations-new-york-3",
     "lat": 40.7524818,
     "lng": -73.9775753,
     "google_rating": 4,
@@ -683,7 +683,7 @@
     "price": 3,
     "price_estimated": true,
     "ot_slug": "northshore-brasserie",
-    "platform": "website",
+    "platform": "opentable",
     "website": "https://www.grandbrasserie.com/"
   },
   "oceans": {
@@ -1241,8 +1241,8 @@
     "address": "340 W 46th St, New York, NY 10036, USA"
   },
   "Lattanzi Ristorante": {
-    "platform": "website",
-    "url": "http://www.lattanzinyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/lattanzi-new-york",
     "lat": 40.760822499999996,
     "lng": -73.98999719999999,
     "google_rating": 4.3,
@@ -4025,8 +4025,8 @@
     "neighborhood": "Greenwich Village"
   },
   "restaurant daniel": {
-    "platform": "website",
-    "url": "http://www.danielnyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/daniel",
     "lat": 40.7668083,
     "lng": -73.9675769,
     "google_rating": 4.6,
@@ -9364,7 +9364,7 @@
     "michelin_recommended": true
   },
   "Vietnaam Restaurant": {
-    "url": "http://www.ladongnyc.com/",
+    "url": "https://www.opentable.com/r/la-dong-reservations-new-york",
     "lat": 40.7377201,
     "lng": -73.9912047,
     "google_rating": 4.8,
@@ -9381,7 +9381,7 @@
     "instagram": "ladongnyc",
     "price": 2,
     "ot_slug": "vietnaam",
-    "platform": "website"
+    "platform": "opentable"
   },
   "legend of taste": {
     "platform": "resy",
@@ -11804,8 +11804,8 @@
     "opentable_url": "https://www.opentable.com/r/noz-market-new-york"
   },
   "Sant Ambroeus Madison": {
-    "platform": "website",
-    "url": "https://www.santambroeus.com/pages/location-madison-avenue",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sant-ambroeus-madison-ave",
     "lat": 40.7754159,
     "lng": -73.9629886,
     "google_rating": 4.3,
@@ -12340,7 +12340,7 @@
     "venue_id": 65217
   },
   "Heirloom Room": {
-    "url": "https://readingroomnyc.com/",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-reading-room",
     "lat": 40.755435999999996,
     "lng": -73.97810799999999,
     "google_rating": 4.4,
@@ -12356,7 +12356,7 @@
     "price": 2,
     "price_estimated": true,
     "ot_slug": "heirloom-room",
-    "platform": "website",
+    "platform": "resy",
     "website": "https://readingroomnyc.com/"
   },
   "beija flor": {
@@ -12747,8 +12747,8 @@
     "address": "212 W 57th St, New York, NY 10019, USA"
   },
   "momoya upper west": {
-    "platform": "website",
-    "url": "http://momoyanyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/momoya-uws",
     "lat": 40.784189614672684,
     "lng": -73.97738914782425,
     "google_rating": 4.3,
@@ -17539,8 +17539,8 @@
     "address": "24-25 Steinway St, Astoria, NY 11103, USA"
   },
   "capt loui cajun seafood boil": {
-    "platform": "website",
-    "url": "https://captloui.com/ny-ny-32nd-st",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/capt-loui-reservations-new-york",
     "lat": 40.7477421,
     "lng": -73.9873069,
     "google_rating": 4.9,
@@ -25467,7 +25467,7 @@
     "address": "103-11 39th Ave, Flushing, NY 11368, USA"
   },
   "Caffe Buon Gusto": {
-    "url": "https://www.caffebuongusto.nyc/",
+    "url": "https://www.opentable.com/rest_profile.aspx",
     "lat": 40.7723459,
     "lng": -73.95709049999999,
     "google_rating": 4.4,
@@ -25485,7 +25485,7 @@
     "ot_slug": "caffe-buon-gusto",
     "bilt_dining": true,
     "bilt_id": "b32a20b1-cac0-38ce-a2bb-24cc762367e2",
-    "platform": "website"
+    "platform": "opentable"
   },
   "el castillo de manhattan restaurant": {
     "platform": "opentable",
@@ -27478,7 +27478,7 @@
     "address": "917 8th Ave, New York, NY 10019, USA"
   },
   "l'angeletto": {
-    "url": "https://langeletto.com/?y_source=1_MTA0OTAyOTc5MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ==",
+    "url": "https://www.opentable.com/r/langeletto-new-york",
     "lat": 40.73541790000001,
     "lng": -73.9829477,
     "google_rating": 4.6,
@@ -27493,7 +27493,7 @@
     ],
     "price": 2,
     "ot_slug": "angeletto",
-    "platform": "website"
+    "platform": "opentable"
   },
   "l'express": {
     "platform": "opentable",
@@ -28852,8 +28852,8 @@
     "address": "78 5th Ave, Brooklyn, NY 11217, USA"
   },
   "monty's nyc": {
-    "platform": "website",
-    "url": "http://www.montestrattorianyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.7295449,
     "lng": -74.0010131,
     "google_rating": 4.4,
@@ -43152,7 +43152,7 @@
     "address": "681 Washington St, New York, NY 10014, USA"
   },
   "Paul & Jimmy's Restaurant": {
-    "url": "http://www.paulandjimmys.com/",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.736790899999995,
     "lng": -73.9873021,
     "google_rating": 4.4,
@@ -43168,7 +43168,7 @@
     "instagram": "paulandjimmys",
     "price": 2,
     "ot_slug": "paul-and-jimmys",
-    "platform": "website"
+    "platform": "opentable"
   },
   "fan szechuan": {
     "platform": "opentable",
@@ -67836,7 +67836,7 @@
     ]
   },
   "Black Tap Craft Burgers & Beer": {
-    "url": "https://blacktap.com/location/35th/",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.723838799999996,
     "lng": -74.0041755,
     "google_rating": 4.4,
@@ -67854,7 +67854,7 @@
     "ot_slug": "black-tap-craft-burgers-and-beer",
     "bilt_dining": true,
     "bilt_id": "bcf4cd50-90e6-35fc-a32e-9a59af9604c7",
-    "platform": "website",
+    "platform": "opentable",
     "booking_url": "https://www.opentable.com/r/black-tap-soho-new-york"
   },
   "Pazza Notte": {
@@ -69664,7 +69664,7 @@
     "platform": "website"
   },
   "DiWine": {
-    "url": "http://www.diwineonline.com/",
+    "url": "https://www.exploretock.com/diwineonline/experience/497767/reservation",
     "lat": 40.760815799999996,
     "lng": -73.9156375,
     "google_rating": 4.6,
@@ -69680,7 +69680,7 @@
     "instagram": "diwinebar",
     "price": 2,
     "ot_slug": "diwine",
-    "platform": "website"
+    "platform": "tock"
   },
   "Giano Restaurant": {
     "url": "https://www.gianonyc.com/",
@@ -70230,7 +70230,7 @@
     "_vibe_confidence": "low"
   },
   "Dubrovnik Restaurant": {
-    "url": "http://dubrovnikny.com/",
+    "url": "https://www.exploretock.com/dubrovnik-restaurant",
     "lat": 40.9036111,
     "lng": -73.7891667,
     "google_rating": 4.7,
@@ -70247,7 +70247,7 @@
     "instagram": "dubrovnikrestaurant_ny",
     "price": 2,
     "ot_slug": "dubrovnik",
-    "platform": "website"
+    "platform": "tock"
   },
   "Poke Bowl": {
     "url": null,
@@ -70563,7 +70563,7 @@
     "platform": "website"
   },
   "La Vecina": {
-    "url": "https://www.lavecinaastoria.com/",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.7623374,
     "lng": -73.91652069999999,
     "google_rating": 4.3,
@@ -70578,7 +70578,7 @@
     ],
     "price": 1,
     "ot_slug": "la-vecina",
-    "platform": "website"
+    "platform": "opentable"
   },
   "Le Gigot": {
     "url": "https://www.opentable.com/le-gigot",
@@ -70620,7 +70620,7 @@
     "platform": "website"
   },
   "Bistro Vendome": {
-    "url": "http://bistrovendomenyc.com/",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.7588867,
     "lng": -73.9619189,
     "google_rating": 4.5,
@@ -70636,7 +70636,7 @@
     "instagram": "bistrovendome",
     "price": 3,
     "ot_slug": "bistro-vendome",
-    "platform": "website"
+    "platform": "opentable"
   },
   "Khao Nom": {
     "platform": "walk_in",
@@ -72968,7 +72968,7 @@
     "platform": "website"
   },
   "Bobby Van's 230 Park": {
-    "url": "http://www.bobbyvans.com/",
+    "url": "https://www.opentable.com/restref/client/",
     "lat": 40.7544956,
     "lng": -73.9758567,
     "google_rating": 4.5,
@@ -72986,7 +72986,7 @@
     "instagram": "bobbyvans230park",
     "price": 4,
     "ot_slug": "bobby-vans-230-park",
-    "platform": "website"
+    "platform": "opentable"
   },
   "Hop Lee": {
     "url": "http://www.hopleenyc.com/",
@@ -80774,7 +80774,7 @@
     "platform": "opentable"
   },
   "Chef Guo - 小国宴": {
-    "url": "https://www.chefguo.com",
+    "url": "https://www.exploretock.com/chefguo",
     "lat": 40.75638139999999,
     "lng": -73.971662,
     "google_rating": 4.7,
@@ -80788,7 +80788,7 @@
     ],
     "ot_slug": "chef-guo",
     "website": "https://www.chefguo.com",
-    "platform": "website"
+    "platform": "tock"
   },
   "Hudson Malone: A New York Joint": {
     "url": "http://www.hudsonmalone.com",
@@ -89337,8 +89337,8 @@
     ]
   },
   "CECILIA": {
-    "platform": "website",
-    "url": "http://cecilia97.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cecelia-reservations-new-york",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -92965,8 +92965,8 @@
     ]
   },
   "RT 60": {
-    "platform": "website",
-    "url": "https://hotel.hardrock.com/new-york/rt60-rooftop-bar.aspx?utm_campaign=hri%20%7C%20hotel%20%7C%20new-york%20%7C%20websitelisting&utm_medium=referral&utm_source=gmb",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/rt60-new-york",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -104430,7 +104430,7 @@
   },
   "Trattoria L'incontro": {
     "name": "Trattoria L'incontro",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "b2b9bc1e-dfd1-3c13-8cc6-60075c4f029b",
     "address": "21-76 31st St, Queens, NY 11105",
@@ -104447,7 +104447,7 @@
       "date_night",
       "lively"
     ],
-    "url": "https://www.lincontrobyrocco.com/"
+    "url": "https://www.opentable.com/restaurant/profile/1369099"
   },
   "Bombay Grill House - Brooklyn": {
     "name": "Bombay Grill House - Brooklyn",
@@ -105657,7 +105657,7 @@
   },
   "INDAY All Day": {
     "name": "INDAY All Day",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "b6c5597c-e3c8-3c27-b022-3ae37dc45fb4",
     "address": "658 Driggs Ave, New York City, NY 11211",
@@ -105675,7 +105675,7 @@
       "lively"
     ],
     "opentable_url": "https://www.opentable.com/r/inday-all-day-brooklyn",
-    "url": "https://www.indayallday.com/williamsburg/"
+    "url": "https://www.opentable.com/r/indays-bar-and-restaurant-brooklyn"
   },
   "CHLOE": {
     "name": "CHLOE",
@@ -105831,7 +105831,7 @@
   },
   "Isla & Co LES": {
     "name": "Isla & Co LES",
-    "platform": "website",
+    "platform": "resy",
     "bilt_dining": true,
     "bilt_id": "7a081031-1232-3015-9aad-0a2fdabe41e7",
     "address": "139 Orchard St Ground Floor, New York City, NY 10002",
@@ -105847,7 +105847,7 @@
       "date_night",
       "lively"
     ],
-    "url": "https://www.isla-co.com/les"
+    "url": "https://resy.com/cities/new-york-ny/venues/isla-and-co-lower-east-side"
   },
   "High Lúa": {
     "name": "High Lúa",
@@ -108490,7 +108490,7 @@
   },
   "B V Tuscany": {
     "name": "B V Tuscany",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "bfa293f9-02c0-4229-8b9d-e516289081d6",
     "address": "368 Cedar Ln, Teaneck, NJ 07666",
@@ -108507,7 +108507,7 @@
       "date_night",
       "upscale"
     ],
-    "url": "https://bvtuscany.com/"
+    "url": "https://www.opentable.com/restref/client/"
   },
   "Matisse 167": {
     "name": "Matisse 167",
@@ -108717,7 +108717,7 @@
   },
   "Mambo Latín Kitchen & Empanadas": {
     "name": "Mambo Latín Kitchen & Empanadas",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "38230bd1-eaf0-4ae4-bf4f-fcb319b93f61",
     "address": "313 Union Ave, Rutherford, NJ 07070",
@@ -108730,7 +108730,7 @@
     "google_reviews": 775,
     "price": 2,
     "website": "http://www.mamboempanadas.com/",
-    "url": "http://www.mamboempanadas.com/",
+    "url": "https://www.opentable.com/r/mambo-latin-kitchen-rutherford",
     "vibe_tags": [
       "chill"
     ],
@@ -110317,7 +110317,7 @@
   },
   "Maestro's Italian Restaurant": {
     "name": "Maestro's Italian Restaurant",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "c3810b31-00eb-4299-a8be-a94d3cbd0eea",
     "address": "1329 North Ave, New Rochelle, NY 10804",
@@ -110330,7 +110330,7 @@
     "google_reviews": 1566,
     "price": 2,
     "website": "https://www.maestropasta.com/",
-    "url": "https://www.maestropasta.com/",
+    "url": "https://www.opentable.com/r/maestro-pasta-new-york-2",
     "vibe_tags": [
       "lively",
       "chill"
@@ -110773,7 +110773,7 @@
   },
   "Anatolia": {
     "name": "Anatolia",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "bc983ad1-2182-428f-8e77-857417e7f273",
     "address": "183 Hempstead Ave, West Hempstead, NY 11552",
@@ -110790,7 +110790,7 @@
       "date_night",
       "lively"
     ],
-    "url": "http://www.antalianyc.com/"
+    "url": "https://www.opentable.com/restref/client/"
   },
   "Dragon Tea & Mochi": {
     "name": "Dragon Tea & Mochi",
@@ -111665,7 +111665,7 @@
   },
   "Hyderabad Spice": {
     "name": "Hyderabad Spice",
-    "platform": "website",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "29916a22-2274-4457-b79d-ea62c3bf902b",
     "address": "1008 State Route 34 Ste 8, Matawan, NJ 07747",
@@ -111683,7 +111683,7 @@
       "group_friendly",
       "casual"
     ],
-    "url": "http://hyderabadizaiqa.com/"
+    "url": "https://www.opentable.com/restref/client/"
   },
   "Tandoor Restaurant & Kitchen": {
     "name": "Tandoor Restaurant & Kitchen",
@@ -114033,8 +114033,8 @@
     "address": "39 Downing St, New York, NY 10014, USA"
   },
   "at nine restaurant & bar": {
-    "platform": "website",
-    "url": "http://www.atninenyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/at-nine-restaurant-and-bar",
     "lat": 40.75869,
     "lng": -73.99209,
     "google_rating": 4.5,
@@ -115515,8 +115515,8 @@
     "address": "325 Bowery, New York, NY 10003, USA"
   },
   "bkk": {
-    "platform": "website",
-    "url": "https://www.bkknewyork.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/restref/client/",
     "cuisine": "",
     "rating": "",
     "price_level": "",
@@ -116702,8 +116702,8 @@
     "opentable_url": "https://www.opentable.com/r/scarrs-pizza-new-york"
   },
   "r slice pizza": {
-    "platform": "website",
-    "url": "https://www.robertaspizza.com/rslice-penn1",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/robertas-pizza-reservations-brooklyn",
     "address": "1 Pennsylvania Plaza, New York, NY 10119",
     "neighborhood": "Midtown",
     "cuisine": "Pizza",
