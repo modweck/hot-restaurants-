@@ -195514,5 +195514,259 @@
       "trendy",
       "hidden_gem"
     ]
+  },
+  {
+    "name": "Adélaïde's Salon",
+    "place_id": "ChIJQRO4JPtZwokRrhd95RRd_Y8",
+    "address": "176 8th Ave, New York, NY 10011, USA",
+    "lat": 40.74262,
+    "lng": -74.00005240000002,
+    "google_rating": 4.3,
+    "google_reviews": 79,
+    "price": null,
+    "website": "https://www.adelaide-salon.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "date_night",
+      "trendy",
+      "hidden_gem"
+    ],
+    "neighborhood": null,
+    "instagram": null
+  },
+  {
+    "name": "Little Sister",
+    "place_id": "ChIJwauOVwlZwokRMlP1mSceNDA",
+    "address": "112 E 11th St, New York, NY 10013, USA",
+    "lat": 40.7316366,
+    "lng": -73.9895569,
+    "google_rating": 1.9,
+    "google_reviews": 495,
+    "price": null,
+    "website": "https://moxyeastvillage.com/little-sister-lounge/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "outdoor"
+    ],
+    "neighborhood": null,
+    "instagram": null
+  },
+  {
+    "name": "Latitude 39",
+    "place_id": "ChIJT1m25ztZwokRDCH4txqTARI",
+    "address": "306 W 39th St, New York, NY 10018",
+    "lat": 40.7554072,
+    "lng": -73.9917979,
+    "google_rating": 4.4,
+    "google_reviews": 215,
+    "website": "http://www.latitude39nyc.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "late_night",
+      "date_night"
+    ],
+    "neighborhood": "Hell's Kitchen"
+  },
+  {
+    "name": "Ms. Kim's",
+    "place_id": "ChIJgZUXdiBZwokRRDLXtbXe-F8",
+    "address": "6 W 28th St 2nd Floor, New York, NY 10001",
+    "lat": 40.7447721,
+    "lng": -73.9881261,
+    "google_rating": 4.5,
+    "google_reviews": 217,
+    "website": "http://mskims.co/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "lively",
+      "casual"
+    ],
+    "neighborhood": "NoMad"
+  },
+  {
+    "name": "Isla & Co",
+    "place_id": "ChIJIYq6WtZZwokRdqduboSbRU8",
+    "address": "107 N 12th St, Brooklyn, NY 11249",
+    "lat": 40.7517724,
+    "lng": -73.98410299999999,
+    "google_rating": 4.8,
+    "google_reviews": 4602,
+    "price": 2,
+    "website": "http://www.isla-co.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "date_night",
+      "lively"
+    ],
+    "neighborhood": "Williamsburg"
+  },
+  {
+    "name": "Gonzalez Y Gonzalez",
+    "place_id": "ChIJ_QBuvI9ZwokR8zkoo5mcClI",
+    "address": "192 Mercer St, New York, NY 10012",
+    "lat": 40.726225299999996,
+    "lng": -73.99709039999999,
+    "google_rating": 4,
+    "google_reviews": 2035,
+    "price": 2,
+    "website": "http://gygnyc.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "lively",
+      "date_night"
+    ],
+    "neighborhood": "NoHo"
+  },
+  {
+    "name": "Estrella Latina Bar & Grill",
+    "place_id": "ChIJZVdP98ZfwokR3y1R5i2j074",
+    "address": "3907 104th St, Corona, NY 11368",
+    "lat": 40.7504172,
+    "lng": -73.8618346,
+    "google_rating": 4.5,
+    "google_reviews": 770,
+    "price": 1,
+    "website": "https://www.estrellalatina.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "trendy",
+      "date_night"
+    ],
+    "neighborhood": "Corona"
+  },
+  {
+    "name": "Pan",
+    "place_id": "ChIJcwcHE2BdwokRb5vdLMfTbHg",
+    "address": "1563 Decatur St, New York City, NY 11385",
+    "lat": 40.69430390000001,
+    "lng": -73.9020963,
+    "google_rating": 4.8,
+    "google_reviews": 543,
+    "price": 2,
+    "website": "https://pan-nyc.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "date_night",
+      "late_night"
+    ],
+    "neighborhood": "Ridgewood"
+  },
+  {
+    "name": "Iliana's",
+    "place_id": "ChIJ-xrDioD1wokRL4rCzAAHvvg",
+    "address": "1511 College Point Blvd, College Point, NY 11356",
+    "lat": 40.7837841,
+    "lng": -73.84569139999999,
+    "google_rating": 4.6,
+    "google_reviews": 148,
+    "website": "http://ilianasbar.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "chill",
+      "date_night",
+      "foodie"
+    ],
+    "neighborhood": "College Point"
+  },
+  {
+    "name": "PiCH",
+    "place_id": "ChIJw2tVPFRbwokR1sV9AyFFCQM",
+    "address": "774 Flatbush Ave, Brooklyn, NY 11226",
+    "lat": 40.6539399,
+    "lng": -73.9596964,
+    "google_rating": 4.2,
+    "google_reviews": 333,
+    "price": 2,
+    "website": "https://pichnyc.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "lively",
+      "late_night"
+    ],
+    "neighborhood": "Flatbush"
+  },
+  {
+    "name": "Made in Puerto Rico Latin Cuisine Bronx NY",
+    "place_id": "ChIJHaVzNEaLwokRQB_-jwrkW2E",
+    "address": "3363 E Tremont Ave, Bronx, NY 10461",
+    "lat": 40.834509499999996,
+    "lng": -73.8290179,
+    "google_rating": 4.3,
+    "google_reviews": 3223,
+    "price": 2,
+    "website": "http://www.madeinpuertoricony.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "lively",
+      "brunch"
+    ],
+    "neighborhood": "Schuylerville"
+  },
+  {
+    "name": "Blue 42 Restaurant And Bar",
+    "place_id": "ChIJC3Zadgf8wokRMm_cOqwMbKs",
+    "address": "158 Market St, Elmwood Park, NJ 07407",
+    "lat": 40.900935499999996,
+    "lng": -74.1247782,
+    "google_rating": 4.6,
+    "google_reviews": 1322,
+    "price": 2,
+    "website": "http://blue42bar.com/",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "group_friendly",
+      "lively",
+      "casual"
+    ],
+    "neighborhood": ""
+  },
+  {
+    "name": "Tiki Mojito",
+    "place_id": "ChIJqZNzGzRNwokRQnZk9aCa9_8",
+    "address": "525 Bayway Ave, Elizabeth, NJ 07202",
+    "lat": 40.7868177,
+    "lng": -73.9754304,
+    "google_rating": 4.6,
+    "google_reviews": 870,
+    "price": 2,
+    "website": "https://www.tikichick.com/",
+    "cuisine": "Bar",
+    "vibe_tags": [
+      "date_night",
+      "group_friendly"
+    ],
+    "neighborhood": "Mravlag Manor"
+  },
+  {
+    "name": "Serena American Bistro",
+    "place_id": "ChIJhyiVn1y1w4kREHS26kA4IcE",
+    "address": "96 Page Ave, Staten Island, NY 10309",
+    "lat": 40.521937099999995,
+    "lng": -74.2356348,
+    "google_rating": 4.5,
+    "google_reviews": 82,
+    "website": "https://serenanyc.com/?utm_source=google",
+    "cuisine": "Nightclub",
+    "vibe_tags": [
+      "lively",
+      "date_night"
+    ],
+    "neighborhood": "Richmond Valley"
+  },
+  {
+    "name": "izakaya sushi & lounge",
+    "place_id": "ChIJ2z7-Y5RFwokRH1BRDyxe9vM",
+    "address": "1629 Sheepshead Bay Rd, Brooklyn, NY 11235, USA",
+    "lat": 40.5870367,
+    "lng": -73.9523367,
+    "google_rating": 4.6,
+    "google_reviews": 307,
+    "price": 2,
+    "website": "https://www.izakayasushilounge.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-izakaya",
+    "cuisine": "Japanese",
+    "vibe_tags": [
+      "chill",
+      "date_night"
+    ]
   }
 ]

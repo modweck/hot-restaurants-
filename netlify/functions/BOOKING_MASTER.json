@@ -102158,49 +102158,6 @@
     "ot_slug": "yakiniku-futago",
     "address": "37 W 17th St, New York, NY 10011, USA"
   },
-  "Adélaïde's Salon": {
-    "platform": "website",
-    "url": "https://www.adelaide-salon.com/",
-    "lat": 40.74262,
-    "lng": -74.00005240000002,
-    "google_rating": 4.3,
-    "google_reviews": 79,
-    "place_id": "ChIJQRO4JPtZwokRrhd95RRd_Y8",
-    "website": null,
-    "neighborhood": null,
-    "instagram": null,
-    "cuisine": "Nightclub",
-    "price": null,
-    "vibe_tags": [
-      "date_night",
-      "trendy",
-      "hidden_gem"
-    ],
-    "ot_slug": "adelaides-salon-new-york",
-    "address": "176 8th Ave, New York, NY 10011, USA"
-  },
-  "Apothéke": {
-    "platform": "website",
-    "url": "https://www.apothekemixology.com/",
-    "lat": 40.7144071,
-    "lng": -73.99817250000001,
-    "google_rating": 4.4,
-    "google_reviews": 2267,
-    "place_id": "ChIJNxEu8SZawokRARkMLjXhyBY",
-    "website": null,
-    "neighborhood": null,
-    "instagram": null,
-    "cuisine": "Nightclub",
-    "price": null,
-    "vibe_tags": [
-      "date_night",
-      "chill",
-      "lively",
-      "trendy"
-    ],
-    "ot_slug": "apotheke-new-york",
-    "address": "9 Doyers St, New York, NY 10013, USA"
-  },
   "Birreria": {
     "platform": "website",
     "url": "https://www.eataly.com/us_en/stores/nyc-flatiron/restaurants/serra-by-birreria/",
@@ -102301,25 +102258,6 @@
     ],
     "ot_slug": "jumpin-jacks-new-york",
     "address": "27 Grand St Second Floor, New York, NY 10013, USA",
-    "_vibe_confidence": "low"
-  },
-  "Little Sister": {
-    "platform": "website",
-    "url": "https://moxyeastvillage.com/little-sister-lounge/",
-    "lat": 40.7316366,
-    "lng": -73.9895569,
-    "google_rating": 1.9,
-    "google_reviews": 495,
-    "place_id": "ChIJwauOVwlZwokRMlP1mSceNDA",
-    "website": null,
-    "neighborhood": null,
-    "instagram": null,
-    "cuisine": "Nightclub",
-    "price": null,
-    "vibe_tags": [
-      "outdoor"
-    ],
-    "address": "112 E 11th St, New York, NY 10013, USA",
     "_vibe_confidence": "low"
   },
   "Peacock Alley": {
@@ -103749,28 +103687,6 @@
       "chill"
     ]
   },
-  "Dolly Varden": {
-    "name": "Dolly Varden",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "e7fb1834-3c9a-34fb-a0e5-b022eee7ddb7",
-    "address": "302 West 51st Street, New York City, NY 10019",
-    "neighborhood": "Hell's Kitchen",
-    "place_id": "ChIJGxgc_lZYwokRZUwtia280Uo",
-    "google_rating": 4.5,
-    "cuisine": "Nightclub",
-    "lat": 40.7629417,
-    "lng": -73.9863029,
-    "google_reviews": 1009,
-    "price": 2,
-    "website": "http://dollys51.com/",
-    "vibe_tags": [
-      "date_night",
-      "lively"
-    ],
-    "opentable_url": "https://www.opentable.com/r/dolly-varden-new-york",
-    "url": "http://dollys51.com/"
-  },
   "Kung Fu Little Steamed Buns Ramen-HK": {
     "name": "Kung Fu Little Steamed Buns Ramen-HK",
     "platform": "website",
@@ -104424,26 +104340,6 @@
       "group_friendly"
     ]
   },
-  "Latitude 39": {
-    "name": "Latitude 39",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "51a1f076-5394-455c-8e23-86dffd071289",
-    "address": "306 W 39th St, New York, NY 10018",
-    "neighborhood": "Hell's Kitchen",
-    "place_id": "ChIJT1m25ztZwokRDCH4txqTARI",
-    "google_rating": 4.4,
-    "cuisine": "Nightclub",
-    "lat": 40.7554072,
-    "lng": -73.9917979,
-    "google_reviews": 215,
-    "website": "http://www.latitude39nyc.com/",
-    "vibe_tags": [
-      "late_night",
-      "date_night"
-    ],
-    "url": "http://www.latitude39nyc.com/"
-  },
   "Sopo": {
     "name": "Sopo",
     "platform": "website",
@@ -104721,27 +104617,6 @@
       "casual"
     ]
   },
-  "Ms. Kim's": {
-    "name": "Ms. Kim's",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "008919c3-a102-309e-9e5c-d8f7b20805c8",
-    "address": "6 W 28th St 2nd Floor, New York, NY 10001",
-    "neighborhood": "NoMad",
-    "place_id": "ChIJgZUXdiBZwokRRDLXtbXe-F8",
-    "google_rating": 4.5,
-    "cuisine": "Nightclub",
-    "lat": 40.7447721,
-    "lng": -73.9881261,
-    "google_reviews": 217,
-    "website": "http://mskims.co/",
-    "vibe_tags": [
-      "lively",
-      "casual"
-    ],
-    "url": "http://mskims.co/",
-    "opentable_url": "https://www.opentable.com/r/ms-kims-new-york"
-  },
   "Piggyback NYC": {
     "name": "Piggyback NYC",
     "platform": "opentable",
@@ -104784,27 +104659,6 @@
     ],
     "url": "http://www.chintathai.com/",
     "opentable_url": "https://www.opentable.com/r/chinta-new-york"
-  },
-  "Pioneers": {
-    "name": "Pioneers",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "32d0e011-e336-3f9a-abd6-9ba9cfc0642f",
-    "address": "138 W 29th St, New York City, NY 10001",
-    "neighborhood": "Chelsea",
-    "place_id": "ChIJkTptdq9ZwokR9CCc1A4ZcNw",
-    "google_rating": 4.2,
-    "cuisine": "Nightclub",
-    "lat": 40.747234299999995,
-    "lng": -73.99185179999999,
-    "google_reviews": 1188,
-    "price": 2,
-    "website": "http://pioneersbar.com/",
-    "vibe_tags": [
-      "lively",
-      "date_night"
-    ],
-    "url": "http://pioneersbar.com/"
   },
   "Taqueria by El Prieto NYC": {
     "name": "Taqueria by El Prieto NYC",
@@ -105281,25 +105135,6 @@
     "url": "https://edosushinyc.com/",
     "opentable_url": "https://www.opentable.com/r/edo-japanese-restaurant-new-york"
   },
-  "Baby Grand": {
-    "name": "Baby Grand",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "9dd2043b-fa00-3b4b-a0d5-161cb350b6be",
-    "address": "29 W 17th St, New York, NY 10011",
-    "neighborhood": "The Flatiron District",
-    "place_id": "ChIJi1H-9VVZwokRSNPPmCe7hiM",
-    "google_rating": 4.6,
-    "cuisine": "Nightclub",
-    "lat": 40.722135,
-    "lng": -73.988438,
-    "google_reviews": 47,
-    "website": "https://babygrandnyc.com/",
-    "url": "https://babygrandnyc.com/",
-    "vibe_tags": [
-      "lively"
-    ]
-  },
   "Kamisama Ramen": {
     "name": "Kamisama Ramen",
     "platform": "walk_in",
@@ -105339,28 +105174,6 @@
     "vibe_tags": [
       "lively"
     ]
-  },
-  "Isla & Co": {
-    "name": "Isla & Co",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "1f6f3923-5f8b-365b-a8a8-419eb729eb24",
-    "address": "107 N 12th St, Brooklyn, NY 11249",
-    "neighborhood": "Williamsburg",
-    "place_id": "ChIJIYq6WtZZwokRdqduboSbRU8",
-    "google_rating": 4.8,
-    "cuisine": "Nightclub",
-    "lat": 40.7517724,
-    "lng": -73.98410299999999,
-    "google_reviews": 4602,
-    "price": 2,
-    "website": "http://www.isla-co.com/",
-    "vibe_tags": [
-      "date_night",
-      "lively"
-    ],
-    "url": "http://www.isla-co.com/",
-    "opentable_url": "https://www.opentable.com/r/isla-and-co-brooklyn"
   },
   "3 Times - Union Square": {
     "name": "3 Times - Union Square",
@@ -105880,28 +105693,6 @@
     ],
     "url": "https://www.opentable.com/r/chloe",
     "opentable_url": "https://www.opentable.com/r/chloe"
-  },
-  "Gonzalez Y Gonzalez": {
-    "name": "Gonzalez Y Gonzalez",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "ebcded2d-7c27-3f4c-85c9-fe5949511eb0",
-    "address": "192 Mercer St, New York, NY 10012",
-    "neighborhood": "NoHo",
-    "place_id": "ChIJ_QBuvI9ZwokR8zkoo5mcClI",
-    "google_rating": 4,
-    "cuisine": "Nightclub",
-    "lat": 40.726225299999996,
-    "lng": -73.99709039999999,
-    "google_reviews": 2035,
-    "price": 2,
-    "website": "http://gygnyc.com/",
-    "vibe_tags": [
-      "lively",
-      "date_night"
-    ],
-    "url": "http://gygnyc.com/",
-    "opentable_url": "https://www.opentable.com/r/gonzalez-y-gonzalez"
   },
   "Socarrat Nolita": {
     "name": "Socarrat Nolita",
@@ -106669,27 +106460,6 @@
     ],
     "_vibe_confidence": "high"
   },
-  "Estrella Latina Bar & Grill": {
-    "name": "Estrella Latina Bar & Grill",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "1fad7927-419e-45c2-9d20-22559bc01650",
-    "address": "3907 104th St, Corona, NY 11368",
-    "neighborhood": "Corona",
-    "place_id": "ChIJZVdP98ZfwokR3y1R5i2j074",
-    "google_rating": 4.5,
-    "cuisine": "Nightclub",
-    "lat": 40.7504172,
-    "lng": -73.8618346,
-    "google_reviews": 770,
-    "price": 1,
-    "website": "https://www.estrellalatina.com/",
-    "vibe_tags": [
-      "trendy",
-      "date_night"
-    ],
-    "url": "https://www.estrellalatina.com/"
-  },
   "Westville Dumbo": {
     "name": "Westville Dumbo",
     "platform": "opentable",
@@ -106999,27 +106769,6 @@
     ],
     "url": "https://linktr.ee/elvicentinony"
   },
-  "Pan": {
-    "name": "Pan",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "62e01a42-39c2-314c-988d-47deeb2609f9",
-    "address": "1563 Decatur St, New York City, NY 11385",
-    "neighborhood": "Ridgewood",
-    "place_id": "ChIJcwcHE2BdwokRb5vdLMfTbHg",
-    "google_rating": 4.8,
-    "cuisine": "Nightclub",
-    "lat": 40.69430390000001,
-    "lng": -73.9020963,
-    "google_reviews": 543,
-    "price": 2,
-    "website": "https://pan-nyc.com/",
-    "vibe_tags": [
-      "date_night",
-      "late_night"
-    ],
-    "url": "https://pan-nyc.com/"
-  },
   "Pilot": {
     "name": "Pilot",
     "platform": "website",
@@ -107059,28 +106808,6 @@
     "url": "",
     "vibe_tags": [
       "lively"
-    ]
-  },
-  "Iliana's": {
-    "name": "Iliana's",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "ba00e909-0745-4cd0-a532-10bccf401735",
-    "address": "1511 College Point Blvd, College Point, NY 11356",
-    "neighborhood": "College Point",
-    "place_id": "ChIJ-xrDioD1wokRL4rCzAAHvvg",
-    "google_rating": 4.6,
-    "cuisine": "Nightclub",
-    "lat": 40.7837841,
-    "lng": -73.84569139999999,
-    "google_reviews": 148,
-    "website": "http://ilianasbar.com/",
-    "url": "http://ilianasbar.com/",
-    "opentable_url": "https://www.opentable.com/r/ilianas-queens",
-    "vibe_tags": [
-      "chill",
-      "date_night",
-      "foodie"
     ]
   },
   "Yemen Cafe": {
@@ -108343,28 +108070,6 @@
       "chill"
     ]
   },
-  "PiCH": {
-    "name": "PiCH",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "32363cdf-380a-35d7-9849-126fdffec21c",
-    "address": "774 Flatbush Ave, Brooklyn, NY 11226",
-    "neighborhood": "Flatbush",
-    "place_id": "ChIJw2tVPFRbwokR1sV9AyFFCQM",
-    "google_rating": 4.2,
-    "cuisine": "Nightclub",
-    "lat": 40.6539399,
-    "lng": -73.9596964,
-    "google_reviews": 333,
-    "price": 2,
-    "website": "https://pichnyc.com/",
-    "vibe_tags": [
-      "lively",
-      "late_night"
-    ],
-    "url": "https://pichnyc.com/",
-    "opentable_url": "https://www.opentable.com/r/pich-brooklyn"
-  },
   "Haejang": {
     "name": "Haejang",
     "platform": "website",
@@ -108425,27 +108130,6 @@
     "url": "https://mamapuebla.com/",
     "vibe_tags": [
       "lively"
-    ]
-  },
-  "Made in Puerto Rico Latin Cuisine Bronx NY": {
-    "name": "Made in Puerto Rico Latin Cuisine Bronx NY",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "1fa72f3d-3b95-46c7-90d5-a28189f08d7a",
-    "address": "3363 E Tremont Ave, Bronx, NY 10461",
-    "neighborhood": "Schuylerville",
-    "place_id": "ChIJHaVzNEaLwokRQB_-jwrkW2E",
-    "google_rating": 4.3,
-    "cuisine": "Nightclub",
-    "lat": 40.834509499999996,
-    "lng": -73.8290179,
-    "google_reviews": 3223,
-    "price": 2,
-    "website": "http://www.madeinpuertoricony.com/",
-    "url": "http://www.madeinpuertoricony.com/",
-    "vibe_tags": [
-      "lively",
-      "brunch"
     ]
   },
   "Barrow’s Intense": {
@@ -110102,28 +109786,6 @@
     ],
     "_vibe_confidence": "high"
   },
-  "Blue 42 Restaurant And Bar": {
-    "name": "Blue 42 Restaurant And Bar",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "a04745a1-4383-4b8c-81e9-83343dccd7ca",
-    "address": "158 Market St, Elmwood Park, NJ 07407",
-    "neighborhood": "",
-    "place_id": "ChIJC3Zadgf8wokRMm_cOqwMbKs",
-    "google_rating": 4.6,
-    "cuisine": "Nightclub",
-    "lat": 40.900935499999996,
-    "lng": -74.1247782,
-    "google_reviews": 1322,
-    "price": 2,
-    "website": "http://blue42bar.com/",
-    "vibe_tags": [
-      "group_friendly",
-      "lively",
-      "casual"
-    ],
-    "url": "http://blue42bar.com/"
-  },
   "Grill & Greens": {
     "name": "Grill & Greens",
     "platform": "website",
@@ -110943,27 +110605,6 @@
     ],
     "url": "http://www.donchickenus.com/"
   },
-  "Tiki Mojito": {
-    "name": "Tiki Mojito",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "8ada862d-84a2-4730-b021-59d6e0eeaa9a",
-    "address": "525 Bayway Ave, Elizabeth, NJ 07202",
-    "neighborhood": "Mravlag Manor",
-    "place_id": "ChIJqZNzGzRNwokRQnZk9aCa9_8",
-    "google_rating": 4.6,
-    "cuisine": "Bar",
-    "lat": 40.7868177,
-    "lng": -73.9754304,
-    "google_reviews": 870,
-    "price": 2,
-    "website": "https://www.tikichick.com/",
-    "vibe_tags": [
-      "date_night",
-      "group_friendly"
-    ],
-    "url": "https://www.tikichick.com/"
-  },
   "Naxos Estiatorio": {
     "name": "Naxos Estiatorio",
     "platform": "opentable",
@@ -111771,26 +111412,6 @@
       "lively"
     ],
     "url": "https://www.opentable.com/r/lobster-house-joes-staten-island"
-  },
-  "Serena American Bistro": {
-    "name": "Serena American Bistro",
-    "platform": "website",
-    "bilt_dining": true,
-    "bilt_id": "0e0365a5-135a-4f5c-91b9-40dfef1aeb96",
-    "address": "96 Page Ave, Staten Island, NY 10309",
-    "neighborhood": "Richmond Valley",
-    "place_id": "ChIJhyiVn1y1w4kREHS26kA4IcE",
-    "google_rating": 4.5,
-    "cuisine": "Nightclub",
-    "lat": 40.521937099999995,
-    "lng": -74.2356348,
-    "google_reviews": 82,
-    "website": "https://serenanyc.com/?utm_source=google",
-    "vibe_tags": [
-      "lively",
-      "date_night"
-    ],
-    "url": "https://serenanyc.com/"
   },
   "Great Greek - FP": {
     "name": "Great Greek - FP",
@@ -113617,26 +113238,6 @@
     ],
     "booking_platform": "website",
     "address": "17 Ann St, New York, NY 10038, USA"
-  },
-  "Blue Mountain (Sushi, Bar&Lounge)": {
-    "platform": "website",
-    "url": "http://www.bluemountain888.com",
-    "lat": 40.7422628,
-    "lng": -73.9810573,
-    "google_rating": 4.8,
-    "google_reviews": 307,
-    "place_id": "ChIJZb2XwatZwokRuvz8YCJ5VPs",
-    "website": "http://www.bluemountain888.com",
-    "neighborhood": "Chelsea-Flatiron",
-    "instagram": null,
-    "cuisine": "Japanese",
-    "price": null,
-    "vibe_tags": [
-      "casual",
-      "lively"
-    ],
-    "booking_platform": "website",
-    "address": "396 3rd Ave, E 28th St, New York, NY 10016, USA"
   },
   "Temakase Hand Roll Bar - 28th St": {
     "platform": "website",
@@ -116036,23 +115637,6 @@
       "lively"
     ],
     "address": "1582 York Ave, New York, NY 10028, USA"
-  },
-  "izakaya sushi & lounge": {
-    "platform": "website",
-    "url": "https://www.izakayasushilounge.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-izakaya",
-    "lat": 40.5870367,
-    "lng": -73.9523367,
-    "google_rating": 4.6,
-    "google_reviews": 307,
-    "place_id": "ChIJ2z7-Y5RFwokRH1BRDyxe9vM",
-    "website": "https://www.izakayasushilounge.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-izakaya",
-    "cuisine": "Japanese",
-    "vibe_tags": [
-      "chill",
-      "date_night"
-    ],
-    "price": 2,
-    "address": "1629 Sheepshead Bay Rd, Brooklyn, NY 11235, USA"
   },
   "june wine bar": {
     "platform": "resy",
