@@ -6290,7 +6290,7 @@
     "opentable_url": "https://www.opentable.com/one-dine-at-one-world-observatory"
   },
   "metropolis by marcus samuelsson": {
-    "url": "https://www.metropolisbymarcus.com/",
+    "url": "https://www.opentable.com/r/metropolis-by-marcus-samuelsson-new-york",
     "lat": 40.712439,
     "lng": -74.0123736,
     "google_rating": 4.2,
@@ -6308,7 +6308,7 @@
     "price": 2,
     "price_estimated": true,
     "ot_slug": "metropolis",
-    "platform": "website"
+    "platform": "opentable"
   },
   "gran morsi": {
     "platform": "opentable",
@@ -73270,7 +73270,7 @@
     "platform": "website"
   },
   "Toledo Restaurant": {
-    "url": "http://toledonyc.com/#home",
+    "url": "https://www.opentable.com/toledo-restaurant",
     "lat": 40.7492904,
     "lng": -73.9830756,
     "google_rating": 4.4,
@@ -73286,7 +73286,7 @@
     "instagram": "toledorestaurant",
     "price": 3,
     "ot_slug": "toledo",
-    "platform": "website"
+    "platform": "opentable"
   },
   "Perfect Picnic": {
     "url": "http://www.perfectpicnicnyc.com/",
@@ -79593,7 +79593,7 @@
     "website": "http://mgustonyc.com/"
   },
   "Sushi Ryusei": {
-    "url": "https://sushiryusei.com",
+    "url": "https://www.opentable.com/r/sushi-ryusei-new-york",
     "lat": 40.7483656,
     "lng": -73.97520899999999,
     "google_rating": 4.6,
@@ -79608,7 +79608,7 @@
     ],
     "ot_slug": "sushi-ryusei",
     "website": "https://sushiryusei.com",
-    "platform": "website"
+    "platform": "opentable"
   },
   "251 Ginza Sushi": {
     "url": "https://www.grubhub.com/restaurant/251-ginza-sushi-251-e-35th-st-new-york",
@@ -120331,5 +120331,810 @@
     ],
     "price": 0,
     "new_rising": true
+  },
+  "Sushi by Bou - East Village NYCnew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sushi-by-bou-east-village-nyc-new-york",
+    "cuisine": "• Sushi • East Village"
+  },
+  "Sushi By Bou - NOMAD NYC @ Hotel32|32": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sushi-by-bou-nomad-nyc-at-hotel-32-32-new-york",
+    "cuisine": "• Sushi • NoMad"
+  },
+  "Crane Club Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/crane-club-restaurant-new-york",
+    "cuisine": "• Steakhouse • Chelsea"
+  },
+  "Next Door by Wegmans – NoHo": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/next-door-by-wegmans-noho-new-york",
+    "cuisine": "• Japanese • NoHo"
+  },
+  "Gjelina - New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/gjelina-new-york",
+    "cuisine": "• Italian • East Village"
+  },
+  "Brooklyn Chop House - Downtown": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/brooklyn-chop-house-new-york",
+    "cuisine": "• Steakhouse • TriBeCa"
+  },
+  "Foxtail": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/foxtail-new-york",
+    "cuisine": "• Cocktail Bar • TriBeCa"
+  },
+  "The Highlight Room NY": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-highlight-room-ny-new-york",
+    "cuisine": "• Cocktail Bar • Chinatown"
+  },
+  "Fushimi - Williamsburg": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/fushimi-williamsburg",
+    "cuisine": "• French / Japanese • Williamsburg"
+  },
+  "Hide Rooftop": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/hide-rooftop-new-york",
+    "cuisine": "• Bar / Lounge / Bottle Service • Financial District"
+  },
+  "Smyth Tavern": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/smyth-tavern-new-york",
+    "cuisine": "• American • TriBeCa"
+  },
+  "Sarabeth's Park Avenue South": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/sarabeths-park-avenue-south",
+    "cuisine": "• American • Gramercy Park"
+  },
+  "The Capital Grille - NY- Wall Street": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/the-capital-grille-ny-wall-street",
+    "cuisine": "• Steakhouse • Financial District"
+  },
+  "Aquarelle Seafood Mediterranean East Village Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/aquarelle-new-york",
+    "cuisine": "• Seafood • East Village"
+  },
+  "NOMO Kitchen": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/nomo-kitchen",
+    "cuisine": "• American • SoHo"
+  },
+  "ABC Kitchen": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/abc-kitchen",
+    "cuisine": "• Contemporary American • Gramercy Park"
+  },
+  "Medium Rare - New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/medium-rare-new-york",
+    "cuisine": "• Steak • Murray Hill"
+  },
+  "Butcher and Banker NYC": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/butcher-and-banker-new-york",
+    "cuisine": "• Steakhouse • Midtown West"
+  },
+  "Bookmarks": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bookmarks-new-york",
+    "cuisine": "• Tapas / Small Plates • Midtown East"
+  },
+  "Sarabeth’s Greenwich Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sarabeths-greenwich-village-new-york",
+    "cuisine": "• American • Greenwich Village"
+  },
+  "Cathédrale": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cathedrale-new-york",
+    "cuisine": "• French • East Village"
+  },
+  "Chito Gvritonew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/chito-gvrito-new-york",
+    "cuisine": "• Georgian • Gramercy Park"
+  },
+  "Giardino D'Oro": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/giardino-doro",
+    "cuisine": "• Italian • Financial District"
+  },
+  "Fraunces Tavern": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/fraunces-tavern-the-porterhouse-brewing-co",
+    "cuisine": "• Contemporary American • Financial District"
+  },
+  "Da Andrea - Greenwich Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/da-andrea-greenwich-village-new-york",
+    "cuisine": "• Italian • West Village"
+  },
+  "Essex": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/essex-new-york",
+    "cuisine": "• Steakhouse • Lower East Side"
+  },
+  "Antica 'Ancora'": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/antica-ancora",
+    "cuisine": "• Italian • Financial District"
+  },
+  "The Izakaya": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-izakaya-new-york",
+    "cuisine": "• Washoku • East Village"
+  },
+  "La Pecora Bianca - NoMad": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/la-pecora-bianca",
+    "cuisine": "• Italian • Flatiron District"
+  },
+  "Fonda - Tribeca": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/fonda-tribeca-new-york-2",
+    "cuisine": "• Mexican • TriBeCa"
+  },
+  "Le B.": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/le-b-new-york",
+    "cuisine": "• European • West Village"
+  },
+  "Patrizia's of 2nd Avenue": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/patrizias-of-2nd-avenue",
+    "cuisine": "• Italian • Murray Hill"
+  },
+  "Soothr East Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/soothr-new-york",
+    "cuisine": "• Thai • East Village"
+  },
+  "Eataly NYC Downtown - Vino &": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/vino-and-eataly-downtown-nyc-new-york",
+    "cuisine": "• Italian • Financial District"
+  },
+  "Inday's Bar & Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/indays-bar-and-restaurant-brooklyn",
+    "cuisine": "• Indian • Williamsburg"
+  },
+  "Casasalvo": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/casasalvo-new-york",
+    "cuisine": "• Mediterranean • SoHo"
+  },
+  "Rosa Mexicano - Union Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/rosa-mexicano-union-square-new-york-3",
+    "cuisine": "• Mexican • Union Square"
+  },
+  "Grand Brasserie": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/grand-brasserie",
+    "cuisine": "• French • Midtown East"
+  },
+  "Wokuni": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/wokuni-new-york",
+    "cuisine": "• Japanese • Murray Hill"
+  },
+  "Legasea Bar & Grill": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/legasea-bar-and-grill-new-york",
+    "cuisine": "• Bar / Lounge / Bottle Service • Midtown West"
+  },
+  "YAKINIKU GEN EAST VILLAGE": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/yakiniku-gen-east-village-new-york",
+    "cuisine": "• Japanese • East Village"
+  },
+  "Izakaya Futago": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/izakaya-futago-new-york",
+    "cuisine": "• Japanese • Midtown East"
+  },
+  "The Butcher's Daughter - Williamsburg": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-butchers-daughter-williamsburg-brooklyn",
+    "cuisine": "• American • Williamsburg"
+  },
+  "H & H Cantina": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/h-and-h-cantina-new-york",
+    "cuisine": "• Mexican • East Village"
+  },
+  "Early Terrible New York Citynew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/early-terrible-new-york-city-new-york",
+    "cuisine": "• Contemporary American • NoLita"
+  },
+  "Savelli Restaurant and Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/savelli-restaurant-and-bar-brooklyn",
+    "cuisine": "• Italian • Cobble Hill"
+  },
+  "London & Martin Co.": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/london-and-martin-co-new-york",
+    "cuisine": "• Gastro Pub • Financial District"
+  },
+  "Westville - East Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/westville-east-village-new-york",
+    "cuisine": "• American • East Village"
+  },
+  "Dirty French NYC": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/dirty-french-nyc-new-york",
+    "cuisine": "• French • Lower East Side"
+  },
+  "Friedman's - Battery Park": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/friedmans-battery-park-new-york",
+    "cuisine": "• Italian • Battery Park City"
+  },
+  "Jeffrey's Grocery": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/jeffreys-grocery-new-york",
+    "cuisine": "• American • Greenwich Village"
+  },
+  "Boucherie - West Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/boucherie-new-york",
+    "cuisine": "• French • West Village"
+  },
+  "Zou Zou's": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/zou-zous-new-york",
+    "cuisine": "• Mediterranean • Hell's Kitchen"
+  },
+  "Craft": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/craft-new-york",
+    "cuisine": "• American • Gramercy Park"
+  },
+  "Eataly NYC Flatiron - AMALFI Rooftop by Birreria": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/amalfi-at-serra-eataly-flatiron-new-york",
+    "cuisine": "• Italian • Gramercy Park"
+  },
+  "ONE Dine at One World Observatory": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/one-dine-at-one-world-observatory",
+    "cuisine": "• American • Financial District"
+  },
+  "Olio e Più– Greenwich Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/olio-e-piu",
+    "cuisine": "• Italian • West Village"
+  },
+  "Market Table": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/market-table",
+    "cuisine": "• Contemporary American • West Village"
+  },
+  "Giano": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/giano",
+    "cuisine": "• Italian • East Village"
+  },
+  "Fellini": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/fellini-new-york",
+    "cuisine": "• Italian • West Village"
+  },
+  "Roberta's - Domino Park": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/robertas-domino-park-brooklyn",
+    "cuisine": "• Pizzeria • Williamsburg"
+  },
+  "Gage & Tollner": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/gage-and-tollner-brooklyn",
+    "cuisine": "• American • Downtown Brooklyn"
+  },
+  "ART SoHo": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/art-soho-new-york",
+    "cuisine": "• Cocktail Bar • SoHo"
+  },
+  "Wicked Willy's Bar & Grill": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/wicked-willys-bar-and-grill-new-york",
+    "cuisine": "• American • Greenwich Village"
+  },
+  "Buddakan NY": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/buddakan-new-york",
+    "cuisine": "• Chinese • Meatpacking District"
+  },
+  "Lounge On Pearl": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/lounge-on-pearl-new-york",
+    "cuisine": "• Lounge • Financial District"
+  },
+  "Everything's Jake NYC Bar & Lounge": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/everythings-jake-nyc-bar-and-lounge-new-york",
+    "cuisine": "• Cocktail Bar • Union Square"
+  },
+  "Chelsea Ristorante Italiano": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/chelsea-ristorante-italiano-new-york",
+    "cuisine": "• Italian • Chelsea"
+  },
+  "The Grey Dog - West Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-grey-dog-west-village-new-york",
+    "cuisine": "• American • West Village"
+  },
+  "The Mermaid Oyster Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/the-mermaid-oyster-bar",
+    "cuisine": "• Seafood • Greenwich Village"
+  },
+  "Casa D’Angelo New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/casa-dangelo-nyc-new-york",
+    "cuisine": "• Italian • Little Italy"
+  },
+  "Lucky Tiger": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/lucky-tiger-new-york",
+    "cuisine": "• Asian • Financial District"
+  },
+  "Little Ruby's - East Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/little-rubys-east-village-new-york",
+    "cuisine": "• Australian • Union Square"
+  },
+  "Funny Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/funny-bar-new-york",
+    "cuisine": "• Steak • Lower East Side"
+  },
+  "Villa Berulia": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/villa-berulia-new-york",
+    "cuisine": "• Italian • Murray Hill"
+  },
+  "Blue Ribbon Sushi - Sullivan St": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/blue-ribbon-sushi-sullivan-st-new-york",
+    "cuisine": "• Sushi • SoHo"
+  },
+  "La Nonna Ristorante & Bar - Brooklyn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/la-nonna-ristorante-and-bar-brooklyn",
+    "cuisine": "• Italian • Williamsburg"
+  },
+  "The Mermaid Inn - Chelsea": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-mermaid-inn-chelsea-new-york",
+    "cuisine": "• Seafood • Chelsea"
+  },
+  "Little Ruby's - West Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/little-rubys-west-village-new-york",
+    "cuisine": "• Australian • West Village"
+  },
+  "Boucherie - Union Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/boucherie-union-square-new-york",
+    "cuisine": "• French • Gramercy Park"
+  },
+  "Little Ruby's - Murray Hill": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/little-rubys-cafe-murray-hill-new-york",
+    "cuisine": "• Australian • Kips Bay"
+  },
+  "The Tygernew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-tyger-new-york",
+    "cuisine": "• Southeast Asian • Little Italy"
+  },
+  "Orient Express Cocktail Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/orient-express-cocktail-bar",
+    "cuisine": "• Cocktail Bar • West Village"
+  },
+  "Two Twenty One Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/two-twenty-one-restaurant-new-york",
+    "cuisine": "• American • Midtown"
+  },
+  "Ernesto’s": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/ernestos-new-york",
+    "cuisine": "• Basque • Lower East Side"
+  },
+  "Dave & Buster's - Brooklyn - Atlantic Center": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/dave-and-busters-brooklyn-atlantic-center-brooklyn",
+    "cuisine": "• American • Fort Greene"
+  },
+  "Zutto Tribeca": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/zutto-tribeca-new-york",
+    "cuisine": "• Japanese • TriBeCa"
+  },
+  "White Oak Tavern": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/white-oak-tavern",
+    "cuisine": "• Contemporary American • Greenwich Village"
+  },
+  "Ruta Oaxaca - Brooklyn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/ruta-oaxaca-brooklyn",
+    "cuisine": "• Mexican • Cobble Hill"
+  },
+  "SIMPLE بسيط": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/simple-brooklyn",
+    "cuisine": "• French • Williamsburg"
+  },
+  "Café Fleuri": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cafe-fleuri-new-york",
+    "cuisine": "• French • TriBeCa"
+  },
+  "Turks & Frogs": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/turks-and-frogs-new-york",
+    "cuisine": "• Bar / Lounge / Bottle Service • Meatpacking District"
+  },
+  "Reyna - NYC": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/reyna-nyc-new-york",
+    "cuisine": "• Mediterranean • Union Square"
+  },
+  "Penthouse on Park": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/penthouse-on-park-new-york",
+    "cuisine": "• Cocktail Bar • Gramercy Park"
+  },
+  "Bar Primi Penn District": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bar-primi-penn-district-new-york-3",
+    "cuisine": "• Italian • Chelsea"
+  },
+  "Eataly NYC Flatiron - Bar Milano": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bar-milano-by-eataly-new-york",
+    "cuisine": "• Italian • Gramercy Park"
+  },
+  "Twist Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/twist-bar-new-york",
+    "cuisine": "• Bar / Lounge / Bottle Service • Chelsea"
+  },
+  "Amelias": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/amelias-new-york",
+    "cuisine": "• American • Midtown East"
+  },
+  "La Diáspora Bar & Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/la-diaspora-bar-and-restaurant-new-york",
+    "cuisine": "• Mexican • Chinatown"
+  },
+  "Wolfgang's Steakhouse - Broadway  (37th St.)": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/wolfgangs-steakhouse-broadway-37th-st-new-york",
+    "cuisine": "• Steakhouse • Midtown West"
+  },
+  "Black Tap - Soho": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/black-tap-soho-new-york",
+    "cuisine": "• Burgers • SoHo"
+  },
+  "Bar Milagro": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/xolo-brooklyn",
+    "cuisine": "• Mexican • Williamsburg"
+  },
+  "Suprema Provisions": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/suprema-provisions-new-york",
+    "cuisine": "• Italian • West Village"
+  },
+  "Counter & Bodega": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/counter-and-bodega-new-york",
+    "cuisine": "• Puerto Rican • Chelsea"
+  },
+  "Miti Miti Modern Mexicannew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/miti-miti-modern-mexican-brooklyn",
+    "cuisine": "• Mexican • Park Slope"
+  },
+  "Bar Cima": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bar-cima-new-york",
+    "cuisine": "• Cocktail Bar • Garment District"
+  },
+  "Pierre Loti Union Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/pierre-loti-union-square-new-york",
+    "cuisine": "• Wine Bar • Union Square"
+  },
+  "DK": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/delmonicos-kitchen-new-york",
+    "cuisine": "• American • Theater District"
+  },
+  "Clinton Hall": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/clinton-hall-new-york",
+    "cuisine": "• Burgers • Financial District"
+  },
+  "Retro Polish Restaurant and Wine Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/retro-polish-restaurant-and-wine-bar-brooklyn",
+    "cuisine": "• Polish • Greenpoint"
+  },
+  "Meraki Greek Bistro - Brooklyn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/meraki-greek-bistro-brooklyn",
+    "cuisine": "• Greek • Williamsburg"
+  },
+  "A to Z on the fifth Rooftop": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/a-to-z-on-fifth-rooftop-new-york",
+    "cuisine": "• American • Midtown East"
+  },
+  "Urban Cove Society and Kitchen": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/urban-cove-society-and-kitchen-new-york",
+    "cuisine": "• American • Financial District"
+  },
+  "Bazaar Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bazaar-bar-new-york",
+    "cuisine": "• Bar / Lounge / Bottle Service • NoMad"
+  },
+  "Keg & Lantern West Village": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/keg-and-lantern-west-village-new-york",
+    "cuisine": "• American • West Village"
+  },
+  "Yokox Omakasenew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/yokox-omakase-new-york",
+    "cuisine": "• Japanese • East Village"
+  },
+  "Evalyn's Tap House": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/evalyns-tap-house-brooklyn",
+    "cuisine": "• Bar / Lounge / Bottle Service • Park Slope"
+  },
+  "STK - Rooftop": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/stk-rooftop-new-york",
+    "cuisine": "• Contemporary American • Meatpacking District"
+  },
+  "The Champagne & Caviar Bar at RH Guesthouse New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-champagne-and-caviar-bar-at-rh-guesthouse-new-york-1",
+    "cuisine": "• Seafood • Meatpacking District"
+  },
+  "Alphabet Bar": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/alphabet-bar-new-york",
+    "cuisine": "• American • East Village"
+  },
+  "BOONTHAI Brooklyn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/boonthai-brooklyn",
+    "cuisine": "• Thai • Greenpoint"
+  },
+  "Ploume": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/ploume-new-york",
+    "cuisine": "• Lounge • Flatiron District"
+  },
+  "a.lounge+bar - New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/alounge-and-bar-new-york",
+    "cuisine": "• American • NoMad"
+  },
+  "Cheeseboat - Williamsburg": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cheeseboat-williamsburg-brooklyn",
+    "cuisine": "• Georgian • Williamsburg"
+  },
+  "The Flatiron Room - Murray Hill": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-flatiron-room-murray-hill-new-york",
+    "cuisine": "• American • Murray Hill"
+  },
+  "42nd and Sky Lounge - Hilton New York Times Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/42nd-and-sky-lounge-hilton-times-square-new-york",
+    "cuisine": "• American • Times Square"
+  },
+  "wagamama, murray hill, new york": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/wagamama-murray-hill-new-york",
+    "cuisine": "• Pan-Asian • Murray Hill"
+  },
+  "Bar Fesnew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bar-fes-new-york",
+    "cuisine": "• Moroccan • East Village"
+  },
+  "The Capital Grille – NY – MetLife": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-capital-grille-ny-metlife-new-york",
+    "cuisine": "• Steakhouse • Midtown East"
+  },
+  "Virgil's Real BBQ - New York City": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/virgils-real-bbq",
+    "cuisine": "• Barbecue • Theater District"
+  },
+  "GATHER espresso & wine barnew": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/gather-espresso-and-wine-bar-new-york",
+    "cuisine": "• Café • Chinatown"
+  },
+  "Yard House - Times Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/yard-house-times-square-new-york",
+    "cuisine": "• American • Garment District"
+  },
+  "SHIRO": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/shiro-brooklyn",
+    "cuisine": "• Sushi • Williamsburg"
+  },
+  "Love and Dough": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/love-and-dough",
+    "cuisine": "• Pizzeria • DUMBO"
+  },
+  "Cap’t Loui": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/capt-loui-new-york",
+    "cuisine": "• Seafood • Midtown"
+  },
+  "La Contenta Greenpoint": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/la-contenta-greenpoint-kings-county",
+    "cuisine": "• Mexican • Greenpoint"
+  },
+  "The Last Call": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-last-call-brooklyn",
+    "cuisine": "• Cocktail Bar • Williamsburg"
+  },
+  "Burger Village - Tribeca": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/burger-village-tribeca-new-york",
+    "cuisine": "• Burgers • TriBeCa"
+  },
+  "Top of the Strand Rooftop Bar - Marriott Vacation Club New York City": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/top-of-the-strand-rooftop-bar-new-york",
+    "cuisine": "• Cocktail Bar • Midtown West"
+  },
+  "Yayos Latin cuisine": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/yayos-latin-cuisine-brooklyn",
+    "cuisine": "• Latin / Spanish • Park Slope"
+  },
+  "Sachi NYC": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/sachi-nyc-new-york",
+    "cuisine": "• Fusion / Eclectic • Murray Hill"
+  },
+  "L'Amore": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/lamore-new-york",
+    "cuisine": "• Italian • Little Italy"
+  },
+  "Jackson Hole - Murray Hill": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/jackson-hole-murray-hill-new-york",
+    "cuisine": "• Burgers • Murray Hill"
+  },
+  "Beer Authority": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/beer-authority",
+    "cuisine": "• Gastro Pub • Theater District"
+  },
+  "Beer Street South": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/beer-street-south-brooklyn-2",
+    "cuisine": "• Bar / Lounge / Bottle Service • Prospect Heights"
+  },
+  "Chuko": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/chuko-brooklyn",
+    "cuisine": "• Ramen • Prospect Heights"
+  },
+  "Bo Peep Cocktail & Highball Store": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bo-peep-cocktail-and-highball-store-new-york",
+    "cuisine": "• Cocktail Bar • NoMad"
+  },
+  "Bellhop": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bellhop-new-york",
+    "cuisine": "• American • Hell's Kitchen"
+  },
+  "Carib-Soul BK": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/carib-soul-bk-brooklyn",
+    "cuisine": "• Caribbean • Prospect Heights"
+  },
+  "Elcielo Bistró NYC": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bistro-at-elcielo-nyc-new-york",
+    "cuisine": "• Colombian • Midtown"
+  },
+  "Complete Cafe": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/complete-cafe-new-york",
+    "cuisine": "• Contemporary American • Financial District"
+  },
+  "The Brooklyn Deli - Times Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/the-brooklyn-deli-times-square-new-york",
+    "cuisine": "• Deli • Theater District"
+  },
+  "DOLCE MOMENTO- Asian/Mediterranean Fusion": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/dolce-momento-asian/mediterranean-fusion-new-york",
+    "cuisine": "• Mediterranean • Lower East Side"
+  },
+  "El Castillo De Jagua Restaurant": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/el-castillo-de-jagua-restaurant-new-york",
+    "cuisine": "• Caribbean • Lower East Side"
+  },
+  "Red Lobster - New York - Times Square": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/red-lobster-new-york-times-square",
+    "cuisine": "• Seafood • Theater District"
+  },
+  "Bubba Gump - New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bubba-gump-new-york",
+    "cuisine": "• Seafood • Theater District"
+  },
+  "AKB, a hotel bar – New York": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/akb-new-york",
+    "cuisine": "• American • Midtown"
+  },
+  "Mughlai Indian Cuisine - Kipps Bay": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/mughlai-indian-cuisine-kipps-bay-new-york",
+    "cuisine": "• Indian • Kips Bay"
+  },
+  "Paul's on Time Square - Hilton Garden Inn": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/pauls-on-time-square-hilton-garden-inn-new-york",
+    "cuisine": "• Contemporary Italian • Theater District"
+  },
+  "Anjappar Chettinad": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/anjappar-chettinad",
+    "cuisine": "• Indian • Murray Hill"
+  },
+  "Parklife": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/parklife-brooklyn",
+    "cuisine": "• Mexican • Gowanus"
   }
 }
