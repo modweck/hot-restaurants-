@@ -70255,8 +70255,8 @@
     "platform": "website"
   },
   "NEW ASIAN CUISINE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/juqi",
+    "platform": "website",
+    "url": "https://www.juqiusa.com/",
     "cuisine": "Chinese",
     "rating": "",
     "price_level": "",
@@ -71483,8 +71483,8 @@
     "opentable_url": "https://www.opentable.com/churrascaria-plataforma-brazilian-steakhouse"
   },
   "Nara Sushi": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/nara-sushikumo",
+    "platform": "website",
+    "url": "http://narasushi76.com/",
     "cuisine": "Japanese",
     "rating": "",
     "price_level": "",
@@ -72484,7 +72484,7 @@
   },
   "Le District": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/le-district-bar-&-bistro",
+    "url": "https://resy.com/cities/new-york-ny/venues/le-district-bar-&-bistro",
     "lat": 40.712717700000006,
     "lng": -74.0157109,
     "google_rating": 4.3,
@@ -76715,32 +76715,6 @@
     "website": "https://www.gscheesesteaks.com",
     "_vibe_confidence": "low",
     "platform": "website"
-  },
-  "Van Đa": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/van-a",
-    "cuisine": "Southeast Asian",
-    "rating": "",
-    "price_level": "",
-    "neighborhood": "Manhattan",
-    "source": "deduped_master_v6",
-    "lat": 40.723443,
-    "lng": -73.9831293,
-    "address": "234 E 4th St, New York, NY 10009, USA",
-    "google_rating": 4.4,
-    "review_count": 311,
-    "place_id": "ChIJkdfww09ZwokRyOEXAqIS5RU",
-    "website": "http://www.vanda.nyc/",
-    "opentable_url": null,
-    "resy_slug": "van-a",
-    "ot_slug": "van-a",
-    "google_reviews": 311,
-    "price": 2,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/van-a",
-    "vibe_tags": [
-      "date_night",
-      "lively"
-    ]
   },
   "Biga Bite": {
     "url": "https://www.bigabite.pizza/",
@@ -81061,8 +81035,8 @@
     "venue_id": 83123
   },
   "Cha Cha Matcha": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/cha-cha",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cha-cha-tang-new-york",
     "lat": 40.7511994,
     "lng": -73.9953871,
     "google_rating": 4.4,
@@ -82040,8 +82014,8 @@
     "platform": "website"
   },
   "The Pho Lexington": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-pho-lexington",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Asian/Asian Fusion",
     "rating": "",
     "price_level": "",
@@ -85320,8 +85294,8 @@
     "ot_slug": "cloister-grill"
   },
   "Cañave": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/caave",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Latin American",
     "rating": "",
     "price_level": "",
@@ -88166,8 +88140,8 @@
     ]
   },
   "justins salt bread": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/justins-salt-bread",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "",
     "rating": "",
     "price_level": "",
@@ -88289,8 +88263,8 @@
     ]
   },
   "La Piraña Lechonera": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/lechonera-la-piraa",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "",
     "rating": "",
     "price_level": "PRICE_LEVEL_INEXPENSIVE",
@@ -88323,8 +88297,8 @@
     "resy_url": "https://resy.com/cities/new-york-ny/venues/lechonera-la-piraa"
   },
   "lazy suzy": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/lazy-suzy-cafe-and-shop",
+    "platform": "website",
+    "url": "http://lazysuzycafe.com/",
     "cuisine": "",
     "rating": "",
     "price_level": "PRICE_LEVEL_INEXPENSIVE",
@@ -88817,8 +88791,8 @@
     "resy_url": "https://resy.com/cities/new-york-ny/venues/suki-desu"
   },
   "Sushi 35 West": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/sushi-35-west",
+    "platform": "website",
+    "url": "http://www.sushi35west.com/",
     "cuisine": "",
     "rating": "",
     "price_level": "",
@@ -89479,8 +89453,8 @@
     ]
   },
   "AWESUM DIMSUM TIME SQUARE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/dim-sum-sam",
+    "platform": "website",
+    "url": "https://dimsumsam.us/",
     "cuisine": "Chinese",
     "rating": "",
     "price_level": "",
@@ -89504,8 +89478,8 @@
     ]
   },
   "AY GUEY": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/ay-guey",
+    "platform": "website",
+    "url": "http://aygueynyc.com/",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -89715,8 +89689,8 @@
     ]
   },
   "BIRRIALES": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/birria-les-williamsburg",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -89927,8 +89901,8 @@
     "_vibe_confidence": "low"
   },
   "Cantina Tarasca": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/cantina-tarasca",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -89974,8 +89948,8 @@
     ]
   },
   "CATTLE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/cattle-smoked-meats-and-grilled-burgers",
+    "platform": "website",
+    "url": "https://linktr.ee/cattlenyc",
     "cuisine": "Jewish/Kosher",
     "rating": "",
     "price_level": "",
@@ -90081,8 +90055,8 @@
     ]
   },
   "DADA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/dada",
+    "platform": "website",
+    "url": "https://www.dadabar.nyc/",
     "cuisine": "Tapas",
     "rating": "",
     "price_level": "",
@@ -90323,8 +90297,8 @@
     "_vibe_confidence": "low"
   },
   "DIANE'S": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/dianes",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -90744,8 +90718,8 @@
     ]
   },
   "ETC": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/etc-eatery",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -91134,8 +91108,8 @@
     ]
   },
   "GRIFF'S PLACE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/griffs-place",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -91185,8 +91159,8 @@
     ]
   },
   "GUPJI": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/gupji",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Korean",
     "rating": "",
     "price_level": "",
@@ -91370,8 +91344,8 @@
     ]
   },
   "JAVA DAY": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/java-day",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -91582,8 +91556,8 @@
     ]
   },
   "KASAI": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/kashi",
+    "platform": "website",
+    "url": "http://www.kasaihibachi.com/",
     "cuisine": "Jewish/Kosher",
     "rating": "",
     "price_level": "",
@@ -91609,8 +91583,8 @@
     ]
   },
   "KEVIN'S": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/kevins",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -92034,8 +92008,8 @@
     ]
   },
   "LEBANESE EATERY": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/lebanese-eatery",
+    "platform": "website",
+    "url": "http://lebaneseeaterymenu.com/",
     "cuisine": "Mediterranean",
     "rating": "",
     "price_level": "",
@@ -92246,8 +92220,8 @@
     ]
   },
   "MA KIN": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/ma-kin-thai",
+    "platform": "website",
+    "url": "https://www.makinthainy.com/",
     "cuisine": "Thai",
     "rating": "",
     "price_level": "",
@@ -92405,8 +92379,8 @@
     ]
   },
   "MCCAFFREY & BURKE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/mccaffrey-and-burke-bar",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Irish",
     "rating": "",
     "price_level": "",
@@ -92426,8 +92400,8 @@
     "resy_url": "https://resy.com/cities/new-york-ny/venues/mccaffrey-and-burke-bar"
   },
   "MERGUEZ & FRITES": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/merguez-and-frites",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Moroccan",
     "rating": "",
     "price_level": "",
@@ -92531,8 +92505,8 @@
     ]
   },
   "MEZQUILA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/mezquila-bar-and-tapas",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -92767,8 +92741,8 @@
     ]
   },
   "MUKBANG": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/mukbang",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Korean",
     "rating": "",
     "price_level": "",
@@ -92950,8 +92924,8 @@
     ]
   },
   "NUEVAS BRISAS DEL VALLE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/brisas-del-valle",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Spanish",
     "rating": "",
     "price_level": "",
@@ -93026,8 +93000,8 @@
     ]
   },
   "PASTA LAB": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/pasta-lab",
+    "platform": "website",
+    "url": "https://pastalabnyc.com/?utm_source=google",
     "cuisine": "Italian",
     "rating": "",
     "price_level": "",
@@ -93208,8 +93182,8 @@
     ]
   },
   "PITA FALAFEL": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/pita-palace",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mediterranean",
     "rating": "",
     "price_level": "",
@@ -93340,8 +93314,8 @@
     ]
   },
   "PYZA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/pyza",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Polish",
     "rating": "",
     "price_level": "",
@@ -93415,8 +93389,8 @@
     ]
   },
   "RANDIWA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/randiwa",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Indian",
     "rating": "",
     "price_level": "",
@@ -93807,8 +93781,8 @@
     ]
   },
   "SAMBA BBQ": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/samba-bbq",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Brazilian",
     "rating": "",
     "price_level": "",
@@ -93965,8 +93939,8 @@
     ]
   },
   "SELVA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/selva",
+    "platform": "website",
+    "url": "http://selva.nyc/",
     "cuisine": "Latin American",
     "rating": "",
     "price_level": "",
@@ -94074,8 +94048,8 @@
     ]
   },
   "STARLETS": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/starlets-of",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -94098,8 +94072,8 @@
     ]
   },
   "SUNNY'S": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/sunnys",
+    "platform": "website",
+    "url": "http://www.sunnysredhook.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -94287,8 +94261,8 @@
     ]
   },
   "TAMAL EXPRESS": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/tamal-express",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -94340,8 +94314,8 @@
     ]
   },
   "TASTE LAB": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/taste-lab-georgian-family-cuisine",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Eastern European",
     "rating": "",
     "price_level": "",
@@ -94473,8 +94447,8 @@
     ]
   },
   "TENTEN": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/tnten",
+    "platform": "website",
+    "url": "https://tentennyc.square.site/",
     "cuisine": "Southeast Asian",
     "rating": "",
     "price_level": "",
@@ -94705,8 +94679,8 @@
     "resy_url": "https://resy.com/cities/new-york-ny/venues/the-evergreen"
   },
   "THE GATE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-gate",
+    "platform": "website",
+    "url": "https://thegatebrooklyn.getbento.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -94861,36 +94835,9 @@
       "lively"
     ]
   },
-  "THE LEVER CLUB": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/lever-house",
-    "cuisine": "American",
-    "rating": "",
-    "price_level": "",
-    "neighborhood": "Manhattan",
-    "source": "deduped_master_v6",
-    "lat": 40.7596059,
-    "lng": -73.9727396,
-    "address": "390 Park Ave, New York, NY 10022, USA",
-    "ot_rid": "1196398",
-    "ot_slug": "the-crown-club",
-    "google_rating": 4.8,
-    "review_count": 29,
-    "place_id": "ChIJbxQQa_tYwokRtUNdi05Ajtk",
-    "website": "https://www.leverhousenyc.com/",
-    "opentable_url": null,
-    "resy_slug": "lever-house",
-    "google_reviews": 29,
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/lever-house",
-    "vibe_tags": [
-      "trendy",
-      "outdoor"
-    ],
-    "_vibe_confidence": "low"
-  },
   "THE LITTLE PIG": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-little-pig",
+    "platform": "website",
+    "url": "http://www.thelittlepigbk.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -94942,8 +94889,8 @@
     ]
   },
   "THE SENECA": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-seneca",
+    "platform": "website",
+    "url": "http://www.thesenecanyc.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -94994,8 +94941,8 @@
     ]
   },
   "THE YALE CLUB": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-yale-club",
+    "platform": "website",
+    "url": "http://www.yaleclubnyc.org/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -95048,8 +94995,8 @@
     ]
   },
   "TIA ELI'S REATURANT": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/tia-elis",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Mexican",
     "rating": "",
     "price_level": "",
@@ -95124,8 +95071,8 @@
     ]
   },
   "TINA'S PLACE": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/tinas-place",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -95199,8 +95146,8 @@
     ]
   },
   "UKUS": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/ukus",
+    "platform": "walk_in",
+    "url": "",
     "cuisine": "Eastern European",
     "rating": "",
     "price_level": "",
@@ -95305,8 +95252,8 @@
     ]
   },
   "VON": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/von",
+    "platform": "website",
+    "url": "http://www.vonbar.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
@@ -95653,8 +95600,8 @@
     ]
   },
   "ZINC": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/zinc-bar",
+    "platform": "website",
+    "url": "https://www.zincbar.com/",
     "cuisine": "American",
     "rating": "",
     "price_level": "",
