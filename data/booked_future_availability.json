@@ -1,28 +1,48 @@
 {
-  "checked_at": "2026-03-26T17:20:47.329Z",
+  "checked_at": "2026-03-27T13:06:33.279Z",
+  "party_size": 2,
+  "dates_checked": [
+    {
+      "offset": "+3",
+      "date": "2026-03-30"
+    },
+    {
+      "offset": "+5",
+      "date": "2026-04-01"
+    },
+    {
+      "offset": "+7",
+      "date": "2026-04-03"
+    },
+    {
+      "offset": "+14",
+      "date": "2026-04-10"
+    }
+  ],
+  "total_checked": 143,
   "results": {
-    "the four horsemen": {
-      "slug": "the-four-horsemen",
-      "venueId": 2492,
+    "i cavallini": {
+      "slug": "i-cavallini",
+      "venueId": 90079,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -34,182 +54,51 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "riverpark": {
-      "slug": "riverpark-nyc",
-      "venueId": 37437,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 15,
-          "early": 2,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-03-31 11:30:00",
-          "latest": "2026-03-31 20:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 15,
-          "early": 2,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-04-02 11:30:00",
-          "latest": "2026-04-02 20:30:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 15,
-          "early": 2,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-04-09 11:30:00",
-          "latest": "2026-04-09 20:30:00"
-        }
-      }
-    },
-    "keens steakhouse": {
-      "slug": "keens-steakhouse",
-      "venueId": 3413,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 17,
-          "early": 0,
-          "prime": 0,
-          "late": 4,
-          "earliest": "2026-03-31 11:45:00",
-          "latest": "2026-03-31 22:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 16,
-          "early": 0,
-          "prime": 0,
-          "late": 3,
-          "earliest": "2026-04-02 11:45:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 18,
-          "early": 0,
-          "prime": 0,
-          "late": 5,
-          "earliest": "2026-04-09 11:45:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "golden diner": {
-      "slug": "golden-diner",
-      "venueId": 9520,
+    "lilia": {
+      "slug": "lilia",
+      "venueId": 418,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
-        }
-      }
-    },
-    "lysée": {
-      "slug": "lysee",
-      "venueId": 64549,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 25,
-          "early": 8,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-29 11:00:00",
-          "latest": "2026-03-29 17:45:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 34,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 11:00:00",
-          "latest": "2026-03-31 16:45:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 30,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 12:00:00",
-          "latest": "2026-04-02 16:45:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 37,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 12:00:00",
-          "latest": "2026-04-09 16:45:00"
         }
       }
     },
@@ -219,118 +108,103 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "smithereens": {
-      "slug": "smithereens",
-      "venueId": 84732,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 5,
-          "early": 0,
-          "prime": 0,
-          "late": 5,
-          "earliest": "2026-03-31 21:30:00",
-          "latest": "2026-03-31 22:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 6,
-          "early": 0,
-          "prime": 0,
-          "late": 6,
-          "earliest": "2026-04-02 21:15:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 28,
-          "early": 4,
-          "prime": 14,
-          "late": 10,
-          "earliest": "2026-04-09 17:30:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "via carota": {
-      "slug": "via-carota",
-      "venueId": 2567,
+    "lei": {
+      "slug": "lei",
+      "venueId": 89991,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "i sodi": {
-      "slug": "i-sodi",
-      "venueId": 443,
+    "quique crudo": {
+      "slug": "quique-crudo",
+      "venueId": 83129,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "penny": {
+      "slug": "penny",
+      "venueId": 79460,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -339,94 +213,25 @@
     "rubirosa": {
       "slug": "rubirosa",
       "venueId": 466,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 6,
-          "early": 0,
-          "prime": 0,
-          "late": 6,
-          "earliest": "2026-03-29 21:45:00",
-          "latest": "2026-03-29 22:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 42,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 11:00:00",
-          "latest": "2026-03-31 16:45:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 64,
-          "early": 6,
-          "prime": 0,
-          "late": 10,
-          "earliest": "2026-04-02 11:00:00",
-          "latest": "2026-04-02 22:30:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "carbone": {
-      "slug": "carbone",
-      "venueId": 6194,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "torrisi": {
-      "slug": "torrisi",
-      "venueId": 64593,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -435,163 +240,79 @@
     "gramercy tavern": {
       "slug": "gramercy-tavern",
       "venueId": 3731,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 1,
-          "early": 0,
-          "prime": 0,
-          "late": 1,
-          "earliest": "2026-04-02 22:00:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 6,
-          "early": 0,
-          "prime": 0,
-          "late": 1,
-          "earliest": "2026-04-09 11:30:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "sadelles": {
-      "slug": "sadelles",
-      "venueId": 29967,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 5,
-          "early": 1,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-29 16:00:00",
-          "latest": "2026-03-29 17:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 27,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 14:30:00",
-          "latest": "2026-03-31 15:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 31,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 09:00:00",
-          "latest": "2026-04-02 15:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 29,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 11:00:00",
-          "latest": "2026-04-09 15:00:00"
-        }
-      }
-    },
-    "atomix": {
-      "slug": "atomixnyc",
-      "venueId": 69815,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "rezdora": {
-      "slug": "rezdora",
-      "venueId": 5771,
+    "dame": {
+      "slug": "dame-new-york",
+      "venueId": 34341,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "meju": {
-      "slug": "meju",
-      "venueId": 79842,
+    "claud": {
+      "slug": "claud",
+      "venueId": 62659,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -600,30 +321,25 @@
     "thai diner": {
       "slug": "thai-diner",
       "venueId": 49453,
-      "hasAnyAvailability": true,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 2,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 08:45:00",
-          "latest": "2026-04-02 11:00:00"
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -635,204 +351,49 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "foxface natural": {
-      "slug": "foxface-natural",
-      "venueId": 71434,
+    "huda": {
+      "slug": "huda",
+      "venueId": 73930,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "bistrot ha": {
-      "slug": "bistrot-ha",
-      "venueId": 93718,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "ha's snack bar": {
-      "slug": "has-snack-bar",
-      "venueId": 85855,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "ramen by ra": {
-      "slug": "ramen-by-ra",
-      "venueId": 79848,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "kru": {
-      "slug": "kru",
-      "venueId": 63994,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 14,
-          "early": 2,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-03-29 17:30:00",
-          "latest": "2026-03-29 20:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 14,
-          "early": 2,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-03-31 17:30:00",
-          "latest": "2026-03-31 20:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 14,
-          "early": 2,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-04-02 17:30:00",
-          "latest": "2026-04-02 20:30:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 14,
-          "early": 2,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-04-09 17:30:00",
-          "latest": "2026-04-09 20:30:00"
-        }
-      }
-    },
-    "oddball": {
-      "slug": "oddball",
-      "venueId": 94840,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -844,22 +405,49 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "rule of thirds": {
+      "slug": "rule-of-thirds",
+      "venueId": 6012,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -868,89 +456,27 @@
     "one white street": {
       "slug": "one-white-street",
       "venueId": 49137,
-      "hasAnyAvailability": true,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 11,
-          "early": 2,
-          "prime": 7,
-          "late": 2,
-          "earliest": "2026-03-29 17:30:00",
-          "latest": "2026-03-29 21:00:00"
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 12,
-          "early": 4,
-          "prime": 6,
-          "late": 2,
-          "earliest": "2026-03-31 17:30:00",
-          "latest": "2026-03-31 21:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 10,
-          "early": 5,
-          "prime": 4,
-          "late": 1,
-          "earliest": "2026-04-02 17:30:00",
-          "latest": "2026-04-02 21:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 17,
-          "early": 7,
-          "prime": 8,
-          "late": 2,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 21:00:00"
-        }
-      }
-    },
-    "runner up": {
-      "slug": "runner-up",
-      "venueId": 59994,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 13,
-          "early": 3,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-03-29 16:00:00",
-          "latest": "2026-03-29 20:45:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 10,
-          "early": 4,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 20:45:00"
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 11,
-          "early": 4,
-          "prime": 7,
-          "late": 0,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 20:45:00"
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
         }
       }
     },
@@ -960,22 +486,22 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -984,77 +510,52 @@
     "yellow rose": {
       "slug": "yellow-rose",
       "venueId": 53048,
-      "hasAnyAvailability": true,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 21,
-          "early": 1,
-          "prime": 9,
-          "late": 0,
-          "earliest": "2026-03-29 12:30:00",
-          "latest": "2026-03-29 20:30:00"
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 15,
-          "early": 4,
-          "prime": 11,
-          "late": 0,
-          "earliest": "2026-03-31 17:00:00",
-          "latest": "2026-03-31 20:30:00"
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 10,
-          "early": 4,
-          "prime": 6,
-          "late": 0,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 20:30:00"
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 15,
-          "early": 4,
-          "prime": 11,
-          "late": 0,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 20:30:00"
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
         }
       }
     },
     "jeju noodle bar": {
       "slug": "jeju-noodle-bar",
       "venueId": 1543,
-      "hasAnyAvailability": true,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 2,
-          "early": 0,
-          "prime": 0,
-          "late": 1,
-          "earliest": "2026-03-29 21:15:00",
-          "latest": "2026-03-29 15:00:00"
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -1063,195 +564,52 @@
     "antidote": {
       "slug": "antidote",
       "venueId": 60192,
-      "hasAnyAvailability": true,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 25,
-          "early": 1,
-          "prime": 3,
-          "late": 2,
-          "earliest": "2026-03-29 12:15:00",
-          "latest": "2026-03-29 21:15:00"
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 32,
-          "early": 4,
-          "prime": 7,
-          "late": 2,
-          "earliest": "2026-03-31 12:15:00",
-          "latest": "2026-03-31 21:15:00"
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 32,
-          "early": 4,
-          "prime": 7,
-          "late": 2,
-          "earliest": "2026-04-02 12:15:00",
-          "latest": "2026-04-02 21:15:00"
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 32,
-          "early": 4,
-          "prime": 7,
-          "late": 2,
-          "earliest": "2026-04-09 12:15:00",
-          "latest": "2026-04-09 21:15:00"
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
         }
       }
     },
     "hungry thirsty": {
       "slug": "hungry-thirsty",
       "venueId": 89465,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 17,
-          "early": 4,
-          "prime": 12,
-          "late": 1,
-          "earliest": "2026-03-29 17:00:00",
-          "latest": "2026-03-29 21:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 16,
-          "early": 4,
-          "prime": 11,
-          "late": 1,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 21:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 17,
-          "early": 4,
-          "prime": 12,
-          "late": 1,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 21:00:00"
-        }
-      }
-    },
-    "sam sunny": {
-      "slug": "sam-sunny",
-      "venueId": 65463,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "chez messy": {
-      "slug": "chez-messy",
-      "venueId": 83660,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "common park slope": {
-      "slug": "the-common-park-slope",
-      "venueId": 73196,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "chili": {
-      "slug": "chili",
-      "venueId": 64822,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -1263,22 +621,22 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -1290,1003 +648,265 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "tsion": {
-      "slug": "tsion-cafe",
-      "venueId": 5738,
+    "anassa taverna downtown": {
+      "slug": "anassa-taverna-downtown",
+      "venueId": 54343,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
-        }
-      }
-    },
-    "for all things good bedstuy": {
-      "slug": "for-all-things-good-bed-stuy",
-      "venueId": 89550,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "little egg": {
-      "slug": "little-egg",
-      "venueId": 71265,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "izakaya mew": {
-      "slug": "izakaya-mew",
-      "venueId": 30189,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "greenpoint fish and lobster co": {
-      "slug": "greenpoint-fish-and-lobster-co",
-      "venueId": 52205,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "mayfield": {
-      "slug": "mayfield",
-      "venueId": 2238,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "ursula brooklyn": {
-      "slug": "ursula-brooklyn",
-      "venueId": 75275,
-      "hasAnyAvailability": false,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": false,
-          "slots": 0
-        }
-      }
-    },
-    "post": {
-      "slug": "post",
-      "venueId": 58469,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 65,
-          "early": 4,
-          "prime": 12,
-          "late": 3,
-          "earliest": "2026-03-29 10:00:00",
-          "latest": "2026-03-29 21:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 46,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 10:00:00",
-          "latest": "2026-03-31 15:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 65,
-          "early": 4,
-          "prime": 12,
-          "late": 3,
-          "earliest": "2026-04-02 10:00:00",
-          "latest": "2026-04-02 21:30:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 65,
-          "early": 4,
-          "prime": 12,
-          "late": 3,
-          "earliest": "2026-04-09 10:00:00",
-          "latest": "2026-04-09 21:30:00"
-        }
-      }
-    },
-    "hicollar": {
-      "slug": "hi-collar",
-      "venueId": 3631,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 7,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-29 11:30:00",
-          "latest": "2026-03-29 15:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 30,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 11:30:00",
-          "latest": "2026-04-02 15:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 30,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 11:30:00",
-          "latest": "2026-04-09 15:00:00"
         }
       }
     },
     "bar oliver": {
       "slug": "bar-oliver",
       "venueId": 85407,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 17,
-          "early": 1,
-          "prime": 9,
-          "late": 3,
-          "earliest": "2026-03-29 11:00:00",
-          "latest": "2026-03-29 21:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 16,
-          "early": 1,
-          "prime": 6,
-          "late": 3,
-          "earliest": "2026-03-31 11:00:00",
-          "latest": "2026-03-31 21:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 6,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 11:00:00",
-          "latest": "2026-04-02 14:15:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 21,
-          "early": 2,
-          "prime": 8,
-          "late": 5,
-          "earliest": "2026-04-09 11:00:00",
-          "latest": "2026-04-09 22:30:00"
-        }
-      }
-    },
-    "rosella": {
-      "slug": "rosella",
-      "venueId": 65348,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "las' lap nyc": {
-      "slug": "2886",
-      "venueId": 2886,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 7,
-          "early": 1,
-          "prime": 3,
-          "late": 3,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 7,
-          "early": 1,
-          "prime": 3,
-          "late": 3,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "30 love": {
-      "slug": "30-love",
-      "venueId": 87667,
+    "adélaïde salon": {
+      "slug": "adelaide-salon",
+      "venueId": 86236,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "agora taverna": {
-      "slug": "agora-taverna",
-      "venueId": 41207,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 40,
-          "early": 4,
-          "prime": 12,
-          "late": 4,
-          "earliest": "2026-03-29 11:30:00",
-          "latest": "2026-03-29 21:45:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 40,
-          "early": 4,
-          "prime": 12,
-          "late": 4,
-          "earliest": "2026-03-31 12:00:00",
-          "latest": "2026-03-31 21:45:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 40,
-          "early": 4,
-          "prime": 12,
-          "late": 4,
-          "earliest": "2026-04-02 12:00:00",
-          "latest": "2026-04-02 21:45:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 40,
-          "early": 4,
-          "prime": 12,
-          "late": 4,
-          "earliest": "2026-04-09 12:00:00",
-          "latest": "2026-04-09 21:45:00"
-        }
-      }
-    },
-    "akoya": {
-      "slug": "akoya",
-      "venueId": 87798,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 42,
-          "early": 8,
-          "prime": 24,
-          "late": 2,
-          "earliest": "2026-03-29 16:00:00",
-          "latest": "2026-03-29 21:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 42,
-          "early": 8,
-          "prime": 24,
-          "late": 2,
-          "earliest": "2026-03-31 16:00:00",
-          "latest": "2026-03-31 21:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 42,
-          "early": 8,
-          "prime": 24,
-          "late": 2,
-          "earliest": "2026-04-02 16:00:00",
-          "latest": "2026-04-02 21:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 42,
-          "early": 8,
-          "prime": 24,
-          "late": 2,
-          "earliest": "2026-04-09 16:00:00",
-          "latest": "2026-04-09 21:00:00"
-        }
-      }
-    },
-    "alma": {
-      "slug": "alma-ny",
-      "venueId": 8424,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 39,
-          "early": 4,
-          "prime": 11,
-          "late": 0,
-          "earliest": "2026-03-29 11:00:00",
-          "latest": "2026-03-29 20:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 16,
-          "early": 4,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 20:45:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 16,
-          "early": 4,
-          "prime": 12,
-          "late": 0,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 20:45:00"
-        }
-      }
-    },
-    "amity hall uptown": {
-      "slug": "amity-hall-uptown",
-      "venueId": 10099,
+    "akimori brooklyn": {
+      "slug": "akimori-brooklyn",
+      "venueId": 55565,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "anemi modern greek": {
-      "slug": "anemi-modern-greek",
-      "venueId": 92507,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 10,
-          "early": 2,
-          "prime": 6,
-          "late": 2,
-          "earliest": "2026-03-29 17:00:00",
-          "latest": "2026-03-29 21:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 10,
-          "early": 2,
-          "prime": 6,
-          "late": 2,
-          "earliest": "2026-03-31 17:00:00",
-          "latest": "2026-03-31 21:30:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 10,
-          "early": 2,
-          "prime": 6,
-          "late": 2,
-          "earliest": "2026-04-02 17:00:00",
-          "latest": "2026-04-02 21:30:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 10,
-          "early": 2,
-          "prime": 6,
-          "late": 2,
-          "earliest": "2026-04-09 17:00:00",
-          "latest": "2026-04-09 21:30:00"
-        }
-      }
-    },
-    "boqueria flatiron": {
-      "slug": "boqueria-flatiron",
-      "venueId": 27218,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 78,
-          "early": 8,
-          "prime": 24,
-          "late": 0,
-          "earliest": "2026-03-29 11:00:00",
-          "latest": "2026-03-29 20:45:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 68,
-          "early": 8,
-          "prime": 24,
-          "late": 8,
-          "earliest": "2026-03-31 11:30:00",
-          "latest": "2026-03-31 21:45:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 72,
-          "early": 8,
-          "prime": 24,
-          "late": 10,
-          "earliest": "2026-04-02 11:30:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 72,
-          "early": 8,
-          "prime": 24,
-          "late": 10,
-          "earliest": "2026-04-09 11:30:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "boqueria soho": {
-      "slug": "boqueria-soho",
-      "venueId": 27219,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": false,
-          "slots": 0
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 68,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 11:00:00",
-          "latest": "2026-03-31 15:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 68,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 11:00:00",
-          "latest": "2026-04-02 15:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 68,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 11:00:00",
-          "latest": "2026-04-09 15:00:00"
-        }
-      }
-    },
-    "broken shaker new york": {
-      "slug": "broken-shaker-new-york",
-      "venueId": 70551,
+    "akimori omakase bar": {
+      "slug": "akimori-omakase-bar",
+      "venueId": 76959,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "brooklyn chop house - downtown fidi": {
-      "slug": "brooklyn-chop-house-downtown-fidi",
-      "venueId": 87134,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 17,
-          "early": 4,
-          "prime": 6,
-          "late": 3,
-          "earliest": "2026-03-29 16:00:00",
-          "latest": "2026-03-29 22:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 33,
-          "early": 4,
-          "prime": 6,
-          "late": 3,
-          "earliest": "2026-03-31 12:00:00",
-          "latest": "2026-03-31 22:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 33,
-          "early": 4,
-          "prime": 6,
-          "late": 3,
-          "earliest": "2026-04-02 12:00:00",
-          "latest": "2026-04-02 22:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 33,
-          "early": 4,
-          "prime": 6,
-          "late": 3,
-          "earliest": "2026-04-09 12:00:00",
-          "latest": "2026-04-09 22:00:00"
-        }
-      }
-    },
-    "brooklyn roots collective": {
-      "slug": "brooklyn-roots-collective",
-      "venueId": 95613,
+    "async": {
+      "slug": "async",
+      "venueId": 89889,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "brunch me baby": {
-      "slug": "brunch-me-baby",
-      "venueId": 95447,
+    "bordeaux steakhouse": {
+      "slug": "bordeaux-steakhouse",
+      "venueId": 91158,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "caviar cafe": {
-      "slug": "caviar-cafe",
-      "venueId": 94731,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 33,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-29 08:00:00",
-          "latest": "2026-03-29 16:00:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 33,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-03-31 08:00:00",
-          "latest": "2026-03-31 16:00:00"
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": true,
-          "slots": 33,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-02 08:00:00",
-          "latest": "2026-04-02 16:00:00"
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 33,
-          "early": 0,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 08:00:00",
-          "latest": "2026-04-09 16:00:00"
-        }
-      }
-    },
-    "centurion new york® by american express": {
-      "slug": "centurion-ny",
-      "venueId": 66930,
-      "hasAnyAvailability": true,
-      "dates": {
-        "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 2,
-          "early": 0,
-          "prime": 2,
-          "late": 0,
-          "earliest": "2026-03-29 20:00:00",
-          "latest": "2026-03-29 20:30:00"
-        },
-        "+5": {
-          "date": "2026-03-31",
-          "available": false,
-          "slots": 0
-        },
-        "+7": {
-          "date": "2026-04-02",
-          "available": false,
-          "slots": 0
-        },
-        "+14": {
-          "date": "2026-04-09",
-          "available": true,
-          "slots": 4,
-          "early": 2,
-          "prime": 0,
-          "late": 0,
-          "earliest": "2026-04-09 12:15:00",
-          "latest": "2026-04-09 17:45:00"
-        }
-      }
-    },
-    "chong qing lao zao": {
-      "slug": "chong-qing-lao-zao",
-      "venueId": 95802,
+    "buvette nyc": {
+      "slug": "buvette-nyc",
+      "venueId": 4241,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "club please": {
-      "slug": "club-please",
-      "venueId": 87799,
+    "clemente bar and studio": {
+      "slug": "clemente-bar",
+      "venueId": 84216,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -2298,59 +918,49 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "congee village": {
-      "slug": "congee-village",
-      "venueId": 82339,
-      "hasAnyAvailability": true,
+    "corima": {
+      "slug": "corima",
+      "venueId": 74270,
+      "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
-          "available": true,
-          "slots": 41,
-          "early": 4,
-          "prime": 12,
-          "late": 1,
-          "earliest": "2026-03-29 11:00:00",
-          "latest": "2026-03-29 21:00:00"
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
-          "available": true,
-          "slots": 41,
-          "early": 4,
-          "prime": 12,
-          "late": 1,
-          "earliest": "2026-03-31 11:00:00",
-          "latest": "2026-03-31 21:00:00"
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
@@ -2362,49 +972,2857 @@
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
       }
     },
-    "crazy pizza": {
-      "slug": "crazy-pizza",
-      "venueId": 85342,
+    "cupid's secret": {
+      "slug": "cupids-secret",
+      "venueId": 95216,
       "hasAnyAvailability": false,
       "dates": {
         "+3": {
-          "date": "2026-03-29",
+          "date": "2026-03-30",
           "available": false,
           "slots": 0
         },
         "+5": {
-          "date": "2026-03-31",
+          "date": "2026-04-01",
           "available": false,
           "slots": 0
         },
         "+7": {
-          "date": "2026-04-02",
+          "date": "2026-04-03",
           "available": false,
           "slots": 0
         },
         "+14": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "danny's nyc": {
+      "slug": "dannys-nyc",
+      "venueId": 92620,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "ddobar": {
+      "slug": "ddobar",
+      "venueId": 68098,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "haven": {
+      "slug": "haven",
+      "venueId": 77722,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "house brooklyn": {
+      "slug": "house-brooklyn",
+      "venueId": 65546,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "javitri": {
+      "slug": "javitri",
+      "venueId": 78794,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "jiang nan - manhattan": {
+      "slug": "jiang-nan-manhattan",
+      "venueId": 93411,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "jua": {
+      "slug": "jua",
+      "venueId": 8266,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "linen hall": {
+      "slug": "linen-hall",
+      "venueId": 76289,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "lucali ny": {
+      "slug": "lucali-ny",
+      "venueId": 54876,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "malka dumbo": {
+      "slug": "malka-dumbo",
+      "venueId": 83875,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "martiny's": {
+      "slug": "martinys",
+      "venueId": 60243,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "montague diner": {
+      "slug": "montague-diner",
+      "venueId": 79987,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "mykonian garden": {
+      "slug": "mykonian-garden",
+      "venueId": 91921,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "nowon east village": {
+      "slug": "nowon-east-village",
+      "venueId": 8541,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "nr": {
+      "slug": "nr",
+      "venueId": 39797,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "okonomi brooklyn": {
+      "slug": "okonomi-brooklyn",
+      "venueId": 59622,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "olde city": {
+      "slug": "olde-city",
+      "venueId": 95534,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "reserve cut broad st.": {
+      "slug": "reserve-cut-broad-st",
+      "venueId": 58431,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "rulin": {
+      "slug": "rulin",
+      "venueId": 93064,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "sen sakana": {
+      "slug": "sen-sakana",
+      "venueId": 9896,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "tabernacle steakhouse": {
+      "slug": "tabernacle-steakhouse",
+      "venueId": 50173,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "taikun sushi nyc": {
+      "slug": "taikun-sushi",
+      "venueId": 50244,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "talia's steakhouse & bar": {
+      "slug": "talias-steakhouse-and-bar",
+      "venueId": 72784,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the half pint / ernie's": {
+      "slug": "the-half-pint-ernies",
+      "venueId": 3308,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the loft steakhouse - brooklyn": {
+      "slug": "the-loft-steakhouse-brooklyn",
+      "venueId": 93228,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the mulberry": {
+      "slug": "the-mulberry",
+      "venueId": 66377,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the ten bells": {
+      "slug": "the-ten-bells",
+      "venueId": 5748,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "togyushi": {
+      "slug": "togyushi",
+      "venueId": 92553,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "tonchin new york": {
+      "slug": "tonchin-new-york",
+      "venueId": 35883,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "umeko": {
+      "slug": "umeko",
+      "venueId": 94947,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "virginia's": {
+      "slug": "virginias",
+      "venueId": 5938,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "weill café at carnegie hall": {
+      "slug": "weill-cafe-at-carnegie-hall",
+      "venueId": 75404,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "yellow magnolia café": {
+      "slug": "yellow-magnolia-cafe",
+      "venueId": 70119,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "sarava - the modern bistro": {
+      "slug": "the-modern",
+      "venueId": 7369,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "ends meat": {
+      "slug": "meat",
+      "venueId": 7093,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Sonnyboy": {
+      "slug": "sonnyboy",
+      "venueId": 4530,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Boulud Sud": {
+      "slug": "boulud-sud",
+      "venueId": 53002,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Il Brigante": {
+      "slug": "il-brigante",
+      "venueId": 87088,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Huso Nyc": {
+      "slug": "huso-nyc",
+      "venueId": 84818,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "torien": {
+      "slug": "torien",
+      "venueId": 7318,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Veselka (East Village)": {
+      "slug": "veselka-east-village",
+      "venueId": 92399,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "bella blue": {
+      "slug": "bella-blu",
+      "venueId": 86535,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "15 East at Tocqueville": {
+      "slug": "15-east-at-tocqueville",
+      "venueId": 37591,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "The Irish Exit": {
+      "slug": "the-irish-exit",
+      "venueId": 83123,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Maggie's Place": {
+      "slug": "maggies-place",
+      "venueId": 54657,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Crispy Heaven": {
+      "slug": "crispy-heaven",
+      "venueId": 77661,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Two Hands Williamsburg": {
+      "slug": "42913",
+      "venueId": 42913,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Misipasta": {
+      "slug": "misipasta",
+      "venueId": 73487,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "ILIS": {
+      "slug": "ilis",
+      "venueId": 73980,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Blue Box Café by Daniel Boulud": {
+      "slug": "bluebox-cafe-by-daniel-boulud",
+      "venueId": 70161,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Pitanga Bushwick": {
+      "slug": "pitanga-bushwick",
+      "venueId": 77618,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Ramro": {
+      "slug": "ramro",
+      "venueId": 91404,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Marc179": {
+      "slug": "marc179",
+      "venueId": 87026,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Kimika": {
+      "slug": "kimika",
+      "venueId": 30248,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "TASHCA NYC": {
+      "slug": "tashca-nyc",
+      "venueId": 95510,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Casa La Femme": {
+      "slug": "casa-la-femme",
+      "venueId": 88409,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Studio Tropical": {
+      "slug": "studio-tropical",
+      "venueId": 90623,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Winona's": {
+      "slug": "winonas",
+      "venueId": 42650,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Baretto at Fasano": {
+      "slug": "baretto-at-fasano",
+      "venueId": 73326,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Le Café Louis Vuitton": {
+      "slug": "le-cafe-louis-vuitton",
+      "venueId": 85214,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Two Hands Noho": {
+      "slug": "two-hands-noho",
+      "venueId": 8630,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "the horny ram": {
+      "slug": "the-horny-ram",
+      "venueId": 55728,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "gitano nyc": {
+      "slug": "gitano-nyc",
+      "venueId": 61029,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "69Leonardstreet": {
+      "slug": "69leonardstreet",
+      "venueId": 888,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Barbuto Brooklyn": {
+      "slug": "barbuto-brooklyn",
+      "venueId": 65580,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Cafe Mado": {
+      "slug": "cafe-mado",
+      "venueId": 81909,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Caviar Cafe": {
+      "slug": "caviar-cafe",
+      "venueId": 94731,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Citizens Of Chelsea": {
+      "slug": "citizens-of-chelsea",
+      "venueId": 75524,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Citizens Of Soho": {
+      "slug": "citizens-of-soho",
+      "venueId": 60841,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Concrete Shoals": {
+      "slug": "concrete-shoals",
+      "venueId": 92100,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Dejavu": {
+      "slug": "dejavu",
+      "venueId": 93097,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Dept Of Culture Brooklyn": {
+      "slug": "dept-of-culture-brooklyn",
+      "venueId": 60036,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Food Education Fund": {
+      "slug": "food-education-fund",
+      "venueId": 65036,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Haven": {
+      "slug": "haven",
+      "venueId": 77722,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Jaba": {
+      "slug": "jaba",
+      "venueId": 87585,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Kettl Tea Norman Ave": {
+      "slug": "kettl-tea-norman-ave",
+      "venueId": 93184,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Lucali Ny": {
+      "slug": "lucali-ny",
+      "venueId": 54876,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Lucky Charlie": {
+      "slug": "lucky-charlie",
+      "venueId": 92356,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Paquita": {
+      "slug": "paquita",
+      "venueId": 83502,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Rubirosa": {
+      "slug": "rubirosa",
+      "venueId": 466,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Russ And Daughters Cafe": {
+      "slug": "russ-and-daughters-cafe",
+      "venueId": 4600,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Sea": {
+      "slug": "sea",
+      "venueId": 80440,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "The Astarita": {
+      "slug": "the-astarita",
+      "venueId": 85156,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "The Modern": {
+      "slug": "the-modern",
+      "venueId": 7369,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Thirst Series A New Perspective On Wine Presented By Pressoir And American Express": {
+      "slug": "thirst-series-a-new-perspective-on-wine-presented-by-pressoir-and-american-express",
+      "venueId": 74426,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Sunsets at La Cantine": {
+      "slug": "sunsets-at-la-cantine",
+      "venueId": 76796,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Bottega Supper Club": {
+      "slug": "bottega-supper-club",
+      "venueId": 94065,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "bar primi bowery": {
+      "slug": "bar-primi-bowery",
+      "venueId": 52614,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Bubbys Tribeca": {
+      "slug": "bubbys-tribeca",
+      "venueId": 93082,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "potluck club": {
+      "slug": "potluck-club",
+      "venueId": 63514,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "drai's supper club new york": {
+      "slug": "drais-supper-club",
+      "venueId": 79963,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "monkey bar": {
+      "slug": "monkey-bar-nyc",
+      "venueId": 60058,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "highball ltd": {
+      "slug": "highball-limited",
+      "venueId": 94981,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "Massara On Park": {
+      "slug": "massara",
+      "venueId": 80153,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "côte": {
+      "slug": "cote-nyc",
+      "venueId": 72271,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "russ and daughters cafe": {
+      "slug": "russ-and-daughters-cafe",
+      "venueId": 4600,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "frying pan nyc": {
+      "slug": "frying-pan-nyc",
+      "venueId": 84664,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "cuerno": {
+      "slug": "cuerno",
+      "venueId": 86672,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "noi due carne": {
+      "slug": "noi-due-carne",
+      "venueId": 1421,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "nonna doras": {
+      "slug": "nonna-doras",
+      "venueId": 59960,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "one bite omakase": {
+      "slug": "one-bite-omakase",
+      "venueId": 79398,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "sushi makoto – omakase": {
+      "slug": "sushi-makoto",
+      "venueId": 78295,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "abba bar & grill": {
+      "slug": "abba-bar-and-grill",
+      "venueId": 93259,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
+          "available": false,
+          "slots": 0
+        }
+      }
+    },
+    "fan fried rice bar": {
+      "slug": "fan-fried-rice-bar",
+      "venueId": 65620,
+      "hasAnyAvailability": false,
+      "dates": {
+        "+3": {
+          "date": "2026-03-30",
+          "available": false,
+          "slots": 0
+        },
+        "+5": {
+          "date": "2026-04-01",
+          "available": false,
+          "slots": 0
+        },
+        "+7": {
+          "date": "2026-04-03",
+          "available": false,
+          "slots": 0
+        },
+        "+14": {
+          "date": "2026-04-10",
           "available": false,
           "slots": 0
         }
