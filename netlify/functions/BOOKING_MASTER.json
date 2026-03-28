@@ -44,8 +44,8 @@
     "price": 2
   },
   "1803": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/1803-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/1803",
     "cuisine": "• Cajun • TriBeCa",
     "google_rating": 4.5,
     "google_reviews": 2050,
@@ -773,8 +773,8 @@
     "address": "38 E 19th St, New York, NY 10003, USA"
   },
   "le veau d'or": {
-    "platform": "website",
-    "url": "http://lvdnyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/le-veau-dor-new-york",
     "lat": 40.763248,
     "lng": -73.96807199999999,
     "google_rating": 4.5,
@@ -799,8 +799,8 @@
     "nyt_top_100": true
   },
   "odo": {
-    "platform": "website",
-    "url": "http://www.odo.nyc/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/odo-new-york",
     "lat": 40.7403728,
     "lng": -73.99218669999999,
     "google_rating": 4.5,
@@ -871,8 +871,8 @@
     "address": "56 Irving Pl, New York, NY 10003, USA"
   },
   "westville ues": {
-    "platform": "website",
-    "url": "https://westville.com/locations/westville-upper-east-side/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/westville-ues-new-york",
     "lat": 40.7684763,
     "lng": -73.9557465,
     "google_rating": 4.9,
@@ -894,8 +894,8 @@
     "address": "1359 1st Ave, New York, NY 10021, USA"
   },
   "joe allen": {
-    "platform": "website",
-    "url": "http://www.joeallenrestaurant.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/joe-allen-new-york",
     "lat": 40.7601421,
     "lng": -73.9890705,
     "google_rating": 4.5,
@@ -970,8 +970,8 @@
     "bilt_id": "9809371b-1e86-4a51-bd19-5e4e3780a560"
   },
   "don angie": {
-    "platform": "website",
-    "url": "http://donangie.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/don-angie-new-york",
     "lat": 40.7378037,
     "lng": -74.00209389999999,
     "google_rating": 4.6,
@@ -1141,8 +1141,8 @@
     "address": "57 W 57th St, New York, NY 10019, USA"
   },
   "quality meats": {
-    "platform": "website",
-    "url": "http://qualitymeatsnyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/quality-meats-new-york",
     "lat": 40.76500850000001,
     "lng": -73.9761481,
     "google_rating": 4.5,
@@ -1468,8 +1468,8 @@
     "address": "98 E 53rd St, New York, NY 10022, USA"
   },
   "aretsky's patroon": {
-    "platform": "website",
-    "url": "https://patroon.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/aretskys-patroon-new-york",
     "lat": 40.7534521,
     "lng": -73.9733396,
     "google_rating": 4.5,
@@ -1599,8 +1599,8 @@
     "address": "28 Cornelia St, New York, NY 10014, USA"
   },
   "anton's": {
-    "platform": "website",
-    "url": "http://www.antonsnyc.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/antons-new-york",
     "lat": 40.7356714,
     "lng": -74.0058232,
     "google_rating": 4.5,
@@ -1996,8 +1996,8 @@
     "address": "Times Building, 250 W 41st St, New York, NY 10036, USA"
   },
   "benjamin steakhouse": {
-    "platform": "website",
-    "url": "http://benjaminsteakhouse.com/nyc",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/benjamin-steakhouse",
     "lat": 40.7517366,
     "lng": -73.9790955,
     "google_rating": 4.5,
@@ -2055,8 +2055,8 @@
     "address": "56 9th Ave, New York, NY 10011, USA"
   },
   "il mulino prime - soho": {
-    "platform": "website",
-    "url": "https://www.imny.com/location/prime-soho",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/il-mulino-prime-soho",
     "lat": 40.7221986,
     "lng": -74.0037652,
     "google_rating": 4.3,
@@ -2124,8 +2124,8 @@
     "booking_platform": "website"
   },
   "le bernardin": {
-    "platform": "website",
-    "url": "https://www.le-bernardin.com/home",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/le-bernardin",
     "lat": 40.7614218,
     "lng": -73.9817558,
     "google_rating": 4.6,
@@ -2174,8 +2174,8 @@
     "address": "100 E 63rd St, New York, NY 10065, USA"
   },
   "gabriel kreuther": {
-    "platform": "website",
-    "url": "https://www.gknyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/gabriel-kreuther",
     "lat": 40.7545381,
     "lng": -73.98250260000002,
     "google_rating": 4.6,
@@ -2200,8 +2200,8 @@
     "address": "41 W 42nd St, New York, NY 10036, USA"
   },
   "ai fiori": {
-    "platform": "website",
-    "url": "https://aifiorinyc.com/?utm_source=GoogleBusinessProfile&utm_medium=organic&utm_campaign=MapLabs",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/ai-fiori",
     "lat": 40.7500752,
     "lng": -73.9837835,
     "google_rating": 4.4,
@@ -3962,7 +3962,7 @@
   },
   "abc cocina by jean-georges": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/abc-cocina",
+    "url": "https://resy.com/cities/new-york-ny/venues/abc-cocina",
     "lat": 40.738007,
     "lng": -73.98925,
     "google_rating": 4.4,
@@ -8755,8 +8755,8 @@
     "price": 2
   },
   "hearth": {
-    "platform": "website",
-    "url": "https://www.restauranthearth.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp-website-link",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/hearth",
     "lat": 40.7299853,
     "lng": -73.9831907,
     "google_rating": 4.5,
@@ -8780,8 +8780,8 @@
     "address": "403 E 12th St, New York, NY 10009, USA"
   },
   "casa lever": {
-    "platform": "website",
-    "url": "https://www.casalever.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/casa-lever",
     "lat": 40.759607,
     "lng": -73.972869,
     "google_rating": 4.5,
@@ -10877,8 +10877,8 @@
     "ot_slug": "michaelees-italian-life-caffe"
   },
   "the lambs club": {
-    "platform": "website",
-    "url": "http://www.thelambsclub.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-lambs-club",
     "lat": 40.7566849539675,
     "lng": -73.9845264865867,
     "google_rating": 4.4,
@@ -11187,8 +11187,8 @@
     "address": "120 Hudson St, New York, NY 10013, USA"
   },
   "cookshop": {
-    "platform": "website",
-    "url": "https://www.cookshopny.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/cookshop",
     "lat": 40.7455564,
     "lng": -74.0054765,
     "google_rating": 4.5,
@@ -13354,8 +13354,8 @@
     "price": 2
   },
   "osteria carlina west village": {
-    "platform": "website",
-    "url": "http://www.osteriacarlina.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/osteria-carlina-west-village",
     "lat": 40.7313526,
     "lng": -74.0068553,
     "google_rating": 4.7,
@@ -16725,8 +16725,8 @@
     "address": "347 1st Ave, New York, NY 10010, USA"
   },
   "u omakase": {
-    "platform": "website",
-    "url": "http://www.u-bk.com/",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/u-omakase-brooklyn",
     "lat": 40.7304348,
     "lng": -73.9527679,
     "google_rating": 4.9,
@@ -19990,8 +19990,8 @@
     "price": 2
   },
   "friend of a farmer gramercy": {
-    "platform": "website",
-    "url": "http://www.friendofafarmer.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/friend-of-a-farmer-gramercy",
     "lat": 40.73701,
     "lng": -73.98677,
     "google_rating": 4.4,
@@ -23187,8 +23187,8 @@
     "address": "213-35 39th Ave, Bayside, NY 11361, USA"
   },
   "avenida": {
-    "platform": "website",
-    "url": "https://avenida-nyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/avenida",
     "lat": 40.7517901,
     "lng": -73.9931885,
     "google_rating": 4.4,
@@ -23229,8 +23229,8 @@
     "address": "409 Atlantic Ave, Brooklyn, NY 11217, USA"
   },
   "balaboosta": {
-    "platform": "website",
-    "url": "http://www.balaboostanyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/balaboosta",
     "lat": 40.7376733,
     "lng": -74.00588929999999,
     "google_rating": 4.3,
@@ -23357,8 +23357,8 @@
     "address": "141 W 10th St # A, New York, NY 10014, USA"
   },
   "bella luna restaurant": {
-    "platform": "website",
-    "url": "http://www.bellalunanyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/bella-luna-restaurant",
     "lat": 40.787711,
     "lng": -73.971595,
     "google_rating": 4.4,
@@ -24657,8 +24657,8 @@
     "ot_slug": "city-vineyard-at-pier-26"
   },
   "claudette": {
-    "platform": "website",
-    "url": "http://www.claudettenyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/claudette",
     "lat": 40.7330613,
     "lng": -73.9959946,
     "google_rating": 4.5,
@@ -25354,8 +25354,8 @@
     "address": "308 Bowery, New York, NY 10012, USA"
   },
   "due west": {
-    "platform": "website",
-    "url": "http://www.duewestnyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/due-west",
     "lat": 40.7343315,
     "lng": -74.00323949999999,
     "google_rating": 4.3,
@@ -27621,8 +27621,8 @@
     "opentable_url": "https://www.opentable.com/r/la-nacional-restaurant-new-york"
   },
   "ladybird": {
-    "platform": "website",
-    "url": "https://ladybirdny.com/?utm_source=google",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/ladybird",
     "lat": 40.7266801,
     "lng": -73.9845333,
     "google_rating": 4.6,
@@ -30013,8 +30013,8 @@
     "_vibe_confidence": "high"
   },
   "piacere": {
-    "platform": "website",
-    "url": "http://piacerenyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/piacere",
     "lat": 40.719703,
     "lng": -73.9951354,
     "google_rating": 4.6,
@@ -30031,8 +30031,8 @@
     "address": "351 Broome St, New York, NY 10013, USA"
   },
   "pietro nolita": {
-    "platform": "website",
-    "url": "http://pietronolita.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/pietro-nolita",
     "lat": 40.7210232,
     "lng": -73.99473449999999,
     "google_rating": 4.4,
@@ -30679,8 +30679,8 @@
     "_vibe_confidence": "low"
   },
   "sac's place": {
-    "platform": "website",
-    "url": "http://sacsplace.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sacs-place",
     "lat": 40.7567144,
     "lng": -73.9246701,
     "google_rating": 4.5,
@@ -31304,8 +31304,8 @@
     "address": "295 Madison Ave #101G, New York, NY 10017, USA"
   },
   "shoo shoo nolita": {
-    "platform": "website",
-    "url": "http://shooshoonyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/shoo-shoo",
     "lat": 40.720053,
     "lng": -73.9962548,
     "google_rating": 4.5,
@@ -31376,8 +31376,8 @@
     "_vibe_confidence": "low"
   },
   "sociale": {
-    "platform": "website",
-    "url": "http://socialebk.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sociale",
     "lat": 40.6832732,
     "lng": -73.99569749999999,
     "google_rating": 4.3,
@@ -31485,8 +31485,8 @@
     "address": "162 W 56th St, New York, NY 10019, USA"
   },
   "spaghetti incident": {
-    "platform": "website",
-    "url": "http://www.spaghettiincidentnyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/spaghetti-incident",
     "lat": 40.722402,
     "lng": -73.9899587,
     "google_rating": 4.5,
@@ -33543,8 +33543,8 @@
     "address": "201-10 Cross Island Pkwy, Bayside, NY 11360, USA"
   },
   "wall street grill": {
-    "platform": "website",
-    "url": "http://www.wallstreetgrill.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/wall-street-grill",
     "lat": 40.7049874,
     "lng": -74.00856999999999,
     "google_rating": 4.5,
@@ -33837,8 +33837,8 @@
     "_vibe_confidence": "low"
   },
   "farra": {
-    "platform": "website",
-    "url": "https://farranyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/farra",
     "lat": 40.7170313,
     "lng": -74.0056975,
     "google_rating": 4.6,
@@ -34582,8 +34582,8 @@
     "address": "225 Columbus Ave, New York, NY 10023, USA"
   },
   "soda club": {
-    "platform": "website",
-    "url": "https://www.overthrowhospitality.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/soda-club",
     "lat": 40.7256613,
     "lng": -73.98408189999999,
     "google_rating": 4.7,
@@ -35137,8 +35137,8 @@
     "_vibe_confidence": "medium"
   },
   "osteria del porto": {
-    "platform": "website",
-    "url": "http://www.osteriadelportonyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/osteria-del-porto",
     "lat": 40.7073735,
     "lng": -74.0026999,
     "google_rating": 4.4,
@@ -35807,8 +35807,8 @@
     "address": "239 Park Ave S, New York, NY 10003, USA"
   },
   "masquerade": {
-    "platform": "walk_in",
-    "url": "",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/masquerade",
     "lat": 40.7078031,
     "lng": -73.95576489999999,
     "google_rating": 4.5,
@@ -36264,8 +36264,8 @@
     "address": "11 E 13th St, New York, NY 10003, USA"
   },
   "aromi": {
-    "platform": "website",
-    "url": "http://www.arominyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/aromi",
     "lat": 40.6750294,
     "lng": -73.9996712,
     "google_rating": 4.8,
@@ -37173,8 +37173,8 @@
     "address": "191 Smith St, Brooklyn, NY 11201, USA"
   },
   "vinyl steakhouse": {
-    "platform": "website",
-    "url": "https://www.vinylsteakhouse.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/vinyl-steakhouse",
     "lat": 40.7400359,
     "lng": -73.993096,
     "google_rating": 4.7,
@@ -37615,8 +37615,8 @@
     "address": "119 Orchard St, New York, NY 10002, USA"
   },
   "wan waan": {
-    "platform": "website",
-    "url": "https://wannyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/wan-waan",
     "lat": 40.7434814,
     "lng": -73.9995027,
     "google_rating": 4.7,
@@ -38545,8 +38545,8 @@
     "address": "783 5th Ave #414, New York, NY 10022, USA"
   },
   "maison sun": {
-    "platform": "website",
-    "url": "https://www.maisonsun.nyc",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/maison-sun",
     "lat": 40.6885268,
     "lng": -73.9854417,
     "google_rating": 4.6,
@@ -39090,8 +39090,8 @@
     "address": "344 W 52nd St, New York, NY 10019, USA"
   },
   "kebab aur sharab": {
-    "platform": "website",
-    "url": "https://www.kebabaursharab.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/kebab-aur-sharab",
     "lat": 40.7796082,
     "lng": -73.98322259999999,
     "google_rating": 4.3,
@@ -39757,8 +39757,8 @@
     "address": "1155 Broadway, New York, NY 10001, USA"
   },
   "radio kwara": {
-    "platform": "website",
-    "url": "https://www.radiokwarabk.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/radio-kwara",
     "lat": 40.6874964,
     "lng": -73.9601663,
     "google_rating": 4.6,
@@ -39831,8 +39831,8 @@
     "address": "508 W 28th St, New York, NY 10001, USA"
   },
   "ella funt": {
-    "platform": "website",
-    "url": "http://ellafunt.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/ella-funt",
     "lat": 40.7262665,
     "lng": -73.98990959999999,
     "google_rating": 4.5,
@@ -40040,8 +40040,8 @@
     "address": "209 W 38th St, New York, NY 10018, USA"
   },
   "bati ethiopian kitchen": {
-    "platform": "website",
-    "url": "https://www.batikitchen.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/bati-ethiopian-kitchen",
     "lat": 40.6821172,
     "lng": -73.9595169,
     "google_rating": 4.3,
@@ -40278,8 +40278,8 @@
     "address": "245 Dekalb Ave, Brooklyn, NY 11205, USA"
   },
   "sushi yolo": {
-    "platform": "website",
-    "url": "https://sushiyolonyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sushi-yolo",
     "lat": 40.7674543,
     "lng": -73.98510279999999,
     "google_rating": 4.9,
@@ -43108,8 +43108,8 @@
     "address": "102 Norfolk St, New York, NY 10002, USA"
   },
   "vallarta tropical": {
-    "platform": "website",
-    "url": "https://vallartanyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/vallarta-tropical",
     "lat": 40.7189064,
     "lng": -73.98699789999999,
     "google_rating": 4.8,
@@ -43992,8 +43992,8 @@
     "address": "201 Allen St, New York, NY 10002, USA"
   },
   "pastai": {
-    "platform": "website",
-    "url": "https://pastainyc.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/pastai",
     "lat": 40.7454094,
     "lng": -74.0019035,
     "google_rating": 4.3,
@@ -44786,8 +44786,8 @@
     "address": "345 Greenwich St, New York, NY 10013, USA"
   },
   "kawa omakase": {
-    "platform": "website",
-    "url": "http://kawaomakase.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/kawa-omakase",
     "lat": 40.7239237,
     "lng": -73.9902273,
     "google_rating": 5,
@@ -45052,8 +45052,8 @@
     "address": "110 W 40th St Store 4, New York, NY 10018, USA"
   },
   "pig heaven": {
-    "platform": "website",
-    "url": "http://pigheavennyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/pig-heaven",
     "lat": 40.775432,
     "lng": -73.956852,
     "google_rating": 4.3,
@@ -45543,7 +45543,7 @@
     "address": "217 Bowery, New York, NY 10002, USA"
   },
   "mojo east": {
-    "platform": "website",
+    "platform": "resy",
     "url": "https://resy.com/cities/new-york-ny/venues/mojo-east",
     "lat": 40.7213853,
     "lng": -73.9888221,
@@ -45736,8 +45736,8 @@
     "address": "181 Duane St, New York, NY 10013, USA"
   },
   "dell'anima": {
-    "platform": "website",
-    "url": "http://dellanima.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/dellanima",
     "lat": 40.7313939,
     "lng": -74.00198050000002,
     "google_rating": 4.4,
@@ -46776,8 +46776,8 @@
     "_vibe_confidence": "low"
   },
   "willet's corner": {
-    "platform": "website",
-    "url": "http://willetscorner.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/willets-corner",
     "lat": 40.78406529999999,
     "lng": -73.9780299,
     "google_rating": 4.6,
@@ -47082,8 +47082,8 @@
     "address": "3114 Third Ave, Bronx, NY 10451, USA"
   },
   "yono sushi": {
-    "platform": "website",
-    "url": "http://www.yonosushinyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/yono-sushi",
     "lat": 40.7533936,
     "lng": -74.00105500000001,
     "google_rating": 4.9,
@@ -47162,8 +47162,8 @@
     "address": "328-330 W 46th St, New York, NY 10036, United States"
   },
   "lily pond": {
-    "platform": "website",
-    "url": "https://www.lilypondclub.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/lily-pond",
     "lat": 40.7343755,
     "lng": -74.00284789999999,
     "google_rating": 4.8,
@@ -47410,8 +47410,8 @@
     "price": 2
   },
   "barrio chino": {
-    "platform": "website",
-    "url": "http://www.barriochinony.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/barrio-chino",
     "lat": 40.7179925,
     "lng": -73.99006399999999,
     "google_rating": 4.3,
@@ -47797,8 +47797,8 @@
     "_vibe_confidence": "high"
   },
   "perrine": {
-    "platform": "website",
-    "url": "https://www.perrinenyc.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/perrine",
     "lat": 40.765348,
     "lng": -73.9720111,
     "google_rating": 4.1,
@@ -48287,8 +48287,8 @@
     "address": "44-45 21st St Upper Floor, Long Island City, NY 11101, USA"
   },
   "la lanterna di vittorio": {
-    "platform": "website",
-    "url": "http://lalanterna.nyc",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/la-lanterna-di-vittorio",
     "lat": 40.7306654,
     "lng": -74.0000496,
     "google_rating": 4.5,
@@ -48551,8 +48551,8 @@
     ]
   },
   "el coco": {
-    "platform": "website",
-    "url": "http://www.elcocony.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/el-coco",
     "lat": 40.7435248,
     "lng": -73.9994683,
     "google_rating": 4.6,
@@ -61382,8 +61382,8 @@
     "address": "315 5th Ave fl 2, New York, NY 10016, USA"
   },
   "somtum der - east village": {
-    "platform": "website",
-    "url": "http://www.somtumdernewyork.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/somtum-der-east-village",
     "lat": 40.7254451186005,
     "lng": -73.9844492017925,
     "google_rating": 4.5,
@@ -64558,7 +64558,7 @@
   },
   "yama ramen": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/yama-ramen",
+    "url": "https://resy.com/cities/new-york-ny/venues/yama-ramen",
     "lat": 40.7582921534141,
     "lng": -73.9807064319637,
     "google_rating": 4.1,
@@ -66318,8 +66318,8 @@
     "price": 3
   },
   "Tre": {
-    "platform": "website",
-    "url": "http://www.trenewyork.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/tre",
     "lat": 40.7217722,
     "lng": -73.9875833,
     "google_rating": 4.3,
@@ -68597,8 +68597,8 @@
     "price": 2
   },
   "Il Corallo Trattoria": {
-    "platform": "website",
-    "url": "http://www.ilcorallotrattoria.com/",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/il-corallo-trattoria",
     "lat": 40.7261528,
     "lng": -74.0018817,
     "google_rating": 4.5,
@@ -85234,7 +85234,7 @@
     ]
   },
   "Au Za’atar East Village - 12th Street": {
-    "url": "https://resy.com/cities/ny/au-zaatar",
+    "url": "https://resy.com/cities/new-york-ny/venues/au-zaatar",
     "platform": "resy",
     "resy_url": "https://resy.com/cities/ny/au-zaatar",
     "resy_slug": "au-zaatar",
@@ -95792,7 +95792,7 @@
   },
   "empellón": {
     "platform": "resy",
-    "url": "https://resy.com/cities/ny/empellon",
+    "url": "https://resy.com/cities/new-york-ny/venues/empellon",
     "lat": 40.7597614,
     "lng": -73.9746435,
     "google_rating": 4.4,
@@ -111846,8 +111846,8 @@
     "address": "86 Warren St, New York, NY 10007, USA"
   },
   "the polo bar": {
-    "platform": "website",
-    "url": "https://www.ralphlauren.com/global-polo-bar?y_source=1_MTMwNzQ5MjAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/the-polo-bar",
     "lat": 40.761711,
     "lng": -73.974373,
     "google_rating": 4.4,
@@ -114073,8 +114073,8 @@
     ]
   },
   "blue seafood bar and eatery": {
-    "platform": "website",
-    "url": "http://www.blueseafoodbar.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/blue-seafood-bar-and-eatery",
     "lat": 40.7670797142587,
     "lng": -73.9861831743582,
     "google_rating": 4.5,
@@ -114404,8 +114404,8 @@
     "price_estimated": true
   },
   "telly's taverna - astoria": {
-    "platform": "website",
-    "url": "http://tellystaverna.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/tellys-taverna-astoria",
     "lat": 40.775403,
     "lng": -73.914017,
     "google_rating": 4.5,
@@ -114606,8 +114606,8 @@
     "address": "28-10 Astoria Blvd, Astoria, NY 11102, United States"
   },
   "minetta tavern": {
-    "platform": "website",
-    "url": "https://www.minettatavernny.com",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/minetta-tavern",
     "lat": 40.729976,
     "lng": -74.000731,
     "google_rating": 4.5,
@@ -116293,8 +116293,8 @@
     "address": "The Shops at, 10 Columbus Cir Suite 401A, New York, NY 10019, USA"
   },
   "aquavit": {
-    "platform": "tock",
-    "url": "https://www.exploretock.com/aquavit",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/aquavit",
     "lat": 40.7605,
     "lng": -73.9722,
     "google_rating": 4.6,
