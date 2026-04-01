@@ -1,5 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
+
+function compressResponse(statusCode, body) {
+  const json = typeof body === 'string' ? body : JSON.stringify(body);
+  const compressed = zlib.gzipSync(json);
+  return {
+    statusCode,
+    headers: { 'Content-Type': 'application/json', 'Content-Encoding': 'gzip' },
+    body: compressed.toString('base64'),
+    isBase64Encoded: true,
+  };
+}
 
 const fetch = (...args) => {
   if (typeof globalThis.fetch === 'function') return globalThis.fetch(...args);
@@ -1314,10 +1326,9 @@ exports.handler = async (event) => {
       };
     };
     const slim = (arr) => (arr || []).map(slimRecord).filter(Boolean);
-    return {
-      statusCode: 200, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ elite: slim(elite), moreOptions: slim(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error, likelihood_modifiers: { time: LIKELIHOOD_TIME_MODS, party: LIKELIHOOD_PARTY_MODS } })
-    };
+    const payload = JSON.stringify({ elite: slim(elite), moreOptions: slim(more), confirmedAddress: stats.confirmedAddress||null, userLocation: stats.userLocation||null, stats, error, likelihood_modifiers: { time: LIKELIHOOD_TIME_MODS, party: LIKELIHOOD_PARTY_MODS } });
+    if (payload.length > 5000000) return compressResponse(200, payload);
+    return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: payload };
   };
 
   try {
