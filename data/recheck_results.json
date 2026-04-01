@@ -1,0 +1,945 @@
+{
+  "resy": [
+    {
+      "name": "abc cocina by Jean-Georges",
+      "platform": "resy",
+      "slug": "abc-cocina",
+      "url": "https://resy.com/cities/new-york-ny/venues/abc-cocina"
+    },
+    {
+      "name": "Benjamin Steakhouse",
+      "platform": "resy",
+      "slug": "benjamin-steakhouse",
+      "url": "https://resy.com/cities/new-york-ny/venues/benjamin-steakhouse"
+    },
+    {
+      "name": "Le Bernardin",
+      "platform": "resy",
+      "slug": "le-bernardin",
+      "url": "https://resy.com/cities/new-york-ny/venues/le-bernardin"
+    },
+    {
+      "name": "Gabriel Kreuther",
+      "platform": "resy",
+      "slug": "gabriel-kreuther",
+      "url": "https://resy.com/cities/new-york-ny/venues/gabriel-kreuther"
+    },
+    {
+      "name": "Ai Fiori",
+      "platform": "resy",
+      "slug": "ai-fiori",
+      "url": "https://resy.com/cities/new-york-ny/venues/ai-fiori"
+    },
+    {
+      "name": "Hearth",
+      "platform": "resy",
+      "slug": "hearth",
+      "url": "https://resy.com/cities/new-york-ny/venues/hearth"
+    },
+    {
+      "name": "Casa Lever",
+      "platform": "resy",
+      "slug": "casa-lever",
+      "url": "https://resy.com/cities/new-york-ny/venues/casa-lever"
+    },
+    {
+      "name": "The Lambs Club",
+      "platform": "resy",
+      "slug": "the-lambs-club",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-lambs-club"
+    },
+    {
+      "name": "Cookshop",
+      "platform": "resy",
+      "slug": "cookshop",
+      "url": "https://resy.com/cities/new-york-ny/venues/cookshop"
+    },
+    {
+      "name": "Osteria Carlina West Village",
+      "platform": "resy",
+      "slug": "osteria-carlina-west-village",
+      "url": "https://resy.com/cities/new-york-ny/venues/osteria-carlina-west-village"
+    },
+    {
+      "name": "Spicy Moon - Chelsea",
+      "platform": "resy",
+      "slug": "spicy-moon-chelsea",
+      "url": "https://resy.com/cities/new-york-ny/venues/spicy-moon-chelsea"
+    },
+    {
+      "name": "Marani",
+      "platform": "resy",
+      "slug": "marani",
+      "url": "https://resy.com/cities/new-york-ny/venues/marani"
+    },
+    {
+      "name": "Friend of a Farmer Gramercy",
+      "platform": "resy",
+      "slug": "friend-of-a-farmer-gramercy",
+      "url": "https://resy.com/cities/new-york-ny/venues/friend-of-a-farmer-gramercy"
+    },
+    {
+      "name": "The Consulate",
+      "platform": "resy",
+      "slug": "the-consulate",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-consulate"
+    },
+    {
+      "name": "Avenida",
+      "platform": "resy",
+      "slug": "avenida",
+      "url": "https://resy.com/cities/new-york-ny/venues/avenida"
+    },
+    {
+      "name": "Balaboosta",
+      "platform": "resy",
+      "slug": "balaboosta",
+      "url": "https://resy.com/cities/new-york-ny/venues/balaboosta"
+    },
+    {
+      "name": "Bella Luna Restaurant",
+      "platform": "resy",
+      "slug": "bella-luna-restaurant",
+      "url": "https://resy.com/cities/new-york-ny/venues/bella-luna-restaurant"
+    },
+    {
+      "name": "Claudette",
+      "platform": "resy",
+      "slug": "claudette",
+      "url": "https://resy.com/cities/new-york-ny/venues/claudette"
+    },
+    {
+      "name": "Due West",
+      "platform": "resy",
+      "slug": "due-west",
+      "url": "https://resy.com/cities/new-york-ny/venues/due-west"
+    },
+    {
+      "name": "Empellón",
+      "platform": "resy",
+      "slug": "empellon",
+      "url": "https://resy.com/cities/new-york-ny/venues/empellon"
+    },
+    {
+      "name": "Ladybird",
+      "platform": "resy",
+      "slug": "ladybird",
+      "url": "https://resy.com/cities/new-york-ny/venues/ladybird"
+    },
+    {
+      "name": "Piacere",
+      "platform": "resy",
+      "slug": "piacere",
+      "url": "https://resy.com/cities/new-york-ny/venues/piacere"
+    },
+    {
+      "name": "Pietro Nolita",
+      "platform": "resy",
+      "slug": "pietro-nolita",
+      "url": "https://resy.com/cities/new-york-ny/venues/pietro-nolita"
+    },
+    {
+      "name": "Sac's Place",
+      "platform": "resy",
+      "slug": "sacs-place",
+      "url": "https://resy.com/cities/new-york-ny/venues/sacs-place"
+    },
+    {
+      "name": "SEA by Jungsik",
+      "platform": "resy",
+      "slug": "sea",
+      "url": "https://resy.com/cities/new-york-ny/venues/sea"
+    },
+    {
+      "name": "Shoo Shoo Nolita",
+      "platform": "resy",
+      "slug": "shoo-shoo",
+      "url": "https://resy.com/cities/new-york-ny/venues/shoo-shoo"
+    },
+    {
+      "name": "Sociale",
+      "platform": "resy",
+      "slug": "sociale",
+      "url": "https://resy.com/cities/new-york-ny/venues/sociale"
+    },
+    {
+      "name": "Spaghetti Incident",
+      "platform": "resy",
+      "slug": "spaghetti-incident",
+      "url": "https://resy.com/cities/new-york-ny/venues/spaghetti-incident"
+    },
+    {
+      "name": "Wall Street Grill",
+      "platform": "resy",
+      "slug": "wall-street-grill",
+      "url": "https://resy.com/cities/new-york-ny/venues/wall-street-grill"
+    },
+    {
+      "name": "Farra",
+      "platform": "resy",
+      "slug": "farra",
+      "url": "https://resy.com/cities/new-york-ny/venues/farra"
+    },
+    {
+      "name": "Soda Club",
+      "platform": "resy",
+      "slug": "soda-club",
+      "url": "https://resy.com/cities/new-york-ny/venues/soda-club"
+    },
+    {
+      "name": "Osteria Del Porto",
+      "platform": "resy",
+      "slug": "osteria-del-porto",
+      "url": "https://resy.com/cities/new-york-ny/venues/osteria-del-porto"
+    },
+    {
+      "name": "Masquerade",
+      "platform": "resy",
+      "slug": "masquerade",
+      "url": "https://resy.com/cities/new-york-ny/venues/masquerade"
+    },
+    {
+      "name": "Aromi",
+      "platform": "resy",
+      "slug": "aromi",
+      "url": "https://resy.com/cities/new-york-ny/venues/aromi"
+    },
+    {
+      "name": "Vinyl Steakhouse",
+      "platform": "resy",
+      "slug": "vinyl-steakhouse",
+      "url": "https://resy.com/cities/new-york-ny/venues/vinyl-steakhouse"
+    },
+    {
+      "name": "Mr Capri",
+      "platform": "resy",
+      "slug": "mr-capri",
+      "url": "https://resy.com/cities/new-york-ny/venues/mr-capri"
+    },
+    {
+      "name": "Ye's Apothecary 夜莺",
+      "platform": "resy",
+      "slug": "yes-apothecary",
+      "url": "https://resy.com/cities/new-york-ny/venues/yes-apothecary"
+    },
+    {
+      "name": "Wan Waan",
+      "platform": "resy",
+      "slug": "wan-waan",
+      "url": "https://resy.com/cities/new-york-ny/venues/wan-waan"
+    },
+    {
+      "name": "Maison Sun",
+      "platform": "resy",
+      "slug": "maison-sun",
+      "url": "https://resy.com/cities/new-york-ny/venues/maison-sun"
+    },
+    {
+      "name": "Steak Frites",
+      "platform": "resy",
+      "slug": "steak-frites",
+      "url": "https://resy.com/cities/new-york-ny/venues/steak-frites"
+    },
+    {
+      "name": "Kebab Aur Sharab",
+      "platform": "resy",
+      "slug": "kebab-aur-sharab",
+      "url": "https://resy.com/cities/new-york-ny/venues/kebab-aur-sharab"
+    },
+    {
+      "name": "Radio Kwara",
+      "platform": "resy",
+      "slug": "radio-kwara",
+      "url": "https://resy.com/cities/new-york-ny/venues/radio-kwara"
+    },
+    {
+      "name": "Ella Funt",
+      "platform": "resy",
+      "slug": "ella-funt",
+      "url": "https://resy.com/cities/new-york-ny/venues/ella-funt"
+    },
+    {
+      "name": "Bati Ethiopian Kitchen",
+      "platform": "resy",
+      "slug": "bati-ethiopian-kitchen",
+      "url": "https://resy.com/cities/new-york-ny/venues/bati-ethiopian-kitchen"
+    },
+    {
+      "name": "Sushi Yolo",
+      "platform": "resy",
+      "slug": "sushi-yolo",
+      "url": "https://resy.com/cities/new-york-ny/venues/sushi-yolo"
+    },
+    {
+      "name": "Vallarta Tropical",
+      "platform": "resy",
+      "slug": "vallarta-tropical",
+      "url": "https://resy.com/cities/new-york-ny/venues/vallarta-tropical"
+    },
+    {
+      "name": "Pastai",
+      "platform": "resy",
+      "slug": "pastai",
+      "url": "https://resy.com/cities/new-york-ny/venues/pastai"
+    },
+    {
+      "name": "Kawa Omakase",
+      "platform": "resy",
+      "slug": "kawa-omakase",
+      "url": "https://resy.com/cities/new-york-ny/venues/kawa-omakase"
+    },
+    {
+      "name": "Pig Heaven",
+      "platform": "resy",
+      "slug": "pig-heaven",
+      "url": "https://resy.com/cities/new-york-ny/venues/pig-heaven"
+    },
+    {
+      "name": "Mojo East",
+      "platform": "resy",
+      "slug": "mojo-east",
+      "url": "https://resy.com/cities/new-york-ny/venues/mojo-east"
+    },
+    {
+      "name": "dell'anima",
+      "platform": "resy",
+      "slug": "dellanima",
+      "url": "https://resy.com/cities/new-york-ny/venues/dellanima"
+    },
+    {
+      "name": "Willet's Corner",
+      "platform": "resy",
+      "slug": "willets-corner",
+      "url": "https://resy.com/cities/new-york-ny/venues/willets-corner"
+    },
+    {
+      "name": "YONO Sushi",
+      "platform": "resy",
+      "slug": "yono-sushi",
+      "url": "https://resy.com/cities/new-york-ny/venues/yono-sushi"
+    },
+    {
+      "name": "Lily Pond",
+      "platform": "resy",
+      "slug": "lily-pond",
+      "url": "https://resy.com/cities/new-york-ny/venues/lily-pond"
+    },
+    {
+      "name": "Barrio Chino",
+      "platform": "resy",
+      "slug": "barrio-chino",
+      "url": "https://resy.com/cities/new-york-ny/venues/barrio-chino"
+    },
+    {
+      "name": "Perrine",
+      "platform": "resy",
+      "slug": "perrine",
+      "url": "https://resy.com/cities/new-york-ny/venues/perrine"
+    },
+    {
+      "name": "La Lanterna di Vittorio",
+      "platform": "resy",
+      "slug": "la-lanterna-di-vittorio",
+      "url": "https://resy.com/cities/new-york-ny/venues/la-lanterna-di-vittorio"
+    },
+    {
+      "name": "El Coco",
+      "platform": "resy",
+      "slug": "el-coco",
+      "url": "https://resy.com/cities/new-york-ny/venues/el-coco"
+    },
+    {
+      "name": "1803",
+      "platform": "resy",
+      "slug": "1803",
+      "url": "https://resy.com/cities/new-york-ny/venues/1803"
+    },
+    {
+      "name": "District",
+      "platform": "resy",
+      "slug": "district",
+      "url": "https://resy.com/cities/new-york-ny/venues/district"
+    },
+    {
+      "name": "Somtum Der - East Village",
+      "platform": "resy",
+      "slug": "somtum-der-east-village",
+      "url": "https://resy.com/cities/new-york-ny/venues/somtum-der-east-village"
+    },
+    {
+      "name": "Wallsé",
+      "platform": "resy",
+      "slug": "wallse",
+      "url": "https://resy.com/cities/new-york-ny/venues/wallse"
+    },
+    {
+      "name": "Tre",
+      "platform": "resy",
+      "slug": "tre",
+      "url": "https://resy.com/cities/new-york-ny/venues/tre"
+    },
+    {
+      "name": "Il Corallo Trattoria",
+      "platform": "resy",
+      "slug": "il-corallo-trattoria",
+      "url": "https://resy.com/cities/new-york-ny/venues/il-corallo-trattoria"
+    },
+    {
+      "name": "Au Za’atar East Village - 12th Street",
+      "platform": "resy",
+      "slug": "au-zaatar",
+      "url": "https://resy.com/cities/new-york-ny/venues/au-zaatar"
+    },
+    {
+      "name": "Yama Ramen",
+      "platform": "resy",
+      "slug": "yama-ramen",
+      "url": "https://resy.com/cities/new-york-ny/venues/yama-ramen"
+    },
+    {
+      "name": "Oda House",
+      "platform": "resy",
+      "slug": "oda-house",
+      "url": "https://resy.com/cities/new-york-ny/venues/oda-house"
+    },
+    {
+      "name": "The Polo Bar",
+      "platform": "resy",
+      "slug": "the-polo-bar",
+      "url": "https://resy.com/cities/new-york-ny/venues/the-polo-bar"
+    },
+    {
+      "name": "Blue Seafood Bar and Eatery",
+      "platform": "resy",
+      "slug": "blue-seafood-bar-and-eatery",
+      "url": "https://resy.com/cities/new-york-ny/venues/blue-seafood-bar-and-eatery"
+    },
+    {
+      "name": "Telly's Taverna - Astoria",
+      "platform": "resy",
+      "slug": "tellys-taverna-astoria",
+      "url": "https://resy.com/cities/new-york-ny/venues/tellys-taverna-astoria"
+    },
+    {
+      "name": "Minetta Tavern",
+      "platform": "resy",
+      "slug": "minetta-tavern",
+      "url": "https://resy.com/cities/new-york-ny/venues/minetta-tavern"
+    }
+  ],
+  "opentable": [
+    {
+      "name": "Tarallucci e Vino - Upper West Side",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/tarallucci-e-vino-upper-west-side-new-york1",
+      "slots": 5
+    },
+    {
+      "name": "Le Veau d'Or",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/le-veau-dor-new-york",
+      "slots": 0
+    },
+    {
+      "name": "odo",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/odo-new-york",
+      "slots": 0
+    },
+    {
+      "name": "Lady Mendls",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/lady-mendls",
+      "slots": 0
+    },
+    {
+      "name": "Westville UES",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/westville-ues-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Joe Allen",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/joe-allen-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Jajaja Mexicana - Lower East Side",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/jajaja-mexicana-lower-east-side-new-york-city",
+      "slots": 5
+    },
+    {
+      "name": "Tony's Di Napoli - Midtown",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/tonys-di-napoli-midtown-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Don Angie",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/don-angie-new-york",
+      "slots": 0
+    },
+    {
+      "name": "Smith & Wollensky - New York",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/smith-and-wollensky-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Quality Meats",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/quality-meats-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Aretsky's Patroon",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/aretskys-patroon-new-york",
+      "slots": 0
+    },
+    {
+      "name": "Nami Nori West Village",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/nami-nori-west-village-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Anton's",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/antons-new-york",
+      "slots": 5
+    },
+    {
+      "name": "Ruth's Chris Steak House - Jersey City",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/ruths-chris-steak-house-jersey-city",
+      "slots": 5
+    },
+    {
+      "name": "Wolfgang's Steakhouse - Tribeca",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/wolfgangs-steakhouse-tribeca",
+      "slots": 5
+    },
+    {
+      "name": "Old Homestead Steakhouse- New York City",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/old-homestead-steakhouse-new-york-city-new-york-2",
+      "slots": 5
+    },
+    {
+      "name": "Il Mulino Prime - SoHo",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/il-mulino-prime-soho",
+      "slots": 5
+    },
+    {
+      "name": "Aquavit",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/aquavit",
+      "slots": 5
+    },
+    {
+      "name": "U Omakase",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/u-omakase-brooklyn",
+      "slots": 0
+    },
+    {
+      "name": "Splash Thai Cuisine",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/splash-thai-cuisine-saint-john",
+      "slots": 5
+    },
+    {
+      "name": "Xiang HotPot - Brooklyn",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/xiang-hotpot-brooklyn",
+      "slots": 5
+    },
+    {
+      "name": "Xiang HotPot - Brooklyn",
+      "platform": "opentable",
+      "url": "https://www.opentable.com/r/xiang-hotpot-brooklyn",
+      "slots": 5
+    }
+  ],
+  "neither": [
+    "golden steer at one fifth",
+    "the pool",
+    "scarpetta",
+    "hakkasan",
+    "blue hill at stone barns",
+    "atera",
+    "momofuku ko",
+    "Gennaro Restaurant",
+    "andrew steak",
+    "fort defiance",
+    "bahari estiatorio",
+    "john's of 12th street",
+    "dim sum go go",
+    "enoteca maria",
+    "rao's",
+    "malatesta trattoria",
+    "blt steak",
+    "red cat",
+    "nerai",
+    "fresh salt",
+    "Antoya BBQ",
+    "egg shop",
+    "beija flor",
+    "chano's cantina",
+    "un plaza grill",
+    "pascalou",
+    "good guy's",
+    "Avena",
+    "acre",
+    "giando on the water",
+    "meme",
+    "ganhoo bbq",
+    "myrtle thai restaurant",
+    "bareburger",
+    "smeat and hueso",
+    "bangkok 2 thai",
+    "casa tuya",
+    "cactus shop",
+    "lucky cat",
+    "bono trattoria",
+    "palo santo",
+    "chick chick",
+    "p.j. clarke's third avenue",
+    "momosan ramen and sake",
+    "battello",
+    "southern spice",
+    "wokuni broadway",
+    "china glatt",
+    "American Cut Steakhouse Tribeca",
+    "saffron indian cuisine",
+    "san patricios jersey city",
+    "terravita edgewater",
+    "milk n' honey",
+    "cheryl's global soul",
+    "silvana",
+    "kafana",
+    "redfarm",
+    "am thai bistro",
+    "villa erasamo",
+    "soleluna",
+    "osaka japanese restaurant",
+    "aita trattoria",
+    "angelina's kitchen",
+    "angelina's ristorante",
+    "anthony's place",
+    "antique garage tribeca",
+    "bea",
+    "bell book & candle",
+    "bistro casa azul",
+    "black flamingo",
+    "blue door souvlakia",
+    "blujeen",
+    "bubba gump shrimp co.",
+    "cantina sundown",
+    "casa del mar restaurant",
+    "casa mexicana",
+    "chawlas 2",
+    "chens garden",
+    "Claw Daddy’s",
+    "clemente's maryland crab house",
+    "concrete",
+    "corner social",
+    "cowgirl seahorse",
+    "curry heights",
+    "danny's athens restaurant",
+    "desi galli",
+    "dolce vita",
+    "donna margheritia",
+    "east sushi bistro",
+    "el atico restaurant",
+    "el castillo de manhattan restaurant",
+    "el gallo negro",
+    "el malecon restaurant",
+    "el mero mero",
+    "el valle lenox",
+    "emma's torch",
+    "empanada mama hell's kitchen",
+    "ethos gallery",
+    "the village green",
+    "famous sichuan",
+    "frank's trattoria",
+    "fusion east",
+    "gina la fornarina",
+    "good friends restaurant",
+    "grand sahara mediterranean grill",
+    "grill 21",
+    "GunBae Tribeca",
+    "haidilao hot pot",
+    "haile bistro",
+    "hair of the dog",
+    "hibachi express",
+    "himalayan curry house",
+    "homemade taqueria",
+    "hong kong express",
+    "hong kong gourmet",
+    "j's on the bay",
+    "jing fong restaurant",
+    "joe's lobster house",
+    "kati thai cuisine",
+    "kikoo sushi",
+    "ko sushi",
+    "la flaca",
+    "la morada restaurant",
+    "las margaritas",
+    "lemongrass grill",
+    "levante",
+    "Little Poland Restaurant",
+    "ludlow house",
+    "mad dog & beans mexican cantina",
+    "made in mexico",
+    "mandarin house",
+    "masala grill",
+    "matiz latin cuisine",
+    "matsu sushi",
+    "max",
+    "mesa azteca",
+    "miraj healthy grill",
+    "mito asian fusion",
+    "mumbai masala",
+    "nanking",
+    "norma",
+    "oki poke & ramen",
+    "oligarch",
+    "one star",
+    "bōm",
+    "ooki sushi",
+    "orale tacos",
+    "panda garden restaurant",
+    "patacon pisao",
+    "pho grand bayside",
+    "pita grill",
+    "porto bello",
+    "progreso honduras restaurant",
+    "sahib",
+    "samurai sushi",
+    "sao mai",
+    "scavello's on the island",
+    "set l.e.s.",
+    "shanghai mong",
+    "skinny's cantina",
+    "smoke bbq pit",
+    "splendid china",
+    "summer salt",
+    "szechuan garden",
+    "szechuan mountain house",
+    "taci's beyti",
+    "talk of the town",
+    "tam sang thai kitchen",
+    "tana thai restaurant",
+    "tenzan",
+    "the black whale",
+    "the castello plan",
+    "the hideaway seaport",
+    "the hop shoppe",
+    "the islands",
+    "the keg room",
+    "the kunjip",
+    "the trestle",
+    "the waylon",
+    "the wren",
+    "thompson brooke",
+    "tikka indian grill",
+    "Tim Ho Wan East Village",
+    "tj asian bistro",
+    "tu casa",
+    "umami sushi",
+    "wok 88",
+    "wok wok restaurant",
+    "wu liang ye",
+    "xochitl taqueria",
+    "yummy thai",
+    "zio toto",
+    "zona de cuba",
+    "ananda",
+    "iv purpose",
+    "one more charm",
+    "iron sushi",
+    "le pain quotidien",
+    "the rusty face",
+    "kpot korean bbq & hot pot",
+    "grand canyon bistro",
+    "tiny's cantina",
+    "destefano's steakhouse",
+    "momo sushi",
+    "el basurero",
+    "pegasus brooklyn",
+    "geisha asian fusion",
+    "pepe rosso to go",
+    "casa bond",
+    "chateau yaffa",
+    "la villa restaurant",
+    "lilli and loo",
+    "hello saigon",
+    "park slope ale house",
+    "sophie's cuban cuisine",
+    "savannah spiced",
+    "sakura 6",
+    "sogno toscana",
+    "caviar by dnhg",
+    "china river",
+    "rafaelis palace",
+    "chez omar",
+    "romeo's",
+    "xie bao",
+    "el lugar cantina",
+    "la diagonal",
+    "bravest",
+    "commodore ii",
+    "blacksea fish & grill",
+    "grata thai cuisine",
+    "sushi yashin",
+    "fan szechuan",
+    "Din Tai Fung",
+    "makimaki sushi",
+    "mamasushi williamsburg",
+    "tan",
+    "aloha krab",
+    "kid",
+    "maurizio's on the water",
+    "dar lbahja",
+    "dallas bbq restaurant",
+    "go sushi",
+    "sushi journey",
+    "burger spot",
+    "amituofo vegan cuisine",
+    "rei",
+    "the eighty six",
+    "ming men",
+    "flava of the bronx",
+    "yakiniku great",
+    "da noi restaurant",
+    "celeste",
+    "gramercy ale house",
+    "bin 71",
+    "p.j. clarke's on the hudson",
+    "la casa del mofongo",
+    "ki sushi",
+    "hummus place",
+    "il bambino",
+    "la cabana salvadorena",
+    "hibino",
+    "harry's italian",
+    "gemma",
+    "schnitzel haus",
+    "bacaro",
+    "manducatis rustica",
+    "wilfie & nell",
+    "sushi & co",
+    "original pancake house",
+    "thai tree nyc",
+    "dim sum palace",
+    "awang kitchen",
+    "elias corner",
+    "popina",
+    "hillstone",
+    "el bochito",
+    "Lupe's East LA Kitchen",
+    "o",
+    "h",
+    "Veeraswamy",
+    "crunchy's",
+    "bombay chowk",
+    "Athena Mediterranean Cuisine",
+    "Thailicious",
+    "Itaewon Pocha",
+    "Isle of Capri",
+    "Bowery Road",
+    "La Gioconda",
+    "Matsunori",
+    "JG Melon",
+    "Tavola",
+    "maman",
+    "Scalinatella Restaurant",
+    "Istanbul Kebab House",
+    "Papatzul",
+    "Elephant & Castle",
+    "Blossom on Columbus",
+    "Babu Ji",
+    "Firenze Ristorante",
+    "I Trulli",
+    "Comodo",
+    "Agave",
+    "Sushi Seki Times Square",
+    "Aburiya Kinnosuke",
+    "Pinocchio Ristorante",
+    "Poco - NYC",
+    "Sette Mezzo",
+    "Las Ramblas",
+    "El Camion",
+    "Empanada Mama Les",
+    "Huertas",
+    "Caravan of Dreams",
+    "Kuruma Zushi",
+    "The Tuck Room",
+    "Sushi Dojo",
+    "Kailash Parbat",
+    "Kuma Inn",
+    "Proper West",
+    "Le Relais de Venise L'Entrecote Midtown East",
+    "Aji Sushi",
+    "Cha Cha Matcha",
+    "Dark Bullet Sake & Oyster Bar",
+    "Cipriani Dolci",
+    "rita cantina",
+    "AVO",
+    "ERIN'S ISLE",
+    "SALT LIME AND TEQUILA",
+    "Sally's Southern & BBQ",
+    "Sugar Factory - Queens",
+    "CRU",
+    "DaMarino NYC",
+    "UES.",
+    "bar",
+    "bua",
+    "frø",
+    "hom",
+    "zen",
+    "Sip & Co.",
+    "Inday - Midtown",
+    "Five Acres",
+    "Swagat",
+    "House of Lasagna",
+    "Angelina Paris",
+    "Piggyback NYC",
+    "Delhi Masala",
+    "The Corner Store",
+    "ETC Steakhouse",
+    "Alvin and Friends",
+    "Sahara Mediterranean Grill",
+    "Llewellyn Parq Bar and Grill",
+    "Lobster House Joe's",
+    "casa mono / bar jamon",
+    "zz's clam bar",
+    "charlies bar & kitchen",
+    "salud bar & grill",
+    "felice pasta bar",
+    "foundry kitchen & bar",
+    "rowland's bar and grill",
+    "Bocca Cucina and Bar",
+    "dear rufino tanqueria & bar",
+    "Luke's Bar and Grill",
+    "Spoon Table and Bar",
+    "sant ambroeus brookfield",
+    "nar",
+    "the loyal",
+    "andrew bellucci's pizzeria",
+    "el valle jerome",
+    "jade garden",
+    "noches de palenque",
+    "sol de quito",
+    "the mac shack",
+    "broadway comedy club",
+    "anbā"
+  ]
+}

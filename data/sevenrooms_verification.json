@@ -1,0 +1,519 @@
+{
+  "Albertos Cocina": {
+    "name": "Albertos Cocina",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.abccocina.nyc/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "tock": true
+      },
+      "isDead": false,
+      "bodyLength": 1896
+    },
+    "resyCheck": {
+      "slug": "albertos-cocina",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "American Cut Steakhouse Tribeca": {
+    "name": "American Cut Steakhouse Tribeca",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.americancutsteakhouse.com",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 4419
+    },
+    "resyCheck": {
+      "slug": "american-cut-steakhouse-tribeca",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "C Italian Restaurant": {
+    "name": "C Italian Restaurant",
+    "currentPlatform": "website",
+    "websiteUrl": "http://cisiamo.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true
+      },
+      "isDead": false,
+      "bodyLength": 2163
+    },
+    "resyCheck": {
+      "slug": "c-italian-restaurant",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Dhania Fine Indian": {
+    "name": "Dhania Fine Indian",
+    "currentPlatform": "website",
+    "websiteUrl": "http://dhamaka.nyc/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "opentable": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 3287
+    },
+    "resyCheck": {
+      "slug": "dhania-fine-indian",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Fine & Rare": {
+    "name": "Fine & Rare",
+    "currentPlatform": "website",
+    "websiteUrl": "https://theflatironroom.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "opentable": true
+      },
+      "isDead": false,
+      "bodyLength": 2843
+    },
+    "resyCheck": {
+      "slug": "fine-and-rare",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Friedman's West End": {
+    "name": "Friedman's West End",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.friedmansrestaurant.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 1633
+    },
+    "resyCheck": {
+      "slug": "friedmans-west-end",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Pilot": {
+    "name": "Pilot",
+    "currentPlatform": "website",
+    "websiteUrl": "https://crewny.com/pilot",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true
+      },
+      "isDead": false,
+      "bodyLength": 5457
+    },
+    "resyCheck": {
+      "slug": "pilot",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Ponte Modern American": {
+    "name": "Ponte Modern American",
+    "currentPlatform": "website",
+    "websiteUrl": "https://littlemavenrestaurant.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 571
+    },
+    "resyCheck": {
+      "slug": "ponte-modern-american",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "Portale Restaurant": {
+    "name": "Portale Restaurant",
+    "currentPlatform": "website",
+    "websiteUrl": "http://www.portalerestaurant.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 440
+    },
+    "resyCheck": {
+      "slug": "portale-restaurant",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "The View": {
+    "name": "The View",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.theviewnewyorkcity.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 990
+    },
+    "resyCheck": {
+      "slug": "the-view",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "VYBES CUISINE": {
+    "name": "VYBES CUISINE",
+    "currentPlatform": "website",
+    "websiteUrl": "http://www.kokomonyc.com",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 13927
+    },
+    "resyCheck": {
+      "slug": "vybes-cuisine",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "abc cocina": {
+    "name": "abc cocina",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.abccocina.nyc/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "tock": true
+      },
+      "isDead": false,
+      "bodyLength": 1585
+    },
+    "resyCheck": {
+      "slug": "abc-cocina",
+      "found": true,
+      "is404": false,
+      "hasVenue": true,
+      "bodyLength": 4183,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nabc cocina by Jean-Georges\n4.5\n(8.4K) reviews\nModern Latin\n$$\nFlatiron\n\nShare\n"
+    }
+  },
+  "city island yacht club": {
+    "name": "city island yacht club",
+    "currentPlatform": "website",
+    "websiteUrl": "https://crew.fun/the-yacht-club",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 5645
+    },
+    "resyCheck": {
+      "slug": "city-island-yacht-club",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "close up": {
+    "name": "close up",
+    "currentPlatform": "website",
+    "websiteUrl": "http://www.kakes.nyc/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true
+      },
+      "isDead": false,
+      "bodyLength": 3197
+    },
+    "resyCheck": {
+      "slug": "close-up",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "corner store": {
+    "name": "corner store",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.thecornerstoresoho.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 8135
+    },
+    "resyCheck": {
+      "slug": "corner-store",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "drift in": {
+    "name": "drift in",
+    "currentPlatform": "website",
+    "websiteUrl": "https://crewny.com/drift-in",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true,
+        "tock": true
+      },
+      "isDead": false,
+      "bodyLength": 3866
+    },
+    "resyCheck": {
+      "slug": "drift-in",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "el lugar cantina": {
+    "name": "el lugar cantina",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.ellugarcantina.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true
+      },
+      "isDead": false,
+      "bodyLength": 2016
+    },
+    "resyCheck": {
+      "slug": "el-lugar-cantina",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "momofuku ko": {
+    "name": "momofuku ko",
+    "currentPlatform": "website",
+    "websiteUrl": "https://ko.momofuku.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "opentable": true
+      },
+      "isDead": false,
+      "bodyLength": 2155
+    },
+    "resyCheck": {
+      "slug": "momofuku-ko",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "nerai": {
+    "name": "nerai",
+    "currentPlatform": "website",
+    "websiteUrl": "http://nerainyc.com",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 1916
+    },
+    "resyCheck": {
+      "slug": "nerai",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "or'esh": {
+    "name": "or'esh",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.oresh.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 903
+    },
+    "resyCheck": {
+      "slug": "oresh",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "redfarm": {
+    "name": "redfarm",
+    "currentPlatform": "website",
+    "websiteUrl": "http://www.redfarmnyc.com/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 1219
+    },
+    "resyCheck": {
+      "slug": "redfarm",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "scarpetta": {
+    "name": "scarpetta",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.scarpettarestaurants.com/location/scarpetta-new-york-city/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "opentable": true
+      },
+      "isDead": false,
+      "bodyLength": 1948
+    },
+    "resyCheck": {
+      "slug": "scarpetta",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "the eighty six": {
+    "name": "the eighty six",
+    "currentPlatform": "website",
+    "websiteUrl": "http://the86.nyc/",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true
+      },
+      "isDead": false,
+      "bodyLength": 5058
+    },
+    "resyCheck": {
+      "slug": "the-eighty-six",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  },
+  "the fulton on pier 17": {
+    "name": "the fulton on pier 17",
+    "currentPlatform": "website",
+    "websiteUrl": "https://www.thefulton.nyc/?utm_source=gbp&utm_medium=web",
+    "websiteDetection": {
+      "platforms": {
+        "sevenrooms": true,
+        "resy": true,
+        "toast": true
+      },
+      "isDead": false,
+      "bodyLength": 2493
+    },
+    "resyCheck": {
+      "slug": "the-fulton-on-pier-17",
+      "found": false,
+      "is404": false,
+      "hasVenue": false,
+      "bodyLength": 831,
+      "sample": "Skip to Main\nU.S. Card Offers from Amex\nGlobal Dining Access\nThe Resy Credit\nFor Restaurants\nNew York\nLog in\nMain Content\nSorry, but we can’t find that page. Please check that the address is correct o"
+    }
+  }
+}

@@ -1,0 +1,1774 @@
+{
+  "wild cherry": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/wild-cherry-new-york",
+    "oldUrl": "https://resy.com/cities/ny/wild-cherry",
+    "website": "https://www.wildcherrynyc.com/"
+  },
+  "saga": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/saga-ny",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/saga-ny",
+    "website": "https://www.saga-nyc.com/"
+  },
+  "atla": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/atla-noho",
+    "website": "http://eatatla.com/"
+  },
+  "dhamaka": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://www.dhamaka.nyc",
+    "action": "switch_to_website"
+  },
+  "semma": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "http://semma.nyc/",
+    "action": "switch_to_website"
+  },
+  "adda": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://www.addanyc.com",
+    "action": "switch_to_website"
+  },
+  "bongkoch": {
+    "status": "website_only",
+    "website": "https://bongnyc.com/",
+    "action": "switch_to_website"
+  },
+  "kochi": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/kochi-reservations-new-york",
+    "oldUrl": "https://resy.com/cities/ny/kochi",
+    "website": "http://kochinyc.com/"
+  },
+  "commerce": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/cafe-commerce",
+    "oldUrl": "https://resy.com/cities/ny/commerce",
+    "website": "http://cafecommercenyc.com/"
+  },
+  "laser wolf": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/laser-wolf-brooklyn",
+    "oldUrl": "https://resy.com/cities/ny/laser-wolf",
+    "website": "https://www.laserwolfbrooklyn.com/"
+  },
+  "ops": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/ops-bk",
+    "website": "http://www.opsbk.com/"
+  },
+  "ha's đặc biệt": {
+    "status": "website_only",
+    "website": "https://www.instagram.com/has_dac_biet",
+    "action": "switch_to_website"
+  },
+  "cadence": {
+    "status": "closed",
+    "googleName": "Cadence",
+    "action": "remove"
+  },
+  "cote": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/cote-nyc",
+    "website": "https://www.cotekoreansteakhouse.com/"
+  },
+  "sunn's": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/sunns-reservations-new-york",
+    "oldUrl": "https://www.opentable.com/r/sunns-reservations-new-york?restref=1428529",
+    "website": "https://sunnsnyc.com/"
+  },
+  "veselka": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/veselka-east-village",
+    "website": "https://www.veselka.com/"
+  },
+  "l'artusi": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://lartusi.com/",
+    "action": "switch_to_website"
+  },
+  "beauty & essex": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://beautyandessex.com/new-york/",
+    "action": "switch_to_website"
+  },
+  "blue hill": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/family-meal-at-blue-hill",
+    "website": "https://www.bluehillfarm.com/"
+  },
+  "gotham": {
+    "status": "closed",
+    "googleName": "Gotham Restaurant",
+    "action": "remove"
+  },
+  "locanda verde": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://locandaverdenyc.com/",
+    "action": "switch_to_website"
+  },
+  "jack's wife freda": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/jacks-wife-freda-soho",
+    "website": "https://jackswifefreda.com/"
+  },
+  "olmsted": {
+    "status": "closed",
+    "googleName": "Olmsted",
+    "action": "remove"
+  },
+  "shuko": {
+    "status": "closed",
+    "googleName": "Shuko",
+    "action": "remove"
+  },
+  "banh anh em": {
+    "status": "website_only",
+    "website": "http://banhanhem.com/",
+    "action": "switch_to_website"
+  },
+  "lavo": {
+    "status": "closed",
+    "googleName": "LAVO Italian Restaurant",
+    "action": "remove"
+  },
+  "nerina": {
+    "status": "website",
+    "platforms": [
+      "resy",
+      "opentable",
+      "sevenrooms"
+    ],
+    "website": "http://www.nerinanyc.com",
+    "action": "switch_to_website"
+  },
+  "kopitiam": {
+    "status": "website_only",
+    "website": "https://www.kopitiamnyc.com/",
+    "action": "switch_to_website"
+  },
+  "contra": {
+    "status": "closed",
+    "googleName": "Contra",
+    "action": "remove"
+  },
+  "wildair": {
+    "status": "website_only",
+    "website": "http://www.wildair.nyc/",
+    "action": "switch_to_website"
+  },
+  "marlow & sons": {
+    "status": "closed",
+    "googleName": "Marlow & Sons",
+    "action": "remove"
+  },
+  "cafe mogador": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/cafe-mogador-williamsburg",
+    "website": "http://cafemogador.com/"
+  },
+  "lucien": {
+    "status": "website_only",
+    "website": "http://www.luciennyc.com/",
+    "action": "switch_to_website"
+  },
+  "sugarfish": {
+    "status": "website_only",
+    "website": "https://sugarfishsushi.com/",
+    "action": "switch_to_website"
+  },
+  "jungsik": {
+    "status": "switched",
+    "newPlatform": "tock",
+    "newUrl": "https://www.exploretock.com/jungsik",
+    "oldUrl": "https://resy.com/cities/ny/jungsik",
+    "website": "http://www.jungsik.com/"
+  },
+  "llama inn": {
+    "status": "closed",
+    "googleName": "Llama Inn",
+    "action": "remove"
+  },
+  "llama san": {
+    "status": "website_only",
+    "website": "http://www.llamasannyc.com/",
+    "action": "switch_to_website"
+  },
+  "frevo": {
+    "status": "switched",
+    "newPlatform": "tock",
+    "newUrl": "https://www.exploretock.com/frevo",
+    "oldUrl": "https://resy.com/cities/ny/frevo",
+    "website": "http://frevonyc.com/"
+  },
+  "per se": {
+    "status": "switched",
+    "newPlatform": "tock",
+    "newUrl": "https://www.exploretock.com/perse",
+    "oldUrl": "https://resy.com/cities/ny/per-se",
+    "website": "https://www.thomaskeller.com/perseny"
+  },
+  "masa": {
+    "status": "switched",
+    "newPlatform": "tock",
+    "newUrl": "https://www.exploretock.com/masa",
+    "oldUrl": "https://resy.com/cities/ny/masa",
+    "website": "http://www.masanyc.com"
+  },
+  "sushi ginza onodera": {
+    "status": "closed",
+    "googleName": "Sushi Ginza Onodera",
+    "action": "remove"
+  },
+  "pig and khao": {
+    "status": "website_only",
+    "website": "https://www.pigandkhao.com/uws",
+    "action": "switch_to_website"
+  },
+  "jazba": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.jazbanyc.com/",
+    "action": "switch_to_website"
+  },
+  "insa": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://www.insabrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "stars": {
+    "status": "website_only",
+    "website": "http://www.morningstaronsecond.com/",
+    "action": "switch_to_website"
+  },
+  "sushi oku": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/sushi-oku",
+    "website": "https://www.sushioku.com/"
+  },
+  "il leone": {
+    "status": "website_only",
+    "website": "https://www.instagram.com/illeonepeaks/",
+    "action": "switch_to_website"
+  },
+  "kelang": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/kelang",
+    "oldUrl": "https://resy.com/cities/ny/kelang-new-york",
+    "website": "http://www.kelangnyc.com/"
+  },
+  "new absolute bagels": {
+    "status": "website_only",
+    "website": "https://broadnosh.com/",
+    "action": "switch_to_website"
+  },
+  "vato": {
+    "status": "website_only",
+    "website": "https://www.instagram.com/vato.nyc",
+    "action": "switch_to_website"
+  },
+  "raouls": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/raoulsrestaurant",
+    "website": "http://raouls.com/"
+  },
+  "markette": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://marketterestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "nepali bhanchha ghar": {
+    "status": "website_only",
+    "website": "https://www.bhanchhagharny.com/",
+    "action": "switch_to_website"
+  },
+  "peasant": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.peasantnyc.com/",
+    "action": "switch_to_website"
+  },
+  "schmuck": {
+    "status": "website_only",
+    "website": "https://www.schmucknyc.com/",
+    "action": "switch_to_website"
+  },
+  "sami and susu": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/sami-and-susu",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/sami-and-susu",
+    "website": "http://samiandsusu.com"
+  },
+  "sal tang's": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://saltangs.com/",
+    "action": "switch_to_website"
+  },
+  "yemenat": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/yemenat",
+    "oldUrl": "https://resy.com/cities/ny/yemenat-new-york",
+    "website": "https://www.yemenat.rest/"
+  },
+  "laliko": {
+    "status": "website_only",
+    "website": "https://laliko.com/",
+    "action": "switch_to_website"
+  },
+  "le chene": {
+    "status": "website_only",
+    "website": "http://www.lechenenyc.com/",
+    "action": "switch_to_website"
+  },
+  "coral": {
+    "status": "website_only",
+    "website": "http://www.nyckorali.com/",
+    "action": "switch_to_website"
+  },
+  "mrs. georgia": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/mrs-georgia-queens-county",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/mrs-georgia",
+    "website": "https://mrsgeorgia.nyc/"
+  },
+  "tumi": {
+    "status": "website_only",
+    "website": "https://tuminycrestaurant.com/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "brass": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/the-tusk-bar-new-york",
+    "oldUrl": "https://resy.com/cities/ny/brass-new-york",
+    "website": "http://www.brassny.com/"
+  },
+  "tusk": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/the-tusk-bar-new-york",
+    "website": "https://www.thetuskbar.com/"
+  },
+  "gardenia": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.gardeniaterrace.com/",
+    "action": "switch_to_website"
+  },
+  "tenny's brunch": {
+    "status": "website_only",
+    "website": "http://www.newyorkluncheonette.com/",
+    "action": "switch_to_website"
+  },
+  "pete's": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/petes-tavern",
+    "website": "https://www.petestavern.com/?utm_source=google+&utm_medium=gbp&utm_campaign=homepage"
+  },
+  "shaw-nae's": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/shaw-naes-house",
+    "website": "https://www.shawnaeshouse.com/"
+  },
+  "fyc": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/fyc-nyc",
+    "website": "http://thefycnyc.com/"
+  },
+  "place des fêtes": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/place-des-fetes",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/place-des-fetes",
+    "website": "http://www.pdfnyc.com/"
+  },
+  "la compagnie": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/la-compagnie-centre-st",
+    "website": "https://www.compagniedesvinssurnaturels.com/nyc"
+  },
+  "achilles heel": {
+    "status": "closed",
+    "googleName": "Achilles Heel",
+    "action": "remove"
+  },
+  "rolo's": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/rolos",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/rolos",
+    "website": "http://www.rolosnyc.com/"
+  },
+  "milk bar": {
+    "status": "website_only",
+    "website": "https://www.milkbarstore.com/",
+    "action": "switch_to_website"
+  },
+  "lai rai": {
+    "status": "website_only",
+    "website": "https://www.instagram.com/lairai.nyc/",
+    "action": "switch_to_website"
+  },
+  "confidant": {
+    "status": "closed",
+    "googleName": "Confidant",
+    "action": "remove"
+  },
+  "warabi": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/warabi-omakase",
+    "website": "https://www.warabiomakase.com/"
+  },
+  "ace's": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/aces-pizza",
+    "website": "https://www.acespizzaspot.com/"
+  },
+  "double knot": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/double-knot-midtown",
+    "website": "http://www.doubleknotnyc.com/"
+  },
+  "gem wine": {
+    "status": "closed",
+    "googleName": "Gem Wine",
+    "action": "remove"
+  },
+  "miznon": {
+    "status": "website_only",
+    "website": "http://miznonkosher.com/",
+    "action": "switch_to_website"
+  },
+  "hasalon": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/hasalon-nyc",
+    "website": "https://www.hasalonnyc.com/"
+  },
+  "roberta's": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/robertas-pizza-reservations-brooklyn",
+    "oldUrl": "https://www.opentable.com/r/robertas-new-york",
+    "website": "https://www.robertaspizza.com/msg"
+  },
+  "river cafe": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://www.rivercafe.com/",
+    "action": "switch_to_website"
+  },
+  "di fara pizza": {
+    "status": "website_only",
+    "website": "https://www.difarapizzany.com/",
+    "action": "switch_to_website"
+  },
+  "lucali": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.lucali.com/",
+    "action": "switch_to_website"
+  },
+  "juliana's pizza": {
+    "status": "website_only",
+    "website": "https://www.julianaspizza.com/",
+    "action": "switch_to_website"
+  },
+  "kokomo": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://www.kokomonyc.com/",
+    "action": "switch_to_website"
+  },
+  "win son": {
+    "status": "website_only",
+    "website": "https://www.winsonbrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "win son bakery": {
+    "status": "website_only",
+    "website": "http://winsonbrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "rider": {
+    "status": "closed",
+    "googleName": "Rider",
+    "action": "remove"
+  },
+  "claro": {
+    "status": "website_only",
+    "website": "http://clarobk.com/",
+    "action": "switch_to_website"
+  },
+  "marlow and sons": {
+    "status": "closed",
+    "googleName": "Marlow & Sons",
+    "action": "remove"
+  },
+  "cherry point": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/wild-cherry-new-york",
+    "oldUrl": "https://resy.com/cities/ny/cherry-point-new-york",
+    "website": "https://www.wildcherrynyc.com/"
+  },
+  "foul witch": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/foul-witch",
+    "oldUrl": "https://resy.com/cities/ny/foul-witch-new-york",
+    "website": "https://www.foulwitchnyc.com/"
+  },
+  "la rina": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/larina",
+    "website": "http://larinabk.com/"
+  },
+  "café spaghetti": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.cafespaghetti.com/",
+    "action": "switch_to_website"
+  },
+  "casa del chef": {
+    "status": "closed",
+    "googleName": "Casa Del Chef Bistro",
+    "action": "remove"
+  },
+  "mu ramen": {
+    "status": "closed",
+    "googleName": "Mu Ramen",
+    "action": "remove"
+  },
+  "hupo": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://hupo.nyc/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "jingle": {
+    "status": "website_only",
+    "website": "https://thedeadrabbit.com/jingle-jangle/?utm_source=google_business_profile&utm_medium=gbp_view_website&utm_campaign=google_business_profile",
+    "action": "switch_to_website"
+  },
+  "pye boat noodle": {
+    "status": "website_only",
+    "website": "http://www.pyeboatnoodle.com/",
+    "action": "switch_to_website"
+  },
+  "sik gaek": {
+    "status": "website_only",
+    "website": "http://www.sikgaekbbq.com/",
+    "action": "switch_to_website"
+  },
+  "seva": {
+    "status": "website_only",
+    "website": "http://www.sevaindianrestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "venturo": {
+    "status": "closed",
+    "googleName": "Venturo Osteria & Wine Bar",
+    "action": "remove"
+  },
+  "dirt candy": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/dirt-candy",
+    "oldUrl": "https://resy.com/cities/ny/dirt-candy-new-york",
+    "website": "http://www.dirtcandynyc.com/"
+  },
+  "augustine": {
+    "status": "closed",
+    "googleName": "Augustine",
+    "action": "remove"
+  },
+  "legacy records": {
+    "status": "walk_in",
+    "action": "switch_to_walk_in"
+  },
+  "cafe altro paradiso": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://www.altroparadiso.com/",
+    "action": "switch_to_website"
+  },
+  "flora bar": {
+    "status": "closed",
+    "googleName": "Flora Bar",
+    "action": "remove"
+  },
+  "polo bar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/the-polo-bar",
+    "website": "https://www.ralphlauren.com/global-polo-bar?y_source=1_MTMwNzQ5MjAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D"
+  },
+  "charlie bird": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/charlie-bird",
+    "oldUrl": "https://resy.com/cities/ny/charlie-bird-new-york",
+    "website": "https://www.charliebirdnyc.com/"
+  },
+  "red rooster": {
+    "status": "website_only",
+    "website": "https://www.redroosterharlem.com/",
+    "action": "switch_to_website"
+  },
+  "sylvia's": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/sylvias-restaurant",
+    "website": "http://www.sylviasrestaurant.com/"
+  },
+  "buvette": {
+    "status": "website_only",
+    "website": "http://www.ilovebuvette.com/",
+    "action": "switch_to_website"
+  },
+  "sushi nakazawa": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://sushinakazawa.com/",
+    "action": "switch_to_website"
+  },
+  "15 east": {
+    "status": "website_only",
+    "website": "https://eastjprestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "labeille": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/labielle",
+    "oldUrl": "https://www.opentable.com/r/labeille-new-york",
+    "website": "http://www.labeille.nyc/"
+  },
+  "oxalis": {
+    "status": "closed",
+    "googleName": "Oxalis",
+    "action": "remove"
+  },
+  "alley 41": {
+    "status": "website_only",
+    "website": "http://www.alley41.com/",
+    "action": "switch_to_website"
+  },
+  "bayon": {
+    "status": "website_only",
+    "website": "http://bayonnyc.com/",
+    "action": "switch_to_website"
+  },
+  "bohemian spirit": {
+    "status": "website_only",
+    "website": "http://www.bohemianspiritrestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "boro6 wine bar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/boro6-wine-bar",
+    "website": "http://www.boro6winebar.com/"
+  },
+  "burrata": {
+    "status": "website_only",
+    "website": "https://burratabasilpizza.com/",
+    "action": "switch_to_website"
+  },
+  "caleta 111 cevicheria": {
+    "status": "website_only",
+    "website": "https://caleta111cevicheria.toast.site/order",
+    "action": "switch_to_website"
+  },
+  "cardamom": {
+    "status": "website_only",
+    "website": "https://cardamomny.com/",
+    "action": "switch_to_website"
+  },
+  "cecily": {
+    "status": "closed",
+    "googleName": "Cecily",
+    "action": "remove"
+  },
+  "chalong": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://chalongnyc.com/",
+    "action": "switch_to_website"
+  },
+  "cheli": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.che-li.com/",
+    "action": "switch_to_website"
+  },
+  "gordo's cantina": {
+    "status": "website_only",
+    "website": "http://gordoscantina.com/",
+    "action": "switch_to_website"
+  },
+  "hometown bar b que": {
+    "status": "website_only",
+    "website": "http://www.hometownbarbque.com/",
+    "action": "switch_to_website"
+  },
+  "jiang nan": {
+    "status": "website_only",
+    "website": "https://jiangnanny.com/",
+    "action": "switch_to_website"
+  },
+  "katz's": {
+    "status": "website_only",
+    "website": "https://katzsdelicatessen.com/",
+    "action": "switch_to_website"
+  },
+  "kung fu little steamed buns ramen": {
+    "status": "website_only",
+    "website": "https://kungfutogo.com/",
+    "action": "switch_to_website"
+  },
+  "l'industrie pizzeria": {
+    "status": "website_only",
+    "website": "https://www.lindustriebk.com/",
+    "action": "switch_to_website"
+  },
+  "la dong": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/la-dong-reservations-new-york",
+    "oldUrl": "https://resy.com/cities/ny/la-dong",
+    "website": "http://www.ladongnyc.com/"
+  },
+  "legend of taste": {
+    "status": "website_only",
+    "website": "https://legendoftasteup.com/",
+    "action": "switch_to_website"
+  },
+  "little myanmar": {
+    "status": "website_only",
+    "website": "https://littlemyanmar.org/",
+    "action": "switch_to_website"
+  },
+  "lore": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.lorebrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "lungi": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/lungi-bar-and-restaurant",
+    "website": "http://lungirestaurant.com/"
+  },
+  "oso": {
+    "status": "website_only",
+    "website": "http://www.osoharlem.com/",
+    "action": "switch_to_website"
+  },
+  "phayul": {
+    "status": "walk_in",
+    "action": "switch_to_walk_in"
+  },
+  "pierozek": {
+    "status": "website_only",
+    "website": "http://www.pierozekbrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "sagara": {
+    "status": "website_only",
+    "website": "http://saharasturkishcuisine.com/",
+    "action": "switch_to_website"
+  },
+  "saranrom thai": {
+    "status": "website_only",
+    "website": "https://saranromthai.dine.online/",
+    "action": "switch_to_website"
+  },
+  "speedy romeo": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/speedy-romeo-bk",
+    "website": "http://www.speedyromeo.com/"
+  },
+  "tha phraya": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/tha-phraya",
+    "oldUrl": "https://resy.com/cities/ny/tha-phraya",
+    "website": "https://www.thaphraya.com"
+  },
+  "tolo": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/tolo-reservations-new-york",
+    "oldUrl": "https://www.opentable.com/r/toloache-midtown-new-york",
+    "website": "https://tolonyc.com/"
+  },
+  "tonchin": {
+    "status": "website_only",
+    "website": "https://tonchinus.com/",
+    "action": "switch_to_website"
+  },
+  "tong sam gyup goo yi": {
+    "status": "website_only",
+    "website": "http://www.tongsamgyupgooyi.com/",
+    "action": "switch_to_website"
+  },
+  "ugly baby": {
+    "status": "closed",
+    "googleName": "Ugly Baby",
+    "action": "remove"
+  },
+  "untable": {
+    "status": "website_only",
+    "website": "http://www.untablebrooklyn.com/",
+    "action": "switch_to_website"
+  },
+  "zaab zaab": {
+    "status": "website_only",
+    "website": "https://zaabzaabnyc.com/zaabzaabpier57?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "bar kabawa": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/bar-kabawa-new-york",
+    "oldUrl": "https://resy.com/cities/ny/bar-kabawa",
+    "website": "https://www.momofuku.com/restaurants/barkabawa"
+  },
+  "kabawa": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/kabawa-new-york",
+    "oldUrl": "https://resy.com/cities/ny/kabawa",
+    "website": "https://www.momofuku.com/restaurants/kabawa"
+  },
+  "chez fifi": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://chezfifinyc.com/",
+    "action": "switch_to_website"
+  },
+  "demo": {
+    "status": "website_only",
+    "website": "http://demowestvillage.com/",
+    "action": "switch_to_website"
+  },
+  "di an di": {
+    "status": "website",
+    "platforms": [
+      "resy",
+      "opentable"
+    ],
+    "website": "https://www.diandi.nyc/",
+    "action": "switch_to_website"
+  },
+  "joseph leonard": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/joseph-leonard-reservations-new-york",
+    "oldUrl": "https://resy.com/cities/ny/joseph-leonard",
+    "website": "http://www.josephleonard.com/"
+  },
+  "le b.": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://lebnyc.com/",
+    "action": "switch_to_website"
+  },
+  "maddy rose": {
+    "status": "website_only",
+    "website": "https://libertyhousejc.com/",
+    "action": "switch_to_website"
+  },
+  "meximodo": {
+    "status": "website_only",
+    "website": "https://meximodo.com/",
+    "action": "switch_to_website"
+  },
+  "mitsuru": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/mitsuru-reservations-new-york",
+    "oldUrl": "https://resy.com/cities/ny/mitsuru",
+    "website": "https://mitsurunyc.com/"
+  },
+  "moody tongue sushi": {
+    "status": "website",
+    "platforms": [
+      "resy",
+      "sevenrooms"
+    ],
+    "website": "https://moodytongue.com/location/moody-tongue-sushi-and-the-hand-roll-bar/",
+    "action": "switch_to_website"
+  },
+  "muku": {
+    "status": "website_only",
+    "website": "https://www.restaurantmuku.nyc/",
+    "action": "switch_to_website"
+  },
+  "razza": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://razzanj.com/",
+    "action": "switch_to_website"
+  },
+  "sappeisan": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://sappeisan.com/",
+    "action": "switch_to_website"
+  },
+  "principe": {
+    "status": "closed",
+    "googleName": "Principe",
+    "action": "remove"
+  },
+  "sushi katsuei": {
+    "status": "website_only",
+    "website": "http://www.sushikatsuei.com/west-village-ny/",
+    "action": "switch_to_website"
+  },
+  "han dynasty": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://handynasty.net/east-village/",
+    "action": "switch_to_website"
+  },
+  "saul": {
+    "status": "website_only",
+    "website": "http://www.seasaltsnyc.com/",
+    "action": "switch_to_website"
+  },
+  "metta": {
+    "status": "closed",
+    "googleName": "METTĀ",
+    "action": "remove"
+  },
+  "leyenda": {
+    "status": "closed",
+    "googleName": "Leyenda",
+    "action": "remove"
+  },
+  "the finch": {
+    "status": "website_only",
+    "website": "https://www.ihg.com/voco/hotels/us/en/new-york/nycvm/hoteldetail/dining",
+    "action": "switch_to_website"
+  },
+  "bar boulud": {
+    "status": "website_only",
+    "website": "http://www.brasserieboulud.com/",
+    "action": "switch_to_website"
+  },
+  "baar baar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/baar-baar",
+    "oldUrl": "https://resy.com/cities/ny/baar-baar",
+    "website": "http://baarbaarnyc.com/"
+  },
+  "blue ribbon brasserie": {
+    "status": "website_only",
+    "website": "https://www.blueribbonbrasserie.com/",
+    "action": "switch_to_website"
+  },
+  "sushi seki": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/sushi-seki-23rd",
+    "website": "http://sushiseki.com/"
+  },
+  "benno": {
+    "status": "closed",
+    "googleName": "Bar Benno",
+    "action": "remove"
+  },
+  "marta": {
+    "status": "website_only",
+    "website": "https://www.martamanhattan.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+    "action": "switch_to_website"
+  },
+  "maialino": {
+    "status": "website_only",
+    "website": "http://www.maialinonyc.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+    "action": "switch_to_website"
+  },
+  "veronika": {
+    "status": "closed",
+    "googleName": "Verōnika",
+    "action": "remove"
+  },
+  "eleven madison home": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/eleven-madison-park",
+    "website": "https://www.elevenmadisonpark.com/"
+  },
+  "tetsu": {
+    "status": "closed",
+    "googleName": "Tetsu",
+    "action": "remove"
+  },
+  "oiji": {
+    "status": "website_only",
+    "website": "http://www.oijimi.com/",
+    "action": "switch_to_website"
+  },
+  "kiin thai": {
+    "status": "closed",
+    "googleName": "Kiin Thai",
+    "action": "remove"
+  },
+  "sripraphai": {
+    "status": "website_only",
+    "website": "http://www.sripraphai.com/",
+    "action": "switch_to_website"
+  },
+  "ten bells": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/the-ten-bells",
+    "website": "http://www.tenbellsnyc.com/"
+  },
+  "compagnie des vins surnaturels": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/la-compagnie-centre-st",
+    "website": "https://www.compagniedesvinssurnaturels.com/nyc"
+  },
+  "bamonte's": {
+    "status": "website_only",
+    "website": "https://bamontes.shop/",
+    "action": "switch_to_website"
+  },
+  "joe's shanghai": {
+    "status": "website_only",
+    "website": "https://order.toasttab.com/online/joes-shanghai",
+    "action": "switch_to_website"
+  },
+  "great ny noodletown": {
+    "status": "website_only",
+    "website": "http://greatnewyorknoodletown.com/",
+    "action": "switch_to_website"
+  },
+  "xi'an famous foods": {
+    "status": "website_only",
+    "website": "http://xianfoods.com/",
+    "action": "switch_to_website"
+  },
+  "zz's clam bar": {
+    "status": "walk_in",
+    "action": "switch_to_walk_in"
+  },
+  "grand banks": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/seaworthy-new-orleans-2",
+    "oldUrl": "https://resy.com/cities/ny/grand-banks",
+    "website": "https://crewny.com/grand-banks"
+  },
+  "sel rrose": {
+    "status": "closed",
+    "googleName": "Sel Rrose",
+    "action": "remove"
+  },
+  "egg": {
+    "status": "website_only",
+    "website": "http://www.eggrestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "clinton st. baking company": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.clintonstreetbaking.com/",
+    "action": "switch_to_website"
+  },
+  "ruby's cafe": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.rubyscafe.com/",
+    "action": "switch_to_website"
+  },
+  "cafe gitane": {
+    "status": "walk_in",
+    "action": "switch_to_walk_in"
+  },
+  "petaluma": {
+    "status": "closed",
+    "googleName": "Petaluma",
+    "action": "remove"
+  },
+  "the nomad bar": {
+    "status": "website_only",
+    "website": "https://www.ladressenyc.com/",
+    "action": "switch_to_website"
+  },
+  "prince street pizza": {
+    "status": "website_only",
+    "website": "https://locations.princestreetpizza.com/new-york",
+    "action": "switch_to_website"
+  },
+  "paulie gee's": {
+    "status": "website_only",
+    "website": "https://pauliegee.com/restaurant/paulie-gees-slice-shop/",
+    "action": "switch_to_website"
+  },
+  "emmy squared": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/emmy-squared-pizza-hells-kitchen-reservations-new-york",
+    "website": "https://www.emmysquaredpizza.com/location/hells-kitchen-new-york/"
+  },
+  "john's of bleecker street": {
+    "status": "website_only",
+    "website": "http://johnsofbleecker.com/",
+    "action": "switch_to_website"
+  },
+  "leonti": {
+    "status": "closed",
+    "googleName": "Leonti",
+    "action": "remove"
+  },
+  "pioppi": {
+    "status": "website_only",
+    "website": "http://www.villapioppihotel.com/",
+    "action": "switch_to_website"
+  },
+  "lolo's seafood shack": {
+    "status": "website_only",
+    "website": "https://www.lolosonthewater.com/",
+    "action": "switch_to_website"
+  },
+  "casa del chef bistro": {
+    "status": "closed",
+    "googleName": "Casa Del Chef Bistro",
+    "action": "remove"
+  },
+  "la pecora bianca bryant park": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.lapecorabianca.com/",
+    "action": "switch_to_website"
+  },
+  "naks": {
+    "status": "website",
+    "platforms": [
+      "resy",
+      "sevenrooms"
+    ],
+    "website": "https://www.naks.nyc",
+    "action": "switch_to_website"
+  },
+  "sam sunny": {
+    "status": "website_only",
+    "website": "https://www.samsunnynyc.com",
+    "action": "switch_to_website"
+  },
+  "mayfield": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/mayfield",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/mayfield",
+    "website": "http://www.mayfieldbk.com"
+  },
+  "queens": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/queen",
+    "oldUrl": "http://queen.nyc/",
+    "website": "http://queen.nyc/"
+  },
+  "gigis": {
+    "status": "website_only",
+    "website": "https://eatgigi.com/",
+    "action": "switch_to_website"
+  },
+  "143 social": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/143-social",
+    "website": "https://www.143social.com/"
+  },
+  "bella dea": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://www.buddakannyc.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+    "action": "switch_to_website"
+  },
+  "67 orange at back bar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/back-bar-ny",
+    "website": "http://backbarnyc.com/"
+  },
+  "haam caribbean plant cuisine": {
+    "status": "website_only",
+    "website": "https://haamnyc.com/",
+    "action": "switch_to_website"
+  },
+  "san patricios": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/San-Patricios",
+    "website": "https://www.sanpatriciosnj.com/"
+  },
+  "agave maria": {
+    "status": "website_only",
+    "website": "http://agavemarianj.com/",
+    "action": "switch_to_website"
+  },
+  "american whiskey newark": {
+    "status": "website_only",
+    "website": "http://whiskeytavernnyc.com/",
+    "action": "switch_to_website"
+  },
+  "ani ramen - jersey city": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.aniramen.com/",
+    "action": "switch_to_website"
+  },
+  "ani ramen - montclair": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.aniramen.com/",
+    "action": "switch_to_website"
+  },
+  "antique bar & bakery": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/antique-bar-and-bakery",
+    "website": "https://www.antiquebarandbakery.com/"
+  },
+  "asian fusion grills & sushi": {
+    "status": "website_only",
+    "website": "http://fusiongrillsandsushi.com/",
+    "action": "switch_to_website"
+  },
+  "asu mare peru restobar": {
+    "status": "website_only",
+    "website": "https://www.asumareperu.com/",
+    "action": "switch_to_website"
+  },
+  "atit thai": {
+    "status": "website_only",
+    "website": "https://www.atitrestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "atlas kitchen": {
+    "status": "website_only",
+    "website": "https://www.atlaskitchennyc.com",
+    "action": "switch_to_website"
+  },
+  "bacchanal junction": {
+    "status": "website_only",
+    "website": "https://bacchanalnj.com/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "backstage cocktail lounge": {
+    "status": "website_only",
+    "website": "https://thebackstagenyc.com/",
+    "action": "switch_to_website"
+  },
+  "bann": {
+    "status": "closed",
+    "googleName": "Bann",
+    "action": "remove"
+  },
+  "bar mexicana": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/bar-mexicana-new-york",
+    "oldUrl": "https://resy.com/cities/ny/bar-mexicana",
+    "website": "https://www.barmexicananyc.com"
+  },
+  "becca": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.becco-nyc.com/",
+    "action": "switch_to_website"
+  },
+  "bin 14 trattoria & wine bar": {
+    "status": "website_only",
+    "website": "http://bin141.com/",
+    "action": "switch_to_website"
+  },
+  "bloomfield steak & seafood house": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://www.palladinos.com/",
+    "action": "switch_to_website"
+  },
+  "bosphorus cafe grill": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/bosphorus-cafe-grill",
+    "website": "http://www.bosphoruscafegrill.com/"
+  },
+  "brick and dough": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://brickanddough.com/",
+    "action": "switch_to_website"
+  },
+  "bricklane curry house - jersey city": {
+    "status": "website_only",
+    "website": "https://bricklanejc.com/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "butterfish": {
+    "status": "website_only",
+    "website": "http://www.thebutterfish.com/",
+    "action": "switch_to_website"
+  },
+  "cafe alyce": {
+    "status": "website_only",
+    "website": "https://cafealyce.com/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "cafe nelo": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/cafe-nelo",
+    "website": "https://www.cafenelo.com/"
+  },
+  "cantina 46": {
+    "status": "website_only",
+    "website": "https://www.cantina46nj.com/",
+    "action": "switch_to_website"
+  },
+  "city bistro": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/city-bistro",
+    "oldUrl": "https://resy.com/cities/ny/city-bistro",
+    "website": "https://www.citybistrohobokennj.com/"
+  },
+  "claire's wine bar": {
+    "status": "website",
+    "platforms": [
+      "opentable",
+      "yelp"
+    ],
+    "website": "https://claireswinebar.com/",
+    "action": "switch_to_website"
+  },
+  "coby club": {
+    "status": "website_only",
+    "website": "https://www.cobyclubnyc.com",
+    "action": "switch_to_website"
+  },
+  "colonie": {
+    "status": "closed",
+    "googleName": "Colonie",
+    "action": "remove"
+  },
+  "concourse club": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.concourseclubnj.com/",
+    "action": "switch_to_website"
+  },
+  "consigliere wine bar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/consigliere-wine-bar",
+    "website": "https://www.consiglierewine.com/"
+  },
+  "coral omakase": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/point-seven-new-york-4",
+    "oldUrl": "https://resy.com/cities/ny/coral-omakase",
+    "website": "https://www.coralomakase.com/"
+  },
+  "czen restaurant englewood": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/czen-restaurant-brooklyn",
+    "oldUrl": "https://resy.com/cities/new-york-ny/venues/czen-restaurant-brooklyn",
+    "website": "http://czennyc.com"
+  },
+  "ddobar": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/ddobar",
+    "oldUrl": "https://resy.com/cities/ny/ddobar",
+    "website": "https://www.ddobarnyc.com"
+  },
+  "de novo montclair": {
+    "status": "website_only",
+    "website": "https://denovoeuropeanpub.com/",
+    "action": "switch_to_website"
+  },
+  "dear maud": {
+    "status": "website_only",
+    "website": "https://www.cafemaud.com/eastvillage",
+    "action": "switch_to_website"
+  },
+  "denovo-edgewater": {
+    "status": "website_only",
+    "website": "http://www.cafedenovogreenwichst.com/",
+    "action": "switch_to_website"
+  },
+  "dilly dally": {
+    "status": "website_only",
+    "website": "http://www.dillydallybk.com",
+    "action": "switch_to_website"
+  },
+  "egan & sons pub": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/egan-and-sons-pub",
+    "website": "http://www.eganandsons.pub/"
+  },
+  "egg shop williamsburg": {
+    "status": "closed",
+    "googleName": "Egg Shop",
+    "action": "remove"
+  },
+  "elmo": {
+    "status": "closed",
+    "googleName": "Elmo",
+    "action": "remove"
+  },
+  "faubourg weehawken": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/faubourg",
+    "oldUrl": "https://resy.com/cities/ny/faubourg-nj",
+    "website": "https://www.faubourgnj.com/"
+  },
+  "fava": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/fava",
+    "oldUrl": "https://resy.com/cities/ny/fava",
+    "website": "http://favarestaurant.com/"
+  },
+  "friends in food 2025 conference": {
+    "status": "website_only",
+    "website": "https://www.waitingonafriendnyc.com",
+    "action": "switch_to_website"
+  },
+  "fusionista": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/fusionista-modern-peruvian-cuisine-montclair",
+    "oldUrl": "https://resy.com/cities/ny/fusionista",
+    "website": "http://fusionistarestaurant.com/"
+  },
+  "gaia & loki": {
+    "status": "website_only",
+    "website": "https://gaiaandloki.com/?utm_source=google",
+    "action": "switch_to_website"
+  },
+  "gioia mia": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://www.gioiamianj.com/",
+    "action": "switch_to_website"
+  },
+  "greek taverna": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "http://www.villagetaverna.com/",
+    "action": "switch_to_website"
+  },
+  "grimaldi's": {
+    "status": "website_only",
+    "website": "https://www.grimaldispizzeria.com/locations/1-front-street-brooklyn/",
+    "action": "switch_to_website"
+  },
+  "guardian rooftop": {
+    "status": "website",
+    "platforms": [
+      "sevenrooms"
+    ],
+    "website": "https://vintagegreen.nyc/",
+    "action": "switch_to_website"
+  },
+  "hanwoori": {
+    "status": "website_only",
+    "website": "http://hanwoorinj.com/",
+    "action": "switch_to_website"
+  },
+  "harvey's at union station": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/harveys-at-union-station",
+    "oldUrl": "https://resy.com/cities/ny/harveys-at-union-station",
+    "website": "https://harveyskc.com/"
+  },
+  "hirohisa": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/soba-ulala",
+    "website": "https://www.sobaulala.nyc/"
+  },
+  "shaw-naé’s house": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/shaw-naes-house",
+    "oldUrl": "https://resy.com/cities/ny/shaw-naes-new-york",
+    "website": "https://www.shawnaeshouse.com/"
+  },
+  "sweet t’s southern eatery - montclair": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/sweet-ts-southern-eatery-montclair",
+    "oldUrl": "https://resy.com/cities/ny/sweet-ts-southern-eatery-montclair",
+    "website": "https://sweettseatery.com/"
+  },
+  "serendipity 3 times square": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/serendipity-3",
+    "oldUrl": "https://resy.com/cities/ny/serendipity-3",
+    "website": "https://serendipity3.com/"
+  },
+  "bkb | brooklyn brasserie": {
+    "status": "website_only",
+    "website": "https://www.bkbnyc.com/",
+    "action": "switch_to_website"
+  },
+  "hawksmoor": {
+    "status": "website_only",
+    "website": "http://hawksmoornyc.com/?y_source=1_MjU3MzY3NDctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "action": "switch_to_website"
+  },
+  "beija flor": {
+    "status": "website_only",
+    "website": "https://www.beijaflor.nyc/",
+    "action": "switch_to_website"
+  },
+  "sweet chick": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "https://www.sweetchick.com/",
+    "action": "switch_to_website"
+  },
+  "cafe massawa": {
+    "status": "website_only",
+    "website": "http://cafemassawa.com/",
+    "action": "switch_to_website"
+  },
+  "bouquet": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/le-bilboquet-ny-llc",
+    "website": "https://www.lebilboquetny.com/"
+  },
+  "power plant kitchen": {
+    "status": "website_only",
+    "website": "https://www.thepowerplantkitchen.com/",
+    "action": "switch_to_website"
+  },
+  "spiga": {
+    "status": "switched",
+    "newPlatform": "resy",
+    "newUrl": "https://resy.com/cities/ny/spiga-ny",
+    "website": "https://spiganewyork.com/"
+  },
+  "joomak": {
+    "status": "website",
+    "platforms": [
+      "opentable"
+    ],
+    "website": "https://www.joomaknyc.com/",
+    "action": "switch_to_website"
+  },
+  "corto": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://cortojc.com/",
+    "action": "switch_to_website"
+  },
+  "moru": {
+    "status": "website_only",
+    "website": "https://www.morumaki.com/?fbclid=PAAabMoKmGhzj4hJlbnmObhPR3LjVDp14S2SxSzsZ-E-5lReIx6AWKJfCdXAY_aem_Ac1kYtSjMNZ2tN1m0geKkdhEkPgaEQnqt96hV1AlsAEwIJ_gasWSR0Wr5eyBKeH7J5s",
+    "action": "switch_to_website"
+  },
+  "verge": {
+    "status": "website_only",
+    "website": "https://www.vergefusion.com/",
+    "action": "switch_to_website"
+  },
+  "bondurants": {
+    "status": "website_only",
+    "website": "https://bondurantsnyc.com/",
+    "action": "switch_to_website"
+  },
+  "la flor": {
+    "status": "website_only",
+    "website": "http://orderlaflor.com/",
+    "action": "switch_to_website"
+  },
+  "macario": {
+    "status": "website_only",
+    "website": "https://www.macario-ny.com/",
+    "action": "switch_to_website"
+  },
+  "winner": {
+    "status": "website",
+    "platforms": [
+      "resy"
+    ],
+    "website": "http://winner.nyc/",
+    "action": "switch_to_website"
+  },
+  "time and tide": {
+    "status": "website_only",
+    "website": "https://www.timeandtide.nyc/",
+    "action": "switch_to_website"
+  },
+  "olivier": {
+    "status": "switched",
+    "newPlatform": "opentable",
+    "newUrl": "https://www.opentable.com/r/olivier-bistro-brooklyn",
+    "website": "http://olivierbistro.com/"
+  },
+  "momofuku ssam bar": {
+    "status": "closed",
+    "googleName": "Momofuku Ssam Bar",
+    "action": "remove"
+  },
+  "vestry": {
+    "status": "closed",
+    "googleName": "Vestry",
+    "action": "remove"
+  },
+  "bohemian": {
+    "status": "website_only",
+    "website": "http://www.bohemianspiritrestaurant.com/",
+    "action": "switch_to_website"
+  },
+  "brushstroke": {
+    "status": "closed",
+    "googleName": "The Noodle Bar at Brushstroke",
+    "action": "remove"
+  }
+}
