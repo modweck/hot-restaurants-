@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+
+# Environment
+.env
+
+# Temp files
+*.pre_*.json
+*_report.json
+tonight_availability_resy_half*.json
+
+# Logs
+data/*.log
+data/sniper-*.log
+data/test-launch.txt
+data/opentable-debug.png
+
+# Progress/temp data
+data/*_progress.json
+data/last-run.json
+data/temp_*.json
+
+# Legacy/generated files
+netlify/functions/availability-checker.js
+
+# Local Netlify folder
+.netlify

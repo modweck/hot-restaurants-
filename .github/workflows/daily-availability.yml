@@ -1,0 +1,99 @@
+name: Daily Availability Check
+
+on:
+  schedule:
+    - cron: '0 14 * * *'   # 10:00am EDT (UTC-4) = 2:00pm UTC
+  workflow_dispatch:        # also allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-availability:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      # Step 1: Copy booking_lookup to scrapers dir
+      - name: Prep data files
+        run: |
+          cp netlify/functions/booking_lookup.json scripts/scrapers/booking_lookup.json
+          cp netlify/functions/tonight_availability.json scripts/scrapers/tonight_availability.json
+
+      # Step 2: Run tonight's Resy availability check
+      - name: Check Resy availability tonight
+        run: node scripts/scrapers/resy-tonight-check.js --all
+        timeout-minutes: 120
+
+      # Step 3: Copy results back
+      - name: Sync availability data
+        run: cp scripts/scrapers/tonight_availability.json netlify/functions/tonight_availability.json
+
+      # Step 4: Check future availability for booked restaurants (+3/+5/+7/+14)
+      - name: Check future availability for booked restaurants
+        run: node scripts/utilities/check-booked-availability.js
+        timeout-minutes: 60
+
+      # Step 5: Merge opens_in/fully_locked into tonight_availability
+      - name: Merge future availability tags
+        run: |
+          node -e "
+          const fs = require('fs');
+          const avail = JSON.parse(fs.readFileSync('netlify/functions/tonight_availability.json','utf8'));
+          const future = JSON.parse(fs.readFileSync('data/booked_future_availability.json','utf8'));
+
+          // Clear old tags
+          for (const v of Object.values(avail)) {
+            delete v.opens_in;
+            delete v.fully_locked;
+          }
+
+          // Apply fresh tags
+          let setOpens = 0, setLocked = 0;
+          for (const [name, info] of Object.entries(future.results || {})) {
+            const key = name.toLowerCase();
+            const entry = avail[key] || avail[name];
+            if (!entry) continue;
+
+            if (info.hasAnyAvailability) {
+              for (const o of ['+3','+5','+7','+14']) {
+                if (info.dates[o] && info.dates[o].available) {
+                  entry.opens_in = parseInt(o.replace('+',''));
+                  setOpens++;
+                  break;
+                }
+              }
+            } else {
+              entry.fully_locked = true;
+              setLocked++;
+            }
+          }
+
+          fs.writeFileSync('netlify/functions/tonight_availability.json', JSON.stringify(avail, null, 2));
+          console.log('Merged: ' + setOpens + ' opens_in, ' + setLocked + ' fully_locked');
+          "
+
+      # Step 6: Generate slim version
+      - name: Slim down availability file
+        run: node netlify/functions/slim-availability.js
+
+      # Step 7: Commit and push
+      - name: Commit and push fresh availability
+        run: |
+          git config user.name "SeatWize Bot"
+          git config user.email "bot@seatwize.com"
+          git add netlify/functions/tonight_availability.json
+          git add netlify/functions/tonight_availability_slim.json
+          git add data/booked_future_availability.json
+          git diff --staged --quiet || git commit -m "🍽️ availability update $(date +'%Y-%m-%d')"
+          git push
