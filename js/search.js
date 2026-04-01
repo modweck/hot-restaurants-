@@ -417,8 +417,7 @@ function display(restaurants) {
 
   let html = '';
   if (isBookAhead) {
-    // Sort by opens_in (soonest first)
-    list.sort((a,b) => (a.opens_in||99) - (b.opens_in||99));
+    // Keep rating sort from above (don't re-sort by opens_in)
     html += `<div class="sec-head"><span class="sec-title hot">📅 Popular — Book in Advance</span><div class="sec-line"></div><span class="sec-count">${list.length}</span></div>`;
     html += list.map(r=>renderCard(r,false)).join('');
   } else {
