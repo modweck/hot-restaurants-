@@ -111567,7 +111567,7 @@
     "address": "273 Center Ave, Westwood, NJ 07675",
     "neighborhood": "",
     "place_id": "ChIJxZtz_rDlwokRpaCCn4-2iZg",
-    "google_rating": 4.7,
+    "google_rating": 4.4,
     "cuisine": "American Restaurant",
     "lat": 40.703503999999995,
     "lng": -74.00869,
@@ -111576,7 +111576,8 @@
       "lively",
       "trendy"
     ],
-    "url": "http://www.tfsburgerworks.com/"
+    "url": "http://www.tfsburgerworks.com/",
+    "google_reviews": 42
   },
   "Umai Sushi & Steak House": {
     "name": "Umai Sushi & Steak House",
@@ -120660,8 +120661,8 @@
     "url": "http://bklynwild.com/",
     "lat": 40.7169614,
     "lng": -73.9617938,
-    "google_rating": 0,
-    "google_reviews": 0,
+    "google_rating": 4,
+    "google_reviews": 1,
     "place_id": "ChIJDzchdbdZwokRbuiNPwKYAJo",
     "website": "http://bklynwild.com/",
     "address": "103 N 3rd St, Brooklyn, NY 11249, USA",
@@ -121278,7 +121279,10 @@
   "Sushi by Bou - East Village NYCnew": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/sushi-by-bou-east-village-nyc-new-york",
-    "cuisine": "• Sushi • East Village"
+    "cuisine": "• Sushi • East Village",
+    "google_rating": 4.8,
+    "google_reviews": 31,
+    "address": "320 E 11th St, New York, NY 10003, United States"
   },
   "Sushi By Bou - NOMAD NYC @ Hotel32|32": {
     "platform": "opentable",
@@ -121347,7 +121351,10 @@
   "Foxtail": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/foxtail-new-york",
-    "cuisine": "• Cocktail Bar • TriBeCa"
+    "cuisine": "• Cocktail Bar • TriBeCa",
+    "google_rating": 4.9,
+    "google_reviews": 159,
+    "address": "Lobby Level, 231 Hudson St, New York, NY 10013, United States"
   },
   "The Highlight Room NY": {
     "platform": "opentable",
@@ -128804,7 +128811,10 @@
   "Shun Lee Cafe": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/shun-lee-cafe-new-york",
-    "cuisine": "• Dim Sum • Lincoln Square"
+    "cuisine": "• Dim Sum • Lincoln Square",
+    "google_rating": 3.7,
+    "google_reviews": 50,
+    "address": "1442 3rd Ave, New York, NY 10028, United States"
   },
   "Vista Sky Lounge": {
     "platform": "opentable",
@@ -128923,7 +128933,10 @@
   "Kid Pizza": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/kid-pizza-new-york",
-    "cuisine": "• Pizzeria • Chelsea"
+    "cuisine": "• Pizzeria • Chelsea",
+    "google_rating": 4.8,
+    "google_reviews": 119,
+    "address": "157 W 18th St, New York, NY 10011, United States"
   },
   "Pig n Whistle on 36th": {
     "platform": "opentable",
@@ -129444,7 +129457,10 @@
   "Upstairs at the Kimberly": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/upstairs-at-the-kimberly-new-york",
-    "cuisine": "• American • Midtown East"
+    "cuisine": "• American • Midtown East",
+    "google_rating": 4.2,
+    "google_reviews": 1063,
+    "address": "145 E 50th St #149, New York, NY 10022, United States"
   },
   "Duomo51": {
     "platform": "opentable",
@@ -131138,7 +131154,10 @@
   },
   "Habibi The Restaurant": {
     "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/habibi-the-restaurant"
+    "url": "https://resy.com/cities/new-york-ny/venues/habibi-the-restaurant",
+    "google_rating": 4.3,
+    "google_reviews": 113,
+    "address": "154 Scott Ave, Brooklyn, NY 11237, United States"
   },
   "Third Time's the Charm": {
     "platform": "resy",
@@ -131604,7 +131623,9 @@
     "lat": 40.7526643,
     "lng": -73.9807136,
     "website": "https://www.exploretock.com/sushi-sho-nyc",
-    "place_id": "ChIJT_JHTgFZwokRXleXHadsVaE"
+    "place_id": "ChIJT_JHTgFZwokRXleXHadsVaE",
+    "google_rating": 4.6,
+    "google_reviews": 79
   },
   "YOSHINO · NEW YORK": {
     "platform": "tock",
@@ -131617,7 +131638,9 @@
     "googleReviewCount": 164,
     "lat": 40.7262286,
     "lng": -73.9921624,
-    "place_id": "ChIJ6WTjLENZwokRsU3IurxvnCI"
+    "place_id": "ChIJ6WTjLENZwokRsU3IurxvnCI",
+    "google_rating": 4.5,
+    "google_reviews": 165
   },
   "Perry Street by Cedric & Jean-Georges": {
     "platform": "tock",
@@ -131629,7 +131652,9 @@
     "lat": 40.73444689999999,
     "lng": -74.0096758,
     "price_range": "$$$$",
-    "place_id": "ChIJ_Ry4hutZwokR0rYn7FKT3W8"
+    "place_id": "ChIJ_Ry4hutZwokR0rYn7FKT3W8",
+    "google_rating": 4.6,
+    "google_reviews": 747
   },
   "Noodlelove": {
     "platform": "tock",
@@ -131641,7 +131666,9 @@
     "address": "192 Mott St, New York, NY 10012, USA",
     "price_range": "$$",
     "website": "http://www.noodlelove.com/",
-    "place_id": "ChIJiXD_SgdZwokRNoX6B7g1ZqA"
+    "place_id": "ChIJiXD_SgdZwokRNoX6B7g1ZqA",
+    "google_rating": 4.4,
+    "google_reviews": 607
   },
   "Super Nice Pizza": {
     "platform": "tock",
@@ -131654,7 +131681,9 @@
     "googleReviewCount": 181,
     "lat": 40.8016076,
     "lng": -73.96465289999999,
-    "place_id": "ChIJ5annHAD3wokRHZky9UIV0v8"
+    "place_id": "ChIJ5annHAD3wokRHZky9UIV0v8",
+    "google_rating": 4.8,
+    "google_reviews": 184
   },
   "La Compagnie Wine Bar - Flatiron": {
     "platform": "tock",
@@ -131667,7 +131696,9 @@
     "googleReviewCount": 105,
     "lat": 40.7425357,
     "lng": -73.9903322,
-    "place_id": "ChIJL4oFegpZwokR3k1iqemkIa4"
+    "place_id": "ChIJL4oFegpZwokR3k1iqemkIa4",
+    "google_rating": 4.5,
+    "google_reviews": 105
   },
   "Aman New York": {
     "platform": "tock",
@@ -131680,7 +131711,9 @@
     "googleReviewCount": 26,
     "lat": 40.7629436,
     "lng": -73.9746691,
-    "place_id": "ChIJW7-SQexZwokRLp_-5UuMQow"
+    "place_id": "ChIJW7-SQexZwokRLp_-5UuMQow",
+    "google_rating": 4.4,
+    "google_reviews": 332
   },
   "Ahgassi Gopchang": {
     "platform": "tock",
@@ -131693,7 +131726,9 @@
     "googleReviewCount": 2781,
     "lat": 40.7470799,
     "lng": -73.9850233,
-    "place_id": "ChIJjc7gVtxZwokRN3Fzss0eS4g"
+    "place_id": "ChIJjc7gVtxZwokRN3Fzss0eS4g",
+    "google_rating": 4.8,
+    "google_reviews": 2786
   },
   "JoJo Restaurant by Jean-Georges": {
     "platform": "tock",
@@ -131705,7 +131740,9 @@
     "lat": 40.76508949999999,
     "lng": -73.9657019,
     "price_range": "$$$",
-    "place_id": "ChIJI9k11O5YwokRJXZKb8r3CoQ"
+    "place_id": "ChIJI9k11O5YwokRJXZKb8r3CoQ",
+    "google_rating": 4.3,
+    "google_reviews": 700
   },
   "Le Zie Trattoria": {
     "platform": "tock",
@@ -131718,7 +131755,9 @@
     "googleReviewCount": 550,
     "lat": 40.74253,
     "lng": -73.997081,
-    "place_id": "ChIJw5ZDfLtZwokRIq-gubtn53c"
+    "place_id": "ChIJw5ZDfLtZwokRIq-gubtn53c",
+    "google_rating": 4.5,
+    "google_reviews": 549
   },
   "Bodai NYC": {
     "platform": "tock",
@@ -131731,7 +131770,9 @@
     "googleReviewCount": 37,
     "lat": 40.7563814,
     "lng": -73.971662,
-    "place_id": "ChIJzdBZa2lZwokRk9tdWEfAcuE"
+    "place_id": "ChIJzdBZa2lZwokRk9tdWEfAcuE",
+    "google_rating": 4.4,
+    "google_reviews": 37
   },
   "Futago USA": {
     "platform": "tock",
@@ -131744,7 +131785,9 @@
     "googleReviewCount": 1254,
     "lat": 40.7389084,
     "lng": -73.9940515,
-    "place_id": "ChIJucdA0KJZwokRSRxyOarSWoI"
+    "place_id": "ChIJucdA0KJZwokRSRxyOarSWoI",
+    "google_rating": 4.6,
+    "google_reviews": 1255
   },
   "Flaweless": {
     "platform": "tock",
@@ -131755,7 +131798,9 @@
     "googleReviewCount": 44,
     "lat": 40.7193759,
     "lng": -74.00551899999999,
-    "place_id": "ChIJQRlrcdNZwokRA91oSEekftg"
+    "place_id": "ChIJQRlrcdNZwokRA91oSEekftg",
+    "google_rating": 5,
+    "google_reviews": 44
   },
   "Edward's": {
     "platform": "tock",
@@ -131768,7 +131813,9 @@
     "googleReviewCount": 442,
     "lat": 40.716973,
     "lng": -74.00837299999999,
-    "place_id": "ChIJ13pGoR9awokRs3n54AZdmGc"
+    "place_id": "ChIJ13pGoR9awokRs3n54AZdmGc",
+    "google_rating": 4.1,
+    "google_reviews": 442
   },
   "Cafe Carlyle": {
     "platform": "tock",
@@ -131781,7 +131828,9 @@
     "lat": 40.7743568,
     "lng": -73.9630361,
     "website": "http://www.cafecarlylenewyork.com/",
-    "place_id": "ChIJEQ6D9pRYwokR8M_uqv0O4bE"
+    "place_id": "ChIJEQ6D9pRYwokR8M_uqv0O4bE",
+    "google_rating": 4.5,
+    "google_reviews": 498
   },
   "La Compagnie Centre Street": {
     "platform": "tock",
@@ -131794,7 +131843,9 @@
     "googleReviewCount": 567,
     "lat": 40.72051570000001,
     "lng": -73.9981652,
-    "place_id": "ChIJLdUjBIlZwokRE7GSMUrqovY"
+    "place_id": "ChIJLdUjBIlZwokRE7GSMUrqovY",
+    "google_rating": 4.6,
+    "google_reviews": 568
   },
   "The Expat": {
     "platform": "tock",
@@ -131807,7 +131858,9 @@
     "googleReviewCount": 530,
     "lat": 40.81551,
     "lng": -73.960078,
-    "place_id": "ChIJ-VhG3uH3wokRfYkcXWjtglw"
+    "place_id": "ChIJ-VhG3uH3wokRfYkcXWjtglw",
+    "google_rating": 4.5,
+    "google_reviews": 532
   },
   "abaita": {
     "platform": "tock",
@@ -131820,7 +131873,9 @@
     "googleReviewCount": 1082,
     "lat": 40.7557,
     "lng": -73.9720694,
-    "place_id": "ChIJEWKPJ_1YwokRoIcOxfVTe4Q"
+    "place_id": "ChIJEWKPJ_1YwokRoIcOxfVTe4Q",
+    "google_rating": 4.6,
+    "google_reviews": 1082
   },
   "Polanco Social": {
     "platform": "tock",
@@ -131833,7 +131888,9 @@
     "googleReviewCount": 32,
     "lat": 40.784553,
     "lng": -73.9738737,
-    "place_id": "ChIJERPRGmFZwokRF3ZzjBXEYMs"
+    "place_id": "ChIJERPRGmFZwokRF3ZzjBXEYMs",
+    "google_rating": 4.7,
+    "google_reviews": 32
   },
   "Tomokase": {
     "platform": "tock",
@@ -131846,7 +131903,9 @@
     "googleReviewCount": 26,
     "lat": 40.72694509999999,
     "lng": -73.98311679999999,
-    "place_id": "ChIJp6sYtU5ZwokRC7XeR3jRZto"
+    "place_id": "ChIJp6sYtU5ZwokRC7XeR3jRZto",
+    "google_rating": 4.5,
+    "google_reviews": 26
   },
   "KazuNori - Greenwich Village": {
     "platform": "tock",
@@ -131857,7 +131916,9 @@
     "googleReviewCount": 256,
     "lat": 40.7296478,
     "lng": -74.0017999,
-    "place_id": "ChIJe9hBFABZwokRG8nxnZx8qkk"
+    "place_id": "ChIJe9hBFABZwokRG8nxnZx8qkk",
+    "google_rating": 4.7,
+    "google_reviews": 256
   },
   "Chef Guo NYC": {
     "platform": "tock",
@@ -131870,7 +131931,9 @@
     "googleReviewCount": 137,
     "lat": 40.7563814,
     "lng": -73.971662,
-    "place_id": "ChIJE3SO9C5ZwokRrA04gkUVIyQ"
+    "place_id": "ChIJE3SO9C5ZwokRrA04gkUVIyQ",
+    "google_rating": 4.7,
+    "google_reviews": 137
   },
   "Jō": {
     "platform": "tock",
@@ -131883,7 +131946,9 @@
     "googleReviewCount": 30,
     "lat": 40.7467386,
     "lng": -73.9799549,
-    "place_id": "ChIJ0wqA3DVZwokRw9mv_CYa8XQ"
+    "place_id": "ChIJ0wqA3DVZwokRw9mv_CYa8XQ",
+    "google_rating": 4.5,
+    "google_reviews": 30
   },
   "OSAKANA": {
     "platform": "tock",
@@ -131896,7 +131961,9 @@
     "googleReviewCount": 216,
     "lat": 40.7282683,
     "lng": -73.9872465,
-    "place_id": "ChIJ0WDwhrFZwokRRYidyi4VA-I"
+    "place_id": "ChIJ0WDwhrFZwokRRYidyi4VA-I",
+    "google_rating": 4.3,
+    "google_reviews": 217
   },
   "Restaurant Yuu": {
     "platform": "tock",
@@ -131909,7 +131976,9 @@
     "googleReviewCount": 217,
     "lat": 40.723456,
     "lng": -73.9524875,
-    "place_id": "ChIJh2cqMDNZwokRqMMqNP9srxI"
+    "place_id": "ChIJh2cqMDNZwokRqMMqNP9srxI",
+    "google_rating": 4.5,
+    "google_reviews": 217
   },
   "Il Fresco": {
     "platform": "tock",
@@ -131922,7 +131991,9 @@
     "lat": 40.7588164,
     "lng": -73.9745136,
     "address": "34 E 52nd St, New York, NY 10022, USA",
-    "place_id": "ChIJM0KKgPtYwokRbfhZtOleFGo"
+    "place_id": "ChIJM0KKgPtYwokRbfhZtOleFGo",
+    "google_rating": 4.6,
+    "google_reviews": 531
   },
   "Grass Roots Kitchen": {
     "platform": "tock",
@@ -131934,7 +132005,9 @@
     "lat": 41.0796827,
     "lng": -73.8635194,
     "price_range": "$$",
-    "place_id": "ChIJM6hPGe_rwokRQSRmPZOeILE"
+    "place_id": "ChIJM6hPGe_rwokRQSRmPZOeILE",
+    "google_rating": 4.6,
+    "google_reviews": 510
   },
   "Luncheonette": {
     "platform": "tock",
@@ -131946,7 +132019,9 @@
     "lat": 40.7563814,
     "lng": -73.971662,
     "price_range": "$",
-    "place_id": "ChIJT_C10PxYwokRjHup8DJnuF8"
+    "place_id": "ChIJT_C10PxYwokRjHup8DJnuF8",
+    "google_rating": 4.4,
+    "google_reviews": 1610
   },
   "Tomatillo": {
     "platform": "tock",
@@ -131959,7 +132034,9 @@
     "googleReviewCount": 334,
     "lat": 41.0151319,
     "lng": -73.87114,
-    "place_id": "ChIJ2WQl_mHrwokR-wOqkmDxPKY"
+    "place_id": "ChIJ2WQl_mHrwokR-wOqkmDxPKY",
+    "google_rating": 4.5,
+    "google_reviews": 2248
   },
   "Cooper's Craft and Cocktails": {
     "platform": "tock",
@@ -131972,7 +132049,9 @@
     "googleReviewCount": 818,
     "lat": 40.7269839,
     "lng": -73.9890629,
-    "place_id": "ChIJGSGOWZtZwokRlIEcbFo4FjE"
+    "place_id": "ChIJGSGOWZtZwokRlIEcbFo4FjE",
+    "google_rating": 4.4,
+    "google_reviews": 819
   },
   "Ms. Kim's": {
     "platform": "tock",
@@ -131985,7 +132064,9 @@
     "googleReviewCount": 217,
     "lat": 40.7447721,
     "lng": -73.9881261,
-    "place_id": "ChIJgZUXdiBZwokRRDLXtbXe-F8"
+    "place_id": "ChIJgZUXdiBZwokRRDLXtbXe-F8",
+    "google_rating": 4.5,
+    "google_reviews": 217
   },
   "SEA by Jungsik": {
     "platform": "tock",
@@ -131998,7 +132079,9 @@
     "googleReviewCount": 258,
     "lat": 40.7484352,
     "lng": -73.99177639999999,
-    "place_id": "ChIJrVuKvz9ZwokRvrxUyJHeweQ"
+    "place_id": "ChIJrVuKvz9ZwokRvrxUyJHeweQ",
+    "google_rating": 4.3,
+    "google_reviews": 259
   },
   "The Gray Mare": {
     "platform": "tock",
@@ -132011,6 +132094,8 @@
     "googleReviewCount": 422,
     "lat": 40.7260554,
     "lng": -73.9899373,
-    "place_id": "ChIJ2YoWsYRZwokRJXhv6sEGsw4"
+    "place_id": "ChIJ2YoWsYRZwokRJXhv6sEGsw4",
+    "google_rating": 4.5,
+    "google_reviews": 424
   }
 }
