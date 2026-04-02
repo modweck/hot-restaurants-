@@ -56336,7 +56336,8 @@
       "upscale"
     ],
     "last_availability_check": "2026-03-06",
-    "address": "132 E 61st St, New York, NY 10065, USA"
+    "address": "132 E 61st St, New York, NY 10065, USA",
+    "venue_id": 78794
   },
   "jazba nyc": {
     "platform": "resy",
@@ -60193,7 +60194,8 @@
       "trendy"
     ],
     "website": "http://otwaynyc.com",
-    "address": "930 Fulton St, Brooklyn, NY 11238, USA"
+    "address": "930 Fulton St, Brooklyn, NY 11238, USA",
+    "venue_id": 976
   },
   "p.j. clarke's lincoln square": {
     "platform": "resy",
@@ -60337,7 +60339,8 @@
       "upscale"
     ],
     "last_availability_check": "2026-03-06",
-    "address": "301 Park Ave, New York, NY 10022, USA"
+    "address": "301 Park Ave, New York, NY 10022, USA",
+    "venue_id": 87553
   },
   "pearl box": {
     "platform": "resy",
@@ -61102,7 +61105,8 @@
       "Eater"
     ],
     "address": "15 E 13th St, New York, NY 10003, USA",
-    "new_rising": true
+    "new_rising": true,
+    "venue_id": 93064
   },
   "safta": {
     "platform": "resy",
@@ -130990,7 +130994,8 @@
     "lat": 40.7423816,
     "lng": -73.9834386,
     "website": "https://www.rosehillrooftop.com/",
-    "price": 3
+    "price": 3,
+    "venue_id": 91999
   },
   "Chef's Table at Brooklyn Fare": {
     "platform": "resy",
@@ -131035,7 +131040,8 @@
     "address": "85 Debevoise Ave, Brooklyn, NY 11222, USA",
     "lat": 40.7191845,
     "lng": -73.9394557,
-    "website": "https://driftaway.coffee/"
+    "website": "https://driftaway.coffee/",
+    "venue_id": 92579
   },
   "Landwer Cafe - Williamsburg": {
     "platform": "resy",
