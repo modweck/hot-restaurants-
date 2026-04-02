@@ -76,16 +76,19 @@ try {
   AVAILABILITY_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'tonight_availability.json'), 'utf8'));
   const availCount = Object.keys(AVAILABILITY_BOOK).filter(k => !k.startsWith('_')).length;
   console.log(`✅ Tonight availability: ${availCount} restaurants`);
-  // Merge OT opens_in at load time so bookAhead always has full data
+  // Merge full OT availability at load time
   try {
     const otAvail = JSON.parse(fs.readFileSync(path.join(__dirname, 'tonight_availability_ot.json'), 'utf8'));
     let otMerged = 0;
     for (const [name, val] of Object.entries(otAvail)) {
-      if (name.startsWith('_') || !val.opens_in) continue;
-      const entry = AVAILABILITY_BOOK[name] || AVAILABILITY_BOOK[name.toLowerCase()];
-      if (entry && entry.tier === 'booked' && !entry.opens_in) { entry.opens_in = val.opens_in; otMerged++; }
+      if (name.startsWith('_')) continue;
+      const key = name.toLowerCase();
+      if (!AVAILABILITY_BOOK[key] || val.checked_date > (AVAILABILITY_BOOK[key].checked_date || '')) {
+        AVAILABILITY_BOOK[key] = val;
+        otMerged++;
+      }
     }
-    if (otMerged) console.log(`✅ Merged OT opens_in: ${otMerged} restaurants`);
+    if (otMerged) console.log(`✅ Merged OT availability: ${otMerged} restaurants`);
   } catch(e) {}
 } catch (err) { console.warn('⚠️ Availability book missing:', err.message); }
 
