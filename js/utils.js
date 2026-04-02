@@ -88,10 +88,9 @@ function availTier(r) {
   const t = r.avail_tier || r.tier;
   if (t === 'available' || t === 'open') return 'available';
   if (t === 'limited') return 'limited';
-  if (t === 'hard' || t === 'hard_to_book') return 'hard';
+  if (t === 'hard' || t === 'hard_to_book') return 'booked';
   if (t === 'booked' || t === 'fully_booked') return 'booked';
-  if (t === 'prime_booked' || t === 'very_hard') return 'radar';
-  if (!r.booking_url && !r.booking_platform) return 'radar';
+  if (t === 'prime_booked' || t === 'very_hard') return 'booked';
   return null;
 }
 
@@ -101,7 +100,7 @@ function availTierAR(r) {
   if (t === 'limited') return 'limited';
   if (t === 'hard' || t === 'hard_to_book') return 'hard';
   if (t === 'booked' || t === 'fully_booked') return 'booked';
-  if (t === 'prime_booked' || t === 'very_hard') return 'radar';
+  if (t === 'prime_booked' || t === 'very_hard') return 'booked';
   return null;
 }
 
