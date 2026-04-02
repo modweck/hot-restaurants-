@@ -3654,7 +3654,8 @@
     ],
     "nyt_stars": 2,
     "pete_wells": true,
-    "address": "15-17 Doyers St, New York, NY 10013, USA"
+    "address": "15-17 Doyers St, New York, NY 10013, USA",
+    "venue_id": 89991
   },
   "smithereens": {
     "platform": "resy",
@@ -12263,7 +12264,8 @@
       "upscale"
     ],
     "instagram": "c___r___e___w",
-    "price": 3
+    "price": 3,
+    "venue_id": 65747
   },
   "egg shop": {
     "platform": "website",
@@ -96592,7 +96594,8 @@
     ],
     "website": "https://www.lechenenyc.com",
     "place_id": "ChIJU27ERwBZwokRk3qhQhv3juo",
-    "address": "76 Carmine St, New York, NY 10014, United States"
+    "address": "76 Carmine St, New York, NY 10014, United States",
+    "venue_id": 88264
   },
   "little alley": {
     "platform": "resy",
@@ -99081,7 +99084,8 @@
     "nyt_stars": 2,
     "pete_wells": true,
     "address": "126 Union St, Brooklyn, NY 11231, United States",
-    "resy_url": "https://resy.com/cities/ny/cafe-spaghetti"
+    "resy_url": "https://resy.com/cities/ny/cafe-spaghetti",
+    "venue_id": 59220
   },
   "Cafe Zaffri": {
     "platform": "resy",
@@ -99384,7 +99388,8 @@
       "NYT",
       "Time Out"
     ],
-    "address": "60 E 65th St, New York, NY 10065, United States"
+    "address": "60 E 65th St, New York, NY 10065, United States",
+    "venue_id": 29947
   },
   "Dejavu": {
     "platform": "resy",
@@ -112735,7 +112740,8 @@
     "address": "1 E 55th St, New York, NY 10022, USA",
     "buzz_sources": [
       "Time Out"
-    ]
+    ],
+    "venue_id": 6439
   },
   "sushi lab rooftop": {
     "platform": "opentable",
@@ -130867,7 +130873,8 @@
     "price": 4,
     "buzz_sources": [
       "Time Out"
-    ]
+    ],
+    "venue_id": 52855
   },
   "El Vez NY": {
     "platform": "resy",
@@ -131168,7 +131175,8 @@
     "address": "275 Van Brunt St, Brooklyn, NY 11231, USA",
     "lat": 40.679175,
     "lng": -74.0105136,
-    "website": "https://charmbarnyc.com/"
+    "website": "https://charmbarnyc.com/",
+    "venue_id": 92555
   },
   "Ops - East Village": {
     "platform": "resy",
@@ -131541,7 +131549,8 @@
     "address": "317 E 75th St, New York, NY 10021, USA",
     "lat": 40.7705225,
     "lng": -73.9558389,
-    "website": "https://sushiakiranyc.com/"
+    "website": "https://sushiakiranyc.com/",
+    "venue_id": 85142
   },
   "JR & Son": {
     "platform": "resy",

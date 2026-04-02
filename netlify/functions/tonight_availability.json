@@ -673,15 +673,6 @@
     "late": "limited",
     "_checked_date": "2026-04-02"
   },
-  "kopitiam": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "wildair": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -698,15 +689,6 @@
     "prime": "booked",
     "late": "limited",
     "_checked_date": "2026-04-02"
-  },
-  "sugarfish": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "thai diner": {
     "tier": "booked",
@@ -845,15 +827,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "foxface natural": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "moono": {
     "tier": "open",
     "dinner_slots": 32,
@@ -954,15 +927,6 @@
     "_checked_date": "2026-04-02"
   },
   "kelang": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "ramen by ra": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
@@ -1150,15 +1114,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "tenny's brunch": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "point seven": {
     "tier": "open",
     "dinner_slots": 18,
@@ -1326,15 +1281,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "cherry point": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "foul witch": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -1370,51 +1316,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "pye boat noodle": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "sik gaek": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "dirt candy": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "legacy records": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "charlie bird": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "pasquale jones": {
     "tier": "open",
     "dinner_slots": 38,
@@ -1430,15 +1331,6 @@
     "prime": "booked",
     "late": "limited",
     "_checked_date": "2026-04-02"
-  },
-  "15 east": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "loring place": {
     "tier": "open",
@@ -1557,15 +1449,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "kung fu little steamed buns ramen": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "la dong": {
     "tier": "booked",
@@ -1733,15 +1616,6 @@
     "_checked_date": "2026-04-02"
   },
   "zaab zaab": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "bar kabawa": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
@@ -1940,15 +1814,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "blue ribbon brasserie": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "sushi yasuda": {
     "tier": "open",
     "dinner_slots": 15,
@@ -1974,15 +1839,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "sripraphai": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "wayla": {
     "tier": "open",
     "dinner_slots": 50,
@@ -1992,24 +1848,6 @@
     "_checked_date": "2026-04-02"
   },
   "bamonte's": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "xi'an famous foods": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "grand banks": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
@@ -2033,15 +1871,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "lolo's seafood shack": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "asset": {
     "tier": "open",
@@ -4141,24 +3970,6 @@
     "late": "limited",
     "_checked_date": "2026-04-02"
   },
-  "ani ramen - jersey city": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "ani ramen - montclair": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "antalia nyc mediterranean turkish kitchen": {
     "tier": "open",
     "dinner_slots": 15,
@@ -5050,15 +4861,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "centurion new york® by american express": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "chada": {
     "tier": "open",
     "dinner_slots": 12,
@@ -5173,15 +4975,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "city vineyard & wine garden at pier 26": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "class on 38th": {
     "tier": "open",
     "dinner_slots": 17,
@@ -5280,15 +5073,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "concrete shoals": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "congee village": {
     "tier": "booked",
@@ -5687,15 +5471,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "driftaway coffee tasting room": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "dubuhaus": {
     "tier": "open",
     "dinner_slots": 7,
@@ -5728,15 +5503,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "egg shop williamsburg": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "el coco 9th ave": {
     "tier": "open",
@@ -6087,15 +5853,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "friends in food 2025 conference": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "frijoleros": {
     "tier": "open",
@@ -6664,15 +6421,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "jack's wife freda - chelsea": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "jack's wife freda - soho": {
     "tier": "open",
@@ -8451,15 +8199,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "one world pizza": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "one40rooftop": {
     "tier": "open",
     "dinner_slots": 17,
@@ -9892,15 +9631,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "takumen": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "tal korean bistro": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -10241,15 +9971,6 @@
     "late": "booked",
     "_checked_date": "2026-04-02"
   },
-  "the ribbon": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "the ridge house": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -10401,15 +10122,6 @@
     "_checked_date": "2026-04-02"
   },
   "tiger sushi": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "tillie's x wsa": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
@@ -10762,15 +10474,6 @@
     "prime": "available",
     "late": "booked",
     "_checked_date": "2026-04-02"
-  },
-  "weill café at carnegie hall": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "west bank cafe": {
     "tier": "open",
@@ -12170,15 +11873,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "bar primi bowery": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "vesta trattoria & wine bar": {
     "tier": "open",
     "dinner_slots": 20,
@@ -12250,15 +11944,6 @@
     "prime": "available",
     "late": "limited",
     "_checked_date": "2026-04-02"
-  },
-  "monkey bar": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "gui steakhouse nyc times square": {
     "tier": "open",
@@ -12625,29 +12310,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "expat": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "11:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "11:30 AM",
-      "close": "11:00 PM"
-    },
-    "checked_date": "2026-04-02T18:50:55.380Z"
-  },
   "pasta louise restaurant": {
     "tier": "open",
     "dinner_slots": 38,
@@ -12712,15 +12374,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "claudette": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "dino": {
     "tier": "open",
     "dinner_slots": 18,
@@ -12728,29 +12381,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "duane park": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "7:30 PM",
-      "10:30 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "7:30 PM",
-      "close": "10:30 PM"
-    },
-    "checked_date": "2026-04-02T18:51:10.236Z"
   },
   "due west": {
     "tier": "limited",
@@ -13069,15 +12699,6 @@
     "prime": "available",
     "late": "available",
     "_checked_date": "2026-04-02"
-  },
-  "baylander steel beach": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "patrick steakhouse": {
     "tier": "booked",
@@ -13900,15 +13521,6 @@
     "late": "available",
     "_checked_date": "2026-03-30"
   },
-  "frying pan nyc": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "il corallo trattoria": {
     "tier": "open",
     "dinner_slots": 8,
@@ -13982,29 +13594,6 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02"
-  },
-  "ms. kim's": {
-    "tier": "open",
-    "dinner_slots": 24,
-    "early": "limited",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "6:00 PM",
-      "6:15 PM",
-      "6:30 PM",
-      "6:45 PM",
-      "7:00 PM",
-      "7:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "6:00 PM",
-      "close": "12:00 AM"
-    },
-    "checked_date": "2026-04-02T19:00:08.156Z"
   },
   "suram - sushi & ramen (hudson yards)": {
     "tier": "open",
@@ -14447,15 +14036,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "boulud sud": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "amarone": {
     "tier": "open",
     "dinner_slots": 24,
@@ -14765,15 +14345,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "time out market - union square": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "sushi lin  upper west side": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -15003,52 +14574,6 @@
     },
     "checked_date": "2026-04-02T18:51:20.672Z"
   },
-  "diwine": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "5:00 PM",
-      "close": "12:00 AM"
-    },
-    "checked_date": "2026-04-02T18:51:36.816Z"
-  },
-  "dubrovnik restaurant": {
-    "tier": "open",
-    "dinner_slots": 21,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "9:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "11:00 AM",
-      "close": "9:00 PM"
-    },
-    "checked_date": "2026-04-02T18:51:51.557Z"
-  },
   "chef guo - 小国宴": {
     "tier": "tasting_menu",
     "dinner_slots": 2,
@@ -15081,25 +14606,6 @@
     },
     "checked_date": "2026-04-02T18:52:54.750Z"
   },
-  "puertas": {
-    "tier": "limited",
-    "dinner_slots": 2,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "sample_times": [
-      "5:30 PM",
-      "9:30 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "5:30 PM",
-      "close": "9:30 PM"
-    },
-    "checked_date": "2026-04-02T18:53:29.578Z"
-  },
   "yoshino · new york": {
     "tier": "tasting_menu",
     "dinner_slots": 1,
@@ -15128,72 +14634,6 @@
     "open_today": false,
     "checked_date": "2026-04-02T18:54:11.349Z"
   },
-  "super nice pizza": {
-    "tier": "open",
-    "dinner_slots": 25,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "10:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "5:00 PM",
-      "close": "10:00 PM"
-    },
-    "checked_date": "2026-04-02T18:54:23.918Z"
-  },
-  "la compagnie wine bar - flatiron": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "5:00 PM",
-      "close": "12:00 AM"
-    },
-    "checked_date": "2026-04-02T18:54:38.852Z"
-  },
-  "aman new york": {
-    "tier": "open",
-    "dinner_slots": 25,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-04-02T18:54:50.774Z"
-  },
   "ahgassi gopchang": {
     "tier": "tasting_menu",
     "dinner_slots": 4,
@@ -15216,29 +14656,6 @@
     "open_today": false,
     "checked_date": "2026-04-02T18:55:10.564Z"
   },
-  "le zie trattoria": {
-    "tier": "open",
-    "dinner_slots": 23,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "10:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "12:00 PM",
-      "close": "10:00 PM"
-    },
-    "checked_date": "2026-04-02T18:55:28.443Z"
-  },
   "bodai nyc": {
     "tier": "tasting_menu",
     "dinner_slots": 1,
@@ -15260,158 +14677,6 @@
     "platform": "tock",
     "open_today": true,
     "checked_date": "2026-04-02T18:55:52.177Z"
-  },
-  "edward's": {
-    "tier": "open",
-    "dinner_slots": 21,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "10:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "11:00 AM",
-      "close": "10:00 PM"
-    },
-    "checked_date": "2026-04-02T18:56:34.571Z"
-  },
-  "cafe carlyle": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "sample_times": [],
-    "platform": "tock",
-    "prepaid_price": 190,
-    "open_today": true,
-    "hours": {
-      "open": "6:30 PM",
-      "close": "11:00 PM"
-    },
-    "checked_date": "2026-04-02T18:56:43.754Z",
-    "opens_in": 3
-  },
-  "la compagnie centre street": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "4:00 PM",
-      "close": "12:00 AM"
-    },
-    "checked_date": "2026-04-02T18:56:56.438Z"
-  },
-  "the expat": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "11:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "11:30 AM",
-      "close": "11:00 PM"
-    },
-    "checked_date": "2026-04-02T18:57:09.849Z"
-  },
-  "abaita": {
-    "tier": "open",
-    "dinner_slots": 24,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "9:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "12:00 PM",
-      "close": "9:00 PM"
-    },
-    "checked_date": "2026-04-02T18:57:25.963Z"
-  },
-  "polanco social": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "4:00 PM",
-      "close": "12:00 AM"
-    },
-    "checked_date": "2026-04-02T18:57:39.385Z"
-  },
-  "tomokase": {
-    "tier": "open",
-    "dinner_slots": 6,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "sample_times": [
-      "6:00 PM",
-      "6:30 PM",
-      "7:00 PM",
-      "7:30 PM",
-      "8:00 PM",
-      "8:30 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-04-02T18:57:52.939Z"
   },
   "kazunori - greenwich village": {
     "tier": "tasting_menu",
@@ -15461,23 +14726,6 @@
     },
     "checked_date": "2026-04-02T18:58:24.236Z"
   },
-  "osakana": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "sample_times": [],
-    "platform": "tock",
-    "prepaid_price": 195,
-    "open_today": true,
-    "hours": {
-      "open": "1:00 PM",
-      "close": "10:00 PM"
-    },
-    "checked_date": "2026-04-02T18:58:34.207Z",
-    "opens_in": 3
-  },
   "restaurant yuu": {
     "tier": "tasting_menu",
     "dinner_slots": 2,
@@ -15493,160 +14741,6 @@
       "close": "11:30 PM"
     },
     "checked_date": "2026-04-02T18:58:46.083Z"
-  },
-  "il fresco": {
-    "tier": "open",
-    "dinner_slots": 17,
-    "early": "available",
-    "prime": "available",
-    "late": "limited",
-    "sample_times": [
-      "9:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "12:00 PM",
-      "close": "2:30 PM"
-    },
-    "checked_date": "2026-04-02T18:58:59.266Z"
-  },
-  "grass roots kitchen": {
-    "tier": "open",
-    "dinner_slots": 13,
-    "early": "available",
-    "prime": "available",
-    "late": "booked",
-    "sample_times": [
-      "8:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "9:00 AM",
-      "close": "8:00 PM"
-    },
-    "checked_date": "2026-04-02T18:59:16.640Z"
-  },
-  "luncheonette": {
-    "tier": "limited",
-    "dinner_slots": 2,
-    "early": "booked",
-    "prime": "limited",
-    "late": "booked",
-    "sample_times": [
-      "8:15 PM",
-      "7:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-04-02T18:59:29.204Z"
-  },
-  "tomatillo": {
-    "tier": "open",
-    "dinner_slots": 13,
-    "early": "available",
-    "prime": "available",
-    "late": "booked",
-    "sample_times": [
-      "8:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "12:00 PM",
-      "close": "8:00 PM"
-    },
-    "checked_date": "2026-04-02T18:59:41.403Z"
-  },
-  "cooper's craft and cocktails": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "12:00 PM",
-      "close": "2:00 AM"
-    },
-    "checked_date": "2026-04-02T18:59:53.618Z"
-  },
-  "sea by jungsik": {
-    "tier": "open",
-    "dinner_slots": 21,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "9:00 PM",
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "4:30 PM",
-      "close": "9:00 PM"
-    },
-    "checked_date": "2026-04-02T19:00:21.345Z"
-  },
-  "loreley beer garden": {
-    "tier": "open",
-    "dinner_slots": 28,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "sample_times": [
-      "5:00 PM",
-      "5:15 PM",
-      "5:30 PM",
-      "5:45 PM",
-      "6:00 PM",
-      "6:15 PM"
-    ],
-    "platform": "tock",
-    "prepaid_price": null,
-    "open_today": true,
-    "hours": {
-      "open": "5:00 PM",
-      "close": "2:00 AM"
-    },
-    "checked_date": "2026-04-02T18:52:08.953Z"
   },
   "tara mór": {
     "tier": "open",
@@ -17696,15 +16790,6 @@
     "late": "available",
     "_checked_date": "2026-04-02"
   },
-  "bandits burger & dive": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "meama": {
     "tier": "open",
     "dinner_slots": 22,
@@ -18056,15 +17141,6 @@
     "_checked_date": "2026-04-02",
     "fully_locked": true
   },
-  "le café louis vuitton": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "69leonardstreet": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -18090,15 +17166,6 @@
     "late": "booked",
     "_checked_date": "2026-04-02",
     "opens_in": 14
-  },
-  "food education fund": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
   },
   "jaba": {
     "tier": "booked",
@@ -18127,25 +17194,7 @@
     "_checked_date": "2026-04-02",
     "opens_in": 14
   },
-  "sea": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
   "the modern": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "thirst series a new perspective on wine presented by pressoir and american express": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
@@ -18181,24 +17230,6 @@
     "opens_in": 3
   },
   "hwaro": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "hwaro nyc times square": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-02",
-    "fully_locked": true
-  },
-  "sushi sho - nyc": {
     "tier": "booked",
     "dinner_slots": 0,
     "early": "booked",
