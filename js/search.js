@@ -418,10 +418,6 @@ function display(restaurants) {
       html += `<div class="sec-head"><span class="sec-title hot">🔥 Hot &amp; Available</span><div class="sec-line"></div><span class="sec-count">${avail.length}</span></div>`;
       html += avail.map(r=>renderCard(r,false)).join('');
     }
-    if (radar.length) {
-      html += `<div class="sec-head" style="margin-top:6px"><span class="sec-title radar">On the Radar</span><div class="sec-line"></div><span class="sec-count">${radar.length}</span></div>`;
-      html += radar.map(r=>renderCard(r,true)).join('');
-    }
   }
   if (!list.length) {
     html = `<div class="empty"><div class="empty-icon">🍽️</div><div class="empty-title">${isBookAhead ? 'No book-ahead spots found' : 'No hot spots found'}</div><div class="empty-sub">Try adjusting your filters</div></div>`;

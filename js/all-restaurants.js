@@ -140,8 +140,7 @@ function renderCardAR(r) {
     availHtml = `<div><span class="avail hard">🔴 Fully Booked Tonight</span></div>`;
   } else if (tier === 'available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
   else if (tier === 'limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
-  else if (tier === 'hard') availHtml = `<div><span class="avail hard">🔴 Hard to Book</span></div>`;
-  else if (tier === 'radar') availHtml = `<div><span class="avail radar">🔥 On the Radar</span></div>`;
+  else if (tier === 'hard') availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
 
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
