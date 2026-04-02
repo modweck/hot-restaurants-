@@ -449,13 +449,17 @@ async function main() {
         skipped++;
         retryQueue.push(r);
       } else {
+        const prev = output[key] || {};
         output[key] = {
           tier:         result.tier,
           dinner_slots: result.dinner_slots,
           early:        result.early,
           prime:        result.prime,
           late:         result.late,
-          _checked_date: TODAY
+          _checked_date: TODAY,
+          // Preserve future availability from previous run until Phase 2 re-checks
+          ...(prev.opens_in ? { opens_in: prev.opens_in } : {}),
+          ...(prev.fully_locked ? { fully_locked: prev.fully_locked } : {}),
         };
 
         const EMOJI = { booked: '⚫', limited: '🟠', open: '🟢' };

@@ -149,9 +149,9 @@
     .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.2)}
     .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.2)}
     .badge.insta{background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.2)}
-    .badge.inkind{background:#fff7ed;color:#c2410c;border:1px solid rgba(194,65,12,.2)}
+    .badge.inkind{background:#fff7ed;color:#c2410c;border:2px solid #c2410c;font-weight:800}
     .badge.bilt{background:#1a1a2e;color:#fff;border:1px solid rgba(26,26,46,.5)}
-    .badge.rakuten{background:#fff0f0;color:#bf0000;border:1px solid rgba(191,0,0,.2)}
+    .badge.rakuten{background:#fff0f0;color:#bf0000;border:2px solid #bf0000;font-weight:800}
     .avail{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:9px}
     .avail.av{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)}
     .avail.lim{background:#fff8e1;color:#f57f17;border:1px solid rgba(245,127,23,.2)}
@@ -210,6 +210,14 @@
   </style>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  const _sbMod = window.supabase;
+  const _sb = (_sbMod.createClient || _sbMod)('https://zdsolubfxzvrqiqvwjev.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM');
+  _sb.auth.getSession().then(({data:{session}})=>{if(!session)window.location.href='login.html'});
+  function _logout(){_sb.auth.signOut().then(()=>window.location.href='login.html')}
+</script>
+
 <div class="container">
 
   <!-- ═══════════════════════════════════════════════════════ HOME VIEW -->
@@ -220,7 +228,7 @@
       <div class="hero-bg"></div>
       <div style="position:relative">
         <div class="hero-top">
-          <div class="hero-logo">Seat<span>Wize</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><div class="hero-logo">Seat<span>Wize</span></div><button onclick="_logout()" style="background:none;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:4px 8px;font-size:10px;font-weight:700;color:#999;cursor:pointer;font-family:'DM Sans',sans-serif">Logout</button></div>
           <div class="hero-tabs">
             <button class="hero-tab active" id="ht-hotspots" onclick="setHeroTab('hotspots',this)">🔥 Hot Spots</button>
             <button class="hero-tab" id="ht-all" onclick="setHeroTab('all',this)">📍 All Restaurants</button>
@@ -355,9 +363,10 @@
         </select>
       </div>
 
-      <!-- 4. Restaurant name search -->
-      <div style="margin-bottom:10px">
-        <input type="text" id="homeRestInput" class="finput" placeholder="Restaurant name (optional)..." style="background:#fff;border-color:rgba(0,0,0,0.1);color:#1a1a2e">
+      <!-- 4. Restaurant name search with autocomplete -->
+      <div style="margin-bottom:10px;position:relative">
+        <input type="text" id="homeRestInput" class="finput" placeholder="Search for a restaurant..." style="background:#fff;border-color:rgba(0,0,0,0.1);color:#1a1a2e" autocomplete="off" oninput="_restAutocomplete(this.value)">
+        <div id="restAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.1);border-top:none;border-radius:0 0 12px 12px;max-height:240px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.12)"></div>
       </div>
 
       <!-- 5. Featured cards — real restaurants from BUZZ_SET -->
@@ -587,7 +596,7 @@
           <option value="price_high">💰 Price ↓</option>
         </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="state.reviewCountFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
-          <option value="any">📊 Reviews</option>
+          <option value="any">📊 Review Count</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -604,11 +613,30 @@
   </div><!-- /view-search -->
 
   <!-- ═══════════════════════════════════════════════════════ MAP VIEW -->
-  <div class="view" id="view-map">
-    <div style="padding:60px 20px;text-align:center">
-      <div style="font-size:36px;margin-bottom:12px">🗺️</div>
-      <div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Map View Coming Soon</div>
-      <div style="font-size:13px;color:#333">Find restaurants near you on the map</div>
+  <div class="view" id="view-map" style="position:relative;height:calc(100vh - 60px)">
+    <div id="map-filters" style="position:absolute;top:10px;left:10px;right:10px;z-index:5;display:flex;gap:5px;flex-wrap:wrap;padding:6px;background:rgba(255,255,255,.92);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.1)">
+      <button class="mfilt on" data-mf="all" onclick="_toggleMapFilter('all',this)" style="background:#ff4500;color:#fff">All</button>
+      <button class="mfilt" data-mf="hotspot" onclick="_toggleMapFilter('hotspot',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4500;margin-right:4px"></span>Hot Spots</button>
+      <button class="mfilt" data-mf="available" onclick="_toggleMapFilter('available',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2e7d32;margin-right:4px"></span>Available</button>
+      <button class="mfilt" data-mf="limited" onclick="_toggleMapFilter('limited',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f5a623;margin-right:4px"></span>Limited</button>
+      <button class="mfilt" data-mf="booked_tonight" onclick="_toggleMapFilter('booked_tonight',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:4px"></span>Booked Tonight</button>
+      <button class="mfilt" data-mf="booked" onclick="_toggleMapFilter('booked',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1a1a1a;margin-right:4px"></span>Booked</button>
+    </div>
+    <style>
+      .mfilt{padding:5px 10px;border-radius:8px;border:1px solid rgba(0,0,0,.12);background:#fff;font-size:11px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;color:#555;display:flex;align-items:center;transition:all .15s}
+      .mfilt.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
+    </style>
+    <div id="gmap" style="width:100%;height:100%"></div>
+    <div id="map-info" style="display:none;position:absolute;bottom:70px;left:12px;right:12px;background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.15);padding:14px 16px;z-index:10;max-width:500px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div id="map-info-name" style="font-weight:800;font-size:15px;color:#1a1a2e"></div>
+          <div id="map-info-sub" style="font-size:12px;color:#888;margin-top:2px"></div>
+        </div>
+        <button onclick="document.getElementById('map-info').style.display='none'" style="background:none;border:none;font-size:18px;cursor:pointer;color:#aaa;padding:0 0 0 8px">✕</button>
+      </div>
+      <div id="map-info-badges" style="margin-top:6px"></div>
+      <a id="map-info-book" href="#" target="_blank" rel="noopener" style="display:none;margin-top:10px;padding:10px;background:#a0344d;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;display:block">Book →</a>
     </div>
   </div>
 
@@ -842,7 +870,7 @@
           <option value="price_high">💰 Price ↓</option>
         </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="arState.reviewCountFilter=this.value;if(allNYCRestaurants.length)displayAllNYC(allNYCRestaurants)">
-          <option value="any">📊 Reviews</option>
+          <option value="any">📊 Review Count</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -1092,7 +1120,7 @@
           <option value="price_high">💰 Price ↓</option>
         </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="barState.reviewCountFilter=this.value;barRefilter()">
-          <option value="any">📊 Reviews</option>
+          <option value="any">📊 Review Count</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -1108,15 +1136,19 @@
 
   </div><!-- /view-drinks -->
 
+  <!-- FOOTER LINKS -->
+  <div style="display:flex;justify-content:center;gap:16px;padding:12px 20px;background:#f5f0eb;border-top:1px solid rgba(0,0,0,.06)">
+    <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
+    <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
+    <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
+    <a href="privacy.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Privacy</a>
+  </div>
+
   <!-- BOTTOM NAV -->
   <div class="bottom-nav">
     <button class="nav-item active" id="nav-home" onclick="switchNav('home')">
       <span class="nav-icon">🔥</span>
-      <span class="nav-label">Hot Spots</span>
-    </button>
-    <button class="nav-item" id="nav-search" onclick="switchNav('search')">
-      <span class="nav-icon">🔍</span>
-      <span class="nav-label">Search</span>
+      <span class="nav-label">Home</span>
     </button>
     <button class="nav-item" id="nav-drinks" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">
       <span class="nav-icon">🍸</span>
@@ -1135,6 +1167,142 @@
 </div><!-- /container -->
 
 <script>
+// ─── SAVED RESTAURANTS ───────────────────────────────────────────────────────
+function _getSaved() { try { return JSON.parse(localStorage.getItem('sw_saved') || '{}'); } catch { return {}; } }
+function _setSaved(obj) { localStorage.setItem('sw_saved', JSON.stringify(obj)); }
+function isSaved(name) { return !!_getSaved()[(name||'').toLowerCase().trim()]; }
+function toggleSave(name, cardData) {
+  const key = (name||'').toLowerCase().trim();
+  const saved = _getSaved();
+  if (saved[key]) { delete saved[key]; } else { saved[key] = cardData || { name }; }
+  _setSaved(saved);
+  // Update all save buttons for this restaurant
+  document.querySelectorAll(`[data-save-key="${CSS.escape(key)}"]`).forEach(btn => {
+    btn.textContent = saved[key] ? '★' : '☆';
+    btn.title = saved[key] ? 'Unsave' : 'Save';
+    btn.style.color = saved[key] ? '#ff4500' : '#ccc';
+  });
+  // Refresh saved view if visible
+  if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
+}
+function renderSavedView() {
+  const saved = _getSaved();
+  const el = document.getElementById('view-saved');
+  const entries = Object.values(saved);
+  if (!entries.length) {
+    el.innerHTML = '<div style="padding:60px 20px;text-align:center"><div style="font-size:36px;margin-bottom:12px">⭐</div><div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Saved Places</div><div style="font-size:13px;color:#999">Tap ☆ on any restaurant to save it here</div></div>';
+    return;
+  }
+  let html = '<div style="padding:16px 20px 8px"><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Saved Places</div><div style="font-size:12px;color:#888;margin-top:2px">' + entries.length + ' saved</div></div>';
+  entries.forEach(r => {
+    const name = r.name || '';
+    const key = name.toLowerCase().trim();
+    const cuisine = r.cuisine || '';
+    const rating = Number(r.googleRating||0);
+    const reviews = Number(r.googleReviewCount||0);
+    const ratingStr = rating > 0 ? `⭐ ${rating}${reviews > 0 ? ' ('+( reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews)+')' : ''}` : '';
+    const bookUrl = r.booking_url || '';
+    const platform = r.booking_platform || '';
+    const platformLabel = platform === 'resy' ? 'Resy' : platform === 'opentable' ? 'OpenTable' : platform === 'tock' ? 'Tock' : '';
+    const bookBtn = bookUrl && platformLabel ? `<a href="${bookUrl}" target="_blank" rel="noopener" style="display:block;padding:10px;background:#a0344d;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:8px">Book on ${platformLabel} →</a>` : '';
+    const mapsUrl = r.place_id ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name)+'&query_place_id='+r.place_id : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' restaurant New York NY');
+    html += `<div class="card" style="margin:0 16px 12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="card-name">${name}</div><div class="card-sub">${cuisine}</div></div>
+        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#ff4500;padding:4px" title="Unsave">★</button>
+      </div>
+      ${ratingStr ? '<div class="badges"><span class="badge goog">'+ratingStr+'</span></div>' : ''}
+      <div class="actions">${bookBtn || `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn google">Find on Google →</a>`}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+// ─── RESTAURANT AUTOCOMPLETE ─────────────────────────────────────────────────
+let _restNames = null;
+async function _loadRestNames() {
+  if (_restNames) return _restNames;
+  try {
+    const resp = await fetch('/.netlify/functions/search-candidates', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
+    });
+    const data = await resp.json();
+    const all = [...(data.elite||[]), ...(data.moreOptions||[])];
+    _restNames = all.map(r => ({ name: r.name, cuisine: r.cuisine||'', rating: r.googleRating||0, platform: r.booking_platform||'' }));
+    return _restNames;
+  } catch { return []; }
+}
+
+let _autoTimeout = null;
+function _restAutocomplete(query) {
+  clearTimeout(_autoTimeout);
+  const el = document.getElementById('restAutoList');
+  if (!query || query.length < 2) { el.style.display = 'none'; return; }
+  _autoTimeout = setTimeout(async () => {
+    const names = await _loadRestNames();
+    const q = query.toLowerCase();
+    const matches = names.filter(r => r.name.toLowerCase().includes(q)).slice(0, 8);
+    if (!matches.length) { el.style.display = 'none'; return; }
+    el.innerHTML = matches.map(r => {
+      const ratingStr = r.rating > 0 ? `⭐ ${r.rating}` : '';
+      return `<div onclick="_selectRest('${r.name.replace(/'/g,"\\'")}')" style="padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:center;transition:background .1s" onmouseover="this.style.background='#f9f6f2'" onmouseout="this.style.background=''">
+        <div><div style="font-weight:700;font-size:13px;color:#1a1a2e">${r.name}</div><div style="font-size:11px;color:#999">${r.cuisine}</div></div>
+        <div style="font-size:11px;color:#888">${ratingStr}</div>
+      </div>`;
+    }).join('');
+    el.style.display = 'block';
+  }, 150);
+}
+
+function _selectRest(name) {
+  document.getElementById('homeRestInput').value = '';
+  document.getElementById('restAutoList').style.display = 'none';
+  // Find the full restaurant data and show it directly
+  const q = name.toLowerCase();
+  const matches = (_restNames || []).filter(r => r.name.toLowerCase() === q || r.name.toLowerCase().includes(q));
+  if (!matches.length) return;
+  // Fetch full data for this restaurant and render card
+  state._restNameQuery = name;
+  state.transport = 'all_nyc';
+  state.buzzFilter = 'any';
+  state.availFilter = 'any';
+  showView('search');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('nav-home')?.classList.add('active');
+  document.getElementById('search')?.classList.add('hidden');
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:13px;color:#888">Loading...</div></div>';
+  // Fetch all restaurants and filter to this one
+  fetch('/.netlify/functions/search-candidates', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
+  }).then(r => r.json()).then(data => {
+    let results = [...(data.elite||[]), ...(data.moreOptions||[])];
+    const seen = new Set();
+    results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
+    const matched = results.filter(r => (r.name||'').toLowerCase().includes(q));
+    if (matched.length) {
+      allRestaurants = matched;
+      rawRestaurants = matched;
+      state._restNameQuery = '';
+      display(matched);
+      document.getElementById('resMeta').textContent = matched.length + ' result' + (matched.length !== 1 ? 's' : '');
+    } else {
+      document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:28px;margin-bottom:8px">🍽️</div><div style="font-size:13px;color:#888">Restaurant not found</div></div>';
+    }
+  }).catch(() => {
+    document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px;color:#c00">Search failed</div>';
+  });
+}
+
+// Close autocomplete when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#homeRestInput') && !e.target.closest('#restAutoList')) {
+    document.getElementById('restAutoList').style.display = 'none';
+  }
+});
+
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
 const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 1, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null, priceFilter: 'any' };
 
@@ -1225,6 +1393,8 @@ function switchNav(name) {
     if (br) br.style.display = 'none';
     showView('drinks');
   }
+  else if (name === 'saved') { showView('saved'); renderSavedView(); }
+  else if (name === 'map') { showView('map'); initMap(); }
   else showView(name);
   // Sync hero tab highlights across all tab switchers
   syncHeroTabs(name);
@@ -1376,7 +1546,9 @@ function goToSearchWithAddr(cuisineOverride) {
 function goToSearch(buzz, cuisine) {
   showView('search');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('nav-search').classList.add('active');
+  const navSearch = document.getElementById('nav-search');
+  if (navSearch) navSearch.classList.add('active');
+  else document.getElementById('nav-home')?.classList.add('active');
 
   // Always sync buzz filter from home screen — reset to 'any' when no specific filter
   if (buzz && buzz !== 'any') {
@@ -1419,6 +1591,10 @@ function goToSearch(buzz, cuisine) {
   if (state.availFilter === 'book_ahead') {
     state.transport = 'all_nyc';
   }
+
+  // Sync restaurant name search from home screen
+  const restName = document.getElementById('homeRestInput')?.value.trim() || '';
+  state._restNameQuery = restName;
 
   // Sync vibe filter from home screen
   state.vibeFilter = homeState.vibeFilter || null;
@@ -1685,7 +1861,7 @@ function renderCard(r, isRadar) {
   }
 
   // Show specific press source badges with clickable links
-  if (hasBuzz && !r.michelin && !r.bib_gourmand && !isNYT) {
+  if (hasBuzz) {
     const pressLinks = new Map();
     const _ns = s => ({'eater':'Eater','infatuation':'Infatuation','the infatuation':'Infatuation','The Infatuation':'Infatuation','timeout':'Time Out','TimeOut':'Time Out','Time Out':'Time Out','grubstreet':'GrubStreet','GrubStreet':'GrubStreet','Grub Street':'GrubStreet','nyt':'NYT','NY Times':'NYT','michelin':'Michelin'}[s] || s.charAt(0).toUpperCase()+s.slice(1));
     if (bdata?.links) bdata.links.forEach(l => { const k = _ns(l.source); if (k !== 'NYT' && k !== 'Michelin') pressLinks.set(k, l.url); });
@@ -1720,13 +1896,13 @@ function renderCard(r, isRadar) {
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
   // inKind badge
-  if (r.inkind && (hasBookingPlatform(r) || state.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
   // Bilt badge
   if (r.bilt_dining && (hasBookingPlatform(r) || state.rewardsFilter === 'bilt'))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatform(r) || state.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
     badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
@@ -1817,18 +1993,7 @@ function renderCard(r, isRadar) {
   }
 
   // Press links
-  let pressHtml = '';
-  if (bdata?.links?.length) {
-    const id = 'p'+Math.random().toString(36).substr(2,5);
-    const sm = {'Eater':'eater','The Infatuation':'infat','Infatuation':'infat','NY Times':'nyt','NYT':'nyt','Time Out':'timeout','Grub Street':'grub','GrubStreet':'grub','Bon Appétit':'grub'};
-    const chips = bdata.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="plink ${sm[l.source]||''}">${l.label}</a>`).join('');
-    pressHtml = `<div class="press-section">
-      <button class="press-toggle" onclick="var e=document.getElementById('${id}');e.style.display=e.style.display==='none'?'flex':'none';this.querySelector('.bc').textContent=e.style.display==='none'?'▸':'▾'">
-        📰 Press (${bdata.links.length}) <span class="bc">▸</span>
-      </button>
-      <div id="${id}" style="display:none;flex-wrap:wrap;gap:4px;margin-top:5px">${chips}</div>
-    </div>`;
-  }
+  const pressHtml = '';
 
   // Website + Instagram links
   let cardLinks = '';
@@ -1860,13 +2025,18 @@ function renderCard(r, isRadar) {
     cardLinks += '</div>';
   }
 
+  const _skey = (r.name||'').toLowerCase().trim();
+  const _saved = isSaved(r.name);
+  const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||''}).replace(/'/g,'&#39;');
+  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#ff4500':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
+
   return `<div class="card${isRadar?' dim':''}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
     ${vibeHtml}
     ${badgesHtml}
     ${availHtml}
-    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
+    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a>${saveBtn}</div>
     ${pressHtml}
     ${cardLinks}
   </div>`;
@@ -1877,6 +2047,12 @@ function display(restaurants) {
   restaurants.forEach(r => { r._bs = buzzScore(r); });
 
   let list = [...restaurants];
+
+  // ── Restaurant name search ──
+  const _restQuery = (state._restNameQuery || '').toLowerCase().trim();
+  if (_restQuery) {
+    list = list.filter(r => (r.name||'').toLowerCase().includes(_restQuery));
+  }
 
   // ── Client-side distance filter (for walk/drive/radius modes) ──
   if (state.transport === 'walk') {
@@ -1895,8 +2071,8 @@ function display(restaurants) {
     const maxMi = state._homeRadius || +document.getElementById('radiusMiles').value || 1;
     list = list.filter(r => r.distanceMiles != null && r.distanceMiles <= maxMi);
   }
-  // ── Trend/buzz filter — supports multiple selections (OR logic) ──
-  const bfs = (state.trendFilters && state.trendFilters.length > 0) ? state.trendFilters : (state.buzzFilter && state.buzzFilter !== 'any' ? [state.buzzFilter] : []);
+  // ── Trend/buzz filter — supports multiple selections (OR logic), skip for name search ──
+  const bfs = _restQuery ? [] : ((state.trendFilters && state.trendFilters.length > 0) ? state.trendFilters : (state.buzzFilter && state.buzzFilter !== 'any' ? [state.buzzFilter] : []));
   if (bfs.length > 0) {
     list = list.filter(r => bfs.some(bf => {
       if (bf==='michelin') return (r.michelin?.stars||0)>=1;
@@ -1934,12 +2110,17 @@ function display(restaurants) {
   // ── Vibe filter — supports multiple selections (OR logic) ──
   const vfs = (state.vibeFilters && state.vibeFilters.length > 0) ? state.vibeFilters : (state.vibeFilter ? [state.vibeFilter] : []);
   if (vfs.length > 0) {
-    list = list.filter(r => r.vibe_tags && vfs.some(vf => r.vibe_tags.includes(vf)));
+    list = list.filter(r => r.vibe_tags && vfs.every(vf => r.vibe_tags.includes(vf)));
   }
 
   if (state.priceFilter!=='any') {
     const pl = Number(state.priceFilter);
     list = list.filter(r => r.price_level===pl);
+  }
+
+  if (state.reviewCountFilter && state.reviewCountFilter!=='any') {
+    const minR = Number(state.reviewCountFilter);
+    list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
   }
 
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
@@ -1958,8 +2139,8 @@ function display(restaurants) {
     });
   }
 
-  // ── Availability filter ──
-  const af = state.availFilter !== 'any' ? state.availFilter : homeState.availFilter;
+  // ── Availability filter (skip when searching by restaurant name) ──
+  const af = _restQuery ? 'any' : (state.availFilter !== 'any' ? state.availFilter : homeState.availFilter);
   const isBookAhead = af === 'book_ahead';
   if (af && af !== 'any') {
     list = list.filter(r => {
@@ -1973,18 +2154,24 @@ function display(restaurants) {
     });
   }
 
+  function _sortRating(a, b) {
+    const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
+    const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
+    if (aHasData && !bHasData) return -1;
+    if (!aHasData && bHasData) return 1;
+    const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
+    const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
+    const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
+    const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
+    const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+    const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+    if (rB !== rA) return rB - rA;
+    return (b._bs||0)-(a._bs||0);
+  }
   if (isBookAhead) {
-    list.sort((a,b) => (a.opens_in||99) - (b.opens_in||99));
+    list.sort(_sortRating);
   } else {
-    list.sort((a,b) => {
-      const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
-      const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
-      if (aHasData && !bHasData) return -1;
-      if (!aHasData && bHasData) return 1;
-      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-      if (rB !== rA) return rB - rA;
-      return (b._bs||0)-(a._bs||0);
-    });
+    list.sort(_sortRating);
   }
 
   const avail=[], radar=[];
@@ -2043,7 +2230,8 @@ async function doSearch() {
     // Map buzz filter to quality param for the backend
     // If multiple trend filters selected, send 'any' and let client-side filter handle it
     const buzzToQuality = { michelin:'michelin', michelin_rec:'michelin_rec', bib:'bib_gourmand', any:'any', new_rising:'new_rising' };
-    const qualityParam = (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[state.buzzFilter] || 'any');
+    const hasNameSearch = !!(state._restNameQuery || '').trim();
+    const qualityParam = hasNameSearch ? 'all' : (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[state.buzzFilter] || 'any');
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -2051,7 +2239,7 @@ async function doSearch() {
         location,
         quality: qualityParam,
         cuisine: cuisine==='any' ? undefined : cuisine,
-        broadCity: state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc'),
+        broadCity: hasNameSearch || (state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc')),
         transport: tp.transport,
         walkTime: tp.walkTime,
         driveTime: tp.driveTime,
@@ -2334,13 +2522,13 @@ function renderCardAR(r) {
   }
 
   // inKind badge
-  if (r.inkind && (hasBookingPlatform(r) || arState.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
   // Bilt badge
   if (r.bilt_dining && (hasBookingPlatform(r) || arState.rewardsFilter === 'bilt'))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatform(r) || arState.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
     badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const bpAR = (r.booking_platform || r.platform || '').toLowerCase();
@@ -2438,6 +2626,10 @@ function applyARFilters(list) {
   else if (bf === 'great') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.6 && rg < 4.75; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
   if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
+  if (arState.reviewCountFilter && arState.reviewCountFilter !== 'any') {
+    const minR = Number(arState.reviewCountFilter);
+    list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
+  }
   if (arState.cuisine && arState.cuisine !== 'any') {
     const cs = arState.cuisine.toLowerCase();
     list = list.filter(r => (r.cuisine || '').toLowerCase().includes(cs) || cs.includes((r.cuisine || '').toLowerCase().trim()));
@@ -2484,16 +2676,20 @@ function displayAllNYC(restaurants) {
     document.getElementById('allRestList').innerHTML = `<div style="text-align:center;padding:50px 20px;color:#555"><div style="font-size:36px;margin-bottom:12px">🍽️</div><div>No restaurants match these filters</div></div>`;
     return;
   }
-  // Sort: highest rating first (descending), Michelin always on top
+  // Sort: highest rating first, -1 penalty for <75 reviews (bypass for buzz/new_rising)
   filtered.sort((a, b) => {
     const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
     if (aHasData && !bHasData) return -1;
     if (!aHasData && bHasData) return 1;
-    const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
-    if (michelinDiff !== 0) return michelinDiff;
-    const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
-    return rB - rA; // highest rating first
+    const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
+    const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
+    const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
+    const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
+    const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+    const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+    if (rB !== rA) return rB - rA;
+    return 0;
   });
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
 }
@@ -2508,7 +2704,7 @@ async function doAllNYCSearch() {
 
   const listEl = document.getElementById('allRestList');
   const warnEl = document.getElementById('allRestWarnings');
-  listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all NYC restaurants...</div></div>`;
+  listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all restaurants...</div></div>`;
   warnEl.innerHTML = '';
 
   const btn = document.getElementById('arSearchBtn');
@@ -2846,6 +3042,178 @@ async function doBarSearch() {
     barSearching = false;
     if (btn) { btn.disabled = false; btn.textContent = '🍸 Find Bars & Drinks'; }
   }
+}
+
+// ─── MAP VIEW ────────────────────────────────────────────────────────────────
+let _map = null, _mapMarkers = [], _mapLoaded = false, _mapsApiKey = null, _mapRestaurants = [], _mapFilter = 'all';
+
+async function initMap() {
+  // Load Google Maps API once
+  if (!_mapLoaded) {
+    try {
+      const resp = await fetch('/.netlify/functions/get-maps-key');
+      const data = await resp.json();
+      _mapsApiKey = data.key;
+    } catch { _mapsApiKey = ''; }
+
+    if (!_mapsApiKey) {
+      document.getElementById('gmap').innerHTML = '<div style="padding:60px 20px;text-align:center;color:#888">Maps API key not configured</div>';
+      return;
+    }
+
+    await new Promise((resolve, reject) => {
+      if (window.google?.maps) { resolve(); return; }
+      const s = document.createElement('script');
+      s.src = `https://maps.googleapis.com/maps/api/js?key=${_mapsApiKey}&libraries=marker,geometry`;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+    _mapLoaded = true;
+  }
+
+  // Create map centered on NYC
+  if (!_map) {
+    _map = new google.maps.Map(document.getElementById('gmap'), {
+      center: { lat: 40.7505, lng: -73.9860 },
+      zoom: 14,
+      gestureHandling: 'greedy',
+      zoomControl: true,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
+      styles: [
+        { featureType: 'poi.business', stylers: [{ visibility: 'off' }] },
+        { featureType: 'poi.park', elementType: 'labels', stylers: [{ visibility: 'off' }] }
+      ]
+    });
+  }
+
+  // Get restaurants to plot — use existing data or fetch all NYC
+  let restaurants = allRestaurants.length ? allRestaurants : (allNYCRestaurants.length ? allNYCRestaurants : []);
+  if (!restaurants.length) {
+    try {
+      const resp = await fetch('/.netlify/functions/search-candidates', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
+      });
+      const data = await resp.json();
+      restaurants = [...(data.elite || []), ...(data.moreOptions || [])];
+    } catch {}
+  }
+  _mapRestaurants = restaurants.filter(r => {
+    const lat = r.lat ?? r.geometry?.location?.lat;
+    const lng = r.lng ?? r.geometry?.location?.lng;
+    if (!lat || !lng) return false;
+    if (lat < 40.4 || lat > 41.0 || lng < -74.3 || lng > -73.6) return false;
+    r._lat = lat; r._lng = lng;
+    return true;
+  });
+
+  // Render visible markers on idle
+  google.maps.event.addListener(_map, 'idle', _renderVisible);
+  _renderVisible();
+}
+
+function _toggleMapFilter(filter, btn) {
+  _mapFilter = filter;
+  document.querySelectorAll('.mfilt').forEach(b => { b.classList.remove('on'); b.style.background = ''; b.style.color = ''; b.style.borderColor = ''; });
+  btn.classList.add('on');
+  if (filter === 'all') { btn.style.background = '#ff4500'; btn.style.color = '#fff'; }
+  _renderVisible();
+}
+
+function _isHotSpot(r) {
+  return (r.michelin?.stars >= 1) || r.buzz_sources?.length || r.instagram_buzz?.length || r.new_rising || r.nyt_top_100 || r.pete_wells;
+}
+
+function _matchesMapFilter(r) {
+  if (_mapFilter === 'all') return true;
+  const tier = r.avail_tier || r.tier || '';
+  const isHS = _isHotSpot(r);
+  if (_mapFilter === 'hotspot') return isHS;
+  if (_mapFilter === 'available') return tier === 'open' || tier === 'available';
+  if (_mapFilter === 'limited') return tier === 'limited';
+  if (_mapFilter === 'booked_tonight') return tier === 'booked' && !r.fully_locked;
+  if (_mapFilter === 'booked') return tier === 'booked' && r.fully_locked;
+  return true;
+}
+
+function _renderVisible() {
+  // Clear old
+  _mapMarkers.forEach(m => m.setMap(null));
+  _mapMarkers = [];
+
+  const bounds = _map.getBounds();
+  if (!bounds) return;
+
+  // Filter by viewport + selected filter, max 300
+  const visible = _mapRestaurants.filter(r => bounds.contains({ lat: r._lat, lng: r._lng }) && _matchesMapFilter(r));
+  const toShow = visible.slice(0, 300);
+
+  toShow.forEach(r => {
+    const tier = r.avail_tier || r.tier || '';
+    const isMichelin = r.michelin?.stars >= 1;
+    const isHotSpot = _isHotSpot(r);
+    let color = '#888';
+    if (isHotSpot) color = '#ff4500';
+    else if (tier === 'booked' && r.fully_locked) color = '#1a1a1a';
+    else if (tier === 'booked') color = '#c0392b';
+    else if (tier === 'limited') color = '#f5a623';
+    else if (tier === 'open' || tier === 'available') color = '#2e7d32';
+
+    const marker = new google.maps.Marker({
+      position: { lat: r._lat, lng: r._lng },
+      map: _map,
+      title: r.name || '',
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: color,
+        fillOpacity: 0.85,
+        strokeColor: '#fff',
+        strokeWeight: 1,
+        scale: isMichelin ? 7 : 5
+      }
+    });
+    marker.addListener('click', () => {
+      _map.panTo({ lat: r._lat, lng: r._lng });
+      showMapInfo(r);
+    });
+    _mapMarkers.push(marker);
+  });
+}
+
+function showMapInfo(r) {
+  const info = document.getElementById('map-info');
+  const rating = Number(r.googleRating || 0);
+  const reviews = Number(r.googleReviewCount || 0);
+  const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : '';
+
+  document.getElementById('map-info-name').textContent = r.name || '';
+  document.getElementById('map-info-sub').textContent = [r.cuisine, r.vicinity || ''].filter(Boolean).join(' · ');
+
+  let badges = '';
+  if (r.michelin?.stars >= 1) badges += `<span class="badge mstar">${'⭐'.repeat(Math.min(r.michelin.stars,3))} Michelin</span>`;
+  if (rating > 0) badges += `<span class="badge goog">⭐ ${rating}${rs ? ' ('+rs+')' : ''}</span>`;
+  const tier = r.avail_tier || r.tier || '';
+  if (tier === 'open' || tier === 'available') badges += '<span class="avail av" style="font-size:10px;padding:3px 8px">Available</span>';
+  else if (tier === 'limited') badges += '<span class="avail lim" style="font-size:10px;padding:3px 8px">Limited</span>';
+  else if (tier === 'booked' && r.fully_locked) badges += '<span class="avail hard" style="font-size:10px;padding:3px 8px;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked</span>';
+  else if (tier === 'booked') badges += '<span class="avail hard" style="font-size:10px;padding:3px 8px">Booked Tonight</span>';
+  document.getElementById('map-info-badges').innerHTML = badges;
+
+  const bookBtn = document.getElementById('map-info-book');
+  if (r.booking_url && r.booking_platform) {
+    const pmap = { resy: 'Resy', opentable: 'OpenTable', tock: 'Tock', sevenrooms: 'SevenRooms' };
+    bookBtn.href = r.booking_url;
+    bookBtn.textContent = `Book on ${pmap[r.booking_platform] || 'Website'} →`;
+    bookBtn.style.display = 'block';
+  } else {
+    bookBtn.style.display = 'none';
+  }
+
+  info.style.display = 'block';
 }
 </script>
 </body>

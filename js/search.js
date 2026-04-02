@@ -101,7 +101,19 @@ function renderCard(r, isRadar) {
     }
   }
 
-  // Press Pick badge moved to bottom with press links
+  // Press source badges with clickable links
+  if (hasBuzz) {
+    const pressLinks = new Map();
+    const _ns = s => ({'eater':'Eater','infatuation':'Infatuation','the infatuation':'Infatuation','The Infatuation':'Infatuation','timeout':'Time Out','TimeOut':'Time Out','Time Out':'Time Out','grubstreet':'GrubStreet','GrubStreet':'GrubStreet','Grub Street':'GrubStreet','nyt':'NYT','NY Times':'NYT','michelin':'Michelin'}[s] || s.charAt(0).toUpperCase()+s.slice(1));
+    if (bdata?.links) bdata.links.forEach(l => { const k = _ns(l.source); if (k !== 'NYT' && k !== 'Michelin') pressLinks.set(k, l.url); });
+    if (r.buzz_sources) r.buzz_sources.forEach(s => { const k = _ns(s); if (k !== 'NYT' && k !== 'Michelin' && !pressLinks.has(k)) pressLinks.set(k, null); });
+    if (pressLinks.size > 0) {
+      pressLinks.forEach((url, src) => {
+        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">📰 ${src}</a>`;
+        else badges += `<span class="badge press">📰 ${src}</span>`;
+      });
+    }
+  }
 
   const reviews = Number(r.googleReviewCount||0);
   const rawRating = Number(r.googleRating||0);
@@ -125,7 +137,7 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#fef2f2;color:#dc2626;border:1px solid rgba(220,38,38,.2)">💳 Deposit Req.</span>`;
 
   // inKind badge — show for restaurants with a booking platform, or when inkind filter is active
-  if (r.inkind && (hasBookingPlatform(r) || state.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
 
   // Bilt badge
@@ -133,7 +145,7 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge bilt">Bilt Dining</span>`;
 
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatform(r) || state.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
     badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
@@ -221,13 +233,7 @@ function renderCard(r, isRadar) {
     bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn google">Find on Google →</a>`;
   }
 
-  // Press links — always visible
-  let pressHtml = '';
-  if (bdata?.links?.length) {
-    const sm = {'Eater':'eater','The Infatuation':'infat','Infatuation':'infat','NY Times':'nyt','NYT':'nyt','Time Out':'timeout','Grub Street':'grub','GrubStreet':'grub','Bon Appétit':'grub','Michelin Guide':'michelin'};
-    const chips = bdata.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener" class="plink ${sm[l.source]||''}">${l.label}</a>`).join('');
-    pressHtml = `<div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-top:4px"><span style="font-size:10px;font-weight:700;color:#888">📰 Press</span>${chips}</div>`;
-  }
+  const pressHtml = '';
 
   // Website + Instagram links
   let cardLinks = '';
@@ -333,7 +339,7 @@ function display(restaurants) {
   // ── Vibe filter — supports multiple selections (OR logic) ──
   const vfs = (state.vibeFilters && state.vibeFilters.length > 0) ? state.vibeFilters : (state.vibeFilter ? [state.vibeFilter] : []);
   if (vfs.length > 0) {
-    list = list.filter(r => r.vibe_tags && vfs.some(vf => r.vibe_tags.includes(vf)));
+    list = list.filter(r => r.vibe_tags && vfs.every(vf => r.vibe_tags.includes(vf)));
   }
 
   if (state.priceFilter!=='any') {
@@ -395,14 +401,13 @@ function display(restaurants) {
       const pA = a.price_level || 0, pB = b.price_level || 0;
       if (pA !== pB) return pB - pA;
     } else {
-      // Default sort: rating weighted by review count, but buzz restaurants keep full weight
-      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
       const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
-      const buzzA = a.new_rising || a.buzz_sources?.length || a.instagram_buzz?.length || a.michelin;
-      const buzzB = b.new_rising || b.buzz_sources?.length || b.instagram_buzz?.length || b.michelin;
-      const wA = rA * (buzzA ? 1 : Math.min(1, Math.log10(Math.max(rcA, 1)) / 2));
-      const wB = rB * (buzzB ? 1 : Math.min(1, Math.log10(Math.max(rcB, 1)) / 2));
-      if (wB !== wA) return wB - wA;
+      const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
+      const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
+      const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
+      const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+      const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+      if (rB !== rA) return rB - rA;
     }
     return (b._bs||0)-(a._bs||0);
   });

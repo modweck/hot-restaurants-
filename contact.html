@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>SeatWize — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f5f0eb;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .wrap{max-width:520px;margin:0 auto;padding:20px 24px 60px}
+    @media(min-width:520px){body{padding:16px}.wrap{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.1);background:#f5f0eb}}
+    .back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px}
+    .back:hover{color:#ff4500}
+    .logo{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#1a1a2e;margin-bottom:4px}
+    .logo span{color:#ff4500}
+    .tagline{font-size:13px;color:#888;margin-bottom:28px}
+    h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#1a1a2e;margin:28px 0 12px}
+    h2:first-of-type{margin-top:0}
+    p{font-size:14px;line-height:1.7;color:#444;margin-bottom:12px}
+    .contact-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px;margin-bottom:16px}
+    .contact-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.05)}
+    .contact-row:last-child{border-bottom:none}
+    .contact-icon{font-size:20px;width:32px;text-align:center}
+    .contact-info .label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px}
+    .contact-info .val{font-size:15px;font-weight:700;color:#1a1a2e;margin-top:2px}
+    .contact-info .val a{color:#ff4500;text-decoration:none}
+    .contact-info .val a:hover{text-decoration:underline}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    .nav-links a{font-size:12px;font-weight:700;color:#888;text-decoration:none}
+    .nav-links a:hover{color:#ff4500}
+    .nav-links a.active{color:#ff4500}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back">← Back to SeatWize</a>
+  <div class="logo">Seat<span>Wize</span></div>
+  <div class="tagline">NYC's smartest restaurant guide</div>
+
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+
+  <h2>Get in Touch</h2>
+  <p>Have a question, suggestion, or want to report an issue? We'd love to hear from you.</p>
+
+  <div class="contact-card">
+    <div class="contact-row">
+      <div class="contact-icon">📧</div>
+      <div class="contact-info">
+        <div class="label">Email</div>
+        <div class="val"><a href="mailto:info@seatwize.com">info@seatwize.com</a></div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">📞</div>
+      <div class="contact-info">
+        <div class="label">Phone</div>
+        <div class="val"><a href="tel:2124217777">(212) 421-7777</a></div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-icon">📍</div>
+      <div class="contact-info">
+        <div class="label">Location</div>
+        <div class="val">New York, NY</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Restaurant Owners</h2>
+  <p>Want to update your restaurant's information, add your booking link, or get listed on SeatWize? Email us at <a href="mailto:info@seatwize.com" style="color:#ff4500;font-weight:700;text-decoration:none">info@seatwize.com</a> with your restaurant name and we'll take care of it.</p>
+
+  <h2>Report an Issue</h2>
+  <p>Spotted incorrect info, a broken booking link, or a restaurant that's closed? Let us know and we'll fix it within 24 hours.</p>
+</div>
+</body>
+</html>

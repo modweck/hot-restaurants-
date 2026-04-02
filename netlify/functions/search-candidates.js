@@ -2419,9 +2419,9 @@ exports.handler = async (event) => {
     [...elite, ...moreOptions].forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
 
     const sortFn = (a,b) => {
-      if (a.walkMinEstimate !== b.walkMinEstimate) return a.walkMinEstimate - b.walkMinEstimate;
+      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
+      if (rB !== rA) return rB - rA;
       if ((b.seatwizeScore||0) !== (a.seatwizeScore||0)) return (b.seatwizeScore||0) - (a.seatwizeScore||0);
-      if (b.googleReviewCount !== a.googleReviewCount) return b.googleReviewCount - a.googleReviewCount;
       return String(a.name||'').localeCompare(String(b.name||''));
     };
     elite.sort(sortFn); moreOptions.sort(sortFn);

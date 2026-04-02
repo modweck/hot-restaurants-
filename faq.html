@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>SeatWize — FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f5f0eb;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .wrap{max-width:520px;margin:0 auto;padding:20px 24px 60px}
+    @media(min-width:520px){body{padding:16px}.wrap{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.1);background:#f5f0eb}}
+    .back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px}
+    .back:hover{color:#ff4500}
+    .logo{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#1a1a2e;margin-bottom:4px}
+    .logo span{color:#ff4500}
+    .tagline{font-size:13px;color:#888;margin-bottom:28px}
+    h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#1a1a2e;margin:28px 0 14px;padding-top:20px;border-top:1px solid rgba(0,0,0,.06)}
+    h2:first-of-type{border-top:none;margin-top:0;padding-top:0}
+    .faq{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;margin-bottom:10px;overflow:hidden}
+    .faq-q{padding:14px 16px;font-size:14px;font-weight:800;color:#1a1a2e;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-q:hover{background:rgba(0,0,0,.02)}
+    .faq-q .arrow{color:#ccc;font-size:12px;transition:transform .2s}
+    .faq.open .arrow{transform:rotate(90deg);color:#ff4500}
+    .faq-a{padding:0 16px 14px;font-size:13px;line-height:1.7;color:#555;display:none}
+    .faq.open .faq-a{display:block}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+    .nav-links a{font-size:12px;font-weight:700;color:#888;text-decoration:none}
+    .nav-links a:hover{color:#ff4500}
+    .nav-links a.active{color:#ff4500}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back">← Back to SeatWize</a>
+  <div class="logo">Seat<span>Wize</span></div>
+  <div class="tagline">NYC's smartest restaurant guide</div>
+
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+
+  <h2>Ratings & Reviews</h2>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Where do the star ratings come from?<span class="arrow">▸</span></div>
+    <div class="faq-a">All star ratings and review counts are pulled directly from Google Reviews. We don't create our own ratings — what you see is what real diners have rated on Google. Ratings are updated regularly to stay current.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What does the number in parentheses mean?<span class="arrow">▸</span></div>
+    <div class="faq-a">The number next to the star rating (e.g. "4.7 (2.1k)") is the total number of Google reviews. "2.1k" means 2,100 reviews. More reviews generally means a more reliable rating.</div>
+  </div>
+
+  <h2>Availability & Booking</h2>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What does +3d, +7d, +14d mean?<span class="arrow">▸</span></div>
+    <div class="faq-a">This means the restaurant is booked tonight but has availability opening up in 3, 7, or 14 days. For example, "+3d" means there are dinner spots available 3 days from now. Great for planning ahead.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What's the difference between "Booked Tonight" and "Booked"?<span class="arrow">▸</span></div>
+    <div class="faq-a"><strong>Booked Tonight</strong> (red) means no spots are left for today, but the restaurant may have availability on future dates. <strong>Booked</strong> (black) means no availability was found in the next 14 days — these are the hardest restaurants to get into.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What does "Hard to Book" mean?<span class="arrow">▸</span></div>
+    <div class="faq-a">Restaurants marked "Hard to Book" are consistently fully booked. They're popular spots where reservations fill up quickly. Keep checking back — cancellations happen, and new reservation windows open regularly.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">How often is availability updated?<span class="arrow">▸</span></div>
+    <div class="faq-a">We check availability daily for all Resy, OpenTable, and Tock restaurants. The data you see reflects tonight's availability as of the most recent check.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What booking platforms do you support?<span class="arrow">▸</span></div>
+    <div class="faq-a">We track restaurants on <strong>Resy</strong>, <strong>OpenTable</strong>, <strong>Tock</strong>, and <strong>SevenRooms</strong>. When you tap "Book," you go directly to that restaurant's booking page on the original platform.</div>
+  </div>
+
+  <h2>Tags & Badges</h2>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What does "New & Rising" mean?<span class="arrow">▸</span></div>
+    <div class="faq-a">New & Rising restaurants are recently opened spots that are getting attention from food critics and press. They may have fewer reviews but are generating buzz from sources like Eater, The Infatuation, or food influencers.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What are the vibe tags?<span class="arrow">▸</span></div>
+    <div class="faq-a">Vibe tags describe the atmosphere and best use for a restaurant. Tags include Date Night, Lively, Upscale, Casual, Trendy, Brunch, Outdoor, Late Night, Hidden Gem, Foodie, and Group Friendly. You can filter by multiple vibes to find exactly what you're looking for.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What do the press badges mean (Eater, Infatuation, NYT, Time Out)?<span class="arrow">▸</span></div>
+    <div class="faq-a">These badges indicate the restaurant has been featured or reviewed by that publication. A restaurant with multiple press badges has been widely covered by NYC food critics — a strong signal that it's worth trying.</div>
+  </div>
+
+  <h2>Rewards & Savings</h2>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is inKind?<span class="arrow">▸</span></div>
+    <div class="faq-a"><strong>inKind</strong> is a dining credit app. You buy credits at a discount and use them to pay at participating restaurants — typically saving 20-30% on your bill. Restaurants with the inKind badge accept inKind credits. Download the inKind app to get started.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is Rakuten?<span class="arrow">▸</span></div>
+    <div class="faq-a"><strong>Rakuten</strong> is a cash back platform. When you dine at participating restaurants through Rakuten's dining program, you earn cash back on your meal. The Rakuten badge shows which restaurants participate. Sign up at Rakuten to start earning.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is Bilt Dining?<span class="arrow">▸</span></div>
+    <div class="faq-a"><strong>Bilt Dining</strong> is part of Bilt Rewards, the rent rewards program. Earn Bilt points when you dine at participating restaurants. Points can be transferred to airlines, hotels, or used toward rent payments. The Bilt badge shows which restaurants are part of the program.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is Chase Sapphire Dining?<span class="arrow">▸</span></div>
+    <div class="faq-a"><strong>Chase Sapphire Dining</strong> offers exclusive perks for Chase Sapphire Reserve and Preferred cardholders at partner restaurants. Perks may include priority reservations, complimentary dishes, bonus Ultimate Rewards points, or special tasting menus. Look for the Chase badge on participating restaurants.</div>
+  </div>
+
+  <h2>General</h2>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Why is a restaurant missing?<span class="arrow">▸</span></div>
+    <div class="faq-a">We focus on NYC sit-down restaurants with online booking. If a restaurant is missing, email us at <a href="mailto:info@seatwize.com" style="color:#ff4500">info@seatwize.com</a> with the restaurant name and we'll add it.</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Is SeatWize free to use?<span class="arrow">▸</span></div>
+    <div class="faq-a">Yes, SeatWize is completely free. We help you find and book restaurants — you book directly through the restaurant's own platform (Resy, OpenTable, Tock, etc.).</div>
+  </div>
+
+  <div class="faq" onclick="this.classList.toggle('open')">
+    <div class="faq-q">How do I save a restaurant?<span class="arrow">▸</span></div>
+    <div class="faq-a">Tap the ☆ star icon on any restaurant card to save it. View all your saved restaurants by tapping "Saved" in the bottom navigation bar.</div>
+  </div>
+
+</div>
+</body>
+</html>

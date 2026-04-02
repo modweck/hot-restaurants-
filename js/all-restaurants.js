@@ -285,9 +285,12 @@ function displayAllNYC(restaurants) {
       const pA = a.price_level || 0, pB = b.price_level || 0;
       if (pA !== pB) return pB - pA;
     } else {
-      const michelinDiff = (b.michelin?.stars||0) - (a.michelin?.stars||0);
-      if (michelinDiff !== 0) return michelinDiff;
-      const rA = Number(a.googleRating||0), rB = Number(b.googleRating||0);
+      const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
+      const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
+      const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
+      const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
+      const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+      const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
       if (rB !== rA) return rB - rA;
     }
     return 0;
@@ -310,7 +313,7 @@ async function doAllNYCSearch() {
 
   const listEl = document.getElementById('allRestList');
   const warnEl = document.getElementById('allRestWarnings');
-  listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all NYC restaurants...</div></div>`;
+  listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all restaurants...</div></div>`;
   warnEl.innerHTML = '';
 
   const btn = document.getElementById('arSearchBtn');
