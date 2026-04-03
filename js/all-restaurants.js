@@ -287,10 +287,19 @@ function displayAllNYC(restaurants) {
       const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
       const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
       const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
-      const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
-      const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
-      const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+      function _pen(r, rc, isWalk) {
+        if (isWalk) return 1;
+        const rat = Number(r.googleRating||0);
+        if (r.new_rising && rat >= 5) { if (rc >= 40) return 0; if (rc >= 25) return 1; return 2; }
+        if (r.booking_platform === 'website' && rc < 200) return 1;
+        if (!r.new_rising && rc > 0 && rc < 75) return 1;
+        return 0;
+      }
+      const rA = Number(a.googleRating||0) - _pen(a, rcA, isWalkA);
+      const rB = Number(b.googleRating||0) - _pen(b, rcB, isWalkB);
       if (rB !== rA) return rB - rA;
+      if (a.new_rising && !b.new_rising) return 1;
+      if (!a.new_rising && b.new_rising) return -1;
     }
     return 0;
   });

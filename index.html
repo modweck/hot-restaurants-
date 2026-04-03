@@ -246,11 +246,11 @@
         <div style="padding:0 20px 14px;display:flex;align-items:center;gap:8px">
           <span style="font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap">Radius</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="radius-btn on" onclick="setRadius(1,this)">1 mi</button>
+            <button class="radius-btn" onclick="setRadius(1,this)">1 mi</button>
             <button class="radius-btn" onclick="setRadius(2,this)">2 mi</button>
             <button class="radius-btn" onclick="setRadius(3,this)">3 mi</button>
             <button class="radius-btn" onclick="setRadius(5,this)">5 mi</button>
-            <button class="radius-btn" onclick="setRadius(0,this)">🗽 All NYC</button>
+            <button class="radius-btn on" onclick="setRadius(0,this)">🗽 All NYC</button>
           </div>
         </div>
 
@@ -311,9 +311,11 @@
           <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">🟢 Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
             <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
-            <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early  6–7:30</button>
-            <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime  7:30–9</button>
-            <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late  9pm+</button>
+            <button class="fchip" id="avail-limited" onclick="setAvailFilter('limited',this)">Limited</button>
+            <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Booked Solid</button>
+            <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early  5–6:15</button>
+            <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime  6:30–8:15</button>
+            <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late  8:30+</button>
           </div>
         </div>
 
@@ -371,7 +373,7 @@
 
       <!-- 5. Featured cards — real restaurants from BUZZ_SET -->
       <div class="nearby-scroll" id="nearbyCards">
-        <div class="rcard" onclick="goToSearchWithAddr('italian')">
+        <div class="rcard" onclick="_goToCard('Via Carota')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail sold">Fully Booked</div>
@@ -382,7 +384,7 @@
           <div class="rcard-rating">📖 Michelin Recommended</div>
           <div class="rcard-drop">🔔 Fri 10am</div>
         </div>
-        <div class="rcard" onclick="goToSearchWithAddr('american')">
+        <div class="rcard" onclick="_goToCard('Gramercy Tavern')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail av">Available</div>
@@ -392,7 +394,7 @@
           <div class="rcard-sub">American · Flatiron</div>
           <div class="rcard-rating">⭐ Michelin Star</div>
         </div>
-        <div class="rcard" onclick="goToSearchWithAddr('italian')">
+        <div class="rcard" onclick="_goToCard('Lilia')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail lim">Limited</div>
@@ -402,7 +404,7 @@
           <div class="rcard-sub">Italian · Williamsburg</div>
           <div class="rcard-rating">🔥 NYT Top 100</div>
         </div>
-        <div class="rcard" onclick="goToSearchWithAddr('italian')">
+        <div class="rcard" onclick="_goToCard('Carbone')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail sold">Fully Booked</div>
@@ -413,7 +415,7 @@
           <div class="rcard-rating">🔥 Press Pick</div>
           <div class="rcard-drop">🔔 Thu 10am</div>
         </div>
-        <div class="rcard" onclick="goToSearchWithAddr('indian')">
+        <div class="rcard" onclick="_goToCard('Semma')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail hard">Hard to Get</div>
@@ -423,7 +425,7 @@
           <div class="rcard-sub">Indian · Greenwich Village</div>
           <div class="rcard-rating">⭐ Michelin · NYT #1</div>
         </div>
-        <div class="rcard" onclick="goToSearchWithAddr('korean')">
+        <div class="rcard" onclick="_goToCard('Atomix')">
           <div class="rcard-img">
             <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
             <div class="rcard-avail lim">Limited</div>
@@ -589,6 +591,12 @@
         <span class="res-meta" id="resMeta"></span>
       </div>
       <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="state.horizonFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">📅 Availability</option>
+          <option value="3">+3 days</option>
+          <option value="7">+7 days</option>
+          <option value="14">+14 days</option>
+        </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setSortOrder(this.value)">
           <option value="rating">⭐ Rating</option>
           <option value="distance">📏 Distance</option>
@@ -714,16 +722,11 @@
           <span class="flabel">🟢 Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
-            <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early  6–7:30</button>
-            <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime  7:30–9</button>
-            <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late  9pm+</button>
-          </div>
-          <span class="flabel" style="margin-top:6px">📅 Or Browse Upcoming</span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="fchip" id="ar-hor-3" onclick="arSetHorizon(3,this)">+3 days</button>
-            <button class="fchip" id="ar-hor-5" onclick="arSetHorizon(5,this)">+5 days</button>
-            <button class="fchip" id="ar-hor-7" onclick="arSetHorizon(7,this)">+7 days</button>
-            <button class="fchip" id="ar-hor-14" onclick="arSetHorizon(14,this)">+14 days</button>
+            <button class="fchip" id="ar-avail-limited" onclick="arSetAvail('limited',this)">Limited</button>
+            <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Booked Solid</button>
+            <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early  5–6:15</button>
+            <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime  6:30–8:15</button>
+            <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late  8:30+</button>
           </div>
         </div>
 
@@ -1053,9 +1056,11 @@
           <span class="flabel">🟢 Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="bar-avail-any" onclick="barSetAvail('any',this)">Any Time</button>
-            <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early  6–7:30</button>
-            <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime  7:30–9</button>
-            <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late  9pm+</button>
+            <button class="fchip" id="bar-avail-limited" onclick="barSetAvail('limited',this)">Limited</button>
+            <button class="fchip" id="bar-avail-booked" onclick="barSetAvail('booked_solid',this)">Booked Solid</button>
+            <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early  5–6:15</button>
+            <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime  6:30–8:15</button>
+            <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late  8:30+</button>
           </div>
           <span class="flabel" style="margin-top:6px">📅 Or Browse Upcoming</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
@@ -1296,6 +1301,30 @@ function _selectRest(name) {
   });
 }
 
+function _goToCard(name) {
+  const cardId = 'card-' + name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+  const existing = document.getElementById(cardId);
+  if (existing) {
+    existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    existing.style.transition = 'box-shadow 0.3s';
+    existing.style.boxShadow = '0 0 0 3px #e8590c';
+    setTimeout(() => { existing.style.boxShadow = ''; }, 2000);
+    return;
+  }
+  _selectRest(name);
+  const check = setInterval(() => {
+    const el = document.getElementById(cardId);
+    if (el) {
+      clearInterval(check);
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.transition = 'box-shadow 0.3s';
+      el.style.boxShadow = '0 0 0 3px #e8590c';
+      setTimeout(() => { el.style.boxShadow = ''; }, 2000);
+    }
+  }, 200);
+  setTimeout(() => clearInterval(check), 10000);
+}
+
 // Close autocomplete when clicking outside
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#homeRestInput') && !e.target.closest('#restAutoList')) {
@@ -1304,7 +1333,7 @@ document.addEventListener('click', (e) => {
 });
 
 // ─── HOME SCREEN STATE ────────────────────────────────────────────────────────
-const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 1, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null, priceFilter: 'any' };
+const homeState = { tab: 'hotspots', trendFilter: 'any', trendFilters: [], vibeFilter: null, vibeFilters: [], radiusMiles: 0, addr: '', cuisine: 'any', availFilter: 'tonight', horizonFilter: null, priceFilter: 'any' };
 
 function setPriceFilter(val) {
   homeState.priceFilter = val;
@@ -1313,13 +1342,13 @@ function setPriceFilter(val) {
 function setAvailFilter(val, btn) {
   homeState.horizonFilter = null;
   ['hor-3','hor-5','hor-7','hor-14'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
-  ['avail-any','avail-tonight','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  ['avail-any','avail-tonight','avail-limited','avail-booked','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
   // Reset book ahead button
   const bab = document.getElementById('bookAheadBtn');
   if (bab) { bab.style.borderColor = ''; bab.style.background = ''; }
   homeState.availFilter = val;
   btn.classList.add('on');
-  const labels = { any:'Any Time', tonight:'Tonight', early:'Early (6–7:30)', prime:'Prime Time', late:'Late Night' };
+  const labels = { any:'Any Time', tonight:'Tonight', limited:'Limited', booked_solid:'Booked Solid', early:'Early (5–6:15)', prime:'Prime (6:30–8:15)', late:'Late (8:30+)' };
   const vb = document.getElementById('trendingViewBtn');
   if (vb) vb.textContent = '🔥 View Hot Spots — ' + (labels[val] || 'Tonight');
 }
@@ -1339,7 +1368,7 @@ function setBookAhead(btn) {
   }
   homeState.availFilter = 'book_ahead';
   homeState.horizonFilter = null;
-  ['avail-any','avail-tonight','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  ['avail-any','avail-tonight','avail-limited','avail-booked','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
   btn.style.borderColor = 'rgba(255,69,0,.4)';
   btn.style.background = 'rgba(255,69,0,0.08)';
   const vb = document.getElementById('trendingViewBtn');
@@ -1349,7 +1378,7 @@ function setBookAhead(btn) {
 function setHorizonFilter(days, btn) {
   homeState.availFilter = null;
   homeState.horizonFilter = days;
-  ['avail-any','avail-tonight','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
+  ['avail-any','avail-tonight','avail-limited','avail-booked','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
   ['hor-3','hor-5','hor-7','hor-14'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
   btn.classList.add('on');
   const vb = document.getElementById('trendingViewBtn');
@@ -1625,7 +1654,7 @@ const INSTA = {"53": "53nyc", "886": "eighteightsix", "929": "929.nyc", "8282": 
 const BUZZ_SET = new Set(["15 east","4 charles prime rib","8282","abc cocina","abc kitchen","adda","ai fiori","al di la trattoria","altro paradiso","aquavit","aska","atera","atla","atoboy","atomix","babbo","bad roman","balthazar","bar pitti","barbuto","barney greengrass","blue hill","blue hill at stone barns","blue ribbon sushi","bondst","bonnie's","buvette","carbone","cardamom","carmine's","casa enrique","casa mono","catch","cathédrale","caviar russe","cecily","celestine","cervo's","charlie bird","chez ma tante","ci siamo","cipriani downtown","claud","clinton st. baking company","clover hill","colonie","commerce","contra","cookshop","coqodaq","cosme","craft","crown shy","dame","daniel","dante","dhamaka","don angie","double chicken please","eleven madison park","emily","estela","fish cheeks","five leaves","four twenty five","francie","frankies spuntino","frenchette","frevo","gabriel kreuther","gage & tollner","gramercy tavern","grand central oyster bar","haenyeo","hags","hangawi","hart's","hasalon","hawksmoor","hearth","i sodi","il buco","il buco alimentari","indian accent","jack's wife freda","jean-georges","jeju noodle bar","joseph leonard","jungsik","junoon","katz's","keens","keens steakhouse","king","kisa","kissaki","ko","kochi","kopitiam","la grande boucherie","lafayette","laser wolf","le bernardin","le coucou","le pavillon","le rock","lilia","lincoln ristorante","little owl","locanda verde","lucali","lupa","manhatta","marea","masa","minetta tavern","misi","momofuku ko","momofuku noodle bar","motorino","nami nori","nobu downtown","nom wah tea parlor","noreetuh","odo","oiji mi","olmsted","one white street","ops","oxalis","oxomoco","palma","pasquale jones","pastis","per se","peter luger","pig and khao","place des fêtes","quality italian","quality meats","raf's","rao's","rezdora","roberta's","rubirosa","ruffian","sadelle's","saga","san sabino","sant ambroeus","scarr's pizza","semma","shuko","smith & wollensky","st. anselm","strip house","sugarfish","sunday in brooklyn","sushi nakazawa","tatiana","the dutch","the grill","the modern","the musket room","the odeon","the polo bar","the pool","the river cafe","the standard grill","tiny's","torrisi","tribeca grill","txikito","ugly baby","una pizza napoletana","union square cafe","via carota","waverly inn","wildair","win son","zuma"]);
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
-const state = { cuisine:'any', buzzFilter:'any', trendFilters:[], priceFilter:'any', rewardsFilter:'any', reviewCountFilter:'any', availFilter:'any', transport:'all_nyc', vibeFilter: null, vibeFilters:[] };
+const state = { cuisine:'any', buzzFilter:'any', trendFilters:[], priceFilter:'any', rewardsFilter:'any', reviewCountFilter:'any', availFilter:'any', transport:'all_nyc', vibeFilter: null, vibeFilters:[], horizonFilter:'any' };
 
 // Bilt-only = has bilt_dining but no real booking URL → hidden unless Bilt filter is active
 function isBiltOnly(r) {
@@ -1919,9 +1948,9 @@ function renderCard(r, isRadar) {
   const _styleBooked  = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fde8e8;color:#c0392b;border:1px solid rgba(192,57,43,.25)';
 
   function _windowBadge(status, label) {
-    if (status === 'available') return `<span style="${_styleAvail}">${label}</span>`;
-    if (status === 'limited')   return `<span style="${_styleLimited}">${label} Limited</span>`;
-    return `<span style="${_styleBooked}">${label} Booked</span>`;
+    if (status === 'available') return `<span style="${_styleAvail}">🟢 ${label}</span>`;
+    if (status === 'limited')   return `<span style="${_styleLimited}">🟡 ${label}</span>`;
+    return `<span style="${_styleBooked}">🔴 ${label}</span>`;
   }
 
   // Only compute window statuses if we actually have window data AND a real booking platform
@@ -1939,11 +1968,14 @@ function renderCard(r, isRadar) {
 
     const allAvailable = earlyStatus === 'available' && primeStatus === 'available' && lateStatus === 'available';
     const allBooked    = earlyStatus === 'booked'    && primeStatus === 'booked'    && lateStatus === 'booked';
+    const isBooked     = tier === 'booked' || allBooked;
 
-    if ((tier === 'booked' || allBooked) && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
-    } else if (tier === 'booked' || allBooked) {
+    if (isBooked && r.opens_in) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+    } else if (isBooked && r.fully_locked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    } else if (isBooked) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
     } else if (allAvailable) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
     } else {
@@ -1958,7 +1990,7 @@ function renderCard(r, isRadar) {
   } else if (tier === 'booked' && r.fully_locked) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;
   } else if (tier === 'booked') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
   } else if (tier === 'available') {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
   } else if (tier === 'limited') {
@@ -2026,7 +2058,8 @@ function renderCard(r, isRadar) {
   const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||''}).replace(/'/g,'&#39;');
   const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#ff4500':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
 
-  return `<div class="card${isRadar?' dim':''}">
+  const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+  return `<div class="card${isRadar?' dim':''}" id="${_cardId}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
     ${vibeHtml}
@@ -2119,6 +2152,12 @@ function display(restaurants) {
     list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
   }
 
+  // ── Horizon / days-out filter — only show exact match ──
+  if (state.horizonFilter && state.horizonFilter!=='any') {
+    const target = Number(state.horizonFilter);
+    list = list.filter(r => r.opens_in === target);
+  }
+
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
   if (state.rewardsFilter !== 'bilt') {
     list = list.filter(r => !isBiltOnly(r));
@@ -2141,11 +2180,19 @@ function display(restaurants) {
   if (af && af !== 'any') {
     list = list.filter(r => {
       const tier = r.avail_tier;
-      if (isBookAhead) return tier === 'booked' && r.opens_in && r.opens_in <= 14;
-      if (!tier) return true; // no data — show it
-      if (af === 'early') return r.has_early && tier !== 'booked';
-      if (af === 'prime') return r.has_prime && tier !== 'booked';
-      if (af === 'late')  return r.has_late  && tier !== 'booked';
+      const bp = (r.booking_platform || '').toLowerCase();
+      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+      const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
+      if (isBookAhead) return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform;
+      if (af === 'limited' || af === 'booked_solid' || af === 'early' || af === 'prime' || af === 'late') {
+        if (!realPlatform) return false;
+        if (!tier) return false;
+        if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
+        if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
+        if (af === 'early') return r.has_early && tier !== 'booked';
+        if (af === 'prime') return r.has_prime && tier !== 'booked';
+        if (af === 'late')  return r.has_late  && tier !== 'booked';
+      }
       return true;
     });
   }
@@ -2158,10 +2205,20 @@ function display(restaurants) {
     const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
     const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
     const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
-    const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
-    const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
-    const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+    function _pen(r, rc, isWalk) {
+      if (isWalk) return 1;
+      const rat = Number(r.googleRating||0);
+      if (r.new_rising && rat >= 5) { if (rc >= 40) return 0; if (rc >= 25) return 1; return 2; }
+      if (r.booking_platform === 'website' && rc < 200) return 1;
+      if (!r.new_rising && rc > 0 && rc < 75) return 1;
+      return 0;
+    }
+    const rA = Number(a.googleRating||0) - _pen(a, rcA, isWalkA);
+    const rB = Number(b.googleRating||0) - _pen(b, rcB, isWalkB);
     if (rB !== rA) return rB - rA;
+    // New & Rising sorts to bottom of their tier
+    if (a.new_rising && !b.new_rising) return 1;
+    if (!a.new_rising && b.new_rising) return -1;
     return (b._bs||0)-(a._bs||0);
   }
   if (isBookAhead) {
@@ -2354,12 +2411,12 @@ function arSetTransport(mode, btn) {
 
 function arSetAvail(val, btn) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = val; arState.horizonFilter = null;
   btn.classList.add('on');
 }
 function arSetHorizon(days, btn) {
-  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = null; arState.horizonFilter = days;
   btn.classList.add('on');
@@ -2372,12 +2429,12 @@ function barSetVibe(vibe, btn) {
 
 function barSetAvail(val, btn) {
   ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['bar-avail-any','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['bar-avail-any','bar-avail-limited','bar-avail-booked','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   barState.availFilter = val; barState.horizonFilter = null;
   btn.classList.add('on');
 }
 function barSetHorizon(days, btn) {
-  ['bar-avail-any','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['bar-avail-any','bar-avail-limited','bar-avail-booked','bar-avail-early','bar-avail-prime','bar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['bar-hor-3','bar-hor-5','bar-hor-7','bar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   barState.availFilter = null; barState.horizonFilter = days;
   btn.classList.add('on');
@@ -2528,7 +2585,9 @@ function renderCardAR(r) {
   else if (tier === 'available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
   else if (tier === 'limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
   else if (tier === 'hard') availHtml = `<div><span class="avail hard">🔴 Hard to Book</span></div>`;
-  else if (tier === 'booked') availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  else if (tier === 'booked' && r.opens_in) availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+  else if (tier === 'booked' && r.fully_locked) availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  else if (tier === 'booked') availHtml = `<div><span class="avail hard">🔴 Booked Tonight</span></div>`;
 
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
@@ -2585,7 +2644,8 @@ function renderCardAR(r) {
     vibeHtmlAR = `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px">${pills}</div>`;
   }
 
-  return `<div class="card">
+  const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
+  return `<div class="card" id="${_cardId}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
     ${vibeHtmlAR}
@@ -2644,7 +2704,12 @@ function applyARFilters(list) {
   if (af && af !== 'any') {
     list = list.filter(r => {
       const tier = r.avail_tier;
-      if (!tier) return true; // no data — show it
+      const bp = (r.booking_platform || '').toLowerCase();
+      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+      if (!realPlatform) return false;
+      if (!tier) return false;
+      if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
+      if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
       if (af === 'late')  return r.has_late  && tier !== 'booked';

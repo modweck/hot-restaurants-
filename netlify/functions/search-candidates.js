@@ -118,19 +118,48 @@ function availNorm(s) {
 }
 
 (function buildAvailLookup() {
+  // Track which normalized keys have multiple entries (collision) — skip those
+  const normCount = {};
   for (const [key, val] of Object.entries(AVAILABILITY_BOOK)) {
     if (key.startsWith('_')) continue;
     AVAIL_LOOKUP[key] = val;
     AVAIL_LOOKUP[key.toLowerCase()] = val;
     const normed = availNorm(key);
-    if (normed && !AVAIL_LOOKUP[normed]) AVAIL_LOOKUP[normed] = val;
+    if (normed) normCount[normed] = (normCount[normed] || 0) + 1;
   }
-  console.log(`✅ Availability lookup: ${Object.keys(AVAIL_LOOKUP).length} keys (from ${Object.keys(AVAILABILITY_BOOK).filter(k=>!k.startsWith('_')).length} restaurants)`);
+  // Only add normalized keys that have exactly ONE match (no ambiguity)
+  for (const [key, val] of Object.entries(AVAILABILITY_BOOK)) {
+    if (key.startsWith('_')) continue;
+    const normed = availNorm(key);
+    if (normed && normCount[normed] === 1 && !AVAIL_LOOKUP[normed]) AVAIL_LOOKUP[normed] = val;
+  }
+  const skipped = Object.values(normCount).filter(c => c > 1).length;
+  console.log(`✅ Availability lookup: ${Object.keys(AVAIL_LOOKUP).length} keys (from ${Object.keys(AVAILABILITY_BOOK).filter(k=>!k.startsWith('_')).length} restaurants, ${skipped} ambiguous norms skipped)`);
 })();
 
 function getAvail(name) {
   if (!name) return null;
-  return AVAIL_LOOKUP[name] || AVAIL_LOOKUP[name.toLowerCase()] || AVAIL_LOOKUP[availNorm(name)] || null;
+  const hit = AVAIL_LOOKUP[name] || AVAIL_LOOKUP[name.toLowerCase()] || AVAIL_LOOKUP[availNorm(name)];
+  if (hit) return hit;
+  // Chain restaurant fallback: "STK - Nyc - Meatpacking" → try matching keys starting with "stk - " or "stk meatpacking"
+  const lower = name.toLowerCase().trim();
+  const dashIdx = lower.indexOf(' - ');
+  if (dashIdx > 0) {
+    const base = lower.substring(0, dashIdx).trim();
+    // Extract location parts after dashes
+    const parts = lower.split(/\s*-\s*/);
+    const locParts = parts.slice(1).map(p => p.trim()).filter(Boolean);
+    // Try "base location" combos (e.g. "stk meatpacking")
+    for (const loc of locParts) {
+      const tryKey = base + ' ' + loc;
+      const found = AVAIL_LOOKUP[tryKey] || AVAIL_LOOKUP[availNorm(tryKey)];
+      if (found) return found;
+    }
+    // Try just the base name as exact key
+    const baseHit = AVAIL_LOOKUP[base] || AVAIL_LOOKUP[availNorm(base)];
+    if (baseHit) return baseHit;
+  }
+  return null;
 }
 
 let CUISINE_LOOKUP = {};
@@ -787,7 +816,9 @@ function enrichNYT(r) {
   if (!r.pete_wells_rank && entry.pete_wells_rank) r.pete_wells_rank = entry.pete_wells_rank;
   // Enrich availability from tonight_availability
   const avail = getAvail(mk);
-  if (avail) {
+  const plat = (entry.platform || r.booking_platform || '').toLowerCase();
+  const hasRealPlatform = plat === 'resy' || plat === 'opentable' || plat === 'tock' || plat === 'sevenrooms';
+  if (avail && hasRealPlatform) {
     if (!r.avail_tier) r.avail_tier = avail.tier || null;
     if (!r.opens_in && avail.opens_in) r.opens_in = avail.opens_in;
     if (!r.prepaid_price && avail.prepaid_price) r.prepaid_price = avail.prepaid_price;
@@ -1279,6 +1310,8 @@ exports.handler = async (event) => {
     // This keeps responses well under the 6MB Netlify payload limit.
     const slimRecord = (r) => {
       if (!r) return null;
+      const _bp = (r.booking_platform || '').toLowerCase();
+      const _rp = _bp === 'resy' || _bp === 'opentable' || _bp === 'tock' || _bp === 'sevenrooms';
       return {
         name: r.name || null,
         place_id: r.place_id || null,
@@ -1311,16 +1344,16 @@ exports.handler = async (event) => {
         nyt_top_100: r.nyt_top_100 || null,
         pete_wells_rank: r.pete_wells_rank || null,
         instagram_buzz: r.instagram_buzz || null,
-        avail_tier: r.avail_tier || null,
-        avail_slots: r.avail_slots || null,
-        has_early: r.has_early || null,
-        has_prime: r.has_prime || null,
-        has_late: r.has_late || null,
-        early: r.early || null,
-        prime: r.prime || null,
-        late: r.late || null,
-        opens_in: r.opens_in || null,
-        fully_locked: r.fully_locked || false,
+        avail_tier: _rp ? (r.avail_tier || null) : null,
+        avail_slots: _rp ? (r.avail_slots || null) : null,
+        has_early: _rp ? (r.has_early || null) : null,
+        has_prime: _rp ? (r.has_prime || null) : null,
+        has_late: _rp ? (r.has_late || null) : null,
+        early: _rp ? (r.early || null) : null,
+        prime: _rp ? (r.prime || null) : null,
+        late: _rp ? (r.late || null) : null,
+        opens_in: _rp ? (r.opens_in || null) : null,
+        fully_locked: _rp ? (r.fully_locked || false) : false,
         prepaid_price: r.prepaid_price || null,
         vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
         velocity: r.velocity || null,
@@ -1371,7 +1404,10 @@ exports.handler = async (event) => {
 
       for (const [aName, avail] of Object.entries(AVAILABILITY_BOOK)) {
         if (aName.startsWith('_')) continue;
-        if (avail.tier !== 'booked' || !avail.opens_in || avail.opens_in > 14) continue;
+        if (avail.tier !== 'booked' || !avail.opens_in || avail.opens_in > 14 || avail.not_bookable) continue;
+        const ml0 = findMaster(aName);
+        const plat0 = ml0?.entry?.platform || '';
+        if (plat0 === 'website' || plat0 === 'walk_in') continue;
         const ml = findMaster(aName);
         const name = ml?.name || aName;
         const entry = ml?.entry || {};

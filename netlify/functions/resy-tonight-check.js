@@ -558,7 +558,7 @@ async function main() {
 
   // ── Phase 2: Future horizon for booked restaurants ──
   const bookedList = Object.entries(output)
-    .filter(([k, v]) => !k.startsWith('_') && v.tier === 'booked' && v._checked_date === TODAY)
+    .filter(([k, v]) => !k.startsWith('_') && v._checked_date === TODAY && (v.tier === 'booked' || (v.early === 'booked' && v.prime === 'booked' && v.late === 'booked')))
     .map(([name]) => name)
     .filter(name => {
       const info = BOOKING_LOOKUP[name] || BOOKING_LOOKUP[Object.keys(BOOKING_LOOKUP).find(k => k.toLowerCase() === name)];

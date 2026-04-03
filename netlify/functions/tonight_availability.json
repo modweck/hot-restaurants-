@@ -39,7 +39,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-03-30",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability"
   },
   "eleven madison park": {
     "tier": "open",
@@ -107,7 +108,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "i cavallini": {
     "tier": "limited",
@@ -182,7 +184,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "junoon": {
     "tier": "open",
@@ -224,7 +227,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "sofreh": {
     "tier": "open",
@@ -272,7 +277,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 14
   },
   "houseman": {
     "tier": "open",
@@ -288,7 +295,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "misi": {
     "tier": "limited",
@@ -329,7 +338,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "lei": {
     "tier": "booked",
@@ -338,7 +348,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 13
   },
   "smithereens": {
     "tier": "limited",
@@ -355,7 +367,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 25,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "casa enrique": {
     "tier": "open",
@@ -379,7 +393,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "truly_booked",
+    "opens_in": 7
   },
   "via carota": {
     "tier": "booked",
@@ -388,7 +404,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "i sodi": {
     "tier": "limited",
@@ -396,7 +413,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "rubirosa": {
     "tier": "limited",
@@ -404,7 +423,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "l'artusi": {
     "tier": "limited",
@@ -412,7 +434,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "carbone": {
     "tier": "booked",
@@ -421,7 +445,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "torrisi": {
     "tier": "booked",
@@ -430,7 +455,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "balthazar": {
     "tier": "limited",
@@ -455,7 +481,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "truly_booked"
   },
   "union square cafe": {
     "tier": "open",
@@ -472,8 +499,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-03-30",
-    "fully_locked": true,
-    "opens_in": 3
+    "fully_locked": false,
+    "opens_in": 3,
+    "_recheck_result": "has_availability"
   },
   "the polo bar": {
     "tier": "booked",
@@ -482,7 +510,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "minetta tavern": {
     "tier": "limited",
@@ -490,7 +520,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability"
   },
   "the dutch": {
     "tier": "open",
@@ -506,7 +538,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 1
   },
   "the standard grill": {
     "tier": "open",
@@ -539,7 +574,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "crown shy": {
     "tier": "open",
@@ -556,7 +592,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "haenyeo": {
     "tier": "open",
@@ -654,7 +691,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "nerina": {
     "tier": "booked",
@@ -697,7 +735,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "ci siamo": {
     "tier": "open",
@@ -713,7 +753,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "truly_booked",
+    "opens_in": 7
   },
   "red hook tavern": {
     "tier": "booked",
@@ -722,7 +764,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "jungsik": {
     "tier": "booked",
@@ -874,7 +917,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "ha's snack bar": {
     "tier": "limited",
@@ -882,7 +926,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "kashi": {
     "tier": "open",
@@ -924,7 +970,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 7
   },
   "kelang": {
     "tier": "booked",
@@ -1003,7 +1052,8 @@
     "late": "booked",
     "_checked_date": "2026-03-30",
     "fully_locked": true,
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "sami and susu": {
     "tier": "limited",
@@ -1011,7 +1061,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "sal tang's": {
     "tier": "open",
@@ -1047,7 +1099,9 @@
     "late": "booked",
     "_checked_date": "2026-03-30",
     "fully_locked": true,
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "le chene": {
     "tier": "open",
@@ -1177,7 +1231,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 7
   },
   "la bonne soupe": {
     "tier": "open",
@@ -1203,7 +1260,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "kokomo": {
     "tier": "booked",
@@ -1305,7 +1363,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-03-30",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "hupo": {
     "tier": "booked",
@@ -1355,7 +1415,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "alley 41": {
     "tier": "booked",
@@ -1596,7 +1658,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "untable": {
     "tier": "booked",
@@ -1721,7 +1784,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "the golden swan": {
     "tier": "open",
@@ -1769,7 +1834,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "saul": {
     "tier": "booked",
@@ -1828,7 +1895,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "jeju noodle bar": {
     "tier": "booked",
@@ -1837,7 +1906,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "wayla": {
     "tier": "open",
@@ -2182,7 +2252,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "isabelle's osteria": {
     "tier": "open",
@@ -2287,7 +2359,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "sam sunny": {
     "tier": "booked",
@@ -2337,7 +2411,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "common park slope": {
     "tier": "limited",
@@ -2345,7 +2420,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 1
   },
   "soledad": {
     "tier": "open",
@@ -2386,7 +2464,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "meadowsweet": {
     "tier": "open",
@@ -2427,7 +2507,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "east harlem bottling co": {
     "tier": "open",
@@ -2476,7 +2558,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability"
   },
   "tava turkish and mediterranean": {
     "tier": "open",
@@ -2493,7 +2576,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "paisley": {
     "tier": "open",
@@ -2581,7 +2666,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "for all things good bedstuy": {
     "tier": "booked",
@@ -2590,7 +2677,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 28
   },
   "lingo": {
     "tier": "open",
@@ -2615,7 +2704,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "cotra": {
     "tier": "open",
@@ -2672,7 +2762,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "nice matin": {
     "tier": "open",
@@ -2865,7 +2957,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "le fanfare": {
     "tier": "open",
@@ -2890,7 +2985,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "hav and mar": {
     "tier": "open",
@@ -3106,7 +3203,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "chinese tuxedo": {
     "tier": "open",
@@ -3338,7 +3438,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "stretch pizza": {
     "tier": "open",
@@ -3362,7 +3465,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "sushi kaito": {
     "tier": "limited",
@@ -3370,7 +3475,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "the sparrow": {
     "tier": "open",
@@ -3386,7 +3493,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "tara rose": {
     "tier": "open",
@@ -3459,7 +3569,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-03-30",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "gosuke": {
     "tier": "open",
@@ -3525,7 +3636,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "456 sushi": {
     "tier": "open",
@@ -3712,7 +3825,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "adélaïde salon": {
     "tier": "booked",
@@ -3721,7 +3836,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "agave maria": {
     "tier": "booked",
@@ -3771,7 +3888,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 1,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "akimori omakase bar": {
     "tier": "booked",
@@ -3780,7 +3899,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 9
   },
   "akoya": {
     "tier": "open",
@@ -3870,7 +3991,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "amélie upper west side": {
     "tier": "open",
@@ -3928,7 +4051,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "anassa taverna - midtown": {
     "tier": "open",
@@ -4025,7 +4150,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "arno ristorante": {
     "tier": "open",
@@ -4084,7 +4210,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "atit thai": {
     "tier": "booked",
@@ -4340,7 +4468,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "berimbau brazilian table, 36th street": {
     "tier": "limited",
@@ -4348,7 +4478,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "bhatti indian grill": {
     "tier": "open",
@@ -4542,7 +4674,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "boro brine": {
     "tier": "open",
@@ -4576,7 +4710,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 12,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "brooklyn chop house - downtown fidi": {
     "tier": "limited",
@@ -4584,7 +4720,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "brooklyn chop house - times square": {
     "tier": "open",
@@ -4609,7 +4747,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 13,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "brunch me baby": {
     "tier": "booked",
@@ -4618,7 +4758,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 1
   },
   "bryant park grill": {
     "tier": "open",
@@ -4666,7 +4808,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "by antidote": {
     "tier": "limited",
@@ -4674,7 +4818,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "café boulud at maison barnes": {
     "tier": "open",
@@ -4843,7 +4989,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability"
   },
   "cebu bistro": {
     "tier": "open",
@@ -4956,7 +5104,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "chote nawab": {
     "tier": "open",
@@ -5022,7 +5172,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "club room": {
     "tier": "open",
@@ -5081,7 +5232,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 1,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "conmigo first ave": {
     "tier": "open",
@@ -5138,7 +5291,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-29"
+    "_checked_date": "2026-03-29",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "crabtree's restaurant": {
     "tier": "booked",
@@ -5204,7 +5359,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "cut - new york": {
     "tier": "open",
@@ -5221,7 +5378,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-03-30",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability"
   },
   "czen restaurant englewood": {
     "tier": "booked",
@@ -5230,7 +5388,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "dahla": {
     "tier": "open",
@@ -5287,7 +5447,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "ddobar": {
     "tier": "booked",
@@ -5321,7 +5482,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "dhaba indian cuisine": {
     "tier": "open",
@@ -5338,7 +5501,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "dilly dally": {
     "tier": "booked",
@@ -5583,7 +5747,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "empellón taqueria": {
     "tier": "open",
@@ -5624,7 +5791,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "endswell": {
     "tier": "open",
@@ -5730,7 +5899,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "fava": {
     "tier": "booked",
@@ -5772,7 +5944,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "fish cheeks williamsburg": {
     "tier": "open",
@@ -6050,7 +6223,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "hakata tonton": {
     "tier": "open",
@@ -6083,7 +6258,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "hanaya omakase": {
     "tier": "open",
@@ -6151,7 +6328,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "haven": {
     "tier": "open",
@@ -6207,7 +6386,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "hojokban nyc": {
     "tier": "open",
@@ -6240,7 +6421,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "hōseki": {
     "tier": "booked",
@@ -6257,7 +6439,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 14
   },
   "house of the red pearl at tin building by jean-georges": {
     "tier": "booked",
@@ -6387,7 +6571,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "iwak sushi + kitchen": {
     "tier": "booked",
@@ -6477,7 +6663,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 5
   },
   "jazba nyc": {
     "tier": "open",
@@ -6537,7 +6725,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 2,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "jj dak": {
     "tier": "booked",
@@ -6554,7 +6744,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "jojo by jean-georges": {
     "tier": "open",
@@ -6578,7 +6770,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "jora": {
     "tier": "open",
@@ -6594,7 +6788,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 4
   },
   "juban izakaya": {
     "tier": "open",
@@ -6724,7 +6921,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "ki omakase": {
     "tier": "open",
@@ -6741,7 +6940,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "truly_booked"
   },
   "kimura": {
     "tier": "open",
@@ -6805,7 +7005,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "omakase by kun tsuki": {
     "tier": "open",
@@ -7015,7 +7217,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 1,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "le baratin": {
     "tier": "open",
@@ -7056,7 +7260,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 7,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "left bank": {
     "tier": "open",
@@ -7138,7 +7344,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "little rascal - greenpoint": {
     "tier": "open",
@@ -7187,7 +7395,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "lucali ny": {
     "tier": "booked",
@@ -7196,7 +7406,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "lucia alimentari": {
     "tier": "open",
@@ -7328,7 +7539,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 8,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "malvan": {
     "tier": "open",
@@ -7434,7 +7647,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 3,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "martiny's": {
     "tier": "open",
@@ -7846,7 +8061,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 1,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "n'between": {
     "tier": "open",
@@ -7870,7 +8087,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-30"
+    "_checked_date": "2026-03-30",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 7
   },
   "nino's beach": {
     "tier": "booked",
@@ -7959,7 +8179,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "nozomi nyc": {
     "tier": "limited",
@@ -7967,7 +8189,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "nr": {
     "tier": "limited",
@@ -7992,7 +8216,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "ocabanon": {
     "tier": "open",
@@ -8008,7 +8233,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "oen omakase by morimoto": {
     "tier": "booked",
@@ -8034,7 +8261,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "okonomi brooklyn": {
     "tier": "open",
@@ -8050,7 +8278,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "has_availability",
+    "opens_in": 0
   },
   "old john's luncheonette": {
     "tier": "open",
@@ -8115,7 +8346,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "omakase osukaa midtown east": {
     "tier": "open",
@@ -8139,7 +8372,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "omakase room by shin": {
     "tier": "limited",
@@ -8147,7 +8382,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "truly_booked",
+    "opens_in": 7
   },
   "omakase shihou (shiro) - upper east side": {
     "tier": "open",
@@ -8172,7 +8409,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "omen azen": {
     "tier": "booked",
@@ -8181,7 +8420,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "truly_booked"
   },
   "omi omakase": {
     "tier": "limited",
@@ -8297,7 +8537,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "ovelia": {
     "tier": "open",
@@ -8378,7 +8619,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "pearl box": {
     "tier": "booked",
@@ -8387,7 +8630,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "pearl's dive": {
     "tier": "open",
@@ -8453,7 +8698,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "plum restaurant": {
     "tier": "open",
@@ -8543,7 +8790,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "raku midtown": {
     "tier": "booked",
@@ -8552,7 +8802,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "raku soho": {
     "tier": "booked",
@@ -8561,7 +8813,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "ramerino - italian prime restaurant": {
     "tier": "open",
@@ -8610,7 +8864,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "truly_booked"
   },
   "reverie brooklyn": {
     "tier": "open",
@@ -8660,7 +8915,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "route 66 smokehouse": {
     "tier": "open",
@@ -8685,7 +8942,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "safta": {
     "tier": "open",
@@ -8773,7 +9032,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "sapps lic": {
     "tier": "open",
@@ -8798,7 +9060,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "sea salt": {
     "tier": "open",
@@ -8872,7 +9135,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "sendo": {
     "tier": "booked",
@@ -8881,7 +9146,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "sentir": {
     "tier": "open",
@@ -8922,7 +9189,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "shaking crab - williamsburg": {
     "tier": "open",
@@ -8938,7 +9207,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "shaw-naé’s house": {
     "tier": "booked",
@@ -8963,7 +9235,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 7
   },
   "omaxkase by shinsen": {
     "tier": "limited",
@@ -8971,7 +9246,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true,
+    "opens_in": 3
   },
   "shirokuro": {
     "tier": "open",
@@ -9028,7 +9306,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "similan on the bay": {
     "tier": "open",
@@ -9061,7 +9341,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "sloane's": {
     "tier": "booked",
@@ -9128,7 +9410,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "souraji": {
     "tier": "open",
@@ -9248,7 +9532,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "_recheck_result": "has_availability",
+    "opens_in": 3
   },
   "stout nyc penn station": {
     "tier": "open",
@@ -9328,7 +9614,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "sushi kai - east village": {
     "tier": "open",
@@ -9400,7 +9687,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "sushi nikko - lic": {
     "tier": "open",
@@ -9425,7 +9713,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "sushi seki chelsea": {
     "tier": "open",
@@ -9466,7 +9756,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "sushiichi": {
     "tier": "open",
@@ -9482,7 +9773,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "suteishi": {
     "tier": "open",
@@ -9540,7 +9832,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "tacombi - bleecker": {
     "tier": "open",
@@ -9647,7 +9941,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "tanoshi sushi sake bar": {
     "tier": "limited",
@@ -9655,7 +9951,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "taq - taqueria restaurant & bar - ny": {
     "tier": "booked",
@@ -9803,7 +10100,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "the corner (bay ridge)": {
     "tier": "open",
@@ -9860,7 +10158,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "the grand": {
     "tier": "open",
@@ -9877,7 +10176,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "the honey well": {
     "tier": "open",
@@ -9902,7 +10202,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "the loft steakhouse - brooklyn": {
     "tier": "booked",
@@ -9911,7 +10212,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "the lotus room": {
     "tier": "booked",
@@ -9961,7 +10264,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "the restaurant at gilder": {
     "tier": "limited",
@@ -9969,7 +10273,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "the ridge house": {
     "tier": "booked",
@@ -10037,7 +10342,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "the ten bells- bk": {
     "tier": "open",
@@ -10103,7 +10410,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "thirteen water west": {
     "tier": "limited",
@@ -10154,7 +10462,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "toloache 50th st": {
     "tier": "open",
@@ -10178,7 +10488,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "top thai vintage": {
     "tier": "open",
@@ -10242,7 +10553,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "tsubomi": {
     "tier": "open",
@@ -10307,7 +10619,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "urban cove society & kitchen": {
     "tier": "open",
@@ -10332,7 +10645,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "veranda restaurant": {
     "tier": "open",
@@ -10389,7 +10704,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "vin sur vingt bistro nyc": {
     "tier": "open",
@@ -10465,7 +10781,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "wasan brooklyn": {
     "tier": "open",
@@ -10497,7 +10815,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "westville lic": {
     "tier": "open",
@@ -10569,7 +10888,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "yakitori torishin select counter": {
     "tier": "limited",
@@ -10577,7 +10897,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 14
   },
   "yakitori totto": {
     "tier": "open",
@@ -10617,7 +10938,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "yoon haeundae galbi": {
     "tier": "open",
@@ -10750,7 +11072,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "tanoreen": {
     "tier": "open",
@@ -10816,7 +11139,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "morandi": {
     "tier": "open",
@@ -10849,7 +11173,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "korai kitchen (no dine-in without reservations!)": {
     "tier": "booked",
@@ -10956,7 +11282,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "fish cheeks noho": {
     "tier": "open",
@@ -10989,7 +11316,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "truly_booked"
   },
   "bridges": {
     "tier": "open",
@@ -11006,7 +11334,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 4,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "sushi amane": {
     "tier": "open",
@@ -11063,7 +11393,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "le pavillon": {
     "tier": "open",
@@ -11144,7 +11476,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "the reading room": {
     "tier": "open",
@@ -11217,7 +11550,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "macosa trattoria": {
     "tier": "open",
@@ -11242,7 +11577,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "trad room": {
     "tier": "open",
@@ -11291,7 +11628,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": false,
+    "_recheck_result": "has_availability",
+    "opens_in": 12
   },
   "12 chairs café": {
     "tier": "open",
@@ -11355,7 +11694,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "seventy seven alley": {
     "tier": "open",
@@ -11380,7 +11720,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "forsythia": {
     "tier": "limited",
@@ -11396,7 +11737,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "cut by wolfgang puck": {
     "tier": "open",
@@ -11420,7 +11762,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "take 31": {
     "tier": "limited",
@@ -11492,7 +11835,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "margaux by la sirene": {
     "tier": "open",
@@ -11525,7 +11869,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "ambassadors clubhouse new york": {
     "tier": "booked",
@@ -11534,7 +11879,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "anixi mediterranean vegan restaurant": {
     "tier": "open",
@@ -11590,7 +11936,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "pig and khao - uws": {
     "tier": "open",
@@ -11742,7 +12089,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "olea brooklyn": {
     "tier": "limited",
@@ -11750,7 +12098,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "pearl street restaurant": {
     "tier": "open",
@@ -11775,7 +12124,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "franchia vegan café": {
     "tier": "open",
@@ -11823,7 +12174,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "fortuna nyc": {
     "tier": "open",
@@ -11912,7 +12265,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "tobala": {
     "tier": "open",
@@ -12000,7 +12355,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "the grill": {
     "tier": "open",
@@ -12050,7 +12406,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-25"
+    "_checked_date": "2026-03-25",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "russ and daughters cafe": {
     "tier": "booked",
@@ -12059,7 +12417,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "the edge harlem": {
     "tier": "open",
@@ -12139,7 +12499,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "gabriel kreuther": {
     "tier": "open",
@@ -12292,7 +12653,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "toriya": {
     "tier": "open",
@@ -12364,7 +12727,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "chow house 德悦轩": {
     "tier": "open",
@@ -12388,7 +12752,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "flora": {
     "tier": "open",
@@ -12554,7 +12919,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 10,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "sakana sushi & hibachi steakhouse": {
     "tier": "open",
@@ -12602,7 +12969,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "kame": {
     "tier": "open",
@@ -12707,7 +13075,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "shiki omakase": {
     "tier": "open",
@@ -12763,7 +13133,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "chino grande": {
     "tier": "open",
@@ -12780,7 +13151,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "takumi omakase": {
     "tier": "limited",
@@ -12788,7 +13161,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "essex pearl": {
     "tier": "open",
@@ -12820,7 +13194,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "kono": {
     "tier": "booked",
@@ -12829,7 +13204,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 4,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "mr. capri": {
     "tier": "open",
@@ -12861,7 +13238,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "hey thai": {
     "tier": "open",
@@ -12901,7 +13279,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "maison sun": {
     "tier": "limited",
@@ -12909,7 +13288,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "ren restaurant": {
     "tier": "booked",
@@ -12918,7 +13298,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "bonnie's grill": {
     "tier": "not_on_ot",
@@ -12995,7 +13377,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "bati ethiopian kitchen": {
     "tier": "open",
@@ -13100,7 +13483,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "tatsuda omakase": {
     "tier": "open",
@@ -13196,7 +13580,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "kappo sono": {
     "tier": "booked",
@@ -13205,7 +13590,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "vallarta tropical": {
     "tier": "open",
@@ -13455,7 +13841,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 0,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "perrine": {
     "tier": "open",
@@ -13658,7 +14046,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "il buco alimentari": {
     "tier": "unknown",
@@ -13816,7 +14206,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-30"
+    "_checked_date": "2026-03-30",
+    "opens_in": 3
   },
   "kubeh": {
     "tier": "booked",
@@ -13825,7 +14216,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "osteria 57": {
     "tier": "open",
@@ -14051,7 +14443,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "giorgio's of gramercy": {
     "tier": "open",
@@ -14132,7 +14526,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "oiji mi": {
     "tier": "booked",
@@ -14141,7 +14536,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 2,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "heirloom room": {
     "tier": "booked",
@@ -14149,7 +14546,10 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false,
+    "opens_in": 0
   },
   "momoya upper west": {
     "tier": "booked",
@@ -14183,7 +14583,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "spiga trattoria": {
     "tier": "open",
@@ -14199,7 +14601,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "charley": {
     "tier": "limited",
@@ -14215,7 +14619,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "eataly": {
     "tier": "booked",
@@ -14223,7 +14629,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "the green room": {
     "tier": "booked",
@@ -14231,7 +14639,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "isla & co les": {
     "tier": "booked",
@@ -14239,7 +14649,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "ma-de": {
     "tier": "booked",
@@ -14247,7 +14659,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "huso": {
     "tier": "booked",
@@ -14255,7 +14669,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "two hands tribeca": {
     "tier": "booked",
@@ -14263,7 +14679,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "mezcali": {
     "tier": "booked",
@@ -14271,7 +14689,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "au cheval - nyc": {
     "tier": "booked",
@@ -14279,7 +14699,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "kimmi": {
     "tier": "open",
@@ -14303,7 +14725,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "truly_booked"
   },
   "armada": {
     "tier": "open",
@@ -14327,7 +14750,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "aquarelle seafood & mediterranean restaurant": {
     "tier": "booked",
@@ -14335,7 +14760,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "truly_booked"
   },
   "by & by": {
     "tier": "open",
@@ -14351,7 +14777,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "habibi the restaurant": {
     "tier": "booked",
@@ -14360,7 +14788,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "nick's ristorante & pizzeria": {
     "tier": "booked",
@@ -14368,7 +14798,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "pizzette": {
     "tier": "open",
@@ -14400,7 +14832,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "truly_booked"
   },
   "entre nous": {
     "tier": "open",
@@ -14424,7 +14857,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "armani ristorante": {
     "tier": "booked",
@@ -14432,7 +14867,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "lupe's east l.a. kitchen": {
     "tier": "open",
@@ -14456,7 +14893,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "nothing really matters": {
     "tier": "open",
@@ -14480,7 +14919,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "dept. of culture": {
     "tier": "booked",
@@ -14488,7 +14929,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "jr & son": {
     "tier": "booked",
@@ -14496,7 +14939,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "all blues": {
     "tier": "open",
@@ -14512,7 +14957,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "la tête d’or by daniel": {
     "tier": "booked",
@@ -14520,7 +14967,9 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-03-27"
+    "_checked_date": "2026-03-27",
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "the chef's table at brooklyn fare": {
     "tier": "booked",
@@ -14885,7 +15334,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 9,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "ubani - midtown": {
     "tier": "open",
@@ -15061,7 +15512,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "maiden lane": {
     "tier": "open",
@@ -15141,7 +15593,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 14
   },
   "baba ny": {
     "tier": "open",
@@ -15165,7 +15618,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "barbuto brooklyn": {
     "tier": "open",
@@ -15237,7 +15691,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "claw daddys brooklyn": {
     "tier": "open",
@@ -15341,7 +15796,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "kfar brooklyn": {
     "tier": "open",
@@ -15429,7 +15885,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "obao": {
     "tier": "open",
@@ -15486,7 +15943,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "rarities": {
     "tier": "open",
@@ -15663,7 +16122,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "torishin": {
     "tier": "open",
@@ -16000,7 +16461,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 2,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "sylvia's restaurant": {
     "tier": "open",
@@ -16072,7 +16535,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "señor ceviche": {
     "tier": "open",
@@ -16096,7 +16560,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "la goulue restaurant": {
     "tier": "open",
@@ -16241,7 +16706,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "go nonna": {
     "tier": "open",
@@ -16297,7 +16764,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "dar 525 malcolm x blvd": {
     "tier": "open",
@@ -16329,7 +16797,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 3
   },
   "uva": {
     "tier": "open",
@@ -16410,7 +16879,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "pranakhon thai restaurant": {
     "tier": "booked",
@@ -16419,7 +16890,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "free range at double chicken please": {
     "tier": "booked",
@@ -16428,7 +16900,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "sushi sho": {
     "tier": "booked",
@@ -16446,7 +16919,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 1,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "mountain house midtown": {
     "tier": "booked",
@@ -16481,7 +16956,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "opens_in": 7
   },
   "mercato trattoria": {
     "tier": "open",
@@ -16506,7 +16982,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "altesi downtown": {
     "tier": "open",
@@ -16643,7 +17120,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "truly_booked"
   },
   "the irish exit": {
     "tier": "booked",
@@ -16652,7 +17130,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "locanda verde hudson yards": {
     "tier": "open",
@@ -16756,7 +17236,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "isla & co. lower east side": {
     "tier": "open",
@@ -16853,7 +17334,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "fellini cucina": {
     "tier": "open",
@@ -16870,7 +17353,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "au za’atar east village - 12th street": {
     "tier": "open",
@@ -16910,7 +17395,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-02"
+    "_checked_date": "2026-04-02",
+    "fully_locked": true
   },
   "bee’s knees provisions": {
     "tier": "open",
@@ -16951,7 +17437,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "isla & co - williamsburg": {
     "tier": "open",
@@ -17024,7 +17512,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 7
+    "opens_in": 7,
+    "_recheck_result": "truly_booked"
   },
   "mocha burger - times square": {
     "tier": "booked",
@@ -17033,7 +17522,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "hummus kitchen - hell's kitchen": {
     "tier": "open",
@@ -17058,7 +17549,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "truly_booked"
   },
   "cork & slice bk": {
     "tier": "booked",
@@ -17067,7 +17559,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "siena ristorante brooklyn": {
     "tier": "booked",
@@ -17076,7 +17570,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "marc179": {
     "tier": "booked",
@@ -17085,7 +17580,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "kimika": {
     "tier": "booked",
@@ -17094,7 +17590,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "tashca nyc": {
     "tier": "booked",
@@ -17103,7 +17600,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "casa la femme": {
     "tier": "booked",
@@ -17112,7 +17611,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "studio tropical": {
     "tier": "booked",
@@ -17121,7 +17622,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "winona's": {
     "tier": "booked",
@@ -17130,7 +17633,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "baretto at fasano": {
     "tier": "booked",
@@ -17139,7 +17644,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "69leonardstreet": {
     "tier": "booked",
@@ -17148,7 +17654,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "dejavu": {
     "tier": "open",
@@ -17165,7 +17672,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "jaba": {
     "tier": "booked",
@@ -17174,7 +17683,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "lucky charlie": {
     "tier": "booked",
@@ -17183,7 +17693,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "noi due": {
     "tier": "booked",
@@ -17192,7 +17704,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 14
+    "opens_in": 14,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "the modern": {
     "tier": "booked",
@@ -17201,7 +17715,8 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "truly_booked"
   },
   "sunsets at la cantine": {
     "tier": "open",
@@ -17218,7 +17733,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "fully_locked": true
+    "fully_locked": true,
+    "_recheck_result": "not_bookable",
+    "not_bookable": true
   },
   "bubbys tribeca": {
     "tier": "booked",
@@ -17227,7 +17744,9 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-02",
-    "opens_in": 3
+    "opens_in": 3,
+    "_recheck_result": "has_availability",
+    "fully_locked": false
   },
   "hwaro": {
     "tier": "booked",
@@ -17237,5 +17756,25 @@
     "late": "booked",
     "_checked_date": "2026-04-02",
     "fully_locked": true
+  },
+  "monkey bar": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "fully_locked": true,
+    "_recheck_result": "truly_booked",
+    "_checked_date": "2026-04-03"
+  },
+  "63 clinton": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "fully_locked": true,
+    "_recheck_result": "truly_booked",
+    "_checked_date": "2026-04-03"
   }
 }

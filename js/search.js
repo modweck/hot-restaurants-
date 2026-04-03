@@ -180,11 +180,14 @@ function renderCard(r, isRadar) {
 
     const allAvailable = earlyStatus === 'available' && primeStatus === 'available' && lateStatus === 'available';
     const allBooked    = earlyStatus === 'booked'    && primeStatus === 'booked'    && lateStatus === 'booked';
+    const isBooked     = tier === 'booked' || allBooked;
 
-    if ((tier === 'booked' || allBooked) && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
-    } else if (tier === 'booked' || allBooked) {
+    if (isBooked && r.opens_in) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+    } else if (isBooked && r.fully_locked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    } else if (isBooked) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
     } else if (allAvailable) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
     } else {
@@ -192,9 +195,13 @@ function renderCard(r, isRadar) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
     }
   } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
-  } else if (tier === 'booked') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+  } else if (tier === 'booked' && r.fully_locked) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  } else if (tier === 'booked' && r.opens_in) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+  } else if (tier === 'booked') {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
   } else if (tier === 'available') {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
   } else if (tier === 'limited') {
@@ -363,7 +370,8 @@ function display(restaurants) {
       const tier = r.avail_tier;
       // Book in advance: booked tonight but available within next 14 days
       if (af === 'book_ahead') {
-        return tier === 'booked' && r.opens_in && r.opens_in <= 14;
+        const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
+        return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
       }
       if (!tier) return false; // no data — hide when filtering by availability
       if (af === 'early') return r.has_early && tier !== 'booked';
@@ -392,10 +400,20 @@ function display(restaurants) {
       const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
       const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
       const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
-      const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
-      const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+      function _pen(r, rc, isWalk) {
+        if (isWalk) return 1;
+        const rat = Number(r.googleRating||0);
+        if (r.new_rising && rat >= 5) { if (rc >= 40) return 0; if (rc >= 25) return 1; return 2; }
+        if (r.booking_platform === 'website' && rc < 200) return 1;
+        if (!r.new_rising && rc > 0 && rc < 75) return 1;
+        return 0;
+      }
+      const penA = _pen(a, rcA, isWalkA);
+      const penB = _pen(b, rcB, isWalkB);
       const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
       if (rB !== rA) return rB - rA;
+      if (a.new_rising && !b.new_rising) return 1;
+      if (!a.new_rising && b.new_rising) return -1;
     }
     return (b._bs||0)-(a._bs||0);
   });

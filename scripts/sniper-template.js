@@ -1,24 +1,40 @@
 /**
- * sniper-4charles.js — 4 Charles Prime Rib
- * Hybrid API + 2Captcha. Drop 9:00 AM, April 20, party of 4.
- * Target 4:00 PM, fallback any time after 4:00 PM, then anything.
+ * sniper-template.js — Resy Sniper Template (Hybrid API + 2Captcha)
  *
- * RUN: node scripts/sniper-4charles.js
+ * USAGE: Copy this file, fill in the config below, and run.
+ *
+ * Flow:
+ *   1. Opens Chrome 5min before drop (log in if needed)
+ *   2. Pre-solves 2 captchas via 2Captcha 2min before drop
+ *   3. API polls /4/find 500ms before drop (4 checks, 500ms apart)
+ *   4. Slot found → picks best evening slot (4pm+), closest to target
+ *   5. /3/details with captcha_token → /3/book with payment method
+ *   6. If all fail → browser fallback for manual booking
+ *
+ * RUN: node scripts/sniper-template.js
  */
 
 const puppeteer = require('puppeteer-core');
 const { homedir } = require('os');
 const { execSync } = require('child_process');
 
-const VENUE_SLUG = '4-charles-prime-rib';
-const VENUE_ID = 834;
-const TARGET_DATE = '2026-04-23';
-const PARTY_SIZE = 4;
-const DROP_HOUR = 9;
-const DROP_MINUTE = 0;
+// ═══════════════════════════════════════════════════════════════════
+// ██ FILL IN THESE VALUES ██
+// ═══════════════════════════════════════════════════════════════════
+const VENUE_SLUG    = 'RESTAURANT-SLUG-HERE';       // e.g. 'the-four-horsemen', 'torrisi'
+const VENUE_ID      = 0;                             // e.g. 2492, 64593 (find via /3/venue API)
+const TARGET_DATE   = '2026-00-00';                  // e.g. '2026-05-01'
+const PARTY_SIZE    = 2;                             // e.g. 2, 4
+const DROP_HOUR     = 9;                             // e.g. 7, 9, 10 (24h format)
+const DROP_MINUTE   = 0;                             // usually 0
+const TARGET_HOUR   = 17;                            // preferred time: 16=4pm, 17=5pm, 17.5=5:30pm
+const TARGET_MIN    = 30;                            // preferred minute: 0 or 30
+// ═══════════════════════════════════════════════════════════════════
+
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 // Mo (uid 64640437)
 const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzg4OTg1MTMsInVpZCI6NjQ2NDA0MzcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTMyNTg0MDZ9fQ.AOMbosBxAd5CvHh8g-YD8NfkXQahDSrZ0asmRrU1CaOb5muBMcw44ujG_W1LWRbiw285t1Kv3BaFyjj2xQ-n-HGbAX1GTaB-pd6wSoNvTdT5so9pAeAIsoRDrbrPQEPx_qqZtDVlkJokmDFEsZc_TlwKTnQlIlsHWAIrnE7v4hfn8n5s';
+const PAYMENT_METHOD_ID = 34810271; // Visa ending 5142
 
 const CAPTCHA_KEY = 'c9f9650dcc39ce04c40e5414c201836a';
 const SITEKEY = '6Lfw-dIZAAAAAESRBH4JwdgfTXj5LlS1ewlvvCYe';
@@ -34,6 +50,7 @@ const HEADERS = {
 };
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 function log(msg) {
   const now = new Date();
   const ts = now.toLocaleTimeString('en-US', { hour12: false }) + '.' + String(now.getMilliseconds()).padStart(3, '0');
@@ -48,6 +65,7 @@ async function solveCaptcha() {
     ));
     if (submitResp.status !== 1) return null;
     const taskId = submitResp.request;
+
     for (let i = 0; i < 30; i++) {
       await sleep(5000);
       const resp = JSON.parse(execSync(
@@ -57,7 +75,9 @@ async function solveCaptcha() {
       if (resp.status === 1) return resp.request;
       if (resp.request !== 'CAPCHA_NOT_READY') return null;
     }
-  } catch (e) { log(`Captcha error: ${e.message}`); }
+  } catch (e) {
+    log(`Captcha error: ${e.message}`);
+  }
   return null;
 }
 
@@ -73,8 +93,28 @@ async function apiFind() {
     const slots = data?.results?.venues?.[0]?.slots || [];
     if (!slots.length) return { found: false, slotCount: 0, ms: Date.now() - t0 };
 
-    // Grab any available slot — first one
-    let pick = slots[0];
+    let pick = null;
+    const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
+    const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
+
+    // Priority 1: exact target time
+    for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
+
+    // Priority 2: any slot 4pm or later, closest to target
+    if (!pick) {
+      const evening = slots.filter(s => {
+        const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
+        return hm && parseInt(hm[1]) >= 16;
+      }).sort((a, b) => {
+        const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
+        const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
+        return Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - targetMins) - Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - targetMins);
+      });
+      if (evening.length) pick = evening[0];
+    }
+
+    // Last resort: anything
+    if (!pick) pick = slots[0];
 
     return { found: true, time: pick.date?.start, configToken: pick.config?.token, slotCount: slots.length, ms: Date.now() - t0 };
   } catch (e) {
@@ -105,38 +145,51 @@ async function apiDetails(configToken, captchaToken) {
 
     const data = JSON.parse(result);
     return { success: !!data?.book_token?.value, bookToken: data?.book_token?.value, ms: Date.now() - t0 };
-  } catch (e) { return { success: false, error: e.message.substring(0, 150), ms: Date.now() - t0 }; }
+  } catch (e) {
+    return { success: false, error: e.message.substring(0, 150), ms: Date.now() - t0 };
+  }
 }
 
 async function apiBook(bookToken) {
   const t0 = Date.now();
   try {
-    const h = Object.assign({}, HEADERS); h['Content-Type'] = 'application/x-www-form-urlencoded'; delete h['Accept'];
-    const PAYMENT_METHOD_ID = 34810271; // Visa ending 5142
+    const h = Object.assign({}, HEADERS);
+    h['Content-Type'] = 'application/x-www-form-urlencoded';
+    delete h['Accept'];
     const paymentMethod = JSON.stringify({"id": PAYMENT_METHOD_ID});
-    const resp = await fetch('https://api.resy.com/3/book', { method: 'POST', headers: h, body: `book_token=${encodeURIComponent(bookToken)}&struct_payment_method=${encodeURIComponent(paymentMethod)}` });
+    const resp = await fetch('https://api.resy.com/3/book', {
+      method: 'POST', headers: h, body: `book_token=${encodeURIComponent(bookToken)}&struct_payment_method=${encodeURIComponent(paymentMethod)}`,
+    });
     const data = await resp.json();
-    return { success: resp.status === 201 || !!data?.resy_token, status: resp.status, resyToken: data?.resy_token || null, error: data?.message || null, ms: Date.now() - t0 };
-  } catch (e) { return { success: false, error: e.message, ms: Date.now() - t0 }; }
+    return {
+      success: resp.status === 201 || !!data?.resy_token,
+      status: resp.status, resyToken: data?.resy_token || null,
+      error: data?.message || null, ms: Date.now() - t0,
+    };
+  } catch (e) {
+    return { success: false, error: e.message, ms: Date.now() - t0 };
+  }
 }
 
 async function main() {
-  log('4 CHARLES SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — any available slot`);
+  log(`RESY SNIPER — ${VENUE_SLUG}`);
+  log(`   Target: ${TARGET_DATE} — ${TARGET_HOUR}:${String(TARGET_MIN).padStart(2, '0')} (fallback 4pm+, then any)`);
   log(`   Party: ${PARTY_SIZE}`);
-  log(`   Drop: ${DROP_HOUR}:00 AM`);
+  log(`   Drop: ${DROP_HOUR}:${String(DROP_MINUTE).padStart(2, '0')} AM`);
   log('');
 
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     headless: false,
-    userDataDir: `${homedir()}/.resy-sniper-profile-4charles`,
+    userDataDir: `${homedir()}/.resy-sniper-profile-${VENUE_SLUG}`,
     args: ['--no-first-run', '--no-default-browser-check', '--disable-blink-features=AutomationControlled', '--start-maximized'],
     defaultViewport: null,
   });
 
   let page = (await browser.pages())[0] || await browser.newPage();
-  await page.evaluateOnNewDocument(() => { Object.defineProperty(navigator, 'webdriver', { get: () => false }); });
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+  });
 
   const resyUrl = `https://resy.com/cities/new-york-ny/venues/${VENUE_SLUG}?date=${TARGET_DATE}&seats=${PARTY_SIZE}`;
 
@@ -160,7 +213,8 @@ async function main() {
   await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 30000 });
   log('Browser ready');
 
-  const solveAt = new Date(drop.getTime() - 120000); // 2 min before drop
+  // Wait until 2min before drop to solve captchas
+  const solveAt = new Date(drop.getTime() - 120000);
   if (solveAt > new Date()) {
     log('Waiting to solve captchas...');
     while (new Date() < solveAt) {
@@ -171,15 +225,23 @@ async function main() {
     }
   }
 
+  // ── PHASE 0: Pre-solve captchas ──
   log('PHASE 0: Solving 2 captchas in parallel...');
   const solveStart = Date.now();
+
   const [token1, token2] = await Promise.all([
     solveCaptcha().then(t => { log(`   Captcha 1: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
     solveCaptcha().then(t => { log(`   Captcha 2: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
   ]);
+
   const captchaTokens = [token1, token2].filter(Boolean);
   log(`${captchaTokens.length} captcha token(s) ready`);
 
+  if (captchaTokens.length === 0) {
+    log('Both captchas failed — will try without + browser fallback');
+  }
+
+  // Wait until 500ms before drop
   const startAt = drop.getTime() - 500;
   if (startAt > Date.now()) {
     log('Waiting for drop...');
@@ -190,11 +252,17 @@ async function main() {
     }
   }
 
+  // ── PHASE 1: Find ──
   log('PHASE 1: API polling...');
   let slot = null;
+
   for (let i = 0; i < 4; i++) {
     const result = await apiFind();
-    if (result.found) { slot = result; log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`); break; }
+    if (result.found) {
+      slot = result;
+      log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
+      break;
+    }
     log(`Check ${i + 1}/4: ${result.error ? 'error ' + result.error : 'no slots'} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
@@ -202,17 +270,20 @@ async function main() {
   if (!slot) {
     log('No slots found. Browser fallback.');
     await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
+    log('BOOK MANUALLY NOW!');
     await new Promise(() => {});
   }
 
+  // ── PHASE 2+3: Details + Book ──
   for (let t = 0; t < Math.max(captchaTokens.length, 1); t++) {
     const captchaToken = captchaTokens[t] || null;
-    log(`PHASE 2: Details (token ${t + 1}/${captchaTokens.length || 1})...`);
+    log(`PHASE 2: Details (captcha token ${t + 1}/${captchaTokens.length || 1})...`);
+
     const details = await apiDetails(slot.configToken, captchaToken);
     if (!details.success) {
-      log(`Details FAILED: ${details.status} — ${details.error} (${details.ms}ms)`);
-      if (t < captchaTokens.length - 1) { log('Trying next token...'); continue; }
-      log('Browser fallback.');
+      log(`Details FAILED: ${details.error} (${details.ms}ms)`);
+      if (t < captchaTokens.length - 1) { log('Trying next captcha token...'); continue; }
+      log('All tokens exhausted — browser fallback.');
       await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
       log('BOOK MANUALLY NOW!');
       await new Promise(() => {});
@@ -225,7 +296,7 @@ async function main() {
     if (book.success) {
       log('');
       log('RESERVATION BOOKED!');
-      log(`   4 Charles — ${TARGET_DATE} at ${slot.time}`);
+      log(`   ${VENUE_SLUG} — ${TARGET_DATE} at ${slot.time}`);
       log(`   Party of ${PARTY_SIZE}`);
       log(`   Resy token: ${book.resyToken}`);
       log(`   find=${slot.ms}ms + details=${details.ms}ms + book=${book.ms}ms`);
@@ -233,7 +304,7 @@ async function main() {
       break;
     } else {
       log(`Book FAILED: ${book.status} — ${book.error} (${book.ms}ms)`);
-      if (t < captchaTokens.length - 1) { log('Trying next token...'); continue; }
+      if (t < captchaTokens.length - 1) { log('Trying next captcha token...'); continue; }
       log('Browser fallback.');
       await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
       log('BOOK MANUALLY NOW!');
