@@ -829,7 +829,7 @@
         <div style="margin-bottom:6px">
           <span class="flabel" style="margin-bottom:8px;display:block">✨ Featured Picks</span>
           <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
-            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="doAllNYCSearch()">
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Le Bernardin')">
               <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
                 <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
@@ -837,7 +837,7 @@
               <div style="font-size:11px;color:#888;margin-bottom:3px">French · Midtown</div>
               <div style="font-size:11px;font-weight:700;color:#ff6b2b">⭐⭐⭐ Michelin</div>
             </div>
-            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="doAllNYCSearch()">
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Sushi Nakazawa')">
               <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
                 <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
@@ -845,7 +845,7 @@
               <div style="font-size:11px;color:#888;margin-bottom:3px">Japanese · West Village</div>
               <div style="font-size:11px;font-weight:700;color:#ff6b2b">⭐ Michelin Star</div>
             </div>
-            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="doAllNYCSearch()">
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Don Angie')">
               <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
                 <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
@@ -1272,6 +1272,8 @@ function _selectRest(name) {
   state.transport = 'all_nyc';
   state.buzzFilter = 'any';
   state.availFilter = 'any';
+  state.cuisine = 'any';
+  homeState.availFilter = 'any';
   showView('search');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('nav-home')?.classList.add('active');
@@ -1290,8 +1292,8 @@ function _selectRest(name) {
     if (matched.length) {
       allRestaurants = matched;
       rawRestaurants = matched;
-      state._restNameQuery = '';
       display(matched);
+      state._restNameQuery = '';
       document.getElementById('resMeta').textContent = matched.length + ' result' + (matched.length !== 1 ? 's' : '');
     } else {
       document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:28px;margin-bottom:8px">🍽️</div><div style="font-size:13px;color:#888">Restaurant not found</div></div>';
@@ -1308,6 +1310,7 @@ function _goToCard(name) {
   state.buzzFilter = 'any';
   state.availFilter = 'any';
   state.cuisine = 'any';
+  homeState.availFilter = 'any';
   showView('search');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('nav-home')?.classList.add('active');
@@ -1325,8 +1328,8 @@ function _goToCard(name) {
     if (matched.length) {
       allRestaurants = matched;
       rawRestaurants = matched;
-      state._restNameQuery = '';
       display(matched);
+      state._restNameQuery = '';
       document.getElementById('resMeta').textContent = matched.length + ' result' + (matched.length !== 1 ? 's' : '');
     } else {
       document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:28px;margin-bottom:8px">🍽️</div><div style="font-size:13px;color:#888">Restaurant not found</div></div>';
