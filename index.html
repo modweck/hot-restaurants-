@@ -1302,27 +1302,38 @@ function _selectRest(name) {
 }
 
 function _goToCard(name) {
-  const cardId = 'card-' + name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
-  const existing = document.getElementById(cardId);
-  if (existing) {
-    existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    existing.style.transition = 'box-shadow 0.3s';
-    existing.style.boxShadow = '0 0 0 3px #e8590c';
-    setTimeout(() => { existing.style.boxShadow = ''; }, 2000);
-    return;
-  }
-  _selectRest(name);
-  const check = setInterval(() => {
-    const el = document.getElementById(cardId);
-    if (el) {
-      clearInterval(check);
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      el.style.transition = 'box-shadow 0.3s';
-      el.style.boxShadow = '0 0 0 3px #e8590c';
-      setTimeout(() => { el.style.boxShadow = ''; }, 2000);
+  const q = name.toLowerCase();
+  state._restNameQuery = name;
+  state.transport = 'all_nyc';
+  state.buzzFilter = 'any';
+  state.availFilter = 'any';
+  state.cuisine = 'any';
+  showView('search');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('nav-home')?.classList.add('active');
+  document.getElementById('search')?.classList.add('hidden');
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:13px;color:#888">Loading...</div></div>';
+  fetch('/.netlify/functions/search-candidates', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
+  }).then(r => r.json()).then(data => {
+    let results = [...(data.elite||[]), ...(data.moreOptions||[])];
+    const seen = new Set();
+    results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
+    const matched = results.filter(r => (r.name||'').toLowerCase().includes(q));
+    if (matched.length) {
+      allRestaurants = matched;
+      rawRestaurants = matched;
+      state._restNameQuery = '';
+      display(matched);
+      document.getElementById('resMeta').textContent = matched.length + ' result' + (matched.length !== 1 ? 's' : '');
+    } else {
+      document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:28px;margin-bottom:8px">🍽️</div><div style="font-size:13px;color:#888">Restaurant not found</div></div>';
     }
-  }, 200);
-  setTimeout(() => clearInterval(check), 10000);
+  }).catch(() => {
+    document.getElementById('list').innerHTML = '<div style="text-align:center;padding:40px 20px;color:#c00">Search failed</div>';
+  });
 }
 
 // Close autocomplete when clicking outside
