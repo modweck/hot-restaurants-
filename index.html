@@ -1367,25 +1367,9 @@ function setAvailFilter(val, btn) {
 }
 
 function setBookAhead(btn) {
-  const wasActive = homeState.availFilter === 'book_ahead';
-  if (wasActive) {
-    // Toggle off — go back to default
-    homeState.availFilter = 'tonight';
-    btn.style.borderColor = '';
-    btn.style.background = '';
-    const anyBtn = document.getElementById('avail-any');
-    if (anyBtn) anyBtn.classList.add('on');
-    const vb = document.getElementById('trendingViewBtn');
-    if (vb) vb.textContent = '🔥 View Hot Spots — Tonight';
-    return;
-  }
   homeState.availFilter = 'book_ahead';
   homeState.horizonFilter = null;
-  ['avail-any','avail-tonight','avail-limited','avail-booked','avail-early','avail-prime','avail-late'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
-  btn.style.borderColor = 'rgba(255,69,0,.4)';
-  btn.style.background = 'rgba(255,69,0,0.08)';
-  const vb = document.getElementById('trendingViewBtn');
-  if (vb) vb.textContent = '📅 View Popular — Book in Advance';
+  goToSearch(null, null);
 }
 
 function setHorizonFilter(days, btn) {
