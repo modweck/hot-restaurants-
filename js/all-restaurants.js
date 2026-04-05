@@ -93,10 +93,9 @@ function arUseGPS() {
 function renderCardAR(r) {
   const name = tcAR(r.name) || 'Unknown';
   const addr = (r.vicinity || r.formatted_address || r.address || '').replace(/,?\s*U\.?S\.?A?\.?$/i, '');
-  let distText = '';
-  if (r.walkMinEstimate && r.walkMinEstimate < 999) distText = r.walkMinEstimate + ' min walk';
-  else if (r.distanceMiles && r.distanceMiles < 999) distText = r.distanceMiles + ' mi';
-  const sub = [r.cuisine, addr, distText].filter(Boolean).join(' · ');
+  const walkStr = r.walkMinEstimate > 0 && r.walkMinEstimate < 999 ? `🚶 ${r.walkMinEstimate} min` : null;
+  const driveStr = r.driveMinEstimate > 0 && r.driveMinEstimate < 999 ? `🚗 ${r.driveMinEstimate} min` : null;
+  const sub = [r.cuisine, addr, r.distanceMiles != null && r.distanceMiles < 999 ? `${r.distanceMiles} mi` : null, walkStr, driveStr].filter(Boolean).join(' · ');
   const price = r.price_level > 0 ? `<span style="color:#888;font-size:12px">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills

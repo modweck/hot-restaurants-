@@ -1,9 +1,9 @@
 /**
- * sniper-torrisi.js — Full Hybrid Sniper with 2Captcha
+ * sniper-monkey-bar.js — Full Hybrid Sniper with 2Captcha
  *
  * Same proven v3 script that booked Four Horsemen in 2.7s.
  *
- * RUN: node scripts/sniper-torrisi.js
+ * RUN: node scripts/sniper-monkey-bar.js
  */
 
 const puppeteer = require('puppeteer-core');
@@ -11,11 +11,11 @@ const { homedir } = require('os');
 const { execSync } = require('child_process');
 
 // ── Config ──
-const VENUE_SLUG = 'torrisi';
-const VENUE_ID = 64593;
-const TARGET_DATE = '2026-05-05';
+const VENUE_SLUG = 'monkey-bar-nyc';
+const VENUE_ID = 60058;
+const TARGET_DATE = '2026-04-25';
 const PARTY_SIZE = 2;
-const DROP_HOUR = 10;
+const DROP_HOUR = 9;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 // uid 64692867
@@ -81,18 +81,18 @@ async function apiFind() {
 
     let pick = null;
     const TARGET_HOUR = 17;
-    const TARGET_MIN = 30;
+    const TARGET_MIN = 0;
     const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
     const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
 
-    // Priority 1: exact 5:30 PM
+    // Priority 1: exact 5:00 PM
     for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 2: any slot 5:30pm or later, closest to 5:30pm
+    // Priority 2: any slot 5pm or later, closest to 5pm
     if (!pick) {
       const evening = slots.filter(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 1050;
+        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 1020;
       }).sort((a, b) => {
         const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
         const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
@@ -160,8 +160,8 @@ async function apiBook(bookToken) {
 }
 
 async function main() {
-  log('TORRISI SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 5:30 PM+ only (no early slots)`);
+  log('MONKEY BAR SNIPER — Hybrid API + 2Captcha');
+  log(`   Target: ${TARGET_DATE} — 5:00 PM+ only (no early slots)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log('');
@@ -169,7 +169,7 @@ async function main() {
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     headless: false,
-    userDataDir: `${homedir()}/.resy-sniper-profile-torrisi`,
+    userDataDir: `${homedir()}/.resy-sniper-profile-${VENUE_SLUG}`,
     args: ['--no-first-run', '--no-default-browser-check', '--disable-blink-features=AutomationControlled', '--start-maximized'],
     defaultViewport: null,
   });
@@ -251,7 +251,7 @@ async function main() {
       log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
       break;
     }
-    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5:30pm+` : 'no slots'} (${result.ms}ms)`);
+    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5pm+` : 'no slots'} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 

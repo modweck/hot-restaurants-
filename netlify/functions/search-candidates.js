@@ -1315,7 +1315,7 @@ exports.handler = async (event) => {
       return {
         name: r.name || null,
         place_id: r.place_id || null,
-        vicinity: r.vicinity || r.formatted_address || null,
+        vicinity: r.vicinity || r.formatted_address || r.address || null,
         lat: r.lat ?? r.geometry?.location?.lat ?? null,
         lng: r.lng ?? r.geometry?.location?.lng ?? null,
         googleRating: r.googleRating ?? r.rating ?? null,
