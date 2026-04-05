@@ -288,7 +288,7 @@
 <div class="container">
 
   <!-- ═══════════════════════════════════════════════════════ HOME VIEW -->
-  <div class="view on" id="view-home" style="background:#f7f5f2;min-height:100vh">
+  <div class="view" id="view-home" style="background:#f7f5f2;min-height:100vh;display:none">
 
     <!-- HERO TOP BAR -->
     <div class="home-hero">
@@ -736,15 +736,14 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════ ALL RESTAURANTS VIEW -->
-  <div class="view" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
+  <div class="view on" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
 
     <!-- FORM -->
     <div id="ar-form">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
         <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
-          <button class="hero-tab active">All</button>
+          <button class="hero-tab active">Restaurants</button>
           <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
         </div>
       </div>
@@ -807,15 +806,7 @@
             <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime 6:30-8:15</button>
             <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late 8:30+</button>
           </div>
-          <div id="ar-book-ahead-days" style="display:none;margin-bottom:8px">
-            <span class="flabel" style="font-size:11px">Opens within</span>
-            <div style="display:flex;gap:6px;flex-wrap:wrap">
-              <button class="fchip on" id="ar-days-any" onclick="arSetDays('any',this)">Any</button>
-              <button class="fchip" id="ar-days-3" onclick="arSetDays(3,this)">+3 days</button>
-              <button class="fchip" id="ar-days-7" onclick="arSetDays(7,this)">+7 days</button>
-              <button class="fchip" id="ar-days-14" onclick="arSetDays(14,this)">+14 days</button>
-            </div>
-          </div>
+          <!-- days filter moved to results area -->
         </div>
 
         <!-- Hot Spots (collapsible) -->
@@ -933,6 +924,12 @@
           style="width:100%;padding:16px;background:#d4a373;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;transition:all .2s;box-shadow:0 3px 16px rgba(212,163,115,0.3)">
           Find Restaurants
         </button>
+
+        <!-- Restaurant Search -->
+        <div style="margin-bottom:14px;position:relative">
+          <input type="text" id="arRestInput" class="finput" placeholder="Search restaurants..." autocomplete="off" oninput="_restAutocomplete(this.value,'arRestAutoList')" onfocus="_restAutocomplete(this.value,'arRestAutoList')">
+          <div id="arRestAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.06);border-top:none;border-radius:0 0 14px 14px;max-height:240px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.08)"></div>
+        </div>
 
         <!-- Featured Picks -->
         <div style="margin-bottom:6px">
@@ -1358,9 +1355,9 @@ async function _loadRestNames() {
 }
 
 let _autoTimeout = null;
-function _restAutocomplete(query) {
+function _restAutocomplete(query, listId) {
   clearTimeout(_autoTimeout);
-  const el = document.getElementById('restAutoList');
+  const el = document.getElementById(listId || 'restAutoList');
   if (!query || query.length < 2) { el.style.display = 'none'; return; }
   _autoTimeout = setTimeout(async () => {
     const names = await _loadRestNames();
@@ -1379,8 +1376,10 @@ function _restAutocomplete(query) {
 }
 
 function _selectRest(name) {
-  document.getElementById('homeRestInput').value = '';
-  document.getElementById('restAutoList').style.display = 'none';
+  const _hri = document.getElementById('homeRestInput'); if(_hri) _hri.value = '';
+  const _ral = document.getElementById('restAutoList'); if(_ral) _ral.style.display = 'none';
+  const _ari = document.getElementById('arRestInput'); if(_ari) _ari.value = '';
+  const _arl = document.getElementById('arRestAutoList'); if(_arl) _arl.style.display = 'none';
   // Find the full restaurant data and show it directly
   const q = name.toLowerCase();
   const matches = (_restNames || []).filter(r => r.name.toLowerCase() === q || r.name.toLowerCase().includes(q));
@@ -1460,7 +1459,10 @@ function _goToCard(name) {
 // Close autocomplete when clicking outside
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#homeRestInput') && !e.target.closest('#restAutoList')) {
-    document.getElementById('restAutoList').style.display = 'none';
+    const _rl = document.getElementById('restAutoList'); if(_rl) _rl.style.display = 'none';
+  }
+  if (!e.target.closest('#arRestInput') && !e.target.closest('#arRestAutoList')) {
+    const _arl = document.getElementById('arRestAutoList'); if(_arl) _arl.style.display = 'none';
   }
 });
 
@@ -1530,7 +1532,7 @@ function switchNav(name) {
     showView('search');
     doSearch();
   }
-  else if (name === 'home') showView('home');
+  else if (name === 'home') { name='allrestaurants'; showView('allrestaurants'); document.getElementById('ar-form').style.display='block'; document.getElementById('ar-results').style.display='none'; }
   else if (name === 'drinks') {
     const bf = document.getElementById('bar-form');
     const br = document.getElementById('bar-results');
@@ -1574,7 +1576,10 @@ function setHeroTab(tab, btn) {
     document.getElementById('bar-form').style.display = 'block';
     document.getElementById('bar-results').style.display = 'none';
   } else if (tab === 'hotspots') {
-    switchNav('home');
+    switchNav('allrestaurants');
+    document.getElementById('ar-form').style.display = 'block';
+    document.getElementById('ar-results').style.display = 'none';
+    allNYCRestaurants = [];
   }
 }
 
@@ -2537,11 +2542,10 @@ function arSetAvail(val, btn) {
   ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = val; arState.horizonFilter = null; arState.daysFilter = null;
   btn.classList.add('on');
-  const daysEl = document.getElementById('ar-book-ahead-days');
-  if (daysEl) daysEl.style.display = val === 'book_ahead' ? 'block' : 'none';
   if (val !== 'book_ahead') {
-    ['ar-days-any','ar-days-3','ar-days-7','ar-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-    const anyBtn = document.getElementById('ar-days-any'); if(anyBtn) anyBtn.classList.add('on');
+    arState.daysFilter = null;
+    ['ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+    const anyBtn = document.getElementById('ar-res-days-any'); if(anyBtn) anyBtn.classList.add('on');
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
