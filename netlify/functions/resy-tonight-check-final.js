@@ -323,15 +323,26 @@ async function checkOne(name, url, date, partySize) {
   let slots = null;
 
   try {
-    // Step 1: resolve venue ID
+    // Step 1: resolve venue ID (try slug variants + location variants)
     let venueId = null;
-    const venueResp = await fetch(
-      `https://api.resy.com/3/venue?url_slug=${slug}&location=ny`,
-      { headers: getHeaders(), signal: AbortSignal.timeout(10000) }
-    );
-    if (venueResp.ok) {
-      const venueData = await venueResp.json();
-      venueId = venueData?.id?.resy;
+    const slugsToTry = [slug];
+    const shortSlug = slug.replace(/-new-york$/, '');
+    if (shortSlug !== slug) slugsToTry.push(shortSlug);
+    for (const s of slugsToTry) {
+      for (const loc of ['ny', 'new-york-ny']) {
+        try {
+          const venueResp = await fetch(
+            `https://api.resy.com/3/venue?url_slug=${s}&location=${loc}`,
+            { headers: getHeaders(), signal: AbortSignal.timeout(10000) }
+          );
+          if (venueResp.ok) {
+            const venueData = await venueResp.json();
+            venueId = venueData?.id?.resy;
+            if (venueId) break;
+          }
+        } catch {}
+      }
+      if (venueId) break;
     }
 
     // Step 2: try API (POST then GET)
@@ -582,14 +593,23 @@ async function main() {
     async function resolveVenueId(slug, lookupEntry) {
       if (venueCache[slug]) return venueCache[slug];
       if (lookupEntry?.venue_id) { venueCache[slug] = lookupEntry.venue_id; return lookupEntry.venue_id; }
-      try {
-        const resp = await fetch(`https://api.resy.com/3/venue?url_slug=${slug}&location=ny`, { headers: getHeaders(), signal: AbortSignal.timeout(10000) });
-        if (!resp.ok) return null;
-        const data = await resp.json();
-        const id = data?.id?.resy;
-        if (id) venueCache[slug] = id;
-        return id;
-      } catch { return null; }
+      const slugsToTry = new Set([slug]);
+      const short = slug.replace(/-new-york$/, '');
+      if (short !== slug) slugsToTry.add(short);
+      for (const suffix of ['-chelsea','-soho','-nyc','-brooklyn','-les','-williamsburg','-west-village','-east-village','-flatiron','-midtown','-uws','-ues','-nolita','-tribeca']) {
+        slugsToTry.add(short + suffix);
+      }
+      for (const s of slugsToTry) {
+        for (const loc of ['new-york-ny', 'ny']) {
+          try {
+            const resp = await fetch(`https://api.resy.com/3/venue?url_slug=${s}&location=${loc}`, { headers: getHeaders(), signal: AbortSignal.timeout(10000) });
+            if (!resp.ok) continue;
+            const data = await resp.json();
+            const id = data?.id?.resy;
+            if (id) { venueCache[slug] = id; return id; }
+          } catch {}
+        }
+      }
     }
 
     let hasFuture = 0, locked = 0, apiFailed = 0, noSlugCount = 0, notBookable = 0;
