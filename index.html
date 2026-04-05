@@ -162,9 +162,9 @@
     .badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:4px 9px;border-radius:8px;font-size:11px;font-weight:700}
     .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.15)}
-    .badge.vibe{background:#f0f7ff;color:#3b82f6;border:1px solid rgba(59,130,246,.15);font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
-    .badge.bib{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15)}
-    .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.15)}
+    .badge.vibe{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15);font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
+    .badge.bib{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
+    .badge.press{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
     .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
     .badge.insta{background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.15)}
     .badge.inkind{background:#fff7ed;color:#c2410c;border:1.5px solid #c2410c;font-weight:800}
@@ -211,6 +211,10 @@
     .insta-buzz-more:hover{background:#fff0f7}
     .insta-buzz-expanded{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;width:100%}
     .insta-buzz-sub{font-size:10px;opacity:.85}
+    .insta-influencer-badge{display:contents}
+    .insta-influencer-toggle{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15);transition:all .15s;font-family:'DM Sans',sans-serif}
+    .insta-influencer-toggle:hover{background:#e0f0d8;border-color:rgba(56,142,60,.3)}
+    .insta-influencer-dropdown{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;width:100%}
     .loc-banner{background:#fff;border:1px solid rgba(0,0,0,.05);padding:8px 14px;border-radius:10px;margin:0 16px 10px;font-size:12px;color:#999;display:flex;align-items:center;gap:5px}
     .err-banner{background:#fef2f2;border:1px solid rgba(220,38,38,.15);padding:12px 14px;border-radius:12px;margin:0 16px 10px;font-size:13px;font-weight:600;color:#dc2626}
     .empty{text-align:center;padding:60px 20px}
@@ -272,7 +276,7 @@
     .bbtn.walkin{background:#1b4332;color:#fff}
     .mapbtn{background:#faf9f6}
     .avail.av{background:#e8f5e9;color:#1b4332;border:1px solid rgba(27,67,50,.15)}
-    .badge.vibe{background:#f0f5f1;color:#2d6a4f;border:1px solid rgba(45,106,79,.15)}
+    .badge.vibe{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15)}
     .pac-matched{color:#1b4332}
     .back-btn:hover{color:#1b4332}
     .mfilt.on{background:#1b4332;color:#fff;border-color:#1b4332}
@@ -333,7 +337,7 @@
           <button class="fchip" onclick="setTrendFilter('nyt',this)">NYT Reviewed</button>
           <button class="fchip" onclick="setTrendFilter('press',this)">Eater / Infa</button>
           <button class="fchip" onclick="setTrendFilter('timeout',this)">Time Out</button>
-          <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram</button>
+          <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram Influencers</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
         </div>
@@ -819,7 +823,7 @@
               <button class="fchip" id="ar-hot-nyt" onclick="arSetHotspot('nyt',this)">NYT Reviewed</button>
               <button class="fchip" id="ar-hot-press" onclick="arSetHotspot('press',this)">Eater / Infa</button>
               <button class="fchip" id="ar-hot-timeout" onclick="arSetHotspot('timeout',this)">Time Out</button>
-              <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram</button>
+              <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram Influencers</button>
               <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
               <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
             </div>
@@ -1561,7 +1565,7 @@ function toggleInstaBuzz(id, btn) {
   if (!el) return;
   const isOpen = el.style.display !== 'none';
   el.style.display = isOpen ? 'none' : 'flex';
-  btn.textContent = isOpen ? btn.textContent.replace('▴', '▾') : btn.textContent.replace('▾', '▴');
+  btn.textContent = btn.textContent.replace(isOpen ? '▴' : '▾', isOpen ? '▾' : '▴');
 }
 
 function setTrendFilter(buzz, btn) {
@@ -2033,6 +2037,14 @@ function renderCard(r, isRadar) {
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
     badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
 
+  // Instagram Influencers collapsible badge
+  if (r.instagram_buzz && r.instagram_buzz.length > 0) {
+    const _sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
+    const _buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
+    let _links = _sorted.map(p => `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${p.influencer}</a>`).join('');
+    badges += `<span class="insta-influencer-badge"><button class="insta-influencer-toggle" onclick="toggleInstaBuzz('${_buzzId}',this)">📸 Instagram Influencers (${_sorted.length}) ▾</button><div id="${_buzzId}" class="insta-influencer-dropdown" style="display:none">${_links}</div></span>`;
+  }
+
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
 
   // Availability — only show for platforms with real availability data
@@ -2130,24 +2142,6 @@ function renderCard(r, isRadar) {
     if (instaHandle) {
       const cleanHandle = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
       cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">@${cleanHandle}</a>`;
-    }
-    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-      const top = sorted[0];
-      const rest = sorted.slice(1);
-      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-      if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
-      } else {
-        cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
-        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
-        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
-        rest.forEach(p => {
-          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
-        });
-        cardLinks += `</span></span>`;
-      }
     }
     cardLinks += '</div>';
   }
@@ -2702,6 +2696,14 @@ function renderCardAR(r) {
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
     badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
 
+  // Instagram Influencers collapsible badge
+  if (r.instagram_buzz && r.instagram_buzz.length > 0) {
+    const _sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
+    const _buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
+    let _links = _sorted.map(p => `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${p.influencer}</a>`).join('');
+    badges += `<span class="insta-influencer-badge"><button class="insta-influencer-toggle" onclick="toggleInstaBuzz('${_buzzId}',this)">📸 Instagram Influencers (${_sorted.length}) ▾</button><div id="${_buzzId}" class="insta-influencer-dropdown" style="display:none">${_links}</div></span>`;
+  }
+
   const bpAR = (r.booking_platform || r.platform || '').toLowerCase();
   const realPlatformAR = bpAR === 'resy' || bpAR === 'opentable' || bpAR === 'tock' || bpAR === 'sevenrooms';
   const tier = realPlatformAR ? availTierAR(r) : null;
@@ -2780,24 +2782,6 @@ function renderCardAR(r) {
     if (instaHandle) {
       const ch = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
       cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">@${ch}</a>`;
-    }
-    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-      const top = sorted[0];
-      const rest = sorted.slice(1);
-      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-      if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
-      } else {
-        cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
-        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
-        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
-        rest.forEach(p => {
-          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
-        });
-        cardLinks += `</span></span>`;
-      }
     }
     cardLinks += '</div>';
   }
