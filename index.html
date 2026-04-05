@@ -280,14 +280,6 @@
   </style>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script>
-  const _sbMod = window.supabase;
-  const _sb = (_sbMod.createClient || _sbMod)('https://zdsolubfxzvrqiqvwjev.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM');
-  // Auth disabled for localhost testing — re-enable before deploy
-  // _sb.auth.getSession().then(({data:{session}})=>{if(!session)window.location.href='login.html'});
-  function _logout(){_sb.auth.signOut().then(()=>window.location.href='login.html')}
-</script>
 
 <div class="container">
 
@@ -306,7 +298,6 @@
               <button class="hero-tab" id="ht-all" onclick="setHeroTab('all',this)">All</button>
               <button class="hero-tab" id="ht-drinks" onclick="setHeroTab('drinks',this)">Drinks</button>
             </div>
-            <button onclick="_logout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:6px 10px;font-size:10px;font-weight:700;color:#bbb;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s">Logout</button>
           </div>
         </div>
 
