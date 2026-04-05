@@ -161,7 +161,7 @@
 
     .badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:4px 9px;border-radius:8px;font-size:11px;font-weight:700}
-    .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.15)}
+    .badge.mstar{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
     .badge.vibe{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15);font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
     .badge.bib{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
     .badge.press{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
@@ -669,8 +669,8 @@
         <span class="res-meta" id="resMeta"></span>
       </div>
       <div class="results-filters">
-        <select onchange="state.horizonFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
-          <option value="any">Availability</option>
+        <select id="hotspot-days-filter" style="display:none" onchange="state.daysFilter=this.value==='any'?null:Number(this.value);if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">Opens within</option>
           <option value="3">+3 days</option>
           <option value="7">+7 days</option>
           <option value="14">+14 days</option>
@@ -806,6 +806,15 @@
             <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early 5-6:15</button>
             <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime 6:30-8:15</button>
             <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late 8:30+</button>
+          </div>
+          <div id="ar-book-ahead-days" style="display:none;margin-bottom:8px">
+            <span class="flabel" style="font-size:11px">Opens within</span>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="fchip on" id="ar-days-any" onclick="arSetDays('any',this)">Any</button>
+              <button class="fchip" id="ar-days-3" onclick="arSetDays(3,this)">+3 days</button>
+              <button class="fchip" id="ar-days-7" onclick="arSetDays(7,this)">+7 days</button>
+              <button class="fchip" id="ar-days-14" onclick="arSetDays(14,this)">+14 days</button>
+            </div>
           </div>
         </div>
 
@@ -964,6 +973,15 @@
       <div class="res-header">
         <button class="back-btn" onclick="arGoBack()">← Back</button>
         <span class="res-meta" id="allRestMeta"></span>
+      </div>
+      <div id="ar-results-days" style="display:none;padding:6px 16px 2px;background:#f7f5f2">
+        <span style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;display:block">Opens within</span>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button class="fchip on" id="ar-res-days-any" onclick="arSetDays('any',this)">Any</button>
+          <button class="fchip" id="ar-res-days-3" onclick="arSetDays(3,this)">+3 days</button>
+          <button class="fchip" id="ar-res-days-7" onclick="arSetDays(7,this)">+7 days</button>
+          <button class="fchip" id="ar-res-days-14" onclick="arSetDays(14,this)">+14 days</button>
+        </div>
       </div>
       <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setARSortOrder(this.value)">
@@ -1976,19 +1994,19 @@ function renderCard(r, isRadar) {
   if (isNYT) {
     const nytLinkData = bdata?.links?.find(l => l.source === 'NYT' || l.source === 'NY Times');
     const nytUrl = nytLinkData?.url;
-    const nytStyle = 'background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2);text-decoration:none;cursor:pointer';
+    const nytStyle = 'background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15);text-decoration:none;cursor:pointer';
     if (r.nyt_top_100) {
       const rankMatch = nytLinkData?.label?.match(/#(\d+)/);
       const rankStr = rankMatch ? ` #${rankMatch[1]}` : '';
       if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT Top 100${rankStr}</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT Top 100${rankStr}</span>`;
+      else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT Top 100${rankStr}</span>`;
     } else if (r.pete_wells && r.nyt_stars) {
       const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
       if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT ${stars}</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT ${stars}</span>`;
+      else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT ${stars}</span>`;
     } else {
       if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">NYT</span>`;
+      else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT</span>`;
     }
   }
 
@@ -2167,6 +2185,8 @@ function renderCard(r, isRadar) {
 // ─── DISPLAY ──────────────────────────────────────────────────────────────────
 function display(restaurants) {
   restaurants.forEach(r => { r._bs = buzzScore(r); });
+  const _daysEl = document.getElementById('hotspot-days-filter');
+  if (_daysEl) _daysEl.style.display = (state.availFilter === 'book_ahead' || homeState.availFilter === 'book_ahead') ? '' : 'none';
 
   let list = [...restaurants];
 
@@ -2276,7 +2296,11 @@ function display(restaurants) {
       const bp = (r.booking_platform || '').toLowerCase();
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
       const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
-      if (isBookAhead) return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform;
+      if (isBookAhead) {
+        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform)) return false;
+        if (state.daysFilter) return r.opens_in === state.daysFilter;
+        return true;
+      }
       if (af === 'limited' || af === 'booked_solid' || af === 'early' || af === 'prime' || af === 'late') {
         if (!realPlatform) return false;
         if (!tier) return false;
@@ -2511,8 +2535,26 @@ function arSetTransport(mode, btn) {
 function arSetAvail(val, btn) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  arState.availFilter = val; arState.horizonFilter = null;
+  arState.availFilter = val; arState.horizonFilter = null; arState.daysFilter = null;
   btn.classList.add('on');
+  const daysEl = document.getElementById('ar-book-ahead-days');
+  if (daysEl) daysEl.style.display = val === 'book_ahead' ? 'block' : 'none';
+  if (val !== 'book_ahead') {
+    ['ar-days-any','ar-days-3','ar-days-7','ar-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+    const anyBtn = document.getElementById('ar-days-any'); if(anyBtn) anyBtn.classList.add('on');
+  }
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+function arSetDays(val, btn) {
+  ['ar-days-any','ar-days-3','ar-days-7','ar-days-14','ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  btn.classList.add('on');
+  // Sync both form and results chips
+  const v = val === 'any' ? 'any' : val;
+  const formChip = document.getElementById('ar-days-' + v);
+  const resChip = document.getElementById('ar-res-days-' + v);
+  if (formChip) formChip.classList.add('on');
+  if (resChip) resChip.classList.add('on');
+  arState.daysFilter = val === 'any' ? null : Number(val);
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
@@ -2661,19 +2703,19 @@ function renderCardAR(r) {
       badges = badges.replace(/<a[^>]*class="badge press"[^>]*>📰 [^<]+<\/a>/g, '').replace(/<span class="badge press">📰 [^<]+<\/span>/g, '');
       const nytLinkAR = bdataAR?.links?.find(l => l.source === 'NYT' || l.source === 'NY Times');
       const nytUrlAR = nytLinkAR?.url;
-      const nytStyleAR = 'background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2);text-decoration:none;cursor:pointer';
+      const nytStyleAR = 'background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15);text-decoration:none;cursor:pointer';
       if (r.nyt_top_100) {
         const rm = nytLinkAR?.label?.match(/#(\d+)/);
         const rs = rm ? ` #${rm[1]}` : '';
         if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT Top 100${rs}</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT Top 100${rs}</span>`;
+        else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT Top 100${rs}</span>`;
       } else if (r.pete_wells && r.nyt_stars) {
         const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
         if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT ${stars}</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT ${stars}</span>`;
+        else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT ${stars}</span>`;
       } else {
         if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">NYT</span>`;
+        else badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">NYT</span>`;
       }
     }
   }
@@ -2884,7 +2926,9 @@ function applyARFilters(list) {
       if (af === 'book_ahead') {
         if (!realPlatform) return false;
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
-        return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
+        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14)) return false;
+        if (arState.daysFilter) return r.opens_in === arState.daysFilter;
+        return true;
       }
       if (!realPlatform) return false;
       if (!tier) return false;
@@ -2910,6 +2954,8 @@ function applyARFilters(list) {
 }
 
 function displayAllNYC(restaurants) {
+  const _resDaysEl = document.getElementById('ar-results-days');
+  if (_resDaysEl) _resDaysEl.style.display = arState.availFilter === 'book_ahead' ? 'block' : 'none';
   const filtered = applyARFilters([...restaurants]);
   document.getElementById('allRestMeta').textContent = `${filtered.length} restaurant${filtered.length !== 1 ? 's' : ''}`;
   if (!filtered.length) {
@@ -3148,7 +3194,7 @@ function renderBarCard(b) {
       const ampm = last[3].toUpperCase();
       const closeHour = ampm === 'AM' ? (hr===12?24:24+hr) : (hr===12?12:12+hr);
       if (closeHour >= 29) badges += `<span class="badge" style="background:#f5f3ff;color:#6d28d9;border:1px solid rgba(109,40,217,.2)">🌑 Until 5am+</span>`;
-      else if (closeHour === 28) badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">🌙 Until 4am</span>`;
+      else if (closeHour === 28) badges += `<span class="badge" style="background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)">🌙 Until 4am</span>`;
     }
   }
 
