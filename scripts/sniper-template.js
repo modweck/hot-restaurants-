@@ -5,7 +5,7 @@
  *
  * Flow:
  *   1. Opens Chrome 5min before drop (log in if needed)
- *   2. Pre-solves 2 captchas via 2Captcha 2min before drop
+ *   2. Pre-solves 6 captchas via 2Captcha in 2 waves (3min + 90s before drop)
  *   3. API polls /4/find 500ms before drop (4 checks, 500ms apart)
  *   4. Slot found → picks best evening slot (4pm+), closest to target
  *   5. /3/details with captcha_token → /3/book with payment method
@@ -213,8 +213,8 @@ async function main() {
   await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 30000 });
   log('Browser ready');
 
-  // Wait until 2min before drop to solve captchas
-  const solveAt = new Date(drop.getTime() - 120000);
+  // Wait until 3min before drop to solve first batch of captchas
+  const solveAt = new Date(drop.getTime() - 180000);
   if (solveAt > new Date()) {
     log('Waiting to solve captchas...');
     while (new Date() < solveAt) {
@@ -225,20 +225,37 @@ async function main() {
     }
   }
 
-  // ── PHASE 0: Pre-solve captchas ──
-  log('PHASE 0: Solving 2 captchas in parallel...');
+  // ── PHASE 0: Pre-solve captchas in 2 waves ──
+  // Wave 1: 4 captchas ~3min before drop
+  log('PHASE 0: Wave 1 — solving 4 captchas in parallel...');
   const solveStart = Date.now();
 
-  const [token1, token2] = await Promise.all([
+  const wave1 = await Promise.all([
     solveCaptcha().then(t => { log(`   Captcha 1: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
     solveCaptcha().then(t => { log(`   Captcha 2: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 3: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 4: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
   ]);
 
-  const captchaTokens = [token1, token2].filter(Boolean);
+  // Wave 2: 2 fresh captchas ~90s before drop (these will be freshest at drop time)
+  const wave2At = new Date(drop.getTime() - 90000);
+  if (wave2At > new Date()) {
+    log('Waiting for wave 2...');
+    while (new Date() < wave2At) await sleep(1000);
+  }
+  log('PHASE 0: Wave 2 — solving 2 fresh captchas...');
+  const solve2Start = Date.now();
+  const wave2 = await Promise.all([
+    solveCaptcha().then(t => { log(`   Captcha 5: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solve2Start) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 6: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solve2Start) / 1000).toFixed(0)}s)`); return t; }),
+  ]);
+
+  // Freshest tokens first (wave 2), then wave 1
+  const captchaTokens = [...wave2, ...wave1].filter(Boolean);
   log(`${captchaTokens.length} captcha token(s) ready`);
 
   if (captchaTokens.length === 0) {
-    log('Both captchas failed — will try without + browser fallback');
+    log('All captchas failed — will try without + browser fallback');
   }
 
   // Wait until 500ms before drop
