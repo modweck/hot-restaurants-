@@ -3613,7 +3613,8 @@
     "late": "booked",
     "_checked_date": "2026-03-30",
     "fully_locked": false,
-    "_recheck_result": "has_availability"
+    "_recheck_result": "has_availability",
+    "opens_in": 24
   },
   "gosuke": {
     "tier": "open",
@@ -8593,7 +8594,8 @@
     "late": "booked",
     "_checked_date": "2026-04-02",
     "fully_locked": false,
-    "_recheck_result": "has_availability"
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "ovelia": {
     "tier": "open",
@@ -17661,7 +17663,8 @@
     "late": "booked",
     "_checked_date": "2026-04-02",
     "fully_locked": false,
-    "_recheck_result": "has_availability"
+    "_recheck_result": "has_availability",
+    "opens_in": 7
   },
   "marc179": {
     "tier": "booked",
