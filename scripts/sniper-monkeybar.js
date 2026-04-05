@@ -1,9 +1,7 @@
 /**
- * sniper-torrisi.js — Full Hybrid Sniper with 2Captcha
+ * sniper-monkeybar.js — Monkey Bar
  *
- * Same proven v3 script that booked Four Horsemen in 2.7s.
- *
- * RUN: node scripts/sniper-torrisi.js
+ * RUN: node scripts/sniper-monkeybar.js
  */
 
 const puppeteer = require('puppeteer-core');
@@ -11,11 +9,11 @@ const { homedir } = require('os');
 const { execSync } = require('child_process');
 
 // ── Config ──
-const VENUE_SLUG = 'torrisi';
-const VENUE_ID = 64593;
-const TARGET_DATE = '2026-05-05';
+const VENUE_SLUG = 'monkey-bar-nyc';
+const VENUE_ID = 60058;
+const TARGET_DATE = '2026-04-25';
 const PARTY_SIZE = 2;
-const DROP_HOUR = 10;
+const DROP_HOUR = 9;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 // Mo (uid 64640437)
@@ -160,7 +158,7 @@ async function apiBook(bookToken) {
 }
 
 async function main() {
-  log('TORRISI SNIPER — Hybrid API + 2Captcha');
+  log('MONKEY BAR SNIPER — Hybrid API + 2Captcha');
   log(`   Target: ${TARGET_DATE} — 5:00 PM+ only (no early slots)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
@@ -169,7 +167,7 @@ async function main() {
   const browser = await puppeteer.launch({
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     headless: false,
-    userDataDir: `${homedir()}/.resy-sniper-profile-torrisi`,
+    userDataDir: `${homedir()}/.resy-sniper-profile-monkeybar`,
     args: ['--no-first-run', '--no-default-browser-check', '--disable-blink-features=AutomationControlled', '--start-maximized'],
     defaultViewport: null,
   });
