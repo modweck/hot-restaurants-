@@ -341,6 +341,90 @@ async function main() {
     await sleep(randomDelay());
   }
 
+  // ── Future availability for booked restaurants (+3, +7, +14 days) ──
+  const stillBooked = Object.entries(results)
+    .filter(([k, v]) => !k.startsWith('_') && v.tier === 'booked' && !v.opens_in && !v.fully_locked)
+    .map(([k]) => k);
+
+  if (stillBooked.length > 0) {
+    console.log(`\n${'─'.repeat(50)}`);
+    console.log(`🔮 Checking future availability for ${stillBooked.length} booked restaurants\n`);
+
+    const OFFSETS = [3, 7, 14];
+    function futureDate(offset) {
+      const d = new Date(); d.setDate(d.getDate() + offset);
+      return d.toISOString().split('T')[0];
+    }
+
+    let hasFuture = 0, locked = 0;
+    for (let i = 0; i < stillBooked.length; i++) {
+      if (sessionCount >= BROWSER_RESTART_EVERY) {
+        await browser.close(); await sleep(5000);
+        browser = await launchBrowser(); page = await setupPage(browser); sessionCount = 0;
+      }
+
+      const name = stillBooked[i];
+      const cleanName = name.replace(/\(.*\)/g, '').replace(/[^\w\s'-]/g, '').replace(/\s+/g, ' ').trim();
+      let opensIn = null;
+
+      for (const offset of OFFSETS) {
+        if (opensIn) break;
+        const date = futureDate(offset);
+        try {
+          const url = `https://www.opentable.com/s?term=${encodeURIComponent(cleanName)}&dateTime=${date}T19%3A30%3A00&covers=${PARTY_SIZE}&metroId=8`;
+          await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+
+          // Detect Access Denied
+          const blocked = await page.evaluate(() => {
+            const text = document.body?.innerText || '';
+            return text.includes('Access Denied') || text.includes("don't have permission");
+          });
+          if (blocked) {
+            console.log(`  🚫 Blocked on future check — rotating VPN...`);
+            await browser.close(); await rotateVPN(); await sleep(5000);
+            browser = await launchBrowser(); page = await setupPage(browser); sessionCount = 0;
+            await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+          }
+
+          const slotCount = await page.evaluate((searchName) => {
+            const cards = document.querySelectorAll('[data-test="pinned-restaurant-card"],[data-test="restaurant-card"]');
+            for (const card of cards) {
+              const cardName = card.querySelector('a[data-test="res-card-name"]')?.textContent?.trim() || '';
+              const notOnOT = card.innerText.includes('not on the OpenTable reservation network');
+              if (notOnOT) continue;
+              const cw = searchName.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ').filter(w => w.length > 2);
+              const cn = cardName.toLowerCase().replace(/[^a-z0-9 ]/g, '');
+              const matched = cw.filter(w => cn.includes(w)).length;
+              if (matched < Math.max(1, cw.length * 0.5)) continue;
+              const slots = card.querySelectorAll('li[data-test^="time-slot"]');
+              if (slots.length > 0) return slots.length;
+            }
+            return 0;
+          }, cleanName);
+
+          sessionCount++;
+          if (slotCount >= 2) { opensIn = offset; break; }
+        } catch {}
+        await sleep(randomDelay());
+      }
+
+      if (opensIn) {
+        results[name].opens_in = opensIn;
+        hasFuture++;
+        console.log(`  🟢 [${i+1}/${stillBooked.length}] ${name}: opens in +${opensIn}d`);
+      } else {
+        results[name].fully_locked = true;
+        locked++;
+        console.log(`  🔒 [${i+1}/${stillBooked.length}] ${name}: locked`);
+      }
+
+      if ((i+1) % 10 === 0) fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
+      await sleep(randomDelay());
+    }
+
+    console.log(`\n   🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}`);
+  }
+
   await browser.close();
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
 
