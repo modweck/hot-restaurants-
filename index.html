@@ -2912,7 +2912,13 @@ function applyARFilters(list) {
       if (!realPlatform) return false;
       if (!tier) return false;
       if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
-      if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
+      if (af === 'limited') {
+        const e = r.early, p = r.prime, l = r.late;
+        if (!e && !p && !l) return false;
+        const allAvail = e === 'available' && p === 'available' && l === 'available';
+        const allBooked = e === 'booked' && p === 'booked' && l === 'booked';
+        return !allAvail && !allBooked;
+      }
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
       if (af === 'late')  return r.has_late  && tier !== 'booked';
