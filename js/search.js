@@ -519,7 +519,7 @@ async function doSearch() {
     searching = false;
     btn.disabled = false;
     btn.classList.remove('busy');
-    btn.textContent = '🔥 Find Hot Spots';
+    btn.textContent = 'Find Hot Spots';
   }
 }
 

@@ -18,8 +18,8 @@ const PARTY_SIZE = 2;
 const DROP_HOUR = 10;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
-// uid 64692867
-const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NzkxMTIwMjMsInVpZCI6NjQ2OTI4NjcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM0MjQ4NTN9fQ.AT1UN2iAUCaSPZZl2tu4lGh48SUK-Cx92fPQAHVKTlYJA2wAnGHnCmZ_NdZj5752mcahbYM91OgjjgPQfXzvlaz6AajoIVvv6mejkFdiYwCPLcMH_ur1Q2Nn5Wpke2lJ6Q2ettY4XQCQAioQt8wZwf5lw0FU4ywsYrJcT2ENlSTCLpMo';
+// Mo (uid 64640437)
+const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzg4OTg1MTMsInVpZCI6NjQ2NDA0MzcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTMyNTg0MDZ9fQ.AOMbosBxAd5CvHh8g-YD8NfkXQahDSrZ0asmRrU1CaOb5muBMcw44ujG_W1LWRbiw285t1Kv3BaFyjj2xQ-n-HGbAX1GTaB-pd6wSoNvTdT5so9pAeAIsoRDrbrPQEPx_qqZtDVlkJokmDFEsZc_TlwKTnQlIlsHWAIrnE7v4hfn8n5s';
 const PAYMENT_METHOD_ID = 34810271; // Visa ending 5142
 
 const CAPTCHA_KEY = 'c9f9650dcc39ce04c40e5414c201836a';
@@ -80,19 +80,19 @@ async function apiFind() {
     if (!slots.length) return { found: false, slotCount: 0, ms: Date.now() - t0 };
 
     let pick = null;
-    const TARGET_HOUR = 16;
-    const TARGET_MIN = 30;
+    const TARGET_HOUR = 17;
+    const TARGET_MIN = 0;
     const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
     const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
 
-    // Priority 1: exact 4:30 PM
+    // Priority 1: exact 5:00 PM
     for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 2: any slot 4:30pm or later, closest to 4:30pm
+    // Priority 2: any slot 5pm or later, closest to 5pm
     if (!pick) {
       const evening = slots.filter(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 990;
+        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 1020;
       }).sort((a, b) => {
         const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
         const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
@@ -101,7 +101,7 @@ async function apiFind() {
       if (evening.length) pick = evening[0];
     }
 
-    // NO last resort — only 4:30pm+ slots
+    // NO last resort — only 5pm+ slots
     if (!pick) return { found: false, slotCount: slots.length, noEveningSlots: true, ms: Date.now() - t0 };
 
     return { found: true, time: pick.date?.start, configToken: pick.config?.token, slotCount: slots.length, ms: Date.now() - t0 };
@@ -161,7 +161,7 @@ async function apiBook(bookToken) {
 
 async function main() {
   log('TORRISI SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 4:30 PM+ only (no early slots)`);
+  log(`   Target: ${TARGET_DATE} — 5:00 PM+ only (no early slots)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log('');
@@ -251,7 +251,7 @@ async function main() {
       log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
       break;
     }
-    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 4:30pm+` : 'no slots'} (${result.ms}ms)`);
+    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5pm+` : 'no slots'} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 

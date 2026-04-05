@@ -12,7 +12,7 @@ const { execSync } = require('child_process');
 
 const VENUE_SLUG = '4-charles-prime-rib';
 const VENUE_ID = 834;
-const TARGET_DATE = '2026-04-23';
+const TARGET_DATE = '2026-04-24';
 const PARTY_SIZE = 4;
 const DROP_HOUR = 9;
 const DROP_MINUTE = 0;
@@ -192,10 +192,10 @@ async function main() {
 
   log('PHASE 1: API polling...');
   let slot = null;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 8; i++) {
     const result = await apiFind();
     if (result.found) { slot = result; log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`); break; }
-    log(`Check ${i + 1}/4: ${result.error ? 'error ' + result.error : 'no slots'} (${result.ms}ms)`);
+    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : 'no slots'} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 

@@ -13,13 +13,13 @@ const { execSync } = require('child_process');
 // ── Config ──
 const VENUE_SLUG = 'the-four-horsemen';
 const VENUE_ID = 2492;
-const TARGET_DATE = '2026-05-02';
+const TARGET_DATE = '2026-05-03';
 const PARTY_SIZE = 2;
 const DROP_HOUR = 7;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
-// Mo (uid 64640437)
-const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzg4OTg1MTMsInVpZCI6NjQ2NDA0MzcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTMyNTg0MDZ9fQ.AOMbosBxAd5CvHh8g-YD8NfkXQahDSrZ0asmRrU1CaOb5muBMcw44ujG_W1LWRbiw285t1Kv3BaFyjj2xQ-n-HGbAX1GTaB-pd6wSoNvTdT5so9pAeAIsoRDrbrPQEPx_qqZtDVlkJokmDFEsZc_TlwKTnQlIlsHWAIrnE7v4hfn8n5s';
+// Steve (uid 39817946)
+const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3NzkxNTM2NTgsInVpZCI6Mzk4MTc5NDYsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxMzE1NzU1OTh9fQ.ATXZZ0n7px9vv1BNHaK0nOn8L-j0AVvqMXAUAkmNnKJgWM7_6ZLdtQN1ZTdwHF0IgUXiS8meWi5AeMBPMdwHUSqoAOIcfAxZKm9KIBrgY5QppBIgApd7okxLoPR6Jlumrq3BLNzj6horEsqNUOl8xVgyOMi6_IMQSzwOtnxFjNg7d7Hp';
 
 const CAPTCHA_KEY = 'c9f9650dcc39ce04c40e5414c201836a';
 const SITEKEY = '6Lfw-dIZAAAAAESRBH4JwdgfTXj5LlS1ewlvvCYe';
@@ -79,19 +79,19 @@ async function apiFind() {
     if (!slots.length) return { found: false, slotCount: 0, ms: Date.now() - t0 };
 
     let pick = null;
-    const TARGET_HOUR = 17;
-    const TARGET_MIN = 0;
+    const TARGET_HOUR = 18;
+    const TARGET_MIN = 30;
     const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
     const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
 
-    // Priority 1: exact 5:00 PM
+    // Priority 1: exact 6:30 PM
     for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 2: any slot 5pm or later, closest to 5pm
+    // Priority 2: any slot 6:30pm or later, closest to 6:30pm
     if (!pick) {
       const evening = slots.filter(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && parseInt(hm[1]) >= 17;
+        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 1110;
       }).sort((a, b) => {
         const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
         const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
@@ -100,7 +100,7 @@ async function apiFind() {
       if (evening.length) pick = evening[0];
     }
 
-    // NO last resort — only 5pm+ slots
+    // NO last resort — only 6:30pm+ slots
     if (!pick) return { found: false, slotCount: slots.length, noEveningSlots: true, ms: Date.now() - t0 };
 
     return { found: true, time: pick.date?.start, configToken: pick.config?.token, slotCount: slots.length, ms: Date.now() - t0 };
@@ -143,7 +143,7 @@ async function apiBook(bookToken) {
     const h = Object.assign({}, HEADERS);
     h['Content-Type'] = 'application/x-www-form-urlencoded';
     delete h['Accept'];
-    const PAYMENT_METHOD_ID = 34810271; // Visa ending 5142
+    const PAYMENT_METHOD_ID = 32042646; // Visa ending 3833 (Steve)
     const paymentMethod = JSON.stringify({"id": PAYMENT_METHOD_ID});
     const resp = await fetch('https://api.resy.com/3/book', {
       method: 'POST', headers: h, body: `book_token=${encodeURIComponent(bookToken)}&struct_payment_method=${encodeURIComponent(paymentMethod)}`,
@@ -161,7 +161,7 @@ async function apiBook(bookToken) {
 
 async function main() {
   log('FOUR HORSEMEN SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 5:00 PM+ only (no early slots)`);
+  log(`   Target: ${TARGET_DATE} — 6:30 PM+ only (no early slots)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log('');
@@ -251,7 +251,7 @@ async function main() {
       log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
       break;
     }
-    log(`Check ${i + 1}/4: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5pm+` : 'no slots'} (${result.ms}ms)`);
+    log(`Check ${i + 1}/4: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 6:30pm+` : 'no slots'} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 

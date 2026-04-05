@@ -38,7 +38,9 @@ const arState = {
   transport: 'all_nyc',
   availFilter: 'any',
   horizonFilter: null,
-  vibeFilter: null
+  vibeFilter: null,
+  hotspotFilter: 'any',
+  hotspotFilters: []
 };
 
 // Bars/drinks view state

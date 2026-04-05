@@ -3,210 +3,280 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>SeatWize</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f5f0eb;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
     .container{max-width:520px;margin:0 auto;min-height:100vh;position:relative;padding-bottom:70px}
-    @media(min-width:520px){body{padding:16px}.container{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.7);min-height:auto}}
+    @media(min-width:520px){body{padding:16px}.container{border-radius:24px;overflow:hidden;box-shadow:0 8px 60px rgba(0,0,0,0.12);min-height:auto}}
 
     /* ── VIEWS ── */
     .view{display:none}.view.on{display:block}
 
     /* ── HOME SCREEN ── */
-    .home-hero{position:relative;overflow:hidden;background:#f5f0eb}
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%, rgba(255,100,0,0.08) 0%, rgba(245,240,235,0) 60%)}
-    .hero-top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 10px}
-    .hero-logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px}
+    .home-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#f7f5f2 100%)}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 10%, rgba(255,100,0,0.05) 0%, transparent 60%)}
+    .hero-top{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px}
+    .hero-logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px}
     .hero-logo span{color:#ff4500}
-    .hero-tabs{display:flex;background:rgba(0,0,0,0.06);border-radius:10px;padding:3px;gap:3px}
-    .hero-tab{padding:7px 16px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;color:#666;background:transparent;transition:all .2s;-webkit-tap-highlight-color:transparent}
-    .hero-tab.active{background:#ff4500;color:#fff}
+    .hero-tabs{display:flex;background:rgba(0,0,0,0.04);border-radius:12px;padding:3px;gap:2px}
+    .hero-tab{padding:8px 14px;border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;color:#888;background:transparent;transition:all .2s;-webkit-tap-highlight-color:transparent;letter-spacing:.1px}
+    .hero-tab.active{background:#1a1a2e;color:#fff;box-shadow:0 2px 8px rgba(26,26,46,0.2)}
     .hero-search{padding:12px 20px 16px;display:flex;gap:8px}
-    .hero-input{flex:1;padding:12px 16px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:12px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;-webkit-appearance:none}
-    .hero-input::placeholder{color:#aaa}
-    .hero-input:focus{border-color:rgba(255,69,0,.5);background:#fff}
-    .hero-explore-btn{width:100%;padding:15px 20px;background:#ff4500;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;margin:0 0 4px}
+    .hero-input{flex:1;padding:12px 16px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;-webkit-appearance:none;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .hero-input::placeholder{color:#bbb}
+    .hero-input:focus{border-color:rgba(255,69,0,.4);box-shadow:0 0 0 3px rgba(255,69,0,0.08)}
+    .hero-explore-btn{width:100%;padding:15px 20px;background:#ff4500;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;margin:0 0 4px;box-shadow:0 2px 12px rgba(255,69,0,0.25)}
     .hero-explore-btn:active{background:#e03c00;transform:scale(.98)}
 
     /* SECTIONS */
-    .home-section{padding:12px 20px 0}
-    .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-    .section-title{font-size:17px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:7px}
+    .home-section{padding:16px 20px 0}
+    .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .section-title{font-size:18px;font-weight:800;color:#1a1a2e;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
     .section-title .section-icon{font-size:18px}
     .section-viewall{font-size:12px;font-weight:700;color:#ff4500;cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:3px}
 
     /* FILTER CHIPS - wrap grid */
-    .filter-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-    .fchip{padding:8px 15px;border-radius:20px;border:1px solid rgba(0,0,0,0.12);background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#444;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .15s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px}
-    .fchip.on{background:rgba(255,69,0,0.15);color:#ff6b2b;border-color:rgba(255,69,0,.4)}
-    .fchip:active,.fchip:hover:not(.on){border-color:rgba(255,69,0,.3);color:#ff4500}
+    .filter-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+    .fchip{padding:7px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .2s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+    .fchip.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
+    .fchip:active,.fchip:hover:not(.on){border-color:rgba(0,0,0,.15);color:#333;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 
     /* TRENDING SECTION box */
-    .trending-box{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:12px;margin-bottom:10px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+    .trending-box{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 16px rgba(0,0,0,0.04)}
     .trending-box .filter-chips{margin-bottom:14px}
-    .trending-view-btn{width:100%;padding:12px;background:#ff4500;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s}
-    .trending-view-btn:active{background:#e03c00}
-    .radius-btn{padding:6px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.12);background:transparent;cursor:pointer;font-size:12px;font-weight:700;color:#666;font-family:'DM Sans',sans-serif;transition:all .15s;white-space:nowrap}
-    .radius-btn.on{background:rgba(255,69,0,0.15);color:#ff6b2b;border-color:rgba(255,69,0,.4)}
+    .trending-view-btn{width:100%;padding:14px;background:#ff4500;color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;box-shadow:0 2px 12px rgba(255,69,0,0.2)}
+    .trending-view-btn:active{background:#e03c00;transform:scale(.98)}
+    .radius-btn{padding:7px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#888;font-family:'DM Sans',sans-serif;transition:all .2s;white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+    .radius-btn.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
     .radius-btn:active{opacity:.7}
 
+    /* COLLAPSIBLE ADVANCED FILTERS */
+    .adv-filters-toggle{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:12px;border:none;border-radius:12px;background:#d4a373;color:#fff;cursor:pointer;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;transition:all .2s;margin-bottom:12px;box-shadow:0 2px 8px rgba(212,163,115,0.25)}
+    .adv-filters-toggle:hover{opacity:.9}
+    .adv-filters-toggle.open{background:#c4935f;color:#fff}
+    .adv-filters-toggle .toggle-arrow{transition:transform .3s;display:inline-block}
+    .adv-filters-toggle.open .toggle-arrow{transform:rotate(180deg)}
+    .adv-filters-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(0.4,0,0.2,1),opacity .3s;opacity:0}
+    .adv-filters-body.open{max-height:600px;opacity:1}
+
+    /* FILTER SECTION LABEL */
+    .filter-section-label{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block}
+
     /* NEARBY - horizontal photo cards */
-    .nearby-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:12px;margin:-2px -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .nearby-scroll{display:flex;gap:14px;overflow-x:auto;padding-bottom:16px;margin:-2px -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
     .nearby-scroll::-webkit-scrollbar{display:none}
-    .rcard{flex-shrink:0;width:160px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-    .rcard-img{width:160px;height:120px;border-radius:12px;background:#f0ede8;margin-bottom:8px;position:relative;overflow:hidden}
-    .rcard-avail{position:absolute;bottom:7px;left:7px;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif}
+    .rcard{flex-shrink:0;width:160px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s}
+    .rcard:active{transform:scale(.97)}
+    .rcard-img{width:160px;height:120px;border-radius:14px;background:#eee;margin-bottom:8px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+    .rcard-avail{position:absolute;bottom:7px;left:7px;padding:3px 8px;border-radius:8px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif;backdrop-filter:blur(4px)}
     .rcard-avail.av{background:rgba(46,125,50,0.88);color:#fff}
     .rcard-avail.lim{background:rgba(200,70,0,0.88);color:#fff}
     .rcard-avail.hard{background:rgba(160,20,20,0.88);color:#fff}
     .rcard-avail.sold{background:rgba(30,30,30,0.82);color:#fff}
-    .rcard-time{position:absolute;bottom:7px;right:7px;padding:3px 7px;border-radius:6px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif;color:#fff}
+    .rcard-time{position:absolute;bottom:7px;right:7px;padding:3px 7px;border-radius:8px;font-size:10px;font-weight:800;font-family:'DM Sans',sans-serif;color:#fff;backdrop-filter:blur(4px)}
     .rcard-time.early{background:rgba(46,125,50,0.82)}
     .rcard-time.prime{background:rgba(57,73,171,0.82)}
     .rcard-time.late{background:rgba(194,24,91,0.82)}
     .rcard-time.horizon{background:rgba(230,81,0,0.82)}
     .rcard-drop{font-size:10px;font-weight:700;color:#e65100;margin-top:2px}
-    .rcard-img-placeholder{width:160px;height:120px;border-radius:12px;background:linear-gradient(135deg,#243050 0%,#131e2e 100%);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}
+    .rcard-img-placeholder{width:160px;height:120px;border-radius:14px;background:linear-gradient(135deg,#243050 0%,#131e2e 100%);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:8px}
     .rcard-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.2;margin-bottom:3px}
-    .rcard-sub{font-size:11px;color:#888;margin-bottom:4px}
+    .rcard-sub{font-size:11px;color:#999;margin-bottom:4px}
     .rcard-rating{font-size:11px;font-weight:700;color:#ff6b2b}
-    .see-all-btn{width:100%;padding:13px;background:transparent;border:1px solid rgba(255,69,0,.35);color:#ff4500;border-radius:12px;font-size:13px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;transition:all .2s}
-    .see-all-btn:active{background:rgba(255,69,0,.1)}
+    .see-all-btn{width:100%;padding:14px;background:transparent;border:1.5px solid rgba(0,0,0,.1);color:#1a1a2e;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;transition:all .2s}
+    .see-all-btn:active{background:rgba(0,0,0,.03)}
+    .see-all-btn:hover{border-color:rgba(0,0,0,.2)}
 
     /* BOTTOM NAV */
-    .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:#f5f0eb;border-top:1px solid rgba(0,0,0,0.08);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
-    .nav-item{flex:1;padding:12px 0 10px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent;transition:opacity .15s}
-    .nav-icon{font-size:18px;line-height:1}
-    .nav-label{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.3px}
+    .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,0.06);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
+    .nav-item{flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent;transition:all .15s}
+    .nav-icon{font-size:20px;line-height:1}
+    .nav-label{font-size:9px;font-weight:700;color:#bbb;text-transform:uppercase;letter-spacing:.5px}
     .nav-item.active .nav-label{color:#ff4500}
+    .nav-item.active .nav-icon{transform:scale(1.1)}
 
     /* ── SEARCH VIEW ── */
-    .search-view-header{padding:16px 20px 0;display:flex;align-items:center;gap:10px;background:#f5f0eb}
-    .back-btn2{width:36px;height:36px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:9px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:#666;flex-shrink:0}
-    .search-view-title{font-size:16px;font-weight:800;color:#1a1a2e}
+    .search-view-header{padding:20px 20px 4px;display:flex;align-items:center;gap:12px;background:#f7f5f2}
+    .back-btn2{width:38px;height:38px;background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:11px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:#666;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .search-view-title{font-size:17px;font-weight:800;color:#1a1a2e;letter-spacing:-.2px}
 
     /* form reused styles */
-    .form2{padding:14px 20px;background:#f5f0eb}
-    .flabel{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;display:block}
-    .frow{display:flex;gap:8px;margin-bottom:12px}
-    .finput{width:100%;padding:10px 13px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;transition:border .2s;-webkit-appearance:none;appearance:auto}
-    .finput:focus{border-color:rgba(255,69,0,.5)}
+    .form2{padding:16px 20px;background:#f7f5f2}
+    .flabel{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;display:block}
+    .frow{display:flex;gap:10px;margin-bottom:14px}
+    .finput{width:100%;padding:12px 14px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;transition:all .2s;-webkit-appearance:none;appearance:auto;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+    .finput:focus{border-color:rgba(255,69,0,.4);box-shadow:0 0 0 3px rgba(255,69,0,0.08)}
     .finput option{background:#fff;color:#1a1a2e}
     input[type="date"].finput{color-scheme:light}
-    .stepper{display:flex;align-items:center;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;overflow:hidden;transition:border .2s}
-    .stepper:focus-within{border-color:rgba(255,69,0,.5)}
-    .step-btn{width:36px;height:42px;background:none;border:none;color:#666;font-size:17px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color .15s;flex-shrink:0}
-    .step-btn:hover{color:#f0ede8}
-    .step-num{flex:1;text-align:center;background:none;border:none;color:#1a1a2e;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;outline:none;min-width:28px}
-    .tgroup{display:flex;gap:5px}
-    .tbtn{flex:1;padding:8px 4px;border:1px solid rgba(0,0,0,0.1);border-radius:9px;background:#fff;cursor:pointer;font-size:11px;font-weight:600;color:#888;font-family:'DM Sans',sans-serif;text-align:center;transition:all .15s}
-    .tbtn.active{background:rgba(255,69,0,.12);color:#ff6b2b;border-color:rgba(255,69,0,.4);font-weight:700}
-    .tbtn:hover:not(.active){border-color:rgba(0,0,0,.2);color:#555}
+    .stepper{display:flex;align-items:center;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+    .stepper:focus-within{border-color:rgba(255,69,0,.4);box-shadow:0 0 0 3px rgba(255,69,0,0.08)}
+    .step-btn{width:40px;height:44px;background:none;border:none;color:#888;font-size:18px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;flex-shrink:0}
+    .step-btn:hover{color:#ff4500;background:rgba(255,69,0,0.04)}
+    .step-num{flex:1;text-align:center;background:none;border:none;color:#1a1a2e;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;outline:none;min-width:28px}
+    .tgroup{display:flex;gap:6px}
+    .tbtn{flex:1;padding:10px 6px;border:1px solid rgba(0,0,0,0.08);border-radius:10px;background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#888;font-family:'DM Sans',sans-serif;text-align:center;transition:all .2s;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+    .tbtn.active{background:#1a1a2e;color:#fff;border-color:#1a1a2e;font-weight:700;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
+    .tbtn:hover:not(.active){border-color:rgba(0,0,0,.15);color:#555}
     .dist-drop{max-height:0;overflow:hidden;transition:max-height .25s ease,opacity .2s;opacity:0;margin-top:0}
     .dist-drop.open{max-height:48px;opacity:1;margin-top:6px}
     .dselect{position:relative}
-    .dselect select{width:100%;padding:10px 32px 10px 13px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;cursor:pointer;transition:border .2s;-webkit-appearance:none;appearance:none}
-    .dselect select:focus{border-color:rgba(255,69,0,.5)}
+    .dselect select{width:100%;padding:12px 32px 12px 14px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;cursor:pointer;transition:all .2s;-webkit-appearance:none;appearance:none;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+    .dselect select:focus{border-color:rgba(255,69,0,.4);box-shadow:0 0 0 3px rgba(255,69,0,0.08)}
     .dselect select option{background:#fff;color:#1a1a2e}
-    .dselect::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:11px;color:#999}
-    .chips{display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .dselect::after{content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #aaa}
+    .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
     .chips::-webkit-scrollbar{display:none}
-    .chip{padding:6px 13px;border-radius:20px;border:1px solid rgba(0,0,0,0.1);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#888;white-space:nowrap;flex-shrink:0;font-family:'DM Sans',sans-serif;transition:all .15s}
-    .chip.on{background:#ff4500;color:#fff;border-color:#ff4500}
-    .chip:hover:not(.on){border-color:rgba(0,0,0,.2);color:#555}
-    .sbtn{width:100%;padding:15px;background:#ff4500;color:#fff;border:none;border-radius:11px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.3px;transition:all .2s;margin-top:14px}
-    .sbtn:hover{background:#e03c00;transform:translateY(-1px)}
-    .sbtn:disabled{opacity:.6;cursor:wait;transform:none}
+    .chip{padding:8px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#888;white-space:nowrap;flex-shrink:0;font-family:'DM Sans',sans-serif;transition:all .2s;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+    .chip.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
+    .chip:hover:not(.on){border-color:rgba(0,0,0,.15);color:#555}
+    .sbtn{width:100%;padding:16px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.3px;transition:all .2s;margin-top:16px;box-shadow:0 3px 16px rgba(255,69,0,0.25)}
+    .sbtn:hover{background:#e03c00;transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,69,0,0.3)}
+    .sbtn:disabled{opacity:.6;cursor:wait;transform:none;box-shadow:none}
     @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     .sbtn.busy{background:linear-gradient(90deg,#ff4500,#ff7a2b,#ff4500);background-size:200% 100%;animation:shimmer 1.4s infinite}
     #results{display:none}
-    .res-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px;background:#f5f0eb}
-    .back-btn{padding:7px 14px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;background:#fff;cursor:pointer;font-weight:700;font-size:12px;font-family:'DM Sans',sans-serif;color:#666;transition:all .15s}
-    .back-btn:hover{border-color:rgba(0,0,0,.2);color:#1a1a2e}
-    .res-meta{font-size:12px;color:#888;font-weight:500}
-    .sec-head{padding:8px 16px 5px;display:flex;align-items:center;gap:8px}
+    .res-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px;background:#f7f5f2}
+    .back-btn{padding:8px 16px;border:1px solid rgba(0,0,0,0.08);border-radius:10px;background:#fff;cursor:pointer;font-weight:700;font-size:12px;font-family:'DM Sans',sans-serif;color:#666;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+    .back-btn:hover{border-color:rgba(0,0,0,.15);color:#1a1a2e}
+    .res-meta{font-size:12px;color:#999;font-weight:500}
+    .sec-head{padding:10px 16px 6px;display:flex;align-items:center;gap:8px}
     .sec-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px}
-    .sec-title.hot{color:#ff4500}.sec-title.radar{color:#aaa}
-    .sec-line{flex:1;height:1px;background:rgba(0,0,0,.07)}
-    .sec-count{font-size:10px;font-weight:700;color:#888;background:rgba(0,0,0,.05);padding:2px 7px;border-radius:20px}
-    .card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:13px;margin:0 16px 8px;padding:13px;transition:border-color .2s;box-shadow:0 1px 6px rgba(0,0,0,0.05)}
+    .sec-title.hot{color:#ff4500}.sec-title.radar{color:#bbb}
+    .sec-line{flex:1;height:1px;background:rgba(0,0,0,.05)}
+    .sec-count{font-size:10px;font-weight:700;color:#999;background:rgba(0,0,0,.04);padding:3px 8px;border-radius:20px}
+    .card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:16px;margin:0 16px 10px;padding:16px;transition:all .2s;box-shadow:0 1px 8px rgba(0,0,0,0.04)}
     @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     .card{animation:fadeUp .25s ease both}
-    .card:hover{border-color:rgba(255,69,0,.25)}
-    .card.dim{border-color:rgba(0,0,0,.04);opacity:.8}
-    .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px}
-    .card-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1a1a2e;line-height:1.2;flex:1;padding-right:6px}
-    .card-price{font-size:12px;color:#bbb;font-weight:600;letter-spacing:-.3px;flex-shrink:0}
-    .card-sub{font-size:12px;color:#999;margin-bottom:5px;line-height:1.4}
+    .card:hover{border-color:rgba(0,0,0,.1);box-shadow:0 2px 16px rgba(0,0,0,0.06)}
+    .card.dim{border-color:rgba(0,0,0,.03);opacity:.75}
+    .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
+    .card-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1a1a2e;line-height:1.25;flex:1;padding-right:8px}
+    .card-price{font-size:13px;color:#ccc;font-weight:600;letter-spacing:-.3px;flex-shrink:0}
+    .card-sub{font-size:12px;color:#999;margin-bottom:6px;line-height:1.4}
 
-    .badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
-    .badge{display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700}
-    .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.2)}
-    .badge.vibe{background:#f0f7ff;color:#3b82f6;border:1px solid rgba(59,130,246,.2);font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600}
-    .badge.bib{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.2)}
-    .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.2)}
-    .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.2)}
-    .badge.insta{background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.2)}
-    .badge.inkind{background:#fff7ed;color:#c2410c;border:2px solid #c2410c;font-weight:800}
-    .badge.bilt{background:#1a1a2e;color:#fff;border:1px solid rgba(26,26,46,.5)}
-    .badge.rakuten{background:#fff0f0;color:#bf0000;border:2px solid #bf0000;font-weight:800}
-    .avail{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:9px}
-    .avail.av{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)}
-    .avail.lim{background:#fff8e1;color:#f57f17;border:1px solid rgba(245,127,23,.2)}
-    .avail.hard{background:#fbe9e7;color:#d84315;border:1px solid rgba(216,67,21,.2)}
-    .avail.radar{background:#f5f5f5;color:#999;border:1px solid rgba(0,0,0,.08)}
-    .actions{display:flex;gap:7px;margin-top:11px}
-    .bbtn{flex:1;padding:10px 13px;border:none;border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:flex;align-items:center;justify-content:center;transition:opacity .15s;letter-spacing:.2px}
-    .bbtn:hover{opacity:.85}
+    .badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+    .badge{display:inline-flex;align-items:center;gap:3px;padding:4px 9px;border-radius:8px;font-size:11px;font-weight:700}
+    .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.15)}
+    .badge.vibe{background:#f0f7ff;color:#3b82f6;border:1px solid rgba(59,130,246,.15);font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
+    .badge.bib{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15)}
+    .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.15)}
+    .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
+    .badge.insta{background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.15)}
+    .badge.inkind{background:#fff7ed;color:#c2410c;border:1.5px solid #c2410c;font-weight:800}
+    .badge.bilt{background:#f0f5f1;color:#1b4332;border:1px solid rgba(27,67,50,.2)}
+    .badge.rakuten{background:#fff0f0;color:#bf0000;border:1.5px solid #bf0000;font-weight:800}
+    .avail{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:10px}
+    .avail.av{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.15)}
+    .avail.lim{background:#fff8e1;color:#f57f17;border:1px solid rgba(245,127,23,.15)}
+    .avail.hard{background:#fbe9e7;color:#d84315;border:1px solid rgba(216,67,21,.15)}
+    .avail.radar{background:#f5f5f5;color:#999;border:1px solid rgba(0,0,0,.06)}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .bbtn{flex:1;padding:11px 14px;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:flex;align-items:center;justify-content:center;transition:all .15s;letter-spacing:.2px}
+    .bbtn:hover{opacity:.88;transform:translateY(-1px)}
     .bbtn.resy{background:#c2185b;color:#fff}
     .bbtn.opentable{background:#da3743;color:#fff}
     .bbtn.tock{background:#0f766e;color:#fff}
     .bbtn.bilt{background:#1a1a2e;color:#fff}
     .bbtn.yelp{background:#c41200;color:#fff}
     .bbtn.sevenrooms{background:#7b2d8e;color:#fff}
-    .bbtn.google{background:#ede8e0;color:#888;border:1px solid rgba(0,0,0,0.12)}
-    .bbtn.site{background:#ede8e0;color:#888;border:1px solid rgba(0,0,0,0.12)}
-    .bbtn.walkin{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,0.2)}
-    .mapbtn{width:40px;background:#f5f0eb;border:1px solid rgba(0,0,0,0.1);border-radius:9px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;text-decoration:none;flex-shrink:0;transition:border-color .15s}
-    .mapbtn:hover{border-color:#444}
+    .bbtn.google{background:#f7f5f2;color:#888;border:1px solid rgba(0,0,0,0.08)}
+    .bbtn.site{background:#f7f5f2;color:#888;border:1px solid rgba(0,0,0,0.08)}
+    .bbtn.walkin{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,0.15)}
+    .mapbtn{width:42px;background:#f7f5f2;border:1px solid rgba(0,0,0,0.08);border-radius:10px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;text-decoration:none;flex-shrink:0;transition:all .15s}
+    .mapbtn:hover{border-color:rgba(0,0,0,.15);background:#eee}
     .press-section{margin-top:8px}
-    .press-toggle{padding:3px 9px;border-radius:12px;font-size:11px;font-weight:700;border:1px solid rgba(0,0,0,.1);background:#f5f0eb;color:#888;cursor:pointer;display:inline-flex;align-items:center;gap:3px;font-family:'DM Sans',sans-serif;transition:all .15s}
-    .press-toggle:hover{border-color:rgba(0,0,0,.2);color:#555}
-    .plink{padding:3px 9px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);color:#888;transition:all .15s}
-    .plink:hover{color:#1a1a2e;border-color:rgba(0,0,0,.2)}
-    .plink.infat{color:#ff6b6b;border-color:rgba(255,107,107,.25)}
-    .plink.eater{color:#ff9500;border-color:rgba(255,149,0,.25)}
-    .plink.nyt{color:#7878ff;border-color:rgba(120,120,255,.25)}
-    .plink.timeout{color:#4caf50;border-color:rgba(76,175,80,.25)}
-    .plink.grub{color:#e040fb;border-color:rgba(224,64,251,.25)}
-    .card-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
-    .web-link{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#f5f0eb;color:#888;border:1px solid rgba(0,0,0,0.08);transition:all .15s}
-    .web-link:hover{color:#1a1a2e;border-color:rgba(0,0,0,0.2)}
+    .press-toggle{padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700;border:1px solid rgba(0,0,0,.08);background:#f7f5f2;color:#888;cursor:pointer;display:inline-flex;align-items:center;gap:3px;font-family:'DM Sans',sans-serif;transition:all .15s}
+    .press-toggle:hover{border-color:rgba(0,0,0,.15);color:#555}
+    .plink{padding:4px 10px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.06);color:#888;transition:all .15s}
+    .plink:hover{color:#1a1a2e;border-color:rgba(0,0,0,.15)}
+    .plink.infat{color:#ff6b6b;border-color:rgba(255,107,107,.2)}
+    .plink.eater{color:#ff9500;border-color:rgba(255,149,0,.2)}
+    .plink.nyt{color:#7878ff;border-color:rgba(120,120,255,.2)}
+    .plink.timeout{color:#4caf50;border-color:rgba(76,175,80,.2)}
+    .plink.grub{color:#e040fb;border-color:rgba(224,64,251,.2)}
+    .card-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+    .web-link{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#f7f5f2;color:#888;border:1px solid rgba(0,0,0,0.06);transition:all .15s}
+    .web-link:hover{color:#1a1a2e;border-color:rgba(0,0,0,0.15)}
     .insta-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;text-decoration:none;color:#c13584;opacity:.7;transition:opacity .15s}
     .insta-link:hover{opacity:1}
-    .insta-buzz-link{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#fff0f7;color:#c13584;border:1px solid rgba(193,53,132,0.25);transition:all .15s}
-    .insta-buzz-link:hover{background:#ffd6ee;border-color:rgba(193,53,132,0.5)}
+    .insta-buzz-link{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#fff0f7;color:#c13584;border:1px solid rgba(193,53,132,0.2);transition:all .15s}
+    .insta-buzz-link:hover{background:#ffd6ee;border-color:rgba(193,53,132,0.4)}
     .insta-buzz-wrap{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px}
-    .insta-buzz-more{display:inline-flex;align-items:center;padding:3px 8px;border-radius:11px;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:#c13584;border:1px solid rgba(193,53,132,0.25);transition:all .15s}
+    .insta-buzz-more{display:inline-flex;align-items:center;padding:4px 9px;border-radius:11px;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:#c13584;border:1px solid rgba(193,53,132,0.2);transition:all .15s}
     .insta-buzz-more:hover{background:#fff0f7}
     .insta-buzz-expanded{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;width:100%}
     .insta-buzz-sub{font-size:10px;opacity:.85}
-    .loc-banner{background:#fff;border:1px solid rgba(0,0,0,.07);padding:7px 13px;border-radius:8px;margin:0 16px 10px;font-size:12px;color:#888;display:flex;align-items:center;gap:5px}
-    .err-banner{background:#fef2f2;border:1px solid rgba(220,38,38,.2);padding:10px 13px;border-radius:9px;margin:0 16px 10px;font-size:13px;font-weight:600;color:#dc2626}
-    .empty{text-align:center;padding:50px 20px}
-    .empty-icon{font-size:34px;margin-bottom:10px}
-    .empty-title{font-size:15px;font-weight:700;color:#aaa;margin-bottom:5px}
+    .loc-banner{background:#fff;border:1px solid rgba(0,0,0,.05);padding:8px 14px;border-radius:10px;margin:0 16px 10px;font-size:12px;color:#999;display:flex;align-items:center;gap:5px}
+    .err-banner{background:#fef2f2;border:1px solid rgba(220,38,38,.15);padding:12px 14px;border-radius:12px;margin:0 16px 10px;font-size:13px;font-weight:600;color:#dc2626}
+    .empty{text-align:center;padding:60px 20px}
+    .empty-icon{font-size:34px;margin-bottom:12px}
+    .empty-title{font-size:15px;font-weight:700;color:#aaa;margin-bottom:6px}
     .empty-sub{font-size:13px;color:#ccc}
     .hidden{display:none}
-    .pac-container{z-index:9999;font-family:'DM Sans',sans-serif;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-    .pac-item{background:#fff;color:#888;border-top:1px solid rgba(0,0,0,.05);padding:8px 12px;font-size:13px;cursor:pointer}
-    .pac-item:hover,.pac-item-selected{background:#f5f0eb}
+    .pac-container{z-index:9999;font-family:'DM Sans',sans-serif;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.08)}
+    .pac-item{background:#fff;color:#888;border-top:1px solid rgba(0,0,0,.04);padding:10px 14px;font-size:13px;cursor:pointer}
+    .pac-item:hover,.pac-item-selected{background:#f7f5f2}
     .pac-item-query{color:#1a1a2e;font-weight:600}
     .pac-matched{font-weight:700;color:#ff4500}
     .pac-container:empty{display:none!important}
-    .divider{height:1px;background:rgba(0,0,0,.06);margin:16px 0 0}
+    .divider{height:1px;background:rgba(0,0,0,.04);margin:20px 0 0}
+
+    /* RESULTS FILTER BAR */
+    .results-filters{display:flex;gap:8px;padding:8px 16px 12px;background:#f7f5f2}
+    .results-filters select{flex:1;padding:10px 12px;font-size:12px;font-weight:600;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;box-shadow:0 1px 3px rgba(0,0,0,0.03);transition:all .2s}
+    .results-filters select:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+
+    /* ═══ DEEP GREEN + CREAM PALETTE ═══ */
+    body{background:#faf9f6}
+    .home-hero{background:linear-gradient(180deg,#fff 0%,#faf9f6 100%)}
+    .hero-logo span{color:#1b4332}
+    .hero-tab.active{background:#1b4332;color:#fff;box-shadow:0 2px 8px rgba(27,67,50,0.25)}
+    .hero-input:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+    .fchip.on{background:#1b4332;color:#fff;border-color:#1b4332;box-shadow:0 2px 8px rgba(27,67,50,0.2)}
+    .fchip:active,.fchip:hover:not(.on){border-color:rgba(27,67,50,.2);color:#1b4332}
+    .radius-btn.on{background:#1b4332;color:#fff;border-color:#1b4332;box-shadow:0 2px 8px rgba(27,67,50,0.2)}
+    .trending-view-btn{background:#d4a373;color:#fff;box-shadow:0 2px 12px rgba(212,163,115,0.3)}
+    .trending-view-btn:active{background:#c4935f}
+    .hero-explore-btn{background:#d4a373;color:#fff;box-shadow:0 2px 12px rgba(212,163,115,0.3)}
+    .hero-explore-btn:active{background:#c4935f}
+    .sbtn{background:#d4a373;box-shadow:0 3px 16px rgba(212,163,115,0.3)}
+    .sbtn:hover{background:#c4935f;box-shadow:0 4px 20px rgba(212,163,115,0.35)}
+    .sbtn.busy{background:linear-gradient(90deg,#d4a373,#e0b98a,#d4a373);background-size:200% 100%;animation:shimmer 1.4s infinite}
+    .adv-filters-toggle:hover{color:#1b4332}
+    .tbtn.active{background:#1b4332;color:#fff;border-color:#1b4332;box-shadow:0 2px 8px rgba(27,67,50,0.2)}
+    .chip.on{background:#1b4332;color:#fff;border-color:#1b4332;box-shadow:0 2px 8px rgba(27,67,50,0.2)}
+    .finput:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+    .dselect select:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+    .stepper:focus-within{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+    .step-btn:hover{color:#1b4332;background:rgba(27,67,50,0.04)}
+    .nav-item.active .nav-label{color:#1b4332}
+    .section-viewall{color:#d4a373}
+    .rcard-rating{color:#d4a373}
+    .see-all-btn:hover{border-color:rgba(27,67,50,.2)}
+    .card:hover{border-color:rgba(27,67,50,.15);box-shadow:0 2px 16px rgba(27,67,50,0.06)}
+    .bottom-nav{background:rgba(250,249,246,0.92)}
+    .sec-title.hot{color:#1b4332}
+    .bbtn.resy{background:#1b4332;color:#fff}
+    .bbtn.opentable{background:#1b4332;color:#fff}
+    .bbtn.tock{background:#1b4332;color:#fff}
+    .bbtn.bilt{background:#1b4332;color:#fff}
+    .bbtn.yelp{background:#1b4332;color:#fff}
+    .bbtn.sevenrooms{background:#1b4332;color:#fff}
+    .bbtn.google{background:#1b4332;color:#fff}
+    .bbtn.site{background:#1b4332;color:#fff}
+    .bbtn.walkin{background:#1b4332;color:#fff}
+    .mapbtn{background:#faf9f6}
+    .avail.av{background:#e8f5e9;color:#1b4332;border:1px solid rgba(27,67,50,.15)}
+    .badge.vibe{background:#f0f5f1;color:#2d6a4f;border:1px solid rgba(45,106,79,.15)}
+    .pac-matched{color:#1b4332}
+    .back-btn:hover{color:#1b4332}
+    .mfilt.on{background:#1b4332;color:#fff;border-color:#1b4332}
+    .toggle a{color:#d4a373}
   </style>
 </head>
 <body>
@@ -214,161 +284,175 @@
 <script>
   const _sbMod = window.supabase;
   const _sb = (_sbMod.createClient || _sbMod)('https://zdsolubfxzvrqiqvwjev.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM');
-  _sb.auth.getSession().then(({data:{session}})=>{if(!session)window.location.href='login.html'});
+  // Auth disabled for localhost testing — re-enable before deploy
+  // _sb.auth.getSession().then(({data:{session}})=>{if(!session)window.location.href='login.html'});
   function _logout(){_sb.auth.signOut().then(()=>window.location.href='login.html')}
 </script>
 
 <div class="container">
 
   <!-- ═══════════════════════════════════════════════════════ HOME VIEW -->
-  <div class="view on" id="view-home" style="background:#f5f0eb;min-height:100vh">
+  <div class="view on" id="view-home" style="background:#f7f5f2;min-height:100vh">
 
     <!-- HERO TOP BAR -->
     <div class="home-hero">
       <div class="hero-bg"></div>
       <div style="position:relative">
         <div class="hero-top">
-          <div style="display:flex;align-items:center;gap:10px"><div class="hero-logo">Seat<span>Wize</span></div><button onclick="_logout()" style="background:none;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:4px 8px;font-size:10px;font-weight:700;color:#999;cursor:pointer;font-family:'DM Sans',sans-serif">Logout</button></div>
-          <div class="hero-tabs">
-            <button class="hero-tab active" id="ht-hotspots" onclick="setHeroTab('hotspots',this)">🔥 Hot Spots</button>
-            <button class="hero-tab" id="ht-all" onclick="setHeroTab('all',this)">📍 All Restaurants</button>
-            <button class="hero-tab" id="ht-drinks" onclick="setHeroTab('drinks',this)">🍸 Drinks</button>
+          <div class="hero-logo">Seat<span>Wize</span></div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="hero-tabs">
+              <button class="hero-tab active" id="ht-hotspots" onclick="setHeroTab('hotspots',this)">Hot Spots</button>
+              <button class="hero-tab" id="ht-all" onclick="setHeroTab('all',this)">All</button>
+              <button class="hero-tab" id="ht-drinks" onclick="setHeroTab('drinks',this)">Drinks</button>
+            </div>
+            <button onclick="_logout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:6px 10px;font-size:10px;font-weight:700;color:#bbb;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s">Logout</button>
           </div>
         </div>
 
-        <!-- 1. Address + GPS pin -->
-        <div style="padding:0 20px 8px;display:flex;gap:8px">
-          <input type="text" id="homeAddrInput" class="finput" placeholder="Enter your address or neighborhood..." style="flex:1;background:#fff;border-color:rgba(0,0,0,0.1);color:#1a1a2e">
-          <button onclick="homeUseGPS()" title="My Location" style="flex-shrink:0;width:42px;height:42px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.08)">📍</button>
+        <!-- Address + GPS + Radius in one compact row -->
+        <div style="padding:0 20px 10px;display:flex;gap:8px;align-items:center">
+          <input type="text" id="homeAddrInput" class="finput" placeholder="Address or neighborhood..." style="flex:1">
+          <button onclick="homeUseGPS()" title="My Location" style="flex-shrink:0;width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all .15s">📍</button>
         </div>
 
-        <!-- Radius chips under address -->
-        <div style="padding:0 20px 14px;display:flex;align-items:center;gap:8px">
-          <span style="font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.6px;white-space:nowrap">Radius</span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="radius-btn" onclick="setRadius(1,this)">1 mi</button>
-            <button class="radius-btn" onclick="setRadius(2,this)">2 mi</button>
-            <button class="radius-btn" onclick="setRadius(3,this)">3 mi</button>
-            <button class="radius-btn" onclick="setRadius(5,this)">5 mi</button>
-            <button class="radius-btn on" onclick="setRadius(0,this)">🗽 All NYC</button>
-          </div>
+        <!-- Radius chips -->
+        <div style="padding:0 20px 16px;display:flex;gap:6px;flex-wrap:wrap">
+          <button class="radius-btn" onclick="setRadius(1,this)">1 mi</button>
+          <button class="radius-btn" onclick="setRadius(2,this)">2 mi</button>
+          <button class="radius-btn" onclick="setRadius(3,this)">3 mi</button>
+          <button class="radius-btn" onclick="setRadius(5,this)">5 mi</button>
+          <button class="radius-btn on" onclick="setRadius(0,this)">All NYC</button>
         </div>
 
       </div>
     </div>
 
     <!-- 3. Trending Hot Spots -->
-    <div class="home-section" >
+    <div class="home-section">
       <div class="section-header">
-        <div class="section-title"><span class="section-icon">🔥</span> Trending Hot Spots</div>
+        <div class="section-title">Trending Hot Spots</div>
       </div>
       <div class="trending-box">
+        <!-- Primary filters always visible -->
         <div class="filter-chips" id="trendingChips">
-          <button class="fchip on" onclick="setTrendFilter('any',this)">🔥 All</button>
-          <button class="fchip" onclick="setTrendFilter('michelin',this)">⭐ Michelin Stars</button>
-          <button class="fchip" onclick="setTrendFilter('michelin_rec',this)">📖 Michelin Recommended</button>
-          <button class="fchip" onclick="setTrendFilter('nyt',this)">📰 NYT Reviewed</button>
-          <button class="fchip" onclick="setTrendFilter('press',this)">📰 Eater / Infa</button>
-          <button class="fchip" onclick="setTrendFilter('timeout',this)">⏱️ Time Out</button>
-          <button class="fchip" onclick="setTrendFilter('instagram',this)">🎯 Instagram Influencers</button>
-          <button class="fchip" onclick="setTrendFilter('google_amazing',this)">🔥 Amazing Reviews</button>
-          <button class="fchip" onclick="setTrendFilter('new_rising',this)">✨ New &amp; Rising</button>
+          <button class="fchip on" onclick="setTrendFilter('any',this)">All</button>
+          <button class="fchip" onclick="setTrendFilter('michelin',this)">Michelin Stars</button>
+          <button class="fchip" onclick="setTrendFilter('michelin_rec',this)">Michelin Rec</button>
+          <button class="fchip" onclick="setTrendFilter('nyt',this)">NYT Reviewed</button>
+          <button class="fchip" onclick="setTrendFilter('press',this)">Eater / Infa</button>
+          <button class="fchip" onclick="setTrendFilter('timeout',this)">Time Out</button>
+          <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram</button>
+          <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
+          <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
         </div>
 
-        <!-- Vibes -->
-        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:12px">
-          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">✨ Vibes</span>
-          <div class="filter-chips" id="vibeChips">
-            <button class="fchip" onclick="setVibeFilter('date_night',this)">🍷 Date</button>
-            <button class="fchip" onclick="setVibeFilter('upscale',this)">💎 Upscale</button>
-            <button class="fchip" onclick="setVibeFilter('lively',this)">🔥 Lively</button>
-            <button class="fchip" onclick="setVibeFilter('chill',this)">😌 Chill</button>
-            <button class="fchip" onclick="setVibeFilter('trendy',this)">✨ Trendy</button>
-            <button class="fchip" onclick="setVibeFilter('brunch',this)">🥞 Brunch</button>
-            <button class="fchip" onclick="setVibeFilter('outdoor',this)">🌿 Outdoor</button>
-            <button class="fchip" onclick="setVibeFilter('late_night',this)">🌙 Late Night</button>
-            <button class="fchip" onclick="setVibeFilter('casual',this)">👕 Casual</button>
-            <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">🕵️ Hidden Gem</button>
-            <button class="fchip" onclick="setVibeFilter('foodie',this)">🍽 Foodie</button>
-            <button class="fchip" onclick="setVibeFilter('group_friendly',this)">👥 Group</button>
+        <!-- Collapsible advanced filters -->
+        <button class="adv-filters-toggle" onclick="this.classList.toggle('open');document.getElementById('advFilters').classList.toggle('open')">
+          <span>More Filters</span>
+          <span class="toggle-arrow">▾</span>
+        </button>
+
+        <div class="adv-filters-body" id="advFilters">
+          <!-- Vibes -->
+          <div style="margin-bottom:14px">
+            <span class="filter-section-label">Vibe</span>
+            <div class="filter-chips" id="vibeChips">
+              <button class="fchip" onclick="setVibeFilter('date_night',this)">Date Night</button>
+              <button class="fchip" onclick="setVibeFilter('upscale',this)">Upscale</button>
+              <button class="fchip" onclick="setVibeFilter('lively',this)">Lively</button>
+              <button class="fchip" onclick="setVibeFilter('chill',this)">Chill</button>
+              <button class="fchip" onclick="setVibeFilter('trendy',this)">Trendy</button>
+              <button class="fchip" onclick="setVibeFilter('brunch',this)">Brunch</button>
+              <button class="fchip" onclick="setVibeFilter('outdoor',this)">Outdoor</button>
+              <button class="fchip" onclick="setVibeFilter('late_night',this)">Late Night</button>
+              <button class="fchip" onclick="setVibeFilter('casual',this)">Casual</button>
+              <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">Hidden Gem</button>
+              <button class="fchip" onclick="setVibeFilter('foodie',this)">Foodie</button>
+              <button class="fchip" onclick="setVibeFilter('group_friendly',this)">Group</button>
+            </div>
           </div>
-        </div>
 
-        <!-- Price -->
-        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
-          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px">💰 Price</span>
-          <select id="homePriceFilter" onchange="setPriceFilter(this.value)" style="padding:5px 8px;border-radius:8px;border:1px solid rgba(0,0,0,0.12);font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;color:#444;background:#fff;outline:none;cursor:pointer">
-            <option value="any">Any</option>
-            <option value="1">$</option>
-            <option value="2">$$</option>
-            <option value="3">$$$</option>
-            <option value="4">$$$$</option>
-          </select>
-        </div>
+          <!-- Price + Availability side by side -->
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <div style="flex:1">
+              <span class="filter-section-label">Price</span>
+              <div class="dselect">
+                <select id="homePriceFilter" onchange="setPriceFilter(this.value)">
+                  <option value="any">Any Price</option>
+                  <option value="1">$</option>
+                  <option value="2">$$</option>
+                  <option value="3">$$$</option>
+                  <option value="4">$$$$</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-        <!-- Available Tonight -->
-        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:12px">
-          <span style="font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:block">🟢 Available Tonight</span>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
-            <button class="fchip" id="avail-limited" onclick="setAvailFilter('limited',this)">Limited</button>
-            <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Booked Solid</button>
-            <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early  5–6:15</button>
-            <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime  6:30–8:15</button>
-            <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late  8:30+</button>
+          <!-- Available Tonight -->
+          <div style="margin-bottom:14px">
+            <span class="filter-section-label">Available Tonight</span>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
+              <button class="fchip" id="avail-limited" onclick="setAvailFilter('limited',this)">Limited</button>
+              <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Booked Solid</button>
+              <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early 5-6:15</button>
+              <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime 6:30-8:15</button>
+              <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late 8:30+</button>
+            </div>
           </div>
         </div>
 
         <!-- Book in advance -->
-        <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:11px;margin-bottom:14px">
-          <button id="bookAheadBtn" onclick="setBookAhead(this)" style="width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid rgba(0,0,0,0.08);background:linear-gradient(135deg,#fff8f5,#fff);cursor:pointer;display:flex;align-items:center;gap:10px;text-align:left">
-            <span style="font-size:22px">📅</span>
-            <div>
-              <div style="font-size:13px;font-weight:700;color:#333">Popular — Book in Advance</div>
-              <div style="font-size:11px;color:#888;margin-top:2px">Booked tonight, but available in the next few days</div>
-            </div>
-            <span style="margin-left:auto;color:#999;font-size:16px">›</span>
-          </button>
-        </div>
+        <button id="bookAheadBtn" onclick="setBookAhead(this)" style="width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(0,0,0,0.06);background:#fff;cursor:pointer;display:flex;align-items:center;gap:12px;text-align:left;margin-bottom:12px;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,0.03)">
+          <span style="font-size:20px">📅</span>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:700;color:#1a1a2e">Book in Advance</div>
+            <div style="font-size:11px;color:#999;margin-top:1px">Booked tonight, open in the next few days</div>
+          </div>
+          <span style="color:#ccc;font-size:18px">›</span>
+        </button>
 
-        <button class="trending-view-btn" id="trendingViewBtn" onclick="goToSearch(homeState.trendFilter, homeState.cuisine)">🔥 View Hot Spots — Tonight</button>
+        <button class="trending-view-btn" id="trendingViewBtn" onclick="goToSearch(homeState.trendFilter, homeState.cuisine)">View Hot Spots</button>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <!-- ALL RESTAURANTS NEARBY -->
-    <div class="home-section"  style="padding-top:10px">
+    <div class="home-section" style="padding-top:14px">
       <div class="section-header">
-        <div class="section-title">📍 All Restaurants Near You</div>
+        <div class="section-title">All Restaurants Near You</div>
       </div>
 
-      <!-- 3. Cuisine dropdown -->
-      <div class="dselect" style="margin-bottom:8px">
-        <select id="homeCuisine" onchange="homeState.cuisine=this.value" style="width:100%;padding:10px 32px 10px 13px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;cursor:pointer;-webkit-appearance:none;appearance:none">
-          <option value="any">🍽️ Any Cuisine</option>
-          <option value="american">🍔 American</option>
-          <option value="italian">🍝 Italian</option>
-          <option value="japanese">🍱 Japanese</option>
-          <option value="sushi">🍣 Sushi</option>
-          <option value="french">🥐 French</option>
-          <option value="korean">🥘 Korean</option>
-          <option value="chinese">🥡 Chinese</option>
-          <option value="mexican">🌮 Mexican</option>
-          <option value="indian">🍛 Indian</option>
-          <option value="steakhouse">🥩 Steakhouse</option>
-          <option value="mediterranean">🫒 Mediterranean</option>
-          <option value="seafood">🦞 Seafood</option>
-          <option value="thai">🍜 Thai</option>
-          <option value="barbecue">🍖 BBQ</option>
-          <option value="pizza">🍕 Pizza</option>
-        </select>
+      <!-- Cuisine + Search in one row -->
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <div class="dselect" style="flex:1">
+          <select id="homeCuisine" onchange="homeState.cuisine=this.value">
+            <option value="any">Any Cuisine</option>
+            <option value="american">American</option>
+            <option value="italian">Italian</option>
+            <option value="japanese">Japanese</option>
+            <option value="sushi">Sushi</option>
+            <option value="french">French</option>
+            <option value="korean">Korean</option>
+            <option value="chinese">Chinese</option>
+            <option value="mexican">Mexican</option>
+            <option value="indian">Indian</option>
+            <option value="steakhouse">Steakhouse</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="seafood">Seafood</option>
+            <option value="thai">Thai</option>
+            <option value="barbecue">BBQ</option>
+            <option value="pizza">Pizza</option>
+          </select>
+        </div>
       </div>
 
-      <!-- 4. Restaurant name search with autocomplete -->
-      <div style="margin-bottom:10px;position:relative">
-        <input type="text" id="homeRestInput" class="finput" placeholder="Search for a restaurant..." style="background:#fff;border-color:rgba(0,0,0,0.1);color:#1a1a2e" autocomplete="off" oninput="_restAutocomplete(this.value)">
-        <div id="restAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.1);border-top:none;border-radius:0 0 12px 12px;max-height:240px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.12)"></div>
+      <!-- Restaurant name search -->
+      <div style="margin-bottom:14px;position:relative">
+        <input type="text" id="homeRestInput" class="finput" placeholder="Search restaurants..." autocomplete="off" oninput="_restAutocomplete(this.value)">
+        <div id="restAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.06);border-top:none;border-radius:0 0 14px 14px;max-height:240px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.08)"></div>
       </div>
 
       <!-- 5. Featured cards — real restaurants from BUZZ_SET -->
@@ -381,7 +465,7 @@
           </div>
           <div class="rcard-name">Via Carota</div>
           <div class="rcard-sub">Italian · West Village</div>
-          <div class="rcard-rating">📖 Michelin Recommended</div>
+          <div class="rcard-rating">Michelin Recommended</div>
           <div class="rcard-drop">🔔 Fri 10am</div>
         </div>
         <div class="rcard" onclick="_goToCard('Gramercy Tavern')">
@@ -441,7 +525,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════ SEARCH VIEW -->
-  <div class="view" id="view-search" style="background:#f5f0eb;min-height:100vh">
+  <div class="view" id="view-search" style="background:#f7f5f2;min-height:100vh">
 
     <div class="search-view-header">
       <button class="back-btn2" onclick="showView('home')">←</button>
@@ -451,22 +535,22 @@
     <div class="form2" id="search">
 
       <!-- Location -->
-      <div style="margin-bottom:12px">
-        <span class="flabel">📍 Location</span>
-        <div style="display:flex;gap:7px">
+      <div style="margin-bottom:14px">
+        <span class="flabel">Location</span>
+        <div style="display:flex;gap:8px">
           <input type="text" id="addressInput" class="finput" placeholder="Address or neighborhood" value="New York, NY" style="flex:1">
-          <button onclick="useGPS()" title="Use my location" style="width:42px;height:42px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:15px;color:#888;flex-shrink:0;transition:border-color .15s">📍</button>
+          <button onclick="useGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;cursor:pointer;font-size:16px;color:#888;flex-shrink:0;transition:all .15s;box-shadow:0 1px 3px rgba(0,0,0,0.04)">📍</button>
         </div>
       </div>
 
       <!-- Distance -->
-      <div style="margin-bottom:12px">
-        <span class="flabel">📏 Distance</span>
+      <div style="margin-bottom:14px">
+        <span class="flabel">Distance</span>
         <div class="tgroup" id="tgroup">
-          <button class="tbtn" onclick="setTransport('walk',this)">🚶 Walk</button>
-          <button class="tbtn" onclick="setTransport('drive',this)">🚗 Drive</button>
-          <button class="tbtn" onclick="setTransport('radius',this)">📍 Radius</button>
-          <button class="tbtn active" onclick="setTransport('all_nyc',this)">🗽 All NYC</button>
+          <button class="tbtn" onclick="setTransport('walk',this)">Walk</button>
+          <button class="tbtn" onclick="setTransport('drive',this)">Drive</button>
+          <button class="tbtn" onclick="setTransport('radius',this)">Radius</button>
+          <button class="tbtn active" onclick="setTransport('all_nyc',this)">All NYC</button>
         </div>
         <div class="dist-drop" id="dd-walk">
           <select id="walkTime" class="finput" style="padding:7px 10px;font-size:12px">
@@ -497,11 +581,11 @@
       <!-- Date + Party -->
       <div class="frow">
         <div style="flex:1.3">
-          <span class="flabel">📅 Date</span>
+          <span class="flabel">Date</span>
           <input type="date" id="dateInput" class="finput">
         </div>
         <div style="flex:.9">
-          <span class="flabel">👥 Party</span>
+          <span class="flabel">Party Size</span>
           <div class="stepper">
             <button class="step-btn" onclick="adjParty(-1)">−</button>
             <input type="number" id="party" class="step-num" value="2" min="1" max="20" readonly>
@@ -511,25 +595,25 @@
       </div>
 
       <!-- Buzz Filter -->
-      <div style="margin-bottom:12px">
-        <span class="flabel">🔥 Buzz Filter</span>
+      <div style="margin-bottom:14px">
+        <span class="flabel">Buzz</span>
         <div class="dselect">
           <select id="buzzFilter" onchange="state.buzzFilter=this.value; state.trendFilters=[]; if(rawRestaurants.length>0) display(rawRestaurants);">
             <option value="any">All Hot Spots</option>
-            <option value="michelin">⭐ Michelin Stars</option>
-            <option value="michelin_rec">📖 Michelin Recommended</option>
-            <option value="press">📰 Eater / Infatuation</option>
-            <option value="nyt">📰 NYT Reviewed</option>
-            <option value="instagram">📸 Instagram Influencers</option>
-            <option value="google_amazing">🔥 Amazing Reviews (4.7+, 750+)</option>
-            <option value="new_rising">✨ New &amp; Rising</option>
+            <option value="michelin">Michelin Stars</option>
+            <option value="michelin_rec">Michelin Recommended</option>
+            <option value="press">Eater / Infatuation</option>
+            <option value="nyt">NYT Reviewed</option>
+            <option value="instagram">Instagram Influencers</option>
+            <option value="google_amazing">Amazing Reviews (4.7+, 750+)</option>
+            <option value="new_rising">New &amp; Rising</option>
           </select>
         </div>
       </div>
 
       <!-- Price -->
-      <div style="margin-bottom:12px">
-        <span class="flabel">💰 Price</span>
+      <div style="margin-bottom:14px">
+        <span class="flabel">Price</span>
         <div class="dselect">
           <select id="priceFilter" onchange="state.priceFilter=this.value">
             <option value="any">Any Price</option>
@@ -542,8 +626,8 @@
       </div>
 
       <!-- Rewards -->
-      <div style="margin-bottom:12px">
-        <span class="flabel">🎁 Rewards</span>
+      <div style="margin-bottom:14px">
+        <span class="flabel">Rewards</span>
         <div class="dselect">
           <select id="rewardsFilter" onchange="state.rewardsFilter=this.value">
             <option value="any">Any</option>
@@ -557,7 +641,7 @@
 
       <!-- Cuisine -->
       <div style="margin-bottom:4px">
-        <span class="flabel">🍕 Cuisine</span>
+        <span class="flabel">Cuisine</span>
         <div class="chips">
           <button class="chip on" onclick="setCuisine('any',this)">Any</button>
           <button class="chip" onclick="setCuisine('american',this)">American</button>
@@ -580,7 +664,7 @@
         </div>
       </div>
 
-      <button class="sbtn" id="searchBtn" onclick="doSearch()">🔥 Find Hot Spots</button>
+      <button class="sbtn" id="searchBtn" onclick="doSearch()">Find Hot Spots</button>
       <div style="height:24px"></div>
     </div><!-- /form -->
 
@@ -589,21 +673,21 @@
       <div class="res-header">
         <span class="res-meta" id="resMeta"></span>
       </div>
-      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
-        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="state.horizonFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
-          <option value="any">📅 Availability</option>
+      <div class="results-filters">
+        <select onchange="state.horizonFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">Availability</option>
           <option value="3">+3 days</option>
           <option value="7">+7 days</option>
           <option value="14">+14 days</option>
         </select>
-        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setSortOrder(this.value)">
-          <option value="rating">⭐ Rating</option>
-          <option value="distance">📏 Distance</option>
-          <option value="price_low">💰 Price ↑</option>
-          <option value="price_high">💰 Price ↓</option>
+        <select onchange="setSortOrder(this.value)">
+          <option value="rating">Rating</option>
+          <option value="distance">Distance</option>
+          <option value="price_low">Price ↑</option>
+          <option value="price_high">Price ↓</option>
         </select>
-        <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="state.reviewCountFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
-          <option value="any">📊 Review Count</option>
+        <select onchange="state.reviewCountFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">Reviews</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -622,8 +706,8 @@
   <!-- ═══════════════════════════════════════════════════════ MAP VIEW -->
   <div class="view" id="view-map" style="position:relative;height:calc(100vh - 60px)">
     <div id="map-filters" style="position:absolute;top:10px;left:10px;right:10px;z-index:5;display:flex;gap:5px;flex-wrap:wrap;padding:6px;background:rgba(255,255,255,.92);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.1)">
-      <button class="mfilt on" data-mf="all" onclick="_toggleMapFilter('all',this)" style="background:#ff4500;color:#fff">All</button>
-      <button class="mfilt" data-mf="hotspot" onclick="_toggleMapFilter('hotspot',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4500;margin-right:4px"></span>Hot Spots</button>
+      <button class="mfilt on" data-mf="all" onclick="_toggleMapFilter('all',this)" style="background:#1b4332;color:#fff">All</button>
+      <button class="mfilt" data-mf="hotspot" onclick="_toggleMapFilter('hotspot',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1b4332;margin-right:4px"></span>Hot Spots</button>
       <button class="mfilt" data-mf="available" onclick="_toggleMapFilter('available',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2e7d32;margin-right:4px"></span>Available</button>
       <button class="mfilt" data-mf="limited" onclick="_toggleMapFilter('limited',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f5a623;margin-right:4px"></span>Limited</button>
       <button class="mfilt" data-mf="booked_tonight" onclick="_toggleMapFilter('booked_tonight',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:4px"></span>Booked Tonight</button>
@@ -657,16 +741,16 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════ ALL RESTAURANTS VIEW -->
-  <div class="view" id="view-allrestaurants" style="background:#f5f0eb;min-height:100vh">
+  <div class="view" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
 
     <!-- FORM -->
     <div id="ar-form">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 10px">
-        <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#ff4500">Wize</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab" onclick="switchNav('home')">🔥 Hot Spots</button>
-          <button class="hero-tab active">📍 All Restaurants</button>
-          <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">🍸 Drinks</button>
+          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
+          <button class="hero-tab active">All</button>
+          <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
         </div>
       </div>
 
@@ -674,21 +758,21 @@
 
         <!-- Location -->
         <div style="margin-bottom:14px">
-          <span class="flabel">📍 Location</span>
-          <div style="display:flex;gap:7px">
-            <input type="text" id="arAddrInput" class="finput" placeholder="Enter your address or neighborhood..." value="" style="flex:1">
-            <button onclick="arUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:16px;color:#ff4500;flex-shrink:0">📍</button>
+          <span class="flabel">Location</span>
+          <div style="display:flex;gap:8px">
+            <input type="text" id="arAddrInput" class="finput" placeholder="Address or neighborhood..." value="" style="flex:1">
+            <button onclick="arUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;cursor:pointer;font-size:16px;color:#888;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all .15s">📍</button>
           </div>
         </div>
 
         <!-- Distance -->
         <div style="margin-bottom:14px">
-          <span class="flabel">📏 Distance</span>
+          <span class="flabel">Distance</span>
           <div class="tgroup" id="ar-tgroup">
-            <button class="tbtn" onclick="arSetTransport('walk',this)">🚶 Walk</button>
-            <button class="tbtn" onclick="arSetTransport('drive',this)">🚗 Drive</button>
-            <button class="tbtn" onclick="arSetTransport('radius',this)">📍 Radius</button>
-            <button class="tbtn active" onclick="arSetTransport('all_nyc',this)">⭐ All NYC</button>
+            <button class="tbtn" onclick="arSetTransport('walk',this)">Walk</button>
+            <button class="tbtn" onclick="arSetTransport('drive',this)">Drive</button>
+            <button class="tbtn" onclick="arSetTransport('radius',this)">Radius</button>
+            <button class="tbtn active" onclick="arSetTransport('all_nyc',this)">All NYC</button>
           </div>
           <div class="dist-drop" id="ar-dd-walk">
             <select id="arWalkTime" class="finput" style="padding:7px 10px;font-size:12px">
@@ -718,20 +802,42 @@
 
         <!-- Available Tonight -->
         <div style="margin-bottom:14px">
-          <span class="flabel">🟢 Available Tonight</span>
+          <span class="flabel">Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
             <button class="fchip" id="ar-avail-limited" onclick="arSetAvail('limited',this)">Limited</button>
+            <button class="fchip" id="ar-avail-book_ahead" onclick="arSetAvail('book_ahead',this)">Book in Advance</button>
             <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Booked Solid</button>
-            <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early  5–6:15</button>
-            <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime  6:30–8:15</button>
-            <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late  8:30+</button>
+            <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early 5-6:15</button>
+            <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime 6:30-8:15</button>
+            <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late 8:30+</button>
           </div>
         </div>
 
-        <!-- Quality -->
+        <!-- Hot Spots (collapsible) -->
         <div style="margin-bottom:14px">
-          <span class="flabel">🔥 Quality</span>
+          <button class="adv-filters-toggle" onclick="this.classList.toggle('open');document.getElementById('arHotspotFilters').classList.toggle('open')">
+            <span>Hot Spots Filter</span>
+            <span class="toggle-arrow">▾</span>
+          </button>
+          <div class="adv-filters-body" id="arHotspotFilters">
+            <div style="display:flex;gap:6px;flex-wrap:wrap;padding-top:4px">
+              <button class="fchip on" id="ar-hot-any" onclick="arSetHotspot('any',this)">All</button>
+              <button class="fchip" id="ar-hot-michelin" onclick="arSetHotspot('michelin',this)">Michelin Stars</button>
+              <button class="fchip" id="ar-hot-michelin_rec" onclick="arSetHotspot('michelin_rec',this)">Michelin Rec</button>
+              <button class="fchip" id="ar-hot-nyt" onclick="arSetHotspot('nyt',this)">NYT Reviewed</button>
+              <button class="fchip" id="ar-hot-press" onclick="arSetHotspot('press',this)">Eater / Infa</button>
+              <button class="fchip" id="ar-hot-timeout" onclick="arSetHotspot('timeout',this)">Time Out</button>
+              <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram</button>
+              <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
+              <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">Reviews</span>
           <div class="dselect">
             <select id="arBuzzFilter" onchange="arState.buzzFilter=this.value">
               <option value="any" selected>Any</option>
@@ -743,9 +849,56 @@
           </div>
         </div>
 
+        <!-- Cuisine -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">Cuisine</span>
+          <div class="dselect">
+            <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
+              <option value="any">Any Cuisine</option>
+              <option value="american">American</option>
+              <option value="italian">Italian</option>
+              <option value="japanese">Japanese</option>
+              <option value="sushi">Sushi</option>
+              <option value="french">French</option>
+              <option value="korean">Korean</option>
+              <option value="chinese">Chinese</option>
+              <option value="mexican">Mexican</option>
+              <option value="indian">Indian</option>
+              <option value="steakhouse">Steakhouse</option>
+              <option value="mediterranean">Mediterranean</option>
+              <option value="seafood">Seafood</option>
+              <option value="thai">Thai</option>
+              <option value="barbecue">BBQ</option>
+              <option value="pizza">Pizza</option>
+              <option value="spanish">Spanish</option>
+              <option value="vietnamese">Vietnamese</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Vibe -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">Vibe</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="fchip on" id="ar-vibe-any" onclick="arSetVibe(null,this)">All</button>
+            <button class="fchip" id="ar-vibe-date_night" onclick="arSetVibe('date_night',this)">Date Night</button>
+            <button class="fchip" id="ar-vibe-upscale" onclick="arSetVibe('upscale',this)">Upscale</button>
+            <button class="fchip" id="ar-vibe-lively" onclick="arSetVibe('lively',this)">Lively</button>
+            <button class="fchip" id="ar-vibe-chill" onclick="arSetVibe('chill',this)">Chill</button>
+            <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">Trendy</button>
+            <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">Brunch</button>
+            <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">Outdoor</button>
+            <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">Late Night</button>
+            <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
+            <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
+            <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
+            <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">Group</button>
+          </div>
+        </div>
+
         <!-- Price -->
         <div style="margin-bottom:14px">
-          <span class="flabel">💰 Price</span>
+          <span class="flabel">Price</span>
           <div class="dselect">
             <select id="arPriceFilter" onchange="arSetPrice(this.value)">
               <option value="any">Any Price</option>
@@ -757,56 +910,9 @@
           </div>
         </div>
 
-        <!-- Cuisine -->
-        <div style="margin-bottom:14px">
-          <span class="flabel">🍴 Cuisine</span>
-          <div class="dselect">
-            <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
-              <option value="any">🍴 Any Cuisine</option>
-              <option value="american">🍔 American</option>
-              <option value="italian">🍝 Italian</option>
-              <option value="japanese">🍱 Japanese</option>
-              <option value="sushi">🍣 Sushi</option>
-              <option value="french">🥐 French</option>
-              <option value="korean">🥘 Korean</option>
-              <option value="chinese">🥡 Chinese</option>
-              <option value="mexican">🌮 Mexican</option>
-              <option value="indian">🍛 Indian</option>
-              <option value="steakhouse">🥩 Steakhouse</option>
-              <option value="mediterranean">🫒 Mediterranean</option>
-              <option value="seafood">🦞 Seafood</option>
-              <option value="thai">🍜 Thai</option>
-              <option value="barbecue">🍖 BBQ</option>
-              <option value="pizza">🍕 Pizza</option>
-              <option value="spanish">🥘 Spanish</option>
-              <option value="vietnamese">🍜 Vietnamese</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Vibe -->
-        <div style="margin-bottom:14px">
-          <span class="flabel">✨ Vibe</span>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
-            <button class="fchip on" id="ar-vibe-any" onclick="arSetVibe(null,this)">🔥 All</button>
-            <button class="fchip" id="ar-vibe-date_night" onclick="arSetVibe('date_night',this)">🍷 Date</button>
-            <button class="fchip" id="ar-vibe-upscale" onclick="arSetVibe('upscale',this)">💎 Upscale</button>
-            <button class="fchip" id="ar-vibe-lively" onclick="arSetVibe('lively',this)">🔥 Lively</button>
-            <button class="fchip" id="ar-vibe-chill" onclick="arSetVibe('chill',this)">😌 Chill</button>
-            <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">✨ Trendy</button>
-            <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">🥞 Brunch</button>
-            <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">🌿 Outdoor</button>
-            <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">🌙 Late Night</button>
-            <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">👕 Casual</button>
-            <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">🕵️ Hidden Gem</button>
-            <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">🍽 Foodie</button>
-            <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">👥 Group</button>
-          </div>
-        </div>
-
         <!-- Rewards -->
         <div style="margin-bottom:16px">
-          <span class="flabel">🎁 Rewards</span>
+          <span class="flabel">Rewards</span>
           <div class="dselect">
             <select id="arRewardsFilter" onchange="arState.rewardsFilter=this.value">
               <option value="any">Any</option>
@@ -820,13 +926,13 @@
 
         <!-- Find Button -->
         <button id="arSearchBtn" onclick="doAllNYCSearch()"
-          style="width:100%;padding:17px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;transition:all .2s">
-          🍴 Find Restaurants
+          style="width:100%;padding:16px;background:#d4a373;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;transition:all .2s;box-shadow:0 3px 16px rgba(212,163,115,0.3)">
+          Find Restaurants
         </button>
 
         <!-- Featured Picks -->
         <div style="margin-bottom:6px">
-          <span class="flabel" style="margin-bottom:8px;display:block">✨ Featured Picks</span>
+          <span class="flabel" style="margin-bottom:8px;display:block">Featured Picks</span>
           <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
             <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Le Bernardin')">
               <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
@@ -864,7 +970,7 @@
         <button class="back-btn" onclick="arGoBack()">← Back</button>
         <span class="res-meta" id="allRestMeta"></span>
       </div>
-      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setARSortOrder(this.value)">
           <option value="rating">⭐ Rating</option>
           <option value="distance">📏 Distance</option>
@@ -889,37 +995,37 @@
   </div><!-- /view-allrestaurants -->
 
   <!-- ═══════════════════════════════════════════════════════ DRINKS VIEW -->
-  <div class="view" id="view-drinks" style="background:#f5f0eb;min-height:100vh">
+  <div class="view" id="view-drinks" style="background:#f7f5f2;min-height:100vh">
 
     <!-- FORM -->
     <div id="bar-form">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 10px">
-        <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#ff4500">Wize</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab" onclick="switchNav('home')">🔥 Hot Spots</button>
-          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">📍 All Restaurants</button>
-          <button class="hero-tab active">🍸 Drinks</button>
+          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
+          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">All</button>
+          <button class="hero-tab active">Drinks</button>
         </div>
       </div>
       <div style="padding:0 16px">
 
         <!-- Location -->
         <div style="margin-bottom:14px">
-          <span class="flabel">📍 Location</span>
-          <div style="display:flex;gap:7px">
-            <input type="text" id="barAddrInput" class="finput" placeholder="Enter your address or neighborhood..." value="" style="flex:1">
-            <button onclick="barUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;cursor:pointer;font-size:16px;color:#ff4500;flex-shrink:0">📍</button>
+          <span class="flabel">Location</span>
+          <div style="display:flex;gap:8px">
+            <input type="text" id="barAddrInput" class="finput" placeholder="Address or neighborhood..." value="" style="flex:1">
+            <button onclick="barUseGPS()" title="Use my location" style="width:44px;height:44px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;cursor:pointer;font-size:16px;color:#888;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:all .15s">📍</button>
           </div>
         </div>
 
         <!-- Distance -->
         <div style="margin-bottom:14px">
-          <span class="flabel">📏 Distance</span>
+          <span class="flabel">Distance</span>
           <div class="tgroup" id="bar-tgroup">
-            <button class="tbtn" onclick="barSetTransport('walk',this)">🚶 Walk</button>
-            <button class="tbtn" onclick="barSetTransport('drive',this)">🚗 Drive</button>
-            <button class="tbtn" onclick="barSetTransport('radius',this)">📍 Radius</button>
-            <button class="tbtn active" onclick="barSetTransport('all_nyc',this)">⭐ All NYC</button>
+            <button class="tbtn" onclick="barSetTransport('walk',this)">Walk</button>
+            <button class="tbtn" onclick="barSetTransport('drive',this)">Drive</button>
+            <button class="tbtn" onclick="barSetTransport('radius',this)">Radius</button>
+            <button class="tbtn active" onclick="barSetTransport('all_nyc',this)">All NYC</button>
           </div>
           <div class="dist-drop open" id="bar-dd-walk">
             <select id="barWalkTime" class="finput" style="padding:7px 10px;font-size:12px">
@@ -949,73 +1055,73 @@
 
         <!-- Vibe (Mood) -->
         <div style="margin-bottom:14px">
-          <span class="flabel">✨ Mood</span>
+          <span class="flabel">Mood</span>
           <div class="dselect">
             <select id="barMoodFilter" onchange="barState.mood=this.value">
               <option value="any">Any Mood</option>
-              <option value="party">🎉 Party</option>
-              <option value="dive">🍺 Dive Bar</option>
-              <option value="upscale">💎 Upscale</option>
-              <option value="neighborhood">🏘️ Neighborhood</option>
-              <option value="date_night">🌹 Date Night</option>
+              <option value="party">Party</option>
+              <option value="dive">Dive Bar</option>
+              <option value="upscale">Upscale</option>
+              <option value="neighborhood">Neighborhood</option>
+              <option value="date_night">Date Night</option>
             </select>
           </div>
         </div>
 
-        <!-- Vibe (Specialty) -->
+        <!-- Specialty -->
         <div style="margin-bottom:14px">
-          <span class="flabel">🍸 Specialty</span>
+          <span class="flabel">Specialty</span>
           <div class="dselect">
             <select id="barSpecialtyFilter" onchange="barState.specialty=this.value">
               <option value="any">Any Specialty</option>
-              <option value="cocktail">🍸 Cocktail Bar</option>
-              <option value="wine">🍷 Wine Bar</option>
-              <option value="speakeasy">🕯️ Speakeasy</option>
-              <option value="rooftop">🌃 Rooftop</option>
-              <option value="lounge">🛋️ Lounge</option>
-              <option value="live_music">🎶 Live Music</option>
-              <option value="beer">🍺 Beer</option>
-              <option value="mezcal">🥃 Mezcal</option>
-              <option value="sake">🍶 Sake</option>
-              <option value="tiki">🌴 Tiki</option>
-              <option value="whiskey">🥃 Whiskey</option>
-              <option value="karaoke">🎤 Karaoke</option>
+              <option value="cocktail">Cocktail Bar</option>
+              <option value="wine">Wine Bar</option>
+              <option value="speakeasy">Speakeasy</option>
+              <option value="rooftop">Rooftop</option>
+              <option value="lounge">Lounge</option>
+              <option value="live_music">Live Music</option>
+              <option value="beer">Beer</option>
+              <option value="mezcal">Mezcal</option>
+              <option value="sake">Sake</option>
+              <option value="tiki">Tiki</option>
+              <option value="whiskey">Whiskey</option>
+              <option value="karaoke">Karaoke</option>
             </select>
           </div>
         </div>
 
-        <!-- Restaurant Vibe Filter for Bars -->
+        <!-- Vibe -->
         <div style="margin-bottom:14px">
-          <span class="flabel">✨ Vibe</span>
+          <span class="flabel">Vibe</span>
           <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
-            <button class="fchip on" id="bar-vibe-any" onclick="barSetVibe(null,this)">🔥 All</button>
-            <button class="fchip" id="bar-vibe-date_night" onclick="barSetVibe('date_night',this)">🍷 Date</button>
-            <button class="fchip" id="bar-vibe-upscale" onclick="barSetVibe('upscale',this)">💎 Upscale</button>
-            <button class="fchip" id="bar-vibe-lively" onclick="barSetVibe('lively',this)">🔥 Lively</button>
-            <button class="fchip" id="bar-vibe-chill" onclick="barSetVibe('chill',this)">😌 Chill</button>
-            <button class="fchip" id="bar-vibe-trendy" onclick="barSetVibe('trendy',this)">✨ Trendy</button>
-            <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">🌿 Outdoor</button>
-            <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">🌙 Late Night</button>
-            <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">🕵️ Hidden Gem</button>
-            <button class="fchip" id="bar-vibe-group_friendly" onclick="barSetVibe('group_friendly',this)">👥 Group</button>
+            <button class="fchip on" id="bar-vibe-any" onclick="barSetVibe(null,this)">All</button>
+            <button class="fchip" id="bar-vibe-date_night" onclick="barSetVibe('date_night',this)">Date Night</button>
+            <button class="fchip" id="bar-vibe-upscale" onclick="barSetVibe('upscale',this)">Upscale</button>
+            <button class="fchip" id="bar-vibe-lively" onclick="barSetVibe('lively',this)">Lively</button>
+            <button class="fchip" id="bar-vibe-chill" onclick="barSetVibe('chill',this)">Chill</button>
+            <button class="fchip" id="bar-vibe-trendy" onclick="barSetVibe('trendy',this)">Trendy</button>
+            <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">Outdoor</button>
+            <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">Late Night</button>
+            <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">Hidden Gem</button>
+            <button class="fchip" id="bar-vibe-group_friendly" onclick="barSetVibe('group_friendly',this)">Group</button>
           </div>
         </div>
 
         <!-- Late Night + Day Mode row -->
         <div class="frow" style="margin-bottom:14px">
           <div style="flex:1">
-            <span class="flabel">🌙 Late Night</span>
+            <span class="flabel">Late Night</span>
             <div class="dselect">
               <select id="barLateFilter" onchange="barState.lateNight=this.value!=='off';barState.lateNightLevel=this.value">
                 <option value="off">Any Hours</option>
-                <option value="late">🌙 Until 4am</option>
-                <option value="very_late">🌑 Until 5am+</option>
+                <option value="late">Until 4am</option>
+                <option value="very_late">Until 5am+</option>
                 <option value="both">Both</option>
               </select>
             </div>
           </div>
           <div style="flex:1">
-            <span class="flabel">📅 Day</span>
+            <span class="flabel">Day</span>
             <div class="dselect">
               <select id="barDayMode" onchange="barState.dayMode=this.value">
                 <option value="weekday">Weekday</option>
@@ -1028,7 +1134,7 @@
         <!-- Price + Buzz row -->
         <div class="frow" style="margin-bottom:16px">
           <div style="flex:1">
-            <span class="flabel">💰 Price</span>
+            <span class="flabel">Price</span>
             <div class="dselect">
               <select id="barPriceFilter" onchange="barState.priceLevel=this.value">
                 <option value="any">Any Price</option>
@@ -1040,7 +1146,7 @@
             </div>
           </div>
           <div style="flex:1">
-            <span class="flabel">📰 Press</span>
+            <span class="flabel">Press</span>
             <div class="dselect">
               <select id="barBuzzFilter" onchange="barState.buzz=this.value==='on'">
                 <option value="off">All Bars</option>
@@ -1052,16 +1158,16 @@
 
         <!-- Available Tonight -->
         <div style="margin-bottom:16px">
-          <span class="flabel">🟢 Available Tonight</span>
+          <span class="flabel">Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="bar-avail-any" onclick="barSetAvail('any',this)">Any Time</button>
             <button class="fchip" id="bar-avail-limited" onclick="barSetAvail('limited',this)">Limited</button>
             <button class="fchip" id="bar-avail-booked" onclick="barSetAvail('booked_solid',this)">Booked Solid</button>
-            <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early  5–6:15</button>
-            <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime  6:30–8:15</button>
-            <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late  8:30+</button>
+            <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early 5-6:15</button>
+            <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime 6:30-8:15</button>
+            <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late 8:30+</button>
           </div>
-          <span class="flabel" style="margin-top:6px">📅 Or Browse Upcoming</span>
+          <span class="flabel" style="margin-top:6px">Or Browse Upcoming</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
             <button class="fchip" id="bar-hor-3" onclick="barSetHorizon(3,this)">+3 days</button>
             <button class="fchip" id="bar-hor-5" onclick="barSetHorizon(5,this)">+5 days</button>
@@ -1072,13 +1178,13 @@
 
         <!-- Find Button -->
         <button id="barSearchBtn" onclick="doBarSearch()"
-          style="width:100%;padding:17px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;transition:all .2s">
-          🍸 Find Bars & Drinks
+          style="width:100%;padding:16px;background:#d4a373;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;transition:all .2s;box-shadow:0 3px 16px rgba(212,163,115,0.3)">
+          Find Bars &amp; Drinks
         </button>
 
         <!-- Featured Bars -->
         <div style="margin-bottom:6px">
-          <span class="flabel" style="margin-bottom:8px;display:block">🍸 Featured Bars</span>
+          <span class="flabel" style="margin-bottom:8px;display:block">Featured Bars</span>
           <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
             <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="doBarSearch()">
               <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
@@ -1111,12 +1217,12 @@
     </div><!-- /bar-form -->
 
     <!-- BAR RESULTS -->
-    <div id="bar-results" style="display:none;background:#f5f0eb;min-height:100vh">
+    <div id="bar-results" style="display:none;background:#f7f5f2;min-height:100vh">
       <div class="res-header">
         <button class="back-btn" onclick="barGoBack()">← Back</button>
         <span class="res-meta" id="barResultsMeta"></span>
       </div>
-      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f5f0eb">
+      <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setBarSortOrder(this.value)">
           <option value="rating">⭐ Rating</option>
           <option value="distance">📏 Distance</option>
@@ -1141,7 +1247,7 @@
   </div><!-- /view-drinks -->
 
   <!-- FOOTER LINKS -->
-  <div style="display:flex;justify-content:center;gap:16px;padding:12px 20px;background:#f5f0eb;border-top:1px solid rgba(0,0,0,.06)">
+  <div style="display:flex;justify-content:center;gap:16px;padding:12px 20px;background:#f7f5f2;border-top:1px solid rgba(0,0,0,.06)">
     <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
     <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
     <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
@@ -1151,7 +1257,7 @@
   <!-- BOTTOM NAV -->
   <div class="bottom-nav">
     <button class="nav-item active" id="nav-home" onclick="switchNav('home')">
-      <span class="nav-icon">🔥</span>
+      <span class="nav-icon">🏠</span>
       <span class="nav-label">Home</span>
     </button>
     <button class="nav-item" id="nav-drinks" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">
@@ -1184,7 +1290,7 @@ function toggleSave(name, cardData) {
   document.querySelectorAll(`[data-save-key="${CSS.escape(key)}"]`).forEach(btn => {
     btn.textContent = saved[key] ? '★' : '☆';
     btn.title = saved[key] ? 'Unsave' : 'Save';
-    btn.style.color = saved[key] ? '#ff4500' : '#ccc';
+    btn.style.color = saved[key] ? '#d4a373' : '#ccc';
   });
   // Refresh saved view if visible
   if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
@@ -1213,7 +1319,7 @@ function renderSavedView() {
     html += `<div class="card" style="margin:0 16px 12px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div><div class="card-name">${name}</div><div class="card-sub">${cuisine}</div></div>
-        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#ff4500;padding:4px" title="Unsave">★</button>
+        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#d4a373;padding:4px" title="Unsave">★</button>
       </div>
       ${ratingStr ? '<div class="badges"><span class="badge goog">'+ratingStr+'</span></div>' : ''}
       <div class="actions">${bookBtn || `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn google">Find on Google →</a>`}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
@@ -1655,7 +1761,12 @@ const state = { cuisine:'any', buzzFilter:'any', trendFilters:[], priceFilter:'a
 
 // Bilt-only = has bilt_dining but no real booking URL → hidden unless Bilt filter is active
 function isBiltOnly(r) {
-  return r.bilt_dining && !r.resy_url && !r.opentable_url;
+  if (!r.bilt_dining) return false;
+  const bp = (r.booking_platform || '').toLowerCase();
+  if (bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms') return false;
+  if (bp === 'website' && r.booking_url && (r.googleRating || 0) >= 4.3 && (r.googleReviewCount || 0) >= 100 && (r.price_level || 0) >= 2) return false;
+  if ((r.googleRating || 0) >= 4.3 && (r.googleReviewCount || 0) >= 200 && (r.price_level || 0) >= 2) return false;
+  return true;
 }
 function hasBookingPlatform(r) {
   const p = r.booking_platform || r.platform || '';
@@ -1829,7 +1940,7 @@ function renderCard(r, isRadar) {
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
-  const VIBE_EMOJI = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
+  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
   const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
@@ -1848,20 +1959,20 @@ function renderCard(r, isRadar) {
   if (r.michelin) {
     const st = r.michelin.stars||0, d = r.michelin.distinction||'';
     if (st>=1) {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'⭐'.repeat(Math.min(st,3))} Michelin</a>`;
-      else badges += `<span class="badge mstar">${'⭐'.repeat(Math.min(st,3))} Michelin</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'★'.repeat(Math.min(st,3))} Michelin</a>`;
+      else badges += `<span class="badge mstar">${'★'.repeat(Math.min(st,3))} Michelin</span>`;
     }
     else if (d==='bib_gourmand'||d==='bib') {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">Michelin Recommended</span>`;
     }
     else {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">Michelin Recommended</span>`;
     }
   } else if (r.bib_gourmand) {
-    if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
-    else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
+    if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
+    else badges += `<span class="badge bib">Michelin Recommended</span>`;
   }
   const hasBuzz = hasBuzzCoverage(r);
 
@@ -1874,15 +1985,15 @@ function renderCard(r, isRadar) {
     if (r.nyt_top_100) {
       const rankMatch = nytLinkData?.label?.match(/#(\d+)/);
       const rankStr = rankMatch ? ` #${rankMatch[1]}` : '';
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT Top 100${rankStr}</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rankStr}</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT Top 100${rankStr}</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT Top 100${rankStr}</span>`;
     } else if (r.pete_wells && r.nyt_stars) {
       const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT ${stars}</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT ${stars}</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT ${stars}</span>`;
     } else {
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT</a>`;
-      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">📰 NYT</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">NYT</span>`;
     }
   }
 
@@ -1894,11 +2005,11 @@ function renderCard(r, isRadar) {
     if (r.buzz_sources) r.buzz_sources.forEach(s => { const k = _ns(s); if (k !== 'NYT' && k !== 'Michelin' && !pressLinks.has(k)) pressLinks.set(k, null); });
     if (pressLinks.size > 0) {
       pressLinks.forEach((url, src) => {
-        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">📰 ${src}</a>`;
-        else badges += `<span class="badge press">📰 ${src}</span>`;
+        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">${src}</a>`;
+        else badges += `<span class="badge press">${src}</span>`;
       });
     } else {
-      badges += `<span class="badge press">📰 Press Pick</span>`;
+      badges += `<span class="badge press">Press Pick</span>`;
     }
   }
 
@@ -1907,7 +2018,7 @@ function renderCard(r, isRadar) {
     const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : null;
     const opacity = rating >= 4.7 ? '1' : rating >= 4.4 ? '.8' : '.55';
     const countStr = rs ? ` (${rs})` : '';
-    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rating}${countStr}</span>`;
+    badges += `<span class="badge goog" style="opacity:${opacity}">${rating}${countStr}</span>`;
   }
 
   // Instagram — backend field takes priority, fallback to lookup table
@@ -1923,13 +2034,13 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
-  // Bilt badge
-  if (r.bilt_dining && (hasBookingPlatform(r) || state.rewardsFilter === 'bilt'))
+    badges += `<span class="badge inkind">inKind 20% Off</span>`;
+  // Bilt badge — only show when Bilt filter is active
+  if (r.bilt_dining && state.rewardsFilter === 'bilt')
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
+    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
 
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
 
@@ -1945,9 +2056,9 @@ function renderCard(r, isRadar) {
   const _styleBooked  = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fde8e8;color:#c0392b;border:1px solid rgba(192,57,43,.25)';
 
   function _windowBadge(status, label) {
-    if (status === 'available') return `<span style="${_styleAvail}">🟢 ${label}</span>`;
-    if (status === 'limited')   return `<span style="${_styleLimited}">🟡 ${label}</span>`;
-    return `<span style="${_styleBooked}">🔴 ${label}</span>`;
+    if (status === 'available') return `<span style="${_styleAvail}">${label}</span>`;
+    if (status === 'limited')   return `<span style="${_styleLimited}">${label}</span>`;
+    return `<span style="${_styleBooked}">${label}</span>`;
   }
 
   // Only compute window statuses if we actually have window data AND a real booking platform
@@ -1968,30 +2079,30 @@ function renderCard(r, isRadar) {
     const isBooked     = tier === 'booked' || allBooked;
 
     if (isBooked && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
     } else if (isBooked && r.fully_locked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
     } else if (isBooked) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
     } else if (allAvailable) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">Available Tonight</span></div>`;
     } else {
       timeBadgeHtml = _windowBadge(earlyStatus, 'Early') + _windowBadge(primeStatus, 'Prime') + _windowBadge(lateStatus, 'Late');
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
     }
   } else if (tier === 'tasting_menu') {
     const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">🍽 Tasting Menu${pp}</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
   } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Fully Booked</span></div>`;
   } else if (tier === 'booked') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
   } else if (tier === 'available') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">Available Tonight</span></div>`;
   } else if (tier === 'limited') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">🟡 Limited Spots</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">Limited Spots</span></div>`;
   }
 
   // Maps URL
@@ -2002,12 +2113,12 @@ function renderCard(r, isRadar) {
   // Book button
   let bookBtn = '';
   if (r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
-    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">🚶 Walk-in</a>`;
+    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Walk-in</a>`;
   } else if (r.booking_url && r.booking_platform) {
     let url = r.booking_url;
     try { if (url.includes('google.com/url')) { const u = new URL(url); url = u.searchParams.get('q')||url; } } catch(e){}
     url = url.replace(/\/+$/,'');
-    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'🏠 Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
+    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform]||{cls:'site',label:'Book on Website →'};
     const tockPrice = r.booking_platform === 'tock' && r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
     bookBtn = `<a href="${url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}${tockPrice}</a>`;
@@ -2024,10 +2135,10 @@ function renderCard(r, isRadar) {
   let cardLinks = '';
   if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
     cardLinks = '<div class="card-links">';
-    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
+    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">Website</a>`;
     if (instaHandle) {
       const cleanHandle = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
-      cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">📸 @${cleanHandle}</a>`;
+      cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">@${cleanHandle}</a>`;
     }
     if (r.instagram_buzz && r.instagram_buzz.length > 0) {
       const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
@@ -2035,10 +2146,10 @@ function renderCard(r, isRadar) {
       const rest = sorted.slice(1);
       const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
       if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
       } else {
         cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
         cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
         cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
         rest.forEach(p => {
@@ -2053,7 +2164,7 @@ function renderCard(r, isRadar) {
   const _skey = (r.name||'').toLowerCase().trim();
   const _saved = isSaved(r.name);
   const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||''}).replace(/'/g,'&#39;');
-  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#ff4500':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
+  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#d4a373':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
 
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card${isRadar?' dim':''}" id="${_cardId}">
@@ -2185,7 +2296,13 @@ function display(restaurants) {
         if (!realPlatform) return false;
         if (!tier) return false;
         if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
-        if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
+        if (af === 'limited') {
+          const e = r.early, p = r.prime, l = r.late;
+          if (!e && !p && !l) return false;
+          const allAvail = e === 'available' && p === 'available' && l === 'available';
+          const allBooked = e === 'booked' && p === 'booked' && l === 'booked';
+          return !allAvail && !allBooked;
+        }
         if (af === 'early') return r.has_early && tier !== 'booked';
         if (af === 'prime') return r.has_prime && tier !== 'booked';
         if (af === 'late')  return r.has_late  && tier !== 'booked';
@@ -2385,7 +2502,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null };
+const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null, hotspotFilter: 'any', hotspotFilters: [] };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -2408,12 +2525,13 @@ function arSetTransport(mode, btn) {
 
 function arSetAvail(val, btn) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = val; arState.horizonFilter = null;
   btn.classList.add('on');
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
-  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = null; arState.horizonFilter = days;
   btn.classList.add('on');
@@ -2445,6 +2563,23 @@ function arSetVibe(vibe, btn) {
 
 function arSetPrice(val) {
   arState.priceFilter = val;
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
+function arSetHotspot(val, btn) {
+  if (val === 'any') {
+    arState.hotspotFilters = [];
+    arState.hotspotFilter = 'any';
+    document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  } else {
+    const idx = arState.hotspotFilters.indexOf(val);
+    if (idx > -1) { arState.hotspotFilters.splice(idx, 1); btn.classList.remove('on'); }
+    else { arState.hotspotFilters.push(val); btn.classList.add('on'); }
+    const anyBtn = document.getElementById('ar-hot-any');
+    if (arState.hotspotFilters.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.hotspotFilter = arState.hotspotFilters[0]; }
+    else { anyBtn && anyBtn.classList.add('on'); arState.hotspotFilter = 'any'; }
+  }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
@@ -2508,14 +2643,14 @@ function renderCardAR(r) {
   if (r.michelin) {
     const st = r.michelin.stars || 0, d2 = r.michelin.distinction || '';
     if (st >= 1) {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'⭐'.repeat(Math.min(st,3))} Michelin</a>`;
-      else badges += `<span class="badge mstar">${'⭐'.repeat(Math.min(st,3))} Michelin</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'★'.repeat(Math.min(st,3))} Michelin</a>`;
+      else badges += `<span class="badge mstar">${'★'.repeat(Math.min(st,3))} Michelin</span>`;
     } else if (d2 === 'bib_gourmand' || d2 === 'bib') {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">Michelin Recommended</span>`;
     } else {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">Michelin Recommended</span>`;
     }
   }
   if (hasBuzzAR(r) && !r.michelin) {
@@ -2525,11 +2660,11 @@ function renderCardAR(r) {
     if (r.buzz_sources) r.buzz_sources.forEach(s => { const k = _nsAR(s); if (k !== 'NYT' && k !== 'Michelin' && !pressLinksAR.has(k)) pressLinksAR.set(k, null); });
     if (pressLinksAR.size > 0) {
       pressLinksAR.forEach((url, src) => {
-        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">📰 ${src}</a>`;
-        else badges += `<span class="badge press">📰 ${src}</span>`;
+        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">${src}</a>`;
+        else badges += `<span class="badge press">${src}</span>`;
       });
     } else {
-      badges += `<span class="badge press">📰 Press Pick</span>`;
+      badges += `<span class="badge press">Press Pick</span>`;
     }
   }
   if (!r.michelin) {
@@ -2543,15 +2678,15 @@ function renderCardAR(r) {
       if (r.nyt_top_100) {
         const rm = nytLinkAR?.label?.match(/#(\d+)/);
         const rs = rm ? ` #${rm[1]}` : '';
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT Top 100${rs}</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rs}</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT Top 100${rs}</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT Top 100${rs}</span>`;
       } else if (r.pete_wells && r.nyt_stars) {
         const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT ${stars}</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT ${stars}</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">NYT ${stars}</span>`;
       } else {
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT</a>`;
-        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">📰 NYT</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">NYT</span>`;
       }
     }
   }
@@ -2559,32 +2694,73 @@ function renderCardAR(r) {
   if (rat >= 4.0 && rev > 0) {
     const rs = rev >= 1000 ? (rev/1000).toFixed(1)+'k' : rev;
     const opacity = rat >= 4.7 ? '1' : rat >= 4.4 ? '.8' : '.55';
-    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rat} (${rs})</span>`;
+    badges += `<span class="badge goog" style="opacity:${opacity}">${rat} (${rs})</span>`;
   } else if (rat >= 4.0) {
-    badges += `<span class="badge goog" style="opacity:.55">⭐ ${rat}</span>`;
+    badges += `<span class="badge goog" style="opacity:.55">${rat}</span>`;
   }
 
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
-  // Bilt badge
-  if (r.bilt_dining && (hasBookingPlatform(r) || arState.rewardsFilter === 'bilt'))
+    badges += `<span class="badge inkind">inKind 20% Off</span>`;
+  // Bilt badge — only show when Bilt filter is active
+  if (r.bilt_dining && arState.rewardsFilter === 'bilt')
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
+    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
 
   const bpAR = (r.booking_platform || r.platform || '').toLowerCase();
   const realPlatformAR = bpAR === 'resy' || bpAR === 'opentable' || bpAR === 'tock' || bpAR === 'sevenrooms';
   const tier = realPlatformAR ? availTierAR(r) : null;
   let availHtml = '';
-  if (tier === 'tasting_menu') { const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : ''; availHtml = `<div><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">🍽 Tasting Menu${pp}</span></div>`; }
-  else if (tier === 'available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
-  else if (tier === 'limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
-  else if (tier === 'hard') availHtml = `<div><span class="avail hard">🔴 Hard to Book</span></div>`;
-  else if (tier === 'booked' && r.opens_in) availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
-  else if (tier === 'booked' && r.fully_locked) availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
-  else if (tier === 'booked') availHtml = `<div><span class="avail hard">🔴 Booked Tonight</span></div>`;
+
+  const _sAvail   = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)';
+  const _sLimited = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fff8e1;color:#f57c00;border:1px solid rgba(245,124,0,.25)';
+  const _sBooked  = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fde8e8;color:#c0392b;border:1px solid rgba(192,57,43,.25)';
+  function _wBadge(status, label) {
+    if (status === 'available') return `<span style="${_sAvail}">${label}</span>`;
+    if (status === 'limited')   return `<span style="${_sLimited}">${label}</span>`;
+    return `<span style="${_sBooked}">${label}</span>`;
+  }
+
+  const hasNewDataAR = r.early || r.prime || r.late;
+  const hasOldDataAR = r.has_early || r.has_prime || r.has_late;
+  const hasWindowDataAR = realPlatformAR && (hasNewDataAR || hasOldDataAR);
+
+  if (hasWindowDataAR) {
+    const earlyS = r.early || (r.has_early ? 'available' : 'booked');
+    const primeS = r.prime || (r.has_prime ? 'available' : 'booked');
+    const lateS  = r.late  || (r.has_late  ? 'available' : 'booked');
+    const allAvail  = earlyS === 'available' && primeS === 'available' && lateS === 'available';
+    const allBooked = earlyS === 'booked' && primeS === 'booked' && lateS === 'booked';
+    const isBooked  = tier === 'booked' || allBooked;
+
+    if (isBooked && r.opens_in) {
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
+    } else if (isBooked && r.fully_locked) {
+      availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    } else if (isBooked) {
+      availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
+    } else if (allAvail) {
+      availHtml = `<div><span class="avail av">Available Tonight</span></div>`;
+    } else {
+      const twb = _wBadge(earlyS, 'Early') + _wBadge(primeS, 'Prime') + _wBadge(lateS, 'Late');
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${twb}</div>`;
+    }
+  } else if (tier === 'tasting_menu') {
+    const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
+    availHtml = `<div><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
+  } else if (tier === 'booked' && r.opens_in) {
+    availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
+  } else if (tier === 'booked' && r.fully_locked) {
+    availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  } else if (tier === 'booked') {
+    availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
+  } else if (tier === 'available') {
+    availHtml = `<div><span class="avail av">Available Tonight</span></div>`;
+  } else if (tier === 'limited') {
+    availHtml = `<div><span class="avail lim">Limited Spots</span></div>`;
+  }
 
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
@@ -2593,9 +2769,9 @@ function renderCardAR(r) {
 
   let bookBtn = '';
   if (r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
-    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">🚶 Walk-in</a>`;
+    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Walk-in</a>`;
   } else if (r.booking_url && r.booking_platform) {
-    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
+    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},google_reserve:{cls:'google',label:'Book on Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform] || {cls:'site', label:'Book on Website →'};
     bookBtn = `<a href="${r.booking_url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
   } else if (r.website) {
@@ -2607,10 +2783,10 @@ function renderCardAR(r) {
   let cardLinks = '';
   if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
     cardLinks = '<div class="card-links">';
-    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
+    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">Website</a>`;
     if (instaHandle) {
       const ch = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
-      cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">📸 @${ch}</a>`;
+      cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">@${ch}</a>`;
     }
     if (r.instagram_buzz && r.instagram_buzz.length > 0) {
       const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
@@ -2618,10 +2794,10 @@ function renderCardAR(r) {
       const rest = sorted.slice(1);
       const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
       if (rest.length === 0) {
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
       } else {
         cardLinks += `<span class="insta-buzz-wrap">`;
-        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${top.influencer}</a>`;
         cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
         cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
         rest.forEach(p => {
@@ -2633,7 +2809,7 @@ function renderCardAR(r) {
     cardLinks += '</div>';
   }
 
-  const VIBE_EMOJI_AR = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
+  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
   const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
@@ -2695,6 +2871,31 @@ function applyARFilters(list) {
       return true;
     });
   }
+  // ── Hot Spots filter (multi-select OR logic) ──
+  const hsfs = (arState.hotspotFilters && arState.hotspotFilters.length > 0) ? arState.hotspotFilters : [];
+  if (hsfs.length > 0) {
+    list = list.filter(r => hsfs.some(hsf => {
+      if (hsf==='michelin') return (r.michelin?.stars||0)>=1;
+      if (hsf==='michelin_rec') return r.michelin_recommended || r.bib_gourmand || (r.michelin && (r.michelin.distinction==='recommended'||r.michelin.distinction==='bib_gourmand'));
+      if (hsf==='nyt') return hasNYTCoverage(r);
+      if (hsf==='press') {
+        if (r.buzz_sources && r.buzz_sources.length > 0) return true;
+        if (r.infatuation_url) return true;
+        const bdata = getBuzzLinks(r.name);
+        const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
+        return hasEaterOrInfat || BUZZ_SET_AR.has((r.name||'').toLowerCase().trim());
+      }
+      if (hsf==='timeout') {
+        if (r.buzz_sources && r.buzz_sources.some(s => s === 'Time Out' || s === 'TimeOut')) return true;
+        const bdata = getBuzzLinks(r.name);
+        return bdata?.links?.some(l => l.source==='timeout' || l.source==='Time Out');
+      }
+      if (hsf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
+      if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
+      return false;
+    }));
+  }
   // ── Availability filter ──
   const af = arState.availFilter;
   const hf = arState.horizonFilter;
@@ -2703,6 +2904,11 @@ function applyARFilters(list) {
       const tier = r.avail_tier;
       const bp = (r.booking_platform || '').toLowerCase();
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+      if (af === 'book_ahead') {
+        if (!realPlatform) return false;
+        const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
+        return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
+      }
       if (!realPlatform) return false;
       if (!tier) return false;
       if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
@@ -2932,9 +3138,9 @@ function renderBarCard(b) {
     const barSrcSet = new Set();
     b.buzz_sources.forEach(s => barSrcSet.add(s === 'The Infatuation' ? 'Infatuation' : s));
     if (barSrcSet.size > 0) {
-      barSrcSet.forEach(src => { badges += `<span class="badge press">📰 ${src}</span>`; });
+      barSrcSet.forEach(src => { badges += `<span class="badge press">${src}</span>`; });
     } else {
-      badges += `<span class="badge press">📰 Press Pick</span>`;
+      badges += `<span class="badge press">Press Pick</span>`;
     }
   }
 
@@ -3171,7 +3377,7 @@ function _toggleMapFilter(filter, btn) {
   _mapFilter = filter;
   document.querySelectorAll('.mfilt').forEach(b => { b.classList.remove('on'); b.style.background = ''; b.style.color = ''; b.style.borderColor = ''; });
   btn.classList.add('on');
-  if (filter === 'all') { btn.style.background = '#ff4500'; btn.style.color = '#fff'; }
+  if (filter === 'all') { btn.style.background = '#1b4332'; btn.style.color = '#fff'; }
   _renderVisible();
 }
 
@@ -3208,7 +3414,7 @@ function _renderVisible() {
     const isMichelin = r.michelin?.stars >= 1;
     const isHotSpot = _isHotSpot(r);
     let color = '#888';
-    if (isHotSpot) color = '#ff4500';
+    if (isHotSpot) color = '#1b4332';
     else if (tier === 'booked' && r.fully_locked) color = '#1a1a1a';
     else if (tier === 'booked') color = '#c0392b';
     else if (tier === 'limited') color = '#f5a623';

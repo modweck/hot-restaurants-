@@ -22,12 +22,13 @@ function arSetTransport(mode, btn) {
 
 function arSetAvail(val, btn) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = val; arState.horizonFilter = null;
   btn.classList.add('on');
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
-  ['ar-avail-any','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = null; arState.horizonFilter = days;
   btn.classList.add('on');
@@ -37,6 +38,33 @@ function arSetVibe(vibe, btn) {
   arState.vibeFilter = vibe;
   document.querySelectorAll('[id^="ar-vibe-"]').forEach(b => b.classList.remove('on'));
   (btn || document.getElementById(vibe ? `ar-vibe-${vibe}` : 'ar-vibe-any')).classList.add('on');
+}
+
+function arSetHotspot(val, btn) {
+  if (val === 'any') {
+    arState.hotspotFilters = [];
+    arState.hotspotFilter = 'any';
+    document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  } else {
+    const idx = arState.hotspotFilters.indexOf(val);
+    if (idx > -1) {
+      arState.hotspotFilters.splice(idx, 1);
+      btn.classList.remove('on');
+    } else {
+      arState.hotspotFilters.push(val);
+      btn.classList.add('on');
+    }
+    const anyBtn = document.getElementById('ar-hot-any');
+    if (arState.hotspotFilters.length > 0) {
+      anyBtn && anyBtn.classList.remove('on');
+      arState.hotspotFilter = arState.hotspotFilters[0];
+    } else {
+      anyBtn && anyBtn.classList.add('on');
+      arState.hotspotFilter = 'any';
+    }
+  }
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
 function arSetCuisine(val) {
@@ -240,13 +268,44 @@ function applyARFilters(list) {
       return true;
     });
   }
+  // ── Hot Spots filter (multi-select OR logic, same as Hot Spots view) ──
+  const hsfs = (arState.hotspotFilters && arState.hotspotFilters.length > 0) ? arState.hotspotFilters : (arState.hotspotFilter && arState.hotspotFilter !== 'any' ? [arState.hotspotFilter] : []);
+  if (hsfs.length > 0) {
+    list = list.filter(r => hsfs.some(hsf => {
+      if (hsf==='michelin') return (r.michelin?.stars||0)>=1;
+      if (hsf==='michelin_rec') return r.michelin_recommended || r.bib_gourmand || (r.michelin && (r.michelin.distinction==='recommended'||r.michelin.distinction==='bib_gourmand'));
+      if (hsf==='nyt') return hasNYTCoverage(r);
+      if (hsf==='press') {
+        if (r.buzz_sources && r.buzz_sources.length > 0) return true;
+        if (r.infatuation_url) return true;
+        const bdata = getBuzzLinks(r.name);
+        const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
+        return hasEaterOrInfat || BUZZ_SET_AR.has((r.name||'').toLowerCase().trim());
+      }
+      if (hsf==='timeout') {
+        if (r.buzz_sources && r.buzz_sources.some(s => s === 'Time Out' || s === 'TimeOut')) return true;
+        const bdata = getBuzzLinks(r.name);
+        return bdata?.links?.some(l => l.source==='timeout' || l.source==='Time Out');
+      }
+      if (hsf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
+      if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
+      return false;
+    }));
+  }
   // ── Availability filter ──
   const af = arState.availFilter;
   const hf = arState.horizonFilter;
   if (af && af !== 'any') {
     list = list.filter(r => {
-      const tier = r.avail_tier;
-      if (!tier) return true; // no data — show it
+      const tier = r.avail_tier || availTierAR(r);
+      if (af === 'book_ahead') {
+        const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
+        return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
+      }
+      if (!tier) return false;
+      if (af === 'limited') return tier === 'limited';
+      if (af === 'booked_solid') return tier === 'booked' || tier === 'booked_solid';
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
       if (af === 'late')  return r.has_late  && tier !== 'booked';
@@ -332,7 +391,7 @@ async function doAllNYCSearch() {
   if (allNYCRestaurants.length > 0 && allNYCCacheKey === cacheKey) {
     displayAllNYC(allNYCRestaurants);
     allNYCSearching = false;
-    if (btn) { btn.disabled = false; btn.textContent = '🍴 Find Restaurants'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Find Restaurants'; }
     return;
   }
   allNYCCacheKey = cacheKey;
@@ -381,6 +440,6 @@ async function doAllNYCSearch() {
     listEl.innerHTML = '';
   } finally {
     allNYCSearching = false;
-    if (btn) { btn.disabled = false; btn.textContent = '🍴 Find Restaurants'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Find Restaurants'; }
   }
 }

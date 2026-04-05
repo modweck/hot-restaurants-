@@ -260,7 +260,7 @@ async function doBarSearch() {
     list.innerHTML = '';
   } finally {
     barSearching = false;
-    if (btn) { btn.disabled = false; btn.textContent = '🍸 Find Bars & Drinks'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Find Bars & Drinks'; }
   }
 }
 

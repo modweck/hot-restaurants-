@@ -556,7 +556,7 @@ async function main() {
   console.log(`   🟢 Open:    ${counts.open}`);
   console.log(`\n💾 Saved → ${OUTPUT_FILE}`);
 
-  // ── Phase 2: Future horizon for booked restaurants ──
+  // ── Phase 2: Future horizon for booked restaurants (calendar API) ──
   const bookedList = Object.entries(output)
     .filter(([k, v]) => !k.startsWith('_') && v._checked_date === TODAY && (v.tier === 'booked' || (v.early === 'booked' && v.prime === 'booked' && v.late === 'booked')))
     .map(([name]) => name)
@@ -573,24 +573,28 @@ async function main() {
     }
 
     console.log(`\n${'─'.repeat(45)}`);
-    console.log(`🔮 Phase 2: Checking future availability for ${bookedList.length} booked Resy restaurants\n`);
+    console.log(`🔮 Phase 2: Checking future availability for ${bookedList.length} booked Resy restaurants`);
+    console.log(`   📡 Using /4/venue/calendar API (one call per restaurant)\n`);
 
-    // Puppeteer-only for Phase 2 — API gets shadow-blocked by Imperva
-    console.log(`  🌐 Using Puppeteer (API unreliable for future checks)\n`);
+    // Venue ID cache for Phase 2
+    const venueCache = {};
 
-    const puppeteer = require('puppeteer');
-    let p2Browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-blink-features=AutomationControlled', '--window-size=1280,800']
-    });
-    let p2Page = await p2Browser.newPage();
-    await p2Page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36');
-    await p2Page.setViewport({ width: 1280, height: 800 });
-    await p2Page.evaluateOnNewDocument(() => {
-      Object.defineProperty(navigator, 'webdriver', { get: () => false });
-    });
+    async function resolveVenueId(slug, lookupEntry) {
+      if (venueCache[slug]) return venueCache[slug];
+      if (lookupEntry?.venue_id) { venueCache[slug] = lookupEntry.venue_id; return lookupEntry.venue_id; }
+      try {
+        const resp = await fetch(`https://api.resy.com/3/venue?url_slug=${slug}&location=ny`, { headers: getHeaders(), signal: AbortSignal.timeout(10000) });
+        if (!resp.ok) return null;
+        const data = await resp.json();
+        const id = data?.id?.resy;
+        if (id) venueCache[slug] = id;
+        return id;
+      } catch { return null; }
+    }
 
-    let hasFuture = 0, locked = 0, apiFailed = 0, noSlugCount = 0;
+    let hasFuture = 0, locked = 0, apiFailed = 0, noSlugCount = 0, notBookable = 0;
+    let consecutiveFails = 0;
+    let calendarWorking = null; // null = unknown
 
     for (let i = 0; i < bookedList.length; i++) {
       const name = bookedList[i];
@@ -608,83 +612,107 @@ async function main() {
         continue;
       }
 
+      // Resolve venue ID
+      const venueId = await resolveVenueId(slug, lookupEntry);
+      if (!venueId) {
+        apiFailed++;
+        consecutiveFails++;
+        console.log(`  ❌ [${i+1}/${bookedList.length}] ${name}: no venue ID`);
+        if (consecutiveFails >= 5) {
+          console.log(`     ⏸️ ${consecutiveFails} consecutive fails — backing off 30s`);
+          await sleep(30000);
+          consecutiveFails = 0;
+        }
+        await sleep(3000);
+        continue;
+      }
+
       let opensIn = null;
 
-      // Puppeteer: visit page for each offset until we find availability
-      for (const offset of OFFSETS) {
-          if (opensIn) break; // already found
-          const date = futureDate(offset);
-          try {
-            // Intercept the API response from the page
-            let apiSlots = null;
-            const responseHandler = async (resp) => {
-              if (resp.url().includes('/4/find')) {
-                try {
-                  const data = await resp.json();
-                  apiSlots = data?.results?.venues?.[0]?.slots || [];
-                } catch {}
-              }
-            };
-            p2Page.on('response', responseHandler);
+      // Try /4/venue/calendar first — one call covers all dates
+      if (calendarWorking !== false) {
+        try {
+          const resp = await fetch(
+            `https://api.resy.com/4/venue/calendar?venue_id=${venueId}&num_seats=${PARTY_SIZE}&start_date=${TODAY}&end_date=${futureDate(14)}`,
+            { headers: getHeaders(), signal: AbortSignal.timeout(10000) }
+          );
 
-            await p2Page.goto(`https://resy.com/cities/ny/${slug}?date=${date}&seats=${PARTY_SIZE}`, {
-              waitUntil: 'networkidle2', timeout: 15000
-            });
-            await sleep(3000);
+          if (resp.status === 500) {
+            if (calendarWorking === null) {
+              calendarWorking = false;
+              console.log(`  ⚠️  Calendar API returning 500s — falling back to /4/find\n`);
+            }
+          } else if (resp.ok) {
+            calendarWorking = true;
+            consecutiveFails = 0;
+            const data = await resp.json();
+            const scheduled = data?.scheduled || [];
 
-            p2Page.off('response', responseHandler);
+            if (scheduled.length === 0) {
+              // No scheduled days at all = not bookable (walk-in/events only)
+              output[key].fully_locked = true;
+              output[key].not_bookable = true;
+              notBookable++;
+              console.log(`  ⚪ [${i+1}/${bookedList.length}] ${name}: not bookable (0 scheduled days)`);
+              await sleep(5000);
+              continue;
+            }
 
-            if (apiSlots !== null) {
-              allFailed = false;
-              const dinnerSlots = apiSlots.filter(s => {
-                const t = s.date?.start || '';
-                const hm = t.match(/(\d{2}):(\d{2})/);
-                if (!hm) return false;
-                const h = parseInt(hm[1]) + parseInt(hm[2]) / 60;
-                return h >= 17;
-              }).length;
-              if (dinnerSlots > 0) opensIn = offset;
-            } else {
-              // Scrape page for time buttons or "Notify Me"
-              const pageResult = await p2Page.evaluate(() => {
-                const body = document.body?.innerText || '';
-                const isBooked = body.includes('Notify Me') || body.includes('no availability');
-                const btns = [...document.querySelectorAll('button, [role=button]')]
-                  .map(b => b.textContent?.trim())
-                  .filter(t => t && /^\d{1,2}:\d{2}\s*(AM|PM)$/i.test(t));
-                return { isBooked, slots: btns };
-              });
-              if (pageResult.slots.length > 0) {
-                const dinnerBtns = pageResult.slots.filter(t => {
-                  const m = t.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
-                  if (!m) return false;
-                  let h = parseInt(m[1]);
-                  if (m[3].toUpperCase() === 'PM' && h !== 12) h += 12;
-                  return h >= 17;
-                });
-                if (dinnerBtns.length > 0) opensIn = offset;
+            // Check target dates for availability
+            const targetDates = OFFSETS.map(o => futureDate(o));
+            for (let d = 0; d < targetDates.length; d++) {
+              const day = scheduled.find(s => s.date === targetDates[d]);
+              if (day && day.inventory?.reservation === 'available') {
+                opensIn = OFFSETS[d];
+                break;
               }
             }
-          } catch {}
-          await sleep(4000 + Math.random() * 3000);
-        }
 
-        // Restart browser every 50 to avoid detection
-        if ((i + 1) % 50 === 0 && p2Browser) {
-          await p2Browser.close().catch(() => {});
-          await sleep(3000);
-          const puppeteer = require('puppeteer');
-          p2Browser = await puppeteer.launch({
-            headless: 'new',
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-blink-features=AutomationControlled']
-          });
-          p2Page = await p2Browser.newPage();
-          await p2Page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36');
-          await p2Page.evaluateOnNewDocument(() => {
-            Object.defineProperty(navigator, 'webdriver', { get: () => false });
-          });
-          console.log(`    🔄 Browser restarted`);
+            // If target dates aren't available, check if ANY future date is
+            if (!opensIn) {
+              const anyAvailable = scheduled.find(s => s.inventory?.reservation === 'available');
+              if (anyAvailable) {
+                // Calculate offset from today
+                const diffMs = new Date(anyAvailable.date) - new Date(TODAY);
+                const diffDays = Math.round(diffMs / 86400000);
+                opensIn = diffDays;
+              }
+            }
+          } else {
+            // Non-500 error
+            calendarWorking = null;
+          }
+        } catch {
+          calendarWorking = null;
         }
+      }
+
+      // Fallback: /4/find per date if calendar didn't work
+      if (calendarWorking === false && !opensIn) {
+        for (const offset of OFFSETS) {
+          if (opensIn) break;
+          const date = futureDate(offset);
+          try {
+            const resp = await fetch('https://api.resy.com/4/find', {
+              method: 'POST',
+              headers: { ...getHeaders(), 'Content-Type': 'application/json', 'X-Origin': 'https://resy.com' },
+              body: JSON.stringify({ venue_id: venueId, day: date, party_size: PARTY_SIZE, lat: 0, long: 0 }),
+              signal: AbortSignal.timeout(10000),
+            });
+            if (!resp.ok) { apiFailed++; continue; }
+            consecutiveFails = 0;
+            const data = await resp.json();
+            const slots = data?.results?.venues?.[0]?.slots || [];
+            const dinnerSlots = slots.filter(s => {
+              const t = s.date?.start || '';
+              const hm = t.match(/(\d{2}):(\d{2})/);
+              return hm && parseInt(hm[1]) >= 17;
+            }).length;
+            if (dinnerSlots > 0) opensIn = offset;
+          } catch {}
+          await sleep(5000);
+        }
+      }
 
       if (opensIn) {
         output[key].opens_in = opensIn;
@@ -700,12 +728,12 @@ async function main() {
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
         console.log(`    💾 Progress saved`);
       }
+
+      await sleep(5000);
     }
 
-    if (p2Browser) await p2Browser.close().catch(() => {});
-
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
-    console.log(`\n   🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}  ❌ API failed: ${apiFailed}  🔒 No slug: ${noSlugCount}`);
+    console.log(`\n   🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}  ⚪ Not bookable: ${notBookable}  ❌ API failed: ${apiFailed}  🔒 No slug: ${noSlugCount}`);
   }
 
   // Clean up Puppeteer browser if used

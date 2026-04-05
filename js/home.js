@@ -8,7 +8,7 @@ function setAvailFilter(val, btn) {
   btn.classList.add('on');
   const labels = { any:'Any Time', tonight:'Tonight', early:'Early (6–7:30)', prime:'Prime Time', late:'Late Night' };
   const vb = document.getElementById('trendingViewBtn');
-  if (vb) vb.textContent = '🔥 View Hot Spots — ' + (labels[val] || 'Tonight');
+  if (vb) vb.textContent = 'View Hot Spots — ' + (labels[val] || 'Tonight');
 }
 
 function setHorizonFilter(days, btn) {
@@ -18,7 +18,7 @@ function setHorizonFilter(days, btn) {
   ['hor-3','hor-5','hor-7','hor-14'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.remove('on'); });
   btn.classList.add('on');
   const vb = document.getElementById('trendingViewBtn');
-  if (vb) vb.textContent = '🔥 View Hot Spots — Next ' + days + ' Days';
+  if (vb) vb.textContent = 'View Hot Spots — Next ' + days + ' Days';
 }
 
 function setTrendFilter(buzz, btn) {
