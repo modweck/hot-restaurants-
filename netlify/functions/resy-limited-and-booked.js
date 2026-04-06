@@ -36,10 +36,32 @@ const PARTY_SIZE = parseInt(getArg('party', '2'), 10);
 const TODAY      = new Date().toISOString().split('T')[0];
 
 // ── Files ─────────────────────────────────────────────────────────────────────
+const MASTER_FILE   = path.join(__dirname, 'BOOKING_MASTER.json');
 const BOOKING_FILE  = path.join(__dirname, 'booking_lookup.json');
 const OUTPUT_FILE   = path.join(__dirname, 'tonight_availability.json');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ── Auto-sync booking_lookup from BOOKING_MASTER ─────────────────────────────
+try {
+  const master = JSON.parse(fs.readFileSync(MASTER_FILE, 'utf8'));
+  const old = JSON.parse(fs.readFileSync(BOOKING_FILE, 'utf8'));
+  const synced = {};
+  for (const [name, v] of Object.entries(master)) {
+    if (!v.platform || !v.url) continue;
+    const k = name.toLowerCase();
+    synced[k] = { platform: v.platform, url: v.url };
+    if (v.lat) synced[k].lat = v.lat;
+    if (v.lng) synced[k].lng = v.lng;
+    if (v.website) synced[k].website = v.website;
+    if (v.venue_id) synced[k].venue_id = v.venue_id;
+    if (v.resy_venue_id) synced[k].venue_id = v.resy_venue_id;
+    const o = old[name] || old[k];
+    if (o) for (const [k2, v2] of Object.entries(o)) if (!(k2 in synced[k])) synced[k][k2] = v2;
+  }
+  fs.writeFileSync(BOOKING_FILE, JSON.stringify(synced, null, 2));
+  console.log(`🔄 booking_lookup synced: ${Object.keys(synced).length} entries`);
+} catch (e) { console.log('⚠️ booking_lookup sync skipped:', e.message); }
 
 // ── Resy URL → slug ───────────────────────────────────────────────────────────
 function extractResySlug(url) {
