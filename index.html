@@ -8,6 +8,7 @@
   <meta http-equiv="Expires" content="0" />
   <title>SeatWize</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
@@ -91,6 +92,10 @@
     .see-all-btn{width:100%;padding:14px;background:transparent;border:1.5px solid rgba(0,0,0,.1);color:#1a1a2e;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;transition:all .2s}
     .see-all-btn:active{background:rgba(0,0,0,.03)}
     .see-all-btn:hover{border-color:rgba(0,0,0,.2)}
+
+    /* AUTH DROPDOWN */
+    .auth-dropdown{position:absolute;top:54px;right:16px;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.06);overflow:hidden;z-index:200;min-width:180px;display:none}
+    .auth-dropdown.show{display:block}
 
     /* BOTTOM NAV */
     .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,0.06);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
@@ -744,9 +749,17 @@
     <div id="ar-form">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
         <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
-        <div class="hero-tabs">
-          <button class="hero-tab active">Restaurants</button>
-          <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="hero-tabs">
+            <button class="hero-tab active">Restaurants</button>
+            <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
+          </div>
+          <div id="auth-profile" style="position:relative">
+            <a href="login.html" style="padding:7px 16px;background:#1b4332;color:#fff;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif">Sign In</a>
+          </div>
+          <div id="auth-dropdown" class="auth-dropdown">
+            <div id="auth-dropdown-content"></div>
+          </div>
         </div>
       </div>
 
@@ -1344,7 +1357,75 @@
 </div><!-- /container -->
 
 <script>
-// ─── SAVED RESTAURANTS ───────────────────────────────────────────────────────
+// ─── SUPABASE AUTH ──────────────────────────────────────────────────────────
+const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+const _supa = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+let _currentUser = null;
+
+// Handle OAuth callback & restore session on load
+(async () => {
+  // If URL has auth tokens (from Google OAuth redirect), Supabase picks them up automatically
+  const { data: { session } } = await _supa.auth.getSession();
+  if (session) {
+    _currentUser = session.user;
+    _updateAuthUI();
+    // Clean hash fragments from URL after OAuth callback
+    if (window.location.hash && window.location.hash.includes('access_token')) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+    // Sync saved restaurants from Supabase
+    await _pullSavedFromSupabase();
+  }
+})();
+
+// Listen for auth state changes (login/logout)
+_supa.auth.onAuthStateChange(async (event, session) => {
+  _currentUser = session?.user || null;
+  _updateAuthUI();
+  if (event === 'SIGNED_IN' && session) {
+    // Push any local saves first, then pull remote saves (merge)
+    await _pushAllSavesToSupabase();
+    await _pullSavedFromSupabase();
+  }
+});
+
+function _updateAuthUI() {
+  const el = document.getElementById('auth-profile');
+  if (!el) return;
+  if (_currentUser) {
+    const name = _currentUser.user_metadata?.full_name || _currentUser.email || '';
+    const initial = (name.charAt(0) || '?').toUpperCase();
+    const avatar = _currentUser.user_metadata?.avatar_url;
+    el.innerHTML = avatar
+      ? `<img src="${avatar}" style="width:32px;height:32px;border-radius:50%;cursor:pointer;border:2px solid rgba(0,0,0,.08)" onclick="document.getElementById('auth-dropdown').classList.toggle('show')" />`
+      : `<div onclick="document.getElementById('auth-dropdown').classList.toggle('show')" style="width:32px;height:32px;border-radius:50%;background:#1b4332;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif">${initial}</div>`;
+    document.getElementById('auth-dropdown-content').innerHTML = `
+      <div style="padding:10px 14px;font-size:12px;color:#888;border-bottom:1px solid rgba(0,0,0,.06)">${_currentUser.email || ''}</div>
+      <button onclick="_logout()" style="width:100%;padding:10px 14px;background:none;border:none;text-align:left;font-size:13px;font-weight:600;color:#dc2626;cursor:pointer;font-family:'DM Sans',sans-serif">Sign Out</button>`;
+  } else {
+    el.innerHTML = `<a href="login.html" style="padding:7px 16px;background:#1b4332;color:#fff;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif">Sign In</a>`;
+    document.getElementById('auth-dropdown-content').innerHTML = '';
+  }
+}
+
+async function _logout() {
+  await _supa.auth.signOut();
+  _currentUser = null;
+  _updateAuthUI();
+  document.getElementById('auth-dropdown').classList.remove('show');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', e => {
+  const dd = document.getElementById('auth-dropdown');
+  const prof = document.getElementById('auth-profile');
+  if (dd && prof && !prof.contains(e.target) && !dd.contains(e.target)) {
+    dd.classList.remove('show');
+  }
+});
+
+// ─── SAVED RESTAURANTS (localStorage + Supabase sync) ───────────────────────
 function _getSaved() { try { return JSON.parse(localStorage.getItem('sw_saved') || '{}'); } catch { return {}; } }
 function _setSaved(obj) { localStorage.setItem('sw_saved', JSON.stringify(obj)); }
 function isSaved(name) { return !!_getSaved()[(name||'').toLowerCase().trim()]; }
@@ -1361,6 +1442,57 @@ function toggleSave(name, cardData) {
   });
   // Refresh saved view if visible
   if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
+  // Sync to Supabase if logged in
+  _syncSaveToSupabase(key, saved[key] || null);
+}
+
+async function _syncSaveToSupabase(key, data) {
+  if (!_currentUser) return;
+  try {
+    if (data) {
+      await _supa.from('saved_restaurants').upsert({
+        user_id: _currentUser.id,
+        restaurant_key: key,
+        restaurant_data: data
+      }, { onConflict: 'user_id,restaurant_key' });
+    } else {
+      await _supa.from('saved_restaurants').delete()
+        .eq('user_id', _currentUser.id)
+        .eq('restaurant_key', key);
+    }
+  } catch (e) { console.warn('Save sync error:', e); }
+}
+
+async function _pullSavedFromSupabase() {
+  if (!_currentUser) return;
+  try {
+    const { data, error } = await _supa.from('saved_restaurants')
+      .select('restaurant_key, restaurant_data')
+      .eq('user_id', _currentUser.id);
+    if (error) { console.warn('Pull saved error:', error); return; }
+    if (!data || !data.length) return;
+    // Merge: Supabase wins for conflicts, keep local-only saves
+    const local = _getSaved();
+    data.forEach(row => {
+      local[row.restaurant_key] = row.restaurant_data;
+    });
+    _setSaved(local);
+    if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
+  } catch (e) { console.warn('Pull saved error:', e); }
+}
+
+async function _pushAllSavesToSupabase() {
+  if (!_currentUser) return;
+  const saved = _getSaved();
+  const rows = Object.entries(saved).map(([key, data]) => ({
+    user_id: _currentUser.id,
+    restaurant_key: key,
+    restaurant_data: data
+  }));
+  if (!rows.length) return;
+  try {
+    await _supa.from('saved_restaurants').upsert(rows, { onConflict: 'user_id,restaurant_key' });
+  } catch (e) { console.warn('Push saved error:', e); }
 }
 function renderSavedView() {
   const saved = _getSaved();
