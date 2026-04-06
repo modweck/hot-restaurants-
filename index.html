@@ -338,7 +338,7 @@
       <div class="trending-box">
         <!-- Primary filters always visible -->
         <div class="filter-chips" id="trendingChips">
-          <button class="fchip on" onclick="setTrendFilter('any',this)">All</button>
+          <button class="fchip" onclick="setTrendFilter('any',this)">All</button>
           <button class="fchip" onclick="setTrendFilter('michelin',this)">Michelin Stars</button>
           <button class="fchip" onclick="setTrendFilter('michelin_rec',this)">Michelin Rec</button>
           <button class="fchip" onclick="setTrendFilter('nyt',this)">NYT Reviewed</button>
@@ -832,7 +832,7 @@
           </button>
           <div class="adv-filters-body" id="arHotspotFilters">
             <div style="display:flex;gap:6px;flex-wrap:wrap;padding-top:4px">
-              <button class="fchip on" id="ar-hot-any" onclick="arSetHotspot('any',this)">All</button>
+              <button class="fchip" id="ar-hot-any" onclick="arSetHotspot('any',this)">All</button>
               <button class="fchip" id="ar-hot-michelin" onclick="arSetHotspot('michelin',this)">Michelin Stars</button>
               <button class="fchip" id="ar-hot-michelin_rec" onclick="arSetHotspot('michelin_rec',this)">Michelin Rec</button>
               <button class="fchip" id="ar-hot-nyt" onclick="arSetHotspot('nyt',this)">NYT Reviewed</button>
@@ -1795,7 +1795,7 @@ function toggleInstaBuzz(id, btn) {
 
 function setTrendFilter(buzz, btn) {
   if (buzz === 'any') {
-    homeState.trendFilters = [];
+    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
     homeState.trendFilter = 'any';
     document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -1814,8 +1814,7 @@ function setTrendFilter(buzz, btn) {
     anyBtn && anyBtn.classList.remove('on');
     homeState.trendFilter = homeState.trendFilters[0];
   } else {
-    anyBtn && anyBtn.classList.add('on');
-    homeState.trendFilter = 'any';
+    homeState.trendFilter = 'none';
   }
 }
 
@@ -2801,7 +2800,7 @@ function arSetPrice(val) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = [];
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
     arState.hotspotFilter = 'any';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -2811,7 +2810,7 @@ function arSetHotspot(val, btn) {
     else { arState.hotspotFilters.push(val); btn.classList.add('on'); }
     const anyBtn = document.getElementById('ar-hot-any');
     if (arState.hotspotFilters.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.hotspotFilter = arState.hotspotFilters[0]; }
-    else { anyBtn && anyBtn.classList.add('on'); arState.hotspotFilter = 'any'; }
+    else { arState.hotspotFilter = 'none'; }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
