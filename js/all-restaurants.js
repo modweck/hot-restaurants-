@@ -243,7 +243,10 @@ function applyARFilters(list) {
   else if (bf === 'very_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.5 && rg < 4.65; });
   else if (bf === 'great') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.6 && rg < 4.75; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
-  if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
+  if (pf === 'multi' && arState.priceLevels && arState.priceLevels.length > 0) {
+    const mn = Math.min(...arState.priceLevels), mx = Math.max(...arState.priceLevels);
+    list = list.filter(r => r.price_level >= mn && r.price_level <= mx);
+  } else if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
   if (arState.reviewCountFilter && arState.reviewCountFilter !== 'any') {
     const minR = Number(arState.reviewCountFilter);
     list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
@@ -288,6 +291,7 @@ function applyARFilters(list) {
       }
       if (hsf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (hsf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
       return false;
     }));

@@ -317,6 +317,7 @@ function display(restaurants) {
       if (bf==='nyt') return hasNYTCoverage(r);
       if (bf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (bf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (bf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
       return false;
     }));

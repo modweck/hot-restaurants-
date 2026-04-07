@@ -45,6 +45,7 @@
     .fchip{padding:7px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .2s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
     .fchip.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
     .fchip:active,.fchip:hover:not(.on){border-color:rgba(0,0,0,.15);color:#333;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+    .fchip.price-chip{padding:10px 14px;font-size:14px;font-weight:700;border-radius:12px;letter-spacing:-.3px}
 
     /* TRENDING SECTION box */
     .trending-box{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 16px rgba(0,0,0,0.04)}
@@ -341,6 +342,7 @@
           <button class="fchip" onclick="setTrendFilter('timeout',this)">Time Out</button>
           <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram Influencers</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
+          <button class="fchip" onclick="setTrendFilter('exceptional',this)">Top Rated</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
         </div>
 
@@ -827,50 +829,23 @@
               <button class="fchip" id="ar-hot-timeout" onclick="arSetHotspot('timeout',this)">Time Out</button>
               <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram Influencers</button>
               <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
+              <button class="fchip" id="ar-hot-exceptional" onclick="arSetHotspot('exceptional',this)">Top Rated</button>
               <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
             </div>
           </div>
         </div>
 
-        <!-- Reviews + Cuisine -->
-        <div style="display:flex;gap:10px;margin-bottom:14px">
-          <div style="flex:1">
-            <span class="flabel">Reviews</span>
-            <div class="dselect">
-              <select id="arBuzzFilter" onchange="arState.buzzFilter=this.value">
-                <option value="any" selected>Any</option>
-                <option value="good">Good</option>
-                <option value="very_good">Very Good</option>
-                <option value="great">Great</option>
-                <option value="exceptional">Excellent</option>
-              </select>
-            </div>
+        <!-- Price -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">Price</span>
+          <div style="display:flex;gap:8px;margin-top:4px">
+            <button class="fchip price-chip on" id="ar-price-any" onclick="arTogglePriceAny(this)" style="flex:1;justify-content:center">Any</button>
+            <button class="fchip price-chip" id="ar-price-1" onclick="arTogglePrice(1,this)" style="flex:1;justify-content:center">$</button>
+            <button class="fchip price-chip" id="ar-price-2" onclick="arTogglePrice(2,this)" style="flex:1;justify-content:center">$$</button>
+            <button class="fchip price-chip" id="ar-price-3" onclick="arTogglePrice(3,this)" style="flex:1;justify-content:center">$$$</button>
+            <button class="fchip price-chip" id="ar-price-4" onclick="arTogglePrice(4,this)" style="flex:1;justify-content:center">$$$$</button>
           </div>
-          <div style="flex:1">
-            <span class="flabel">Cuisine</span>
-            <div class="dselect">
-              <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
-              <option value="any">Any Cuisine</option>
-              <option value="american">American</option>
-              <option value="italian">Italian</option>
-              <option value="japanese">Japanese</option>
-              <option value="sushi">Sushi</option>
-              <option value="french">French</option>
-              <option value="korean">Korean</option>
-              <option value="chinese">Chinese</option>
-              <option value="mexican">Mexican</option>
-              <option value="indian">Indian</option>
-              <option value="steakhouse">Steakhouse</option>
-              <option value="mediterranean">Mediterranean</option>
-              <option value="seafood">Seafood</option>
-              <option value="thai">Thai</option>
-              <option value="barbecue">BBQ</option>
-              <option value="pizza">Pizza</option>
-              <option value="spanish">Spanish</option>
-              <option value="vietnamese">Vietnamese</option>
-            </select>
-            </div>
-          </div>
+          <div style="text-align:center;font-size:10px;color:#999;margin-top:4px">Tap multiple to set a range</div>
         </div>
 
         <!-- Vibe (collapsible) -->
@@ -898,18 +873,31 @@
           </div>
         </div>
 
-        <!-- Price + Rewards -->
-        <div style="display:flex;gap:10px;margin-bottom:16px">
+        <!-- Cuisine + Rewards -->
+        <div style="display:flex;gap:10px;margin-bottom:14px">
           <div style="flex:1">
-            <span class="flabel">Price</span>
+            <span class="flabel">Cuisine</span>
             <div class="dselect">
-              <select id="arPriceFilter" onchange="arSetPrice(this.value)">
-                <option value="any">Any Price</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-                <option value="4">$$$$</option>
-              </select>
+              <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
+              <option value="any">Any Cuisine</option>
+              <option value="american">American</option>
+              <option value="italian">Italian</option>
+              <option value="japanese">Japanese</option>
+              <option value="sushi">Sushi</option>
+              <option value="french">French</option>
+              <option value="korean">Korean</option>
+              <option value="chinese">Chinese</option>
+              <option value="mexican">Mexican</option>
+              <option value="indian">Indian</option>
+              <option value="steakhouse">Steakhouse</option>
+              <option value="mediterranean">Mediterranean</option>
+              <option value="seafood">Seafood</option>
+              <option value="thai">Thai</option>
+              <option value="barbecue">BBQ</option>
+              <option value="pizza">Pizza</option>
+              <option value="spanish">Spanish</option>
+              <option value="vietnamese">Vietnamese</option>
+            </select>
             </div>
           </div>
           <div style="flex:1">
@@ -1658,7 +1646,7 @@ function toggleInstaBuzz(id, btn) {
 
 function setTrendFilter(buzz, btn) {
   if (buzz === 'any') {
-    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
+    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
     homeState.trendFilter = 'any';
     document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -2304,6 +2292,7 @@ function display(restaurants) {
       if (bf==='nyt') return hasNYTCoverage(r);
       if (bf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (bf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (bf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
       return false;
     }));
@@ -2661,9 +2650,28 @@ function arSetPrice(val) {
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
+function arTogglePrice(level, btn) {
+  if (!arState.priceLevels) arState.priceLevels = [];
+  const idx = arState.priceLevels.indexOf(level);
+  if (idx >= 0) { arState.priceLevels.splice(idx, 1); btn.classList.remove('on'); }
+  else { arState.priceLevels.push(level); btn.classList.add('on'); }
+  const anyBtn = document.getElementById('ar-price-any');
+  if (arState.priceLevels.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.priceFilter = 'multi'; }
+  else { anyBtn && anyBtn.classList.add('on'); arState.priceFilter = 'any'; }
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
+function arTogglePriceAny(btn) {
+  arState.priceLevels = [];
+  arState.priceFilter = 'any';
+  document.querySelectorAll('.price-chip').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
     arState.hotspotFilter = 'any';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -2934,7 +2942,10 @@ function applyARFilters(list) {
   else if (bf === 'very_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.5 && rg < 4.65; });
   else if (bf === 'great') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.6 && rg < 4.75; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
-  if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
+  if (pf === 'multi' && arState.priceLevels && arState.priceLevels.length > 0) {
+    const mn = Math.min(...arState.priceLevels), mx = Math.max(...arState.priceLevels);
+    list = list.filter(r => r.price_level >= mn && r.price_level <= mx);
+  } else if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
   if (arState.reviewCountFilter && arState.reviewCountFilter !== 'any') {
     const minR = Number(arState.reviewCountFilter);
     list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
@@ -2979,6 +2990,7 @@ function applyARFilters(list) {
       }
       if (hsf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
+      if (hsf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
       return false;
     }));
