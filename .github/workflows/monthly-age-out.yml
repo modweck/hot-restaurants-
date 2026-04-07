@@ -1,0 +1,11 @@
+# DISABLED — moved to local LaunchAgent (com.seatwize.monthly-age-out)
+# Previously modified BOOKING_MASTER directly which caused conflicts.
+# Now runs locally on the 1st of each month at 11am.
+name: Monthly Age Out New & Rising (DISABLED)
+on:
+  workflow_dispatch:
+jobs:
+  disabled:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Moved to local. Run with node scripts/age-out-new-rising.js"
