@@ -42,7 +42,7 @@ function arSetVibe(vibe, btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = [];
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
     arState.hotspotFilter = 'any';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -60,8 +60,7 @@ function arSetHotspot(val, btn) {
       anyBtn && anyBtn.classList.remove('on');
       arState.hotspotFilter = arState.hotspotFilters[0];
     } else {
-      anyBtn && anyBtn.classList.add('on');
-      arState.hotspotFilter = 'any';
+      arState.hotspotFilter = 'none';
     }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);

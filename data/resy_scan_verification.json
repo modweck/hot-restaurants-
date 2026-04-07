@@ -1,0 +1,1424 @@
+{
+  "active": [
+    {
+      "name": "blue hill at stone barns",
+      "slug": "family-meal-at-blue-hill",
+      "venue_id": 73513,
+      "venue_name": "Family Meal at Blue Hill",
+      "website": "https://www.bluehillfarm.com/",
+      "sample_slots": 12,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "brass",
+      "slug": "brass",
+      "venue_id": 93292,
+      "venue_name": "Brass",
+      "website": "http://www.brassny.com/",
+      "sample_slots": 17,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "blt steak",
+      "slug": "blt-prime-new-york",
+      "venue_id": 95747,
+      "venue_name": "BLT Prime New York",
+      "website": "https://www.bltrestaurants.com/location/blt-prime-new-york/",
+      "sample_slots": 21,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Avena",
+      "slug": "evelina",
+      "venue_id": 1851,
+      "venue_name": "Evelina",
+      "website": "http://www.evelinabk.com/",
+      "sample_slots": 24,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "spicy moon chelsea",
+      "slug": "spicy-moon-chelsea",
+      "venue_id": 85441,
+      "venue_name": "Spicy Moon - Chelsea",
+      "website": "https://www.spicymoonnyc.com/",
+      "sample_slots": 37,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "p.j. clarke's third avenue",
+      "slug": "p-j-clarkes-third-avenue",
+      "venue_id": 64560,
+      "venue_name": "P.J. Clarke's Third Avenue",
+      "website": "https://pjclarkes.com/location/third-avenue/",
+      "sample_slots": 43,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "terravita edgewater",
+      "slug": "terravita-downtown",
+      "venue_id": 92483,
+      "venue_name": "Terravita Downtown",
+      "website": "https://www.terravitarestaurant.com/",
+      "sample_slots": 25,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "empellon al pastor",
+      "slug": "empellon-taqueria",
+      "venue_id": 66436,
+      "venue_name": "Empellón Taqueria",
+      "website": "https://www.empellon.com/restaurants/al-pastor/",
+      "sample_slots": 44,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "the village green",
+      "slug": "green-kitchen-70th-street",
+      "venue_id": 73116,
+      "venue_name": "Green Kitchen - 70th Street",
+      "website": "https://www.greenkitchennyc.com/",
+      "sample_slots": 56,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "follia",
+      "slug": "la-follia",
+      "venue_id": 691,
+      "venue_name": "Follia",
+      "website": "http://follianyc.com/",
+      "sample_slots": 23,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "levante",
+      "slug": "levante-ny",
+      "venue_id": 65822,
+      "venue_name": "Levante",
+      "website": "http://levantelic.com/",
+      "sample_slots": 40,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "sushi ishikawa- ues",
+      "slug": "sushiishikawa-ues",
+      "venue_id": 1341,
+      "venue_name": "Sushi Ishikawa- UES",
+      "website": "http://www.ishikawanyc.com/",
+      "sample_slots": 4,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "casino",
+      "slug": "casino-new-york",
+      "venue_id": 66444,
+      "venue_name": "Casino",
+      "website": "https://www.casinonyc.info/",
+      "sample_slots": 4,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "caviar by dnhg",
+      "slug": "caviar-kaspia-at-the-mark",
+      "venue_id": 68495,
+      "venue_name": "Caviar Kaspia at The Mark",
+      "website": "https://www.caviarkaspiany.com/",
+      "sample_slots": 36,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "la sirène soho",
+      "slug": "la-sirene-soho",
+      "venue_id": 73773,
+      "venue_name": "La Sirène Soho",
+      "website": "http://www.lasirenenyc.com/",
+      "sample_slots": 72,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "zen sushi omakase",
+      "slug": "zensushi-omakase",
+      "venue_id": 78062,
+      "venue_name": "Zen Sushi Omakase",
+      "website": "http://zensushiomakase.com",
+      "sample_slots": 6,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "le tout va bien - french restaurant",
+      "slug": "le-tout-va-bien",
+      "venue_id": 84989,
+      "venue_name": "Le Tout va Bien",
+      "website": "http://www.letoutvabien.nyc/",
+      "sample_slots": 25,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "bang bang bangkok",
+      "slug": "bangbang-bangkok",
+      "venue_id": 83806,
+      "venue_name": "Bang Bang Bangkok",
+      "website": "https://www.bangbangbangkokbrooklyn.com/",
+      "sample_slots": 4,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "kinjo",
+      "slug": "kinjo-ny",
+      "venue_id": 84207,
+      "venue_name": "Kinjo",
+      "website": "http://www.kinjodumbo.com",
+      "sample_slots": 6,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "kid",
+      "slug": "serendipity-3",
+      "venue_id": 41007,
+      "venue_name": "Serendipity 3",
+      "website": "http://www.serendipity3.com/",
+      "sample_slots": 48,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "teakwood thai chophouse",
+      "slug": "teakwood-thai-chop-house",
+      "venue_id": 90377,
+      "venue_name": "Teakwood Thai Chophouse",
+      "website": "https://teakwoodnyc.com/?utm_source=google",
+      "sample_slots": 35,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "los cuernos",
+      "slug": "cuerno",
+      "venue_id": 86672,
+      "venue_name": "Cuerno",
+      "website": "https://cuernony.com",
+      "sample_slots": 27,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "sawaan thai",
+      "slug": "pho-real",
+      "venue_id": 93161,
+      "venue_name": "Sawaan thai",
+      "website": "https://sawaanthainy.com",
+      "sample_slots": 28,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "p.j. clarke's on the hudson",
+      "slug": "p-j-clarkes-third-avenue",
+      "venue_id": 64560,
+      "venue_name": "P.J. Clarke's Third Avenue",
+      "website": "http://pjclarkes.com/location/on-the-hudson/",
+      "sample_slots": 43,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "gemma",
+      "slug": "gemma-ny",
+      "venue_id": 72402,
+      "venue_name": "Gemma",
+      "website": "http://www.theboweryhotel.com/dining/gemma",
+      "sample_slots": 97,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "bacaro",
+      "slug": "bacaro-nyc",
+      "venue_id": 8353,
+      "venue_name": "Bacaro NYC",
+      "website": "http://bacaronyc.com/",
+      "sample_slots": 23,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "1803 nyc",
+      "slug": "1803",
+      "venue_id": 80538,
+      "venue_name": "1803",
+      "website": "https://1803nyc.com/",
+      "sample_slots": 42,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "popina",
+      "slug": "popina-nyc",
+      "venue_id": 1340,
+      "venue_name": "Popina NYC",
+      "website": "http://popinanyc.com/",
+      "sample_slots": 48,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Sushi Seki Times Square",
+      "slug": "sushi-seki-23rd",
+      "venue_id": 49,
+      "venue_name": "Sushi Seki Chelsea",
+      "website": "https://sushiseki.com/",
+      "sample_slots": 52,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Bengal Tiger",
+      "slug": "bengal-tiger-indian-food",
+      "venue_id": 83309,
+      "venue_name": "Bengal Tiger Indian Food",
+      "website": "http://www.bengaltigerindianfood.com/",
+      "sample_slots": 30,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Yama Ramen and Sushi",
+      "slug": "yama-ramen",
+      "venue_id": 84657,
+      "venue_name": "Yama Ramen",
+      "website": "http://yamaramen.com/",
+      "sample_slots": 21,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Mari ne",
+      "slug": "mari-ne-handroll",
+      "venue_id": 74576,
+      "venue_name": "Mari.Ne Handroll",
+      "website": "https://www.marinenyc.com/",
+      "sample_slots": 18,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Old Bukhara",
+      "slug": "bukhara-grill-indian-spice-rave-nyc",
+      "venue_id": 86440,
+      "venue_name": "Bukhara Grill : Indian Spice Rave NYC (By Raja Jhanjee)",
+      "website": "http://www.bukharagrillnyc.com/",
+      "sample_slots": 31,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Mantra",
+      "slug": "spice-mantra",
+      "venue_id": 73358,
+      "venue_name": "Spice Mantra",
+      "website": "https://spicemantranyc.com/",
+      "sample_slots": 32,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Salsa Perucha",
+      "slug": "kausa",
+      "venue_id": 76877,
+      "venue_name": "Kausa",
+      "website": "https://kausarestaurant.com/",
+      "sample_slots": 55,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Aji Ceviche Bar",
+      "slug": "mission-ceviche",
+      "venue_id": 6928,
+      "venue_name": "Mission Ceviche Upper East Side",
+      "website": "https://www.missionceviche.com/",
+      "sample_slots": 39,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "Nineteen19 Grill & Bar",
+      "slug": "19-cleveland",
+      "venue_id": 3899,
+      "venue_name": "19 Cleveland",
+      "website": "https://19cleveland.com/",
+      "sample_slots": 42,
+      "sample_date": "2026-04-07"
+    },
+    {
+      "name": "uogashi",
+      "slug": "yono-sushi",
+      "venue_id": 81583,
+      "venue_name": "YONO Sushi",
+      "website": "http://www.yonosushinyc.com/",
+      "sample_slots": 29,
+      "sample_date": "2026-04-07"
+    }
+  ],
+  "exists_but_booked": [
+    {
+      "name": "shion 69 leonard street",
+      "slug": "69leonardstreet",
+      "venue_id": 888,
+      "venue_name": "69 Leonard Street",
+      "website": "http://www.69leonardstreet.com"
+    },
+    {
+      "name": "Roof At Park South",
+      "slug": "rosehill-rooftop",
+      "venue_id": 91999,
+      "venue_name": "Rosehill Rooftop",
+      "website": "https://www.rosehillrooftop.com/"
+    }
+  ],
+  "dead": [
+    {
+      "name": "lupa osteria romana",
+      "slug": "lupa-osteria-romana",
+      "website": "http://www.luparestaurant.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "grand banks",
+      "slug": "sailors-choice",
+      "website": "https://crewny.com/grand-banks",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "hamilton pork",
+      "slug": "hamilton-pork",
+      "website": "http://hamiltonpork.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "domodomo jersey city",
+      "slug": "domodomo-jersey-city",
+      "website": "https://www.domodomorestaurant.com/domodomojc",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "angelina's kitchen",
+      "slug": "angelinas-kitchen-staten-island",
+      "website": "http://angelinaskitchennyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "the hop shoppe",
+      "slug": "the-hop-shoppe",
+      "website": "http://www.thehopshoppe.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "the dean nyc",
+      "slug": "the-dean",
+      "website": "http://www.thedeannyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "coszcal de allende restaurant",
+      "slug": "coszcal-de-allende",
+      "website": "http://coszcalbk.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "sushi ajjo",
+      "slug": "sushi-ajjo",
+      "website": "http://www.sushiajjo.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "bacchanal junction",
+      "slug": "bacchanal-junction",
+      "website": "https://bacchanalnj.com/?utm_source=google",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "Blossom on Columbus",
+      "slug": "blossom-on-columbus",
+      "website": "https://www.blossomnyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "Comodo",
+      "slug": "comodo",
+      "website": "http://comodonyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "Kailash Parbat",
+      "slug": "kailash-parbat-ny",
+      "website": "https://kailashparbatnyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "Little Tijuana NJ",
+      "slug": "tiny-tijuana",
+      "website": "http://www.tinytijuananj.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "Bocca Cucina and Bar",
+      "slug": "bocca-cucina-and-bar",
+      "website": "http://boccanyc.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "mya's bar & kitchen",
+      "slug": "myas-bar-and-kitchen",
+      "website": "https://myaskitchen.com/",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "le district bar & bistro",
+      "slug": "le-district-bar-",
+      "website": "https://www.ledistrict.com/bistro-bar",
+      "reason": "venue not found: 404"
+    },
+    {
+      "name": "La Porchetta Pollo Bar",
+      "slug": "ciccio",
+      "website": "http://www.ciccionyc.com/",
+      "reason": "venue not found: 404"
+    }
+  ],
+  "false_positive": [
+    {
+      "name": "kaizen nyc",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "villaggio ristorante",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "southern spice",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "the river palm terrace - edgewater",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "oen omakase by morimoto",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "ippudo dumbo",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "made in miami",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "house of the red pearl at tin building by jean-georges",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "jiang nan - long island city",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "jj dak",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "madame",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "makara",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "mathews food & drink",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "minka nikkei",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "nino's beach",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "olivia's",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "oso felipe",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "perla oyster bar",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "room 151 sushi steakhouse",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "siam staten island",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "sonoma bistro",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "takumen",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the lotus room",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the malt house greenwich village",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the ribbon",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the ridge house",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the saint clair",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the waiting room",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "tiger sushi",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "tillie's x wsa",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "tiny tijuana",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "viv & jules",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "walnut street kitchen",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "zack's restaurant",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "zara forest grill",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "zula grill",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "brbq",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "korai kitchen (no dine-in without reservations!)",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the roxy jc",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "masalawala & sons",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "mayahuel bar & restaurant",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "pranam restaurant & bar",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "schilling restaurant & bar",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "the great indian kitchen",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "seabass taverna",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "Tavern 61",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A"
+      ]
+    },
+    {
+      "name": "court street",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    },
+    {
+      "name": "One World Pizza",
+      "signals": [
+        "link: https://resy.com/global-dining-access",
+        "link: https://resy.com/resycredit?intlink=us-resy-topnav",
+        "link: https://resy.com/resyos"
+      ]
+    }
+  ],
+  "no_slug": [
+    {
+      "name": "markette",
+      "website": "https://marketterestaurant.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "peasant",
+      "website": "http://www.peasantnyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "sal tang's",
+      "website": "https://saltangs.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "café spaghetti",
+      "website": "https://www.cafespaghetti.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "the good fork",
+      "website": "http://www.goodfork.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "fort defiance",
+      "website": "http://www.goodfork.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "lore",
+      "website": "https://www.lorebrooklyn.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "moody tongue sushi",
+      "website": "https://moodytongue.com/location/moody-tongue-sushi-and-the-hand-roll-bar/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "the palm",
+      "website": "https://www.thepalm.com/restaurants/new-york-city-west-side/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "dos caminos",
+      "website": "https://www.doscaminos.com/location/dos-caminos-times-square/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "la pecora bianca bryant park",
+      "website": "https://www.lapecorabianca.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "soho park",
+      "website": "https://www.lapecorabianca.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "lucky cat",
+      "website": "http://www.izakayaluckycat.com",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "arepa lady astoria",
+      "website": "https://www.thearepalady.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "daily provisions union square",
+      "website": "https://dailyprovisions.co/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "naked dog",
+      "website": "http://www.nakeddogbrooklyn.com/",
+      "signals": [
+        "html: resy\\.com\\/cities\\/[^\"'\\s]+"
+      ]
+    },
+    {
+      "name": "ayat astoria",
+      "website": "https://www.ayatnyc.com/location/astoria/?utm_source=google&utm_medium=organic&utm_campaign=gbp-profile%20&utm_content=ast",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "grand vin",
+      "website": "http://grandvinhoboken.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "antonio's trattoria",
+      "website": "http://www.antoniostrattoria.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Afetch%2Cenv%3Ap",
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fdenovo"
+      ]
+    },
+    {
+      "name": "forma pasta factory",
+      "website": "https://www.formapasta.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "angelina's ristorante",
+      "website": "http://angelinasristorante.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "bubba gump shrimp co.",
+      "website": "https://www.bubbagump.com/location/bubba-gump-new-york-ny/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "cedric's at the shed",
+      "website": "http://www.cedricsattheshed.com/?utm_source=GoogleBusinessProfile&utm_medium=Website&utm_campaign=MapLabs",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "claudy's kitchen",
+      "website": "http://www.claudys.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "concrete",
+      "website": "http://concrete-brooklyn.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "evelyn's kitchen",
+      "website": "http://www.evelyns-kitchen.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "hair of the dog",
+      "website": "https://www.hairofthedognyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "mighty quinn's barbeque",
+      "website": "http://mightyquinnsbbq.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "mito asian fusion",
+      "website": "http://themito.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "patricia's",
+      "website": "https://www.patrizias.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "patrizia's of williamsburg",
+      "website": "http://www.patrizias.com/location/brooklyn/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "samurai sushi",
+      "website": "http://www.njsamurai.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "tartinery",
+      "website": "http://www.tartinery.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "the wren",
+      "website": "http://www.thewrennyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "sushi 456",
+      "website": "http://sushi456.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "the migrant kitchen",
+      "website": "http://www.themigrantkitchen.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "nota bene",
+      "website": "http://notabenebrooklyn.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "steak frites bistro",
+      "website": "http://www.steakfritesbistro.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "cruz del sur",
+      "website": "http://www.delsurnyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "flyfish club",
+      "website": "https://www.flyfishclub.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "monkey thief",
+      "website": "https://www.monkeythiefbar.com",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "n/a",
+      "website": "https://www.anerestaurant.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "august gatherings",
+      "website": "http://www.augustgatheringsny.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fmade-i"
+      ]
+    },
+    {
+      "name": "ayat bushwick",
+      "website": "https://www.ayatnyc.com/location/bushwick/?utm_source=google&utm_medium=organic&utm_campaign=gbp-profile%20&utm_content=bus",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "wilfie & nell",
+      "website": "http://www.wilfieandnell.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "anytime kitchen",
+      "website": "https://www.anytimenyc.com/",
+      "signals": [
+        "link: http://resy.com/link?venue_id=81195"
+      ]
+    },
+    {
+      "name": "leo's grandevous",
+      "website": "http://www.leosgrandevous.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "o",
+      "website": "http://ocafenyc.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fninos-"
+      ]
+    },
+    {
+      "name": "h",
+      "website": "http://www.thehughnyc.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Folivia"
+      ]
+    },
+    {
+      "name": "sushi katsuei brooklyn",
+      "website": "https://www.sushikatsuei.com/parkslope-brooklyn-ny",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fsonoma"
+      ]
+    },
+    {
+      "name": "Veeraswamy",
+      "website": "http://veerays.com",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab"
+      ]
+    },
+    {
+      "name": "crunchy's",
+      "website": "https://order.toasttab.com/online/crunchys-kosher-brooklyn",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab"
+      ]
+    },
+    {
+      "name": "pier 17",
+      "website": "https://rooftopatpier17.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab"
+      ]
+    },
+    {
+      "name": "el gallo taqueria",
+      "website": "http://elgallobk.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://session-replay.browser-intake-datadoghq.com/api/v2/replay?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Ab",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fthe-ro"
+      ]
+    },
+    {
+      "name": "Mughlai Grill",
+      "website": "https://www.mughlaigrillny.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Bowery Road",
+      "website": "https://www.boweryroad.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "nerina",
+      "website": "http://www.nerinanyc.com",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "naks",
+      "website": "https://www.naks.nyc",
+      "signals": [
+        "link: https://blog.resy.com/2025/03/best-dishes-naks-nyc/"
+      ]
+    },
+    {
+      "name": "Shaw Naes House",
+      "website": "https://www.shawnaeshouse.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "Sweet Chick Queens",
+      "website": "https://www.sweetchick.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "Inday - Midtown",
+      "website": "http://indayallday.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Han Dynasty - UWS",
+      "website": "https://www.handynasty.net/location/han-dynasty-upper-west-side/",
+      "signals": [
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "Inday  Nomad",
+      "website": "http://indayallday.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Sushi by Bou Ani Ramen",
+      "website": "https://sushibybou.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Taco Azul",
+      "website": "http://www.tacoazulny.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Havana Restaurant",
+      "website": "https://www.havanacentral.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Sushi by Bou Westchester Place",
+      "website": "https://www.sushibybou.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Umai Sushi & Steak House",
+      "website": "https://www.umaisushinj.com/",
+      "signals": [
+        "link: https://widgets.resy.com/images/resy-book-now-en.svg",
+        "html: widgets\\.resy\\.com",
+        "network: https://widgets.resy.com/embed.js"
+      ]
+    },
+    {
+      "name": "Roman Gourmet",
+      "website": "https://www.badromannyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "1958 Cuban Cuisine",
+      "website": "https://www.havanacentral.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "Tandoor Restaurant & Kitchen",
+      "website": "http://tandooroven.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "casa mono / bar jamon",
+      "website": "http://www.casamononyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "the brewery bar & kitchen",
+      "website": "http://www.thebrewery.nyc/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "mom's kitchen & bar",
+      "website": "https://www.eatatmomsnyc.com/",
+      "signals": [
+        "html: widgets\\.resy\\.com"
+      ]
+    },
+    {
+      "name": "katz's delicatessen",
+      "website": "https://katzsdelicatessen.com/",
+      "signals": [
+        "network: https://rum.browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&ddtags=sdk_version%3A4.50.1%2Capi%3Abeacon%2Cenv%3A",
+        "network: https://www.google.com/ccm/collect?frm=0&en=page_view&dl=https%3A%2F%2Fresy.com%2Fcities%2Fnew-york-ny%2Fvenues%2Fcourt-"
+      ]
+    }
+  ],
+  "errors": []
+}

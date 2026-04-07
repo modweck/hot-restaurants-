@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const puppeteer = require('puppeteer');
 
 const fetch = (...args) => {
   if (typeof globalThis.fetch === 'function') return globalThis.fetch(...args);
@@ -33,7 +34,7 @@ function getArg(name, defaultVal) {
 const QUICK_MODE = args.includes('--quick');
 const CHECK_ALL  = args.includes('--all');
 const PARTY_SIZE = parseInt(getArg('party', '2'), 10);
-const TODAY      = new Date().toISOString().split('T')[0];
+const TODAY      = getArg('date', null) || (() => { const d = new Date(); d.setDate(d.getDate() + 1); return d.toISOString().split('T')[0]; })();
 
 // ── Files ─────────────────────────────────────────────────────────────────────
 const MASTER_FILE   = path.join(__dirname, 'BOOKING_MASTER.json');
@@ -111,7 +112,7 @@ function buildTimeFlags(slots) {
 // ── Resy tokens ──────────────────────────────────────────────────────────────
 const RESY_API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 const RESY_TOKENS = [
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzg4NjcyMTgsInVpZCI6NjQ2NDA0MzcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTMyNTg0MDZ9fQ.AbIb4_1fzODDTl7V4f7jpGRLurhHJ4dmYrDJY5VNqfonj8fGXTGDvm6QFD2DK8woHToIGR7esllXerxRL0x9cuQNAf2C7KrBseDuAQc0U-J-Hf2xub26Fh-CYRsF1ZQ-bc2TqylKGkhtrdImXz6qLy1sXiyH938NbR1nIJTNzT-_CYdv',
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk0MDczOTEsInVpZCI6Mzk4MTc5NDYsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxMzE1NzU1OTh9fQ.AN9bvDSJhN41QD4qtXmyJJl6zopWWjCp7X12plmGyKf9s8_AFBdEBkF5uY2FJe6_KJ_WyBnrIVw2-lHkLvogVFN5APP0XXEoEenKBvmmgKA30lEeM1vJRY1LBLkKYYQ_1Ktb54No6aHlCeRXG6Cu1MAudtuRgxgQl4iJinqyEx8M6r68',
 ];
 let tokenIdx = 0;
 function getHeaders() {
@@ -143,8 +144,10 @@ async function fetchSlots(venueId, slug, date, partySize) {
     });
     if (resp.ok) {
       const data = await resp.json();
-      const slots = data?.results?.venues?.[0]?.slots || [];
-      return slots.map(s => ({ time: s.date?.start || s.date?.end || '', type: s.config?.type || 'dining_room' }));
+      const venue = data?.results?.venues?.[0];
+      if (!venue) return null; // venue not found in results — API error, not "booked"
+      const slots = venue.slots || [];
+      return { slots: slots.map(s => ({ time: s.date?.start || s.date?.end || '', type: s.config?.type || 'dining_room' })), venueName: venue.venue?.name };
     }
   } catch {}
 
@@ -155,12 +158,77 @@ async function fetchSlots(venueId, slug, date, partySize) {
     const resp = await fetch(url, { headers: getHeaders(), signal: AbortSignal.timeout(10000) });
     if (resp.ok) {
       const data = await resp.json();
-      const slots = data?.results?.venues?.[0]?.slots || [];
-      return slots.map(s => ({ time: s.date?.start || s.date?.end || '', type: s.config?.type || 'dining_room' }));
+      const venue = data?.results?.venues?.[0];
+      if (!venue) return null;
+      const slots = venue.slots || [];
+      return { slots: slots.map(s => ({ time: s.date?.start || s.date?.end || '', type: s.config?.type || 'dining_room' })), venueName: venue.venue?.name };
     }
   } catch {}
 
   return null;
+}
+
+// ── Puppeteer fallback ───────────────────────────────────────────────────────
+let browser = null;
+
+async function launchBrowser() {
+  if (browser) return browser;
+  browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-blink-features=AutomationControlled'] });
+  return browser;
+}
+
+async function fetchSlotsViaPuppeteer(slug, date, partySize) {
+  try {
+    const b = await launchBrowser();
+    const page = await b.newPage();
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    });
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36');
+
+    const url = `https://resy.com/cities/ny/${slug}?date=${date}&seats=${partySize}`;
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 });
+    await sleep(3000);
+
+    const result = await page.evaluate(() => {
+      const text = document.body?.innerText || '';
+      if (text.includes('Access Denied') || text.includes('404') || text.length < 200) return null;
+
+      // Look for time slot buttons
+      const buttons = Array.from(document.querySelectorAll('button[data-test="time-slot"], button.ReservationButton, [class*="TimeSlot"], [class*="timeslot"]'));
+      const times = [];
+      for (const btn of buttons) {
+        const t = btn.textContent.trim();
+        const m = t.match(/(\d{1,2}:\d{2}\s*[AP]M)/i);
+        if (m) times.push(m[1]);
+      }
+
+      // Also try grabbing from any text that looks like time slots
+      if (times.length === 0) {
+        const allTimes = text.match(/\d{1,2}:\d{2}\s*[AP]M/gi) || [];
+        for (const t of [...new Set(allTimes)]) times.push(t);
+      }
+
+      return { times, pageLen: text.length };
+    });
+
+    await page.close();
+
+    if (!result) return null;
+
+    const slots = result.times.map(t => {
+      const m = t.match(/(\d{1,2}):(\d{2})\s*([AP]M)/i);
+      if (!m) return null;
+      let h = parseInt(m[1]); const min = parseInt(m[2]);
+      if (m[3].toUpperCase() === 'PM' && h !== 12) h += 12;
+      if (m[3].toUpperCase() === 'AM' && h === 12) h = 0;
+      return { time: `${date} ${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}:00`, type: 'dining_room' };
+    }).filter(Boolean);
+
+    return { slots, venueName: null, viaPuppeteer: true };
+  } catch (e) {
+    return null;
+  }
 }
 
 // ── Resolve venue ID ──────────────────────────────────────────────────────────
@@ -234,21 +302,34 @@ async function main() {
 
   for (let i = 0; i < list.length; i++) {
     const name = list[i];
-    const key = name.toLowerCase();
+    // Find the actual key in output (case-insensitive) to avoid duplicates
+    const key = Object.keys(output).find(k => k.toLowerCase() === name.toLowerCase()) || name.toLowerCase();
     const lookupEntry = getLookupEntry(name);
     const slug = extractResySlug(lookupEntry?.url);
     if (!slug) { p1_fail++; continue; }
 
     const venueId = await resolveVenueId(slug, lookupEntry);
-    const slots = await fetchSlots(venueId, slug, TODAY, PARTY_SIZE);
+    let result = await fetchSlots(venueId, slug, TODAY, PARTY_SIZE);
 
-    if (slots === null) {
-      p1_fail++;
-      console.log(`  ❌ [${i+1}/${list.length}] ${name}: API error`);
-      await sleep(3000);
-      continue;
+    // Retry once with longer delay if API returns null
+    if (result === null) {
+      await sleep(5000);
+      result = await fetchSlots(venueId, slug, TODAY, PARTY_SIZE);
     }
 
+    // Puppeteer fallback if API still fails
+    if (result === null) {
+      console.log(`  ⚠️  [${i+1}/${list.length}] ${name}: API failed, trying Puppeteer...`);
+      result = await fetchSlotsViaPuppeteer(slug, TODAY, PARTY_SIZE);
+    }
+
+    if (result === null) {
+      p1_fail++;
+      console.log(`  ❌ [${i+1}/${list.length}] ${name}: API + Puppeteer both failed`);
+      await sleep(8000);
+      continue;
+    }
+    const slots = result.slots || [];
     const dinnerSlots = slots.filter(s => {
       const h = slotToHour(s.time);
       return h !== null && h >= 17 && h < 23;
@@ -270,6 +351,7 @@ async function main() {
       : buildTimeFlags(slots);
 
     // Update output
+    if (!output[key]) output[key] = {};
     output[key].tier = tier;
     output[key].dinner_slots = dinnerSlots;
     output[key].early = windows.early;
@@ -296,7 +378,7 @@ async function main() {
       console.log(`    💾 Progress saved`);
     }
 
-    await sleep(3000);
+    await sleep(7000);
   }
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
@@ -326,16 +408,34 @@ async function main() {
 
     for (let i = 0; i < futureList.length; i++) {
       const name = futureList[i];
-      const key = name.toLowerCase();
+      const key = Object.keys(output).find(k => k.toLowerCase() === name.toLowerCase()) || name.toLowerCase();
       const lookupEntry = getLookupEntry(name);
       const slug = extractResySlug(lookupEntry?.url);
       if (!slug) { apiFailed++; continue; }
 
       const venueId = await resolveVenueId(slug, lookupEntry);
       if (!venueId) {
-        apiFailed++;
-        console.log(`  ❌ [${i+1}/${futureList.length}] ${name}: no venue ID`);
-        await sleep(3000);
+        // No venue ID — try Puppeteer for each future date
+        console.log(`  ⚠️  [${i+1}/${futureList.length}] ${name}: no venue ID, trying Puppeteer...`);
+        let puppeteerOpensIn = null;
+        for (const offset of OFFSETS) {
+          const fResult = await fetchSlotsViaPuppeteer(slug, futureDate(offset), PARTY_SIZE);
+          if (fResult && fResult.slots.length > 0) {
+            const dinnerSlots = fResult.slots.filter(s => { const h = slotToHour(s.time); return h !== null && h >= 17 && h < 23; });
+            if (dinnerSlots.length > 0) { puppeteerOpensIn = offset; break; }
+          }
+          await sleep(5000);
+        }
+        if (puppeteerOpensIn) {
+          if (!output[key]) output[key] = {};
+          output[key].opens_in = puppeteerOpensIn;
+          hasFuture++;
+          console.log(`  🟢 [${i+1}/${futureList.length}] ${name}: opens in +${puppeteerOpensIn}d (via Puppeteer)`);
+        } else {
+          apiFailed++;
+          console.log(`  ❌ [${i+1}/${futureList.length}] ${name}: no venue ID + Puppeteer failed`);
+        }
+        await sleep(5000);
         continue;
       }
 
@@ -419,6 +519,8 @@ async function main() {
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
     console.log(`\n📊 Phase 2 Results: 🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}  ⚪ Not bookable: ${notBookable}  ❌ Failed: ${apiFailed}`);
   }
+
+  if (browser) await browser.close();
 
   console.log(`\n${'═'.repeat(45)}`);
   console.log(`✅ Done!`);
