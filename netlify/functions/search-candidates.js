@@ -90,6 +90,22 @@ try {
     }
     if (otMerged) console.log(`✅ Merged OT availability: ${otMerged} restaurants`);
   } catch(e) {}
+  // Merge Google Reserve availability — overrides false "booked" from OT/Resy
+  try {
+    const googleAvail = JSON.parse(fs.readFileSync(path.join(__dirname, 'tonight_availability_google.json'), 'utf8'));
+    let googleMerged = 0;
+    for (const [name, val] of Object.entries(googleAvail)) {
+      if (name.startsWith('_')) continue;
+      const key = name.toLowerCase();
+      const existing = AVAILABILITY_BOOK[key];
+      // Override if: no existing data, or existing says booked but Google says open/limited
+      if (!existing || (existing.tier === 'booked' && (val.tier === 'open' || val.tier === 'limited'))) {
+        AVAILABILITY_BOOK[key] = val;
+        googleMerged++;
+      }
+    }
+    if (googleMerged) console.log(`✅ Merged Google Reserve availability: ${googleMerged} restaurants`);
+  } catch(e) {}
 } catch (err) { console.warn('⚠️ Availability book missing:', err.message); }
 
 // Build normalized availability lookup for fuzzy name matching
