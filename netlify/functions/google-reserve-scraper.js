@@ -620,17 +620,142 @@ async function phase2(reserveIds) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// PHASE 3: Check future availability for booked restaurants (+3, +7, +14 days)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const PHASE3_ONLY = args.includes('--phase3');
+const FUTURE_DAYS = [3, 7, 14];
+
+async function phase3() {
+  console.log(`\n═══ PHASE 3: Future availability for booked restaurants ═══\n`);
+
+  // Load reserve IDs
+  let reserveIds = {};
+  try { reserveIds = JSON.parse(fs.readFileSync(RESERVE_ID_FILE, 'utf8')); } catch {
+    console.error('❌ No reserve IDs found. Run phase1 + phase2 first.');
+    return;
+  }
+
+  // Load tonight's availability — find booked restaurants
+  let tonight = {};
+  try { tonight = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')); } catch {
+    console.error('❌ No tonight availability found. Run phase2 first.');
+    return;
+  }
+
+  const bookedRestaurants = Object.entries(tonight)
+    .filter(([k, v]) => !k.startsWith('_') && v.tier === 'booked' && v.reserve_id)
+    .map(([name, v]) => ({ name, reserveId: v.reserve_id }));
+
+  console.log(`🔴 Found ${bookedRestaurants.length} booked restaurants to check future dates`);
+
+  if (bookedRestaurants.length === 0) {
+    console.log('✅ Nothing to check!');
+    return;
+  }
+
+  let browser = await launchBrowser();
+  let page = await setupPage(browser);
+  let foundFuture = 0;
+
+  for (let i = 0; i < bookedRestaurants.length; i++) {
+    const r = bookedRestaurants[i];
+
+    if (i > 0 && i % BROWSER_RESTART_EVERY === 0) {
+      console.log(`\n  🔄 Restarting browser (${i}/${bookedRestaurants.length})...\n`);
+      await page.close().catch(() => {});
+      await browser.close().catch(() => {});
+      await sleep(2000);
+      browser = await launchBrowser();
+      page = await setupPage(browser);
+    }
+
+    let opensIn = null;
+
+    for (const days of FUTURE_DAYS) {
+      const futureDate = new Date();
+      futureDate.setDate(futureDate.getDate() + days);
+      const futureDateStr = futureDate.toISOString().split('T')[0];
+      const futureDateCompact = futureDateStr.replace(/-/g, '');
+
+      // Temporarily override the date for scraping
+      const url = `https://www.google.com/maps/reserve/v/dine/c/${r.reserveId}?hl=en-US&ps=${PARTY_SIZE}&ld=${futureDateCompact}T190000`;
+
+      try {
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+        await sleep(2000);
+
+        const hasSlots = await page.evaluate(() => {
+          const text = document.body.innerText;
+          const noAvail = text.includes('No availability') || text.includes('no tables') ||
+                          text.includes('fully booked') || text.includes('No times available') ||
+                          text.includes('not available');
+          if (noAvail) return false;
+
+          // Check for time slot buttons
+          const allEls = document.querySelectorAll('button, a, [role="option"], [role="button"]');
+          for (const el of allEls) {
+            const t = el.textContent.trim();
+            if (/^\d{1,2}:\d{2}\s*[AP]M$/i.test(t) && !el.disabled) return true;
+          }
+          return false;
+        });
+
+        if (hasSlots) {
+          opensIn = days;
+          break; // Found the earliest future date with availability
+        }
+      } catch (e) {
+        if (DEBUG) console.log(`    ⚠️  ${r.name} +${days}d: ${e.message?.slice(0, 50)}`);
+      }
+
+      await sleep(randomDelay(1500, 3000));
+    }
+
+    if (opensIn) {
+      tonight[r.name].opens_in = opensIn;
+      foundFuture++;
+      console.log(`  🟢 ${i + 1}/${bookedRestaurants.length} ${r.name} → opens in +${opensIn}d`);
+    } else {
+      tonight[r.name].fully_locked = true;
+      console.log(`  ⚫ ${i + 1}/${bookedRestaurants.length} ${r.name} → fully booked (checked +${FUTURE_DAYS.join(', +')}d)`);
+    }
+
+    // Save every 10
+    if ((i + 1) % 10 === 0) {
+      fs.writeFileSync(OUTPUT_FILE, JSON.stringify(tonight, null, 2));
+    }
+
+    await sleep(randomDelay(2000, 4000));
+  }
+
+  // Final save
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(tonight, null, 2));
+
+  await page.close().catch(() => {});
+  await browser.close().catch(() => {});
+
+  console.log(`\n✅ Phase 3 done!`);
+  console.log(`   🟢 Opens in future: ${foundFuture}`);
+  console.log(`   ⚫ Fully locked: ${bookedRestaurants.length - foundFuture}`);
+  console.log(`   📁 Updated ${OUTPUT_FILE}`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // MAIN
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function main() {
-  if (PHASE2_ONLY) {
+  if (PHASE3_ONLY) {
+    await phase3();
+  } else if (PHASE2_ONLY) {
     await phase2(null);
   } else if (PHASE1_ONLY) {
     await phase1();
   } else {
     const reserveIds = await phase1();
     await phase2(reserveIds);
+    await phase3();
   }
 }
 

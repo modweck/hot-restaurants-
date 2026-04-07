@@ -1051,8 +1051,7 @@
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
         <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
-          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">All</button>
+          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">Restaurants</button>
           <button class="hero-tab active">Drinks</button>
         </div>
       </div>
@@ -1295,25 +1294,22 @@
 
   </div><!-- /view-drinks -->
 
-  <!-- FOOTER LINKS -->
-  <div style="display:flex;justify-content:center;gap:16px;padding:12px 20px;background:#f7f5f2;border-top:1px solid rgba(0,0,0,.06)">
-    <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
-    <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
-    <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
-    <a href="privacy.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Privacy</a>
-  </div>
-
   <!-- ═══════════════════════════════════════════════════════ SEARCH VIEW -->
   <div class="view" id="view-restsearch" style="background:#f7f5f2;min-height:100vh">
     <div style="padding:20px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
-        <button onclick="closeRestSearch()" style="background:none;border:none;font-size:16px;cursor:pointer;padding:8px;color:#1a1a2e;font-family:'DM Sans',sans-serif;font-weight:700">← Back</button>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1a1a2e">Search Restaurants</div>
-      </div>
+      <button onclick="closeRestSearch()" style="background:none;border:none;font-size:14px;cursor:pointer;padding:6px 0;color:#1a1a2e;font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:12px;display:block">← Back</button>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:16px">Search Restaurants</div>
       <div style="position:relative">
         <input type="text" id="arRestInput" class="finput" placeholder="Type a restaurant name..." autocomplete="off" oninput="_restAutocomplete(this.value,'arRestAutoList')" style="font-size:16px;padding:14px 16px">
         <div id="arRestAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.06);border-top:none;border-radius:0 0 14px 14px;max-height:400px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.08)"></div>
       </div>
+    </div>
+    <!-- Footer -->
+    <div style="position:fixed;bottom:70px;left:0;right:0;text-align:center;padding:12px 20px;display:flex;gap:16px;justify-content:center">
+      <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
+      <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
+      <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
+      <a href="privacy.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Privacy</a>
     </div>
   </div>
 
@@ -1618,19 +1614,18 @@ function switchNav(name) {
 }
 
 function syncHeroTabs(activeView) {
-  // Map view name to tab index (0=hotspots, 1=allrestaurants, 2=drinks)
-  const tabMap = { home: 0, hotspots: 0, allrestaurants: 1, drinks: 2 };
-  const activeIdx = tabMap[activeView] ?? 0;
-  document.querySelectorAll('.hero-tabs .hero-tab').forEach((btn, i) => {
-    const tabGroup = Math.floor(i / 3); // group by sets of 3
-    const posInGroup = i % 3;
-    btn.classList.toggle('active', posInGroup === activeIdx);
-  });
-  // Also sync the home hero-tab buttons by ID
-  const ids = ['ht-hotspots', 'ht-all', 'ht-drinks'];
-  ids.forEach((id, i) => {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('active', i === activeIdx);
+  const isRest = activeView === 'allrestaurants' || activeView === 'home' || activeView === 'hotspots';
+  const isDrinks = activeView === 'drinks';
+  document.querySelectorAll('.hero-tabs').forEach(group => {
+    const btns = group.querySelectorAll('.hero-tab');
+    btns.forEach(btn => {
+      const text = btn.textContent.trim().toLowerCase();
+      if (text === 'restaurants' || text === 'all' || text === 'hot spots') {
+        btn.classList.toggle('active', isRest);
+      } else if (text === 'drinks') {
+        btn.classList.toggle('active', isDrinks);
+      }
+    });
   });
 }
 

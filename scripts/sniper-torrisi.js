@@ -13,7 +13,7 @@ const { execSync } = require('child_process');
 // ── Config ──
 const VENUE_SLUG = 'torrisi';
 const VENUE_ID = 64593;
-const TARGET_DATE = '2026-05-07';
+const TARGET_DATE = '2026-05-06';
 const PARTY_SIZE = 2;
 const DROP_HOUR = 10;
 const DROP_MINUTE = 0;
@@ -80,27 +80,23 @@ async function apiFind() {
     if (!slots.length) return { found: false, slotCount: 0, ms: Date.now() - t0 };
 
     let pick = null;
-    const PREFER_HOUR = 21; // prefer 9 PM
-    const PREFER_MIN = 0;
-    const preferMins = PREFER_HOUR * 60 + PREFER_MIN;
-    const MIN_HOUR = 17; // earliest acceptable: 5 PM
-    const minMins = MIN_HOUR * 60;
+    const TARGET_HOUR = 17;
+    const TARGET_MIN = 30;
+    const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
+    const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
 
-    // Log ALL slots so we can see what dropped
-    log(`   ALL SLOTS: ${slots.map(s => (s.date?.start || '').match(/\d{2}:\d{2}/)?.[0] || '?').join(', ')}`);
+    // Priority 1: exact 5:30 PM
+    for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 1: exact 9:00 PM
-    for (const s of slots) { if ((s.date?.start || '').includes('21:00')) { pick = s; break; } }
-
-    // Priority 2: any slot 5pm or later, closest to 9pm
+    // Priority 2: any slot 5:30pm or later, closest to 5:30pm
     if (!pick) {
       const evening = slots.filter(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= minMins;
+        return hm && (parseInt(hm[1]) * 60 + parseInt(hm[2])) >= 1050;
       }).sort((a, b) => {
         const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
         const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - preferMins) - Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - preferMins);
+        return Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - targetMins) - Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - targetMins);
       });
       if (evening.length) pick = evening[0];
     }
@@ -165,7 +161,7 @@ async function apiBook(bookToken) {
 
 async function main() {
   log('TORRISI SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 5:00 PM+, prefer 9:00 PM`);
+  log(`   Target: ${TARGET_DATE} — 5:30 PM+ only (no early slots)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log('');
@@ -205,8 +201,8 @@ async function main() {
   await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 30000 });
   log('Browser ready');
 
-  // Wait until 2min before drop to solve captchas
-  const solveAt = new Date(drop.getTime() - 120000);
+  // Wait until 3min before drop to solve first batch of captchas
+  const solveAt = new Date(drop.getTime() - 180000);
   if (solveAt > new Date()) {
     log('Waiting to solve captchas...');
     while (new Date() < solveAt) {
@@ -217,24 +213,41 @@ async function main() {
     }
   }
 
-  // ── PHASE 0: Pre-solve captchas ──
-  log('PHASE 0: Solving 2 captchas in parallel...');
+  // ── PHASE 0: Pre-solve captchas in 2 waves ──
+  // Wave 1: 4 captchas ~3min before drop
+  log('PHASE 0: Wave 1 — solving 4 captchas in parallel...');
   const solveStart = Date.now();
 
-  const [token1, token2] = await Promise.all([
+  const wave1 = await Promise.all([
     solveCaptcha().then(t => { log(`   Captcha 1: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
     solveCaptcha().then(t => { log(`   Captcha 2: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 3: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 4: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solveStart) / 1000).toFixed(0)}s)`); return t; }),
   ]);
 
-  const captchaTokens = [token1, token2].filter(Boolean);
+  // Wave 2: 2 fresh captchas ~90s before drop (these will be freshest at drop time)
+  const wave2At = new Date(drop.getTime() - 90000);
+  if (wave2At > new Date()) {
+    log('Waiting for wave 2...');
+    while (new Date() < wave2At) await sleep(1000);
+  }
+  log('PHASE 0: Wave 2 — solving 2 fresh captchas...');
+  const solve2Start = Date.now();
+  const wave2 = await Promise.all([
+    solveCaptcha().then(t => { log(`   Captcha 5: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solve2Start) / 1000).toFixed(0)}s)`); return t; }),
+    solveCaptcha().then(t => { log(`   Captcha 6: ${t ? 'READY' : 'FAILED'} (${((Date.now() - solve2Start) / 1000).toFixed(0)}s)`); return t; }),
+  ]);
+
+  // Freshest tokens first (wave 2), then wave 1
+  const captchaTokens = [...wave2, ...wave1].filter(Boolean);
   log(`${captchaTokens.length} captcha token(s) ready`);
 
   if (captchaTokens.length === 0) {
-    log('Both captchas failed — will try without + browser fallback');
+    log('All captchas failed — will try without + browser fallback');
   }
 
   // Wait until 500ms before drop
-  const startAt = drop.getTime() - 1500;
+  const startAt = drop.getTime() - 500;
   if (startAt > Date.now()) {
     log('Waiting for drop...');
     while (Date.now() < startAt) {
