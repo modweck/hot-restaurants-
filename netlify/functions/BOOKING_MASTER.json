@@ -453,8 +453,8 @@
     "inkind": true
   },
   "exquisite restaurant": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=exquisite+restaurant&query_place_id=ChIJ58OtM8pZwokRbd6DT6gcVys",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/exquisite-restaurant",
     "lat": 40.7626274,
     "lng": -73.98084109999999,
     "google_rating": 4.6,
@@ -470,10 +470,8 @@
     ],
     "price": 2,
     "address": "145 W 53rd St, New York, NY 10019, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=exquisite+restaurant&query_place_id=ChIJ58OtM8pZwokRbd6DT6gcVys",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "GpKVO0oMUPE"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/exquisite-restaurant"
   },
   "new york city center": {
     "platform": "opentable",
@@ -6705,8 +6703,8 @@
     "address": "114 Franklin St, New York, NY 10013, USA"
   },
   "babylon": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=babylon&query_place_id=ChIJibGCxZVZwokR6Nv6NWFWQRg",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/babylon",
     "lat": 40.745317,
     "lng": -73.9778439,
     "google_rating": 5,
@@ -6724,9 +6722,8 @@
     "price": 2,
     "price_estimated": true,
     "address": "206 E 34th St, New York, NY 10016, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=babylon&query_place_id=ChIJibGCxZVZwokR6Nv6NWFWQRg",
-    "reserve_id": "9VB1ajxOBwU"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/babylon"
   },
   "landmark cevicheria": {
     "platform": "opentable",
@@ -17076,8 +17073,8 @@
     "address": "231 Kent Ave, Brooklyn, NY 11249"
   },
   "cactus restaurant": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=cactus+restaurant&query_place_id=ChIJ_dEen79ZwokRCcfpTzsSprc",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/cactus-restaurant",
     "lat": 40.7167388,
     "lng": -73.9654223,
     "google_rating": 4.8,
@@ -17095,10 +17092,8 @@
     "price": 2,
     "address": "231 Kent Ave, Brooklyn, NY 11249",
     "opentable_url": "https://www.opentable.com/r/cactus-restaurant",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=cactus+restaurant&query_place_id=ChIJ_dEen79ZwokRCcfpTzsSprc",
-    "underlying_platform": "Resy",
-    "reserve_id": "aNoUxaQEZ-4"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/cactus-restaurant"
   },
   "piccola cucina uptown": {
     "platform": "opentable",
@@ -22591,8 +22586,8 @@
     "address": "Mulberry Street, New York City, NY 10013"
   },
   "due amici": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=due+amici&query_place_id=ChIJT82n1x1ZwokRnSciUmzf11Y",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/due-amici",
     "lat": 40.719862,
     "lng": -73.997373,
     "google_rating": 4.5,
@@ -22607,10 +22602,8 @@
     "price": 2,
     "address": "Mulberry Street, New York City, NY 10013",
     "opentable_url": "https://www.opentable.com/r/due-amici",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=due+amici&query_place_id=ChIJT82n1x1ZwokRnSciUmzf11Y",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "59AP1RNc9Ys"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/due-amici"
   },
   "amuni": {
     "platform": "opentable",
@@ -22760,8 +22753,8 @@
     "address": "1500 Broadway Suite 105, New York, NY 10036, USA"
   },
   "animal": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=animal&query_place_id=ChIJbdoPbEZZwokREBWq_EVLfOI",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/animal",
     "lat": 40.7623763,
     "lng": -73.98787279999999,
     "google_rating": 4.6,
@@ -22778,10 +22771,8 @@
     "price": 2,
     "opentable_url": "https://www.opentable.com/r/animal",
     "address": "329 W 49th St, New York, NY 10019, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=animal&query_place_id=ChIJbdoPbEZZwokREBWq_EVLfOI",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "c0ZcG5eNeL0"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/animal"
   },
   "barking dog nyc": {
     "platform": "opentable",
@@ -24039,8 +24030,8 @@
     "address": "200 Park Ave, New York, NY 10166, USA"
   },
   "caribe restaurant": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=caribe+restaurant&query_place_id=ChIJKd-zvbBZwokRbfTwswCdFoA",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/caribe-restaurant",
     "lat": 40.7609107,
     "lng": -73.99030309999999,
     "google_rating": 4.4,
@@ -24059,10 +24050,8 @@
     "bilt_dining": true,
     "bilt_id": "a0e55d38-456f-4a7d-9586-f634888ca871",
     "address": "371 W 46th St, New York, NY 10036, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=caribe+restaurant&query_place_id=ChIJKd-zvbBZwokRbfTwswCdFoA",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "YsrbOa7u6fU"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/caribe-restaurant"
   },
   "jasmine's caribbean cuisine": {
     "platform": "opentable",
@@ -25843,8 +25832,8 @@
     "address": "1325 2nd Ave, New York, NY 10021, USA"
   },
   "famous": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=famous&query_place_id=ChIJt7fMLIlZwokRCRtM9bNDg78",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/famous",
     "lat": 40.722668,
     "lng": -73.99822979999999,
     "google_rating": 4.4,
@@ -25864,10 +25853,8 @@
     "bilt_id": "975c7212-f644-4507-ae05-c055b4fe7220",
     "inkind": true,
     "address": "80 Spring St, New York, NY 10012, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=famous&query_place_id=ChIJt7fMLIlZwokRCRtM9bNDg78",
-    "underlying_platform": "Resy",
-    "reserve_id": "pIirG1wnwJY"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/famous"
   },
   "famous sichuan": {
     "platform": "website",
@@ -26705,8 +26692,8 @@
     "rakuten": true
   },
   "indian summer": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=indian+summer&query_place_id=ChIJy_OuDa73wokRJYCMG8GWan8",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/indian-summer",
     "lat": 40.8058943,
     "lng": -73.9472914,
     "google_rating": 4.5,
@@ -26723,10 +26710,8 @@
     "bilt_dining": true,
     "bilt_id": "8cb501e0-5c24-42ee-b33e-6fa7371eecbf",
     "address": "239 Malcolm X Blvd, New York, NY 10027, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=indian+summer&query_place_id=ChIJy_OuDa73wokRJYCMG8GWan8",
-    "underlying_platform": "Yelp",
-    "reserve_id": "gW_18Yt4THE"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/indian-summer"
   },
   "ippudo ny": {
     "platform": "website",
@@ -28578,8 +28563,8 @@
     "address": "78 5th Ave, Brooklyn, NY 11217, USA"
   },
   "monty's nyc": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=monty's+nyc&query_place_id=ChIJORz6I5JZwokRJG6OtuIZLiU",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/montys-nyc",
     "lat": 40.7295449,
     "lng": -74.0010131,
     "google_rating": 4.4,
@@ -28594,9 +28579,8 @@
     "instagram": "montestrattoria",
     "price": 2,
     "address": "97 MacDougal St, New York, NY 10012, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=monty's+nyc&query_place_id=ChIJORz6I5JZwokRJG6OtuIZLiU",
-    "reserve_id": "LDb5L0JYIaE"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/montys-nyc"
   },
   "morgan's brooklyn barbecue": {
     "platform": "resy",
@@ -30126,8 +30110,8 @@
     "price": 2
   },
   "republica": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=republica&query_place_id=ChIJ1RfMugf0wokR9plYzcTb04Y",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/republica",
     "lat": 40.8636282,
     "lng": -73.9263378,
     "google_rating": 4.5,
@@ -30142,10 +30126,8 @@
     "instagram": "republicanyc",
     "price": 2,
     "address": "160 Dyckman St, New York, NY 10040, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=republica&query_place_id=ChIJ1RfMugf0wokR9plYzcTb04Y",
-    "underlying_platform": "Yelp",
-    "reserve_id": "i5oudgnyW3g"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/republica"
   },
   "riko": {
     "platform": "opentable",
@@ -46553,8 +46535,8 @@
     "address": "502 Amsterdam Ave #504, New York, NY 10024, United States"
   },
   "Santa Fe Restaurant": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=Santa+Fe+Restaurant&query_place_id=ChIJ4dsPCotYwokRdeDFFEWusHQ",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/santa-fe-restaurant",
     "lat": 40.776696199999996,
     "lng": -73.9789614,
     "google_rating": 4.3,
@@ -46571,10 +46553,8 @@
     ],
     "instagram": "santafe71",
     "price": 2,
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Santa+Fe+Restaurant&query_place_id=ChIJ4dsPCotYwokRdeDFFEWusHQ",
-    "underlying_platform": "Resy",
-    "reserve_id": "8uKzfFBRmWk"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/santa-fe-restaurant"
   },
   "barrio chino": {
     "platform": "resy",
@@ -64527,8 +64507,8 @@
     "_vibe_confidence": "low"
   },
   "Paesano of Mulberry Street": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=Paesano+of+Mulberry+Street&query_place_id=ChIJ7ZZgM4hZwokRddMfsLPztpM",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/paesano-of-mulberry-street",
     "lat": 40.7185466,
     "lng": -73.9974466,
     "google_rating": 4.4,
@@ -64544,9 +64524,8 @@
     "instagram": "paesanoofmulberry",
     "price": 2,
     "_vibe_confidence": "low",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Paesano+of+Mulberry+Street&query_place_id=ChIJ7ZZgM4hZwokRddMfsLPztpM",
-    "reserve_id": "PTZSDqxT9w4"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/paesano-of-mulberry-street"
   },
   "Wayan": {
     "platform": "resy",
@@ -71592,7 +71571,7 @@
     "platform": "website"
   },
   "Bobby Van's 230 Park": {
-    "url": "https://www.google.com/maps/search/?api=1&query=Bobby+Van's+230+Park&query_place_id=ChIJSW0wjf1YwokRSDmX1_gp5FI",
+    "url": "https://www.opentable.com/r/bobby-vans-230-park",
     "lat": 40.7544956,
     "lng": -73.9758567,
     "google_rating": 4.5,
@@ -71610,11 +71589,9 @@
     "instagram": "bobbyvans230park",
     "price": 4,
     "ot_slug": "bobby-vans-230-park",
-    "platform": "google_reserve",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Bobby+Van's+230+Park&query_place_id=ChIJSW0wjf1YwokRSDmX1_gp5FI",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "Aw_4-HLkIM0"
+    "platform": "opentable",
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/bobby-vans-230-park"
   },
   "Hop Lee": {
     "url": "http://www.hopleenyc.com/",
@@ -97166,8 +97143,8 @@
     "address": "1626 2nd Ave, New York, NY 10028, USA"
   },
   "Grand View Events": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=Grand+View+Events&query_place_id=ChIJOW7ATVRYwokRV0xbbYDZNm4",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/grand-view-events",
     "lat": 40.7587252,
     "lng": -73.98622,
     "google_rating": 4.5,
@@ -97183,10 +97160,8 @@
       "upscale"
     ],
     "address": "1535 Broadway, New York, NY 10036, USA",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Grand+View+Events&query_place_id=ChIJOW7ATVRYwokRV0xbbYDZNm4",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "X92fWC-6Or8"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/grand-view-events"
   },
   "Il Forno": {
     "platform": "opentable",
@@ -97980,8 +97955,8 @@
     ]
   },
   "estela": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=estela&query_place_id=ChIJf3f-f4VZwokRcBCEciTOGRQ",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/estela-new-york",
     "lat": 40.72468629999999,
     "lng": -73.9947115,
     "google_rating": 4.4,
@@ -98002,12 +97977,10 @@
     ],
     "instagram": "estelanyc",
     "michelin_stars": 1,
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=estela&query_place_id=ChIJf3f-f4VZwokRcBCEciTOGRQ",
-    "booking_platform": "google_reserve",
+    "booking_url": "https://www.opentable.com/r/estela-new-york",
+    "booking_platform": "opentable",
     "michelin_recommended": true,
-    "address": "47 E Houston St 1st floor, New York, NY 10012, USA",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "yyuyQBJaFyw"
+    "address": "47 E Houston St 1st floor, New York, NY 10012, USA"
   },
   "foxy": {
     "platform": "opentable",
@@ -105371,7 +105344,7 @@
   },
   "Ariella's Restaurant": {
     "name": "Ariella's Restaurant",
-    "platform": "google_reserve",
+    "platform": "opentable",
     "bilt_dining": true,
     "bilt_id": "b2251f1b-49c4-43ea-941e-2f4b414e1fa0",
     "address": "710 New Dorp Ln, Staten Island, NY 10306",
@@ -105387,11 +105360,9 @@
       "lively",
       "date_night"
     ],
-    "url": "https://www.google.com/maps/search/?api=1&query=Ariella's+Restaurant&query_place_id=ChIJ0b4ayA5JwokRbZmLk07vS9s",
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Ariella's+Restaurant&query_place_id=ChIJ0b4ayA5JwokRbZmLk07vS9s",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "qC3IsB2206U"
+    "url": "https://www.opentable.com/r/ariellas-restaurant",
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/ariellas-restaurant"
   },
   "Don Chicken Verona": {
     "name": "Don Chicken Verona",
@@ -115576,8 +115547,8 @@
     "price": 2
   },
   "White Oak Tavern": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=White+Oak+Tavern&query_place_id=ChIJ3zjtdppZwokRhZZwPc4gsj0",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/white-oak-tavern",
     "cuisine": "\u2022 Contemporary American \u2022 Greenwich Village",
     "google_rating": 4.6,
     "google_reviews": 1716,
@@ -115587,10 +115558,8 @@
     "lng": -73.99461339999999,
     "website": "https://www.whiteoakny.com/",
     "price": 2,
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=White+Oak+Tavern&query_place_id=ChIJ3zjtdppZwokRhZZwPc4gsj0",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "X2iSpJSIEY0"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/white-oak-tavern"
   },
   "Ruta Oaxaca - Brooklyn": {
     "platform": "opentable",
@@ -119794,8 +119763,8 @@
     "website": "https://www.seedlibrarynyc.com/"
   },
   "DOUGH by Licastri Silver Lake": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=DOUGH+by+Licastri+Silver+Lake&query_place_id=ChIJ7xcxcYZPwokR8_2U_12tP2E",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/dough-by-licastri-silver-lake",
     "cuisine": "\u2022 American \u2022 Clifton",
     "google_rating": 4.6,
     "google_reviews": 145,
@@ -119805,10 +119774,8 @@
     "lng": -74.0993573,
     "website": "https://doughsilverlake.com/",
     "price": 2,
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=DOUGH+by+Licastri+Silver+Lake&query_place_id=ChIJ7xcxcYZPwokR8_2U_12tP2E",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "jGJAAOTW_Bc"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/dough-by-licastri-silver-lake"
   },
   "Queensyard": {
     "platform": "opentable",
@@ -121096,8 +121063,8 @@
     "price": 2
   },
   "Corrado's Cucina": {
-    "platform": "google_reserve",
-    "url": "https://www.google.com/maps/search/?api=1&query=Corrado's+Cucina&query_place_id=ChIJcYdYrqVLwokRzs2cBgkcUDk",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/corrados-cucina",
     "cuisine": "\u2022 Italian \u2022 Great Kills",
     "google_rating": 4.8,
     "google_reviews": 940,
@@ -121107,10 +121074,8 @@
     "lng": -74.1686486,
     "website": "http://www.corradoscucina.com/",
     "price": 2,
-    "booking_platform": "google_reserve",
-    "booking_url": "https://www.google.com/maps/search/?api=1&query=Corrado's+Cucina&query_place_id=ChIJcYdYrqVLwokRzs2cBgkcUDk",
-    "underlying_platform": "OpenTable",
-    "reserve_id": "rFbWNrN76Jk"
+    "booking_platform": "opentable",
+    "booking_url": "https://www.opentable.com/r/corrados-cucina"
   },
   "Holiday Cocktail Lounge": {
     "platform": "opentable",
