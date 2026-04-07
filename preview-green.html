@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>SeatWize</title>
+  <title>SeatWize — Deep Green + Cream</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
@@ -45,7 +42,6 @@
     .fchip{padding:7px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .2s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
     .fchip.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
     .fchip:active,.fchip:hover:not(.on){border-color:rgba(0,0,0,.15);color:#333;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
-    .fchip.price-chip{padding:7px 10px;font-size:12px;font-weight:700;border-radius:10px;letter-spacing:-.3px}
 
     /* TRENDING SECTION box */
     .trending-box{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 2px 16px rgba(0,0,0,0.04)}
@@ -57,9 +53,9 @@
     .radius-btn:active{opacity:.7}
 
     /* COLLAPSIBLE ADVANCED FILTERS */
-    .adv-filters-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 20px;border:none;border-radius:20px;background:#d4a373;color:#fff;cursor:pointer;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif;transition:all .2s;margin-bottom:12px;box-shadow:0 2px 8px rgba(212,163,115,0.25)}
-    .adv-filters-toggle:hover{opacity:.9}
-    .adv-filters-toggle.open{background:#c4935f;color:#fff}
+    .adv-filters-toggle{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:10px;border:1px dashed rgba(0,0,0,0.12);border-radius:12px;background:transparent;cursor:pointer;font-size:12px;font-weight:700;color:#888;font-family:'DM Sans',sans-serif;transition:all .2s;margin-bottom:12px}
+    .adv-filters-toggle:hover{border-color:rgba(0,0,0,.2);color:#555}
+    .adv-filters-toggle.open{border-style:solid;border-color:rgba(0,0,0,.08);color:#666}
     .adv-filters-toggle .toggle-arrow{transition:transform .3s;display:inline-block}
     .adv-filters-toggle.open .toggle-arrow{transform:rotate(180deg)}
     .adv-filters-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(0.4,0,0.2,1),opacity .3s;opacity:0}
@@ -97,8 +93,6 @@
     .bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,0.06);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
     .nav-item{flex:1;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;-webkit-tap-highlight-color:transparent;transition:all .15s}
     .nav-icon{font-size:20px;line-height:1}
-    .nav-icon-svg{color:#999;transition:all .2s}
-    .nav-item.active .nav-icon-svg{color:#1b4332}
     .nav-label{font-size:9px;font-weight:700;color:#bbb;text-transform:uppercase;letter-spacing:.5px}
     .nav-item.active .nav-label{color:#ff4500}
     .nav-item.active .nav-icon{transform:scale(1.1)}
@@ -164,14 +158,14 @@
 
     .badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
     .badge{display:inline-flex;align-items:center;gap:3px;padding:4px 9px;border-radius:8px;font-size:11px;font-weight:700}
-    .badge.mstar{background:#f5ede0;color:#8b7355;border:none}
-    .badge.vibe{background:#f2e6ea;color:#8a5a6a;border:none;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
-    .badge.bib{background:#f5ede0;color:#8b7355;border:none}
-    .badge.press{background:#f5ede0;color:#8b7355;border:none}
-    .badge.goog{background:#ebe0cf;color:#6b5535;border:none}
-    .badge.insta{background:#f5e6e8;color:#9b6b73;border:none}
+    .badge.mstar{background:#fff5f5;color:#e53935;border:1px solid rgba(229,57,53,.15)}
+    .badge.vibe{background:#f0f7ff;color:#3b82f6;border:1px solid rgba(59,130,246,.15);font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
+    .badge.bib{background:#fff8e1;color:#e65100;border:1px solid rgba(230,81,0,.15)}
+    .badge.press{background:#f3f0ff;color:#5c6bc0;border:1px solid rgba(92,107,192,.15)}
+    .badge.goog{background:#f1f8e9;color:#388e3c;border:1px solid rgba(56,142,60,.15)}
+    .badge.insta{background:#fce4ec;color:#c2185b;border:1px solid rgba(194,24,91,.15)}
     .badge.inkind{background:#fff7ed;color:#c2410c;border:1.5px solid #c2410c;font-weight:800}
-    .badge.bilt{background:#f0f5f1;color:#1b4332;border:1px solid rgba(27,67,50,.2)}
+    .badge.bilt{background:#1a1a2e;color:#fff;border:1px solid rgba(26,26,46,.5)}
     .badge.rakuten{background:#fff0f0;color:#bf0000;border:1.5px solid #bf0000;font-weight:800}
     .avail{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:10px}
     .avail.av{background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.15)}
@@ -205,7 +199,7 @@
     .card-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
     .web-link{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#f7f5f2;color:#888;border:1px solid rgba(0,0,0,0.06);transition:all .15s}
     .web-link:hover{color:#1a1a2e;border-color:rgba(0,0,0,0.15)}
-    .insta-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;text-decoration:none;color:#a08060;opacity:.7;transition:opacity .15s}
+    .insta-link{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;text-decoration:none;color:#c13584;opacity:.7;transition:opacity .15s}
     .insta-link:hover{opacity:1}
     .insta-buzz-link{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;border-radius:11px;font-size:11px;font-weight:600;text-decoration:none;background:#fff0f7;color:#c13584;border:1px solid rgba(193,53,132,0.2);transition:all .15s}
     .insta-buzz-link:hover{background:#ffd6ee;border-color:rgba(193,53,132,0.4)}
@@ -214,10 +208,6 @@
     .insta-buzz-more:hover{background:#fff0f7}
     .insta-buzz-expanded{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;width:100%}
     .insta-buzz-sub{font-size:10px;opacity:.85}
-    .insta-influencer-badge{display:contents}
-    .insta-influencer-toggle{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;background:#f5ede0;color:#8b7355;border:none;transition:all .15s;font-family:'DM Sans',sans-serif}
-    .insta-influencer-toggle:hover{background:#e0f0d8;border-color:rgba(56,142,60,.3)}
-    .insta-influencer-dropdown{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;width:100%}
     .loc-banner{background:#fff;border:1px solid rgba(0,0,0,.05);padding:8px 14px;border-radius:10px;margin:0 16px 10px;font-size:12px;color:#999;display:flex;align-items:center;gap:5px}
     .err-banner{background:#fef2f2;border:1px solid rgba(220,38,38,.15);padding:12px 14px;border-radius:12px;margin:0 16px 10px;font-size:13px;font-weight:600;color:#dc2626}
     .empty{text-align:center;padding:60px 20px}
@@ -236,7 +226,7 @@
     /* RESULTS FILTER BAR */
     .results-filters{display:flex;gap:8px;padding:8px 16px 12px;background:#f7f5f2}
     .results-filters select{flex:1;padding:10px 12px;font-size:12px;font-weight:600;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;cursor:pointer;-webkit-appearance:none;appearance:none;box-shadow:0 1px 3px rgba(0,0,0,0.03);transition:all .2s}
-    .results-filters select:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
+    .results-filters select:focus{border-color:rgba(255,69,0,.4);box-shadow:0 0 0 3px rgba(255,69,0,0.08)}
 
     /* ═══ DEEP GREEN + CREAM PALETTE ═══ */
     body{background:#faf9f6}
@@ -265,33 +255,48 @@
     .section-viewall{color:#d4a373}
     .rcard-rating{color:#d4a373}
     .see-all-btn:hover{border-color:rgba(27,67,50,.2)}
-    .card:hover{border-color:rgba(27,67,50,.15);box-shadow:0 2px 16px rgba(27,67,50,0.06)}
+    .card:hover{border-color:rgba(27,67,50,.15)}
     .bottom-nav{background:rgba(250,249,246,0.92)}
     .sec-title.hot{color:#1b4332}
-    .bbtn.resy{background:#1b4332;color:#fff}
-    .bbtn.opentable{background:#1b4332;color:#fff}
-    .bbtn.tock{background:#1b4332;color:#fff}
-    .bbtn.bilt{background:#1b4332;color:#fff}
-    .bbtn.yelp{background:#1b4332;color:#fff}
-    .bbtn.sevenrooms{background:#1b4332;color:#fff}
-    .bbtn.google{background:#1b4332;color:#fff}
-    .bbtn.site{background:#1b4332;color:#fff}
-    .bbtn.walkin{background:#1b4332;color:#fff}
-    .mapbtn{background:#faf9f6}
-    .avail.av{background:#e8f5e9;color:#1b4332;border:1px solid rgba(27,67,50,.15)}
-    .badge.vibe{background:#f2e6ea;color:#8a5a6a;border:none}
+    .bbtn.resy{background:#1b4332}
+    .toggle a{color:#d4a373}
     .pac-matched{color:#1b4332}
     .back-btn:hover{color:#1b4332}
     .mfilt.on{background:#1b4332;color:#fff;border-color:#1b4332}
-    .toggle a{color:#d4a373}
+    .card:hover{border-color:rgba(27,67,50,.15);box-shadow:0 2px 16px rgba(27,67,50,0.06)}
+    .bbtn.resy{background:#1b4332}
+    .bbtn.opentable{background:#d4a373}
+    .bbtn.tock{background:#2d6a4f}
+    .bbtn.google{background:#faf9f6;color:#888;border:1px solid rgba(0,0,0,0.08)}
+    .bbtn.site{background:#faf9f6;color:#888;border:1px solid rgba(0,0,0,0.08)}
+    .mapbtn{background:#faf9f6}
+    .avail.av{background:#e8f5e9;color:#1b4332;border:1px solid rgba(27,67,50,.15)}
+    .badge.vibe{background:#f0f5f1;color:#2d6a4f;border:1px solid rgba(45,106,79,.15)}
+    .sec-title.hot{color:#1b4332}
+    .insta-buzz-link{background:#fff0f7;color:#c13584;border:1px solid rgba(193,53,132,0.15)}
+    .results-filters select:focus{border-color:rgba(27,67,50,.4);box-shadow:0 0 0 3px rgba(27,67,50,0.08)}
   </style>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  const _sbMod = window.supabase;
+  const _sb = (_sbMod.createClient || _sbMod)('https://zdsolubfxzvrqiqvwjev.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM');
+  // auth disabled for preview
+  // _sb.auth.getSession().then(({data:{session}})=>{if(!session)window.location.href='login.html'});
+  function _logout(){_sb.auth.signOut().then(()=>window.location.href='login.html')}
+</script>
 
 <div class="container">
 
   <!-- ═══════════════════════════════════════════════════════ HOME VIEW -->
-  <div class="view" id="view-home" style="background:#f7f5f2;min-height:100vh;display:none">
+  <div style="background:#1b4332;padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <span style="color:#fff;font-weight:800;font-size:13px;font-family:'DM Sans',sans-serif">DEEP GREEN + CREAM</span>
+    <button onclick="document.getElementById('view-home').classList.add('on');document.getElementById('view-search').classList.remove('on')" style="padding:8px 16px;background:#d4a373;color:#fff;border:none;border-radius:8px;font-weight:700;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">Home</button>
+    <button onclick="document.getElementById('view-search').classList.add('on');document.getElementById('view-home').classList.remove('on');document.getElementById('results').style.display='block'" style="padding:8px 16px;background:#fff;color:#1b4332;border:none;border-radius:8px;font-weight:700;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">Search + Cards</button>
+    <a href="preview-teal.html" style="margin-left:auto;padding:8px 16px;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);border-radius:8px;font-weight:700;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none">Switch to Navy+Teal →</a>
+  </div>
+  <div class="view on" id="view-home" style="background:#f7f5f2;min-height:100vh">
 
     <!-- HERO TOP BAR -->
     <div class="home-hero">
@@ -305,6 +310,7 @@
               <button class="hero-tab" id="ht-all" onclick="setHeroTab('all',this)">All</button>
               <button class="hero-tab" id="ht-drinks" onclick="setHeroTab('drinks',this)">Drinks</button>
             </div>
+            <button onclick="_logout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:6px 10px;font-size:10px;font-weight:700;color:#bbb;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s">Logout</button>
           </div>
         </div>
 
@@ -334,15 +340,14 @@
       <div class="trending-box">
         <!-- Primary filters always visible -->
         <div class="filter-chips" id="trendingChips">
-          <button class="fchip" onclick="setTrendFilter('any',this)">All</button>
+          <button class="fchip on" onclick="setTrendFilter('any',this)">All</button>
           <button class="fchip" onclick="setTrendFilter('michelin',this)">Michelin Stars</button>
           <button class="fchip" onclick="setTrendFilter('michelin_rec',this)">Michelin Rec</button>
           <button class="fchip" onclick="setTrendFilter('nyt',this)">NYT Reviewed</button>
           <button class="fchip" onclick="setTrendFilter('press',this)">Eater / Infa</button>
           <button class="fchip" onclick="setTrendFilter('timeout',this)">Time Out</button>
-          <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram Influencers</button>
+          <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram</button>
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
-          <button class="fchip" onclick="setTrendFilter('exceptional',this)">Top Rated</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
         </div>
 
@@ -465,7 +470,7 @@
           </div>
           <div class="rcard-name">Via Carota</div>
           <div class="rcard-sub">Italian · West Village</div>
-          <div class="rcard-rating">Michelin Recommended</div>
+          <div class="rcard-rating">📖 Michelin Recommended</div>
           <div class="rcard-drop">🔔 Fri 10am</div>
         </div>
         <div class="rcard" onclick="_goToCard('Gramercy Tavern')">
@@ -670,13 +675,13 @@
     </div><!-- /form -->
 
     <!-- RESULTS -->
-    <div id="results">
+    <div id="results" style="display:block">
       <div class="res-header">
         <span class="res-meta" id="resMeta"></span>
       </div>
       <div class="results-filters">
-        <select id="hotspot-days-filter" style="display:none" onchange="state.daysFilter=this.value==='any'?null:Number(this.value);if(allRestaurants.length)display(allRestaurants)">
-          <option value="any">Opens within</option>
+        <select onchange="state.horizonFilter=this.value;if(allRestaurants.length)display(allRestaurants)">
+          <option value="any">Availability</option>
           <option value="3">+3 days</option>
           <option value="7">+7 days</option>
           <option value="14">+14 days</option>
@@ -698,7 +703,102 @@
         </select>
       </div>
       <div id="warnings"></div>
-      <div id="list"></div>
+      <div id="list">
+
+        <!-- SAMPLE CARDS FOR PREVIEW -->
+        <div class="sec-head"><span class="sec-title hot">Hot Spots</span><span class="sec-line"></span><span class="sec-count">3</span></div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-name">Via Carota</div>
+            <div class="card-price">$$$</div>
+          </div>
+          <div class="card-sub">Italian · West Village · 0.3 mi</div>
+          <div class="badges">
+            <span class="badge mstar">Michelin Recommended</span>
+            <span class="badge press">Eater · Infatuation</span>
+            <span class="badge goog">4.7 (2,450)</span>
+            <span class="badge vibe">Date Night</span>
+            <span class="badge vibe">Trendy</span>
+          </div>
+          <div class="avail hard">Booked Solid Tonight</div>
+          <div class="actions">
+            <a class="bbtn resy" href="#">Resy</a>
+            <a class="bbtn google" href="#">Google</a>
+            <a class="mapbtn" href="#">📍</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-name">Gramercy Tavern</div>
+            <div class="card-price">$$$$</div>
+          </div>
+          <div class="card-sub">American · Flatiron · 1.2 mi</div>
+          <div class="badges">
+            <span class="badge mstar">1 Michelin Star</span>
+            <span class="badge press">NYT Reviewed</span>
+            <span class="badge goog">4.8 (3,100)</span>
+            <span class="badge inkind">inKind 15%</span>
+            <span class="badge vibe">Upscale</span>
+          </div>
+          <div class="avail av">Available · 6:00, 6:30, 8:45 PM</div>
+          <div class="actions">
+            <a class="bbtn resy" href="#">Resy</a>
+            <a class="bbtn opentable" href="#">OpenTable</a>
+            <a class="mapbtn" href="#">📍</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <div class="card-name">Lilia</div>
+            <div class="card-price">$$$</div>
+          </div>
+          <div class="card-sub">Italian · Williamsburg · 2.8 mi</div>
+          <div class="badges">
+            <span class="badge mstar">Michelin Recommended</span>
+            <span class="badge press">Eater Best New</span>
+            <span class="badge insta">Instagram Buzz</span>
+            <span class="badge goog">4.6 (1,800)</span>
+            <span class="badge vibe">Lively</span>
+            <span class="badge vibe">Foodie</span>
+          </div>
+          <div class="avail lim">Limited · 9:15, 9:45 PM</div>
+          <div class="actions">
+            <a class="bbtn resy" href="#">Resy</a>
+            <a class="bbtn google" href="#">Google</a>
+            <a class="mapbtn" href="#">📍</a>
+          </div>
+          <div class="card-links">
+            <a class="insta-buzz-link" href="#">@lifewithlilia</a>
+            <a class="web-link" href="#">Website</a>
+          </div>
+        </div>
+
+        <div class="sec-head"><span class="sec-title radar">On the Radar</span><span class="sec-line"></span><span class="sec-count">1</span></div>
+
+        <div class="card dim">
+          <div class="card-top">
+            <div class="card-name">Atomix</div>
+            <div class="card-price">$$$$</div>
+          </div>
+          <div class="card-sub">Korean Tasting · Midtown · 1.5 mi</div>
+          <div class="badges">
+            <span class="badge mstar">2 Michelin Stars</span>
+            <span class="badge press">NYT · Time Out</span>
+            <span class="badge goog">4.9 (890)</span>
+            <span class="badge vibe">Upscale</span>
+          </div>
+          <div class="avail radar">Not on Resy · Check Tock</div>
+          <div class="actions">
+            <a class="bbtn tock" href="#">Tock</a>
+            <a class="bbtn google" href="#">Google</a>
+            <a class="mapbtn" href="#">📍</a>
+          </div>
+        </div>
+
+      </div>
       <div style="height:80px"></div>
     </div>
 
@@ -707,8 +807,8 @@
   <!-- ═══════════════════════════════════════════════════════ MAP VIEW -->
   <div class="view" id="view-map" style="position:relative;height:calc(100vh - 60px)">
     <div id="map-filters" style="position:absolute;top:10px;left:10px;right:10px;z-index:5;display:flex;gap:5px;flex-wrap:wrap;padding:6px;background:rgba(255,255,255,.92);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.1)">
-      <button class="mfilt on" data-mf="all" onclick="_toggleMapFilter('all',this)" style="background:#1b4332;color:#fff">All</button>
-      <button class="mfilt" data-mf="hotspot" onclick="_toggleMapFilter('hotspot',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1b4332;margin-right:4px"></span>Hot Spots</button>
+      <button class="mfilt on" data-mf="all" onclick="_toggleMapFilter('all',this)" style="background:#ff4500;color:#fff">All</button>
+      <button class="mfilt" data-mf="hotspot" onclick="_toggleMapFilter('hotspot',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4500;margin-right:4px"></span>Hot Spots</button>
       <button class="mfilt" data-mf="available" onclick="_toggleMapFilter('available',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#2e7d32;margin-right:4px"></span>Available</button>
       <button class="mfilt" data-mf="limited" onclick="_toggleMapFilter('limited',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f5a623;margin-right:4px"></span>Limited</button>
       <button class="mfilt" data-mf="booked_tonight" onclick="_toggleMapFilter('booked_tonight',this)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:4px"></span>Booked Tonight</button>
@@ -742,14 +842,15 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════ ALL RESTAURANTS VIEW -->
-  <div class="view on" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
+  <div class="view" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
 
     <!-- FORM -->
     <div id="ar-form">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
-        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#ff4500">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab active">Restaurants</button>
+          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
+          <button class="hero-tab active">All</button>
           <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
         </div>
       </div>
@@ -806,81 +907,46 @@
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
             <button class="fchip" id="ar-avail-limited" onclick="arSetAvail('limited',this)">Limited</button>
-            <button class="fchip" id="ar-avail-book_ahead" onclick="arSetAvail('book_ahead',this)">Book in Advance</button>
             <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Booked Solid</button>
             <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early 5-6:15</button>
             <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime 6:30-8:15</button>
             <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late 8:30+</button>
           </div>
-          <!-- days filter moved to results area -->
         </div>
 
-        <!-- Hot Spots (collapsible) -->
+        <!-- Quality -->
         <div style="margin-bottom:14px">
-          <button class="adv-filters-toggle" onclick="this.classList.toggle('open');document.getElementById('arHotspotFilters').classList.toggle('open')">
-            <span>Hot Spots Filter</span>
-            <span class="toggle-arrow">▾</span>
-          </button>
-          <div class="adv-filters-body" id="arHotspotFilters">
-            <div style="display:flex;gap:6px;flex-wrap:wrap;padding-top:4px">
-              <button class="fchip" id="ar-hot-any" onclick="arSetHotspot('any',this)">All</button>
-              <button class="fchip" id="ar-hot-michelin" onclick="arSetHotspot('michelin',this)">Michelin Stars</button>
-              <button class="fchip" id="ar-hot-michelin_rec" onclick="arSetHotspot('michelin_rec',this)">Michelin Rec</button>
-              <button class="fchip" id="ar-hot-nyt" onclick="arSetHotspot('nyt',this)">NYT Reviewed</button>
-              <button class="fchip" id="ar-hot-press" onclick="arSetHotspot('press',this)">Eater / Infa</button>
-              <button class="fchip" id="ar-hot-timeout" onclick="arSetHotspot('timeout',this)">Time Out</button>
-              <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram Influencers</button>
-              <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
-              <button class="fchip" id="ar-hot-exceptional" onclick="arSetHotspot('exceptional',this)">Top Rated</button>
-              <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
-            </div>
+          <span class="flabel">Quality</span>
+          <div class="dselect">
+            <select id="arBuzzFilter" onchange="arState.buzzFilter=this.value">
+              <option value="any" selected>Any</option>
+              <option value="good">Good</option>
+              <option value="very_good">Very Good</option>
+              <option value="great">Great</option>
+              <option value="exceptional">Excellent</option>
+            </select>
           </div>
         </div>
 
         <!-- Price -->
         <div style="margin-bottom:14px">
           <span class="flabel">Price</span>
-          <div style="display:flex;gap:8px;margin-top:4px">
-            <button class="fchip price-chip on" id="ar-price-any" onclick="arTogglePriceAny(this)" style="flex:1;justify-content:center">Any</button>
-            <button class="fchip price-chip" id="ar-price-1" onclick="arTogglePrice(1,this)" style="flex:1;justify-content:center">$</button>
-            <button class="fchip price-chip" id="ar-price-2" onclick="arTogglePrice(2,this)" style="flex:1;justify-content:center">$$</button>
-            <button class="fchip price-chip" id="ar-price-3" onclick="arTogglePrice(3,this)" style="flex:1;justify-content:center">$$$</button>
-            <button class="fchip price-chip" id="ar-price-4" onclick="arTogglePrice(4,this)" style="flex:1;justify-content:center">$$$$</button>
+          <div class="dselect">
+            <select id="arPriceFilter" onchange="arSetPrice(this.value)">
+              <option value="any">Any Price</option>
+              <option value="1">$</option>
+              <option value="2">$$</option>
+              <option value="3">$$$</option>
+              <option value="4">$$$$</option>
+            </select>
           </div>
-          <div style="text-align:center;font-size:10px;color:#999;margin-top:4px">Tap multiple to set a range</div>
         </div>
 
-        <!-- Vibe (collapsible) -->
+        <!-- Cuisine -->
         <div style="margin-bottom:14px">
-          <button class="adv-filters-toggle" onclick="this.classList.toggle('open');document.getElementById('arVibeFilters').classList.toggle('open')">
-            <span>Vibe</span>
-            <span class="toggle-arrow">▾</span>
-          </button>
-          <div class="adv-filters-body" id="arVibeFilters">
-            <div style="display:flex;flex-wrap:wrap;gap:6px;padding-top:4px">
-              <button class="fchip on" id="ar-vibe-any" onclick="arSetVibe(null,this)">All</button>
-              <button class="fchip" id="ar-vibe-date_night" onclick="arSetVibe('date_night',this)">Date Night</button>
-              <button class="fchip" id="ar-vibe-upscale" onclick="arSetVibe('upscale',this)">Upscale</button>
-              <button class="fchip" id="ar-vibe-lively" onclick="arSetVibe('lively',this)">Lively</button>
-              <button class="fchip" id="ar-vibe-chill" onclick="arSetVibe('chill',this)">Chill</button>
-              <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">Trendy</button>
-              <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">Brunch</button>
-              <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">Outdoor</button>
-              <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">Late Night</button>
-              <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
-              <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
-              <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
-              <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">Group</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cuisine + Rewards -->
-        <div style="display:flex;gap:10px;margin-bottom:14px">
-          <div style="flex:1">
-            <span class="flabel">Cuisine</span>
-            <div class="dselect">
-              <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
+          <span class="flabel">Cuisine</span>
+          <div class="dselect">
+            <select id="arCuisineFilter" onchange="arSetCuisine(this.value)">
               <option value="any">Any Cuisine</option>
               <option value="american">American</option>
               <option value="italian">Italian</option>
@@ -901,93 +967,76 @@
               <option value="vietnamese">Vietnamese</option>
               <option value="vegan">Vegan</option>
             </select>
-            </div>
           </div>
-          <div style="flex:1">
-            <span class="flabel">Rewards</span>
-            <div class="dselect">
-              <select id="arRewardsFilter" onchange="arState.rewardsFilter=this.value">
-                <option value="any">Any</option>
-                <option value="chase_sapphire">Chase Sapphire</option>
-                <option value="bilt">Bilt</option>
-                <option value="rakuten">Rakuten</option>
-                <option value="inkind">inKind</option>
-              </select>
-            </div>
+        </div>
+
+        <!-- Vibe -->
+        <div style="margin-bottom:14px">
+          <span class="flabel">Vibe</span>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+            <button class="fchip on" id="ar-vibe-any" onclick="arSetVibe(null,this)">All</button>
+            <button class="fchip" id="ar-vibe-date_night" onclick="arSetVibe('date_night',this)">Date Night</button>
+            <button class="fchip" id="ar-vibe-upscale" onclick="arSetVibe('upscale',this)">Upscale</button>
+            <button class="fchip" id="ar-vibe-lively" onclick="arSetVibe('lively',this)">Lively</button>
+            <button class="fchip" id="ar-vibe-chill" onclick="arSetVibe('chill',this)">Chill</button>
+            <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">Trendy</button>
+            <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">Brunch</button>
+            <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">Outdoor</button>
+            <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">Late Night</button>
+            <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
+            <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
+            <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
+            <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">Group</button>
+          </div>
+        </div>
+
+        <!-- Rewards -->
+        <div style="margin-bottom:16px">
+          <span class="flabel">Rewards</span>
+          <div class="dselect">
+            <select id="arRewardsFilter" onchange="arState.rewardsFilter=this.value">
+              <option value="any">Any</option>
+              <option value="chase_sapphire">Chase Sapphire</option>
+              <option value="bilt">Bilt</option>
+              <option value="rakuten">Rakuten</option>
+              <option value="inkind">inKind</option>
+            </select>
           </div>
         </div>
 
         <!-- Find Button -->
         <button id="arSearchBtn" onclick="doAllNYCSearch()"
-          style="width:100%;padding:16px;background:#d4a373;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;transition:all .2s;box-shadow:0 3px 16px rgba(212,163,115,0.3)">
+          style="width:100%;padding:16px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px;transition:all .2s;box-shadow:0 3px 16px rgba(255,69,0,0.25)">
           Find Restaurants
         </button>
-
-        <!-- Restaurant search is in bottom nav -->
 
         <!-- Featured Picks -->
         <div style="margin-bottom:6px">
           <span class="flabel" style="margin-bottom:8px;display:block">Featured Picks</span>
-          <div class="nearby-scroll">
-            <div class="rcard" onclick="_goToCard('Via Carota')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail sold">Fully Booked</div>
-                <div class="rcard-time horizon">+3d</div>
+          <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Le Bernardin')">
+              <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
-              <div class="rcard-name">Via Carota</div>
-              <div class="rcard-sub">Italian · West Village</div>
-              <div class="rcard-rating">Michelin Recommended</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.2;margin-bottom:2px">Le Bernardin</div>
+              <div style="font-size:11px;color:#888;margin-bottom:3px">French · Midtown</div>
+              <div style="font-size:11px;font-weight:700;color:#ff6b2b">⭐⭐⭐ Michelin</div>
             </div>
-            <div class="rcard" onclick="_goToCard('Gramercy Tavern')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail av">Available</div>
-                <div class="rcard-time early">Early</div>
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Sushi Nakazawa')">
+              <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
-              <div class="rcard-name">Gramercy Tavern</div>
-              <div class="rcard-sub">American · Flatiron</div>
-              <div class="rcard-rating">⭐ Michelin Star</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.2;margin-bottom:2px">Sushi Nakazawa</div>
+              <div style="font-size:11px;color:#888;margin-bottom:3px">Japanese · West Village</div>
+              <div style="font-size:11px;font-weight:700;color:#ff6b2b">⭐ Michelin Star</div>
             </div>
-            <div class="rcard" onclick="_goToCard('Lilia')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail lim">Limited</div>
-                <div class="rcard-time prime">Prime</div>
+            <div style="flex-shrink:0;width:150px;cursor:pointer" onclick="_goToCard('Don Angie')">
+              <div style="width:150px;height:110px;border-radius:12px;overflow:hidden;margin-bottom:7px">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover" loading="lazy">
               </div>
-              <div class="rcard-name">Lilia</div>
-              <div class="rcard-sub">Italian · Williamsburg</div>
-              <div class="rcard-rating">🔥 NYT Top 100</div>
-            </div>
-            <div class="rcard" onclick="_goToCard('4 Charles Prime Rib')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail sold">Fully Booked</div>
-                <div class="rcard-time horizon">+14d</div>
-              </div>
-              <div class="rcard-name">4 Charles Prime Rib</div>
-              <div class="rcard-sub">Steakhouse · West Village</div>
-              <div class="rcard-rating">🔥 Press Pick</div>
-            </div>
-            <div class="rcard" onclick="_goToCard('Sen Sakana')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail sold">Fully Booked</div>
-                <div class="rcard-time horizon">+14d</div>
-              </div>
-              <div class="rcard-name">Sen Sakana</div>
-              <div class="rcard-sub">Japanese · Midtown</div>
-              <div class="rcard-rating">🔥 NYT · Time Out</div>
-            </div>
-            <div class="rcard" onclick="_goToCard('Atomix')">
-              <div class="rcard-img">
-                <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=320&h=240&fit=crop&auto=format" style="width:100%;height:100%;object-fit:cover;border-radius:12px" loading="lazy">
-                <div class="rcard-avail lim">Limited</div>
-                <div class="rcard-time early">Early</div>
-              </div>
-              <div class="rcard-name">Atomix</div>
-              <div class="rcard-sub">Korean · Midtown</div>
-              <div class="rcard-rating">⭐⭐ Michelin</div>
+              <div style="font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#1a1a2e;line-height:1.2;margin-bottom:2px">Don Angie</div>
+              <div style="font-size:11px;color:#888;margin-bottom:3px">Italian · West Village</div>
+              <div style="font-size:11px;font-weight:700;color:#ff6b2b">⭐ Michelin Star</div>
             </div>
           </div>
         </div>
@@ -1001,24 +1050,15 @@
         <button class="back-btn" onclick="arGoBack()">← Back</button>
         <span class="res-meta" id="allRestMeta"></span>
       </div>
-      <div id="ar-results-days" style="display:none;padding:6px 16px 2px;background:#f7f5f2">
-        <span style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;display:block">Opens within</span>
-        <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <button class="fchip on" id="ar-res-days-any" onclick="arSetDays('any',this)">Any</button>
-          <button class="fchip" id="ar-res-days-3" onclick="arSetDays(3,this)">+3 days</button>
-          <button class="fchip" id="ar-res-days-7" onclick="arSetDays(7,this)">+7 days</button>
-          <button class="fchip" id="ar-res-days-14" onclick="arSetDays(14,this)">+14 days</button>
-        </div>
-      </div>
       <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setARSortOrder(this.value)">
-          <option value="rating">Rating</option>
-          <option value="distance">Distance</option>
-          <option value="price_low">Price ↑</option>
-          <option value="price_high">Price ↓</option>
+          <option value="rating">⭐ Rating</option>
+          <option value="distance">📏 Distance</option>
+          <option value="price_low">💰 Price ↑</option>
+          <option value="price_high">💰 Price ↓</option>
         </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="arState.reviewCountFilter=this.value;if(allNYCRestaurants.length)displayAllNYC(allNYCRestaurants)">
-          <option value="any">Review Count</option>
+          <option value="any">📊 Review Count</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -1040,9 +1080,10 @@
     <!-- FORM -->
     <div id="bar-form">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
-        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
+        <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#ff4500">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">Restaurants</button>
+          <button class="hero-tab" onclick="switchNav('home')">Hot Spots</button>
+          <button class="hero-tab" onclick="switchNav('allrestaurants');document.getElementById('ar-form').style.display='block';document.getElementById('ar-results').style.display='none';syncHeroTabs('allrestaurants')">All</button>
           <button class="hero-tab active">Drinks</button>
         </div>
       </div>
@@ -1217,7 +1258,7 @@
 
         <!-- Find Button -->
         <button id="barSearchBtn" onclick="doBarSearch()"
-          style="width:100%;padding:16px;background:#d4a373;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;transition:all .2s;box-shadow:0 3px 16px rgba(212,163,115,0.3)">
+          style="width:100%;padding:16px;background:#ff4500;color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px;transition:all .2s;box-shadow:0 3px 16px rgba(255,69,0,0.25)">
           Find Bars &amp; Drinks
         </button>
 
@@ -1263,13 +1304,13 @@
       </div>
       <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="setBarSortOrder(this.value)">
-          <option value="rating">Rating</option>
-          <option value="distance">Distance</option>
-          <option value="price_low">Price ↑</option>
-          <option value="price_high">Price ↓</option>
+          <option value="rating">⭐ Rating</option>
+          <option value="distance">📏 Distance</option>
+          <option value="price_low">💰 Price ↑</option>
+          <option value="price_high">💰 Price ↓</option>
         </select>
         <select class="finput" style="padding:5px 6px;font-size:11px;border-radius:6px;flex:1" onchange="barState.reviewCountFilter=this.value;barRefilter()">
-          <option value="any">Review Count</option>
+          <option value="any">📊 Review Count</option>
           <option value="150">150+</option>
           <option value="250">250+</option>
           <option value="500">500+</option>
@@ -1285,45 +1326,30 @@
 
   </div><!-- /view-drinks -->
 
-  <!-- ═══════════════════════════════════════════════════════ SEARCH VIEW -->
-  <div class="view" id="view-restsearch" style="background:#f7f5f2;min-height:100vh">
-    <div style="padding:20px">
-      <button onclick="closeRestSearch()" style="background:none;border:none;font-size:14px;cursor:pointer;padding:6px 0;color:#1a1a2e;font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:12px;display:block">← Back</button>
-      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:16px">Search Restaurants</div>
-      <div style="position:relative">
-        <input type="text" id="arRestInput" class="finput" placeholder="Type a restaurant name..." autocomplete="off" oninput="_restAutocomplete(this.value,'arRestAutoList')" style="font-size:16px;padding:14px 16px">
-        <div id="arRestAutoList" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.06);border-top:none;border-radius:0 0 14px 14px;max-height:400px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.08)"></div>
-      </div>
-    </div>
-    <!-- Footer -->
-    <div style="position:fixed;bottom:70px;left:0;right:0;text-align:center;padding:12px 20px;display:flex;gap:16px;justify-content:center">
-      <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
-      <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
-      <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
-      <a href="privacy.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Privacy</a>
-    </div>
+  <!-- FOOTER LINKS -->
+  <div style="display:flex;justify-content:center;gap:16px;padding:12px 20px;background:#f7f5f2;border-top:1px solid rgba(0,0,0,.06)">
+    <a href="about.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">About</a>
+    <a href="contact.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Contact</a>
+    <a href="faq.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">FAQ</a>
+    <a href="privacy.html" style="font-size:11px;font-weight:600;color:#999;text-decoration:none">Privacy</a>
   </div>
 
   <!-- BOTTOM NAV -->
   <div class="bottom-nav">
     <button class="nav-item active" id="nav-home" onclick="switchNav('home')">
-      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="nav-icon">🔥</span>
       <span class="nav-label">Home</span>
     </button>
     <button class="nav-item" id="nav-drinks" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">
-      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 9H9L8 2z"/><path d="M12 11v7"/><path d="M8 22h8"/><path d="M12 18h0"/></svg>
+      <span class="nav-icon">🍸</span>
       <span class="nav-label">Drinks</span>
     </button>
-    <button class="nav-item" id="nav-search" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-search').classList.add('active');openRestSearch()">
-      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <span class="nav-label">Search</span>
-    </button>
     <button class="nav-item" id="nav-map" onclick="switchNav('map')">
-      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="nav-icon">📍</span>
       <span class="nav-label">Map</span>
     </button>
     <button class="nav-item" id="nav-saved" onclick="switchNav('saved')">
-      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="nav-icon">☆</span>
       <span class="nav-label">Saved</span>
     </button>
   </div>
@@ -1344,7 +1370,7 @@ function toggleSave(name, cardData) {
   document.querySelectorAll(`[data-save-key="${CSS.escape(key)}"]`).forEach(btn => {
     btn.textContent = saved[key] ? '★' : '☆';
     btn.title = saved[key] ? 'Unsave' : 'Save';
-    btn.style.color = saved[key] ? '#d4a373' : '#ccc';
+    btn.style.color = saved[key] ? '#ff4500' : '#ccc';
   });
   // Refresh saved view if visible
   if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
@@ -1373,7 +1399,7 @@ function renderSavedView() {
     html += `<div class="card" style="margin:0 16px 12px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div><div class="card-name">${name}</div><div class="card-sub">${cuisine}</div></div>
-        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#d4a373;padding:4px" title="Unsave">★</button>
+        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#ff4500;padding:4px" title="Unsave">★</button>
       </div>
       ${ratingStr ? '<div class="badges"><span class="badge goog">'+ratingStr+'</span></div>' : ''}
       <div class="actions">${bookBtn || `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn google">Find on Google →</a>`}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
@@ -1399,22 +1425,9 @@ async function _loadRestNames() {
 }
 
 let _autoTimeout = null;
-function openRestSearch() {
-  showView('restsearch');
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  setTimeout(() => { const inp = document.getElementById('arRestInput'); if(inp) inp.focus(); }, 100);
-}
-function closeRestSearch() {
-  showView('allrestaurants');
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('nav-home')?.classList.add('active');
-  const inp = document.getElementById('arRestInput'); if(inp) inp.value = '';
-  const list = document.getElementById('arRestAutoList'); if(list) list.style.display = 'none';
-}
-
-function _restAutocomplete(query, listId) {
+function _restAutocomplete(query) {
   clearTimeout(_autoTimeout);
-  const el = document.getElementById(listId || 'restAutoList');
+  const el = document.getElementById('restAutoList');
   if (!query || query.length < 2) { el.style.display = 'none'; return; }
   _autoTimeout = setTimeout(async () => {
     const names = await _loadRestNames();
@@ -1433,10 +1446,8 @@ function _restAutocomplete(query, listId) {
 }
 
 function _selectRest(name) {
-  const _hri = document.getElementById('homeRestInput'); if(_hri) _hri.value = '';
-  const _ral = document.getElementById('restAutoList'); if(_ral) _ral.style.display = 'none';
-  const _ari = document.getElementById('arRestInput'); if(_ari) _ari.value = '';
-  const _arl = document.getElementById('arRestAutoList'); if(_arl) _arl.style.display = 'none';
+  document.getElementById('homeRestInput').value = '';
+  document.getElementById('restAutoList').style.display = 'none';
   // Find the full restaurant data and show it directly
   const q = name.toLowerCase();
   const matches = (_restNames || []).filter(r => r.name.toLowerCase() === q || r.name.toLowerCase().includes(q));
@@ -1516,10 +1527,7 @@ function _goToCard(name) {
 // Close autocomplete when clicking outside
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#homeRestInput') && !e.target.closest('#restAutoList')) {
-    const _rl = document.getElementById('restAutoList'); if(_rl) _rl.style.display = 'none';
-  }
-  if (!e.target.closest('#arRestInput') && !e.target.closest('#arRestAutoList')) {
-    const _arl = document.getElementById('arRestAutoList'); if(_arl) _arl.style.display = 'none';
+    document.getElementById('restAutoList').style.display = 'none';
   }
 });
 
@@ -1589,7 +1597,7 @@ function switchNav(name) {
     showView('search');
     doSearch();
   }
-  else if (name === 'home') { name='allrestaurants'; showView('allrestaurants'); document.getElementById('ar-form').style.display='block'; document.getElementById('ar-results').style.display='none'; }
+  else if (name === 'home') showView('home');
   else if (name === 'drinks') {
     const bf = document.getElementById('bar-form');
     const br = document.getElementById('bar-results');
@@ -1605,18 +1613,19 @@ function switchNav(name) {
 }
 
 function syncHeroTabs(activeView) {
-  const isRest = activeView === 'allrestaurants' || activeView === 'home' || activeView === 'hotspots';
-  const isDrinks = activeView === 'drinks';
-  document.querySelectorAll('.hero-tabs').forEach(group => {
-    const btns = group.querySelectorAll('.hero-tab');
-    btns.forEach(btn => {
-      const text = btn.textContent.trim().toLowerCase();
-      if (text === 'restaurants' || text === 'all' || text === 'hot spots') {
-        btn.classList.toggle('active', isRest);
-      } else if (text === 'drinks') {
-        btn.classList.toggle('active', isDrinks);
-      }
-    });
+  // Map view name to tab index (0=hotspots, 1=allrestaurants, 2=drinks)
+  const tabMap = { home: 0, hotspots: 0, allrestaurants: 1, drinks: 2 };
+  const activeIdx = tabMap[activeView] ?? 0;
+  document.querySelectorAll('.hero-tabs .hero-tab').forEach((btn, i) => {
+    const tabGroup = Math.floor(i / 3); // group by sets of 3
+    const posInGroup = i % 3;
+    btn.classList.toggle('active', posInGroup === activeIdx);
+  });
+  // Also sync the home hero-tab buttons by ID
+  const ids = ['ht-hotspots', 'ht-all', 'ht-drinks'];
+  ids.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', i === activeIdx);
   });
 }
 
@@ -1632,10 +1641,7 @@ function setHeroTab(tab, btn) {
     document.getElementById('bar-form').style.display = 'block';
     document.getElementById('bar-results').style.display = 'none';
   } else if (tab === 'hotspots') {
-    switchNav('allrestaurants');
-    document.getElementById('ar-form').style.display = 'block';
-    document.getElementById('ar-results').style.display = 'none';
-    allNYCRestaurants = [];
+    switchNav('home');
   }
 }
 
@@ -1644,12 +1650,12 @@ function toggleInstaBuzz(id, btn) {
   if (!el) return;
   const isOpen = el.style.display !== 'none';
   el.style.display = isOpen ? 'none' : 'flex';
-  btn.textContent = btn.textContent.replace(isOpen ? '▴' : '▾', isOpen ? '▾' : '▴');
+  btn.textContent = isOpen ? btn.textContent.replace('▴', '▾') : btn.textContent.replace('▾', '▴');
 }
 
 function setTrendFilter(buzz, btn) {
   if (buzz === 'any') {
-    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
+    homeState.trendFilters = [];
     homeState.trendFilter = 'any';
     document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -1668,7 +1674,8 @@ function setTrendFilter(buzz, btn) {
     anyBtn && anyBtn.classList.remove('on');
     homeState.trendFilter = homeState.trendFilters[0];
   } else {
-    homeState.trendFilter = 'none';
+    anyBtn && anyBtn.classList.add('on');
+    homeState.trendFilter = 'any';
   }
 }
 
@@ -1834,12 +1841,7 @@ const state = { cuisine:'any', buzzFilter:'any', trendFilters:[], priceFilter:'a
 
 // Bilt-only = has bilt_dining but no real booking URL → hidden unless Bilt filter is active
 function isBiltOnly(r) {
-  if (!r.bilt_dining) return false;
-  const bp = (r.booking_platform || '').toLowerCase();
-  if (bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms') return false;
-  if (bp === 'website' && r.booking_url && (r.googleRating || 0) >= 4.3 && (r.googleReviewCount || 0) >= 100 && (r.price_level || 0) >= 2) return false;
-  if ((r.googleRating || 0) >= 4.3 && (r.googleReviewCount || 0) >= 200 && (r.price_level || 0) >= 2) return false;
-  return true;
+  return r.bilt_dining && !r.resy_url && !r.opentable_url;
 }
 function hasBookingPlatform(r) {
   const p = r.booking_platform || r.platform || '';
@@ -2006,14 +2008,14 @@ function tc(str) {
 // ─── RENDER CARD ──────────────────────────────────────────────────────────────
 function renderCard(r, isRadar) {
   const name = tc(r.name) || 'Unknown';
-  const addr = (r.vicinity||r.formatted_address||r.address||'').replace(/,?\s*U\.?S\.?A?\.?$/i,'');
+  const addr = (r.vicinity||r.formatted_address||'').replace(/,?\s*U\.?S\.?A?\.?$/i,'');
   const walkStr = r.walkMinEstimate > 0 ? `🚶 ${r.walkMinEstimate} min` : null;
   const driveStr = r.driveMinEstimate > 0 ? `🚗 ${r.driveMinEstimate} min` : null;
   const sub = [r.cuisine, addr, r.distanceMiles!=null?`${r.distanceMiles} mi`:null, walkStr, driveStr].filter(Boolean).join(' · ');
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
-  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
+  const VIBE_EMOJI = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
   const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
@@ -2032,20 +2034,20 @@ function renderCard(r, isRadar) {
   if (r.michelin) {
     const st = r.michelin.stars||0, d = r.michelin.distinction||'';
     if (st>=1) {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'★'.repeat(Math.min(st,3))} Michelin</a>`;
-      else badges += `<span class="badge mstar">${'★'.repeat(Math.min(st,3))} Michelin</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'⭐'.repeat(Math.min(st,3))} Michelin</a>`;
+      else badges += `<span class="badge mstar">${'⭐'.repeat(Math.min(st,3))} Michelin</span>`;
     }
     else if (d==='bib_gourmand'||d==='bib') {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">Michelin Recommended</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
     }
     else {
-      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">Michelin Recommended</span>`;
+      if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
     }
   } else if (r.bib_gourmand) {
-    if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
-    else badges += `<span class="badge bib">Michelin Recommended</span>`;
+    if (michelinUrl) badges += `<a href="${michelinUrl}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
+    else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
   }
   const hasBuzz = hasBuzzCoverage(r);
 
@@ -2054,19 +2056,19 @@ function renderCard(r, isRadar) {
   if (isNYT) {
     const nytLinkData = bdata?.links?.find(l => l.source === 'NYT' || l.source === 'NY Times');
     const nytUrl = nytLinkData?.url;
-    const nytStyle = 'background:#f5ede0;color:#8b7355;border:none;text-decoration:none;cursor:pointer';
+    const nytStyle = 'background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2);text-decoration:none;cursor:pointer';
     if (r.nyt_top_100) {
       const rankMatch = nytLinkData?.label?.match(/#(\d+)/);
       const rankStr = rankMatch ? ` #${rankMatch[1]}` : '';
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT Top 100${rankStr}</a>`;
-      else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT Top 100${rankStr}</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT Top 100${rankStr}</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rankStr}</span>`;
     } else if (r.pete_wells && r.nyt_stars) {
       const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT ${stars}</a>`;
-      else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT ${stars}</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT ${stars}</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
     } else {
-      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">NYT</a>`;
-      else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT</span>`;
+      if (nytUrl) badges += `<a href="${nytUrl}" target="_blank" rel="noopener" class="badge" style="${nytStyle}">📰 NYT</a>`;
+      else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">📰 NYT</span>`;
     }
   }
 
@@ -2078,11 +2080,11 @@ function renderCard(r, isRadar) {
     if (r.buzz_sources) r.buzz_sources.forEach(s => { const k = _ns(s); if (k !== 'NYT' && k !== 'Michelin' && !pressLinks.has(k)) pressLinks.set(k, null); });
     if (pressLinks.size > 0) {
       pressLinks.forEach((url, src) => {
-        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">${src}</a>`;
-        else badges += `<span class="badge press">${src}</span>`;
+        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">📰 ${src}</a>`;
+        else badges += `<span class="badge press">📰 ${src}</span>`;
       });
     } else {
-      badges += `<span class="badge press">Press Pick</span>`;
+      badges += `<span class="badge press">📰 Press Pick</span>`;
     }
   }
 
@@ -2091,7 +2093,7 @@ function renderCard(r, isRadar) {
     const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : null;
     const opacity = rating >= 4.7 ? '1' : rating >= 4.4 ? '.8' : '.55';
     const countStr = rs ? ` (${rs})` : '';
-    badges += `<span class="badge goog" style="opacity:${opacity}">${rating}${countStr}</span>`;
+    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rating}${countStr}</span>`;
   }
 
   // Instagram — backend field takes priority, fallback to lookup table
@@ -2107,21 +2109,13 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">inKind 20% Off</span>`;
-  // Bilt badge — only show when Bilt filter is active
-  if (r.bilt_dining && state.rewardsFilter === 'bilt')
+    badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
+  // Bilt badge
+  if (r.bilt_dining && (hasBookingPlatform(r) || state.rewardsFilter === 'bilt'))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
-
-  // Instagram Influencers collapsible badge
-  if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-    const _sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-    const _buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-    let _links = _sorted.map(p => `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${p.influencer}</a>`).join('');
-    badges += `<span class="insta-influencer-badge"><button class="insta-influencer-toggle" onclick="toggleInstaBuzz('${_buzzId}',this)">📸 Instagram Influencers (${_sorted.length}) ▾</button><div id="${_buzzId}" class="insta-influencer-dropdown" style="display:none">${_links}</div></span>`;
-  }
+    badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
 
@@ -2137,9 +2131,9 @@ function renderCard(r, isRadar) {
   const _styleBooked  = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fde8e8;color:#c0392b;border:1px solid rgba(192,57,43,.25)';
 
   function _windowBadge(status, label) {
-    if (status === 'available') return `<span style="${_styleAvail}">${label}</span>`;
-    if (status === 'limited')   return `<span style="${_styleLimited}">${label}</span>`;
-    return `<span style="${_styleBooked}">${label}</span>`;
+    if (status === 'available') return `<span style="${_styleAvail}">🟢 ${label}</span>`;
+    if (status === 'limited')   return `<span style="${_styleLimited}">🟡 ${label}</span>`;
+    return `<span style="${_styleBooked}">🔴 ${label}</span>`;
   }
 
   // Only compute window statuses if we actually have window data AND a real booking platform
@@ -2160,30 +2154,30 @@ function renderCard(r, isRadar) {
     const isBooked     = tier === 'booked' || allBooked;
 
     if (isBooked && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
     } else if (isBooked && r.fully_locked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
     } else if (isBooked) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
     } else if (allAvailable) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">Available Tonight</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
     } else {
       timeBadgeHtml = _windowBadge(earlyStatus, 'Early') + _windowBadge(primeStatus, 'Prime') + _windowBadge(lateStatus, 'Late');
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${timeBadgeHtml}</div>`;
     }
   } else if (tier === 'tasting_menu') {
     const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">🍽 Tasting Menu${pp}</span></div>`;
   } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Fully Booked</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;
   } else if (tier === 'booked') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
   } else if (tier === 'available') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">Available Tonight</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail av" style="margin-bottom:0">🟢 Available Tonight</span></div>`;
   } else if (tier === 'limited') {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">Limited Spots</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail lim" style="margin-bottom:0">🟡 Limited Spots</span></div>`;
   }
 
   // Maps URL
@@ -2194,12 +2188,12 @@ function renderCard(r, isRadar) {
   // Book button
   let bookBtn = '';
   if (r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
-    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Walk-in</a>`;
+    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">🚶 Walk-in</a>`;
   } else if (r.booking_url && r.booking_platform) {
     let url = r.booking_url;
     try { if (url.includes('google.com/url')) { const u = new URL(url); url = u.searchParams.get('q')||url; } } catch(e){}
     url = url.replace(/\/+$/,'');
-    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
+    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'🏠 Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform]||{cls:'site',label:'Book on Website →'};
     const tockPrice = r.booking_platform === 'tock' && r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
     bookBtn = `<a href="${url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}${tockPrice}</a>`;
@@ -2216,10 +2210,28 @@ function renderCard(r, isRadar) {
   let cardLinks = '';
   if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
     cardLinks = '<div class="card-links">';
-    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">Website</a>`;
+    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
     if (instaHandle) {
       const cleanHandle = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
-      cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">@${cleanHandle}</a>`;
+      cardLinks += `<a href="https://www.instagram.com/${cleanHandle}" target="_blank" rel="noopener" class="insta-link">📸 @${cleanHandle}</a>`;
+    }
+    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
+      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
+      const top = sorted[0];
+      const rest = sorted.slice(1);
+      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
+      if (rest.length === 0) {
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+      } else {
+        cardLinks += `<span class="insta-buzz-wrap">`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
+        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
+        rest.forEach(p => {
+          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
+        });
+        cardLinks += `</span></span>`;
+      }
     }
     cardLinks += '</div>';
   }
@@ -2227,7 +2239,7 @@ function renderCard(r, isRadar) {
   const _skey = (r.name||'').toLowerCase().trim();
   const _saved = isSaved(r.name);
   const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||''}).replace(/'/g,'&#39;');
-  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#d4a373':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
+  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#ff4500':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
 
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card${isRadar?' dim':''}" id="${_cardId}">
@@ -2245,8 +2257,6 @@ function renderCard(r, isRadar) {
 // ─── DISPLAY ──────────────────────────────────────────────────────────────────
 function display(restaurants) {
   restaurants.forEach(r => { r._bs = buzzScore(r); });
-  const _daysEl = document.getElementById('hotspot-days-filter');
-  if (_daysEl) _daysEl.style.display = (state.availFilter === 'book_ahead' || homeState.availFilter === 'book_ahead') ? '' : 'none';
 
   let list = [...restaurants];
 
@@ -2295,7 +2305,6 @@ function display(restaurants) {
       if (bf==='nyt') return hasNYTCoverage(r);
       if (bf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
       if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
-      if (bf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (bf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
       return false;
     }));
@@ -2357,22 +2366,12 @@ function display(restaurants) {
       const bp = (r.booking_platform || '').toLowerCase();
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
       const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
-      if (isBookAhead) {
-        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform)) return false;
-        if (state.daysFilter) return r.opens_in === state.daysFilter;
-        return true;
-      }
+      if (isBookAhead) return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform;
       if (af === 'limited' || af === 'booked_solid' || af === 'early' || af === 'prime' || af === 'late') {
         if (!realPlatform) return false;
         if (!tier) return false;
         if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
-        if (af === 'limited') {
-          const e = r.early, p = r.prime, l = r.late;
-          if (!e && !p && !l) return false;
-          const allAvail = e === 'available' && p === 'available' && l === 'available';
-          const allBooked = e === 'booked' && p === 'booked' && l === 'booked';
-          return !allAvail && !allBooked;
-        }
+        if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
         if (af === 'early') return r.has_early && tier !== 'booked';
         if (af === 'prime') return r.has_prime && tier !== 'booked';
         if (af === 'late')  return r.has_late  && tier !== 'booked';
@@ -2572,7 +2571,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null, hotspotFilter: 'any', hotspotFilters: [] };
+const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -2595,30 +2594,12 @@ function arSetTransport(mode, btn) {
 
 function arSetAvail(val, btn) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  arState.availFilter = val; arState.horizonFilter = null; arState.daysFilter = null;
+  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  arState.availFilter = val; arState.horizonFilter = null;
   btn.classList.add('on');
-  if (val !== 'book_ahead') {
-    arState.daysFilter = null;
-    ['ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-    const anyBtn = document.getElementById('ar-res-days-any'); if(anyBtn) anyBtn.classList.add('on');
-  }
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
-}
-function arSetDays(val, btn) {
-  ['ar-days-any','ar-days-3','ar-days-7','ar-days-14','ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  btn.classList.add('on');
-  // Sync both form and results chips
-  const v = val === 'any' ? 'any' : val;
-  const formChip = document.getElementById('ar-days-' + v);
-  const resChip = document.getElementById('ar-res-days-' + v);
-  if (formChip) formChip.classList.add('on');
-  if (resChip) resChip.classList.add('on');
-  arState.daysFilter = val === 'any' ? null : Number(val);
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
-  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-limited','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   arState.availFilter = null; arState.horizonFilter = days;
   btn.classList.add('on');
@@ -2650,42 +2631,6 @@ function arSetVibe(vibe, btn) {
 
 function arSetPrice(val) {
   arState.priceFilter = val;
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
-}
-
-function arTogglePrice(level, btn) {
-  if (!arState.priceLevels) arState.priceLevels = [];
-  const idx = arState.priceLevels.indexOf(level);
-  if (idx >= 0) { arState.priceLevels.splice(idx, 1); btn.classList.remove('on'); }
-  else { arState.priceLevels.push(level); btn.classList.add('on'); }
-  const anyBtn = document.getElementById('ar-price-any');
-  if (arState.priceLevels.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.priceFilter = 'multi'; }
-  else { anyBtn && anyBtn.classList.add('on'); arState.priceFilter = 'any'; }
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
-}
-
-function arTogglePriceAny(btn) {
-  arState.priceLevels = [];
-  arState.priceFilter = 'any';
-  document.querySelectorAll('.price-chip').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
-}
-
-function arSetHotspot(val, btn) {
-  if (val === 'any') {
-    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
-    arState.hotspotFilter = 'any';
-    document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-  } else {
-    const idx = arState.hotspotFilters.indexOf(val);
-    if (idx > -1) { arState.hotspotFilters.splice(idx, 1); btn.classList.remove('on'); }
-    else { arState.hotspotFilters.push(val); btn.classList.add('on'); }
-    const anyBtn = document.getElementById('ar-hot-any');
-    if (arState.hotspotFilters.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.hotspotFilter = arState.hotspotFilters[0]; }
-    else { arState.hotspotFilter = 'any'; }
-  }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
@@ -2740,9 +2685,7 @@ function hasBuzzAR(r) {
 function renderCardAR(r) {
   const name = tcAR(r.name) || 'Unknown';
   const addr = (r.vicinity || r.formatted_address || r.address || '').replace(/,?\s*U\.?S\.?A?\.?$/i, '');
-  const walkStr = r.walkMinEstimate > 0 && r.walkMinEstimate < 999 ? `🚶 ${r.walkMinEstimate} min` : null;
-  const driveStr = r.driveMinEstimate > 0 && r.driveMinEstimate < 999 ? `🚗 ${r.driveMinEstimate} min` : null;
-  const sub = [r.cuisine, addr, r.distanceMiles != null && r.distanceMiles < 999 ? `${r.distanceMiles} mi` : null, walkStr, driveStr].filter(Boolean).join(' · ');
+  const sub = [r.cuisine, addr].filter(Boolean).join(' · ');
   const price = r.price_level > 0 ? `<span style="color:#888;font-size:12px">${'$'.repeat(r.price_level)}</span>` : '';
 
   let badges = '';
@@ -2751,14 +2694,14 @@ function renderCardAR(r) {
   if (r.michelin) {
     const st = r.michelin.stars || 0, d2 = r.michelin.distinction || '';
     if (st >= 1) {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'★'.repeat(Math.min(st,3))} Michelin</a>`;
-      else badges += `<span class="badge mstar">${'★'.repeat(Math.min(st,3))} Michelin</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge mstar" style="text-decoration:none;cursor:pointer">${'⭐'.repeat(Math.min(st,3))} Michelin</a>`;
+      else badges += `<span class="badge mstar">${'⭐'.repeat(Math.min(st,3))} Michelin</span>`;
     } else if (d2 === 'bib_gourmand' || d2 === 'bib') {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">Michelin Recommended</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
     } else {
-      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">Michelin Recommended</a>`;
-      else badges += `<span class="badge bib">Michelin Recommended</span>`;
+      if (michelinUrlAR) badges += `<a href="${michelinUrlAR}" target="_blank" rel="noopener" class="badge bib" style="text-decoration:none;cursor:pointer">📖 Michelin Recommended</a>`;
+      else badges += `<span class="badge bib">📖 Michelin Recommended</span>`;
     }
   }
   if (hasBuzzAR(r) && !r.michelin) {
@@ -2768,11 +2711,11 @@ function renderCardAR(r) {
     if (r.buzz_sources) r.buzz_sources.forEach(s => { const k = _nsAR(s); if (k !== 'NYT' && k !== 'Michelin' && !pressLinksAR.has(k)) pressLinksAR.set(k, null); });
     if (pressLinksAR.size > 0) {
       pressLinksAR.forEach((url, src) => {
-        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">${src}</a>`;
-        else badges += `<span class="badge press">${src}</span>`;
+        if (url) badges += `<a href="${url}" target="_blank" rel="noopener" class="badge press" style="text-decoration:none;cursor:pointer">📰 ${src}</a>`;
+        else badges += `<span class="badge press">📰 ${src}</span>`;
       });
     } else {
-      badges += `<span class="badge press">Press Pick</span>`;
+      badges += `<span class="badge press">📰 Press Pick</span>`;
     }
   }
   if (!r.michelin) {
@@ -2782,19 +2725,19 @@ function renderCardAR(r) {
       badges = badges.replace(/<a[^>]*class="badge press"[^>]*>📰 [^<]+<\/a>/g, '').replace(/<span class="badge press">📰 [^<]+<\/span>/g, '');
       const nytLinkAR = bdataAR?.links?.find(l => l.source === 'NYT' || l.source === 'NY Times');
       const nytUrlAR = nytLinkAR?.url;
-      const nytStyleAR = 'background:#f5ede0;color:#8b7355;border:none;text-decoration:none;cursor:pointer';
+      const nytStyleAR = 'background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2);text-decoration:none;cursor:pointer';
       if (r.nyt_top_100) {
         const rm = nytLinkAR?.label?.match(/#(\d+)/);
         const rs = rm ? ` #${rm[1]}` : '';
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT Top 100${rs}</a>`;
-        else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT Top 100${rs}</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT Top 100${rs}</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT Top 100${rs}</span>`;
       } else if (r.pete_wells && r.nyt_stars) {
         const stars = '★'.repeat(Math.min(r.nyt_stars, 4));
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT ${stars}</a>`;
-        else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT ${stars}</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT ${stars}</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">📰 NYT ${stars}</span>`;
       } else {
-        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">NYT</a>`;
-        else badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">NYT</span>`;
+        if (nytUrlAR) badges += `<a href="${nytUrlAR}" target="_blank" rel="noopener" class="badge" style="${nytStyleAR}">📰 NYT</a>`;
+        else badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.15)">📰 NYT</span>`;
       }
     }
   }
@@ -2802,81 +2745,32 @@ function renderCardAR(r) {
   if (rat >= 4.0 && rev > 0) {
     const rs = rev >= 1000 ? (rev/1000).toFixed(1)+'k' : rev;
     const opacity = rat >= 4.7 ? '1' : rat >= 4.4 ? '.8' : '.55';
-    badges += `<span class="badge goog" style="opacity:${opacity}">${rat} (${rs})</span>`;
+    badges += `<span class="badge goog" style="opacity:${opacity}">⭐ ${rat} (${rs})</span>`;
   } else if (rat >= 4.0) {
-    badges += `<span class="badge goog" style="opacity:.55">${rat}</span>`;
+    badges += `<span class="badge goog" style="opacity:.55">⭐ ${rat}</span>`;
   }
 
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">inKind 20% Off</span>`;
-  // Bilt badge — only show when Bilt filter is active
-  if (r.bilt_dining && arState.rewardsFilter === 'bilt')
+    badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
+  // Bilt badge
+  if (r.bilt_dining && (hasBookingPlatform(r) || arState.rewardsFilter === 'bilt'))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
-
-  // Instagram Influencers collapsible badge
-  if (r.instagram_buzz && r.instagram_buzz.length > 0) {
-    const _sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
-    const _buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
-    let _links = _sorted.map(p => `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">@${p.influencer}</a>`).join('');
-    badges += `<span class="insta-influencer-badge"><button class="insta-influencer-toggle" onclick="toggleInstaBuzz('${_buzzId}',this)">📸 Instagram Influencers (${_sorted.length}) ▾</button><div id="${_buzzId}" class="insta-influencer-dropdown" style="display:none">${_links}</div></span>`;
-  }
+    badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const bpAR = (r.booking_platform || r.platform || '').toLowerCase();
   const realPlatformAR = bpAR === 'resy' || bpAR === 'opentable' || bpAR === 'tock' || bpAR === 'sevenrooms';
   const tier = realPlatformAR ? availTierAR(r) : null;
   let availHtml = '';
-
-  const _sAvail   = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)';
-  const _sLimited = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fff8e1;color:#f57c00;border:1px solid rgba(245,124,0,.25)';
-  const _sBooked  = 'display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fde8e8;color:#c0392b;border:1px solid rgba(192,57,43,.25)';
-  function _wBadge(status, label) {
-    if (status === 'available') return `<span style="${_sAvail}">${label}</span>`;
-    if (status === 'limited')   return `<span style="${_sLimited}">${label}</span>`;
-    return `<span style="${_sBooked}">${label}</span>`;
-  }
-
-  const hasNewDataAR = r.early || r.prime || r.late;
-  const hasOldDataAR = r.has_early || r.has_prime || r.has_late;
-  const hasWindowDataAR = realPlatformAR && (hasNewDataAR || hasOldDataAR);
-
-  if (hasWindowDataAR) {
-    const earlyS = r.early || (r.has_early ? 'available' : 'booked');
-    const primeS = r.prime || (r.has_prime ? 'available' : 'booked');
-    const lateS  = r.late  || (r.has_late  ? 'available' : 'booked');
-    const allAvail  = earlyS === 'available' && primeS === 'available' && lateS === 'available';
-    const allBooked = earlyS === 'booked' && primeS === 'booked' && lateS === 'booked';
-    const isBooked  = tier === 'booked' || allBooked;
-
-    if (isBooked && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
-    } else if (isBooked && r.fully_locked) {
-      availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
-    } else if (isBooked) {
-      availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
-    } else if (allAvail) {
-      availHtml = `<div><span class="avail av">Available Tonight</span></div>`;
-    } else {
-      const twb = _wBadge(earlyS, 'Early') + _wBadge(primeS, 'Prime') + _wBadge(lateS, 'Late');
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px">${twb}</div>`;
-    }
-  } else if (tier === 'tasting_menu') {
-    const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
-    availHtml = `<div><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
-  } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
-  } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
-  } else if (tier === 'booked') {
-    availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
-  } else if (tier === 'available') {
-    availHtml = `<div><span class="avail av">Available Tonight</span></div>`;
-  } else if (tier === 'limited') {
-    availHtml = `<div><span class="avail lim">Limited Spots</span></div>`;
-  }
+  if (tier === 'tasting_menu') { const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : ''; availHtml = `<div><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">🍽 Tasting Menu${pp}</span></div>`; }
+  else if (tier === 'available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
+  else if (tier === 'limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
+  else if (tier === 'hard') availHtml = `<div><span class="avail hard">🔴 Hard to Book</span></div>`;
+  else if (tier === 'booked' && r.opens_in) availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
+  else if (tier === 'booked' && r.fully_locked) availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  else if (tier === 'booked') availHtml = `<div><span class="avail hard">🔴 Booked Tonight</span></div>`;
 
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
@@ -2885,9 +2779,9 @@ function renderCardAR(r) {
 
   let bookBtn = '';
   if (r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
-    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Walk-in</a>`;
+    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">🚶 Walk-in</a>`;
   } else if (r.booking_url && r.booking_platform) {
-    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},google_reserve:{cls:'google',label:'Book on Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
+    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform] || {cls:'site', label:'Book on Website →'};
     bookBtn = `<a href="${r.booking_url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
   } else if (r.website) {
@@ -2899,15 +2793,33 @@ function renderCardAR(r) {
   let cardLinks = '';
   if (r.website || instaHandle || (r.instagram_buzz && r.instagram_buzz.length > 0)) {
     cardLinks = '<div class="card-links">';
-    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">Website</a>`;
+    if (r.website) cardLinks += `<a href="${r.website}" target="_blank" rel="noopener" class="web-link">🌐 Website</a>`;
     if (instaHandle) {
       const ch = instaHandle.replace(/^@/,'').replace(/https?:\/\/.*instagram\.com\//,'').replace(/\/?$/,'');
-      cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">@${ch}</a>`;
+      cardLinks += `<a href="https://www.instagram.com/${ch}" target="_blank" rel="noopener" class="insta-link">📸 @${ch}</a>`;
+    }
+    if (r.instagram_buzz && r.instagram_buzz.length > 0) {
+      const sorted = [...r.instagram_buzz].sort((a,b) => (b.likes||0) - (a.likes||0));
+      const top = sorted[0];
+      const rest = sorted.slice(1);
+      const buzzId = 'ibuzz_' + Math.random().toString(36).slice(2,8);
+      if (rest.length === 0) {
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+      } else {
+        cardLinks += `<span class="insta-buzz-wrap">`;
+        cardLinks += `<a href="${top.post_url}" target="_blank" rel="noopener" class="insta-buzz-link">🎯 @${top.influencer}</a>`;
+        cardLinks += `<button class="insta-buzz-more" onclick="toggleInstaBuzz('${buzzId}',this)">+${rest.length} more ▾</button>`;
+        cardLinks += `<span id="${buzzId}" class="insta-buzz-expanded" style="display:none">`;
+        rest.forEach(p => {
+          cardLinks += `<a href="${p.post_url}" target="_blank" rel="noopener" class="insta-buzz-link insta-buzz-sub">@${p.influencer}</a>`;
+        });
+        cardLinks += `</span></span>`;
+      }
     }
     cardLinks += '</div>';
   }
 
-  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
+  const VIBE_EMOJI_AR = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
   const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
@@ -2945,10 +2857,7 @@ function applyARFilters(list) {
   else if (bf === 'very_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.5 && rg < 4.65; });
   else if (bf === 'great') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.6 && rg < 4.75; });
   else if (bf === 'exceptional') list = list.filter(r => Number(r.googleRating||0) >= 4.8 || (r.michelin?.stars||0) >= 1);
-  if (pf === 'multi' && arState.priceLevels && arState.priceLevels.length > 0) {
-    const mn = Math.min(...arState.priceLevels), mx = Math.max(...arState.priceLevels);
-    list = list.filter(r => r.price_level >= mn && r.price_level <= mx);
-  } else if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
+  if (pf !== 'any') list = list.filter(r => r.price_level === Number(pf));
   if (arState.reviewCountFilter && arState.reviewCountFilter !== 'any') {
     const minR = Number(arState.reviewCountFilter);
     list = list.filter(r => (Number(r.googleReviewCount||0)) >= minR);
@@ -2972,32 +2881,6 @@ function applyARFilters(list) {
       return true;
     });
   }
-  // ── Hot Spots filter (multi-select OR logic) ──
-  const hsfs = (arState.hotspotFilters && arState.hotspotFilters.length > 0) ? arState.hotspotFilters : [];
-  if (hsfs.length > 0) {
-    list = list.filter(r => hsfs.some(hsf => {
-      if (hsf==='michelin') return (r.michelin?.stars||0)>=1;
-      if (hsf==='michelin_rec') return r.michelin_recommended || r.bib_gourmand || (r.michelin && (r.michelin.distinction==='recommended'||r.michelin.distinction==='bib_gourmand'));
-      if (hsf==='nyt') return hasNYTCoverage(r);
-      if (hsf==='press') {
-        if (r.buzz_sources && r.buzz_sources.length > 0) return true;
-        if (r.infatuation_url) return true;
-        const bdata = getBuzzLinks(r.name);
-        const hasEaterOrInfat = bdata?.links?.some(l => l.source==='Eater' || l.source==='The Infatuation' || l.source==='Infatuation');
-        return hasEaterOrInfat || BUZZ_SET_AR.has((r.name||'').toLowerCase().trim());
-      }
-      if (hsf==='timeout') {
-        if (r.buzz_sources && r.buzz_sources.some(s => s === 'Time Out' || s === 'TimeOut')) return true;
-        const bdata = getBuzzLinks(r.name);
-        return bdata?.links?.some(l => l.source==='timeout' || l.source==='Time Out');
-      }
-      if (hsf==='instagram') return !!(r.instagram_buzz && r.instagram_buzz.length > 0);
-      if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
-      if (hsf==='exceptional') return Number(r.googleRating||0) >= 4.7;
-      if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
-      return false;
-    }));
-  }
   // ── Availability filter ──
   const af = arState.availFilter;
   const hf = arState.horizonFilter;
@@ -3006,23 +2889,10 @@ function applyARFilters(list) {
       const tier = r.avail_tier;
       const bp = (r.booking_platform || '').toLowerCase();
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
-      if (af === 'book_ahead') {
-        if (!realPlatform) return false;
-        const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
-        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14)) return false;
-        if (arState.daysFilter) return r.opens_in === arState.daysFilter;
-        return true;
-      }
       if (!realPlatform) return false;
       if (!tier) return false;
       if (af === 'booked_solid') return tier === 'booked' && !r.opens_in && r.fully_locked;
-      if (af === 'limited') {
-        const e = r.early, p = r.prime, l = r.late;
-        if (!e && !p && !l) return false;
-        const allAvail = e === 'available' && p === 'available' && l === 'available';
-        const allBooked = e === 'booked' && p === 'booked' && l === 'booked';
-        return !allAvail && !allBooked;
-      }
+      if (af === 'limited') return tier === 'limited' || (tier !== 'booked' && (r.has_early || r.has_prime || r.has_late));
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
       if (af === 'late')  return r.has_late  && tier !== 'booked';
@@ -3037,8 +2907,6 @@ function applyARFilters(list) {
 }
 
 function displayAllNYC(restaurants) {
-  const _resDaysEl = document.getElementById('ar-results-days');
-  if (_resDaysEl) _resDaysEl.style.display = arState.availFilter === 'book_ahead' ? 'block' : 'none';
   const filtered = applyARFilters([...restaurants]);
   document.getElementById('allRestMeta').textContent = `${filtered.length} restaurant${filtered.length !== 1 ? 's' : ''}`;
   if (!filtered.length) {
@@ -3124,7 +2992,7 @@ async function doAllNYCSearch() {
     let results = [...(data.elite || []), ...(data.moreOptions || [])];
     const seen = new Set();
     results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
-    results = results.map(r => ({ ...r, name: r.name||r.vicinity||'', booking_platform: r.booking_platform||null, booking_url: r.booking_url||null, website: r.website||null, vicinity: r.vicinity || r.formatted_address || r.address || null }));
+    results = results.map(r => ({ ...r, name: r.name||r.vicinity||'', booking_platform: r.booking_platform||null, booking_url: r.booking_url||null, website: r.website||null }));
     allNYCRestaurants = results;
     displayAllNYC(allNYCRestaurants);
   } catch(err) {
@@ -3250,9 +3118,9 @@ function renderBarCard(b) {
     const barSrcSet = new Set();
     b.buzz_sources.forEach(s => barSrcSet.add(s === 'The Infatuation' ? 'Infatuation' : s));
     if (barSrcSet.size > 0) {
-      barSrcSet.forEach(src => { badges += `<span class="badge press">${src}</span>`; });
+      barSrcSet.forEach(src => { badges += `<span class="badge press">📰 ${src}</span>`; });
     } else {
-      badges += `<span class="badge press">Press Pick</span>`;
+      badges += `<span class="badge press">📰 Press Pick</span>`;
     }
   }
 
@@ -3277,7 +3145,7 @@ function renderBarCard(b) {
       const ampm = last[3].toUpperCase();
       const closeHour = ampm === 'AM' ? (hr===12?24:24+hr) : (hr===12?12:12+hr);
       if (closeHour >= 29) badges += `<span class="badge" style="background:#f5f3ff;color:#6d28d9;border:1px solid rgba(109,40,217,.2)">🌑 Until 5am+</span>`;
-      else if (closeHour === 28) badges += `<span class="badge" style="background:#f5ede0;color:#8b7355;border:none">🌙 Until 4am</span>`;
+      else if (closeHour === 28) badges += `<span class="badge" style="background:#eef2ff;color:#4338ca;border:1px solid rgba(67,56,202,.2)">🌙 Until 4am</span>`;
     }
   }
 
@@ -3489,7 +3357,7 @@ function _toggleMapFilter(filter, btn) {
   _mapFilter = filter;
   document.querySelectorAll('.mfilt').forEach(b => { b.classList.remove('on'); b.style.background = ''; b.style.color = ''; b.style.borderColor = ''; });
   btn.classList.add('on');
-  if (filter === 'all') { btn.style.background = '#1b4332'; btn.style.color = '#fff'; }
+  if (filter === 'all') { btn.style.background = '#ff4500'; btn.style.color = '#fff'; }
   _renderVisible();
 }
 
@@ -3526,7 +3394,7 @@ function _renderVisible() {
     const isMichelin = r.michelin?.stars >= 1;
     const isHotSpot = _isHotSpot(r);
     let color = '#888';
-    if (isHotSpot) color = '#1b4332';
+    if (isHotSpot) color = '#ff4500';
     else if (tier === 'booked' && r.fully_locked) color = '#1a1a1a';
     else if (tier === 'booked') color = '#c0392b';
     else if (tier === 'limited') color = '#f5a623';

@@ -253,7 +253,7 @@ function applyARFilters(list) {
   }
   if (arState.cuisine && arState.cuisine !== 'any') {
     const cs = arState.cuisine.toLowerCase();
-    list = list.filter(r => (r.cuisine || '').toLowerCase().includes(cs) || cs.includes((r.cuisine || '').toLowerCase().trim()));
+    list = list.filter(r => { const cc = (r.cuisine || '').toLowerCase().trim(); return cc.includes(cs) || (cc && cs.includes(cc)); });
   }
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
   if (arState.rewardsFilter !== 'bilt') {

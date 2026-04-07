@@ -328,7 +328,7 @@ function display(restaurants) {
     const cs = state.cuisine.toLowerCase();
     list = list.filter(r => {
       const c = (r.cuisine || '').toLowerCase();
-      return c.includes(cs) || cs.includes(c);
+      return c.includes(cs) || (c && cs.includes(c));
     });
   }
 
