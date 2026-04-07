@@ -2671,30 +2671,17 @@ function arTogglePriceAny(btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    if (arState.hotspotFilter === 'any' && arState._allClicked) {
-      // Second tap on All — clear everything and collapse
-      arState.hotspotFilters = [];
-      arState.hotspotFilter = 'any';
-      arState._allClicked = false;
-      document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
-      const body = document.getElementById('arHotspotFilters');
-      const toggle = body && body.previousElementSibling;
-      if (body) body.classList.remove('open');
-      if (toggle) toggle.classList.remove('open');
-    } else {
-      arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
-      arState.hotspotFilter = 'any';
-      arState._allClicked = true;
-      document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-    }
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
+    arState.hotspotFilter = 'any';
+    document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
   } else {
     const idx = arState.hotspotFilters.indexOf(val);
     if (idx > -1) { arState.hotspotFilters.splice(idx, 1); btn.classList.remove('on'); }
     else { arState.hotspotFilters.push(val); btn.classList.add('on'); }
     const anyBtn = document.getElementById('ar-hot-any');
     if (arState.hotspotFilters.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.hotspotFilter = arState.hotspotFilters[0]; }
-    else { arState.hotspotFilter = 'none'; }
+    else { arState.hotspotFilter = 'any'; }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
