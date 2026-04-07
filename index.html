@@ -2671,10 +2671,21 @@ function arTogglePriceAny(btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
-    arState.hotspotFilter = 'any';
-    document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
+    if (arState.hotspotFilter === 'any') {
+      // Already on All — clear everything and collapse
+      arState.hotspotFilters = [];
+      arState.hotspotFilter = 'none';
+      document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
+      const body = document.getElementById('arHotspotFilters');
+      const toggle = body && body.previousElementSibling;
+      if (body) body.classList.remove('open');
+      if (toggle) toggle.classList.remove('open');
+    } else {
+      arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
+      arState.hotspotFilter = 'any';
+      document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+    }
   } else {
     const idx = arState.hotspotFilters.indexOf(val);
     if (idx > -1) { arState.hotspotFilters.splice(idx, 1); btn.classList.remove('on'); }
