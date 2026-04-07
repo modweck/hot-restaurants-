@@ -4121,31 +4121,6 @@
     "last_availability_check": "2026-03-06",
     "venue_id": 29967
   },
-  "jack's wife freda - chelsea": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/jacks-wife-freda-soho",
-    "lat": 40.7409188,
-    "lng": -74.0014771,
-    "google_rating": 4.4,
-    "google_reviews": 2219,
-    "place_id": "ChIJyWBz6jxZwokRQTUeDbf2TmA",
-    "website": "https://jackswifefreda.com/",
-    "address": "116 8th Ave, New York, NY 10011, United States",
-    "cuisine": "Mediterranean",
-    "buzz_sources": [
-      "Eater",
-      "Infatuation"
-    ],
-    "vibe_tags": [
-      "casual",
-      "hidden_gem",
-      "brunch"
-    ],
-    "instagram": "jackswifefreda",
-    "price": 2,
-    "neighborhood": "Chelsea",
-    "inkind": true
-  },
   "the musket room": {
     "platform": "resy",
     "url": "https://resy.com/cities/ny/the-musket-room",
@@ -7631,7 +7606,7 @@
     "address": "283 3rd Ave, New York, NY 10010, USA"
   },
   "foul witch": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/ny/foul-witch",
     "lat": 40.722786,
     "lng": -73.9862345,
@@ -8999,31 +8974,6 @@
     "instagram": "cardamom.nyc",
     "michelin_recommended": true,
     "booking_platform": "website"
-  },
-  "Il Cervo": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/cervos",
-    "lat": 40.7148624,
-    "lng": -73.99134459999999,
-    "google_rating": 4.5,
-    "google_reviews": 586,
-    "place_id": "ChIJp_UkrilawokRtDAS5sls7jo",
-    "website": "http://cervosnyc.com/",
-    "address": "43 Canal St, New York, NY 10002, United States",
-    "cuisine": "Mediterranean/Seafood",
-    "price": 3,
-    "bib_gourmand": true,
-    "buzz_sources": [
-      "Eater",
-      "Infatuation"
-    ],
-    "vibe_tags": [
-      "casual",
-      "foodie"
-    ],
-    "instagram": "cervosnyc",
-    "ot_slug": "il-cervo",
-    "nyt_top_100": true
   },
   "chalong": {
     "platform": "website",
@@ -14754,7 +14704,7 @@
     "address": "95 Commercial St, Brooklyn, NY 11222, USA"
   },
   "mayfield": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/ny/mayfield",
     "lat": 40.674912,
     "lng": -73.95667,
@@ -50013,7 +49963,7 @@
     "ot_slug": "ayada-thai"
   },
   "ayah moroccan restaurant soho": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/ny/ayah-restaurant",
     "cuisine": "Moroccan",
     "rating": "",
@@ -54634,23 +54584,27 @@
   "jack's wife freda - soho": {
     "platform": "resy",
     "url": "https://resy.com/cities/ny/jacks-wife-freda-soho",
-    "lat": 40.7221909443766,
-    "lng": -73.9974602000132,
+    "lat": 40.7409188,
+    "lng": -74.0014771,
     "google_rating": 4.4,
-    "google_reviews": 4287,
-    "place_id": "ChIJA4i114hZwokRaqeyrmI80x0",
-    "neighborhood": "New York",
-    "instagram": "jackswifefreda",
+    "google_reviews": 2219,
+    "place_id": "ChIJyWBz6jxZwokRQTUeDbf2TmA",
+    "website": "https://jackswifefreda.com/",
+    "address": "116 8th Ave, New York, NY 10011, United States",
     "cuisine": "Mediterranean",
-    "price": 2,
+    "buzz_sources": [
+      "Eater",
+      "Infatuation"
+    ],
     "vibe_tags": [
       "casual",
       "hidden_gem",
       "brunch"
     ],
-    "website": "https://jackswifefreda.com",
-    "inkind": true,
-    "address": "226 Lafayette St, New York, NY 10012, USA"
+    "instagram": "jackswifefreda",
+    "price": 2,
+    "neighborhood": "Chelsea",
+    "inkind": true
   },
   "Frida": {
     "platform": "opentable",
@@ -58591,7 +58545,7 @@
     "address": "2 Erie St, Montclair, NJ 07042, USA"
   },
   "the otter": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/ny/otter",
     "lat": 40.72405,
     "lng": -74.00312,
@@ -59523,7 +59477,7 @@
     "address": "1 E 35th St, New York, NY 10016, USA"
   },
   "rulin": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/ny/rulin",
     "lat": 40.73539607365877,
     "lng": -73.99298953066439,
@@ -59865,7 +59819,7 @@
     "address": "28 W 44th St, New York, NY 10036, USA"
   },
   "sendo": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/new-york-ny/venues/sendo",
     "lat": 40.748165772062706,
     "lng": -73.98890734600674,
@@ -60308,7 +60262,7 @@
     "venue_id": 54599
   },
   "sloane's": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/new-york-ny/venues/sloanes-ny",
     "lat": 40.72396,
     "lng": -74.00312,
@@ -94893,7 +94847,7 @@
     "venue_id": 54876
   },
   "Lucky Charlie": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/new-york-ny/venues/lucky-charlie",
     "lat": 40.6998399,
     "lng": -73.9163025,
@@ -95466,7 +95420,7 @@
     "venue_id": 466
   },
   "Russ And Daughters Cafe": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/new-york-ny/venues/russ-and-daughters-cafe",
     "lat": 40.7196181,
     "lng": -73.9895779,
@@ -106437,7 +106391,7 @@
     "address": "86 Warren St, New York, NY 10007, USA"
   },
   "the polo bar": {
-    "platform": "resy",
+    "platform": "website",
     "url": "https://resy.com/cities/new-york-ny/venues/the-polo-bar",
     "lat": 40.761711,
     "lng": -73.974373,
@@ -110985,8 +110939,8 @@
     "place_id": "ChIJr3K-RdZZwokR_tVCYQVzHQc"
   },
   "una pizza napoletana": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/una-pizza-napoletana",
+    "platform": "website",
+    "url": "https://unapizza.com/",
     "address": "175 Orchard St, New York, NY 10002",
     "neighborhood": "Lower East Side",
     "cuisine": "Pizza",
@@ -112858,7 +112812,7 @@
     ],
     "michelin_recommended": false,
     "url": "https://resy.com/cities/ny/elvis",
-    "platform": "resy",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/ny/elvis",
     "resy_slug": "elvis"
   },
@@ -125379,5 +125333,30 @@
       "date_night"
     ],
     "instagram": "cotenyc"
+  },
+  "Cervo's": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/cervos",
+    "lat": 40.7148624,
+    "lng": -73.99134459999999,
+    "google_rating": 4.5,
+    "google_reviews": 586,
+    "place_id": "ChIJp_UkrilawokRtDAS5sls7jo",
+    "website": "http://cervosnyc.com/",
+    "address": "43 Canal St, New York, NY 10002, United States",
+    "cuisine": "Mediterranean/Seafood",
+    "price": 3,
+    "bib_gourmand": true,
+    "buzz_sources": [
+      "Eater",
+      "Infatuation"
+    ],
+    "vibe_tags": [
+      "casual",
+      "foodie"
+    ],
+    "instagram": "cervosnyc",
+    "ot_slug": "il-cervo",
+    "nyt_top_100": true
   }
 }
