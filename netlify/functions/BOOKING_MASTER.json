@@ -27005,7 +27005,8 @@
     ],
     "price": 2,
     "price_estimated": true,
-    "address": "218 W 40th St, New York, NY 10018, USA"
+    "address": "218 W 40th St, New York, NY 10018, USA",
+    "resy_venue_id": 646
   },
   "king's kitchen": {
     "platform": "opentable",
@@ -39310,7 +39311,8 @@
     "michelin_recommended": true,
     "nyt_top_100": true,
     "address": "70 Forsyth St, New York, NY 10002, USA",
-    "venue_id": 80206
+    "venue_id": 80206,
+    "resy_venue_id": 80206
   },
   "le chai": {
     "platform": "opentable",
@@ -63784,7 +63786,8 @@
       "date_night"
     ],
     "instagram": "casaciprianinyc",
-    "inkind": true
+    "inkind": true,
+    "resy_venue_id": 60516
   },
   "jimmy's trattoria": {
     "platform": "resy",
@@ -64541,7 +64544,8 @@
     ],
     "instagram": "taramorny",
     "price": 2,
-    "price_estimated": true
+    "price_estimated": true,
+    "resy_venue_id": 87606
   },
   "Sonnyboy": {
     "platform": "resy",
@@ -81352,7 +81356,8 @@
       "date_night",
       "upscale"
     ],
-    "_vibe_confidence": "low"
+    "_vibe_confidence": "low",
+    "resy_venue_id": 93376
   },
   "Crispy Heaven": {
     "url": "https://resy.com/cities/new-york-ny/venues/crispy-heaven",
@@ -94453,7 +94458,8 @@
       "date_night"
     ],
     "address": "226 W 79th St, New York, NY 10024, USA",
-    "venue_id": 77722
+    "venue_id": 77722,
+    "resy_venue_id": 77722
   },
   "Hill Country Barbecue Market": {
     "platform": "resy",
@@ -95036,7 +95042,8 @@
       "casual",
       "date_night"
     ],
-    "address": "243 E 58th St, New York, NY 10022, USA"
+    "address": "243 E 58th St, New York, NY 10022, USA",
+    "resy_venue_id": 60933
   },
   "Obao": {
     "platform": "resy",
@@ -95652,7 +95659,8 @@
       "upscale",
       "lively"
     ],
-    "address": "1477 2nd Ave, New York, NY 10075, USA"
+    "address": "1477 2nd Ave, New York, NY 10075, USA",
+    "resy_venue_id": 4044
   },
   "Souvlaki Gr": {
     "platform": "opentable",
@@ -100771,7 +100779,8 @@
       "outdoor",
       "chill"
     ],
-    "resy_url": "https://resy.com/cities/ny/12-chairs-cafe"
+    "resy_url": "https://resy.com/cities/ny/12-chairs-cafe",
+    "resy_venue_id": 4956
   },
   "The Corner Store": {
     "name": "The Corner Store",
@@ -101603,7 +101612,8 @@
       "date_night",
       "upscale"
     ],
-    "address": "56 Beaver St, New York, NY 10004, USA"
+    "address": "56 Beaver St, New York, NY 10004, USA",
+    "resy_venue_id": 71393
   },
   "Senshi Ramen": {
     "name": "Senshi Ramen",
@@ -109297,7 +109307,8 @@
       "date_night",
       "lively"
     ],
-    "address": "1114 8th Ave, Brooklyn, NY 11215, USA"
+    "address": "1114 8th Ave, Brooklyn, NY 11215, USA",
+    "resy_venue_id": 41761
   },
   "Altair": {
     "platform": "opentable",
@@ -109436,7 +109447,8 @@
       "date_night",
       "foodie"
     ],
-    "address": "1571 McDonald Ave, Brooklyn, NY 11230, USA"
+    "address": "1571 McDonald Ave, Brooklyn, NY 11230, USA",
+    "resy_venue_id": 73655
   },
   "Gomi Korean wine Bar": {
     "platform": "website",
@@ -110044,7 +110056,8 @@
       "foodie"
     ],
     "instagram": "suramnyc",
-    "price": 2
+    "price": 2,
+    "resy_venue_id": 73078
   },
   "tanoshi sushi sake bar": {
     "platform": "resy",
@@ -110145,7 +110158,8 @@
     ],
     "url": "https://resy.com/cities/ny/delmonicos",
     "resy_url": "https://resy.com/cities/ny/delmonicos",
-    "resy_slug": "delmonicos"
+    "resy_slug": "delmonicos",
+    "resy_venue_id": 71393
   },
   "Sabai Thai": {
     "platform": "resy",
@@ -113559,7 +113573,8 @@
     ],
     "price": 0,
     "new_rising": true,
-    "resy_url": "https://resy.com/cities/ny/sozo-sip-bar-and-omakase"
+    "resy_url": "https://resy.com/cities/ny/sozo-sip-bar-and-omakase",
+    "resy_venue_id": 95774
   },
   "joys\u2019 cafe": {
     "platform": "website",
@@ -123603,7 +123618,8 @@
     "address": "232 8th Ave, New York, NY 10011, USA",
     "lat": 40.7443082,
     "lng": -73.9987117,
-    "website": "https://www.spicymoonnyc.com/"
+    "website": "https://www.spicymoonnyc.com/",
+    "resy_venue_id": 85441
   },
   "Dar525 Greenpoint": {
     "platform": "resy",
@@ -125067,7 +125083,8 @@
     "google_reviews": 5000,
     "cuisine": "American/Dessert",
     "lat": 40.763,
-    "lng": -73.965
+    "lng": -73.965,
+    "resy_venue_id": 41007
   },
   "Shaken Not Stirred": {
     "platform": "opentable",
@@ -125409,8 +125426,8 @@
   },
   "orso": {
     "name": "orso",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/orso",
+    "platform": null,
+    "url": null,
     "lat": 40.7600933,
     "lng": -73.98894510000001,
     "google_rating": 4.5,
@@ -125439,8 +125456,8 @@
   },
   "aquarelle": {
     "name": "aquarelle",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/aquarelle",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/aquarelle",
     "lat": 40.7229499,
     "lng": -73.9824801,
     "google_rating": 4.8,
@@ -125454,8 +125471,8 @@
   },
   "nemesis": {
     "name": "nemesis",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/nemesis-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7385914,
     "lng": -73.9889086,
     "google_rating": 4.8,
@@ -125469,8 +125486,8 @@
   },
   "cactus wren": {
     "name": "cactus wren",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/cactus-wren-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7201959,
     "lng": -73.9884366,
     "google_rating": 4.6,
@@ -125484,8 +125501,8 @@
   },
   "members only": {
     "name": "members only",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/members-only-west-village-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/members-only-west-village",
     "lat": 40.7334733,
     "lng": -73.998693,
     "google_rating": 5,
@@ -125499,8 +125516,8 @@
   },
   "cocktail bar": {
     "name": "cocktail bar",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/bees-knees-cocktail-bar-and-restaurant-brooklyn",
+    "platform": null,
+    "url": null,
     "lat": 40.7562623,
     "lng": -73.9811995,
     "google_rating": 4.7,
@@ -125514,8 +125531,8 @@
   },
   "nonono": {
     "name": "nonono",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/nonono-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/yakitori-nonono",
     "lat": 40.7454616,
     "lng": -73.9848504,
     "google_rating": 4.5,
@@ -125529,8 +125546,8 @@
   },
   "the long hall": {
     "name": "the long hall",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-long-hall-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7472222,
     "lng": -73.9822222,
     "google_rating": 4.5,
@@ -125559,8 +125576,8 @@
   },
   "eavesdrop": {
     "name": "eavesdrop",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/eavesdrop-brooklyn",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/eavesdrop",
     "lat": 40.724922,
     "lng": -73.95115950000002,
     "google_rating": 4.4,
@@ -125604,8 +125621,8 @@
   },
   "benihana": {
     "name": "benihana",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/benihana",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/benihana-new-york-west-ny",
     "lat": 40.7634414,
     "lng": -73.97666240000001,
     "google_rating": 4.3,
@@ -125634,8 +125651,8 @@
   },
   "godunk": {
     "name": "godunk",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/godunk-nyc-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7259208,
     "lng": -73.9922019,
     "google_rating": 5,
@@ -125649,8 +125666,8 @@
   },
   "the consulate": {
     "name": "the consulate",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-consulate-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/the-consulate",
     "lat": 40.7630945,
     "lng": -73.9766369,
     "google_rating": 4.7,
@@ -125664,8 +125681,8 @@
   },
   "maison close": {
     "name": "maison close",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/maison-close-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/maison-close",
     "lat": 40.7232542,
     "lng": -74.0037064,
     "google_rating": 4.8,
@@ -125679,8 +125696,8 @@
   },
   "mezcali": {
     "name": "mezcali",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/mezcali-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/mezcali-new-york",
     "lat": 40.70745460000001,
     "lng": -74.0074691,
     "google_rating": 4.7,
@@ -125694,8 +125711,8 @@
   },
   "musaafer": {
     "name": "musaafer",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/musaafer",
+    "platform": null,
+    "url": null,
     "lat": 40.7163245,
     "lng": -74.0075569,
     "google_rating": 4.7,
@@ -125709,8 +125726,8 @@
   },
   "extra virgin": {
     "name": "extra virgin",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/extra-virgin",
+    "platform": null,
+    "url": null,
     "lat": 40.7354394,
     "lng": -74.003166,
     "google_rating": 4,
@@ -125739,8 +125756,8 @@
   },
   "anntremet cake": {
     "name": "anntremet cake",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/anntremet-cake-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7385327,
     "lng": -74.00401289999999,
     "google_rating": 4.3,
@@ -125784,8 +125801,8 @@
   },
   "zaytinya": {
     "name": "zaytinya",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/zaytinya-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.745546,
     "lng": -73.9889515,
     "google_rating": 4.4,
@@ -125799,8 +125816,8 @@
   },
   "golden wuish": {
     "name": "golden wuish",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/golden-wuish-new-york-2",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/wuish-kitchen-and-bar",
     "lat": 40.70733,
     "lng": -74.0063713,
     "google_rating": 4.4,
@@ -125814,8 +125831,8 @@
   },
   "bar pitti": {
     "name": "bar pitti",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/bar-pitti",
+    "platform": null,
+    "url": null,
     "lat": 40.7290278,
     "lng": -74.0021501,
     "google_rating": 3.8,
@@ -125829,8 +125846,8 @@
   },
   "sappe": {
     "name": "sappe",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/sappeisan-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7391403,
     "lng": -74.0018035,
     "google_rating": 4.9,
@@ -125874,8 +125891,8 @@
   },
   "great wall restaurant": {
     "name": "great wall restaurant",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/great-wall-lebanon",
+    "platform": null,
+    "url": null,
     "lat": 40.763896,
     "lng": -73.8817713,
     "google_rating": 4,
@@ -125889,8 +125906,8 @@
   },
   "ootoya": {
     "name": "ootoya",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/ootoya-chelsea-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/ootoya-chelsea",
     "lat": 40.7549444,
     "lng": -73.9859778,
     "google_rating": 4.3,
@@ -125904,8 +125921,8 @@
   },
   "something else": {
     "name": "something else",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/something-else-liverpool",
+    "platform": null,
+    "url": null,
     "lat": 40.6907244,
     "lng": -73.9832855,
     "google_rating": 4.4,
@@ -125934,8 +125951,8 @@
   },
   "bar miller": {
     "name": "bar miller",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/bar-miller",
+    "platform": null,
+    "url": null,
     "lat": 40.723986,
     "lng": -73.9808048,
     "google_rating": 4.9,
@@ -125949,8 +125966,8 @@
   },
   "au za'atar": {
     "name": "au za'atar",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/au-zaatar-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/au-zaatar",
     "lat": 40.7589866,
     "lng": -73.96275159999999,
     "google_rating": 4.5,
@@ -125979,8 +125996,8 @@
   },
   "malka": {
     "name": "malka",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/malka-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/malka-dumbo",
     "lat": 40.7784799,
     "lng": -73.9807344,
     "google_rating": 4.6,
@@ -126009,8 +126026,8 @@
   },
   "jin ramen": {
     "name": "jin ramen",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/jin-ramen-new-york-2",
+    "platform": null,
+    "url": null,
     "lat": 40.785359,
     "lng": -73.97697389999999,
     "google_rating": 4.4,
@@ -126039,8 +126056,8 @@
   },
   "prime no. 7": {
     "name": "prime no. 7",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/prime-no-7-long-island-city",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/prime-no-7",
     "lat": 40.7559914,
     "lng": -73.9210825,
     "google_rating": 4.8,
@@ -126054,8 +126071,8 @@
   },
   "budda kitchen and bar": {
     "name": "budda kitchen and bar",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/budda-kitchen-and-bar-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.8523733,
     "lng": -73.9348393,
     "google_rating": 4.6,
@@ -126069,8 +126086,8 @@
   },
   "the attic": {
     "name": "the attic",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-attic-queens",
+    "platform": null,
+    "url": null,
     "lat": 40.7624984,
     "lng": -73.82782759999999,
     "google_rating": 4.9,
@@ -126084,8 +126101,8 @@
   },
   "mitr thai": {
     "name": "mitr thai",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/mitr-thai-restaurant-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/mitr-thai",
     "lat": 40.75687689999999,
     "lng": -73.9804147,
     "google_rating": 4.9,
@@ -126099,8 +126116,8 @@
   },
   "sweet spot": {
     "name": "sweet spot",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/sweet-spot-astoria",
+    "platform": null,
+    "url": null,
     "lat": 40.5999572,
     "lng": -73.96105519999999,
     "google_rating": 4.3,
@@ -126114,8 +126131,8 @@
   },
   "the yacht club": {
     "name": "the yacht club",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-yacht-club-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/the-yacht-club-ny",
     "lat": 40.7515771,
     "lng": -74.006581,
     "google_rating": 4.3,
@@ -126129,8 +126146,8 @@
   },
   "thep thai": {
     "name": "thep thai",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/thep-thai-restaurant-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7707714,
     "lng": -73.9572357,
     "google_rating": 4.7,
@@ -126159,8 +126176,8 @@
   },
   "the palace": {
     "name": "the palace",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/palace-santa-fe",
+    "platform": null,
+    "url": null,
     "lat": 40.7609712,
     "lng": -73.9698113,
     "google_rating": 4.1,
@@ -126174,8 +126191,8 @@
   },
   "reading room": {
     "name": "reading room",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-reading-room-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/the-reading-room",
     "lat": 40.7554107,
     "lng": -73.9781283,
     "google_rating": 4.4,
@@ -126219,8 +126236,8 @@
   },
   "gan-hoo bbq": {
     "name": "gan-hoo bbq",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/gan-hoo-bbq-queens",
+    "platform": null,
+    "url": null,
     "lat": 40.7451928,
     "lng": -73.984156,
     "google_rating": 4.9,
@@ -126234,8 +126251,8 @@
   },
   "myrtle thai": {
     "name": "myrtle thai",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/myrtle-thai-brooklyn",
+    "platform": null,
+    "url": null,
     "lat": 40.6930589,
     "lng": -73.9680927,
     "google_rating": 4.8,
@@ -126279,8 +126296,8 @@
   },
   "nomad": {
     "name": "nomad",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/little-ned-nomad-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.74550869999999,
     "lng": -73.9884895,
     "google_rating": 4.8,
@@ -126294,8 +126311,8 @@
   },
   "red room": {
     "name": "red room",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-red-room-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7264809,
     "lng": -73.9898844,
     "google_rating": 4.8,
@@ -126309,8 +126326,8 @@
   },
   "manuela": {
     "name": "manuela",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/manuela-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/manuela-nyc",
     "lat": 40.7254873,
     "lng": -74.0004891,
     "google_rating": 4.3,
@@ -126324,8 +126341,8 @@
   },
   "the blue dog": {
     "name": "the blue dog",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/blue-dog-cookhouse-and-bar-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7625572,
     "lng": -73.98696679999999,
     "google_rating": 4.4,
@@ -126339,8 +126356,8 @@
   },
   "the parlor": {
     "name": "the parlor",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/parlor-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.750662,
     "lng": -73.9861114,
     "google_rating": 4.7,
@@ -126414,8 +126431,8 @@
   },
   "the terrace": {
     "name": "the terrace",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-terrace-and-outdoor-gardens-at-the-edition-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/the-terrace-nyc",
     "lat": 40.759149,
     "lng": -73.98416399999999,
     "google_rating": 4.4,
@@ -126444,8 +126461,8 @@
   },
   "sukh": {
     "name": "sukh",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/sukh-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/sukh-thai",
     "lat": 40.6872542,
     "lng": -73.9763684,
     "google_rating": 4.8,
@@ -126459,8 +126476,8 @@
   },
   "sky lounge": {
     "name": "sky lounge",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/42nd-and-sky-lounge-hilton-times-square-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7544159,
     "lng": -73.9358197,
     "google_rating": 4,
@@ -126504,8 +126521,8 @@
   },
   "caf\u00e9 sabarsky": {
     "name": "caf\u00e9 sabarsky",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/cafe-sabarsky",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/cafe-sabarsky",
     "lat": 40.7812233,
     "lng": -73.9602655,
     "google_rating": 4.3,
@@ -126519,8 +126536,8 @@
   },
   "porter house bar and grill": {
     "name": "porter house bar and grill",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/porter-house-bar-and-grill",
+    "platform": null,
+    "url": null,
     "lat": 40.768882,
     "lng": -73.98263,
     "google_rating": 4.3,
@@ -126534,8 +126551,8 @@
   },
   "cherry on top": {
     "name": "cherry on top",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/cherry-on-top-brooklyn",
+    "platform": null,
+    "url": null,
     "lat": 40.7048018,
     "lng": -73.9212593,
     "google_rating": 4.6,
@@ -126564,8 +126581,8 @@
   },
   "twilight lounge": {
     "name": "twilight lounge",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/twilight-lounge-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/twilight-lounge",
     "lat": 40.726696,
     "lng": -73.9857509,
     "google_rating": 4.9,
@@ -126594,8 +126611,8 @@
   },
   "chelsea living room": {
     "name": "chelsea living room",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/chelsea-living-room-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/chelsea-living-room",
     "lat": 40.7395713,
     "lng": -74.0013209,
     "google_rating": 4.5,
@@ -126609,8 +126626,8 @@
   },
   "la noxe": {
     "name": "la noxe",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/la-noxe-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/la_noxe",
     "lat": 40.747027,
     "lng": -73.993071,
     "google_rating": 3.9,
@@ -126639,8 +126656,8 @@
   },
   "shaking crab": {
     "name": "shaking crab",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/shaking-crab-hells-kitchen-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/shaking-crab-williamsburg",
     "lat": 40.7633889,
     "lng": -73.9892325,
     "google_rating": 4.5,
@@ -126669,8 +126686,8 @@
   },
   "sushi bar": {
     "name": "sushi bar",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/crave-sushi-bar-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7472196,
     "lng": -73.9871655,
     "google_rating": 4.8,
@@ -126684,8 +126701,8 @@
   },
   "paulie gees": {
     "name": "paulie gees",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/paulie-gees-brooklyn",
+    "platform": null,
+    "url": null,
     "lat": 40.7283642,
     "lng": -73.95717499999999,
     "google_rating": 4.5,
@@ -126699,8 +126716,8 @@
   },
   "motel no tell": {
     "name": "motel no tell",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/motel-no-tell-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7297651,
     "lng": -73.9806655,
     "google_rating": 4.5,
@@ -126714,8 +126731,8 @@
   },
   "the highlight room": {
     "name": "the highlight room",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-highlight-room-ny-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.71918609999999,
     "lng": -73.9942106,
     "google_rating": 3.5,
@@ -126744,8 +126761,8 @@
   },
   "estiatorio milos": {
     "name": "estiatorio milos",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/estiatorio-milos-midtown",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/estiatorio-milos-midtown",
     "lat": 40.7635461,
     "lng": -73.9790278,
     "google_rating": 4.5,
@@ -126759,8 +126776,8 @@
   },
   "dear strangers": {
     "name": "dear strangers",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/dear-strangers-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/dear-strangers-nyc",
     "lat": 40.731602,
     "lng": -74.000376,
     "google_rating": 4.7,
@@ -126774,8 +126791,8 @@
   },
   "futago soho": {
     "name": "futago soho",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/izakaya-futago-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/nikutei-futago",
     "lat": 40.7224946,
     "lng": -74.00341030000001,
     "google_rating": 4.7,
@@ -126789,8 +126806,8 @@
   },
   "cheeseboat": {
     "name": "cheeseboat",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/cheeseboat-hells-kitchen-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7638603,
     "lng": -73.9889007,
     "google_rating": 4.7,
@@ -126819,8 +126836,8 @@
   },
   "blue ribbon sushi": {
     "name": "blue ribbon sushi",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/blue-ribbon-sushi",
+    "platform": null,
+    "url": null,
     "lat": 40.7675589,
     "lng": -73.9831177,
     "google_rating": 4.5,
@@ -126834,8 +126851,8 @@
   },
   "hole in the wall": {
     "name": "hole in the wall",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/hole-in-the-wall-fidi-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/hole-in-the-wall-flatiron",
     "lat": 40.74328260000001,
     "lng": -73.9910239,
     "google_rating": 4.7,
@@ -126864,8 +126881,8 @@
   },
   "the office of mr. moto": {
     "name": "the office of mr. moto",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-office-of-mr-moto-new-york",
+    "platform": null,
+    "url": null,
     "lat": 40.7268131,
     "lng": -73.984036,
     "google_rating": 4.5,
@@ -126879,8 +126896,8 @@
   },
   "tuscan hills": {
     "name": "tuscan hills",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/tuscan-hills",
+    "platform": null,
+    "url": null,
     "lat": 40.7189183,
     "lng": -73.8392439,
     "google_rating": 4.3,
@@ -126894,8 +126911,8 @@
   },
   "baccarat hotel": {
     "name": "baccarat hotel",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/grand-salon-and-bar-at-baccarat-hotel",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/Baccarat-Hotel-Grand-Salon",
     "lat": 40.7609041,
     "lng": -73.9774755,
     "google_rating": 4.1,
@@ -126909,8 +126926,8 @@
   },
   "tao downtown": {
     "name": "tao downtown",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/tao-downtown",
+    "platform": null,
+    "url": null,
     "lat": 40.7425376,
     "lng": -74.0038464,
     "google_rating": 4.3,
@@ -126939,8 +126956,8 @@
   },
   "sushi kai": {
     "name": "sushi kai",
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/sushi-kai-new-york",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/sushi-kai-west-village",
     "lat": 40.7326176,
     "lng": -74.0023549,
     "google_rating": 4.6,
