@@ -271,7 +271,7 @@ async function main() {
   log('PHASE 1: API polling...');
   let slot = null;
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 6; i++) {
     const result = await apiFind();
     if (result.found) {
       slot = result;
@@ -281,7 +281,7 @@ async function main() {
     }
     let msg = result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5:30pm+` : 'no slots';
     if (result.allTimes?.length) msg += ` [${result.allTimes.join(', ')}]`;
-    log(`Check ${i + 1}/8: ${msg} (${result.ms}ms)`);
+    log(`Check ${i + 1}/6: ${msg} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 

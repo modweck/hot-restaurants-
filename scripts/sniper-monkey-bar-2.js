@@ -11,7 +11,7 @@ const { execSync } = require('child_process');
 // ── Config ──
 const VENUE_SLUG = 'monkey-bar-nyc';
 const VENUE_ID = 60058;
-const TARGET_DATE = '2026-05-19';
+const TARGET_DATE = '2026-04-29';
 const PARTY_SIZE = 2;
 const DROP_HOUR = 9;
 const DROP_MINUTE = 0;
