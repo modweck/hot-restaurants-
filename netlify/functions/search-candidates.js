@@ -913,7 +913,8 @@ const CUISINE_FILTER_MAP = {
   'steakhouse':     ['Steakhouse'],
   'sushi':          ['Sushi'],
   'thai':           ['Thai'],
-  'vietnamese':     ['Vietnamese']
+  'vietnamese':     ['Vietnamese'],
+  'kosher':         ['Kosher', 'Jewish/Kosher', 'Jewish', 'Deli/Jewish', 'Jewish Deli']
 };
 
 function cuisineLookupMatches(name, userCuisine, fallbackCuisine) {

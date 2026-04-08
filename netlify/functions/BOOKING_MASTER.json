@@ -6577,7 +6577,7 @@
     "google_reviews": 1077,
     "place_id": "ChIJfYqvteRYwokR1I0wCpXMG8Y",
     "website": "http://www.mikesbistro.com/",
-    "cuisine": "American",
+    "cuisine": "Kosher",
     "vibe_tags": [
       "upscale",
       "foodie",
@@ -13722,7 +13722,8 @@
       "foodie"
     ],
     "website": "http://www.pescadanewyork.com",
-    "address": "1359 Coney Island Ave, Brooklyn, NY 11230, United States"
+    "address": "1359 Coney Island Ave, Brooklyn, NY 11230, United States",
+    "venue_id": 89733
   },
   "Montesacro Pinseria Brooklyn": {
     "platform": "resy",
@@ -19322,7 +19323,7 @@
     "google_reviews": 584,
     "place_id": "ChIJb6ybqftZwokRyoA_nVzrJro",
     "website": "https://grillpointnyc.com/",
-    "cuisine": "Middle Eastern",
+    "cuisine": "Kosher",
     "vibe_tags": [
       "foodie",
       "casual"
@@ -27615,7 +27616,8 @@
       "trendy"
     ],
     "website": "http://www.theloftsteakhouse.com",
-    "address": "1306 40th St, Brooklyn, NY 11218, USA"
+    "address": "1306 40th St, Brooklyn, NY 11218, USA",
+    "venue_id": 93228
   },
   "longhorn steakhouse": {
     "platform": "website",
@@ -28852,7 +28854,8 @@
       "lively",
       "group_friendly"
     ],
-    "price": 2
+    "price": 2,
+    "venue_id": 1421
   },
   "nomo soho": {
     "platform": "opentable",
@@ -50665,7 +50668,8 @@
     ],
     "website": "http://bordeauxnyc.com",
     "address": "1922 Coney Island Ave, Brooklyn, NY 11230, USA",
-    "ot_slug": "bordeaux"
+    "ot_slug": "bordeaux",
+    "venue_id": 91158
   },
   "boro brine": {
     "platform": "resy",
@@ -55987,14 +55991,15 @@
     "place_id": "ChIJkeBwmVVYwokReNSgF1CfLoM",
     "neighborhood": "Theater District/Times Square",
     "instagram": "lemarais_steak",
-    "cuisine": "French",
+    "cuisine": "Kosher",
     "price": 2,
     "vibe_tags": [
       "date_night",
       "casual"
     ],
     "website": "http://lemarais.net",
-    "address": "150 W 46th St, New York, NY 10036, USA"
+    "address": "150 W 46th St, New York, NY 10036, USA",
+    "venue_id": 54981
   },
   "left bank": {
     "platform": "resy",
@@ -59296,7 +59301,8 @@
       "foodie"
     ],
     "website": "https://www.reservecut.com",
-    "address": "40 Broad St 2nd Floor, New York, NY 10004, USA"
+    "address": "40 Broad St 2nd Floor, New York, NY 10004, USA",
+    "venue_id": 58431
   },
   "reverie brooklyn": {
     "platform": "resy",
@@ -61556,7 +61562,8 @@
     ],
     "website": "https://taliassteakhouse.com",
     "address": "668 Amsterdam Ave, New York, NY 10025, USA",
-    "inkind": true
+    "inkind": true,
+    "venue_id": 72784
   },
   "taureau": {
     "platform": "resy",
@@ -71156,7 +71163,7 @@
     "place_id": "ChIJ9zpnPidawokRdhxyso6KXKw",
     "website": "http://veganbodhi.com/",
     "address": "77 Mulberry St, New York, NY 10013, USA",
-    "cuisine": "Vegetarian",
+    "cuisine": "Kosher",
     "vibe_tags": [
       "trendy",
       "casual"
@@ -71671,7 +71678,7 @@
     "place_id": "ChIJPya9gP5YwokRBiSdQz1WZTQ",
     "website": "https://www.wolfandlambsteakhouse.com/",
     "address": "16 E 48th St, New York, NY 10017, USA",
-    "cuisine": "Steakhouse",
+    "cuisine": "Kosher",
     "vibe_tags": [
       "casual",
       "date_night"
@@ -95993,13 +96000,14 @@
     "website": "http://buddha-bodai.com/",
     "neighborhood": null,
     "instagram": null,
-    "cuisine": null,
+    "cuisine": "Kosher",
     "price": 1,
     "vibe_tags": [
       "lively",
       "date_night"
     ],
-    "address": "5 Mott St, New York, NY 10013"
+    "address": "5 Mott St, New York, NY 10013",
+    "venue_id": 69916
   },
   "The Waverly Inn": {
     "platform": "resy",
@@ -98672,7 +98680,7 @@
     "neighborhood": "Upper West Side",
     "place_id": "ChIJFXzMFKFZwokRThmYDYHuafs",
     "google_rating": 3.8,
-    "cuisine": "Restaurant",
+    "cuisine": "Jewish/Kosher",
     "lat": 40.7743711,
     "lng": -73.95910359999999,
     "google_reviews": 1770,
@@ -102551,7 +102559,7 @@
     "neighborhood": "Kew Gardens Hills",
     "place_id": "ChIJDxfRFWJgwokR0Rv2HVFpcmQ",
     "google_rating": 4.2,
-    "cuisine": "Restaurant",
+    "cuisine": "Kosher",
     "lat": 40.732582799999996,
     "lng": -73.8252557,
     "google_reviews": 233,
@@ -109894,7 +109902,7 @@
     "place_id": "ChIJCar0f49ZwokR6ozLV-dHNTE",
     "website": "https://katzsdelicatessen.com/",
     "address": "205 E Houston St, New York, NY 10002, United States",
-    "cuisine": "American",
+    "cuisine": "Jewish/Kosher",
     "vibe_tags": [
       "foodie",
       "casual"
@@ -122620,7 +122628,7 @@
   "Mr. Broadway": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/mr-broadway-new-york-2",
-    "cuisine": "• Kosher • Garment District",
+    "cuisine": "Kosher",
     "google_rating": 4.5,
     "google_reviews": 4810,
     "place_id": "ChIJo1t6uatZwokRfS-8XExxTTY",
@@ -122633,7 +122641,7 @@
   "Yakar Steakhouse": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/yakar-steakhouse-brooklyn2",
-    "cuisine": "• Kosher • Midwood",
+    "cuisine": "Kosher",
     "google_rating": 4.7,
     "google_reviews": 523,
     "place_id": "ChIJ-f5DPmlFwokRVNJkiXyeJkg",
@@ -126900,5 +126908,383 @@
     "price": null,
     "instagram": null,
     "address": null
+  },
+  "BHI Thursdays": {
+    "url": "https://resy.com/cities/ny/bhi-thursdays",
+    "platform": "resy",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/bhi-thursdays",
+    "resy_slug": "bhi-thursdays",
+    "lat": 40.606483168510245,
+    "lng": -73.96486610804322,
+    "cuisine": "American",
+    "neighborhood": "New York",
+    "price": 2,
+    "venue_id": 93162,
+    "google_rating": 4.5,
+    "review_count": 703,
+    "address": "722 Kings Hwy, Brooklyn, NY 11223, USA",
+    "place_id": "ChIJxQsc0e1EwokRdVVvGbLRcDk",
+    "website": "http://www.bhithursdays.com/",
+    "opentable_url": null,
+    "google_reviews": 704,
+    "vibe_tags": [
+      "lively",
+      "casual"
+    ]
+  },
+  "Sunsets at La Cantine": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
+    "lat": 40.7066805,
+    "lng": -73.9205728,
+    "google_rating": 4.6,
+    "google_reviews": 401,
+    "place_id": "ChIJY3SV72ddwokRP1FK0G3VnG4",
+    "website": "https://lacantinebushwick.com/",
+    "address": "60 St Nicholas Ave, Brooklyn, NY 11237, USA",
+    "cuisine": "French",
+    "vibe_tags": [
+      "date_night",
+      "lively"
+    ],
+    "instagram": "lacantinebushwick",
+    "price": 2,
+    "ot_slug": "la-cantine",
+    "resy_slug": "sunsets-at-la-cantine",
+    "resy_url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
+    "neighborhood": "New York",
+    "venue_id": 76796
+  },
+  "private room nyc": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/venues/private-room-nyc",
+    "lat": 40.77154521897568,
+    "lng": -73.90801077020915,
+    "google_rating": 3.9,
+    "google_reviews": 38,
+    "place_id": "ChIJi6-xHiBfwokRtTYisnigIxU",
+    "neighborhood": "Astoria",
+    "instagram": "privateroomny",
+    "cuisine": "Caribbean",
+    "price": 1,
+    "vibe_tags": [
+      "upscale",
+      "lively",
+      "trendy"
+    ],
+    "website": "http://privateroomnewyork.com",
+    "address": "22-79 Steinway St, Astoria, NY 11105, USA",
+    "_vibe_confidence": "medium",
+    "venue_id": 94647
+  },
+  "2nd Ave Deli": {
+    "name": "2nd Ave Deli",
+    "platform": "website",
+    "lat": 40.747,
+    "lng": -73.9785,
+    "google_rating": 4.4,
+    "google_reviews": 2150,
+    "cuisine": "Jewish/Kosher",
+    "neighborhood": "Midtown East",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "group_friendly",
+      "classic"
+    ],
+    "website": "https://www.2ndavedeli.com/",
+    "address": "162 E 33rd St, New York, NY 10016, USA"
+  },
+  "Russ & Daughters Cafe": {
+    "name": "Russ & Daughters Cafe",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/russ-and-daughters-cafe",
+    "resy_slug": "russ-and-daughters-cafe",
+    "lat": 40.7205,
+    "lng": -73.9883,
+    "google_rating": 4.6,
+    "google_reviews": 3584,
+    "cuisine": "Jewish/Kosher",
+    "neighborhood": "Lower East Side",
+    "price": 2,
+    "vibe_tags": [
+      "brunch",
+      "casual",
+      "classic",
+      "foodie"
+    ],
+    "website": "https://www.russanddaughterscafe.com/",
+    "address": "127 Orchard St, New York, NY 10002, USA",
+    "venue_id": 4600
+  },
+  "Sadelle's": {
+    "name": "Sadelle's",
+    "platform": "resy",
+    "url": "https://resy.com/cities/ny/sadelles",
+    "resy_slug": "sadelles",
+    "lat": 40.7244,
+    "lng": -73.9998,
+    "google_rating": 4.3,
+    "google_reviews": 2174,
+    "cuisine": "Jewish/Kosher",
+    "neighborhood": "SoHo",
+    "price": 3,
+    "vibe_tags": [
+      "brunch",
+      "date_night",
+      "foodie"
+    ],
+    "website": "https://www.sadelles.com/",
+    "address": "463 W Broadway, New York, NY 10012, USA",
+    "venue_id": 29967
+  },
+  "Estihana": {
+    "name": "Estihana",
+    "platform": "website",
+    "lat": 40.623,
+    "lng": -73.9603,
+    "google_rating": 4.3,
+    "google_reviews": 493,
+    "cuisine": "Kosher",
+    "neighborhood": "Brooklyn",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "group_friendly"
+    ],
+    "website": "https://www.estihana.com/",
+    "address": "1217 Avenue J, Brooklyn, NY 11230, USA"
+  },
+  "Talia's Steakhouse": {
+    "name": "Talia's Steakhouse",
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/talias-steakhouse-new-york",
+    "ot_slug": "talias-steakhouse-new-york",
+    "lat": 40.7851,
+    "lng": -73.9782,
+    "google_rating": 4.3,
+    "google_reviews": 880,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 3,
+    "vibe_tags": [
+      "group_friendly",
+      "casual"
+    ],
+    "website": "https://www.taliassteakhouse.com/",
+    "address": "668 Amsterdam Ave, New York, NY 10025, USA"
+  },
+  "Eden Wok": {
+    "name": "Eden Wok",
+    "platform": "website",
+    "lat": 40.7489,
+    "lng": -73.983,
+    "google_rating": 3.9,
+    "google_reviews": 383,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "group_friendly"
+    ],
+    "website": "https://www.edenwok.com/",
+    "address": "43 E 34th St, New York, NY 10016, USA"
+  },
+  "Carlos & Gabby's Midtown": {
+    "name": "Carlos & Gabby's",
+    "platform": "website",
+    "lat": 40.7845,
+    "lng": -73.9736,
+    "google_rating": 4.2,
+    "google_reviews": 25,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "group_friendly"
+    ],
+    "website": "https://www.carlosandgabbys.com/",
+    "address": "100 W 83rd St, New York, NY 10024, USA"
+  },
+  "Deli Kasbah": {
+    "name": "Kasbah Grill",
+    "platform": "website",
+    "lat": 40.7854,
+    "lng": -73.9726,
+    "google_rating": 4.5,
+    "google_reviews": 614,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "website": "https://kasbah-grill.com/",
+    "address": "251 W 85th St, New York, NY 10024, USA"
+  },
+  "Mendy's": {
+    "name": "Mendy's",
+    "platform": "website",
+    "lat": 40.743,
+    "lng": -73.9833,
+    "google_rating": 4.1,
+    "google_reviews": 363,
+    "cuisine": "Kosher",
+    "neighborhood": "Midtown",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "website": "https://www.mendysdeli.com/",
+    "address": "441 Park Ave S, New York, NY 10016, USA"
+  },
+  "Sushi Fussion": {
+    "name": "Sushi Fussion",
+    "platform": "website",
+    "lat": 40.7567,
+    "lng": -73.9802,
+    "google_rating": 4.6,
+    "google_reviews": 113,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "website": "https://www.sushifussion.com/",
+    "address": "26 W 47th St Lower Level, New York, NY 10036, USA"
+  },
+  "Glatt A La Carte": {
+    "name": "Glatt A La Carte",
+    "platform": "website",
+    "lat": 40.6275,
+    "lng": -73.987,
+    "google_rating": 4.9,
+    "google_reviews": 1816,
+    "cuisine": "Kosher",
+    "neighborhood": "Brooklyn",
+    "price": 3,
+    "vibe_tags": [
+      "upscale",
+      "group_friendly"
+    ],
+    "website": "https://www.glattalacarte.com/",
+    "address": "5123 18th Ave, Brooklyn, NY 11204, USA"
+  },
+  "Graze Smokehouse": {
+    "name": "Graze Smokehouse",
+    "platform": "website",
+    "lat": 40.7845,
+    "lng": -73.9736,
+    "google_rating": 4.5,
+    "google_reviews": 28,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "website": "https://grazebrands.com/graze-smokehouse",
+    "address": "100 W 83rd St, New York, NY 10024, USA"
+  },
+  "King Solomon Palace": {
+    "name": "King Solomon Palace Glatt Kosher Restaurant",
+    "platform": "website",
+    "lat": 40.6174,
+    "lng": -73.9592,
+    "google_rating": 4.6,
+    "google_reviews": 528,
+    "cuisine": "Kosher",
+    "neighborhood": "Brooklyn",
+    "price": 3,
+    "vibe_tags": [
+      "group_friendly",
+      "special_occasion"
+    ],
+    "website": "http://www.kingsolomonrestaurant.com/",
+    "address": "1787 Coney Island Ave, Brooklyn, NY 11230, USA"
+  },
+  "Kosher Deluxe KD46": {
+    "name": "Kosher Deluxe KD46",
+    "platform": "website",
+    "lat": 40.7565,
+    "lng": -73.9804,
+    "google_rating": 3.9,
+    "google_reviews": 830,
+    "cuisine": "Kosher",
+    "neighborhood": "Midtown",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "address": "10 W 46th St, New York, NY 10036, USA"
+  },
+  "Noi Due Cafe": {
+    "name": "Noi Due Cafe",
+    "platform": "website",
+    "lat": 40.7833,
+    "lng": -73.9726,
+    "google_rating": 4.6,
+    "google_reviews": 1991,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "date_night"
+    ],
+    "website": "http://www.noiduecafe.com/",
+    "address": "491 Columbus Ave, New York, NY 10024, USA"
+  },
+  "Soom Soom": {
+    "name": "Soom Soom",
+    "platform": "website",
+    "lat": 40.7764,
+    "lng": -73.9587,
+    "google_rating": 4.7,
+    "google_reviews": 704,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper East Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual",
+      "group_friendly"
+    ],
+    "website": "https://www.soomsoomfalafel.com/",
+    "address": "1108 Lexington Ave, New York, NY 10075, USA"
+  },
+  "Jerusalem Steakhouse": {
+    "name": "Jerusalem Steakhouse",
+    "platform": "website",
+    "lat": 40.623,
+    "lng": -73.96,
+    "google_rating": 4.6,
+    "google_reviews": 523,
+    "cuisine": "Kosher",
+    "neighborhood": "Brooklyn",
+    "price": 3,
+    "vibe_tags": [
+      "group_friendly"
+    ],
+    "website": "https://www.jerusalemsteakhouse.com/",
+    "address": "1319 Avenue J, Brooklyn, NY 11230, USA"
+  },
+  "West Side Wok": {
+    "name": "West Side Wok & Konata Sushi Bar",
+    "platform": "website",
+    "lat": 40.7872,
+    "lng": -73.9747,
+    "google_rating": 4.3,
+    "google_reviews": 62,
+    "cuisine": "Kosher",
+    "neighborhood": "Upper West Side",
+    "price": 2,
+    "vibe_tags": [
+      "casual"
+    ],
+    "website": "https://westsidewok.com/",
+    "address": "691 Amsterdam Ave, New York, NY 10025, USA"
   }
 }
