@@ -42349,8 +42349,8 @@
     "address": "206 9th Ave, New York, NY 10011, USA"
   },
   "aroqa": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/aroqa",
+    "platform": "website",
+    "url": "http://www.aroqanyc.com",
     "lat": 40.74635654494276,
     "lng": -74.0012812963843,
     "google_rating": 4.4,
@@ -57502,8 +57502,8 @@
     "address": "234 Flatbush Ave, Brooklyn, NY 11217, USA"
   },
   "mykonian garden": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/mykonian-garden",
+    "platform": "website",
+    "url": "http://www.mykoniangarden.com/",
     "lat": 40.7591219851864,
     "lng": -73.9609343921422,
     "google_rating": 4.9,
@@ -82965,29 +82965,6 @@
       "lively"
     ]
   },
-  "BHI Thursdays": {
-    "url": "https://resy.com/cities/ny/bhi-thursdays",
-    "platform": "resy",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/bhi-thursdays",
-    "resy_slug": "bhi-thursdays",
-    "lat": 40.606483168510245,
-    "lng": -73.96486610804322,
-    "cuisine": "American",
-    "neighborhood": "New York",
-    "price": 2,
-    "venue_id": 93162,
-    "google_rating": 4.5,
-    "review_count": 703,
-    "address": "722 Kings Hwy, Brooklyn, NY 11223, USA",
-    "place_id": "ChIJxQsc0e1EwokRdVVvGbLRcDk",
-    "website": "http://www.bhithursdays.com/",
-    "opentable_url": null,
-    "google_reviews": 704,
-    "vibe_tags": [
-      "lively",
-      "casual"
-    ]
-  },
   "Siena Ristorante Brooklyn": {
     "url": "https://resy.com/cities/ny/siena-ristorante",
     "platform": "resy",
@@ -95707,8 +95684,8 @@
     ]
   },
   "Stk Meatpacking": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/stk-meatpacking",
+    "platform": "website",
+    "url": "https://stksteakhouse.com/venues/nyc-rooftop/",
     "lat": 40.7397866,
     "lng": -74.0072691,
     "google_rating": 4.8,
@@ -108125,29 +108102,6 @@
     "resy_slug": "giardino-doro",
     "resy_url": "https://resy.com/cities/ny/giardino-doro"
   },
-  "Sunsets at La Cantine": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
-    "lat": 40.7066805,
-    "lng": -73.9205728,
-    "google_rating": 4.6,
-    "google_reviews": 401,
-    "place_id": "ChIJY3SV72ddwokRP1FK0G3VnG4",
-    "website": "https://lacantinebushwick.com/",
-    "address": "60 St Nicholas Ave, Brooklyn, NY 11237, USA",
-    "cuisine": "French",
-    "vibe_tags": [
-      "date_night",
-      "lively"
-    ],
-    "instagram": "lacantinebushwick",
-    "price": 2,
-    "ot_slug": "la-cantine",
-    "resy_slug": "sunsets-at-la-cantine",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/sunsets-at-la-cantine",
-    "neighborhood": "New York",
-    "venue_id": 76796
-  },
   "Westville Hudson": {
     "platform": "resy",
     "url": "https://resy.com/cities/ny/westville-williamsburg",
@@ -113324,28 +113278,6 @@
     "website": "http://wakuwakuny.com/wakuwaku",
     "address": "269 36th St, Brooklyn, NY 11232, USA",
     "_vibe_confidence": "low"
-  },
-  "private room nyc": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/private-room-nyc",
-    "lat": 40.77154521897568,
-    "lng": -73.90801077020915,
-    "google_rating": 3.9,
-    "google_reviews": 38,
-    "place_id": "ChIJi6-xHiBfwokRtTYisnigIxU",
-    "neighborhood": "Astoria",
-    "instagram": "privateroomny",
-    "cuisine": "Caribbean",
-    "price": 1,
-    "vibe_tags": [
-      "upscale",
-      "lively",
-      "trendy"
-    ],
-    "website": "http://privateroomnewyork.com",
-    "address": "22-79 Steinway St, Astoria, NY 11105, USA",
-    "_vibe_confidence": "medium",
-    "venue_id": 94647
   },
   "Village Café": {
     "platform": "website",
