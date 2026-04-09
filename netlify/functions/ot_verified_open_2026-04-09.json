@@ -1,0 +1,6834 @@
+{
+  "serafina tribeca": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "markjoseph steakhouse": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "the smith lincoln square": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "sushi noz": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "westville ues": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "cherry point": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "7:00 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "trattoria dell'arte": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "9:00 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "osteria al doge": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "la marchande": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "morton's the steakhouse": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "8:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "lincoln ristorante": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "clover hill": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "9:00 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "da nico restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "lucky's soho": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "lucky restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "buona notte": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ilili restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "godunk thai street food": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "sailor": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "gjelina": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:30 PM",
+      "8:15 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "momofuku noodle bar - uptown": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "cecconi's dumbo": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "one dine": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "yakiniku toraji": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mrs. georgia": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "emporio": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "be pasta": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "olio e pi\u00f9": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "strip house - greenwich village": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "little italy": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "scalini fedeli": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tribeca grill": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "fonda of chelsea": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Nomad Restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "7:45 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "dudley's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "rucola restaurant": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "7:45 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "u omakase": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "la pecora bianca uws": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "london and martin co": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "bombay grill house": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "barbounia": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "aqua boil": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "lulu mediterranean grill - edgewater": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tudor city steakhouse": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "sushi yasaka": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "koma sushi": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tulum brooklyn": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "beso": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "marshal": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tabu": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tanner smith's": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:00 PM",
+      "9:00 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "greek": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "hudson hound": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "bird pepper": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "8:00 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "8:15 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "briciola harlem": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "9:15 PM",
+      "9:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ainslie": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "alwaha restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "aperibar": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "arcadia": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "atlantis prime": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "bacchus": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "birdy's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:30 PM",
+      "8:15 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "blue": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "bottega restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Burger & Lobster - Bryant Park": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "burger one nyc": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "cantina mexicana": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:15 PM",
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "jasmine's caribbean cuisine": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "10:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "chihuahua": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "cocina latina": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "3:30 PM",
+      "3:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "concettina": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "curry leaf": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "double rainbow": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "dragon garden": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "el salvador restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "essen": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "fei ma": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "japonica": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "javelina": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "9:30 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "la mesita": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mama pisco kitchen": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "marcellino": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "miyako": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mole cantina mexicana": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mussels & more": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "new york burger co.": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "nick's bistro": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:45 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "nordstrom bistro verde": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:00 PM",
+      "8:45 PM",
+      "9:15 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "press box": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:15 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "rw prime": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:00 PM",
+      "9:15 PM",
+      "9:30 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "he xin": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:00 PM",
+      "9:30 PM",
+      "10:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "surprise scoop": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "the edge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Meatball Shop - Hell's Kitchen": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "10:00 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "the art of prime": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "vivo!": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "9:15 PM",
+      "10:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mera": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "festival": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "spanglish": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "baci": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "white radish": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:15 PM",
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "simply greek": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:15 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "belo": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:15 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "oita": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "the dawson": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "9:30 PM",
+      "10:15 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "fresco's grand cantina": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mino brasserie": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "gatsby's landing": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "don cheech": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "9:30 PM",
+      "9:45 PM",
+      "10:00 PM",
+      "10:45 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "secret kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "bartley dunnes": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "sally's caribbean restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "9:45 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "o'toole's way": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "via toscana": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ambra": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "kraam": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "mamazul": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "RA Sushi Bar Restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "blend (williamsburg)": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "9:45 PM",
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "meraki greek bistro": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "la catrina": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "baires grill": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "leon's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "gaia restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "dilli dilli": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:15 PM",
+      "10:45 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "lele": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "10:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "sushi beauu": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "enso omakase": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "10:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "uka omakase": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "10:15 PM",
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "inkaico": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "d kitchen": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Match 65 Brasserie": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "pera mediterranean brasserie": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "marty's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:00 PM",
+      "10:15 PM",
+      "10:30 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "blue anchor": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "aurora brooklyn": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:00 PM",
+      "11:15 PM",
+      "11:30 PM",
+      "10:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "5 napkin burger - hell's kitchen": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:00 PM",
+      "11:15 PM",
+      "11:30 PM",
+      "10:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "h\u014dseki": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:45 PM",
+      "11:00 PM",
+      "11:15 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Trattoria Pesce Pasta": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:00 PM",
+      "10:45 PM",
+      "11:15 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Butcher & Banker NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:00 PM",
+      "12:15 AM",
+      "12:30 AM",
+      "11:15 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bread & Butter": {
+    "tier": "open",
+    "dinner_slots": 13,
+    "sample_times": [
+      "5:00 PM",
+      "8:15 PM",
+      "8:30 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Il Mulino New York": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sauce": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:00 PM",
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Uncle Jack\u2019s Steakhouse Westside": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "12:15 AM",
+      "12:30 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Trattoria Bianca": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:00 PM",
+      "12:15 AM",
+      "12:30 AM",
+      "11:15 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Persepolis": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sushi of Gari 46": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "11:15 PM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Restaurant Nippon": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carroll Place": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Fulton Fish Co.": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "La Mela": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Rosso": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "P.F. Chang's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bite": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Red Star": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM",
+      "9:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "CECILIA": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "LA FUSTA": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "11:15 PM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "RIVIERA MAYA": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "SANGARITA'S": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Frank": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:15 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Patricia's of Morris Park": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Amylos": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "12:15 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "BONDST": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:00 PM",
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "crane club": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "11:30 PM",
+      "11:45 PM",
+      "12:00 AM",
+      "12:15 AM",
+      "12:30 AM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Omakaseed": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:30 PM",
+      "7:15 PM",
+      "8:00 PM",
+      "6:00 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Westville - UWS": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mapo Asian Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mari": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:00 PM",
+      "5:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mama Mia": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Via Vai": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bartolo\u2019s": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:30 PM",
+      "5:45 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Casa Carmen - Flatiron": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:30 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "La Barra at Mercado Little Spain": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Yuca Bar": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Nami Nori - Williamsburg": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "5:00 PM",
+      "9:00 PM",
+      "9:30 PM",
+      "6:30 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Socarrat Nolita": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Kiosko 787": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mario's Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "10:45 PM",
+      "11:00 PM",
+      "11:15 PM",
+      "11:30 PM",
+      "11:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Matisse 167": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Kamal Palace": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "5:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "NoMa Social": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Fusion 27": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "fil\u00e9 gumbo bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "papillon bistro and bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ovelia psistaria bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "china bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "savvy bistro and bar": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Foxy John's Bar & Kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "route bar restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "BuenaVista Restaurant & Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sean's Bar And Kitchen": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tavern on the green": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "park avenue tavern": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "4:45 PM",
+      "5:00 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Glass House Tavern": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Caravaggio New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Numero 28 Pizzeria - West Village": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "aquavit": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:30 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "arturo's": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "zimmi's": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:15 PM",
+      "5:30 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "f&f pizzeria": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "china kitchen": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "golden dragon restaurant": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:15 PM",
+      "10:30 PM",
+      "9:45 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "kuzina": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "puebla mexican food": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "10:30 PM",
+      "10:45 PM",
+      "11:00 PM",
+      "10:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "eatzy thai": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "7:15 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "jue lan club": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "blake\u2019s tavern": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "4:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Crane Club Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Next Door by Wegmans \u2013 NoHo": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Foxtail": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:00 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Hide Rooftop": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sarabeth's Park Avenue South": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Capital Grille - NY- Wall Street": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "NOMO Kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Fraunces Tavern": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Da Andrea - Greenwich Village": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Antica 'Ancora'": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Izakaya": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Fonda - Tribeca": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Patrizia's of 2nd Avenue": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Inday's Bar & Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Legasea Bar & Grill": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:00 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "H & H Cantina": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Savelli Restaurant and Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "London & Martin Co.": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Westville - East Village": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Boucherie - West Village": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Zou Zou's": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "7:00 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ONE Dine at One World Observatory": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Olio e Pi\u00f9\u2013 Greenwich Village": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:30 PM",
+      "5:45 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Market Table": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Giano": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Roberta's - Domino Park": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Buddakan NY": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lounge On Pearl": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Mermaid Oyster Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Casa D\u2019Angelo New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lucky Tiger": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Villa Berulia": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Mermaid Inn - Chelsea": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Orient Express Cocktail Bar": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:30 PM",
+      "6:30 PM",
+      "8:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Two Twenty One Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Dave & Buster's - Brooklyn - Atlantic Center": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:00 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Zutto Tribeca": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "White Oak Tavern": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Ruta Oaxaca - Brooklyn": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bar Primi Penn District": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Eataly NYC Flatiron - Bar Milano": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wolfgang's Steakhouse - Broadway  (37th St.)": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bar Milagro": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Suprema Provisions": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Clinton Hall": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Urban Cove Society and Kitchen": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Evalyn's Tap House": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "42nd and Sky Lounge - Hilton New York Times Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Virgil's Real BBQ - New York City": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Love and Dough": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Cap\u2019t Loui": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Beer Authority": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Chuko": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bo Peep Cocktail & Highball Store": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carib-Soul BK": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Elcielo Bistr\u00f3 NYC": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:00 PM",
+      "8:00 PM",
+      "9:00 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "El Castillo De Jagua Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bubba Gump - New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "AKB, a hotel bar \u2013 New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mughlai Indian Cuisine - Kipps Bay": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Parklife": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "GRECA by The Greek": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ATRIO Wine Bar & Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tarallucci e Vino - Union Square": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Max Brenner - Union Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "North Fork": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Ready Cantina Rooftop": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tucci": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:00 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Olive Tree Cafe": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "9:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Knickerbocker Bar and Grill": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Cafe Chelsea": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:15 PM",
+      "5:30 PM",
+      "10:15 PM",
+      "10:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Teruko - The Hotel Chelsea": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sushi by Bou - Chelsea NYC at Bosque Flowers & Coffee": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:00 PM",
+      "6:00 PM",
+      "7:00 PM",
+      "8:00 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "TAO Downtown - New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "7:15 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Death Ave.": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Roberta's - Penn": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:45 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Zia Maria - Chelsea": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Grey Dog - Chelsea": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bottino": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Argyle": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Elea": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Flatiron Room - Nomad": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Boqueria Soho": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Paul & Jimmy's Ristorante": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "7:15 PM",
+      "6:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Rocco Steakhouse Madison Ave": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "5:30 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "\u00c7ka Ka Qellue": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Dim Sum Garden": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Ninos 46": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "La Grande Boucherie NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Benihana - New York, NY": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Acadia": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carnegie Diner & Caf\u00e9 \u2013 205 W 57th St, New York, NY": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Frankie and Johnnie's Steakhouse - 46th Street": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Capital Grille - NY - Rockefeller Center": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Pasta Lovers Trattoria": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Magic Hour Rooftop Bar & Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sarabeth's Central Park South": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carnegie Diner & Caf\u00e9 \u2013 1185 6th Ave, New York NY": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bobby Van's Grill - 50th Street": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carmine's - 44th Street - NYC": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "3:30 PM",
+      "3:45 PM",
+      "9:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tony's Di Napoli - Midtown": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "4:15 PM",
+      "6:15 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Blue Fin - New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:00 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Terrace and Outdoor Gardens at The Times Square EDITION": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Pig N Whistle - Rockefeller Center": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "4:30 PM",
+      "4:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Elgin": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:45 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mermaid Oyster Bar - Times Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gatsby's Landing - Times Square": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:15 PM",
+      "7:30 PM",
+      "8:45 PM",
+      "6:30 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "RA Sushi Bar Restaurant - Times Square, NY": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Caffe Buon Gusto - UES": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Up Thai": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "San Matteo Pizzeria e Cucina": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Javelina - UES": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Toloache - Upper East Side": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Siena Cafe": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Crave Fishbar - UWS": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "French Roast": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Playa Betty's": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:30 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gazala\u2019s": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:00 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tarallucci e Vino - Upper West Side": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:30 PM",
+      "5:45 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Arte Cafe - Upper West Side": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "10:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lido": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Panda": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Massawa - NY": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Melba's": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Harlem Tavern": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "1:00 AM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Roberto's Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Shalel": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bar Contra": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wabi Nori Hand Roll Bar": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "5:45 PM",
+      "6:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Souvlaki GR - LES": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Omar's Kitchen and Rum Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Crosby Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lindens": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Piccola Cucina Enoteca": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Piccola Cucina Estiatorio": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "SAN CARLO  Osteria Piemonte": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Corner Bar": {
+    "tier": "open",
+    "dinner_slots": 11,
+    "sample_times": [
+      "6:15 PM",
+      "9:00 PM",
+      "9:15 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gelso and Grand": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:00 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Eataly NYC Downtown - La Pizza & La Pasta": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Recreation Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Paris Cafe": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Rex Club NY": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Beckett's Sports Bar": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Holywater": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bill's Bar & Burger Downtown": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Catch New York": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:30 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "RH Rooftop Restaurant at RH New York": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Little Basil": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sahara's Turkish Cuisine": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Broadway Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Hard Rock Cafe - Times Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gyu-Kaku Japanese BBQ - New York, NY | Times Square Manhattan": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Palermo Argentinian Bistro NYC": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Limani - NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:15 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Russian Tea Room - NYC": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Del Frisco's Grille - NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carmine's - 91st Street - NYC": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Fumo Upper West": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Arco Cafe": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Azara Kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Korali": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "SAPERAVI UES": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Paola's Cafe": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Yakiniku Gen": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Seed Library": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Corner Chinese": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "L\u2019Adresse NoMad": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bistro Vendome - NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Chef Papa Vietnamese Kitchen LIC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Paris Bar": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Rosemary's Midtown": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:45 PM",
+      "5:00 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gyu-Kaku Japanese BBQ \u2013 Long Island City, NY | Hunters Point": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Match 65 Brasserie (formerly Paris Match)": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sinigual - NY": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:30 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Anejo Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Shun Lee West": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Spice Symphony \u2013 50th St.": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "OM Real Indian Food": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "GuestHouse": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gandhi Cafe": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gui Steakhouse": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Han Bat Korean Restaurant": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Elia's Casa Bianca": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "TEN 11 LOUNGE & BAR": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wolfgang's Steak House - Park Avenue": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "5:30 PM",
+      "6:00 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wolfgang's Steak House - Times Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Empire Steak House- East": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lady Blue": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Little Ruby's - Williamsburg": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Estiatorio Milos \u2013 Hudson Yards": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Boqueria West 40th Street": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "5:45 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "EZ Paella & Tapas": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tio Pepe NYC": {
+    "tier": "open",
+    "dinner_slots": 14,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Spanglish NYC Astoria": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Aunt Bernies": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sultan Mediterranean Cuisine NYC": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Churrascaria Plataforma Brazilian Steakhouse": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Christos Steak House": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Brasserie Le Mistral": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "INTI NYC Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Warique - Williamsburg": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mama Pisco Kitchen Bar": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Republic Latin Asian Fusion": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Tumi Peruvian": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "4:00 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Parker & Quinn": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "5:00 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Madera Cuban Grill": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sugar Bar": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:30 PM",
+      "9:00 PM",
+      "9:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Momofuku Noodle Bar - East Village": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wollensky\u2019s Grill": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mama Mia 44SW": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Da Raffaele - NYC": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Haven Rooftop": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Afuri ramen + dumpling - Brooklyn": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Patrizias of Brooklyn": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Roberta's - Bushwick": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Emmy Squared - Midtown West - NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Vista Sky Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Nanshan Hot Pot - Flushing\uff5c\u5357\u5c71\u2022\u718a\u732b\u70eb\u706b\u9505 - \u6cd5\u62c9\u76db\u5e97": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "5:30 PM",
+      "5:45 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wa Jeal": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Kid Pizza": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Pig n Whistle on 36th": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Gyu-Kaku Japanese BBQ - New York, NY | Upper West Side Manhattan": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Ragtrader": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Risotteria Melotti": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Society Cafe": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:45 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Water & Wheat Upper East": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:15 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Purple Tongue": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Interlude Rooftop Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Albert's": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "7:00 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Dutch Fred's": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Croton Reservoir Tavern": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Jasper's Tap House": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Aurora - Williamsburg": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Smith- Lincoln Square": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Starchild Rooftop Bar & Lounge": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sir Henry\u2019s": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Stinger Cocktail Bar and Kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Wayan NYC": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Song E Napule - West Village NYC": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:15 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "David Burke Tavern": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Cantina Rooftop": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Refinery Rooftop": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "5:00 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Boat House Waterfront Dining": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Motek NY": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "4:45 PM",
+      "5:00 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lady Mendls": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Ubani - West Village": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:45 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "MEAMA Georgian Kitchen and Wine Bar": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lilya's Restaurant & Grill-Cafe Gourmand": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Amaze44": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "GOSHT": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Uno Pizzeria & Grill - New York": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:00 PM",
+      "8:00 PM",
+      "8:15 PM",
+      "6:45 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Lazzara's Pizza Cafe": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Austin's Ale House": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "White Castle - Jamaica, Queens": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "5:45 PM",
+      "6:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Bonnie": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "N\u00e9o Restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Empire Diner - NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "SUNGOLD": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:15 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Oregano": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bee's Knees & Honey Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mole - Williamsburg": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Palm Court at The Plaza Hotel": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "The Perfect Pint - East": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Don Rique": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Sushi by Bou - East Village NYC": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "sample_times": [
+      "6:00 PM",
+      "7:00 PM",
+      "8:00 PM",
+      "6:30 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bar Fes": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "GATHER espresso & wine bar": {
+    "tier": "open",
+    "dinner_slots": 13,
+    "sample_times": [
+      "7:00 PM",
+      "6:45 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Aromati Cafe and Wine Bar": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carnegie Diner & Cafe, 711 7th Avenue": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Carversteak New York City": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Jazz Genius": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Drift BK Restaurant & Lounge": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Golden Child - Hotel Park Ave NYC": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "5th & Mad": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "A.O.C. East": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bar Goyana": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Bill's Supper Club": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "6:45 PM",
+      "7:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Blend - Astoria": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Blend on the Water": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "6:30 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Brooklyn Chop House Times Square": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Dolly Varden": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Mission Ceviche": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Rosevale Cocktail Room": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Trattoria iL Gusto Wine Bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "Westville": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "pico de gallo": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "ruta oaxaca": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "crab house": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "sample_times": [
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "the basement": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "4:45 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  },
+  "tanner smiths": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "sample_times": [
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09",
+    "verified": true
+  }
+}
