@@ -680,9 +680,14 @@
       <div class="results-filters">
         <select id="hotspot-days-filter" style="display:none" onchange="state.daysFilter=this.value==='any'?null:Number(this.value);if(allRestaurants.length)display(allRestaurants)">
           <option value="any">Opens within</option>
+          <option value="2">+2 days</option>
           <option value="3">+3 days</option>
+
           <option value="7">+7 days</option>
+
           <option value="14">+14 days</option>
+          <option value="21">+21 days</option>
+          <option value="28">+28 days</option>
         </select>
         <select onchange="setSortOrder(this.value)">
           <option value="rating">Rating</option>
@@ -1010,9 +1015,12 @@
         <span style="font-size:11px;font-weight:700;color:#888;margin-bottom:4px;display:block">Opens within</span>
         <div style="display:flex;gap:6px;flex-wrap:wrap">
           <button class="fchip on" id="ar-res-days-any" onclick="arSetDays('any',this)">Any</button>
+          <button class="fchip" id="ar-res-days-2" onclick="arSetDays(2,this)">+2 days</button>
           <button class="fchip" id="ar-res-days-3" onclick="arSetDays(3,this)">+3 days</button>
           <button class="fchip" id="ar-res-days-7" onclick="arSetDays(7,this)">+7 days</button>
           <button class="fchip" id="ar-res-days-14" onclick="arSetDays(14,this)">+14 days</button>
+          <button class="fchip" id="ar-res-days-21" onclick="arSetDays(21,this)">+21 days</button>
+          <button class="fchip" id="ar-res-days-28" onclick="arSetDays(28,this)">+28 days</button>
         </div>
       </div>
       <div style="display:flex;gap:6px;padding:6px 16px 8px;background:#f7f5f2">
@@ -2407,7 +2415,7 @@ function display(restaurants) {
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
       const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
       if (isBookAhead) {
-        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14 && realPlatform)) return false;
+        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= (state.daysFilter || 28) && realPlatform)) return false;
         if (state.daysFilter) return r.opens_in === state.daysFilter;
         return true;
       }
@@ -2649,21 +2657,35 @@ function arSetAvail(val, btn) {
   btn.classList.add('on');
   if (val !== 'book_ahead') {
     arState.daysFilter = null;
-    ['ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+    ['ar-res-days-any','ar-res-days-2','ar-res-days-3','ar-res-days-5','ar-res-days-7','ar-res-days-10','ar-res-days-14','ar-res-days-21','ar-res-days-28'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
     const anyBtn = document.getElementById('ar-res-days-any'); if(anyBtn) anyBtn.classList.add('on');
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetDays(val, btn) {
-  ['ar-days-any','ar-days-3','ar-days-7','ar-days-14','ar-res-days-any','ar-res-days-3','ar-res-days-7','ar-res-days-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  btn.classList.add('on');
-  // Sync both form and results chips
-  const v = val === 'any' ? 'any' : val;
-  const formChip = document.getElementById('ar-days-' + v);
-  const resChip = document.getElementById('ar-res-days-' + v);
-  if (formChip) formChip.classList.add('on');
-  if (resChip) resChip.classList.add('on');
-  arState.daysFilter = val === 'any' ? null : Number(val);
+  const allIds = ['ar-days-any','ar-days-2','ar-days-3','ar-days-5','ar-days-7','ar-days-10','ar-days-14','ar-days-21','ar-days-28','ar-res-days-any','ar-res-days-2','ar-res-days-3','ar-res-days-5','ar-res-days-7','ar-res-days-10','ar-res-days-14','ar-res-days-21','ar-res-days-28'];
+  // If clicking the same one that's already active, toggle it off (go back to Any)
+  if (val !== 'any' && arState.daysFilter === Number(val)) {
+    allIds.forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+    const anyBtn = document.getElementById('ar-res-days-any'); if(anyBtn) anyBtn.classList.add('on');
+    const anyForm = document.getElementById('ar-days-any'); if(anyForm) anyForm.classList.add('on');
+    arState.daysFilter = null;
+  } else {
+    allIds.forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+    btn.classList.add('on');
+    const v = val === 'any' ? 'any' : val;
+    const formChip = document.getElementById('ar-days-' + v);
+    const resChip = document.getElementById('ar-res-days-' + v);
+    if (formChip) formChip.classList.add('on');
+    if (resChip) resChip.classList.add('on');
+    arState.daysFilter = val === 'any' ? null : Number(val);
+    // Auto-set book_ahead filter if selecting a specific day
+    if (val !== 'any' && arState.availFilter !== 'book_ahead') {
+      arState.availFilter = 'book_ahead';
+      document.querySelectorAll('[id^="ar-avail-"]').forEach(el => el.classList.remove('on'));
+      const ba = document.getElementById('ar-avail-book_ahead'); if (ba) ba.classList.add('on');
+    }
+  }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
@@ -3068,7 +3090,8 @@ function applyARFilters(list) {
       if (af === 'book_ahead') {
         if (!realPlatform) return false;
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
-        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14)) return false;
+        const maxDays = arState.daysFilter || 28;
+        if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= maxDays)) return false;
         if (arState.daysFilter) return r.opens_in === arState.daysFilter;
         return true;
       }
