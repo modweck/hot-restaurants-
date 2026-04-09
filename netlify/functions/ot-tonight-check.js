@@ -25,40 +25,55 @@
 
 const fs = require('fs');
 const path = require('path');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 const { execSync } = require('child_process');
 
-// ── NordVPN IP rotation ──────────────────────────────────────────────────────
+// ── NordVPN IP rotation (polling method from ot-limited-and-booked.js) ──
 const VPN_REGIONS = ['us', 'us', 'us', 'us', 'us', 'ca', 'uk'];
 async function rotateVPN() {
   const region = VPN_REGIONS[Math.floor(Math.random() * VPN_REGIONS.length)];
-  const slp = ms => new Promise(r => setTimeout(r, ms));
   try {
     execSync('open -g "nordvpn://disconnect"', { timeout: 5000 });
-    await slp(5000);
+    await sleep(2000);
 
     for (let attempt = 1; attempt <= 3; attempt++) {
       execSync(`open -g "nordvpn://connect/${region}"`, { timeout: 5000 });
-      await slp(15000);
-      try {
-        const ip = execSync('curl -s --max-time 5 https://api.ipify.org', { timeout: 10000 }).toString().trim();
-        if (ip && ip.length > 6) {
-          console.log(`    🔄 VPN rotated → ${region} (${ip})`);
-          return true;
-        }
-      } catch (e) {}
-      console.log(`    ⚠️  VPN connect attempt ${attempt}/3 failed, retrying...`);
+
+      // Poll up to 30s for internet to come back
+      let connected = false;
+      for (let poll = 0; poll < 10; poll++) {
+        await sleep(3000);
+        try {
+          const ip = execSync('curl -s --max-time 4 https://api.ipify.org', { timeout: 8000 }).toString().trim();
+          if (ip && ip.length > 6) {
+            console.log(`    🔄 VPN → ${region} (${ip}) [attempt ${attempt}, ${(poll+1)*3}s]`);
+            connected = true;
+            break;
+          }
+        } catch {}
+      }
+      if (connected) return true;
+
+      console.log(`    ⚠️  VPN attempt ${attempt}/3 — no internet after 30s`);
       execSync('open -g "nordvpn://disconnect"', { timeout: 5000 });
-      await slp(3000);
+      await sleep(3000);
     }
 
+    // Last resort
     execSync('open -g "nordvpn://connect"', { timeout: 5000 });
-    await slp(10000);
-    const ip = execSync('curl -s --max-time 5 https://api.ipify.org', { timeout: 10000 }).toString().trim();
-    console.log(`    🔄 VPN fallback connect (${ip})`);
-    return true;
+    for (let poll = 0; poll < 10; poll++) {
+      await sleep(3000);
+      try {
+        const ip = execSync('curl -s --max-time 4 https://api.ipify.org', { timeout: 8000 }).toString().trim();
+        if (ip && ip.length > 6) { console.log(`    🔄 VPN fallback connected (${ip})`); return true; }
+      } catch {}
+    }
+    console.log(`    ⚠️  VPN rotation failed — continuing without`);
+    return false;
   } catch (e) {
-    console.log(`    ⚠️  VPN rotation failed: ${e.message?.slice(0, 40)}`);
+    console.log(`    ⚠️  VPN error: ${e.message?.slice(0, 40)}`);
     return false;
   }
 }
@@ -75,7 +90,7 @@ const DEBUG      = args.includes('--debug');
 const PHASE2_ONLY = args.includes('--phase2');
 const PARTY_SIZE = parseInt(getArg('party', '2'), 10);
 const BATCH_LIMIT = parseInt(getArg('batch', '0'), 10);
-const BROWSER_RESTART_EVERY = 75;
+const BROWSER_RESTART_EVERY = 5;
 
 // Split mode: --split 2 --half 1 (or --half 2) to run two instances in parallel
 const SPLIT_TOTAL = parseInt(getArg('split', '1'), 10);
@@ -98,7 +113,7 @@ const OUTPUT_FILE = SPLIT_TOTAL > 1
 const VERIFIED_OPEN_FILE = path.join(__dirname, 'ot_verified_open_2026-04-09.json');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-function randomDelay() { return 8000 + Math.floor(Math.random() * 7000); } // 8-15s
+function randomDelay() { return 15000 + Math.floor(Math.random() * 5000); } // 15-20s
 
 // ── Load files ──
 let BOOKING_MASTER = {};
@@ -137,10 +152,11 @@ const VIEWPORTS = [
 
 async function launchBrowser() {
   return puppeteer.launch({
-    headless: 'new',
+    headless: false,
     args: [
       '--no-sandbox',
       '--disable-blink-features=AutomationControlled',
+      '--disable-dev-shm-usage',
       '--window-size=1280,800',
     ]
   });
@@ -148,15 +164,9 @@ async function launchBrowser() {
 
 async function setupPage(browser) {
   const page = await browser.newPage();
-  await page.evaluateOnNewDocument(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-    window.chrome = { runtime: {}, loadTimes: function(){}, csi: function(){} };
-    Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
-    Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
-  });
-  await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
+  // Stealth plugin handles all anti-detection automatically
   const vp = VIEWPORTS[Math.floor(Math.random() * VIEWPORTS.length)];
-  await page.setViewport(vp);
+  await page.setViewport({ ...vp, deviceScaleFactor: 2 });
   return page;
 }
 
@@ -560,27 +570,7 @@ async function main() {
   // Save final results
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
 
-  // Also merge into slim file for the frontend
-  let slim = {};
-  try { slim = JSON.parse(fs.readFileSync(SLIM_FILE, 'utf8')); } catch {}
-  for (const [key, val] of Object.entries(results)) {
-    slim[key] = {
-      tier: val.tier,
-      dinner_slots: val.dinner_slots,
-      early: val.early,
-      prime: val.prime,
-      late: val.late,
-    };
-  }
-  fs.writeFileSync(SLIM_FILE, JSON.stringify(slim));
-
-  // Also merge into main tonight_availability.json if it exists
-  let mainAvail = {};
-  try { mainAvail = JSON.parse(fs.readFileSync(MAIN_OUTPUT, 'utf8')); } catch {}
-  for (const [key, val] of Object.entries(results)) {
-    mainAvail[key] = val;
-  }
-  fs.writeFileSync(MAIN_OUTPUT, JSON.stringify(mainAvail, null, 2));
+  // Results saved to date-stamped file only — review before merging into live data
 
   console.log(`\n${'═'.repeat(50)}`);
   console.log(`✅ Done! Checked ${checked} OpenTable restaurants`);
