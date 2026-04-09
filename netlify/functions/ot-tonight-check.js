@@ -35,11 +35,11 @@ async function rotateVPN() {
   const slp = ms => new Promise(r => setTimeout(r, ms));
   try {
     execSync('open -g "nordvpn://disconnect"', { timeout: 5000 });
-    await slp(3000);
+    await slp(5000);
 
     for (let attempt = 1; attempt <= 3; attempt++) {
       execSync(`open -g "nordvpn://connect/${region}"`, { timeout: 5000 });
-      await slp(8000);
+      await slp(15000);
       try {
         const ip = execSync('curl -s --max-time 5 https://api.ipify.org', { timeout: 10000 }).toString().trim();
         if (ip && ip.length > 6) {
@@ -92,12 +92,13 @@ if (!CHECK_DATE) {
 const TODAY = new Date().toISOString().split('T')[0];
 
 const MASTER_FILE = path.join(__dirname, 'BOOKING_MASTER.json');
-const OUTPUT_FILE = path.join(__dirname, 'tonight_availability_ot.json');
-const SLIM_FILE   = path.join(__dirname, 'tonight_availability_slim.json');
-const MAIN_OUTPUT = path.join(__dirname, 'tonight_availability.json');
+const OUTPUT_FILE = SPLIT_TOTAL > 1
+  ? path.join(__dirname, `ot_availability_${CHECK_DATE}_half${SPLIT_HALF}.json`)
+  : path.join(__dirname, `ot_availability_${CHECK_DATE}.json`);
+const VERIFIED_OPEN_FILE = path.join(__dirname, 'ot_verified_open_2026-04-09.json');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-function randomDelay() { return 3000 + Math.floor(Math.random() * 5000); } // 3-8s
+function randomDelay() { return 8000 + Math.floor(Math.random() * 7000); } // 8-15s
 
 // ── Load files ──
 let BOOKING_MASTER = {};
@@ -114,7 +115,12 @@ const OT_RESTAURANTS = Object.entries(BOOKING_MASTER)
   .filter(([_, v]) => v.platform === 'opentable' && v.url)
   .map(([name, info]) => ({ name, booking_url: info.url }));
 
-console.log(`🍽️  Found ${OT_RESTAURANTS.length} OpenTable restaurants`);
+// Load verified open (skip these)
+let verifiedOpen = {};
+try { verifiedOpen = JSON.parse(fs.readFileSync(VERIFIED_OPEN_FILE, 'utf8')); } catch {}
+const skipSet = new Set(Object.keys(verifiedOpen).map(k => k.toLowerCase()));
+
+console.log(`🍽️  Found ${OT_RESTAURANTS.length} OpenTable restaurants (skipping ${skipSet.size} verified open)`);
 
 // Load existing results
 let existing = {};
@@ -295,6 +301,10 @@ async function main() {
     toCheck = [];
   }
 
+  // Skip verified open restaurants
+  toCheck = toCheck.filter(r => !skipSet.has(r.name.toLowerCase()));
+  console.log(`⏭️  After skipping verified open: ${toCheck.length} to check`);
+
   // Skip recently checked unless --all
   if (!CHECK_ALL) {
     toCheck = toCheck.filter(r => {
@@ -331,9 +341,10 @@ async function main() {
   for (const restaurant of toCheck) {
     // Restart browser every N requests
     if (sessionCount >= BROWSER_RESTART_EVERY) {
-      console.log(`\n  🔄 Restarting browser (session ${Math.floor(checked / BROWSER_RESTART_EVERY) + 1})...\n`);
+      console.log(`\n  🔄 Rotating VPN + restarting browser (session ${Math.floor(checked / BROWSER_RESTART_EVERY) + 1})...\n`);
       await browser.close();
-      await sleep(5000); // brief pause between sessions
+      await rotateVPN();
+      await sleep(20000); // 20s cooldown after VPN rotation
       browser = await launchBrowser();
       page = await setupPage(browser);
       sessionCount = 0;
@@ -373,7 +384,7 @@ async function main() {
       console.log(`\n  ⚠️  ${consecutiveUnknowns} consecutive unknowns — rotating VPN + restarting browser...\n`);
       await browser.close();
       await rotateVPN();
-      await sleep(5000);
+      await sleep(20000); // 20s cooldown after emergency rotation
       browser = await launchBrowser();
       page = await setupPage(browser);
       sessionCount = 0;
@@ -388,7 +399,8 @@ async function main() {
     await sleep(randomDelay());
   }
 
-  // ── Phase 2: Recheck limited + booked at 5:30pm, 7:30pm, 9:30pm ────────
+  // ── Phase 2 & 3 disabled — Phase 1 only ────────
+  if (false) { // DISABLED
   const recheckKeys = Object.entries(results)
     .filter(([_, v]) => v.tier === 'booked' || v.tier === 'limited')
     .map(([k, v]) => ({ name: k, matched_name: v.matched_name, tier: v.tier }));
@@ -541,6 +553,7 @@ async function main() {
 
     console.log(`\n   🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}`);
   }
+  } // END disabled Phase 2 & 3
 
   await browser.close();
 
