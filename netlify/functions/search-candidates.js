@@ -914,7 +914,7 @@ const CUISINE_FILTER_MAP = {
   'sushi':          ['Sushi'],
   'thai':           ['Thai'],
   'vietnamese':     ['Vietnamese'],
-  'kosher':         ['Kosher', 'Jewish/Kosher', 'Jewish', 'Deli/Jewish', 'Jewish Deli']
+  'kosher':         ['Kosher']
 };
 
 function cuisineLookupMatches(name, userCuisine, fallbackCuisine) {
@@ -1961,7 +1961,8 @@ exports.handler = async (event) => {
         const hasInstaBuzz = !!INSTAGRAM_BUZZ[key];
         const isBuzz = !!(entry.buzz_sources && entry.buzz_sources.length > 0);
         const isMichelin = !!entry.michelin_stars || !!entry.michelin_recommended;
-        if (!isMichelin && !isBuzz && !hasInstaBuzz) {
+        const isKosher = (entry.cuisine || '').toLowerCase() === 'kosher';
+        if (!isMichelin && !isBuzz && !hasInstaBuzz && !isKosher) {
           if (rating < 4.3 || reviews < 100) continue;
         }
 
