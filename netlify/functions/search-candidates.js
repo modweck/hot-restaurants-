@@ -1376,6 +1376,7 @@ exports.handler = async (event) => {
         vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
         velocity: r.velocity || null,
         new_rising: r.new_rising || null,
+        coming_soon: r.coming_soon || null,
         michelin_recommended: r.michelin_recommended || null,
       };
     };
@@ -1449,6 +1450,8 @@ exports.handler = async (event) => {
           buzz_sources: entry.buzz_sources || [],
           instagram_buzz: INSTAGRAM_BUZZ[name] || null,
           new_rising: entry.new_rising || null,
+          coming_soon: entry.coming_soon || null,
+          coming_soon: entry.coming_soon || null,
           avail_tier: avail.tier,
           avail_slots: avail.dinner_slots || 0,
           has_early: avail.has_early || false,
@@ -1567,6 +1570,7 @@ exports.handler = async (event) => {
           instagram_buzz: INSTAGRAM_BUZZ[name] || null,
           deposit_type: DEPOSIT_LOOKUP[normalizeName(name)] || null,
           new_rising: entry.new_rising || null,
+          coming_soon: entry.coming_soon || null,
           velocity: entry.velocity || null,
           avail_tier:  (getAvail(name) || {}).tier || null,
           avail_slots: (getAvail(name) || {}).dinner_slots || 0,
@@ -1655,6 +1659,7 @@ exports.handler = async (event) => {
           instagram_buzz: INSTAGRAM_BUZZ[name] || null,
           deposit_type: DEPOSIT_LOOKUP[normalizeName(name)] || null,
           new_rising: entry.new_rising || null,
+          coming_soon: entry.coming_soon || null,
           velocity: entry.velocity || null,
           avail_tier:  (getAvail(name) || {}).tier || null,
           avail_slots: (getAvail(name) || {}).dinner_slots || 0,
@@ -1739,6 +1744,7 @@ exports.handler = async (event) => {
           instagram_buzz: INSTAGRAM_BUZZ[name] || null,
           deposit_type: DEPOSIT_LOOKUP[normalizeName(name)] || null,
           new_rising: entry.new_rising || null,
+          coming_soon: entry.coming_soon || null,
           velocity: entry.velocity || null,
           avail_tier:  (getAvail(name) || {}).tier || null,
           avail_slots: (getAvail(name) || {}).dinner_slots || 0,
@@ -1968,6 +1974,7 @@ exports.handler = async (event) => {
           pete_wells_rank: entry.pete_wells_rank || null,
           instagram_buzz: INSTAGRAM_BUZZ[key] || null,
           new_rising: entry.new_rising || null,
+          coming_soon: entry.coming_soon || null,
           _source: 'master_book',
         });
       }
@@ -2288,6 +2295,7 @@ exports.handler = async (event) => {
         pete_wells_rank: entry.pete_wells_rank || null,
         instagram_buzz: INSTAGRAM_BUZZ[mk] || null,
         new_rising: entry.new_rising || null,
+        coming_soon: entry.coming_soon || null,
         _source: 'master_book',
       });
       if (entry.place_id) existingIds.add(entry.place_id);
