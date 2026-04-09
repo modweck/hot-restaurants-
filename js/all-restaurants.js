@@ -396,8 +396,9 @@ async function doAllNYCSearch() {
   const btn = document.getElementById('arSearchBtn');
   if (btn) { btn.disabled = true; btn.textContent = '⏳ Searching...'; }
 
-  // Cache key — re-fetch when quality, cuisine, or transport changes
-  const cacheKey = `${arState.buzzFilter}|${arState.cuisine}|${arState.transport}|${document.getElementById('arAddrInput')?.value.trim()||'nyc'}`;
+  // Cache key — re-fetch when quality, cuisine, transport, or coming_soon filter changes
+  const hasCS = arState.hotspotFilters && arState.hotspotFilters.includes('coming_soon');
+  const cacheKey = `${arState.buzzFilter}|${arState.cuisine}|${arState.transport}|${document.getElementById('arAddrInput')?.value.trim()||'nyc'}|cs:${hasCS}`;
   if (allNYCRestaurants.length > 0 && allNYCCacheKey === cacheKey) {
     displayAllNYC(allNYCRestaurants);
     allNYCSearching = false;
