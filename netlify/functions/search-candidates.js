@@ -1164,6 +1164,7 @@ function normalizeQualityMode(q) {
   if (q === 'chase_sapphire') return 'chase_sapphire';
   if (q === 'rakuten') return 'rakuten';
   if (q === 'new_rising' || q === 'new_and_rising') return 'new_rising';
+  if (q === 'coming_soon') return 'coming_soon';
   return 'very_good';
 }
 
@@ -1892,6 +1893,51 @@ exports.handler = async (event) => {
       const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, newRisingMode: true, count: filtered.length, performance: { ...timings, cache_hit: false } };
       setCache(cacheKey, { elite: filtered, moreOptions: [], stats });
       return stableResponse(filtered, [], stats);
+    }
+
+    // Coming Soon mode — pull from BOOKING_MASTER
+    if (qualityMode === 'coming_soon') {
+      const allNycSource = MASTER_KEYS.length > 0 ? MASTER_BOOK : BOOKING_LOOKUP;
+      const comingSoon = [];
+
+      for (const [key, entry] of Object.entries(allNycSource)) {
+        if (!entry.coming_soon) continue;
+        const lat = entry.lat || entry.geometry?.location?.lat || 0;
+        const lng = entry.lng || entry.geometry?.location?.lng || 0;
+        const d = (lat && lng) ? haversineMiles(gLat, gLng, lat, lng) : 999;
+        const mk = normalizeName(key);
+
+        comingSoon.push({
+          place_id: entry.place_id || null,
+          name: key,
+          vicinity: entry.address || '',
+          formatted_address: entry.address || '',
+          price_level: entry.price || null,
+          opening_hours: null,
+          geometry: { location: { lat, lng } },
+          googleRating: entry.google_rating || entry.googleRating || 0,
+          googleReviewCount: entry.google_reviews || entry.googleReviewCount || 0,
+          distanceMiles: Math.round(d * 10) / 10,
+          walkMinEstimate: Math.round(d * 20),
+          driveMinEstimate: Math.round(d * 4),
+          transitMinEstimate: Math.round(d * 6),
+          booking_platform: entry.platform || null,
+          booking_url: entry.url || null,
+          website: entry.website || null,
+          cuisine: entry.cuisine || CUISINE_LOOKUP[mk] || null,
+          neighborhood: entry.neighborhood || null,
+          coming_soon: true,
+          coming_soon_source: entry.coming_soon_source || null,
+          new_rising: entry.new_rising || null,
+          _source: 'coming_soon'
+        });
+      }
+
+      console.log(`🚀 Coming Soon: ${comingSoon.length} restaurants`);
+      timings.total_ms = Date.now() - t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, comingSoonMode: true, count: comingSoon.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: comingSoon, moreOptions: [], stats });
+      return stableResponse(comingSoon, [], stats);
     }
 
     // =========================================================================
