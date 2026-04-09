@@ -63,24 +63,27 @@ function arSetHotspot(val, btn) {
       arState.hotspotFilter = 'none';
     }
   }
-  // Coming Soon: fetch and render directly, don't go through normal pipeline
+  // Coming Soon: render hardcoded list directly
   if (val === 'coming_soon' && arState.hotspotFilters.includes('coming_soon')) {
-    fetch('/.netlify/functions/search-candidates', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ quality: 'coming_soon', location: 'New York, NY', broadCity: true, transport: 'all_nyc' })
-    }).then(r => r.json()).then(d => {
-      const cs = d.elite || [];
-      document.getElementById('allRestMeta').textContent = cs.length + ' restaurant' + (cs.length !== 1 ? 's' : '');
-      document.getElementById('allRestList').innerHTML = cs.map(r =>
-        '<div class="rcard" style="padding:16px 20px;border-bottom:1px solid #f0f0f0">' +
+    var _cs = [
+      {name:"Or'esh", hood:"SoHo"},
+      {name:"Soba Ulala by Hirohisa", hood:"LES"},
+      {name:"Beto's Carnitas & Guisados", hood:"Lower East Side"},
+      {name:"Death & Co East Village", hood:"East Village"},
+      {name:"Please Don't Tell (PDT)", hood:"East Village"},
+      {name:"10Cubed", hood:"Meatpacking"},
+      {name:"Erewhon", hood:"Tribeca"}
+    ];
+    var _html = _cs.map(function(r){
+      return '<div style="padding:16px 20px;border-bottom:1px solid #f0f0f0">' +
         '<div style="display:flex;justify-content:space-between;align-items:center">' +
-        '<div><div style="font-size:15px;font-weight:700;color:#1a1a1a">' + (r.name||'') + '</div>' +
-        '<div style="font-size:12px;color:#888;margin-top:3px">' + [r.cuisine, r.neighborhood].filter(Boolean).join(' · ') + '</div></div>' +
+        '<div><div style="font-size:15px;font-weight:700;color:#1a1a1a">' + r.name + '</div>' +
+        '<div style="font-size:12px;color:#888;margin-top:3px">' + r.hood + '</div></div>' +
         '<span style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.2);font-size:12px;padding:4px 10px;border-radius:6px;font-weight:700;white-space:nowrap">🚀 Coming Soon</span>' +
-        '</div></div>'
-      ).join('');
-    }).catch(e => console.error('Coming soon fetch error:', e));
+        '</div></div>';
+    }).join('');
+    document.getElementById('allRestMeta').textContent = _cs.length + ' restaurants';
+    document.getElementById('allRestList').innerHTML = _html;
     return;
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
