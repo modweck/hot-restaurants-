@@ -63,6 +63,11 @@ function arSetHotspot(val, btn) {
       arState.hotspotFilter = 'none';
     }
   }
+  // If coming_soon was just toggled on and we don't have that data yet, re-fetch
+  if (val === 'coming_soon' && arState.hotspotFilters.includes('coming_soon') && !allNYCRestaurants.some(r => r.coming_soon)) {
+    doAllNYCSearch();
+    return;
+  }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
@@ -307,6 +312,7 @@ function applyARFilters(list) {
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
         return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
       }
+      if (r.coming_soon) return true;
       if (!tier) return false;
       if (af === 'limited') return tier === 'limited';
       if (af === 'booked_solid') return tier === 'booked' || tier === 'booked_solid';
