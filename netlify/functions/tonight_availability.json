@@ -25904,5 +25904,14 @@
     "checked_date": "2026-04-05T17:23:05.757Z",
     "platform": "resy",
     "_checked_date": "2026-04-08"
+  },
+  "chez fifi": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "fully_locked": true,
+    "_checked_date": "2026-04-09"
   }
 }
