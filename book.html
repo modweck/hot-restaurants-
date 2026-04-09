@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Get a Hard-to-Book Table | SeatWize</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .container{max-width:520px;margin:0 auto;min-height:100vh;position:relative}
+    @media(min-width:520px){body{padding:16px}.container{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.07);min-height:auto}}
+
+    .header{padding:20px 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(0,0,0,0.06)}
+    .back-btn{color:#ff4500;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer}
+    .header h1{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;letter-spacing:-0.5px}
+
+    .section{padding:20px}
+    .section-title{font-size:15px;font-weight:800;margin-bottom:12px}
+    .section-sub{font-size:12px;color:#888;margin-bottom:16px;line-height:1.5}
+
+    .field{margin-bottom:16px}
+    .field label{display:block;font-size:12px;font-weight:700;color:#555;margin-bottom:6px}
+    .field input,.field select{width:100%;padding:12px 14px;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none}
+    .field input:focus,.field select:focus{border-color:rgba(255,69,0,.5)}
+    .field input::placeholder{color:#aaa}
+    .field-note{font-size:11px;color:#888;margin-top:4px;line-height:1.4}
+
+    .party-row{display:flex;align-items:center;gap:12px}
+    .party-btn{width:36px;height:36px;border-radius:8px;border:1px solid rgba(0,0,0,0.1);background:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1a1a2e}
+    .party-btn:active{background:#f0f0f0}
+    .party-val{font-size:18px;font-weight:700;min-width:30px;text-align:center}
+
+    .page{display:none}.page.active{display:block}
+
+    .btn{width:100%;padding:15px 20px;background:#ff4500;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;transition:all .2s;margin-top:8px}
+    .btn:active{background:#e03c00;transform:scale(.98)}
+    .btn:disabled{background:#ccc;cursor:not-allowed}
+
+    .rest-card{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all .15s;display:flex;justify-content:space-between;align-items:center}
+    .rest-card:active{background:#faf8f6;transform:scale(.99)}
+    .rest-card-left{}
+    .rest-card-name{font-size:15px;font-weight:800}
+    .rest-card-sub{font-size:12px;color:#888;margin-top:2px}
+    .rest-card-arrow{color:#ccc;font-size:18px}
+
+    .resy-login{background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,0.08);padding:20px;margin-top:16px}
+    .resy-logo{font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px}
+    .resy-note{font-size:11px;color:#999;margin-bottom:16px;line-height:1.5}
+
+    .error-msg{background:#fef2f2;color:#dc2626;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:600;margin-bottom:12px;display:none}
+
+    .secure-note{display:flex;align-items:center;gap:6px;font-size:11px;color:#999;margin-top:12px;justify-content:center}
+
+    .info-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:#fff8f5;color:#ff4500;border:1px solid rgba(255,69,0,.15)}
+
+    .success-box{text-align:center;padding:40px 20px}
+    .success-icon{font-size:48px;margin-bottom:12px}
+    .success-title{font-size:20px;font-weight:800;margin-bottom:8px}
+    .success-sub{font-size:13px;color:#888;line-height:1.6}
+
+    .how-item{display:flex;gap:12px;margin-bottom:14px}
+    .how-num{width:28px;height:28px;border-radius:50%;background:#ff4500;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+    .how-text{font-size:13px;color:#555;line-height:1.5}
+    .how-text b{color:#1a1a2e}
+
+    .divider{height:1px;background:rgba(0,0,0,0.06);margin:0 20px}
+
+    .summary-box{background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,0.06);padding:16px;margin-bottom:16px}
+    .summary-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px}
+    .summary-value{font-size:15px;font-weight:700;margin-top:2px}
+    .summary-note{font-size:12px;color:#888;margin-top:4px}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- PAGE 1: Pick a restaurant -->
+    <div class="page active" id="pagePick">
+      <div class="header">
+        <a class="back-btn" href="/">&larr; Back</a>
+        <h1>Get a Table</h1>
+      </div>
+      <div class="section">
+        <div class="section-title">Pick a restaurant</div>
+        <div class="section-sub">We snipe reservations the second they drop. Pick a spot and we handle the rest. We aim for prime time (7-9 PM).</div>
+        <div id="restList"></div>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <div class="section-title">How it works</div>
+        <div class="how-item">
+          <div class="how-num">1</div>
+          <div class="how-text"><b>Pick your spot</b> and choose a date.</div>
+        </div>
+        <div class="how-item">
+          <div class="how-num">2</div>
+          <div class="how-text"><b>Connect your Resy account</b> so we can book under your name.</div>
+        </div>
+        <div class="how-item">
+          <div class="how-num">3</div>
+          <div class="how-text"><b>We snipe the drop.</b> The instant reservations open, we grab your table between 5-10 PM, aiming for prime time.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2: Book form for selected restaurant -->
+    <div class="page" id="pageBook">
+      <div class="header">
+        <span class="back-btn" onclick="showPage('pagePick')">&larr; Back</span>
+        <h1 id="bookHeader"></h1>
+      </div>
+      <div class="section">
+        <div id="bookRestInfo" style="margin-bottom:16px"></div>
+
+        <div class="field">
+          <label>Date</label>
+          <input type="date" id="bookDate">
+          <div class="field-note" id="dateNote"></div>
+        </div>
+
+        <div class="field">
+          <label>Party Size</label>
+          <div class="party-row">
+            <button class="party-btn" onclick="adjParty(-1)">-</button>
+            <span class="party-val" id="partyVal">2</span>
+            <button class="party-btn" onclick="adjParty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" id="bookName" placeholder="Full name">
+        </div>
+
+        <div class="field">
+          <label>Phone or Email</label>
+          <input type="text" id="bookContact" placeholder="We'll notify you when booked">
+        </div>
+
+        <div class="resy-login">
+          <div class="resy-logo">Connect Resy</div>
+          <div class="resy-note">Sign in with your Resy account so we can book under your name. Your password is never stored.</div>
+          <div id="resyError" class="error-msg"></div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="resyEmail" placeholder="Resy account email">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" id="resyPassword" placeholder="Resy password">
+          </div>
+          <div id="resyConnected" style="display:none;font-size:13px;color:#15803d;font-weight:700;padding:8px 0">Connected</div>
+          <button class="btn" id="resyBtn" onclick="resyLogin()">Connect Resy</button>
+          <div class="secure-note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Encrypted &middot; Password never stored
+          </div>
+        </div>
+
+        <button class="btn" id="submitBtn" onclick="submitRequest()" disabled style="margin-top:16px">Submit Request &middot; $20</button>
+        <div style="font-size:11px;color:#888;text-align:center;margin-top:6px">Only charged after we confirm your table</div>
+      </div>
+    </div>
+
+    <!-- PAGE 3: Success -->
+    <div class="page" id="pageSuccess">
+      <div class="success-box">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">You're In the Queue!</div>
+        <div class="success-sub">
+          We're locked in on <b id="successRestaurant"></b>.<br><br>
+          Our system will snipe your table the moment reservations drop. We'll text/email you as soon as it's booked.
+        </div>
+        <button class="btn" onclick="window.location='/'" style="margin-top:24px">Back to Home</button>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+const RESTAURANTS = [
+  { name: 'Torrisi', slug: 'torrisi', venue_id: 64593, drop_days: 30, drop_hour: 10, hood: 'Nolita' },
+  { name: 'Carbone', slug: 'carbone', venue_id: 6194, drop_days: 30, drop_hour: 10, hood: 'Greenwich Village' },
+  { name: 'Via Carota', slug: 'via-carota', venue_id: 25973, drop_days: 30, drop_hour: 10, hood: 'West Village' },
+  { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 20, drop_hour: 9, hood: 'Midtown' },
+  { name: 'Theodora', slug: 'theodora', venue_id: 0, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
+  { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 0, drop_days: 14, drop_hour: 8, hood: 'Upper East Side' },
+];
+
+let partySize = 2;
+let selectedRest = null;
+let resyToken = null;
+let resyPaymentId = null;
+let resyEmail = '';
+
+function adjParty(d) {
+  partySize = Math.max(1, Math.min(8, partySize + d));
+  document.getElementById('partyVal').textContent = partySize;
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function getMinDate(r) {
+  const d = new Date(); d.setDate(d.getDate() + r.drop_days);
+  return d;
+}
+
+function fmtDate(d) {
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+
+function pickRest(idx) {
+  selectedRest = RESTAURANTS[idx];
+  resyToken = null; resyPaymentId = null; resyEmail = '';
+  document.getElementById('resyConnected').style.display = 'none';
+  document.getElementById('resyBtn').style.display = '';
+  document.getElementById('resyEmail').value = '';
+  document.getElementById('resyPassword').value = '';
+  document.getElementById('resyError').style.display = 'none';
+  document.getElementById('submitBtn').disabled = true;
+
+  document.getElementById('bookHeader').textContent = selectedRest.name;
+
+  document.getElementById('bookRestInfo').innerHTML =
+    '<div style="font-size:13px;color:#555">' + selectedRest.hood + '</div>' +
+    '<div style="margin-top:6px"><span class="info-badge">' + selectedRest.drop_days + '+ days out</span> <span class="info-badge">5-10 PM</span></div>';
+
+  const minDate = getMinDate(selectedRest);
+  const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);
+  const dateInput = document.getElementById('bookDate');
+  dateInput.min = minDate.toISOString().split('T')[0];
+  dateInput.max = maxDate.toISOString().split('T')[0];
+  dateInput.value = minDate.toISOString().split('T')[0];
+  document.getElementById('dateNote').textContent = 'Soonest available: ' + fmtDate(minDate) + '. Pick any date from there.';
+
+  showPage('pageBook');
+}
+
+async function resyLogin() {
+  const email = document.getElementById('resyEmail').value.trim();
+  const password = document.getElementById('resyPassword').value;
+  const errEl = document.getElementById('resyError');
+  const btn = document.getElementById('resyBtn');
+
+  if (!email || !password) { errEl.textContent = 'Enter your email and password'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Connecting...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/resy-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await resp.json();
+    if (data.error) {
+      errEl.textContent = data.error; errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Connect Resy';
+      return;
+    }
+    resyToken = data.token;
+    resyPaymentId = data.payment_method_id;
+    resyEmail = email;
+
+    document.getElementById('resyConnected').textContent = 'Connected: ' + email;
+    document.getElementById('resyConnected').style.display = 'block';
+    btn.style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
+  } catch (e) {
+    errEl.textContent = 'Connection failed. Try again.'; errEl.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Connect Resy';
+}
+
+async function submitRequest() {
+  const name = document.getElementById('bookName').value.trim();
+  const contact = document.getElementById('bookContact').value.trim();
+  const date = document.getElementById('bookDate').value;
+  if (!name) { alert('Enter your name'); return; }
+  if (!contact) { alert('Enter your phone or email'); return; }
+  if (!date) { alert('Pick a date'); return; }
+  if (!resyToken) { alert('Connect your Resy account first'); return; }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true; btn.textContent = 'Submitting...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/booking-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        restaurant: selectedRest.name,
+        venue_slug: selectedRest.slug,
+        venue_id: selectedRest.venue_id,
+        drop_days: selectedRest.drop_days,
+        drop_hour: selectedRest.drop_hour,
+        target_date: date,
+        party_size: partySize,
+        time_pref: '5-10pm_prime',
+        name, contact,
+        resy_email: resyEmail,
+        resy_token: resyToken,
+        resy_payment_id: resyPaymentId,
+      })
+    });
+    const data = await resp.json();
+    if (data.success) {
+      // Redirect to Stripe payment
+      window.location.href = 'https://buy.stripe.com/5kQcN50PQgl1fZa6QEao800';
+    } else {
+      alert(data.error || 'Something went wrong');
+    }
+  } catch { alert('Failed to submit'); }
+  btn.disabled = false; btn.textContent = 'Submit Request · $20';
+}
+
+// Render restaurant list
+document.getElementById('restList').innerHTML = RESTAURANTS.map((r, i) =>
+  `<div class="rest-card" onclick="pickRest(${i})">
+    <div class="rest-card-left">
+      <div class="rest-card-name">${r.name}</div>
+      <div class="rest-card-sub">${r.hood} &middot; ${r.drop_days}+ days out</div>
+    </div>
+    <div class="rest-card-arrow">&rsaquo;</div>
+  </div>`
+).join('');
+</script>
+</body>
+</html>

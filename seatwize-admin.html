@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Booking Requests - Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',sans-serif;background:#f7f5f2;color:#1a1a2e;padding:20px}
+    h1{font-size:24px;font-weight:800;margin-bottom:20px}
+    .card{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid rgba(0,0,0,0.06)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .card-name{font-size:16px;font-weight:800}
+    .card-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+    .status-pending{background:#fff8e1;color:#f57c00}
+    .status-booked{background:#e8f5e9;color:#2e7d32}
+    .status-failed{background:#fde8e8;color:#c0392b}
+    .card-details{font-size:13px;color:#555;margin-bottom:6px}
+    .card-token{font-size:11px;color:#999;word-break:break-all;background:#f5f5f5;padding:8px;border-radius:6px;margin-top:8px}
+    .card-token b{color:#1a1a2e}
+    .copy-btn{font-size:11px;color:#ff4500;cursor:pointer;background:none;border:none;font-weight:700;margin-left:8px}
+    .refresh-btn{padding:10px 20px;background:#ff4500;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:20px}
+    .empty{text-align:center;padding:40px;color:#888}
+  </style>
+</head>
+<body>
+  <h1>Booking Requests</h1>
+  <button class="refresh-btn" onclick="loadRequests()">Refresh</button>
+  <div id="list"><div class="empty">Loading...</div></div>
+
+<script>
+async function loadRequests() {
+  try {
+    const resp = await fetch('/.netlify/functions/booking-request?action=list');
+    const data = await resp.json();
+    const list = data.requests || [];
+    if (!list.length) {
+      document.getElementById('list').innerHTML = '<div class="empty">No booking requests yet</div>';
+      return;
+    }
+    // Show newest first
+    list.reverse();
+    document.getElementById('list').innerHTML = list.map(r => `
+      <div class="card">
+        <div class="card-top">
+          <div class="card-name">${r.restaurant}</div>
+          <span class="card-status status-${r.status}">${r.status}</span>
+        </div>
+        <div class="card-details">
+          ${r.date} · Party of ${r.party_size} · ${r.time_pref}<br>
+          ${r.name} · ${r.contact}
+        </div>
+        <div class="card-token">
+          <b>Resy:</b> ${r.resy_email}<br>
+          <b>Token:</b> ${r.resy_token ? r.resy_token.slice(0, 40) + '...' : 'none'}
+          <button class="copy-btn" onclick="navigator.clipboard.writeText('${r.resy_token}');this.textContent='Copied!'">Copy Token</button><br>
+          <b>Payment ID:</b> ${r.resy_payment_id || 'none'}
+          ${r.resy_payment_id ? '<button class="copy-btn" onclick="navigator.clipboard.writeText(\'' + r.resy_payment_id + '\');this.textContent=\'Copied!\'">Copy</button>' : ''}
+        </div>
+        <div style="font-size:11px;color:#aaa;margin-top:6px">${r.created_at}</div>
+      </div>
+    `).join('');
+  } catch (e) {
+    document.getElementById('list').innerHTML = '<div class="empty">Failed to load requests</div>';
+  }
+}
+
+loadRequests();
+</script>
+</body>
+</html>
