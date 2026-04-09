@@ -375,6 +375,7 @@ function display(restaurants) {
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
         return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
       }
+      if (r.coming_soon) return true; // coming soon restaurants bypass availability filter
       if (!tier) return false; // no data — hide when filtering by availability
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';

@@ -409,6 +409,7 @@ async function doAllNYCSearch() {
     // Map quality dropdown → backend quality param
     // 'any' (All Restaurants) = 'all' on backend = no rating floor
     // 'very_good' / 'great' / 'exceptional' pass straight through
+    const hasComingSoon = arState.hotspotFilters && arState.hotspotFilters.includes('coming_soon');
     const qualityParam = 'all';
 
     const resp = await fetch('/.netlify/functions/search-candidates', {
@@ -433,6 +434,20 @@ async function doAllNYCSearch() {
       return;
     }
     let results = [...(data.elite || []), ...(data.moreOptions || [])];
+
+    // If coming_soon filter is active, also fetch coming_soon results and merge
+    if (hasComingSoon) {
+      try {
+        const csResp = await fetch('/.netlify/functions/search-candidates', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ location, quality: 'coming_soon', broadCity: true, transport: 'all_nyc' })
+        });
+        const csData = await csResp.json();
+        results.push(...(csData.elite || []), ...(csData.moreOptions || []));
+      } catch {}
+    }
+
     const seen = new Set();
     results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
     results = results.map(r => ({ ...r, name: r.name||r.vicinity||'', booking_platform: r.booking_platform||null, booking_url: r.booking_url||null, website: r.website||null }));
