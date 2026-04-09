@@ -2180,7 +2180,19 @@ function renderCard(r, isRadar) {
     const isBooked     = tier === 'booked' || allBooked;
 
     if (isBooked && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
+      let futureBadges = '';
+      if (r.future_dates) {
+        const offsets = [2,4,7,10,14,21,28];
+        for (const o of offsets) {
+          const fd = r.future_dates['+'+o];
+          if (!fd) continue;
+          if (fd.tier === 'limited') futureBadges += `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#fff8e1;color:#f57f17;border:1px solid rgba(245,127,23,.25)">🟡 +${o}d</span>`;
+          else if (fd.tier === 'open') futureBadges += `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 +${o}d</span>`;
+          if (futureBadges) break; // show first available
+        }
+      }
+      if (!futureBadges) futureBadges = `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${futureBadges}</div>`;
     } else if (isBooked && r.fully_locked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
     } else if (isBooked) {
@@ -2195,7 +2207,19 @@ function renderCard(r, isRadar) {
     const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
   } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span></div>`;
+    let futureBadges2 = '';
+    if (r.future_dates) {
+      const offsets2 = [2,4,7,10,14,21,28];
+      for (const o of offsets2) {
+        const fd = r.future_dates['+'+o];
+        if (!fd) continue;
+        if (fd.tier === 'limited') futureBadges2 += `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#fff8e1;color:#f57f17;border:1px solid rgba(245,127,23,.25)">🟡 +${o}d</span>`;
+        else if (fd.tier === 'open') futureBadges2 += `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 +${o}d</span>`;
+        if (futureBadges2) break;
+      }
+    }
+    if (!futureBadges2) futureBadges2 = `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${futureBadges2}</div>`;
   } else if (tier === 'booked' && r.fully_locked) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Fully Booked</span></div>`;
   } else if (tier === 'booked') {
@@ -2872,7 +2896,17 @@ function renderCardAR(r) {
     const isBooked  = tier === 'booked' || allBooked;
 
     if (isBooked && r.opens_in) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
+      let fb3 = '';
+      if (r.future_dates) {
+        for (const o of [2,4,7,10,14,21,28]) {
+          const fd = r.future_dates['+'+o];
+          if (!fd) continue;
+          if (fd.tier === 'limited') { fb3 = `<span style="${_sLimited}">🟡 +${o}d</span>`; break; }
+          if (fd.tier === 'open') { fb3 = `<span style="${_sAvail}">🟢 +${o}d</span>`; break; }
+        }
+      }
+      if (!fb3) fb3 = `<span style="${_sAvail}">Opens +${r.opens_in}d</span>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${fb3}</div>`;
     } else if (isBooked && r.fully_locked) {
       availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
     } else if (isBooked) {
