@@ -122,11 +122,11 @@ const DROPS = {
     { name: 'Bungalow', venue_id: 71822, slug: 'bungalow-ny', window: 20 },
   ],
   noon: [
-    { name: 'The Modern', venue_id: 257, slug: 'the-modern', window: 28 },
-    { name: 'Kitchen Table at The Modern', venue_id: null, slug: 'the-kitchen-table-at-the-modern', window: 28 },
     { name: 'Kappo Sono', venue_id: null, slug: 'kappo-sono', window: 21 },
-    { name: "Ha's Snack Bar", venue_id: null, slug: 'has-snack-bar', window: 21 },
     { name: 'Tatiana', venue_id: null, slug: 'tatiana-by-kwame-onwuachi', window: 28 },
+    { name: 'Carbone', venue_id: null, slug: 'carbone', window: 30 },
+    { name: 'I Sodi', venue_id: null, slug: 'i-sodi', window: 30 },
+    { name: 'Rezdora', venue_id: null, slug: 'rezdora', window: 30 },
   ],
 };
 
