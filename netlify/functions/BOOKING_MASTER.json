@@ -3975,34 +3975,6 @@
     "michelin_stars": 2,
     "michelin_recommended": true
   },
-  "the kitchen table at the modern": {
-    "platform": "website",
-    "url": "https://www.themodernnyc.com/the-modern",
-    "lat": 40.760948,
-    "lng": -73.976832,
-    "google_rating": 4.6,
-    "google_reviews": 2704,
-    "place_id": "ChIJMW-gxPtYwokRzDlnsRgq9rA",
-    "neighborhood": "Midtown",
-    "instagram": "themodernnyc",
-    "cuisine": "American",
-    "price": 4,
-    "vibe_tags": [
-      "upscale",
-      "foodie",
-      "date_night"
-    ],
-    "website": "https://www.themodernnyc.com/the-modern",
-    "buzz_sources": [
-      "Eater",
-      "Infatuation"
-    ],
-    "michelin_stars": 1,
-    "inkind": true,
-    "last_availability_check": "2026-03-06",
-    "address": "9 W 53rd St, New York, NY 10019, USA",
-    "venue_id": 2789
-  },
   "blue hill at stone barns": {
     "platform": "website",
     "url": "https://www.bluehillfarm.com/",
@@ -21917,7 +21889,7 @@
     "address": "689 6th Ave, Brooklyn, NY 11215, USA"
   },
   "gertie": {
-    "platform": "website",
+    "platform": "walk_in",
     "url": "https://www.gertie.nyc/",
     "lat": 40.71242669999999,
     "lng": -73.95554179999999,
@@ -83232,31 +83204,6 @@
       "date_night"
     ]
   },
-  "Kimika": {
-    "url": "https://www.kimikanyc.com/",
-    "platform": "website",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/kimika",
-    "resy_slug": "kimika",
-    "lat": 40.720535,
-    "lng": -73.995184,
-    "cuisine": "Italian",
-    "neighborhood": "New York",
-    "price": 3,
-    "venue_id": 30248,
-    "google_rating": 4.5,
-    "review_count": 839,
-    "address": "40 Kenmare St, New York, NY 10012, USA",
-    "place_id": "ChIJBTT9YW9ZwokRGNibieZGOTk",
-    "website": "https://www.kimikanyc.com/",
-    "opentable_url": null,
-    "google_reviews": 839,
-    "vibe_tags": [
-      "date_night",
-      "chill",
-      "lively",
-      "foodie"
-    ]
-  },
   "TASHCA NYC": {
     "url": "https://resy.com/cities/new-york-ny/venues/tashca-nyc",
     "platform": "resy",
@@ -83503,29 +83450,6 @@
       "chill"
     ],
     "address": "676 Flushing Ave, Brooklyn, NY 11206, USA"
-  },
-  "Baretto at Fasano": {
-    "url": "https://www.fasanorestaurantny.com/baretto/",
-    "platform": "website",
-    "resy_url": "https://resy.com/cities/new-york-ny/venues/baretto-at-fasano",
-    "resy_slug": "baretto-at-fasano",
-    "lat": 40.7568854,
-    "lng": -73.9757066,
-    "cuisine": "Italian",
-    "neighborhood": "New York",
-    "price": "",
-    "venue_id": 73326,
-    "google_rating": 4.7,
-    "review_count": 66,
-    "address": "60 E 49th St, New York, NY 10017, USA",
-    "place_id": "ChIJKz5XhThZwokRlO2bYuKMmA8",
-    "website": "https://www.fasanorestaurantny.com/baretto/",
-    "opentable_url": null,
-    "google_reviews": 66,
-    "vibe_tags": [
-      "lively",
-      "date_night"
-    ]
   },
   "Lowerline": {
     "url": "https://resy.com/cities/ny/lowerline",

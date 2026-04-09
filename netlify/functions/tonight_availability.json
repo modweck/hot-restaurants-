@@ -941,43 +941,12 @@
     "_checked_date": "2026-04-08"
   },
   "gramercy tavern": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "opens_in": 5,
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-10",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-12",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-15",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-18",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-22",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-29",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-06",
-        "tier": "booked"
-      }
-    }
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-09"
   },
   "union square cafe": {
     "tier": "open",
@@ -1266,39 +1235,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-10",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-12",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-15",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-18",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-22",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-29",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-06",
-        "tier": "booked"
-      }
-    }
+    "opens_in": 10,
+    "_checked_date": "2026-04-09"
   },
   "cheeni": {
     "tier": "open",
@@ -1448,47 +1386,12 @@
     }
   },
   "red hook tavern": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-10",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-12",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-15",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-18",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-23",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+21": {
-        "date": "2026-04-30",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked",
-        "slots": 0
-      }
-    }
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-09"
   },
   "atoboy": {
     "tier": "open",
@@ -11241,40 +11144,8 @@
     "early": "booked",
     "prime": "booked",
     "late": "booked",
-    "_checked_date": "2026-04-07",
     "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-10",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-12",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-15",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-18",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-22",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-29",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked",
-        "slots": 0
-      }
-    }
+    "_checked_date": "2026-04-09"
   },
   "ocabanon": {
     "tier": "open",
@@ -14026,44 +13897,12 @@
     "_checked_date": "2026-04-08"
   },
   "the kitchen table at the modern": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-10",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-12",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-15",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-18",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-22",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-29",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-06",
-        "tier": "booked"
-      }
-    }
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-09"
   },
   "the loft steakhouse - brooklyn": {
     "tier": "booked",
@@ -24522,92 +24361,13 @@
     "fully_locked": true,
     "_recheck_result": "truly_booked"
   },
-  "kimika": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-11",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+4": {
-        "date": "2026-04-13",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+7": {
-        "date": "2026-04-16",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+10": {
-        "date": "2026-04-19",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+14": {
-        "date": "2026-04-23",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+21": {
-        "date": "2026-04-30",
-        "tier": "booked",
-        "slots": 0
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked",
-        "slots": 0
-      }
-    }
-  },
   "baretto at fasano": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-11",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-13",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-16",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-19",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-23",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-30",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked"
-      }
-    }
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-09"
   },
   "69leonardstreet": {
     "tier": "booked",
@@ -24749,45 +24509,12 @@
     }
   },
   "the modern": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-11",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-13",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-16",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-19",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-23",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-30",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked",
-        "slots": 0
-      }
-    }
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-09"
   },
   "sunsets at la cantine": {
     "tier": "booked",
