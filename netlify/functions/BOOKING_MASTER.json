@@ -3976,8 +3976,8 @@
     "michelin_recommended": true
   },
   "the kitchen table at the modern": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-kitchen-table-at-the-modern",
+    "platform": "website",
+    "url": "https://www.themodernnyc.com/the-modern",
     "lat": 40.760948,
     "lng": -73.976832,
     "google_rating": 4.6,
@@ -4385,8 +4385,8 @@
     "address": "156 9th Ave, New York, NY 10011, USA"
   },
   "meju": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/meju",
+    "platform": "website",
+    "url": "http://mejunyc.com",
     "lat": 40.7436684857107,
     "lng": -73.9552482031945,
     "google_rating": 4.8,
@@ -21917,8 +21917,8 @@
     "address": "689 6th Ave, Brooklyn, NY 11215, USA"
   },
   "gertie": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/gertie",
+    "platform": "website",
+    "url": "https://www.gertie.nyc/",
     "lat": 40.71242669999999,
     "lng": -73.95554179999999,
     "google_rating": 4.4,
@@ -50814,8 +50814,8 @@
     "address": "24 Reed St, Brooklyn, NY 11231, USA"
   },
   "brooklyn roots collective": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/brooklyn-roots-collective",
+    "platform": "website",
+    "url": "http://www.brooklynrootsco.com",
     "lat": 40.710997457559465,
     "lng": -73.9224232746596,
     "google_rating": 5,
@@ -53105,7 +53105,8 @@
     "website": "https://www.finipizza.com",
     "last_availability_check": "2026-03-06",
     "address": "305 Bedford Ave, Brooklyn, NY 11211, USA",
-    "venue_id": 78353
+    "venue_id": 78353,
+    "avail_note": "sundays only"
   },
   "fish cheeks williamsburg": {
     "platform": "resy",
@@ -57873,8 +57874,8 @@
     "address": "130 Grand St CU2, Brooklyn, NY 11249, USA"
   },
   "nura": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/nura",
+    "platform": "website",
+    "url": "http://www.nurabk.com",
     "lat": 40.724892193019,
     "lng": -73.9535022021451,
     "google_rating": 4.5,
@@ -58556,8 +58557,8 @@
     "address": "58 Thompson St, New York, NY 10012, USA"
   },
   "otway": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/ny/otway",
+    "platform": "website",
+    "url": "http://otwaynyc.com",
     "lat": 40.682653,
     "lng": -73.96379,
     "google_rating": 4.3,
@@ -67477,8 +67478,8 @@
     "price": 3
   },
   "Frying Pan NYC": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/frying-pan-nyc",
+    "platform": "website",
+    "url": "https://www.fryingpan.com/",
     "lat": 40.752122199999995,
     "lng": -74.0092902,
     "google_rating": 4.3,
@@ -83232,8 +83233,8 @@
     ]
   },
   "Kimika": {
-    "url": "https://resy.com/cities/new-york-ny/venues/kimika",
-    "platform": "resy",
+    "url": "https://www.kimikanyc.com/",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/kimika",
     "resy_slug": "kimika",
     "lat": 40.720535,
@@ -83504,8 +83505,8 @@
     "address": "676 Flushing Ave, Brooklyn, NY 11206, USA"
   },
   "Baretto at Fasano": {
-    "url": "https://resy.com/cities/new-york-ny/venues/baretto-at-fasano",
-    "platform": "resy",
+    "url": "https://www.fasanorestaurantny.com/baretto/",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/baretto-at-fasano",
     "resy_slug": "baretto-at-fasano",
     "lat": 40.7568854,
@@ -93992,28 +93993,6 @@
       "Time Out"
     ]
   },
-  "Caviar Cafe": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/caviar-cafe",
-    "lat": 40.7329932,
-    "lng": -74.0099899,
-    "google_rating": 4.7,
-    "google_reviews": 26,
-    "place_id": "ChIJA2fUPjtZwokRu7rKAvna6XE",
-    "website": null,
-    "neighborhood": null,
-    "instagram": null,
-    "cuisine": null,
-    "price": null,
-    "vibe_tags": [
-      "chill",
-      "brunch",
-      "upscale",
-      "lively"
-    ],
-    "address": "394/A West St, New York, NY 10014, USA",
-    "venue_id": 94731
-  },
   "Chefs Table At Brooklyn Fare": {
     "platform": "resy",
     "url": "https://resy.com/cities/ny/chefs-table-at-brooklyn-fare",
@@ -95944,8 +95923,8 @@
     "address": "17 Waverly Pl, New York, NY 10003, USA"
   },
   "The Modern": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/the-modern",
+    "platform": "website",
+    "url": "https://www.themodernnyc.com/the-modern/",
     "lat": 40.761081,
     "lng": -73.976753,
     "google_rating": 4.6,
@@ -108958,10 +108937,10 @@
   },
   "gramercy tavern": {
     "name": "Gramercy Tavern",
-    "platform": "resy",
+    "platform": "website",
     "resy_slug": "gramercy-tavern",
     "venue_id": 3731,
-    "url": "https://resy.com/cities/new-york-ny/venues/gramercy-tavern",
+    "url": "https://www.gramercytavern.com/",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/gramercy-tavern",
     "michelin_stars": 1,
     "michelin_recommended": true,
@@ -110659,8 +110638,8 @@
     "place_id": "ChIJhZ5AnJpbwokR8xu2jnQDqP0"
   },
   "red hook tavern": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/red-hook-tavern",
+    "platform": "website",
+    "url": "http://www.redhooktavern.com/",
     "address": "329 Van Brunt St, Brooklyn, NY 11231",
     "neighborhood": "Red Hook",
     "cuisine": "American",
@@ -123420,8 +123399,8 @@
     "website": "https://www.armadanyc.com/"
   },
   "Driftaway Coffee Tasting Room": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/driftaway-coffee-tasting-room",
+    "platform": "website",
+    "url": "https://driftaway.coffee/",
     "google_rating": 4.8,
     "google_reviews": 222,
     "place_id": "ChIJC_LvoIhawokRpgfwcXZyeIk",
