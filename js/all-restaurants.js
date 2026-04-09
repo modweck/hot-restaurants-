@@ -330,6 +330,48 @@ function applyARFilters(list) {
 }
 
 function displayAllNYC(restaurants) {
+  // Coming Soon: if that's the active filter, fetch and render directly
+  const csOnly = arState.hotspotFilters && arState.hotspotFilters.includes('coming_soon');
+  if (csOnly) {
+    const csResults = restaurants.filter(r => r.coming_soon);
+    if (csResults.length > 0) {
+      document.getElementById('allRestMeta').textContent = `${csResults.length} restaurant${csResults.length !== 1 ? 's' : ''}`;
+      document.getElementById('allRestList').innerHTML = csResults.map(r =>
+        `<div class="rcard" style="padding:16px 20px;border-bottom:1px solid #f0f0f0">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#1a1a1a">${r.name}</div>
+              <div style="font-size:12px;color:#888;margin-top:3px">${[r.cuisine, r.neighborhood, r.vicinity||r.formatted_address||''].filter(Boolean).join(' · ')}</div>
+            </div>
+            <span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.2);font-size:12px;padding:4px 10px;border-radius:6px;font-weight:700">🚀 Coming Soon</span>
+          </div>
+        </div>`
+      ).join('');
+      return;
+    }
+    // No coming_soon in current data — fetch them
+    fetch('/.netlify/functions/search-candidates', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ quality: 'coming_soon', location: 'New York, NY', broadCity: true, transport: 'all_nyc' })
+    }).then(r => r.json()).then(d => {
+      const cs = d.elite || [];
+      document.getElementById('allRestMeta').textContent = `${cs.length} restaurant${cs.length !== 1 ? 's' : ''}`;
+      document.getElementById('allRestList').innerHTML = cs.map(r =>
+        `<div class="rcard" style="padding:16px 20px;border-bottom:1px solid #f0f0f0">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:15px;font-weight:700;color:#1a1a1a">${r.name}</div>
+              <div style="font-size:12px;color:#888;margin-top:3px">${[r.cuisine, r.neighborhood, r.vicinity||r.formatted_address||''].filter(Boolean).join(' · ')}</div>
+            </div>
+            <span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.2);font-size:12px;padding:4px 10px;border-radius:6px;font-weight:700">🚀 Coming Soon</span>
+          </div>
+        </div>`
+      ).join('');
+    }).catch(() => {});
+    return;
+  }
+
   const filtered = applyARFilters([...restaurants]);
   document.getElementById('allRestMeta').textContent = `${filtered.length} restaurant${filtered.length !== 1 ? 's' : ''}`;
   if (!filtered.length) {
