@@ -468,7 +468,8 @@ async function doSearch() {
     // Map buzz filter to quality param for the backend
     // If multiple trend filters selected, send 'any' and let client-side filter handle it
     const buzzToQuality = { michelin:'michelin', michelin_rec:'michelin_rec', bib:'bib_gourmand', any:'any', new_rising:'new_rising', coming_soon:'coming_soon' };
-    const qualityParam = (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[state.buzzFilter] || 'any');
+    const activeBuzz = (state.trendFilters && state.trendFilters.length === 1) ? state.trendFilters[0] : state.buzzFilter;
+    const qualityParam = (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[activeBuzz] || 'any');
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
