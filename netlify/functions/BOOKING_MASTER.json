@@ -127189,5 +127189,122 @@
     ],
     "website": "https://westsidewok.com/",
     "address": "691 Amsterdam Ave, New York, NY 10025, USA"
+  },
+  "Dean’s": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/deans",
+    "neighborhood": "Soho",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "eater",
+    "opened_date": "2026-04-09"
+  },
+  "Or’esh": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": null,
+    "address": "450 West Broadway, New York, New York 10012, United States",
+    "cuisine": null,
+    "coming_soon_source": "eater",
+    "added_date": "2026-04-09"
+  },
+  "Soba Ulala by Hirohisa": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "les",
+    "address": "73 Thompson Street, New York, New York 10012, United States",
+    "cuisine": null,
+    "coming_soon_source": "eater",
+    "added_date": "2026-04-09"
+  },
+  "Beto’s Carnitas & Guisados": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "Lower East Side",
+    "address": "69 Clinton Street, New York, New York 10002, United States",
+    "cuisine": null,
+    "coming_soon_source": "eater",
+    "added_date": "2026-04-09"
+  },
+  "Patsy's Pizzeria Flatiron": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/patsys-pizzeria-flatiron",
+    "neighborhood": "Flatiron",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "resy_blog",
+    "opened_date": "2026-04-09"
+  },
+  "Cocktail Omakase": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/cocktail-omakase",
+    "neighborhood": "Lower East Side",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "resy_blog",
+    "opened_date": "2026-04-09"
+  },
+  "Dean's": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/deans",
+    "neighborhood": "SoHo",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "resy_blog",
+    "opened_date": "2026-04-09"
+  },
+  "Balera": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/balera",
+    "neighborhood": "Williamsburg",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "resy_blog",
+    "opened_date": "2026-04-09"
+  },
+  "Death & Co East Village": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "East Village",
+    "address": null,
+    "cuisine": null,
+    "coming_soon_source": "resy_blog",
+    "added_date": "2026-04-09"
+  },
+  "Confidant": {
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/confidant",
+    "neighborhood": "Brooklyn Heights",
+    "cuisine": null,
+    "new_rising": true,
+    "coming_soon_source": "resy_blog",
+    "opened_date": "2026-04-09"
+  },
+  "Please Don't Tell (PDT)": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "East Village",
+    "address": null,
+    "cuisine": null,
+    "coming_soon_source": "resy_blog",
+    "added_date": "2026-04-09"
+  },
+  "10Cubed,": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "Meatpacking",
+    "address": "1 Little West 12th St in the Meatpacking Dist",
+    "cuisine": null,
+    "coming_soon_source": "hauteliving",
+    "added_date": "2026-04-09"
+  },
+  "Erewhon": {
+    "platform": "website",
+    "coming_soon": true,
+    "neighborhood": "Tribeca",
+    "address": null,
+    "cuisine": null,
+    "coming_soon_source": "indagare",
+    "added_date": "2026-04-09"
   }
 }

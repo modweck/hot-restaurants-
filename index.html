@@ -344,6 +344,7 @@
           <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
           <button class="fchip" onclick="setTrendFilter('exceptional',this)">Top Rated</button>
           <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
+          <button class="fchip" onclick="setTrendFilter('coming_soon',this)">🚀 Coming Soon</button>
         </div>
 
         <!-- Collapsible advanced filters -->
@@ -835,6 +836,7 @@
               <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
               <button class="fchip" id="ar-hot-exceptional" onclick="arSetHotspot('exceptional',this)">Top Rated</button>
               <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
+              <button class="fchip" id="ar-hot-coming_soon" onclick="arSetHotspot('coming_soon',this)">🚀 Coming Soon</button>
             </div>
           </div>
         </div>
@@ -2125,6 +2127,9 @@ function renderCard(r, isRadar) {
   // New & Rising badge
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
+  // Coming Soon badge
+  if (r.coming_soon)
+    badges += `<span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.2)">🚀 Coming Soon</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">inKind 20% Off</span>`;

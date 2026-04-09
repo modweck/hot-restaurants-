@@ -236,6 +236,7 @@ function applyARFilters(list) {
   else if (bf === 'nyt') list = list.filter(r => hasBuzzAR(r));
   else if (bf === 'google_amazing') list = list.filter(r => Number(r.googleRating||0) >= 4.7 && Number(r.googleReviewCount||0) >= 750);
   else if (bf === 'new_rising') list = list.filter(r => r.new_rising || (r.velocity && r.velocity.growth30 >= 20));
+  else if (bf === 'coming_soon') list = list.filter(r => r.coming_soon);
   else if (bf === 'good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.2 && rg < 4.5; });
   else if (bf === 'still_good') list = list.filter(r => { const rg = Number(r.googleRating||0); return rg >= 4.2 && rg < 4.5; });
   else if (bf === 'any') {} // no filter
@@ -292,6 +293,7 @@ function applyARFilters(list) {
       if (hsf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
       if (hsf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (hsf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
+      if (hsf==='coming_soon') return !!r.coming_soon;
       return false;
     }));
   }

@@ -319,6 +319,7 @@ function display(restaurants) {
       if (bf==='google_amazing') return Number(r.googleRating||0)>=4.7 && Number(r.googleReviewCount||0)>=750;
       if (bf==='exceptional') return Number(r.googleRating||0) >= 4.7;
       if (bf==='new_rising') return r.new_rising || (r.velocity && r.velocity.growth30 >= 20);
+      if (bf==='coming_soon') return !!r.coming_soon;
       return false;
     }));
   }
