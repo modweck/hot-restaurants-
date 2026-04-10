@@ -172,7 +172,16 @@ function renderCard(r, isRadar) {
 
   let timeBadgeHtml = '';
 
-  if (hasWindowData) {
+  // Hardcoded special labels by name
+  const _nameLower = (r.name || '').toLowerCase();
+  const _sundayOnly = _nameLower.includes('fini williamsburg');
+  const _walkInOnly = _nameLower.includes('lucali') || _nameLower.includes('okdongsik');
+
+  if (_sundayOnly) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#f3e5f5;color:#6a1b9a;border:1px solid rgba(106,27,154,.25)">🟣 Only Open Sunday</span></div>`;
+  } else if (_walkInOnly) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fff3e0;color:#ef6c00;border:1px solid rgba(239,108,0,.25)">🚶 Walk-in · Long Waits</span></div>`;
+  } else if (hasWindowData) {
     // Use new string fields if present, fall back to old booleans
     const earlyStatus = r.early || (r.has_early ? 'available' : 'booked');
     const primeStatus = r.prime || (r.has_prime ? 'available' : 'booked');
@@ -375,7 +384,7 @@ function display(restaurants) {
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
         return (tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= 14;
       }
-      if (r.coming_soon) return true; // coming soon restaurants bypass availability filter
+      if (r.coming_soon) return true;
       if (!tier) return false; // no data — hide when filtering by availability
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
@@ -429,24 +438,55 @@ function display(restaurants) {
     ? `${list.length} popular spot${list.length!==1?'s':''} — book ahead`
     : `${list.length} hot spot${list.length!==1?'s':''}`;
 
+  // Pagination — render first 50, "Load More" for the rest
+  const PAGE_SIZE = 50;
+  _displayList = list;
+  _displayedCount = Math.min(PAGE_SIZE, list.length);
+
   let html = '';
   if (isBookAhead) {
-    // Keep rating sort from above (don't re-sort by opens_in)
     html += `<div class="sec-head"><span class="sec-title hot">📅 Popular — Book in Advance</span><div class="sec-line"></div><span class="sec-count">${list.length}</span></div>`;
-    html += list.map(r=>renderCard(r,false)).join('');
+    html += list.slice(0, _displayedCount).map(r=>renderCard(r,false)).join('');
   } else {
     if (avail.length) {
       html += `<div class="sec-head"><span class="sec-title hot">🔥 Hot &amp; Available</span><div class="sec-line"></div><span class="sec-count">${avail.length}</span></div>`;
-      html += avail.map(r=>renderCard(r,false)).join('');
+      html += avail.slice(0, _displayedCount).map(r=>renderCard(r,false)).join('');
     }
   }
   if (!list.length) {
     html = `<div class="empty"><div class="empty-icon">🍽️</div><div class="empty-title">${isBookAhead ? 'No book-ahead spots found' : 'No hot spots found'}</div><div class="empty-sub">Try adjusting your filters</div></div>`;
   }
+  if (_displayedCount < list.length) {
+    html += `<button id="loadMoreBtn" onclick="loadMoreResults()" style="width:100%;padding:14px;margin:16px 0;background:#fff;border:1px solid rgba(0,0,0,0.1);border-radius:12px;font-size:14px;font-weight:700;color:#1a1a2e;cursor:pointer;font-family:'DM Sans',sans-serif">Load ${Math.min(PAGE_SIZE, list.length - _displayedCount)} more &darr;</button>`;
+  }
   document.getElementById('list').innerHTML = html;
 }
 
+let _displayList = [];
+let _displayedCount = 0;
+function loadMoreResults() {
+  const PAGE_SIZE = 50;
+  const nextCount = Math.min(_displayedCount + PAGE_SIZE, _displayList.length);
+  const moreCards = _displayList.slice(_displayedCount, nextCount).map(r=>renderCard(r,false)).join('');
+  _displayedCount = nextCount;
+  const btn = document.getElementById('loadMoreBtn');
+  if (btn) {
+    btn.insertAdjacentHTML('beforebegin', moreCards);
+    if (_displayedCount >= _displayList.length) btn.remove();
+    else btn.textContent = 'Load ' + Math.min(PAGE_SIZE, _displayList.length - _displayedCount) + ' more ↓';
+  }
+}
+
 // ─── SEARCH ───────────────────────────────────────────────────────────────────
+// Cache + debounce
+let _searchCache = {};
+let _searchDebounce = null;
+
+function doSearchDebounced() {
+  if (_searchDebounce) clearTimeout(_searchDebounce);
+  _searchDebounce = setTimeout(() => doSearch(), 250);
+}
+
 async function doSearch() {
   if (searching && abortCtrl) abortCtrl.abort();
   const location = document.getElementById('addressInput').value.trim() || 'New York, NY';
@@ -471,24 +511,32 @@ async function doSearch() {
     const buzzToQuality = { michelin:'michelin', michelin_rec:'michelin_rec', bib:'bib_gourmand', any:'any', new_rising:'new_rising', coming_soon:'coming_soon' };
     const activeBuzz = (state.trendFilters && state.trendFilters.length === 1) ? state.trendFilters[0] : state.buzzFilter;
     const qualityParam = (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[activeBuzz] || 'any');
-    const resp = await fetch('/.netlify/functions/search-candidates', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        location,
-        quality: qualityParam,
-        cuisine: cuisine==='any' ? undefined : cuisine,
-        broadCity: state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc'),
-        transport: tp.transport,
-        walkTime: tp.walkTime,
-        driveTime: tp.driveTime,
-        radiusMiles: tp.radiusMiles,
-        hotSpotsOnly: true
-      }),
-      signal: abortCtrl.signal
-    });
 
-    const data = await resp.json();
+    // Cache key — same params return cached result, no refetch
+    const cacheKey = JSON.stringify({location, qualityParam, cuisine, transport: tp.transport, walkTime: tp.walkTime, driveTime: tp.driveTime, radiusMiles: tp.radiusMiles});
+    let data;
+    if (_searchCache[cacheKey]) {
+      data = _searchCache[cacheKey];
+    } else {
+      const resp = await fetch('/.netlify/functions/search-candidates', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          location,
+          quality: qualityParam,
+          cuisine: cuisine==='any' ? undefined : cuisine,
+          broadCity: state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc'),
+          transport: tp.transport,
+          walkTime: tp.walkTime,
+          driveTime: tp.driveTime,
+          radiusMiles: tp.radiusMiles,
+          hotSpotsOnly: true
+        }),
+        signal: abortCtrl.signal
+      });
+      data = await resp.json();
+      if (!data?.error) _searchCache[cacheKey] = data;
+    }
     if (data?.error) {
       document.getElementById('warnings').innerHTML = `<div class="err-banner">❌ ${data.error}</div>`;
       document.getElementById('list').innerHTML = `<div class="empty"><div class="empty-icon">😔</div><div class="empty-title">Search failed</div></div>`;

@@ -181,7 +181,15 @@ function renderCardAR(r) {
 
   const tier = availTierAR(r);
   let availHtml = '';
-  if (tier === 'booked' && r.opens_in) {
+  const _nameLower = (r.name || '').toLowerCase();
+  const _sundayOnly = _nameLower.includes('fini williamsburg');
+  const _walkInOnly = _nameLower.includes('lucali') || _nameLower.includes('okdongsik');
+
+  if (_sundayOnly) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#f3e5f5;color:#6a1b9a;border:1px solid rgba(106,27,154,.25)">🟣 Only Open Sunday</span></div>`;
+  } else if (_walkInOnly) {
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#fff3e0;color:#ef6c00;border:1px solid rgba(239,108,0,.25)">🚶 Walk-in · Long Waits</span></div>`;
+  } else if (tier === 'booked' && r.opens_in) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
     availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">⚫ Fully Booked</span></div>`;

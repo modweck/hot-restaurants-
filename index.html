@@ -748,6 +748,17 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════ CONCIERGE VIEW -->
+  <div class="view" id="view-concierge" style="background:#f7f5f2;min-height:100vh">
+    <div style="padding:20px 20px 14px">
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Concierge</div>
+      <div style="font-size:13px;color:#888;margin-top:4px;line-height:1.5">NYC's hardest tables, booked for you. We snipe reservations the second they drop and get you a table between 5-10 PM.</div>
+    </div>
+    <div id="conciergeList" style="padding:0 20px 80px">
+      <div style="text-align:center;padding:30px;color:#888;font-size:13px">Loading...</div>
+    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════ ALL RESTAURANTS VIEW -->
   <div class="view on" id="view-allrestaurants" style="background:#f7f5f2;min-height:100vh">
 
@@ -1345,6 +1356,10 @@
       <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
       <span class="nav-label">Saved</span>
     </button>
+    <button class="nav-item" id="nav-concierge" onclick="switchNav('concierge')">
+      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span class="nav-label">Concierge</span>
+    </button>
   </div>
 
 </div><!-- /container -->
@@ -1610,6 +1625,7 @@ function switchNav(name) {
     showView('drinks');
   }
   else if (name === 'saved') { showView('saved'); renderSavedView(); }
+  else if (name === 'concierge') { showView('concierge'); loadConcierge(); }
   else if (name === 'map') { showView('map'); initMap(); }
   else showView(name);
   // Sync hero tab highlights across all tab switchers
@@ -1657,6 +1673,48 @@ function toggleInstaBuzz(id, btn) {
   const isOpen = el.style.display !== 'none';
   el.style.display = isOpen ? 'none' : 'flex';
   btn.textContent = btn.textContent.replace(isOpen ? '▴' : '▾', isOpen ? '▾' : '▴');
+}
+
+const CONCIERGE_SLUGS = {
+  'torrisi': { slug: 'torrisi', days: 30 },
+  'carbone': { slug: 'carbone', days: 30 },
+  'via carota': { slug: 'via-carota', days: 30 },
+  'the four horsemen': { slug: 'the-four-horsemen', days: 30 },
+  'monkey bar': { slug: 'monkey-bar-nyc', days: 20 },
+  'theodora': { slug: 'theodora', days: 30 },
+  'i cavallini': { slug: 'i-cavallini', days: 14 },
+};
+let conciergeLoaded = false;
+async function loadConcierge() {
+  if (conciergeLoaded) return;
+  try {
+    const resp = await fetch('/.netlify/functions/search-candidates', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ quality: 'all', location: 'New York, NY', broadCity: true, transport: 'all_nyc' })
+    });
+    const data = await resp.json();
+    const all = [...(data.elite||[]), ...(data.moreOptions||[])];
+    const names = Object.keys(CONCIERGE_SLUGS);
+    const matched = names.map(n => all.find(r => (r.name||'').toLowerCase() === n)).filter(Boolean);
+    if (matched.length === 0) {
+      document.getElementById('conciergeList').innerHTML = '<div style="text-align:center;padding:30px;color:#888">Could not load restaurants</div>';
+      return;
+    }
+    document.getElementById('conciergeList').innerHTML = matched.map(r => {
+      const slug = CONCIERGE_SLUGS[(r.name||'').toLowerCase()]?.slug || '';
+      const days = CONCIERGE_SLUGS[(r.name||'').toLowerCase()]?.days || 30;
+      // Render using same card function, then append booking button
+      let card = renderCardAR(r);
+      // Insert "Book for Me" button before closing </div>
+      const bookBtn = '<a href="/book.html?r=' + slug + '" style="display:block;text-align:center;padding:13px 20px;background:#f5ede0;color:#8b7355;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;margin-top:8px;font-family:DM Sans,sans-serif">Need help booking? &rarr;</a>';
+      card = card.replace(/<\/div>\s*$/, bookBtn + '</div>');
+      return card;
+    }).join('');
+    conciergeLoaded = true;
+  } catch (e) {
+    document.getElementById('conciergeList').innerHTML = '<div style="text-align:center;padding:30px;color:#888">Failed to load</div>';
+  }
 }
 
 function setTrendFilter(buzz, btn) {
@@ -2709,9 +2767,27 @@ function barSetHorizon(days, btn) {
 }
 
 function arSetVibe(vibe, btn) {
-  arState.vibeFilter = vibe;
-  document.querySelectorAll('[id^="ar-vibe-"]').forEach(b => b.classList.remove('on'));
-  (btn || document.getElementById(vibe ? `ar-vibe-${vibe}` : 'ar-vibe-any')).classList.add('on');
+  if (!arState.vibeFilters) arState.vibeFilters = [];
+  if (vibe === null) {
+    // "All" — clear everything
+    arState.vibeFilters = [];
+    arState.vibeFilter = null;
+    document.querySelectorAll('[id^="ar-vibe-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  } else {
+    const idx = arState.vibeFilters.indexOf(vibe);
+    if (idx >= 0) { arState.vibeFilters.splice(idx, 1); btn.classList.remove('on'); }
+    else { arState.vibeFilters.push(vibe); btn.classList.add('on'); }
+    const anyBtn = document.getElementById('ar-vibe-any');
+    if (arState.vibeFilters.length > 0) {
+      anyBtn && anyBtn.classList.remove('on');
+      arState.vibeFilter = arState.vibeFilters[0];
+    } else {
+      anyBtn && anyBtn.classList.add('on');
+      arState.vibeFilter = null;
+    }
+  }
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
 function arSetPrice(val) {
@@ -2954,14 +3030,22 @@ function renderCardAR(r) {
     availHtml = `<div><span class="avail lim">Limited Spots</span></div>`;
   }
 
+  // Override for walk-in only restaurants
+  const WALKIN_ONLY_AR = ['lucali', 'okdongsik', 'fini williamsburg'];
+  const _nameLower = (r.name||'').toLowerCase().trim();
+  const isWalkInOnly = WALKIN_ONLY_AR.includes(_nameLower);
+  if (isWalkInOnly) {
+    availHtml = `<div><span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;background:#fff3e0;color:#e65100;border:1px solid rgba(230,81,0,.2)">🚶 Walk-in Only · Usually Long Waits</span></div>`;
+  }
+
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name||'')}&query_place_id=${r.place_id}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((r.name||'')+' restaurant New York NY')}`;
 
   let bookBtn = '';
-  if (r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
-    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Walk-in</a>`;
+  if (isWalkInOnly || r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
+    bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Find on Map →</a>`;
   } else if (r.booking_url && r.booking_platform) {
     const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},google_reserve:{cls:'google',label:'Book on Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform] || {cls:'site', label:'Book on Website →'};
@@ -3107,7 +3191,9 @@ function applyARFilters(list) {
     });
   }
   // ── Vibe filter ──
-  if (arState.vibeFilter) {
+  if (arState.vibeFilters && arState.vibeFilters.length > 0) {
+    list = list.filter(r => r.vibe_tags && arState.vibeFilters.some(v => r.vibe_tags.includes(v)));
+  } else if (arState.vibeFilter) {
     list = list.filter(r => r.vibe_tags && r.vibe_tags.includes(arState.vibeFilter));
   }
   return list;

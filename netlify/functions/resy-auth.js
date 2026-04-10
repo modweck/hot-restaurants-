@@ -15,21 +15,84 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { email, password } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const { method, email, password, phone, code } = body;
+
+    const HEADERS = {
+      'Authorization': `ResyAPI api_key="${API_KEY}"`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+      'Origin': 'https://resy.com',
+      'Referer': 'https://resy.com/',
+    };
+
+    // ── Phone: Step 1 — send SMS code ──
+    if (method === 'phone_send') {
+      if (!phone) return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Phone number required' }) };
+      const formatted = phone.replace(/\D/g, '');
+      const intl = formatted.startsWith('1') ? '+' + formatted : '+1' + formatted;
+      const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+        method: 'POST', headers: HEADERS,
+        body: `mobile_number=${encodeURIComponent(intl)}`,
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (data.sent) {
+        return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sent: true, phone: intl }) };
+      }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: data.message || 'Failed to send code. Check your phone number.' }) };
+    }
+
+    // ── Phone: Step 2 — verify code (returns claim + challenge) ──
+    if (method === 'phone_verify') {
+      if (!phone || !code) return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Phone and code required' }) };
+      const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+        method: 'POST', headers: HEADERS,
+        body: `mobile_number=${encodeURIComponent(phone)}&code=${encodeURIComponent(code)}`,
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (data.token) {
+        // Direct token (no challenge needed)
+        return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: data.token, payment_method_id: data.payment_method_id || null, first_name: data.first_name || '' }) };
+      }
+      if (data.mobile_claim && data.challenge) {
+        // Need to answer the challenge
+        return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          challenge_required: true,
+          claim_token: data.mobile_claim.claim_token,
+          challenge_id: data.challenge.challenge_id,
+          first_name: data.challenge.first_name || '',
+          message: data.challenge.message || '',
+          challenge_type: data.challenge.properties?.[0]?.type || 'email',
+          challenge_prompt: data.challenge.properties?.[0]?.message || 'Enter your email'
+        }) };
+      }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: data?.data?.code || data.message || 'Invalid code. Please try again.' }) };
+    }
+
+    // ── Phone: Step 3 — answer the challenge with email ──
+    if (method === 'phone_challenge') {
+      const { claim_token, challenge_id, em_address } = body;
+      if (!claim_token || !challenge_id || !em_address) {
+        return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Missing challenge fields' }) };
+      }
+      const resp = await fetch('https://api.resy.com/4/auth/challenge', {
+        method: 'POST', headers: HEADERS,
+        body: `challenge_id=${encodeURIComponent(challenge_id)}&claim_token=${encodeURIComponent(claim_token)}&em_address=${encodeURIComponent(em_address)}`,
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (data.token) {
+        return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: data.token, payment_method_id: data.payment_method_id || null, first_name: data.first_name || '' }) };
+      }
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: data?.message || 'Email did not match. Please try again.' }) };
+    }
+
+    // ── Email/password login ──
     if (!email || !password) {
       return { statusCode: 400, body: JSON.stringify({ error: 'Email and password required' }) };
     }
 
-    // Step 1: Authenticate with Resy
     const authResp = await fetch('https://api.resy.com/3/auth/password', {
-      method: 'POST',
-      headers: {
-        'Authorization': `ResyAPI api_key="${API_KEY}"`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        'Origin': 'https://resy.com',
-        'Referer': 'https://resy.com/',
-      },
+      method: 'POST', headers: HEADERS,
       body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
     });
 

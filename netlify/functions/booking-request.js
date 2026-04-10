@@ -28,7 +28,12 @@ exports.handler = async (event) => {
 
   try {
     const body = JSON.parse(event.body);
-    const { restaurant, date, party_size, time_pref, name, contact, resy_email, resy_token, resy_payment_id } = body;
+    const { restaurant, name, contact, resy_token } = body;
+    const date = body.date || body.target_date;
+    const party_size = body.party_size;
+    const time_pref = body.time_pref;
+    const resy_email = body.resy_email;
+    const resy_payment_id = body.resy_payment_id;
 
     if (!restaurant || !date || !name || !contact || !resy_token) {
       return {
@@ -46,14 +51,18 @@ exports.handler = async (event) => {
     const request = {
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
       restaurant,
+      venue_slug: body.venue_slug || null,
+      venue_id: body.venue_id || null,
+      drop_days: body.drop_days || null,
+      drop_hour: body.drop_hour || null,
       date,
       party_size: party_size || 2,
       time_pref: time_pref || 'any',
       name,
       contact,
-      resy_email,
+      resy_email: resy_email || null,
       resy_token,
-      resy_payment_id,
+      resy_payment_id: resy_payment_id || null,
       status: 'pending',
       created_at: new Date().toISOString(),
     };

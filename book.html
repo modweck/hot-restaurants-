@@ -12,7 +12,7 @@
     @media(min-width:520px){body{padding:16px}.container{border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.07);min-height:auto}}
 
     .header{padding:20px 20px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(0,0,0,0.06)}
-    .back-btn{color:#ff4500;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer}
+    .back-btn{display:inline-flex;align-items:center;gap:4px;background:#fff;color:#1a1a2e;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;padding:8px 14px;border-radius:20px;border:1px solid rgba(0,0,0,0.08);box-shadow:0 1px 3px rgba(0,0,0,0.04)}
     .header h1{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;letter-spacing:-0.5px}
 
     .section{padding:20px}
@@ -33,9 +33,11 @@
 
     .page{display:none}.page.active{display:block}
 
-    .btn{width:100%;padding:15px 20px;background:#ff4500;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;transition:all .2s;margin-top:8px}
-    .btn:active{background:#e03c00;transform:scale(.98)}
+    .btn{width:100%;padding:15px 20px;background:#d4a373;color:#fff;border:none;border-radius:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;transition:all .2s;margin-top:8px;box-shadow:0 3px 16px rgba(212,163,115,0.3)}
+    .btn:active{background:#c08e5e;transform:scale(.98)}
     .btn:disabled{background:#ccc;cursor:not-allowed}
+    .btn-cream{background:#f5ede0;color:#8b7355}
+    .btn-cream:active{background:#ebe0cc}
 
     .rest-card{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:14px 16px;margin-bottom:8px;cursor:pointer;transition:all .15s;display:flex;justify-content:space-between;align-items:center}
     .rest-card:active{background:#faf8f6;transform:scale(.99)}
@@ -70,6 +72,8 @@
     .summary-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px}
     .summary-value{font-size:15px;font-weight:700;margin-top:2px}
     .summary-note{font-size:12px;color:#888;margin-top:4px}
+    .login-tab{flex:1;padding:10px;background:#f5f5f5;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;color:#888;font-family:'DM Sans',sans-serif}
+    .login-tab.active{background:#1a1a2e;color:#fff}
   </style>
 </head>
 <body>
@@ -78,7 +82,7 @@
     <!-- PAGE 1: Pick a restaurant -->
     <div class="page active" id="pagePick">
       <div class="header">
-        <a class="back-btn" href="/">&larr; Back</a>
+        <a class="back-btn" href="javascript:history.back()">&larr; Back</a>
         <h1>Get a Table</h1>
       </div>
       <div class="section">
@@ -114,18 +118,28 @@
         <div id="bookRestInfo" style="margin-bottom:16px"></div>
 
         <div class="field">
-          <label>Date</label>
-          <input type="date" id="bookDate">
+          <label>Pick up to 3 dates that work for you</label>
+          <input type="date" id="bookDate1">
+          <input type="date" id="bookDate2" style="margin-top:8px">
+          <input type="date" id="bookDate3" style="margin-top:8px">
           <div class="field-note" id="dateNote"></div>
         </div>
 
         <div class="field">
           <label>Party Size</label>
           <div class="party-row">
-            <button class="party-btn" onclick="adjParty(-1)">-</button>
-            <span class="party-val" id="partyVal">2</span>
-            <button class="party-btn" onclick="adjParty(1)">+</button>
+            <span class="party-val" id="partyVal" style="font-size:16px">Party of 2</span>
           </div>
+          <div class="field-note" style="margin-top:6px">We're still in beta. Larger parties and more restaurants coming soon.</div>
+        </div>
+
+        <div class="field">
+          <label>If prime time (7-9 PM) isn't available, do you prefer?</label>
+          <select id="bookTime">
+            <option value="either">Any</option>
+            <option value="early">Earlier (5-6 PM)</option>
+            <option value="late">Later (9-10 PM)</option>
+          </select>
         </div>
 
         <div class="field">
@@ -141,24 +155,65 @@
         <div class="resy-login">
           <div class="resy-logo">Connect Resy</div>
           <div class="resy-note">Sign in with your Resy account so we can book under your name. Your password is never stored.</div>
+
+          <div style="display:flex;gap:8px;margin-bottom:14px">
+            <button type="button" class="login-tab active" id="tabPhone" onclick="switchLoginTab('phone')">Phone</button>
+            <button type="button" class="login-tab" id="tabEmail" onclick="switchLoginTab('email')">Email</button>
+          </div>
+
           <div id="resyError" class="error-msg"></div>
-          <div class="field">
-            <label>Email</label>
-            <input type="email" id="resyEmail" placeholder="Resy account email">
+
+          <!-- Phone login -->
+          <div id="loginPhone">
+            <div class="field" id="phoneStep1">
+              <label>Phone Number</label>
+              <input type="tel" id="resyPhone" placeholder="(555) 123-4567">
+            </div>
+            <button class="btn btn-cream" id="phoneSendBtn" onclick="sendPhoneCode()">Send Code</button>
+            <div id="phoneStep2" style="display:none">
+              <div class="field" style="margin-top:14px">
+                <label>Verification Code</label>
+                <input type="text" id="resyCode" placeholder="6-digit code from SMS" maxlength="6">
+              </div>
+              <button class="btn" id="phoneVerifyBtn" onclick="verifyPhoneCode()">Verify &amp; Connect</button>
+            </div>
+            <div id="phoneStep3" style="display:none">
+              <div id="challengeMessage" style="font-size:13px;color:#555;margin-top:14px;line-height:1.5"></div>
+              <div class="field" style="margin-top:10px">
+                <label>Email on your Resy account</label>
+                <input type="email" id="challengeEmail" placeholder="you@example.com">
+              </div>
+              <button class="btn" id="challengeBtn" onclick="answerChallenge()">Verify &amp; Connect</button>
+            </div>
           </div>
-          <div class="field">
-            <label>Password</label>
-            <input type="password" id="resyPassword" placeholder="Resy password">
+
+          <!-- Email login -->
+          <div id="loginEmail" style="display:none">
+            <div class="field">
+              <label>Email</label>
+              <input type="email" id="resyEmail" placeholder="Resy account email">
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" id="resyPassword" placeholder="Resy password">
+            </div>
+            <button class="btn" id="resyBtn" onclick="resyLogin()">Connect Resy</button>
           </div>
-          <div id="resyConnected" style="display:none;font-size:13px;color:#15803d;font-weight:700;padding:8px 0">Connected</div>
-          <button class="btn" id="resyBtn" onclick="resyLogin()">Connect Resy</button>
+
+          <div id="resyConnected" style="display:none;font-size:13px;color:#15803d;font-weight:700;padding:8px 0;text-align:center">Connected</div>
+
           <div class="secure-note">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Encrypted &middot; Password never stored
+            Encrypted &middot; Credentials never stored
           </div>
         </div>
 
-        <button class="btn" id="submitBtn" onclick="submitRequest()" disabled style="margin-top:16px">Submit Request &middot; $20</button>
+        <div style="margin-top:16px;display:flex;align-items:flex-start;gap:8px">
+          <input type="checkbox" id="agreeTerms" onchange="document.getElementById('submitBtn').disabled=!this.checked||!resyToken" style="margin-top:3px;width:16px;height:16px;accent-color:#ff4500">
+          <label for="agreeTerms" style="font-size:12px;color:#555;line-height:1.5;cursor:pointer">I agree to the <a href="/terms.html" target="_blank" style="color:#d4a373;font-weight:700">Terms of Service</a> and <a href="/terms.html#privacy" target="_blank" style="color:#d4a373;font-weight:700">Privacy Policy</a>, including authorizing SeatWize to book on my behalf using my Resy account.</label>
+        </div>
+
+        <button class="btn" id="submitBtn" onclick="submitRequest()" disabled style="margin-top:12px">Submit Request &middot; $20</button>
         <div style="font-size:11px;color:#888;text-align:center;margin-top:6px">Only charged after we confirm your table</div>
       </div>
     </div>
@@ -186,6 +241,7 @@ const RESTAURANTS = [
   { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 20, drop_hour: 9, hood: 'Midtown' },
   { name: 'Theodora', slug: 'theodora', venue_id: 0, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
   { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 0, drop_days: 14, drop_hour: 8, hood: 'Upper East Side' },
+  { name: 'The Four Horsemen', slug: 'the-four-horsemen', venue_id: 1284, drop_days: 30, drop_hour: 10, hood: 'Williamsburg' },
 ];
 
 let partySize = 2;
@@ -228,17 +284,140 @@ function pickRest(idx) {
 
   document.getElementById('bookRestInfo').innerHTML =
     '<div style="font-size:13px;color:#555">' + selectedRest.hood + '</div>' +
-    '<div style="margin-top:6px"><span class="info-badge">' + selectedRest.drop_days + '+ days out</span> <span class="info-badge">5-10 PM</span></div>';
+    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>' + selectedRest.drop_days + '+ days in advance</b>. Choose your preferred date below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
 
   const minDate = getMinDate(selectedRest);
   const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);
-  const dateInput = document.getElementById('bookDate');
-  dateInput.min = minDate.toISOString().split('T')[0];
-  dateInput.max = maxDate.toISOString().split('T')[0];
-  dateInput.value = minDate.toISOString().split('T')[0];
-  document.getElementById('dateNote').textContent = 'Soonest available: ' + fmtDate(minDate) + '. Pick any date from there.';
+  const minStr = minDate.toISOString().split('T')[0];
+  const maxStr = maxDate.toISOString().split('T')[0];
+  ['bookDate1', 'bookDate2', 'bookDate3'].forEach((id, i) => {
+    const el = document.getElementById(id);
+    el.min = minStr; el.max = maxStr;
+    if (i === 0) el.value = minStr;
+  });
+  document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first &mdash; we\'re working on getting it every time.';
 
   showPage('pageBook');
+}
+
+let resyPhoneIntl = '';
+let resyCookies = '';
+let resyClaimToken = '';
+let resyChallengeId = '';
+
+function switchLoginTab(tab) {
+  document.getElementById('tabPhone').classList.toggle('active', tab === 'phone');
+  document.getElementById('tabEmail').classList.toggle('active', tab === 'email');
+  document.getElementById('loginPhone').style.display = tab === 'phone' ? 'block' : 'none';
+  document.getElementById('loginEmail').style.display = tab === 'email' ? 'block' : 'none';
+  document.getElementById('resyError').style.display = 'none';
+}
+
+function showConnected(label) {
+  resyEmail = label;
+  document.getElementById('resyConnected').textContent = 'Connected: ' + label;
+  document.getElementById('resyConnected').style.display = 'block';
+  document.getElementById('loginPhone').style.display = 'none';
+  document.getElementById('loginEmail').style.display = 'none';
+  document.querySelectorAll('.login-tab').forEach(t => t.style.display = 'none');
+  document.getElementById('submitBtn').disabled = !document.getElementById('agreeTerms').checked;
+}
+
+async function sendPhoneCode() {
+  const phone = document.getElementById('resyPhone').value.trim();
+  const errEl = document.getElementById('resyError');
+  const btn = document.getElementById('phoneSendBtn');
+  if (!phone) { errEl.textContent = 'Enter your phone number'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Sending...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/resy-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method: 'phone_send', phone })
+    });
+    const data = await resp.json();
+    if (data.error) {
+      errEl.textContent = data.error; errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Send Code';
+      return;
+    }
+    resyPhoneIntl = data.phone;
+    resyCookies = data.cookies || '';
+    document.getElementById('phoneStep2').style.display = 'block';
+    btn.textContent = 'Code Sent';
+    document.getElementById('resyPhone').disabled = true;
+  } catch (e) {
+    errEl.textContent = 'Failed to send code. Try again.'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Send Code';
+  }
+}
+
+async function verifyPhoneCode() {
+  const code = document.getElementById('resyCode').value.trim();
+  const errEl = document.getElementById('resyError');
+  const btn = document.getElementById('phoneVerifyBtn');
+  if (!code) { errEl.textContent = 'Enter the code'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Verifying...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/resy-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method: 'phone_verify', phone: resyPhoneIntl, code })
+    });
+    const data = await resp.json();
+    if (data.token) {
+      resyToken = data.token;
+      resyPaymentId = data.payment_method_id;
+      showConnected(resyPhoneIntl);
+      return;
+    }
+    if (data.challenge_required) {
+      resyClaimToken = data.claim_token;
+      resyChallengeId = data.challenge_id;
+      document.getElementById('phoneStep2').style.display = 'none';
+      document.getElementById('phoneStep3').style.display = 'block';
+      document.getElementById('challengeMessage').textContent = (data.message || 'One more step') + '. ' + (data.challenge_prompt || 'Enter your email');
+      return;
+    }
+    errEl.textContent = data.error || 'Verification failed'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Verify & Connect';
+  } catch (e) {
+    errEl.textContent = 'Verification failed. Try again.'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Verify & Connect';
+  }
+}
+
+async function answerChallenge() {
+  const email = document.getElementById('challengeEmail').value.trim();
+  const errEl = document.getElementById('resyError');
+  const btn = document.getElementById('challengeBtn');
+  if (!email) { errEl.textContent = 'Enter your email'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+  btn.disabled = true; btn.textContent = 'Verifying...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/resy-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ method: 'phone_challenge', claim_token: resyClaimToken, challenge_id: resyChallengeId, em_address: email })
+    });
+    const data = await resp.json();
+    if (data.error || !data.token) {
+      errEl.textContent = data.error || 'Verification failed'; errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Verify & Connect';
+      return;
+    }
+    resyToken = data.token;
+    resyPaymentId = data.payment_method_id;
+    showConnected(resyPhoneIntl);
+  } catch (e) {
+    errEl.textContent = 'Verification failed. Try again.'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Verify & Connect';
+  }
 }
 
 async function resyLogin() {
@@ -265,12 +444,7 @@ async function resyLogin() {
     }
     resyToken = data.token;
     resyPaymentId = data.payment_method_id;
-    resyEmail = email;
-
-    document.getElementById('resyConnected').textContent = 'Connected: ' + email;
-    document.getElementById('resyConnected').style.display = 'block';
-    btn.style.display = 'none';
-    document.getElementById('submitBtn').disabled = false;
+    showConnected(email);
   } catch (e) {
     errEl.textContent = 'Connection failed. Try again.'; errEl.style.display = 'block';
   }
@@ -280,10 +454,13 @@ async function resyLogin() {
 async function submitRequest() {
   const name = document.getElementById('bookName').value.trim();
   const contact = document.getElementById('bookContact').value.trim();
-  const date = document.getElementById('bookDate').value;
+  const date1 = document.getElementById('bookDate1').value;
+  const date2 = document.getElementById('bookDate2').value;
+  const date3 = document.getElementById('bookDate3').value;
+  const dates = [date1, date2, date3].filter(Boolean);
   if (!name) { alert('Enter your name'); return; }
   if (!contact) { alert('Enter your phone or email'); return; }
-  if (!date) { alert('Pick a date'); return; }
+  if (dates.length === 0) { alert('Pick at least one date'); return; }
   if (!resyToken) { alert('Connect your Resy account first'); return; }
 
   const btn = document.getElementById('submitBtn');
@@ -299,9 +476,10 @@ async function submitRequest() {
         venue_id: selectedRest.venue_id,
         drop_days: selectedRest.drop_days,
         drop_hour: selectedRest.drop_hour,
-        target_date: date,
+        target_date: dates[0],
+        target_dates: dates,
         party_size: partySize,
-        time_pref: '5-10pm_prime',
+        time_pref: document.getElementById('bookTime').value,
         name, contact,
         resy_email: resyEmail,
         resy_token: resyToken,
@@ -317,6 +495,22 @@ async function submitRequest() {
     }
   } catch { alert('Failed to submit'); }
   btn.disabled = false; btn.textContent = 'Submit Request · $20';
+}
+
+// Auto-select restaurant from URL param — skip picker, go straight to form
+// If no param, redirect back to main site (entry point is via Concierge cards only)
+const urlParams = new URLSearchParams(window.location.search);
+const preselect = urlParams.get('r');
+if (preselect) {
+  const idx = RESTAURANTS.findIndex(r => r.slug === preselect);
+  if (idx >= 0) {
+    pickRest(idx);
+    document.querySelector('#pageBook .back-btn').onclick = function(){ window.location = '/'; return false; };
+  } else {
+    window.location = '/';
+  }
+} else {
+  window.location = '/';
 }
 
 // Render restaurant list
