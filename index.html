@@ -1748,6 +1748,14 @@ function setVibeFilter(vibe, btn) {
     homeState.vibeFilters.splice(idx, 1);
     btn.classList.remove('on');
   } else {
+    if (homeState.vibeFilters.length >= 2) {
+      // Cap at 2 — flash the clicked chip to signal limit
+      btn.style.transition = 'background-color .2s';
+      const orig = btn.style.backgroundColor;
+      btn.style.backgroundColor = '#ffd6d6';
+      setTimeout(() => { btn.style.backgroundColor = orig; }, 250);
+      return;
+    }
     homeState.vibeFilters.push(vibe);
     btn.classList.add('on');
   }
@@ -2682,7 +2690,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null, hotspotFilter: 'any', hotspotFilters: [] };
+const arState = { cuisine: 'any', buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null, vibeFilters: [], hotspotFilter: 'any', hotspotFilters: [] };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -2767,26 +2775,40 @@ function barSetHorizon(days, btn) {
 }
 
 function arSetVibe(vibe, btn) {
-  if (!arState.vibeFilters) arState.vibeFilters = [];
-  if (vibe === null) {
-    // "All" — clear everything
+  // "All" pill — clear all selections
+  if (!vibe) {
     arState.vibeFilters = [];
     arState.vibeFilter = null;
     document.querySelectorAll('[id^="ar-vibe-"]').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-  } else {
-    const idx = arState.vibeFilters.indexOf(vibe);
-    if (idx >= 0) { arState.vibeFilters.splice(idx, 1); btn.classList.remove('on'); }
-    else { arState.vibeFilters.push(vibe); btn.classList.add('on'); }
-    const anyBtn = document.getElementById('ar-vibe-any');
-    if (arState.vibeFilters.length > 0) {
-      anyBtn && anyBtn.classList.remove('on');
-      arState.vibeFilter = arState.vibeFilters[0];
-    } else {
-      anyBtn && anyBtn.classList.add('on');
-      arState.vibeFilter = null;
-    }
+    (btn || document.getElementById('ar-vibe-any')).classList.add('on');
+    if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+    return;
   }
+  // Toggle individual vibe (multi-select, AND logic in filter)
+  if (!arState.vibeFilters) arState.vibeFilters = [];
+  const idx = arState.vibeFilters.indexOf(vibe);
+  const targetBtn = btn || document.getElementById(`ar-vibe-${vibe}`);
+  if (idx > -1) {
+    arState.vibeFilters.splice(idx, 1);
+    targetBtn && targetBtn.classList.remove('on');
+  } else {
+    if (arState.vibeFilters.length >= 2) {
+      // Cap at 2 — flash the clicked chip to signal limit
+      if (targetBtn) {
+        targetBtn.style.transition = 'background-color .2s';
+        const orig = targetBtn.style.backgroundColor;
+        targetBtn.style.backgroundColor = '#ffd6d6';
+        setTimeout(() => { targetBtn.style.backgroundColor = orig; }, 250);
+      }
+      return;
+    }
+    arState.vibeFilters.push(vibe);
+    targetBtn && targetBtn.classList.add('on');
+  }
+  arState.vibeFilter = arState.vibeFilters[0] || null;
+  const anyBtn = document.getElementById('ar-vibe-any');
+  if (arState.vibeFilters.length > 0) anyBtn && anyBtn.classList.remove('on');
+  else anyBtn && anyBtn.classList.add('on');
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
@@ -3190,11 +3212,10 @@ function applyARFilters(list) {
       return true;
     });
   }
-  // ── Vibe filter ──
-  if (arState.vibeFilters && arState.vibeFilters.length > 0) {
-    list = list.filter(r => r.vibe_tags && arState.vibeFilters.some(v => r.vibe_tags.includes(v)));
-  } else if (arState.vibeFilter) {
-    list = list.filter(r => r.vibe_tags && r.vibe_tags.includes(arState.vibeFilter));
+  // ── Vibe filter — supports multiple selections (AND logic) ──
+  const arVfs = (arState.vibeFilters && arState.vibeFilters.length > 0) ? arState.vibeFilters : (arState.vibeFilter ? [arState.vibeFilter] : []);
+  if (arVfs.length > 0) {
+    list = list.filter(r => r.vibe_tags && arVfs.every(vf => r.vibe_tags.includes(vf)));
   }
   return list;
 }
