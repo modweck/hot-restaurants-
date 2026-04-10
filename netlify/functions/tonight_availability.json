@@ -70,8 +70,8 @@
     "_checked_date": "2026-04-08"
   },
   "the four horsemen": {
-    "tier": "limited",
-    "dinner_slots": 1,
+    "tier": "booked",
+    "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
     "late": "booked",
@@ -1117,7 +1117,7 @@
     "late": "booked",
     "_checked_date": "2026-04-07",
     "_recheck_result": "truly_booked",
-    "opens_in": 9,
+    "fully_locked": true,
     "future_dates": {
       "+2": {
         "date": "2026-04-10",
@@ -12550,13 +12550,12 @@
     "_checked_date": "2026-04-08"
   },
   "sidecar at pj clarke's": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "opens_in": 2,
-    "_checked_date": "2026-04-08",
+    "tier": "open",
+    "dinner_slots": 38,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "_checked_date": "2026-04-10",
     "future_dates": {
       "+2": {
         "date": "2026-04-10",
