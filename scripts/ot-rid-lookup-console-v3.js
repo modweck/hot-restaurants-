@@ -2,7 +2,7 @@
 //
 // HOW TO USE:
 //   1. Quit Chrome completely (Cmd+Q), reopen
-//   2. Go to opentable.com and LOG IN as Mauriced1991
+//   2. Go to opentable.com
 //   3. Open DevTools Console (Cmd+Opt+J)
 //   4. Type: allow pasting (if asked)
 //   5. Paste THIS ENTIRE FILE and press Enter
