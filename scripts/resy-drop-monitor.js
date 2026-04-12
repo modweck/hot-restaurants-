@@ -78,10 +78,10 @@ function futureDate(daysOut) {
 // Each entry: { name, venue_id, slug, drop_time, window_days }
 const DROPS = {
   midnight: [
-    { name: 'Bong', venue_id: 86413, slug: 'bong', window: 20 },
-    { name: 'Jeju Noodle Bar', venue_id: 1543, slug: 'jeju-noodle-bar', window: 44 },
+    { name: 'Bong', venue_id: 86413, slug: 'bong', window: 19 }, // Apr 30
+    { name: 'Jeju Noodle Bar', venue_id: 1543, slug: 'jeju-noodle-bar', window: 44 }, // May 25
     { name: 'Red Hook Tavern', venue_id: 3289, slug: 'red-hook-tavern', window: 13 },
-    { name: 'FREE RANGE at Double Chicken Please', venue_id: 70330, slug: 'free-range-at-double-chicken-please', window: 6 },
+    { name: 'FREE RANGE at Double Chicken Please', venue_id: 70330, slug: 'free-range-at-double-chicken-please', window: 6 }, // Apr 17
     { name: 'Ambassadors Clubhouse', venue_id: null, slug: 'ambassadors-clubhouse-new-york', window: 14 },
     { name: 'Golden Diner', venue_id: 52361, slug: 'golden-diner', window: 30 },
     { name: 'Le Café Louis Vuitton', venue_id: null, slug: 'le-cafe-louis-vuitton', window: 28 },
@@ -94,7 +94,7 @@ const DROPS = {
     { name: 'Nura', venue_id: null, slug: 'nura', window: 21 },
     { name: 'Okdongsik', venue_id: null, slug: 'okdongsik', window: 14 },
     { name: 'Dashi Okume Brooklyn', venue_id: null, slug: 'dashi-okume-brooklyn', window: 14 },
-    { name: '69 Leonard Street', venue_id: null, slug: '69leonardstreet', window: 30 },
+    { name: '69 Leonard Street', venue_id: null, slug: '69leonardstreet', window: 29 }, // May 10
     { name: 'Baretto at Fasano', venue_id: null, slug: 'baretto-at-fasano', window: 30 },
     { name: 'Sidecar at PJ Clarkes', venue_id: null, slug: 'sidecar-pj-clarkes', window: 14 },
   ],
@@ -111,7 +111,7 @@ const DROPS = {
   '10am': [
     { name: 'Torrisi', venue_id: 64593, slug: 'torrisi', window: 30 },
     { name: 'Via Carota', venue_id: 326, slug: 'via-carota', window: 30 },
-    { name: 'Bar Primi Bowery', venue_id: null, slug: 'bar-primi-bowery', window: 30 },
+    { name: 'Bar Primi Bowery', venue_id: null, slug: 'bar-primi-bowery', window: 13 }, // Apr 24
     { name: 'Lilia', venue_id: 2492, slug: 'lilia', window: 28 },
     // Unknown — check at 10am to see
     { name: 'Fulton by Jean-Georges', venue_id: null, slug: 'the-fulton-by-jean-georges', window: 30 },
@@ -119,7 +119,7 @@ const DROPS = {
     { name: 'Gertie', venue_id: null, slug: 'gertie', window: 14 },
   ],
   '11am': [
-    { name: 'Bungalow', venue_id: 71822, slug: 'bungalow-ny', window: 20 },
+    { name: 'Bungalow', venue_id: 71822, slug: 'bungalow-ny', window: 20 }, // May 1
   ],
   noon: [
     { name: 'Kappo Sono', venue_id: null, slug: 'kappo-sono', window: 21 },
@@ -127,6 +127,7 @@ const DROPS = {
     { name: 'Carbone', venue_id: null, slug: 'carbone', window: 30 },
     { name: 'I Sodi', venue_id: null, slug: 'i-sodi', window: 30 },
     { name: 'Rezdora', venue_id: null, slug: 'rezdora', window: 30 },
+    { name: "Ha's Snack Bar", venue_id: null, slug: 'has-snack-bar', window: 19 }, // Apr 30
   ],
 };
 
@@ -176,6 +177,31 @@ async function main() {
     else log(`  ❌ ${r.name}: could not resolve (${r.slug})`);
   }
   log('');
+
+  // ── Wait until drop time if --wait flag is set ──
+  const WAIT = process.argv.includes('--wait');
+  if (WAIT && timesToCheck.length === 1) {
+    const dropHours = { midnight: 0, '8am': 8, '9am': 9, '10am': 10, '11am': 11, noon: 12 };
+    const dropH = dropHours[timesToCheck[0]];
+    if (dropH !== undefined) {
+      const now = new Date();
+      const drop = new Date(now);
+      drop.setHours(dropH, 0, 0, 0);
+      if (drop <= now) drop.setDate(drop.getDate() + 1);
+      const waitMs = drop.getTime() - Date.now();
+      if (waitMs > 0) {
+        log(`Waiting ${Math.round(waitMs / 60000)} minutes until ${timesToCheck[0]} drop...`);
+        while (Date.now() < drop.getTime() - 5000) {
+          const rem = drop.getTime() - Date.now();
+          if (rem > 60000) { log(`   ${Math.round(rem / 60000)} min...`); await new Promise(r => setTimeout(r, 30000)); }
+          else { log(`   ${Math.round(rem / 1000)}s...`); await new Promise(r => setTimeout(r, 5000)); }
+        }
+        // Final countdown - tight loop
+        while (Date.now() < drop.getTime() - 500) await new Promise(r => setTimeout(r, 100));
+        log('DROP TIME — firing now!');
+      }
+    }
+  }
 
   for (const time of timesToCheck) {
     const restaurants = DROPS[time];
