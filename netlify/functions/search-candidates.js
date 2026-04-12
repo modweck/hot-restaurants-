@@ -69,6 +69,11 @@ let MASTER_KEYS = [];
 let AVAILABILITY_BOOK = {};
 try {
   MASTER_BOOK = JSON.parse(fs.readFileSync(path.join(__dirname, 'BOOKING_MASTER.json'), 'utf8'));
+  // Build case-insensitive lookup so enrichNYT can find "Babbo Ristorante" via "babbo ristorante"
+  for (const key of Object.keys(MASTER_BOOK)) {
+    const lk = key.toLowerCase();
+    if (lk !== key && !MASTER_BOOK[lk]) MASTER_BOOK[lk] = MASTER_BOOK[key];
+  }
   MASTER_KEYS = Object.keys(MASTER_BOOK);
   console.log(`✅ Master book: ${MASTER_KEYS.length} restaurants`);
 } catch (err) { console.warn('⚠️ Master book missing, using booking_lookup:', err.message); }
@@ -194,6 +199,11 @@ try {
 let INSTAGRAM_BUZZ = {};
 try {
   INSTAGRAM_BUZZ = JSON.parse(fs.readFileSync(path.join(__dirname, 'instagram_buzz.json'), 'utf8'));
+  // Build case-insensitive lookup for instagram buzz
+  for (const key of Object.keys(INSTAGRAM_BUZZ)) {
+    const lk = key.toLowerCase();
+    if (lk !== key && !INSTAGRAM_BUZZ[lk]) INSTAGRAM_BUZZ[lk] = INSTAGRAM_BUZZ[key];
+  }
   console.log(`✅ Instagram buzz: ${Object.keys(INSTAGRAM_BUZZ).length} restaurants with influencer links`);
 } catch (err) { console.warn('⚠️ Instagram buzz missing:', err.message); }
 // ── REVIEW VELOCITY DATA ──
@@ -830,6 +840,15 @@ function enrichNYT(r) {
   if (!r.pete_wells && entry.pete_wells) r.pete_wells = entry.pete_wells;
   if (!r.nyt_top_100 && entry.nyt_top_100) r.nyt_top_100 = entry.nyt_top_100;
   if (!r.pete_wells_rank && entry.pete_wells_rank) r.pete_wells_rank = entry.pete_wells_rank;
+  if (!r.instagram_buzz) r.instagram_buzz = INSTAGRAM_BUZZ[mk] || INSTAGRAM_BUZZ[mk.replace(/^the /, '')] || null;
+  if (!r.vibe_tags || r.vibe_tags.length === 0) r.vibe_tags = entry.vibe_tags || [];
+  if (!r.bib_gourmand && entry.bib_gourmand) r.bib_gourmand = entry.bib_gourmand;
+  if (!r.michelin_recommended && entry.michelin_recommended) r.michelin_recommended = entry.michelin_recommended;
+  if (!r.michelin && entry.michelin_stars) r.michelin = { stars: entry.michelin_stars, distinction: 'star' };
+  else if (!r.michelin && entry.bib_gourmand) r.michelin = { stars: 0, distinction: 'bib_gourmand' };
+  else if (!r.michelin && entry.michelin_recommended) r.michelin = { stars: 0, distinction: 'recommended' };
+  if (!r.website && entry.website) r.website = entry.website;
+  if (!r.instagram && entry.instagram) r.instagram = entry.instagram;
   // Enrich availability from tonight_availability
   const avail = getAvail(mk);
   const plat = (entry.platform || r.booking_platform || '').toLowerCase();
@@ -839,6 +858,8 @@ function enrichNYT(r) {
     if (!r.opens_in && avail.opens_in) r.opens_in = avail.opens_in;
     if (!r.prepaid_price && avail.prepaid_price) r.prepaid_price = avail.prepaid_price;
     if (!r.fully_locked && avail.fully_locked) r.fully_locked = true;
+    if (avail.sunday_only) r.sunday_only = true;
+    if (avail.walk_in_only) r.walk_in_only = true;
     if (r.has_early === undefined || r.has_early === null) r.has_early = avail.has_early || false;
     if (r.has_prime === undefined || r.has_prime === null) r.has_prime = avail.has_prime || false;
     if (r.has_late === undefined || r.has_late === null) r.has_late = avail.has_late || false;
@@ -1372,6 +1393,8 @@ exports.handler = async (event) => {
         late: _rp ? (r.late || null) : null,
         opens_in: _rp ? (r.opens_in || null) : null,
         fully_locked: _rp ? (r.fully_locked || false) : false,
+        sunday_only: _rp ? (r.sunday_only || false) : false,
+        walk_in_only: _rp ? (r.walk_in_only || false) : false,
         future_dates: _rp ? (r.future_dates || null) : null,
         prepaid_price: r.prepaid_price || null,
         vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
@@ -1464,6 +1487,8 @@ exports.handler = async (event) => {
           opens_in: avail.opens_in,
           future_dates: avail.future_dates || null,
           fully_locked: avail.fully_locked || false,
+          sunday_only: avail.sunday_only || false,
+          walk_in_only: avail.walk_in_only || false,
         });
       }
       results.sort((a,b) => (a.opens_in||99) - (b.opens_in||99));
@@ -1548,7 +1573,7 @@ exports.handler = async (event) => {
           googleRating: entry.google_rating || entry.googleRating || null,
           googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
           distanceMiles: Math.round(d * 10) / 10,
-          walkMinEstimate: Math.round(d * 20),
+          walkMinEstimate: Math.round(d * 15),
           driveMinEstimate: Math.round(d * 4),
           transitMinEstimate: Math.round(d * 6),
           michelin: { stars, distinction: 'star' },
@@ -1584,6 +1609,8 @@ exports.handler = async (event) => {
           opens_in: (getAvail(name) || {}).opens_in || null,
           future_dates: (getAvail(name) || {}).future_dates || null,
           fully_locked:(getAvail(name) || {}).fully_locked || false,
+          sunday_only:(getAvail(name) || {}).sunday_only || false,
+          walk_in_only:(getAvail(name) || {}).walk_in_only || false,
           prepaid_price:(getAvail(name) || {}).prepaid_price || null,
         };
       });
@@ -1591,7 +1618,7 @@ exports.handler = async (event) => {
       // Distance filter — respect transport/radius param from frontend
       const maxDist = allNYCMode ? 999 :
         body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
-        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 15) / 15) :
         body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
 
       const filtered = allResults
@@ -1637,7 +1664,7 @@ exports.handler = async (event) => {
           googleRating: entry.google_rating || entry.googleRating || null,
           googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
           distanceMiles: Math.round(d * 10) / 10,
-          walkMinEstimate: Math.round(d * 20),
+          walkMinEstimate: Math.round(d * 15),
           driveMinEstimate: Math.round(d * 4),
           transitMinEstimate: Math.round(d * 6),
           michelin: { stars: 0, distinction: 'bib_gourmand' },
@@ -1673,13 +1700,15 @@ exports.handler = async (event) => {
           opens_in: (getAvail(name) || {}).opens_in || null,
           future_dates: (getAvail(name) || {}).future_dates || null,
           fully_locked:(getAvail(name) || {}).fully_locked || false,
+          sunday_only:(getAvail(name) || {}).sunday_only || false,
+          walk_in_only:(getAvail(name) || {}).walk_in_only || false,
           prepaid_price:(getAvail(name) || {}).prepaid_price || null,
         };
       });
 
       const maxDist = allNYCMode ? 999 :
         body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
-        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 15) / 15) :
         body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
 
       const filtered = allResults
@@ -1721,7 +1750,7 @@ exports.handler = async (event) => {
           googleRating: entry.google_rating || entry.googleRating || null,
           googleReviewCount: entry.google_reviews || entry.googleReviewCount || null,
           distanceMiles: Math.round(d * 10) / 10,
-          walkMinEstimate: Math.round(d * 20),
+          walkMinEstimate: Math.round(d * 15),
           driveMinEstimate: Math.round(d * 4),
           transitMinEstimate: Math.round(d * 6),
           michelin: { stars: 0, distinction: entry.bib_gourmand ? 'bib_gourmand' : 'recommended' },
@@ -1758,13 +1787,15 @@ exports.handler = async (event) => {
           opens_in: (getAvail(name) || {}).opens_in || null,
           future_dates: (getAvail(name) || {}).future_dates || null,
           fully_locked:(getAvail(name) || {}).fully_locked || false,
+          sunday_only:(getAvail(name) || {}).sunday_only || false,
+          walk_in_only:(getAvail(name) || {}).walk_in_only || false,
           prepaid_price:(getAvail(name) || {}).prepaid_price || null,
         };
       });
 
       const maxDist = allNYCMode ? 999 :
         body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 15) :
-        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+        body.transport === 'walk' ? ((parseFloat(body.walkTime) || 15) / 15) :
         body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 15;
 
       const filtered = allResults
@@ -1863,7 +1894,7 @@ exports.handler = async (event) => {
           googleRating: rating,
           googleReviewCount: reviews,
           distanceMiles: Math.round(d * 10) / 10,
-          walkMinEstimate: Math.round(d * 20),
+          walkMinEstimate: Math.round(d * 15),
           driveMinEstimate: Math.round(d * 4),
           transitMinEstimate: Math.round(d * 6),
           booking_platform: entry.platform || entry.booking_platform || null,
@@ -1918,7 +1949,7 @@ exports.handler = async (event) => {
           googleRating: entry.google_rating || entry.googleRating || 0,
           googleReviewCount: entry.google_reviews || entry.googleReviewCount || 0,
           distanceMiles: Math.round(d * 10) / 10,
-          walkMinEstimate: Math.round(d * 20),
+          walkMinEstimate: Math.round(d * 15),
           driveMinEstimate: Math.round(d * 4),
           transitMinEstimate: Math.round(d * 6),
           booking_platform: entry.platform || null,
@@ -1958,9 +1989,9 @@ exports.handler = async (event) => {
         // Full data is preserved in BOOKING_MASTER — this only affects All NYC display
         const rating = entry.google_rating || 0;
         const reviews = entry.google_reviews || 0;
-        const hasInstaBuzz = !!INSTAGRAM_BUZZ[key];
+        const hasInstaBuzz = !!INSTAGRAM_BUZZ[key] || !!INSTAGRAM_BUZZ[key.toLowerCase()];
         const isBuzz = !!(entry.buzz_sources && entry.buzz_sources.length > 0);
-        const isMichelin = !!entry.michelin_stars || !!entry.michelin_recommended;
+        const isMichelin = !!entry.michelin_stars || !!entry.michelin_recommended || !!entry.bib_gourmand;
         const isKosher = (entry.cuisine || '').toLowerCase() === 'kosher';
         if (!isMichelin && !isBuzz && !hasInstaBuzz && !isKosher) {
           if (rating < 4.3 || reviews < 100) continue;
@@ -1992,8 +2023,9 @@ exports.handler = async (event) => {
           transitMinEstimate: Math.round(d*6),
           googleRating: entry.google_rating || 0,
           googleReviewCount: entry.google_reviews || 0,
-          michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : entry.michelin_recommended ? { stars: 0, distinction: 'recommended' } : null,
+          michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : entry.bib_gourmand ? { stars: 0, distinction: 'bib_gourmand' } : entry.michelin_recommended ? { stars: 0, distinction: 'recommended' } : null,
           bib_gourmand: entry.bib_gourmand || null,
+          michelin_recommended: entry.michelin_recommended || null,
           chase_sapphire: chaseNameLookup.has(normalizeName(key)) || entry.chase_sapphire || null,
           rakuten: rakutenNameLookup.has(normalizeName(key)) || entry.rakuten || null,
           bilt_dining: entry.bilt_dining || null,
@@ -2013,13 +2045,15 @@ exports.handler = async (event) => {
           opens_in: (getAvail(key) || {}).opens_in || null,
           future_dates: (getAvail(key) || {}).future_dates || null,
           fully_locked:(getAvail(key) || {}).fully_locked || false,
+          sunday_only:(getAvail(key) || {}).sunday_only || false,
+          walk_in_only:(getAvail(key) || {}).walk_in_only || false,
           website: entry.website || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
           pete_wells: entry.pete_wells || false,
           nyt_top_100: entry.nyt_top_100 || false,
           pete_wells_rank: entry.pete_wells_rank || null,
-          instagram_buzz: INSTAGRAM_BUZZ[key] || null,
+          instagram_buzz: INSTAGRAM_BUZZ[key] || INSTAGRAM_BUZZ[key.toLowerCase()] || null,
           new_rising: entry.new_rising || null,
           coming_soon: entry.coming_soon || null,
           _source: 'master_book',
@@ -2255,7 +2289,7 @@ exports.handler = async (event) => {
     });
 
     const maxDistMiles = body.transport === 'radius' ? (parseFloat(body.radiusMiles) || 7.0) :
-      body.transport === 'walk' ? ((parseFloat(body.walkTime) || 20) / 20) :
+      body.transport === 'walk' ? ((parseFloat(body.walkTime) || 15) / 15) :
       body.transport === 'drive' ? ((parseFloat(body.driveTime) || 15) / 4) : 7.0;
     const googleResults = withDist.filter(r => r.distanceMiles <= maxDistMiles);
     console.log(`\ud83d\udcca Within 7mi (Google): ${googleResults.length}`);
@@ -2307,7 +2341,7 @@ exports.handler = async (event) => {
         googleRating: entry.google_rating || 0,
         googleReviewCount: entry.google_reviews || 0,
         distanceMiles: Math.round(d * 10) / 10,
-        walkMinEstimate: Math.round(d * 20),
+        walkMinEstimate: Math.round(d * 15),
         driveMinEstimate: Math.round(d * 4),
         transitMinEstimate: Math.round(d * 6),
         booking_platform: entry.platform || entry.booking_platform || null,
@@ -2333,6 +2367,8 @@ exports.handler = async (event) => {
         opens_in: (getAvail(mk) || {}).opens_in || null,
           future_dates: (getAvail(mk) || {}).future_dates || null,
         fully_locked:(getAvail(mk) || {}).fully_locked || false,
+        sunday_only:(getAvail(mk) || {}).sunday_only || false,
+        walk_in_only:(getAvail(mk) || {}).walk_in_only || false,
         velocity: getReviewVelocity(entry.place_id || null),
         likelihood: getReservationLikelihood(entry.place_id || null),
         buzz_sources: entry.buzz_sources || [],
@@ -2381,7 +2417,7 @@ exports.handler = async (event) => {
         geometry: { location: { lat: m.lat, lng: m.lng } },
         types: [], googleRating: m.googleRating || 0, googleReviewCount: m.googleReviewCount || 0,
         distanceMiles: Math.round(d * 10) / 10,
-        walkMinEstimate: Math.round(d * 20), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
+        walkMinEstimate: Math.round(d * 15), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
         michelin: { stars: m.stars || 0, distinction: m.distinction || 'star' },
         cuisine: CUISINE_LOOKUP[m.name] || m.cuisine || null,
         booking_platform: m.booking_platform || null,
@@ -2410,7 +2446,7 @@ exports.handler = async (event) => {
         geometry: { location: { lat: b.lat, lng: b.lng } },
         types: [], googleRating: 0, googleReviewCount: 0,
         distanceMiles: Math.round(d * 10) / 10,
-        walkMinEstimate: Math.round(d * 20), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
+        walkMinEstimate: Math.round(d * 15), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
         michelin: { stars: 0, distinction: 'bib_gourmand' }, cuisine: CUISINE_LOOKUP[b.name] || b.cuisine || null,
         booking_platform: b.booking_platform || null,
         booking_url: b.booking_url || null,
@@ -2438,7 +2474,7 @@ exports.handler = async (event) => {
         geometry: { location: { lat: p.lat, lng: p.lng } },
         types: [], googleRating: p.googleRating || 0, googleReviewCount: p.googleReviewCount || 0,
         distanceMiles: Math.round(d * 10) / 10,
-        walkMinEstimate: Math.round(d * 20), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
+        walkMinEstimate: Math.round(d * 15), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
         michelin: null, cuisine: CUISINE_LOOKUP[p.name] || p.cuisine || null,
         booking_platform: p.booking_platform || null,
         booking_url: p.booking_url || null,
@@ -2474,7 +2510,7 @@ exports.handler = async (event) => {
         geometry: { location: { lat: c.lat, lng: c.lng } },
         types: [], googleRating: c.googleRating || 0, googleReviewCount: c.googleReviewCount || 0,
         distanceMiles: Math.round(d * 10) / 10,
-        walkMinEstimate: Math.round(d * 20), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
+        walkMinEstimate: Math.round(d * 15), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
         michelin: null, cuisine: CUISINE_LOOKUP[c.name] || c.cuisine || null,
         booking_platform: c.booking_platform || null,
         booking_url: c.booking_url || null,
