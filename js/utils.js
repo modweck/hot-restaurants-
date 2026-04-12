@@ -4,13 +4,13 @@
 const VIBE_EMOJI = {
   date_night: '🍷', upscale: '💎', lively: '🔥', chill: '😌',
   trendy: '✨', brunch: '🥞', outdoor: '🌿', late_night: '🌙',
-  casual: '👕', hidden_gem: '🕵️', foodie: '🍽', group_friendly: '👥'
+  casual: '👕', hidden_gem: '🕵️', foodie: '🍽'
 };
 
 const VIBE_LABEL = {
   date_night: 'Date', upscale: 'Upscale', lively: 'Lively', chill: 'Chill',
   trendy: 'Trendy', brunch: 'Brunch', outdoor: 'Outdoor', late_night: 'Late Night',
-  casual: 'Casual', hidden_gem: 'Hidden Gem', foodie: 'Foodie', group_friendly: 'Group'
+  casual: 'Casual', hidden_gem: 'Hidden Gem', foodie: 'Foodie'
 };
 
 // Title case

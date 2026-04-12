@@ -368,7 +368,6 @@
               <button class="fchip" onclick="setVibeFilter('casual',this)">Casual</button>
               <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">Hidden Gem</button>
               <button class="fchip" onclick="setVibeFilter('foodie',this)">Foodie</button>
-              <button class="fchip" onclick="setVibeFilter('group_friendly',this)">Group</button>
             </div>
           </div>
 
@@ -886,7 +885,6 @@
               <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
               <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
               <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
-              <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">Group</button>
             </div>
           </div>
         </div>
@@ -1164,7 +1162,6 @@
             <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">Outdoor</button>
             <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">Late Night</button>
             <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">Hidden Gem</button>
-            <button class="fchip" id="bar-vibe-group_friendly" onclick="barSetVibe('group_friendly',this)">Group</button>
           </div>
         </div>
 
@@ -1683,6 +1680,9 @@ const CONCIERGE_SLUGS = {
   'monkey bar': { slug: 'monkey-bar-nyc', days: 20 },
   'theodora': { slug: 'theodora', days: 30 },
   'i cavallini': { slug: 'i-cavallini', days: 14 },
+  'bong': { slug: 'bong', days: 19 },
+  'jeju noodle bar': { slug: 'jeju-noodle-bar', days: 44 },
+  'free range at double chicken please': { slug: 'free-range-at-double-chicken-please', days: 6 },
 };
 let conciergeLoaded = false;
 async function loadConcierge() {
@@ -1702,11 +1702,10 @@ async function loadConcierge() {
       return;
     }
     document.getElementById('conciergeList').innerHTML = matched.map(r => {
-      const slug = CONCIERGE_SLUGS[(r.name||'').toLowerCase()]?.slug || '';
-      const days = CONCIERGE_SLUGS[(r.name||'').toLowerCase()]?.days || 30;
-      // Render using same card function, then append booking button
+      const cfg = CONCIERGE_SLUGS[(r.name||'').toLowerCase()] || {};
+      const slug = cfg.slug || '';
+      const days = cfg.days || 30;
       let card = renderCardAR(r);
-      // Insert "Book for Me" button before closing </div>
       const bookBtn = '<a href="/book.html?r=' + slug + '" style="display:block;text-align:center;padding:13px 20px;background:#f5ede0;color:#8b7355;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;margin-top:8px;font-family:DM Sans,sans-serif">Need help booking? &rarr;</a>';
       card = card.replace(/<\/div>\s*$/, bookBtn + '</div>');
       return card;
@@ -2127,8 +2126,8 @@ function renderCard(r, isRadar) {
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
-  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
-  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
+  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'' };
+  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => {
@@ -2201,6 +2200,9 @@ function renderCard(r, isRadar) {
   }
 
   const rating = Number(r.googleRating||0), reviews = Number(r.googleReviewCount||0);
+  if (rating >= 4.7 && reviews >= 100 && !r.michelin) {
+    badges += `<span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.15)">⭐ Top Rated</span>`;
+  }
   if (rating >= 4.0) {
     const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : null;
     const opacity = rating >= 4.7 ? '1' : rating >= 4.4 ? '.8' : '.55';
@@ -3011,6 +3013,9 @@ function renderCardAR(r) {
     }
   }
   const rat = Number(r.googleRating || 0), rev = Number(r.googleReviewCount || 0);
+  if (rat >= 4.7 && rev >= 100 && !r.michelin) {
+    badges += `<span class="badge" style="background:#fef3c7;color:#92400e;border:1px solid rgba(146,64,14,.15)">⭐ Top Rated</span>`;
+  }
   if (rat >= 4.0 && rev > 0) {
     const rs = rev >= 1000 ? (rev/1000).toFixed(1)+'k' : rev;
     const opacity = rat >= 4.7 ? '1' : rat >= 4.4 ? '.8' : '.55';
@@ -3140,8 +3145,8 @@ function renderCardAR(r) {
     cardLinks += '</div>';
   }
 
-  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', group_friendly:'' };
-  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
+  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'' };
+  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => `<span class="badge vibe">${VIBE_EMOJI_AR[v]||''} ${VIBE_LABEL_AR[v]||v.replace(/_/g,' ')}</span>`).join('');

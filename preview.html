@@ -324,7 +324,6 @@
               <button class="fchip" onclick="setVibeFilter('casual',this)">Casual</button>
               <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">Hidden Gem</button>
               <button class="fchip" onclick="setVibeFilter('foodie',this)">Foodie</button>
-              <button class="fchip" onclick="setVibeFilter('group_friendly',this)">Group</button>
             </div>
           </div>
 
@@ -937,7 +936,6 @@
             <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
             <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
             <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
-            <button class="fchip" id="ar-vibe-group_friendly" onclick="arSetVibe('group_friendly',this)">Group</button>
           </div>
         </div>
 
@@ -1134,7 +1132,6 @@
             <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">Outdoor</button>
             <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">Late Night</button>
             <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">Hidden Gem</button>
-            <button class="fchip" id="bar-vibe-group_friendly" onclick="barSetVibe('group_friendly',this)">Group</button>
           </div>
         </div>
 
@@ -1966,8 +1963,8 @@ function renderCard(r, isRadar) {
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
-  const VIBE_EMOJI = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
-  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
+  const VIBE_EMOJI = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽' };
+  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => {
@@ -2770,8 +2767,8 @@ function renderCardAR(r) {
     cardLinks += '</div>';
   }
 
-  const VIBE_EMOJI_AR = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽', group_friendly:'👥' };
-  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', group_friendly:'Group' };
+  const VIBE_EMOJI_AR = { date_night:'🍷', upscale:'💎', lively:'🔥', chill:'😌', trendy:'✨', brunch:'🥞', outdoor:'🌿', late_night:'🌙', casual:'👕', hidden_gem:'🕵️', foodie:'🍽' };
+  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => `<span class="badge vibe">${VIBE_EMOJI_AR[v]||''} ${VIBE_LABEL_AR[v]||v.replace(/_/g,' ')}</span>`).join('');
