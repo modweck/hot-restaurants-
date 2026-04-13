@@ -1813,6 +1813,45 @@ function _updatePicksBadge() {
     badge.textContent = count;
   } else if (badge) { badge.remove(); }
 }
+async function _loadMyShareSessions() {
+  if (!_sbUser) return '';
+  const { data: sessions } = await _sb.from('share_sessions').select('*').eq('creator_id', _sbUser.id).order('created_at', { ascending: false }).limit(5);
+  if (!sessions || !sessions.length) return '';
+
+  let html = '<div style="padding:0 16px 16px">';
+  html += '<div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;padding:0 4px">Your Recent Shares</div>';
+
+  for (const session of sessions) {
+    const { data: votes } = await _sb.from('share_votes').select('*').eq('session_id', session.id);
+    const hasVotes = votes && votes.length > 0;
+    const restaurants = session.restaurants || [];
+    const names = restaurants.slice(0, 3).map(r => r.name).join(', ');
+    const date = new Date(session.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    if (hasVotes) {
+      // Count matches
+      const matchCount = restaurants.filter((_, i) => {
+        return votes.some(v => (v.picks || []).includes(i));
+      }).length;
+      html += '<div onclick="_openShareSession(\'' + session.id + '\')" style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.03)">'
+        + '<div style="display:flex;justify-content:space-between;align-items:center">'
+          + '<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + names + '</div><div style="font-size:11px;color:#888;margin-top:2px">' + date + ' \u00B7 ' + restaurants.length + ' restaurants</div></div>'
+          + '<div style="padding:4px 10px;border-radius:8px;font-size:11px;font-weight:800;background:#e8f5e9;color:#2e7d32">' + matchCount + ' match' + (matchCount !== 1 ? 'es' : '') + '</div>'
+        + '</div>'
+      + '</div>';
+    } else {
+      html += '<div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 8px rgba(0,0,0,.03)">'
+        + '<div style="display:flex;justify-content:space-between;align-items:center">'
+          + '<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700;color:#1a1a2e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + names + '</div><div style="font-size:11px;color:#888;margin-top:2px">' + date + ' \u00B7 ' + restaurants.length + ' restaurants</div></div>'
+          + '<div style="padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;background:#fff3e0;color:#f57c00">Waiting...</div>'
+        + '</div>'
+      + '</div>';
+    }
+  }
+  html += '</div>';
+  return html;
+}
+
 function renderPicksView() {
   const picks = _getPicks();
   const el = document.getElementById('view-picks');
@@ -1820,7 +1859,8 @@ function renderPicksView() {
   const count = entries.length;
 
   if (!count) {
-    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:40px;margin-bottom:10px">&#127860;</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e;margin-bottom:6px">Share Tonight\'s Options</div><div style="font-size:13px;color:#999;line-height:1.5">Tap the share icon on any restaurant card to add it here.<br>Add 2-5 spots, then share with your person to pick.</div></div>';
+    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:40px;margin-bottom:10px">&#127860;</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e;margin-bottom:6px">Share Tonight\'s Options</div><div style="font-size:13px;color:#999;line-height:1.5">Tap the share icon on any restaurant card to add it here.<br>Add 2-5 spots, then share with your person to pick.</div></div><div id="recent-shares-area"></div>';
+    _loadMyShareSessions().then(h => { const a = document.getElementById('recent-shares-area'); if (a && h) a.innerHTML = h; });
     return;
   }
 
@@ -1880,9 +1920,18 @@ function renderPicksView() {
   }
 
   // Clear all
-  html += `<div style="text-align:center;padding:8px 20px 20px"><button onclick="_clearPicks()" style="background:none;border:none;font-size:12px;color:#ccc;cursor:pointer;font-family:DM Sans,sans-serif;font-weight:600">Clear all</button></div>`;
+  html += `<div style="text-align:center;padding:8px 20px 12px"><button onclick="_clearPicks()" style="background:none;border:none;font-size:12px;color:#ccc;cursor:pointer;font-family:DM Sans,sans-serif;font-weight:600">Clear all</button></div>`;
+
+  // Placeholder for recent shares
+  html += '<div id="recent-shares-area"></div>';
 
   el.innerHTML = html;
+
+  // Load recent shares async
+  _loadMyShareSessions().then(sessionsHtml => {
+    const area = document.getElementById('recent-shares-area');
+    if (area && sessionsHtml) area.innerHTML = sessionsHtml;
+  });
 }
 
 async function _createShareAndGetURL() {
@@ -2139,7 +2188,22 @@ function _showShareResults(session, votes) {
     + '</div>';
   });
 
-  html += '<div style="padding:16px 20px 32px"><button onclick="switchNav(\'home\')" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#1a1a2e;color:#fff;box-shadow:0 3px 16px rgba(26,26,46,.2)">Browse More Restaurants</button></div>';
+  // "Text results back" button — only show if the current user is NOT the creator (i.e. they're the voter)
+  const isCreator = _sbUser && session.creator_id === _sbUser.id;
+  if (!isCreator && matches.length > 0) {
+    const resultsUrl = window.location.origin + '/?share=' + session.id;
+    const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
+    const matchNames = matches.map(r => r.name).join(', ');
+    const smsBody = voterName + ' picked their favorites! You matched on: ' + matchNames + '. See results: ' + resultsUrl;
+    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text results to ' + from + '</button></div>';
+  } else if (!isCreator && matches.length === 0) {
+    const resultsUrl = window.location.origin + '/?share=' + session.id;
+    const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
+    const smsBody = voterName + ' picked their favorites but no matches this time! See results: ' + resultsUrl;
+    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text results to ' + from + '</button></div>';
+  }
+
+  html += '<div style="padding:8px 16px 32px"><button onclick="switchNav(\'home\')" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#1a1a2e;color:#fff;box-shadow:0 3px 16px rgba(26,26,46,.2)">Browse Restaurants</button></div>';
 
   document.getElementById('sharevote-content').innerHTML = html;
 }
