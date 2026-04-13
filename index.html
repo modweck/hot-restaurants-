@@ -369,7 +369,31 @@ async function _doLogin() {
     btnEl.textContent = _authMode === 'signup' ? 'Create Account' : 'Log In';
     return;
   }
-  // Success — auth state listener will handle the rest
+
+  // Check if we got a session (signup with confirm disabled, or login)
+  if (result.data?.session) {
+    _sbUser = result.data.session.user;
+    _updateAuthUI();
+    _syncSavedToSupabase();
+    _loadSavedFromSupabase();
+  } else if (_authMode === 'signup') {
+    // Email confirmation required — auto-login after signup
+    const loginResult = await _sb.auth.signInWithPassword({ email, password: pass });
+    if (loginResult.data?.session) {
+      _sbUser = loginResult.data.session.user;
+      _updateAuthUI();
+      _syncSavedToSupabase();
+      _loadSavedFromSupabase();
+    } else {
+      msgEl.textContent = 'Account created! Log in now.';
+      msgEl.style.color = '#22c55e';
+      msgEl.style.display = 'block';
+      _authMode = 'login';
+      btnEl.textContent = 'Log In';
+      btnEl.disabled = false;
+      return;
+    }
+  }
   btnEl.textContent = '\u2705 Done!';
 }
 
@@ -1859,9 +1883,10 @@ function renderPicksView() {
 }
 
 async function _createShareAndGetURL() {
-  if (!_sbUser) { alert('Log in first to share!'); return null; }
+  if (!_sbUser) { alert('You need to log in first!'); return null; }
   const picks = _getPicks();
   const entries = Object.values(picks);
+  if (!entries.length) { alert('No restaurants in your share list!'); return null; }
   const restaurants = entries.map(r => ({
     name: r.name || '',
     cuisine: r.cuisine || '',
@@ -1875,9 +1900,19 @@ async function _createShareAndGetURL() {
     address: r.address || ''
   }));
   const senderName = (_sbUser.email || '').split('@')[0];
-  const session = await _createShareSession(restaurants, senderName);
-  if (!session) return null;
-  return { url: window.location.origin + '/?share=' + session.id, id: session.id, senderName };
+  try {
+    const { data, error } = await _sb.from('share_sessions').insert({
+      creator_id: _sbUser.id,
+      creator_name: senderName,
+      restaurants: restaurants
+    }).select().single();
+    if (error) { alert('Supabase error: ' + error.message); return null; }
+    if (!data) { alert('No data returned from Supabase'); return null; }
+    return { url: window.location.origin + '/?share=' + data.id, id: data.id, senderName };
+  } catch(e) {
+    alert('Error: ' + e.message);
+    return null;
+  }
 }
 
 function _showShareMsg(text, color) {
@@ -1896,14 +1931,13 @@ async function _shareSendToEmail() {
   if (!email || !email.includes('@')) { _showShareMsg('Enter a valid email', '#ef4444'); return; }
   btnEl.textContent = 'Sending...'; btnEl.disabled = true;
   const result = await _createShareAndGetURL();
-  if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; _showShareMsg('Error creating share', '#ef4444'); return; }
-  // Open email client with pre-composed email
+  if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; _showShareMsg('Error creating share. Are you logged in?', '#ef4444'); return; }
   const senderName = result.senderName || 'Someone';
   const subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
   const body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + result.url + '\n\nPowered by SeatWize');
-  window.open('mailto:' + email + '?subject=' + subject + '&body=' + body);
+  location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
   btnEl.textContent = 'Sent!'; btnEl.disabled = false;
-  _showShareMsg('\u2705 Email opened! Share ID: ' + result.id, '#22c55e');
+  _showShareMsg('\u2705 Share created! ID: ' + result.id, '#22c55e');
   setTimeout(() => { btnEl.textContent = 'Send'; }, 3000);
 }
 
@@ -1911,13 +1945,13 @@ async function _shareSendSMS() {
   const phoneEl = document.getElementById('shareToPhone');
   const phone = (phoneEl?.value || '').trim();
   const result = await _createShareAndGetURL();
-  if (!result) { _showShareMsg('Error creating share', '#ef4444'); return; }
+  if (!result) { _showShareMsg('Error creating share. Are you logged in?', '#ef4444'); return; }
   const senderName = result.senderName || 'Someone';
   const msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + result.url;
   if (phone) {
-    window.open('sms:' + phone + '?&body=' + encodeURIComponent(msg));
+    location.href = 'sms:' + phone + '?&body=' + encodeURIComponent(msg);
   } else {
-    window.open('sms:?&body=' + encodeURIComponent(msg));
+    location.href = 'sms:?&body=' + encodeURIComponent(msg);
   }
   _showShareMsg('\u2705 Text opened!', '#22c55e');
 }
