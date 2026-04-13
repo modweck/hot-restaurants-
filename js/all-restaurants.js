@@ -42,7 +42,7 @@ function arSetVibe(vibe, btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','new_rising'];
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','new_rising'];
     arState.hotspotFilter = 'any';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');

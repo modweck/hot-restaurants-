@@ -287,8 +287,172 @@
   </style>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+// ─── SUPABASE INIT ──────────────────────────────────────────────────────────
+const _sbMod = window.supabase;
+const _sb = (_sbMod.createClient || _sbMod)(
+  'https://zdsolubfxzvrqiqvwjev.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM'
+);
+let _sbUser = null;
+
+async function _sbGetUser() {
+  const { data } = await _sb.auth.getSession();
+  _sbUser = data?.session?.user || null;
+  return _sbUser;
+}
+
+async function _sbLogin(email) {
+  const { error } = await _sb.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
+  return error;
+}
+
+async function _sbLogout() {
+  await _sb.auth.signOut();
+  _sbUser = null;
+  localStorage.removeItem('sw_saved');
+  localStorage.removeItem('sw_picks');
+  _updateAuthUI();
+}
+
+function _updateAuthUI() {
+  const overlay = document.getElementById('auth-overlay');
+  const bar = document.getElementById('auth-bar');
+  if (_sbUser) {
+    // Hide overlay, show small bar
+    if (overlay) overlay.style.display = 'none';
+    if (bar) {
+      bar.style.display = 'block';
+      bar.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)"><div style="font-size:12px;color:#888"><span style="color:#22c55e;font-weight:700">\u25CF</span> ' + (_sbUser.email||'') + '</div><button onclick="_sbLogout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;color:#888;cursor:pointer;font-family:DM Sans,sans-serif">Log out</button></div>';
+    }
+  } else {
+    // Show overlay
+    if (overlay) overlay.style.display = 'flex';
+    if (bar) bar.style.display = 'none';
+  }
+}
+
+async function _doLogin() {
+  const emailEl = document.getElementById('auth-email');
+  const msgEl = document.getElementById('auth-msg');
+  const btnEl = document.getElementById('auth-btn');
+  const email = (emailEl?.value || '').trim();
+  if (!email || !email.includes('@')) { msgEl.textContent = 'Enter a valid email'; msgEl.style.display = 'block'; return; }
+  btnEl.textContent = 'Sending...'; btnEl.disabled = true;
+  const err = await _sbLogin(email);
+  if (err) { msgEl.textContent = 'Error: ' + err.message; msgEl.style.display = 'block'; msgEl.style.color = '#ef4444'; btnEl.textContent = 'Send Login Link'; btnEl.disabled = false; return; }
+  msgEl.textContent = '\u2705 Check your email for the login link!'; msgEl.style.display = 'block'; msgEl.style.color = '#22c55e';
+  btnEl.textContent = 'Link sent!'; btnEl.disabled = true;
+}
+
+// ─── SYNC SAVED TO SUPABASE ─────────────────────────────────────────────────
+async function _syncSavedToSupabase() {
+  if (!_sbUser) return;
+  const saved = _getSaved();
+  const entries = Object.entries(saved);
+  if (!entries.length) return;
+  for (const [key, data] of entries) {
+    await _sb.from('saved_restaurants').upsert({
+      user_id: _sbUser.id, name: key, data: data
+    }, { onConflict: 'user_id,name' }).select();
+  }
+}
+
+async function _loadSavedFromSupabase() {
+  if (!_sbUser) return;
+  const { data, error } = await _sb.from('saved_restaurants').select('*').eq('user_id', _sbUser.id);
+  if (error || !data) return;
+  const saved = _getSaved();
+  let changed = false;
+  data.forEach(row => {
+    const key = (row.name || '').toLowerCase().trim();
+    if (!saved[key]) { saved[key] = row.data || { name: row.name }; changed = true; }
+    else {
+      // Merge — keep local _rating if exists
+      const localRating = saved[key]._rating;
+      Object.assign(saved[key], row.data || {});
+      if (localRating) saved[key]._rating = localRating;
+    }
+  });
+  if (changed) _setSaved(saved);
+}
+
+// ─── SHARE SESSIONS VIA SUPABASE ────────────────────────────────────────────
+async function _createShareSession(restaurants, creatorName) {
+  if (!_sbUser) return null;
+  const { data, error } = await _sb.from('share_sessions').insert({
+    creator_id: _sbUser.id,
+    creator_name: creatorName || _sbUser.email || '',
+    restaurants: restaurants
+  }).select().single();
+  if (error) { console.error('Share create error:', error); return null; }
+  return data;
+}
+
+async function _getShareSession(sessionId) {
+  const { data, error } = await _sb.from('share_sessions').select('*').eq('id', sessionId).single();
+  if (error) return null;
+  return data;
+}
+
+async function _submitVote(sessionId, picks) {
+  if (!_sbUser) return null;
+  const { data, error } = await _sb.from('share_votes').upsert({
+    session_id: sessionId,
+    voter_id: _sbUser.id,
+    voter_name: _sbUser.email || '',
+    picks: picks
+  }, { onConflict: 'session_id,voter_id' }).select().single();
+  if (error) { console.error('Vote error:', error); return null; }
+  return data;
+}
+
+async function _getVotes(sessionId) {
+  const { data, error } = await _sb.from('share_votes').select('*').eq('session_id', sessionId);
+  if (error) return [];
+  return data || [];
+}
+
+// ─── AUTH STATE LISTENER ────────────────────────────────────────────────────
+_sb.auth.onAuthStateChange(async (event, session) => {
+  _sbUser = session?.user || null;
+  _updateAuthUI();
+  if (_sbUser) {
+    await _syncSavedToSupabase();
+    await _loadSavedFromSupabase();
+    // Check if we arrived with a share link
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('share')) {
+      _openShareSession(params.get('share'));
+    }
+  }
+});
+
+// Init auth on load
+_sbGetUser().then(() => _updateAuthUI());
+</script>
 
 <div class="container">
+
+  <!-- AUTH OVERLAY -->
+  <div id="auth-overlay" style="position:fixed;inset:0;z-index:9999;background:#f7f5f2;display:flex;align-items:center;justify-content:center">
+    <div style="width:100%;max-width:380px;padding:0 24px;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#1a1a2e;letter-spacing:-1px;margin-bottom:4px">Seat<span style="color:#ff4500">Wize</span></div>
+      <div style="font-size:13px;color:#888;margin-bottom:32px">NYC's smartest restaurant finder</div>
+      <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)">
+        <div style="font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px">Welcome</div>
+        <div style="font-size:13px;color:#999;margin-bottom:20px">Enter your email to get started</div>
+        <input id="auth-email" type="email" placeholder="you@email.com" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
+        <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#ff4500;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(255,69,0,.25);transition:all .2s">Send Login Link</button>
+        <div id="auth-msg" style="font-size:12px;color:#888;margin-top:12px;display:none"></div>
+      </div>
+      <div style="font-size:11px;color:#bbb;margin-top:20px">No password needed. We'll email you a link.</div>
+    </div>
+  </div>
+
+  <!-- LOGGED IN HEADER (small bar at top) -->
+  <div id="auth-bar" style="display:none"></div>
 
   <!-- ═══════════════════════════════════════════════════════ HOME VIEW -->
   <div class="view" id="view-home" style="background:#f7f5f2;min-height:100vh;display:none">
@@ -337,13 +501,12 @@
           <button class="fchip" onclick="setTrendFilter('any',this)">All</button>
           <button class="fchip" onclick="setTrendFilter('michelin',this)">Michelin Stars</button>
           <button class="fchip" onclick="setTrendFilter('michelin_rec',this)">Michelin Rec</button>
+          <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
           <button class="fchip" onclick="setTrendFilter('nyt',this)">NYT Reviewed</button>
           <button class="fchip" onclick="setTrendFilter('press',this)">Eater / Infa</button>
           <button class="fchip" onclick="setTrendFilter('timeout',this)">Time Out</button>
           <button class="fchip" onclick="setTrendFilter('instagram',this)">Instagram Influencers</button>
-          <button class="fchip" onclick="setTrendFilter('google_amazing',this)">Top Reviews</button>
           <button class="fchip" onclick="setTrendFilter('exceptional',this)">Top Rated</button>
-          <button class="fchip" onclick="setTrendFilter('new_rising',this)">New &amp; Rising</button>
         </div>
 
         <!-- Collapsible advanced filters -->
@@ -603,7 +766,6 @@
             <option value="press">Eater / Infatuation</option>
             <option value="nyt">NYT Reviewed</option>
             <option value="instagram">Instagram Influencers</option>
-            <option value="google_amazing">Amazing Reviews (4.7+, 750+)</option>
             <option value="new_rising">New &amp; Rising</option>
           </select>
         </div>
@@ -745,6 +907,20 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════════ SHARE VIEW -->
+  <div class="view" id="view-picks">
+    <div style="padding:60px 20px;text-align:center">
+      <div style="font-size:36px;margin-bottom:12px">&#127860;</div>
+      <div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Share Tonight's Options</div>
+      <div style="font-size:13px;color:#333">Tap + on any restaurant to add it here</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ SHARE VOTE VIEW -->
+  <div class="view" id="view-sharevote">
+    <div id="sharevote-content" style="padding-bottom:80px"></div>
+  </div>
+
   <!-- ═══════════════════════════════════════════════════ CONCIERGE VIEW -->
   <div class="view" id="view-concierge" style="background:#f7f5f2;min-height:100vh">
     <div style="padding:20px 20px 14px">
@@ -841,13 +1017,12 @@
               <button class="fchip" id="ar-hot-any" onclick="arSetHotspot('any',this)">All</button>
               <button class="fchip" id="ar-hot-michelin" onclick="arSetHotspot('michelin',this)">Michelin Stars</button>
               <button class="fchip" id="ar-hot-michelin_rec" onclick="arSetHotspot('michelin_rec',this)">Michelin Rec</button>
+              <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
               <button class="fchip" id="ar-hot-nyt" onclick="arSetHotspot('nyt',this)">NYT Reviewed</button>
               <button class="fchip" id="ar-hot-press" onclick="arSetHotspot('press',this)">Eater / Infa</button>
               <button class="fchip" id="ar-hot-timeout" onclick="arSetHotspot('timeout',this)">Time Out</button>
               <button class="fchip" id="ar-hot-instagram" onclick="arSetHotspot('instagram',this)">Instagram Influencers</button>
-              <button class="fchip" id="ar-hot-google_amazing" onclick="arSetHotspot('google_amazing',this)">Top Reviews</button>
               <button class="fchip" id="ar-hot-exceptional" onclick="arSetHotspot('exceptional',this)">Top Rated</button>
-              <button class="fchip" id="ar-hot-new_rising" onclick="arSetHotspot('new_rising',this)">New &amp; Rising</button>
             </div>
           </div>
         </div>
@@ -1353,6 +1528,10 @@
       <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
       <span class="nav-label">Saved</span>
     </button>
+    <button class="nav-item" id="nav-picks" onclick="switchNav('picks')">
+      <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+      <span class="nav-label">Share</span>
+    </button>
     <button class="nav-item" id="nav-concierge" onclick="switchNav('concierge')">
       <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       <span class="nav-label">Concierge</span>
@@ -1373,45 +1552,534 @@ function toggleSave(name, cardData) {
   _setSaved(saved);
   // Update all save buttons for this restaurant
   document.querySelectorAll(`[data-save-key="${CSS.escape(key)}"]`).forEach(btn => {
-    btn.textContent = saved[key] ? '★' : '☆';
+    btn.innerHTML = saved[key]
+      ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="#d4a373" stroke="#d4a373" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+      : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
     btn.title = saved[key] ? 'Unsave' : 'Save';
     btn.style.color = saved[key] ? '#d4a373' : '#ccc';
   });
+  // Sync to Supabase
+  if (_sbUser) {
+    if (saved[key]) { _sb.from('saved_restaurants').upsert({ user_id: _sbUser.id, name: key, data: saved[key] }, { onConflict: 'user_id,name' }); }
+    else { _sb.from('saved_restaurants').delete().eq('user_id', _sbUser.id).eq('name', key).then(() => {}); }
+  }
   // Refresh saved view if visible
   if (document.getElementById('view-saved')?.classList.contains('on')) renderSavedView();
 }
+// Saved view filter state
+let _savedFilter = 'all';
+let _savedSearch = '';
+
+function _getSavedRating(name) {
+  const saved = _getSaved();
+  const r = saved[(name||'').toLowerCase().trim()];
+  return r ? (r._rating || null) : null;
+}
+function setSavedRating(name, rating) {
+  const key = (name||'').toLowerCase().trim();
+  const saved = _getSaved();
+  if (!saved[key]) return;
+  if (saved[key]._rating === rating) { delete saved[key]._rating; } // tap again to clear
+  else { saved[key]._rating = rating; }
+  _setSaved(saved);
+  if (_sbUser) { _sb.from('saved_restaurants').upsert({ user_id: _sbUser.id, name: key, data: saved[key] }, { onConflict: 'user_id,name' }); }
+  renderSavedView();
+}
+function setSavedFilter(f) { _savedFilter = f; renderSavedView(); }
+function onSavedSearch(val) { _savedSearch = val; renderSavedView(); }
+
+function _enrichSavedData() {
+  // Backfill missing address/neighborhood/vibe_tags from loaded restaurant catalog
+  const catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
+  if (!catalog.length) return;
+  const lookup = {};
+  catalog.forEach(r => { if (r.name) lookup[(r.name||'').toLowerCase().trim()] = r; });
+  const saved = _getSaved();
+  let changed = false;
+  Object.keys(saved).forEach(key => {
+    const s = saved[key];
+    const cat = lookup[key];
+    if (!cat) return;
+    if (!s.address && (cat.vicinity || cat.formatted_address)) { s.address = cat.vicinity || cat.formatted_address || ''; changed = true; }
+    if (!s.neighborhood && cat.neighborhood) { s.neighborhood = cat.neighborhood; changed = true; }
+    if ((!s.vibe_tags || !s.vibe_tags.length) && cat.vibe_tags && cat.vibe_tags.length) { s.vibe_tags = cat.vibe_tags; changed = true; }
+    if (!s.price_level && cat.price_level) { s.price_level = cat.price_level; changed = true; }
+  });
+  if (changed) _setSaved(saved);
+}
+
 function renderSavedView() {
+  _enrichSavedData();
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
-  const entries = Object.values(saved);
-  if (!entries.length) {
-    el.innerHTML = '<div style="padding:60px 20px;text-align:center"><div style="font-size:36px;margin-bottom:12px">⭐</div><div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Saved Places</div><div style="font-size:13px;color:#999">Tap ☆ on any restaurant to save it here</div></div>';
+  const allEntries = Object.values(saved);
+  if (!allEntries.length) {
+    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:36px;margin-bottom:12px"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Saved Places</div><div style="font-size:13px;color:#999">Tap the bookmark on any restaurant to save it here</div></div>';
     return;
   }
-  let html = '<div style="padding:16px 20px 8px"><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Saved Places</div><div style="font-size:12px;color:#888;margin-top:2px">' + entries.length + ' saved</div></div>';
+
+  // Count by rating
+  const counts = { all: allEntries.length, try: 0, loved: 0, solid: 0, nah: 0 };
+  allEntries.forEach(r => {
+    const rt = r._rating || null;
+    if (!rt) counts.try++;
+    else if (rt === 'loved') counts.loved++;
+    else if (rt === 'solid') counts.solid++;
+    else if (rt === 'nah') counts.nah++;
+  });
+
+  // Filter
+  let entries = allEntries;
+  if (_savedFilter === 'try') entries = entries.filter(r => !r._rating);
+  else if (_savedFilter === 'loved') entries = entries.filter(r => r._rating === 'loved');
+  else if (_savedFilter === 'solid') entries = entries.filter(r => r._rating === 'solid');
+  else if (_savedFilter === 'nah') entries = entries.filter(r => r._rating === 'nah');
+
+  // Search
+  const q = (_savedSearch || '').toLowerCase().trim();
+  if (q) entries = entries.filter(r => (r.name||'').toLowerCase().includes(q) || (r.cuisine||'').toLowerCase().includes(q) || (r.neighborhood||'').toLowerCase().includes(q) || (r.address||'').toLowerCase().includes(q));
+
+  // Header with back button
+  let html = '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button><div><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Saved Places</div><div style="font-size:12px;color:#888;margin-top:2px">' + allEntries.length + ' saved</div></div></div>';
+
+  // Search bar
+  html += '<div style="padding:10px 20px 0"><input type="text" placeholder="Search your saved..." value="' + (q||'').replace(/"/g,'&quot;') + '" oninput="onSavedSearch(this.value)" style="width:100%;padding:11px 14px 11px 36px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;font-size:13px;font-family:DM Sans,sans-serif;color:#1a1a2e;outline:none;box-shadow:0 1px 3px rgba(0,0,0,.04);background-image:url(\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23bbb%22 stroke-width=%222%22 stroke-linecap=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22/><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22/></svg>\');background-repeat:no-repeat;background-position:12px center;background-size:14px" /></div>';
+
+  // Filter chips
+  const _fc = (f, label, cnt) => `<button onclick="setSavedFilter('${f}')" style="padding:7px 12px;border-radius:10px;border:1px solid ${_savedFilter===f?'#1a1a2e':'rgba(0,0,0,.08)'};background:${_savedFilter===f?'#1a1a2e':'#fff'};color:${_savedFilter===f?'#fff':'#888'};cursor:pointer;font-size:11px;font-weight:700;font-family:DM Sans,sans-serif;white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.03)">${label}${cnt > 0 ? ' '+cnt : ''}</button>`;
+  html += '<div style="display:flex;gap:6px;padding:10px 20px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">';
+  html += _fc('all', 'All', counts.all);
+  html += _fc('try', 'Want to Try', counts.try);
+  html += _fc('loved', '\u{1F7E2} Loved', counts.loved);
+  html += _fc('solid', '\u{1F7E1} Solid', counts.solid);
+  html += _fc('nah', '\u{1F534} Nah', counts.nah);
+  html += '</div>';
+
+  // No results
+  if (!entries.length) {
+    html += '<div style="text-align:center;padding:40px 20px;color:#999;font-size:13px">No restaurants match this filter</div>';
+    el.innerHTML = html;
+    return;
+  }
+
+  // Build catalog lookup for full card rendering
+  const _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
+  const _catLookup = {};
+  _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
+
+  // Cards — use full renderCardAR when possible, with rating dots appended
+  entries.forEach(r => {
+    const name = r.name || '';
+    const key = name.toLowerCase().trim();
+    const eName = name.replace(/'/g,"\\'");
+    const rt = r._rating || null;
+    const catR = _catLookup[key];
+
+    // Rating status label
+    let statusLabel = '';
+    if (rt === 'loved') statusLabel = '<span style="display:inline-block;font-size:10px;font-weight:700;color:#22c55e;margin-left:8px;vertical-align:middle">Loved</span>';
+    else if (rt === 'solid') statusLabel = '<span style="display:inline-block;font-size:10px;font-weight:700;color:#eab308;margin-left:8px;vertical-align:middle">Solid</span>';
+    else if (rt === 'nah') statusLabel = '<span style="display:inline-block;font-size:10px;font-weight:700;color:#ef4444;margin-left:8px;vertical-align:middle">Nah</span>';
+    else statusLabel = '<span style="display:inline-block;font-size:10px;font-weight:600;color:#bbb;margin-left:8px;vertical-align:middle">Want to try</span>';
+
+    // Rating dots
+    const _dot = (val, colorActive, emoji) => {
+      const active = rt === val;
+      return '<button onclick="event.stopPropagation();setSavedRating(\'' + eName + '\',\'' + val + '\')" style="width:30px;height:30px;border-radius:50%;border:2px solid ' + (active ? colorActive : 'rgba(0,0,0,.1)') + ';background:' + (active ? colorActive : '#fff') + ';cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;transition:all .15s" title="' + val + '">' + emoji + '</button>';
+    };
+    const ratingDots = '<div style="display:flex;align-items:center;gap:6px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,.04)">'
+      + '<span style="font-size:11px;font-weight:600;color:#aaa;margin-right:2px">Rate:</span>'
+      + _dot('loved', '#22c55e', '\u{1F7E2}')
+      + _dot('solid', '#eab308', '\u{1F7E1}')
+      + _dot('nah', '#ef4444', '\u{1F534}')
+      + statusLabel
+      + '</div>';
+
+    if (catR) {
+      // Render using the full card renderer, then inject rating dots
+      let fullCard = renderCardAR(catR);
+      // Insert rating dots before the closing </div> of the card
+      const lastClose = fullCard.lastIndexOf('</div>');
+      fullCard = fullCard.slice(0, lastClose) + ratingDots + '</div>';
+      html += fullCard;
+    } else {
+      // Fallback for restaurants not in catalog
+      const cuisine = r.cuisine || '';
+      const addr = (r.address || r.neighborhood || '');
+      const mapsUrl = r.place_id ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name)+'&query_place_id='+r.place_id : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' restaurant New York NY');
+      const bookUrl = r.booking_url || '';
+      const platform = r.booking_platform || '';
+      const platformLabel = platform === 'resy' ? 'Resy' : platform === 'opentable' ? 'OpenTable' : platform === 'tock' ? 'Tock' : '';
+      const bookBtn = bookUrl && platformLabel ? '<a href="'+bookUrl+'" target="_blank" rel="noopener" class="bbtn '+platform+'">Book on '+platformLabel+' \u2192</a>' : '<a href="'+mapsUrl+'" target="_blank" rel="noopener" class="bbtn google">Find on Google \u2192</a>';
+      html += '<div class="card"><div class="card-top"><div class="card-name">' + name + '</div></div>'
+        + '<div class="card-sub">' + [cuisine, addr].filter(Boolean).join(' \u00B7 ') + '</div>'
+        + '<div class="actions">' + bookBtn + '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="mapbtn">\u{1F4CD}</a></div>'
+        + ratingDots
+        + '</div>';
+    }
+  });
+
+  el.innerHTML = html;
+}
+
+// ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
+function _getPicks() { try { return JSON.parse(localStorage.getItem('sw_picks') || '{}'); } catch { return {}; } }
+function _setPicks(obj) { localStorage.setItem('sw_picks', JSON.stringify(obj)); }
+function isPicked(name) { return !!_getPicks()[(name||'').toLowerCase().trim()]; }
+function togglePick(name, cardData) {
+  const key = (name||'').toLowerCase().trim();
+  const picks = _getPicks();
+  const count = Object.keys(picks).length;
+  if (!picks[key] && count >= 5) { alert('Max 5! Remove one first.'); return; }
+  if (picks[key]) { delete picks[key]; } else { picks[key] = cardData || { name }; }
+  _setPicks(picks);
+  document.querySelectorAll(`[data-pick-key="${CSS.escape(key)}"]`).forEach(btn => {
+    btn.innerHTML = picks[key]
+      ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>'
+      : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    btn.title = picks[key] ? 'Remove from Share' : 'Add to Share';
+    btn.style.color = picks[key] ? '#ff4500' : '#ccc';
+  });
+  // Update picks badge count on nav
+  _updatePicksBadge();
+  if (document.getElementById('view-picks')?.classList.contains('on')) renderPicksView();
+}
+function _updatePicksBadge() {
+  const count = Object.keys(_getPicks()).length;
+  let badge = document.getElementById('picks-badge');
+  if (count > 0) {
+    if (!badge) {
+      badge = document.createElement('span');
+      badge.id = 'picks-badge';
+      badge.style.cssText = 'position:absolute;top:4px;right:50%;transform:translateX(12px);background:#ff4500;color:#fff;font-size:9px;font-weight:800;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:DM Sans,sans-serif';
+      const navPicks = document.getElementById('nav-picks');
+      if (navPicks) { navPicks.style.position = 'relative'; navPicks.appendChild(badge); }
+    }
+    badge.textContent = count;
+  } else if (badge) { badge.remove(); }
+}
+function renderPicksView() {
+  const picks = _getPicks();
+  const el = document.getElementById('view-picks');
+  const entries = Object.values(picks);
+  const count = entries.length;
+
+  if (!count) {
+    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:40px;margin-bottom:10px">&#127860;</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e;margin-bottom:6px">Share Tonight\'s Options</div><div style="font-size:13px;color:#999;line-height:1.5">Tap the share icon on any restaurant card to add it here.<br>Add 2-5 spots, then share with your person to pick.</div></div>';
+    return;
+  }
+
+  let html = '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px 8px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button><div><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Tonight\'s Options</div><div style="font-size:12px;color:#888;margin-top:2px">' + count + ' of 5 &middot; ' + (count < 2 ? 'add ' + (2 - count) + ' more to share' : 'ready to share!') + '</div></div></div>';
+
   entries.forEach(r => {
     const name = r.name || '';
     const key = name.toLowerCase().trim();
     const cuisine = r.cuisine || '';
+    const price = (r.price_level || 0) > 0 ? '$'.repeat(r.price_level) : '';
     const rating = Number(r.googleRating||0);
-    const reviews = Number(r.googleReviewCount||0);
-    const ratingStr = rating > 0 ? `⭐ ${rating}${reviews > 0 ? ' ('+( reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews)+')' : ''}` : '';
-    const bookUrl = r.booking_url || '';
-    const platform = r.booking_platform || '';
-    const platformLabel = platform === 'resy' ? 'Resy' : platform === 'opentable' ? 'OpenTable' : platform === 'tock' ? 'Tock' : '';
-    const bookBtn = bookUrl && platformLabel ? `<a href="${bookUrl}" target="_blank" rel="noopener" style="display:block;padding:10px;background:#a0344d;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:8px">Book on ${platformLabel} →</a>` : '';
-    const mapsUrl = r.place_id ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name)+'&query_place_id='+r.place_id : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' restaurant New York NY');
+    const ratingStr = rating > 0 ? `&#11088; ${rating}` : '';
+    const neighborhood = r.neighborhood || '';
+    const sub = [cuisine, neighborhood, price].filter(Boolean).join(' &middot; ');
+    const vibes = (r.vibe_tags || []).slice(0, 3);
+    const vibeHtml = vibes.map(v => {
+      const VE = {date_night:'&#127863;',upscale:'&#128142;',lively:'&#128293;',chill:'&#128524;',trendy:'&#10024;',brunch:'&#129374;',outdoor:'&#127807;',late_night:'&#127769;',casual:'&#128085;',hidden_gem:'&#128373;',foodie:'&#127869;'};
+      const VL = {date_night:'Date',upscale:'Upscale',lively:'Lively',chill:'Chill',trendy:'Trendy',brunch:'Brunch',outdoor:'Outdoor',late_night:'Late Night',casual:'Casual',hidden_gem:'Hidden Gem',foodie:'Foodie'};
+      return `<span style="display:inline-flex;align-items:center;padding:2px 7px;border-radius:6px;font-size:10px;font-weight:700;background:#f0f0f0;color:#666">${VE[v]||''} ${VL[v]||v}</span>`;
+    }).join('');
+
     html += `<div class="card" style="margin:0 16px 12px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
-        <div><div class="card-name">${name}</div><div class="card-sub">${cuisine}</div></div>
-        <button data-save-key="${key}" onclick="toggleSave('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:none;font-size:22px;cursor:pointer;color:#d4a373;padding:4px" title="Unsave">★</button>
+        <div style="flex:1;min-width:0">
+          <div class="card-name">${name}</div>
+          <div class="card-sub">${sub}</div>
+          ${ratingStr ? '<div style="margin-top:3px"><span class="badge goog">' + ratingStr + '</span></div>' : ''}
+          ${vibeHtml ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">' + vibeHtml + '</div>' : ''}
+        </div>
+        <button onclick="togglePick('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:36px;height:36px;font-size:16px;cursor:pointer;color:#e74c3c;flex-shrink:0;margin-left:8px" title="Remove">&#10005;</button>
       </div>
-      ${ratingStr ? '<div class="badges"><span class="badge goog">'+ratingStr+'</span></div>' : ''}
-      <div class="actions">${bookBtn || `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn google">Find on Google →</a>`}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
     </div>`;
   });
+
+  // Share section
+  if (count >= 2) {
+    html += `<div style="padding:0 16px 8px">
+      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 100%);border-radius:16px;padding:18px;box-shadow:0 4px 20px rgba(26,26,46,.25)">
+        <div style="font-family:Playfair Display,serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:4px">Ready to share!</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:14px">Send ${count} options and let them pick where to go.</div>
+        <input id="picksFromName" type="text" placeholder="Your name (optional)" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;margin-bottom:10px;background:rgba(255,255,255,.08)" />
+        <div style="display:flex;gap:8px">
+          <button onclick="_sharePicksCopy()" style="flex:1;padding:12px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif">Copy Link</button>
+          <button onclick="_sharePicksSMS()" style="flex:1;padding:12px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif">&#128172; Text It</button>
+        </div>
+        <div id="picksCopiedMsg" style="text-align:center;font-size:12px;color:#34c759;margin-top:8px;display:none">Link copied!</div>
+      </div>
+    </div>`;
+  } else {
+    html += `<div style="text-align:center;padding:16px 20px;font-size:13px;color:#999">Add ${2 - count} more to unlock sharing</div>`;
+  }
+
+  // Clear all
+  html += `<div style="text-align:center;padding:8px 20px 20px"><button onclick="_clearPicks()" style="background:none;border:none;font-size:12px;color:#ccc;cursor:pointer;font-family:DM Sans,sans-serif;font-weight:600">Clear all</button></div>`;
+
   el.innerHTML = html;
 }
+
+async function _generateShareURL() {
+  if (!_sbUser) { alert('Log in first to share!'); return null; }
+  const picks = _getPicks();
+  const entries = Object.values(picks);
+  const fromName = document.getElementById('picksFromName')?.value.trim() || '';
+  const restaurants = entries.map(r => ({
+    name: r.name || '',
+    cuisine: r.cuisine || '',
+    rating: Number(r.googleRating || 0),
+    reviews: Number(r.googleReviewCount || 0),
+    price: r.price_level || 0,
+    neighborhood: r.neighborhood || '',
+    vibes: (r.vibe_tags || []).slice(0, 3),
+    booking_url: r.booking_url || '',
+    platform: r.booking_platform || '',
+    address: r.address || ''
+  }));
+  const session = await _createShareSession(restaurants, fromName || _sbUser.email);
+  if (!session) { alert('Error creating share. Try again.'); return null; }
+  return { url: window.location.origin + '/?share=' + session.id, id: session.id };
+}
+
+async function _sharePicksCopy() {
+  const btnEl = document.querySelector('[onclick="_sharePicksCopy()"]');
+  if (btnEl) { btnEl.textContent = 'Creating...'; btnEl.disabled = true; }
+  const result = await _generateShareURL();
+  if (!result) { if (btnEl) { btnEl.textContent = 'Copy Link'; btnEl.disabled = false; } return; }
+  navigator.clipboard.writeText(result.url).then(() => {
+    const msg = document.getElementById('picksCopiedMsg');
+    if (msg) { msg.textContent = 'Link copied! Share ID: ' + result.id; msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
+    if (btnEl) { btnEl.textContent = 'Copied!'; setTimeout(() => { btnEl.textContent = 'Copy Link'; btnEl.disabled = false; }, 2500); }
+  });
+}
+
+async function _sharePicksSMS() {
+  const result = await _generateShareURL();
+  if (!result) return;
+  const fromName = document.getElementById('picksFromName')?.value.trim() || '';
+  const msg = (fromName || 'I') + ' shared some options for tonight! Pick your favorites: ' + result.url;
+  window.open('sms:?&body=' + encodeURIComponent(msg));
+}
+
+function _clearPicks() {
+  if (!confirm('Clear all options?')) return;
+  localStorage.removeItem('sw_picks');
+  _updatePicksBadge();
+  document.querySelectorAll('[data-pick-key]').forEach(btn => {
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>'; btn.style.color = '#ccc'; btn.title = 'Add to Share';
+  });
+  renderPicksView();
+}
+
+// Init picks badge on load
+_updatePicksBadge();
+
+// ─── SHARE SESSION: VOTE & RESULTS (IN-APP) ─────────────────────────────────
+let _activeShareSession = null;
+let _shareVoteSelected = new Set();
+
+async function _openShareSession(sessionId) {
+  const session = await _getShareSession(sessionId);
+  if (!session) { alert('Share session not found'); return; }
+  _activeShareSession = session;
+  _shareVoteSelected = new Set();
+
+  // Check if user already voted
+  if (_sbUser) {
+    const votes = await _getVotes(sessionId);
+    const myVote = votes.find(v => v.voter_id === _sbUser.id);
+    if (myVote) {
+      // Already voted — show results
+      _showShareResults(session, votes);
+      return;
+    }
+    // Check if user is the creator — also show results if votes exist
+    if (session.creator_id === _sbUser.id && votes.length > 0) {
+      _showShareResults(session, votes);
+      return;
+    }
+  }
+
+  // Show vote screen
+  _showShareVote(session);
+}
+
+function _showShareVote(session) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.getElementById('view-sharevote').classList.add('on');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const restaurants = session.restaurants || [];
+  const from = session.creator_name || 'Someone';
+
+  let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
+  html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">' + from + '\u2019s Picks</div><div style="font-size:13px;color:#888;margin-top:4px">Tap the ones you\u2019d want to go to</div></div>';
+
+  restaurants.forEach((r, i) => {
+    const name = r.name || '';
+    const price = r.price > 0 ? '$'.repeat(r.price) : '';
+    const sub = [r.cuisine, r.neighborhood, price].filter(Boolean).join(' \u00B7 ');
+    const rating = r.rating > 0 ? '\u2B50 ' + r.rating : '';
+    const vibes = (r.vibes || []).map(v => {
+      const VL = {date_night:'Date',upscale:'Upscale',lively:'Lively',chill:'Chill',trendy:'Trendy',brunch:'Brunch',outdoor:'Outdoor',late_night:'Late Night',casual:'Casual',hidden_gem:'Hidden Gem',foodie:'Foodie'};
+      return '<span class="badge vibe">' + (VL[v]||v) + '</span>';
+    }).join('');
+
+    html += '<div class="card" id="sv-card-' + i + '" onclick="_toggleShareVote(' + i + ')" style="margin:0 16px 10px;cursor:pointer;border:2px solid rgba(0,0,0,.06);transition:all .2s">'
+      + '<div style="display:flex;justify-content:space-between;align-items:flex-start">'
+        + '<div style="flex:1"><div class="card-name">' + name + '</div><div class="card-sub">' + sub + (rating ? ' \u00B7 ' + rating : '') + '</div></div>'
+        + '<div id="sv-check-' + i + '" style="width:28px;height:28px;border-radius:50%;border:2px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:14px;color:transparent;flex-shrink:0;transition:all .2s">\u2713</div>'
+      + '</div>'
+      + (vibes ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">' + vibes + '</div>' : '')
+    + '</div>';
+  });
+
+  // Submit button
+  html += '<div style="padding:16px 20px 32px;position:sticky;bottom:0;background:linear-gradient(0deg,#f7f5f2 70%,transparent)">'
+    + '<button id="sv-submit-btn" onclick="_submitShareVote()" disabled style="width:100%;padding:16px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#ff4500;color:#fff;opacity:.5;box-shadow:0 3px 16px rgba(255,69,0,.25)">Pick at least 1</button>'
+    + '</div>';
+
+  document.getElementById('sharevote-content').innerHTML = html;
+}
+
+function _toggleShareVote(idx) {
+  const card = document.getElementById('sv-card-' + idx);
+  const check = document.getElementById('sv-check-' + idx);
+  if (_shareVoteSelected.has(idx)) {
+    _shareVoteSelected.delete(idx);
+    card.style.borderColor = 'rgba(0,0,0,.06)';
+    card.style.background = '#fff';
+    check.style.borderColor = 'rgba(0,0,0,.12)';
+    check.style.background = '#fff';
+    check.style.color = 'transparent';
+  } else {
+    _shareVoteSelected.add(idx);
+    card.style.borderColor = '#ff4500';
+    card.style.background = 'linear-gradient(135deg,#fff5f0,#fff)';
+    check.style.borderColor = '#ff4500';
+    check.style.background = '#ff4500';
+    check.style.color = '#fff';
+  }
+  const btn = document.getElementById('sv-submit-btn');
+  if (_shareVoteSelected.size > 0) {
+    btn.disabled = false; btn.style.opacity = '1';
+    btn.textContent = 'Done (' + _shareVoteSelected.size + ' selected)';
+  } else {
+    btn.disabled = true; btn.style.opacity = '.5';
+    btn.textContent = 'Pick at least 1';
+  }
+}
+
+async function _submitShareVote() {
+  if (!_sbUser || !_activeShareSession) { alert('Log in first!'); return; }
+  const btn = document.getElementById('sv-submit-btn');
+  btn.textContent = 'Saving...'; btn.disabled = true;
+  await _submitVote(_activeShareSession.id, [..._shareVoteSelected]);
+  const votes = await _getVotes(_activeShareSession.id);
+  _showShareResults(_activeShareSession, votes);
+}
+
+function _showShareResults(session, votes) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.getElementById('view-sharevote').classList.add('on');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+  const restaurants = session.restaurants || [];
+  const from = session.creator_name || 'Someone';
+
+  // Collect all votes
+  const voteCounts = {};
+  restaurants.forEach((_, i) => { voteCounts[i] = []; });
+  votes.forEach(v => {
+    (v.picks || []).forEach(idx => {
+      if (voteCounts[idx]) voteCounts[idx].push(v.voter_name || 'Someone');
+    });
+  });
+  // Creator voted for all (they picked them)
+  restaurants.forEach((_, i) => {
+    if (!voteCounts[i].includes(from)) voteCounts[i].push(from);
+  });
+
+  // Matches = picked by 2+ people (creator + at least one voter)
+  const matches = [];
+  const noMatches = [];
+  restaurants.forEach((r, i) => {
+    if (voteCounts[i].length >= 2) matches.push({ ...r, idx: i, voters: voteCounts[i] });
+    else noMatches.push({ ...r, idx: i, voters: voteCounts[i] });
+  });
+
+  let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
+  html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">The Results</div><div style="font-size:13px;color:#888;margin-top:4px">' + from + ' & friends</div></div>';
+
+  // Verdict
+  if (matches.length === 0) {
+    html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F62D}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">No matches yet</div><div style="font-size:13px;color:#888;margin-top:6px">Waiting for votes or try different picks!</div></div>';
+  } else if (matches.length === 1) {
+    html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F389}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">You matched on 1 spot!</div><div style="font-size:13px;color:#888;margin-top:6px">Looks like you\u2019re going to ' + matches[0].name + '</div></div>';
+  } else {
+    html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F60D}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">' + matches.length + ' matches!</div><div style="font-size:13px;color:#888;margin-top:6px">You both want to go to these</div></div>';
+  }
+
+  // Match cards
+  matches.forEach(r => {
+    const sub = [r.cuisine, r.neighborhood, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    const bookBtn = r.booking_url ? '<a href="' + r.booking_url + '" target="_blank" rel="noopener" style="display:block;padding:10px;background:#ff4500;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:10px">Book Now \u2192</a>' : '';
+    html += '<div style="background:linear-gradient(135deg,#fff5f0,#fff);border:2px solid #ff4500;border-radius:18px;padding:18px;margin:0 16px 12px;box-shadow:0 4px 20px rgba(255,69,0,.1)">'
+      + '<div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ff4500;margin-bottom:8px">\u2705 Match</div>'
+      + '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#1a1a2e">' + r.name + '</div>'
+      + '<div style="font-size:12px;color:#888;margin-top:4px">' + sub + '</div>'
+      + bookBtn
+    + '</div>';
+  });
+
+  // No match cards
+  noMatches.forEach(r => {
+    const sub = [r.cuisine, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    html += '<div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:16px 18px;margin:0 16px 10px;opacity:.6">'
+      + '<div style="font-family:Playfair Display,serif;font-size:16px;font-weight:700;color:#1a1a2e">' + r.name + '</div>'
+      + '<div style="font-size:12px;color:#888;margin-top:4px">' + sub + '</div>'
+    + '</div>';
+  });
+
+  html += '<div style="padding:16px 20px 32px"><button onclick="switchNav(\'home\')" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#1a1a2e;color:#fff;box-shadow:0 3px 16px rgba(26,26,46,.2)">Browse More Restaurants</button></div>';
+
+  document.getElementById('sharevote-content').innerHTML = html;
+}
+
+// ─── CHECK FOR SHARE LINK ON LOAD ───────────────────────────────────────────
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('share')) {
+    const sid = params.get('share');
+    // Wait for auth, then open
+    const _waitAuth = setInterval(async () => {
+      await _sbGetUser();
+      if (_sbUser) {
+        clearInterval(_waitAuth);
+        _openShareSession(sid);
+      } else {
+        // Show login prompt
+        clearInterval(_waitAuth);
+        _updateAuthUI();
+        // Store share ID to open after login
+        window._pendingShareId = sid;
+      }
+    }, 500);
+    // Also listen for auth change
+    _sb.auth.onAuthStateChange(async (event, session) => {
+      if (session?.user && window._pendingShareId) {
+        const sid = window._pendingShareId;
+        delete window._pendingShareId;
+        setTimeout(() => _openShareSession(sid), 500);
+      }
+    });
+  }
+})();
 
 // ─── RESTAURANT AUTOCOMPLETE ─────────────────────────────────────────────────
 let _restNames = null;
@@ -1622,6 +2290,7 @@ function switchNav(name) {
     showView('drinks');
   }
   else if (name === 'saved') { showView('saved'); renderSavedView(); }
+  else if (name === 'picks') { showView('picks'); renderPicksView(); }
   else if (name === 'concierge') { showView('concierge'); loadConcierge(); }
   else if (name === 'map') { showView('map'); initMap(); }
   else showView(name);
@@ -1720,7 +2389,7 @@ async function loadConcierge() {
 
 function setTrendFilter(buzz, btn) {
   if (buzz === 'any') {
-    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
+    homeState.trendFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising'];
     homeState.trendFilter = 'any';
     document.querySelectorAll('#trendingChips .fchip').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
@@ -2368,8 +3037,17 @@ function renderCard(r, isRadar) {
 
   const _skey = (r.name||'').toLowerCase().trim();
   const _saved = isSaved(r.name);
-  const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||''}).replace(/'/g,'&#39;');
-  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer;color:${_saved?'#d4a373':'#ccc'};flex-shrink:0" title="${_saved?'Unsave':'Save'}">${_saved?'★':'☆'}</button>`;
+  const _saveData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||'',price_level:r.price_level||0,neighborhood:r.neighborhood||'',vibe_tags:r.vibe_tags||[],address:r.vicinity||r.formatted_address||''}).replace(/'/g,'&#39;');
+  const _svgSave = _saved
+    ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="#d4a373" stroke="#d4a373" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+  const saveBtn = `<button data-save-key="${_skey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_saveData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_saved?'#d4a373':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_saved?'Unsave':'Save'}">${_svgSave}</button>`;
+  const _picked = isPicked(r.name);
+  const _pickData = _saveData;
+  const _svgShare = _picked
+    ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>'
+    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+  const pickBtn = `<button data-pick-key="${_skey}" onclick="togglePick('${(r.name||'').replace(/'/g,"\\'")}',${_pickData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_picked?'#ff4500':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_picked?'Remove from Share':'Add to Share'}">${_svgShare}</button>`;
 
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card${isRadar?' dim':''}" id="${_cardId}">
@@ -2378,7 +3056,7 @@ function renderCard(r, isRadar) {
     ${vibeHtml}
     ${badgesHtml}
     ${availHtml}
-    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a>${saveBtn}</div>
+    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a>${pickBtn}${saveBtn}</div>
     ${pressHtml}
     ${cardLinks}
   </div>`;
@@ -2873,7 +3551,7 @@ function arSetHotspot(val, btn) {
       if (hsToggle) hsToggle.classList.remove('open');
     } else {
       // Turn on "All" hotspot types
-      arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','google_amazing','exceptional','new_rising'];
+      arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising'];
       arState.hotspotFilter = 'any';
       document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
       btn.classList.add('on');
@@ -3155,6 +3833,19 @@ function renderCardAR(r) {
     vibeHtmlAR = `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px">${pills}</div>`;
   }
 
+  const _arKey = (r.name||'').toLowerCase().trim();
+  const _arCardData = JSON.stringify({name:r.name,cuisine:r.cuisine||'',googleRating:r.googleRating||0,googleReviewCount:r.googleReviewCount||0,booking_platform:r.booking_platform||'',booking_url:r.booking_url||'',place_id:r.place_id||'',website:r.website||'',price_level:r.price_level||0,neighborhood:r.neighborhood||'',vibe_tags:r.vibe_tags||[],address:r.vicinity||r.formatted_address||''}).replace(/'/g,'&#39;');
+  const _arSaved = isSaved(r.name);
+  const _arSvgSave = _arSaved
+    ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="#d4a373" stroke="#d4a373" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+  const arSaveBtn = `<button data-save-key="${_arKey}" onclick="toggleSave('${(r.name||'').replace(/'/g,"\\'")}',${_arCardData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_arSaved?'#d4a373':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_arSaved?'Unsave':'Save'}">${_arSvgSave}</button>`;
+  const _arPicked = isPicked(r.name);
+  const _arSvgShare = _arPicked
+    ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>'
+    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+  const arPickBtn = `<button data-pick-key="${_arKey}" onclick="togglePick('${(r.name||'').replace(/'/g,"\\'")}',${_arCardData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_arPicked?'#ff4500':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_arPicked?'Remove from Share':'Add to Share'}">${_arSvgShare}</button>`;
+
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card" id="${_cardId}">
     <div class="card-top"><div class="card-name">${name}</div>${price}</div>
@@ -3162,7 +3853,7 @@ function renderCardAR(r) {
     ${vibeHtmlAR}
     ${badges ? `<div class="badges">${badges}</div>` : ''}
     ${availHtml}
-    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a></div>
+    <div class="actions">${bookBtn}<a href="${mapsUrl}" target="_blank" rel="noopener" class="mapbtn">📍</a>${arPickBtn}${arSaveBtn}</div>
     ${cardLinks}
   </div>`;
 }

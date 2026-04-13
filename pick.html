@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Table for Two - SeatWize</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .container{max-width:520px;margin:0 auto;min-height:100vh;position:relative}
+    @media(min-width:520px){body{padding:16px}.container{border-radius:24px;overflow:hidden;box-shadow:0 8px 60px rgba(0,0,0,0.12);min-height:auto}}
+
+    .pick-header{padding:24px 20px 16px;background:linear-gradient(180deg,#fff 0%,#f7f5f2 100%)}
+    .pick-logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#999;letter-spacing:-.3px;margin-bottom:8px}
+    .pick-logo a{color:inherit;text-decoration:none}
+    .pick-logo span{color:#ff4500}
+    .pick-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#1a1a2e;letter-spacing:-.5px;line-height:1.15}
+    .pick-subtitle{font-size:13px;color:#888;margin-top:6px;line-height:1.5}
+
+    /* Vote cards */
+    .vote-card{background:#fff;border:2px solid rgba(0,0,0,.06);border-radius:18px;padding:18px;margin:0 20px 12px;cursor:pointer;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.04);-webkit-tap-highlight-color:transparent}
+    .vote-card:active{transform:scale(.98)}
+    .vote-card.selected{border-color:#ff4500;background:linear-gradient(135deg,#fff5f0 0%,#fff 100%);box-shadow:0 4px 20px rgba(255,69,0,.12)}
+    .vote-card .check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:14px;color:transparent;transition:all .2s;flex-shrink:0}
+    .vote-card.selected .check{border-color:#ff4500;background:#ff4500;color:#fff}
+    .vote-card-top{display:flex;align-items:center;gap:12px}
+    .vote-card-info{flex:1;min-width:0}
+    .vote-card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1a2e}
+    .vote-card-sub{font-size:12px;color:#888;margin-top:4px;line-height:1.4}
+    .vote-card-badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+    .vote-badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:8px;font-size:10px;font-weight:700;background:#f0f0f0;color:#666}
+
+    /* CTA */
+    .pick-cta{padding:16px 20px 32px;position:sticky;bottom:0;background:linear-gradient(0deg,#f7f5f2 70%,transparent)}
+    .pick-btn{width:100%;padding:16px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+    .pick-btn.primary{background:#ff4500;color:#fff;box-shadow:0 3px 16px rgba(255,69,0,0.25)}
+    .pick-btn.primary:hover{background:#e03c00;transform:translateY(-1px)}
+    .pick-btn.primary:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+    .pick-btn.secondary{background:#1a1a2e;color:#fff;box-shadow:0 3px 16px rgba(26,26,46,0.2)}
+
+    /* Results */
+    .results-match{background:linear-gradient(135deg,#fff5f0,#fff);border:2px solid #ff4500;border-radius:18px;padding:18px;margin:0 20px 12px;box-shadow:0 4px 20px rgba(255,69,0,.1)}
+    .results-match .match-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ff4500;margin-bottom:8px}
+    .results-match .book-link{display:block;padding:10px;background:#ff4500;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:10px}
+    .results-no{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:16px 18px;margin:0 20px 10px;opacity:.6}
+    .results-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1a2e}
+    .results-sub{font-size:12px;color:#888;margin-top:4px}
+    .results-verdict{text-align:center;padding:20px;margin:0 20px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)}
+    .results-emoji{font-size:48px;margin-bottom:8px}
+    .results-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#1a1a2e}
+    .results-detail{font-size:13px;color:#888;margin-top:6px}
+
+    .screen{display:none}.screen.on{display:block}
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ════════════════════ VOTE SCREEN ════════════════════ -->
+  <div class="screen" id="screen-vote">
+    <div class="pick-header">
+      <div class="pick-logo"><a href="/">Seat<span>Wize</span></a></div>
+      <div class="pick-title" id="voteTitle">Pick your favorites</div>
+      <div class="pick-subtitle" id="voteSubtitle">Tap the ones you'd want to go to.</div>
+    </div>
+    <div id="voteCards"></div>
+    <div class="pick-cta">
+      <input id="voterName" type="text" placeholder="Your name (optional)" style="width:100%;padding:12px 14px;border:1px solid rgba(0,0,0,.08);border-radius:12px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:10px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
+      <button class="pick-btn primary" id="voteBtn" disabled onclick="submitVotes()">Pick at least 1</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════ RESULTS SCREEN ════════════════════ -->
+  <div class="screen" id="screen-results">
+    <div class="pick-header">
+      <div class="pick-logo"><a href="/">Seat<span>Wize</span></a></div>
+      <div class="pick-title" id="resultsTitle">Results</div>
+      <div class="pick-subtitle" id="resultsSubtitle"></div>
+    </div>
+    <div id="resultsVerdict"></div>
+    <div id="resultsCards"></div>
+    <div class="pick-cta">
+      <button class="pick-btn secondary" onclick="window.location.href='/'">Browse Restaurants on SeatWize</button>
+    </div>
+  </div>
+
+  <!-- ════════════════════ ERROR / FALLBACK ════════════════════ -->
+  <div class="screen" id="screen-error">
+    <div class="pick-header">
+      <div class="pick-logo"><a href="/">Seat<span>Wize</span></a></div>
+      <div class="pick-title">Hmm, that link didn't work</div>
+      <div class="pick-subtitle">It may have expired or been copied incorrectly.</div>
+    </div>
+    <div class="pick-cta">
+      <button class="pick-btn secondary" onclick="window.location.href='/'">Go to SeatWize</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function tc(s){return s?s.replace(/\b\w/g,l=>l.toUpperCase()).replace(/'\w/g,m=>m.toLowerCase()):''}
+
+const VEMOJI={date_night:'\u{1F377}',upscale:'\u{1F48E}',lively:'\u{1F525}',chill:'\u{1F60C}',trendy:'\u2728',brunch:'\u{1F95E}',outdoor:'\u{1F33F}',late_night:'\u{1F319}',casual:'\u{1F455}',hidden_gem:'\u{1F575}',foodie:'\u{1F37D}'};
+const VLABEL={date_night:'Date',upscale:'Upscale',lively:'Lively',chill:'Chill',trendy:'Trendy',brunch:'Brunch',outdoor:'Outdoor',late_night:'Late Night',casual:'Casual',hidden_gem:'Hidden Gem',foodie:'Foodie'};
+
+let votes = {};
+
+(function init() {
+  const hash = window.location.hash.slice(1);
+  const params = new URLSearchParams(hash);
+
+  if (params.has('vote')) {
+    try {
+      showVoteScreen(JSON.parse(atob(params.get('vote'))));
+    } catch(e) {
+      document.getElementById('screen-error').classList.add('on');
+    }
+    return;
+  }
+
+  if (params.has('results')) {
+    try {
+      showResultsScreen(JSON.parse(atob(params.get('results'))));
+    } catch(e) {
+      document.getElementById('screen-error').classList.add('on');
+    }
+    return;
+  }
+
+  // No valid hash — redirect to main app
+  window.location.href = '/';
+})();
+
+function showVoteScreen(data) {
+  document.getElementById('screen-vote').classList.add('on');
+  const from = data.from || 'Someone';
+  document.getElementById('voteTitle').textContent = from + '\u2019s Picks';
+  document.getElementById('voteSubtitle').textContent = 'Tap the restaurants you\u2019d want to go to.';
+
+  votes = { data, selected: new Set() };
+
+  document.getElementById('voteCards').innerHTML = data.picks.map((r, i) => {
+    const price = r.price > 0 ? '$'.repeat(r.price) : '';
+    const rating = r.rating > 0 ? '\u2B50 ' + r.rating : '';
+    const revStr = r.reviews > 0 ? ' (' + (r.reviews >= 1000 ? (r.reviews/1000).toFixed(1)+'k' : r.reviews) + ')' : '';
+    const vibes = (r.vibes || []).map(v =>
+      '<span class="vote-badge">' + (VEMOJI[v]||'') + ' ' + (VLABEL[v]||v) + '</span>'
+    ).join('');
+    const sub = [r.cuisine, r.neighborhood, price].filter(Boolean).join(' \u00B7 ');
+
+    return '<div class="vote-card" id="vote-' + i + '" onclick="toggleVote(' + i + ')">' +
+      '<div class="vote-card-top">' +
+        '<div class="vote-card-info">' +
+          '<div class="vote-card-name">' + tc(r.name) + '</div>' +
+          '<div class="vote-card-sub">' + sub + (rating ? ' \u00B7 ' + rating + revStr : '') + '</div>' +
+        '</div>' +
+        '<div class="check">\u2713</div>' +
+      '</div>' +
+      (vibes ? '<div class="vote-card-badges">' + vibes + '</div>' : '') +
+    '</div>';
+  }).join('');
+}
+
+function toggleVote(idx) {
+  const card = document.getElementById('vote-' + idx);
+  if (votes.selected.has(idx)) { votes.selected.delete(idx); card.classList.remove('selected'); }
+  else { votes.selected.add(idx); card.classList.add('selected'); }
+  const btn = document.getElementById('voteBtn');
+  if (votes.selected.size > 0) { btn.disabled = false; btn.textContent = 'Done (' + votes.selected.size + ' selected)'; }
+  else { btn.disabled = true; btn.textContent = 'Pick at least 1'; }
+}
+
+function submitVotes() {
+  if (votes.selected.size === 0) return;
+  const voterName = document.getElementById('voterName').value.trim();
+  const payload = {
+    from: votes.data.from || 'Someone',
+    voter: voterName || 'Your person',
+    picks: votes.data.picks,
+    senderPicks: votes.data.picks.map((_, i) => i),
+    voterPicks: [...votes.selected]
+  };
+  const encoded = btoa(JSON.stringify(payload));
+  window.location.hash = '#results=' + encoded;
+  showResultsScreen(payload);
+}
+
+function showResultsScreen(data) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('on'));
+  document.getElementById('screen-results').classList.add('on');
+
+  const from = data.from || 'Someone';
+  const voter = data.voter || 'Your person';
+  const picks = data.picks || [];
+  const voterPicks = new Set(data.voterPicks || []);
+  const matches = picks.filter((_, i) => voterPicks.has(i));
+  const noMatches = picks.filter((_, i) => !voterPicks.has(i));
+
+  document.getElementById('resultsTitle').textContent = 'The Results';
+  document.getElementById('resultsSubtitle').textContent = from + ' & ' + voter;
+
+  let verdictHtml = '';
+  if (matches.length === 0) {
+    verdictHtml = '<div class="results-verdict"><div class="results-emoji">\u{1F62D}</div><div class="results-text">No matches this time</div><div class="results-detail">Try again with different picks!</div></div>';
+  } else if (matches.length === 1) {
+    verdictHtml = '<div class="results-verdict"><div class="results-emoji">\u{1F389}</div><div class="results-text">You matched on 1 spot!</div><div class="results-detail">Looks like you\'re going to ' + tc(matches[0].name) + '</div></div>';
+  } else {
+    verdictHtml = '<div class="results-verdict"><div class="results-emoji">\u{1F60D}</div><div class="results-text">' + matches.length + ' matches!</div><div class="results-detail">You both want to go to these spots</div></div>';
+  }
+  document.getElementById('resultsVerdict').innerHTML = verdictHtml;
+
+  let cardsHtml = '';
+  matches.forEach(r => {
+    const sub = [r.cuisine, r.neighborhood, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    const bookBtn = r.booking_url ? '<a href="' + r.booking_url + '" target="_blank" rel="noopener" class="book-link">Book Now \u2192</a>' : '';
+    cardsHtml += '<div class="results-match"><div class="match-label">\u2705 Match</div><div class="results-name">' + tc(r.name) + '</div><div class="results-sub">' + sub + '</div>' + bookBtn + '</div>';
+  });
+  noMatches.forEach(r => {
+    const sub = [r.cuisine, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    cardsHtml += '<div class="results-no"><div class="results-name">' + tc(r.name) + '</div><div class="results-sub">' + sub + '</div></div>';
+  });
+  document.getElementById('resultsCards').innerHTML = cardsHtml;
+}
+</script>
+</body>
+</html>
