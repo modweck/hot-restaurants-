@@ -2140,35 +2140,30 @@ function _toggleShareVote(idx) {
 async function _submitShareVote() {
   if (!_sbUser || !_activeShareSession) { alert('Log in first!'); return; }
   var btn = document.getElementById('sv-submit-btn');
-  btn.textContent = 'Saving...'; btn.disabled = true;
-  await _submitVote(_activeShareSession.id, [..._shareVoteSelected]);
-  var votes = await _getVotes(_activeShareSession.id);
+  btn.textContent = 'Sending...'; btn.disabled = true;
 
-  // Auto-text results back to sender
   var session = _activeShareSession;
   var restaurants = session.restaurants || [];
-  var from = session.creator_name || 'Someone';
   var voterName = (_sbUser ? (_sbUser.email || '') : '').split('@')[0] || 'Your friend';
   var senderPhone = window._senderPhone || '';
   var resultsUrl = window.location.origin + '/?share=' + session.id;
-
-  // Figure out matches
   var myPicks = [..._shareVoteSelected];
   var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
   var firstMatch = restaurants[myPicks[0]] || {};
   var bookUrl = firstMatch.booking_url || resultsUrl;
+  var smsBody = voterName + ' chose ' + matchNames.join(', ') + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
 
-  var smsBody = voterName + ' chose ' + matchNames.join(', ') + '! Book now: ' + bookUrl + '\n\nSee full results: ' + resultsUrl;
-
-  // Open SMS automatically with sender's number pre-filled
+  // Open SMS immediately — don't wait for Supabase
   var a = document.createElement('a');
   a.href = senderPhone ? ('sms:' + senderPhone + '?&body=' + encodeURIComponent(smsBody)) : ('sms:?&body=' + encodeURIComponent(smsBody));
   a.click();
 
-  // Then show results page
-  setTimeout(function() {
-    _showShareResults(session, votes);
-  }, 500);
+  // Save vote to Supabase in background
+  _submitVote(session.id, myPicks).then(function() {
+    return _getVotes(session.id);
+  }).then(function(votes) {
+    _showShareResults(session, votes || []);
+  });
 }
 
 function _showShareResults(session, votes) {
