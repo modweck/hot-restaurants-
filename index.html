@@ -2011,7 +2011,9 @@ async function _shareSendSMS() {
     if (!_shareURL) _shareURL = await _createShareAndGetURL();
     if (!_shareURL) { if (smsBtn) { smsBtn.textContent = 'Text'; smsBtn.disabled = false; } return; }
     var senderName = _shareURL.senderName || 'Someone';
-    var msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + _shareURL.url;
+    // Add sender's phone to the share URL so friend can text back
+    var shareUrlWithPhone = _shareURL.url + (phone ? '&ph=' + encodeURIComponent(phone) : '');
+    var msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + shareUrlWithPhone;
     if (smsBtn) smsBtn.textContent = 'Opening text...';
     var a = document.createElement('a');
     a.href = phone ? ('sms:' + phone + '?&body=' + encodeURIComponent(msg)) : ('sms:?&body=' + encodeURIComponent(msg));
@@ -2137,11 +2139,36 @@ function _toggleShareVote(idx) {
 
 async function _submitShareVote() {
   if (!_sbUser || !_activeShareSession) { alert('Log in first!'); return; }
-  const btn = document.getElementById('sv-submit-btn');
+  var btn = document.getElementById('sv-submit-btn');
   btn.textContent = 'Saving...'; btn.disabled = true;
   await _submitVote(_activeShareSession.id, [..._shareVoteSelected]);
-  const votes = await _getVotes(_activeShareSession.id);
-  _showShareResults(_activeShareSession, votes);
+  var votes = await _getVotes(_activeShareSession.id);
+
+  // Auto-text results back to sender
+  var session = _activeShareSession;
+  var restaurants = session.restaurants || [];
+  var from = session.creator_name || 'Someone';
+  var voterName = (_sbUser ? (_sbUser.email || '') : '').split('@')[0] || 'Your friend';
+  var senderPhone = window._senderPhone || '';
+  var resultsUrl = window.location.origin + '/?share=' + session.id;
+
+  // Figure out matches
+  var myPicks = [..._shareVoteSelected];
+  var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
+  var firstMatch = restaurants[myPicks[0]] || {};
+  var bookUrl = firstMatch.booking_url || resultsUrl;
+
+  var smsBody = voterName + ' chose ' + matchNames.join(', ') + '! Book now: ' + bookUrl + '\n\nSee full results: ' + resultsUrl;
+
+  // Open SMS automatically with sender's number pre-filled
+  var a = document.createElement('a');
+  a.href = senderPhone ? ('sms:' + senderPhone + '?&body=' + encodeURIComponent(smsBody)) : ('sms:?&body=' + encodeURIComponent(smsBody));
+  a.click();
+
+  // Then show results page
+  setTimeout(function() {
+    _showShareResults(session, votes);
+  }, 500);
 }
 
 function _showShareResults(session, votes) {
@@ -2243,6 +2270,7 @@ function _showShareResults(session, votes) {
   var params = new URLSearchParams(window.location.search);
   if (params.has('share')) {
     window._pendingShareId = params.get('share');
+    window._senderPhone = params.get('ph') || '';
   }
 })();
 
