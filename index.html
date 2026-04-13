@@ -1888,12 +1888,9 @@ function renderPicksView() {
   if (count >= 2) {
     html += `<div style="padding:0 16px 12px">
       <div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">
-        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">When?</div>
-        <div style="margin-bottom:10px">
-          <div style="font-size:11px;color:#888;margin-bottom:4px">Date</div>
-          <select id="shareDate" style="width:100%;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;appearance:auto">
-            ${(function(){var opts='';var d=new Date();for(var i=0;i<7;i++){var dd=new Date(d);dd.setDate(d.getDate()+i);var label=i===0?'Tonight':i===1?'Tomorrow':dd.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});var val=dd.toISOString().split('T')[0];opts+='<option value="'+val+'">'+label+'</option>';}return opts;})()}
-          </select>
+        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">When? <span style="font-weight:500;color:#ccc">(pick up to 3)</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+          ${(function(){var chips='';var d=new Date();for(var i=0;i<7;i++){var dd=new Date(d);dd.setDate(d.getDate()+i);var label=i===0?'Tonight':i===1?'Tomorrow':dd.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});var val=dd.toISOString().split('T')[0];chips+='<button data-share-date="'+val+'" onclick="_toggleShareDate(this,\''+val+'\',\''+label+'\')" style="padding:8px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;font-family:DM Sans,sans-serif;transition:all .15s">'+label+'</button>';}return chips;})()}
         </div>
         <div style="display:flex;gap:8px;margin-bottom:8px">
           <div style="flex:1">
@@ -1987,13 +1984,10 @@ async function _createShareAndGetURL() {
   // Get time range
   var timeFromEl = document.getElementById('shareTimeFrom');
   var timeToEl = document.getElementById('shareTimeTo');
-  var dateEl = document.getElementById('shareDate');
   var timeFrom = timeFromEl ? timeFromEl.value : '6:00pm';
   var timeTo = timeToEl ? timeToEl.value : '9:00pm';
-  var shareDate = dateEl ? dateEl.value : new Date().toISOString().split('T')[0];
-  // Format date for display
-  var shareDateDisplay = '';
-  try { var dd = new Date(shareDate + 'T12:00:00'); shareDateDisplay = dd.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'}); } catch(e) { shareDateDisplay = shareDate; }
+  var shareDateLabels = _shareDates.map(function(d) { return d.label; });
+  var shareDateDisplay = shareDateLabels.length > 0 ? shareDateLabels.join(', ') : 'Tonight';
 
   const restaurants = entries.map(r => ({
     name: r.name || '',
@@ -2008,7 +2002,7 @@ async function _createShareAndGetURL() {
     address: r.address || '',
     timeFrom: timeFrom,
     timeTo: timeTo,
-    date: shareDate,
+    dates: _shareDates.map(function(d) { return d.val; }),
     dateDisplay: shareDateDisplay
   }));
   const senderName = (_sbUser.email || '').split('@')[0];
@@ -2037,6 +2031,24 @@ function _showShareMsg(text, color) {
 }
 
 var _shareURL = null;
+var _shareDates = []; // [{val:'2026-04-13', label:'Tonight'}, ...]
+
+function _toggleShareDate(btn, val, label) {
+  var idx = _shareDates.findIndex(function(d) { return d.val === val; });
+  if (idx >= 0) {
+    _shareDates.splice(idx, 1);
+    btn.style.background = '#fff';
+    btn.style.color = '#666';
+    btn.style.borderColor = 'rgba(0,0,0,.08)';
+  } else {
+    if (_shareDates.length >= 3) { return; }
+    _shareDates.push({ val: val, label: label });
+    btn.style.background = '#ff4500';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#ff4500';
+  }
+  _shareURL = null; // Clear cache when dates change
+}
 
 async function _shareSendToEmail() {
   try {
@@ -2103,7 +2115,9 @@ _updatePicksBadge();
 var _activeShareSession = null;
 var _shareVoteSelected = new Set();
 var _shareSelectedTime = '';
+var _shareSelectedDate = '';
 var _shareTimeSlotCount = 0;
+var _shareDateCount = 0;
 
 function _selectShareTime(idx, timeStr) {
   // Deselect all time buttons
@@ -2119,15 +2133,33 @@ function _selectShareTime(idx, timeStr) {
   _updateVoteBtn();
 }
 
+function _selectShareDate(idx, label) {
+  for (var i = 0; i < _shareDateCount; i++) {
+    var b = document.getElementById('sv-date-' + i);
+    if (b) { b.style.background = '#fff'; b.style.color = '#666'; b.style.borderColor = 'rgba(0,0,0,.08)'; }
+  }
+  var btn = document.getElementById('sv-date-' + idx);
+  if (btn) { btn.style.background = '#ff4500'; btn.style.color = '#fff'; btn.style.borderColor = '#ff4500'; }
+  _shareSelectedDate = label;
+  _updateVoteBtn();
+}
+
 function _updateVoteBtn() {
   var btn = document.getElementById('sv-submit-btn');
   if (!btn) return;
-  if (_shareVoteSelected.size > 0 && _shareSelectedTime) {
+  var needsDate = _shareDateCount > 1;
+  var hasDate = !needsDate || _shareSelectedDate;
+  var details = [];
+  if (_shareSelectedTime) details.push(_shareSelectedTime);
+  if (_shareSelectedDate) details.push(_shareSelectedDate);
+  var detailStr = details.length > 0 ? ' \u2014 ' + details.join(', ') : '';
+
+  if (_shareVoteSelected.size > 0 && _shareSelectedTime && hasDate) {
     btn.disabled = false; btn.style.opacity = '1';
-    btn.textContent = 'Done \u2014 ' + _shareVoteSelected.size + ' pick' + (_shareVoteSelected.size > 1 ? 's' : '') + ' at ' + _shareSelectedTime;
+    btn.textContent = 'Done' + detailStr;
   } else if (_shareVoteSelected.size > 0) {
     btn.disabled = false; btn.style.opacity = '.7';
-    btn.textContent = 'Pick a time';
+    btn.textContent = !_shareSelectedTime ? 'Pick a time' : 'Pick a date';
   } else {
     btn.disabled = true; btn.style.opacity = '.5';
     btn.textContent = 'Pick at least 1 restaurant';
@@ -2170,8 +2202,22 @@ function _showShareVote(session) {
 
   let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
   var dateDisplay = (restaurants[0] || {}).dateDisplay || '';
+  var dates = (restaurants[0] || {}).dates || [];
   var dateLabel = dateDisplay ? ' for ' + dateDisplay : '';
   html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">' + from + '\u2019s Picks</div><div style="font-size:13px;color:#888;margin-top:4px">Tap the ones you\u2019d want to go to' + dateLabel + '</div></div>';
+
+  // Date picker for friend — if multiple dates, let them pick one
+  if (dates.length > 1) {
+    var dateLabels = dateDisplay.split(', ');
+    html += '<div style="margin:0 16px 12px;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">'
+      + '<div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Which date works?</div>'
+      + '<div style="display:flex;flex-wrap:wrap;gap:6px">';
+    dates.forEach(function(dval, i) {
+      var dlabel = dateLabels[i] || dval;
+      html += '<button id="sv-date-' + i + '" onclick="_selectShareDate(' + i + ',\'' + dlabel.replace(/'/g, '') + '\')" style="padding:8px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;font-size:13px;font-weight:600;color:#666;font-family:DM Sans,sans-serif;transition:all .15s">' + dlabel + '</button>';
+    });
+    html += '</div></div>';
+  }
 
   restaurants.forEach((r, i) => {
     const name = r.name || '';
@@ -2221,7 +2267,9 @@ function _showShareVote(session) {
 
   document.getElementById('sharevote-content').innerHTML = html;
   _shareTimeSlotCount = timeSlots ? timeSlots.length : 0;
+  _shareDateCount = dates ? dates.length : 0;
   _shareSelectedTime = '';
+  _shareSelectedDate = dates && dates.length === 1 ? dateDisplay : '';
 }
 
 function _toggleShareVote(idx) {
@@ -2259,8 +2307,8 @@ async function _submitShareVote() {
   var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
   var firstMatch = restaurants[myPicks[0]] || {};
   var bookUrl = firstMatch.booking_url || resultsUrl;
-  var sessionDate = (restaurants[0] || {}).dateDisplay || '';
-  var timeStr = (_shareSelectedTime ? ' at ' + _shareSelectedTime : '') + (sessionDate ? ' on ' + sessionDate : '');
+  var dateStr = _shareSelectedDate || (restaurants[0] || {}).dateDisplay || '';
+  var timeStr = (_shareSelectedTime ? ' at ' + _shareSelectedTime : '') + (dateStr ? ' on ' + dateStr : '');
   var smsBody = voterName + ' chose ' + matchNames.join(', ') + timeStr + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
 
   // Open SMS immediately — don't wait for Supabase
