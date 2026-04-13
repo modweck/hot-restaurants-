@@ -1891,12 +1891,12 @@ function renderPicksView() {
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Send via email</div>
         <div style="display:flex;gap:8px;margin-bottom:12px">
           <input id="shareToEmail" type="email" placeholder="Their email" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
-          <button id="shareSendBtn" onclick="_shareSendToEmail()" style="padding:11px 18px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Send</button>
+          <button id="shareSendBtn" style="padding:11px 18px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Send</button>
         </div>
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Or send via text</div>
         <div style="display:flex;gap:8px">
           <input id="shareToPhone" type="tel" placeholder="Their phone number" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
-          <button onclick="_shareSendSMS()" style="padding:11px 18px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Text</button>
+          <button id="shareSMSBtn" style="padding:11px 18px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Text</button>
         </div>
         <div id="shareMsg" style="text-align:center;font-size:12px;margin-top:10px;display:none"></div>
       </div>
@@ -1913,9 +1913,15 @@ function renderPicksView() {
 
   el.innerHTML = html;
 
+  // Attach share button event listeners
+  var sendBtn = document.getElementById('shareSendBtn');
+  var smsBtn = document.getElementById('shareSMSBtn');
+  if (sendBtn) sendBtn.addEventListener('click', function() { _shareSendToEmail(); });
+  if (smsBtn) smsBtn.addEventListener('click', function() { _shareSendSMS(); });
+
   // Load recent shares async
-  _loadMyShareSessions().then(sessionsHtml => {
-    const area = document.getElementById('recent-shares-area');
+  _loadMyShareSessions().then(function(sessionsHtml) {
+    var area = document.getElementById('recent-shares-area');
     if (area && sessionsHtml) area.innerHTML = sessionsHtml;
   });
 }
