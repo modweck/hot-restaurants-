@@ -2089,9 +2089,11 @@ function _showShareVote(session) {
       return '<span class="badge vibe">' + (VL[v]||v) + '</span>';
     }).join('');
 
+    const addr = r.address ? '<div style="font-size:11px;color:#aaa;margin-top:3px">\u{1F4CD} ' + r.address + '</div>' : '';
+
     html += '<div class="card" id="sv-card-' + i + '" onclick="_toggleShareVote(' + i + ')" style="margin:0 16px 10px;cursor:pointer;border:2px solid rgba(0,0,0,.06);transition:all .2s">'
       + '<div style="display:flex;justify-content:space-between;align-items:flex-start">'
-        + '<div style="flex:1"><div class="card-name">' + name + '</div><div class="card-sub">' + sub + (rating ? ' \u00B7 ' + rating : '') + '</div></div>'
+        + '<div style="flex:1"><div class="card-name">' + name + '</div><div class="card-sub">' + sub + (rating ? ' \u00B7 ' + rating : '') + '</div>' + addr + '</div>'
         + '<div id="sv-check-' + i + '" style="width:28px;height:28px;border-radius:50%;border:2px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;font-size:14px;color:transparent;flex-shrink:0;transition:all .2s">\u2713</div>'
       + '</div>'
       + (vibes ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">' + vibes + '</div>' : '')
@@ -2172,8 +2174,26 @@ function _showShareResults(session, votes) {
     else noMatches.push({ ...r, idx: i, voters: voteCounts[i] });
   });
 
-  let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
+  // "Text results back" button — only show if the current user is NOT the creator
+  var isCreator = _sbUser && session.creator_id === _sbUser.id;
+  var resultsUrl = window.location.origin + '/?share=' + session.id;
+  var voterName = (_sbUser ? (_sbUser.email || '') : '').split('@')[0] || 'Your friend';
+
+  var html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
   html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">The Results</div><div style="font-size:13px;color:#888;margin-top:4px">' + from + ' & friends</div></div>';
+
+  // Text back button at the top for the voter
+  if (!isCreator) {
+    var smsBody = '';
+    if (matches.length > 0) {
+      var matchNames = matches.map(function(r) { return r.name; }).join(', ');
+      var bookUrl = matches[0].booking_url || resultsUrl;
+      smsBody = voterName + ' chose ' + matchNames + '! Book now: ' + bookUrl + '\n\nSee full results: ' + resultsUrl;
+    } else {
+      smsBody = voterName + ' looked at your picks but no matches this time. Try again? ' + resultsUrl;
+    }
+    html += '<div style="padding:0 16px 16px"><button onclick="var a=document.createElement(\'a\');a.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\';a.click();" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text ' + from + ' the results</button></div>';
+  }
 
   // Verdict
   if (matches.length === 0) {
@@ -2185,42 +2205,29 @@ function _showShareResults(session, votes) {
   }
 
   // Match cards
-  matches.forEach(r => {
-    const sub = [r.cuisine, r.neighborhood, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
-    const bookBtn = r.booking_url ? '<a href="' + r.booking_url + '" target="_blank" rel="noopener" style="display:block;padding:10px;background:#ff4500;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:10px">Book Now \u2192</a>' : '';
+  matches.forEach(function(r) {
+    var sub = [r.cuisine, r.neighborhood, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    var addr = r.address ? '<div style="font-size:11px;color:#aaa;margin-top:3px">\u{1F4CD} ' + r.address + '</div>' : '';
+    var bookBtn = r.booking_url ? '<a href="' + r.booking_url + '" target="_blank" rel="noopener" style="display:block;padding:10px;background:#ff4500;color:#fff;border-radius:10px;text-align:center;font-size:13px;font-weight:700;text-decoration:none;margin-top:10px">Book Now \u2192</a>' : '';
     html += '<div style="background:linear-gradient(135deg,#fff5f0,#fff);border:2px solid #ff4500;border-radius:18px;padding:18px;margin:0 16px 12px;box-shadow:0 4px 20px rgba(255,69,0,.1)">'
       + '<div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#ff4500;margin-bottom:8px">\u2705 Match</div>'
       + '<div style="font-family:Playfair Display,serif;font-size:18px;font-weight:700;color:#1a1a2e">' + r.name + '</div>'
       + '<div style="font-size:12px;color:#888;margin-top:4px">' + sub + '</div>'
+      + addr
       + bookBtn
     + '</div>';
   });
 
   // No match cards
-  noMatches.forEach(r => {
-    const sub = [r.cuisine, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+  noMatches.forEach(function(r) {
+    var sub = [r.cuisine, r.neighborhood, r.price > 0 ? '$'.repeat(r.price) : ''].filter(Boolean).join(' \u00B7 ');
+    var addr = r.address ? '<div style="font-size:11px;color:#aaa;margin-top:3px">\u{1F4CD} ' + r.address + '</div>' : '';
     html += '<div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:16px 18px;margin:0 16px 10px;opacity:.6">'
       + '<div style="font-family:Playfair Display,serif;font-size:16px;font-weight:700;color:#1a1a2e">' + r.name + '</div>'
       + '<div style="font-size:12px;color:#888;margin-top:4px">' + sub + '</div>'
+      + addr
     + '</div>';
   });
-
-  // "Text results back" button — only show if the current user is NOT the creator
-  const isCreator = _sbUser && session.creator_id === _sbUser.id;
-  const resultsUrl = window.location.origin + '/?share=' + session.id;
-  const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
-
-  if (!isCreator) {
-    let smsBody = '';
-    if (matches.length > 0) {
-      const matchNames = matches.map(r => r.name).join(', ');
-      const bookUrl = matches[0].booking_url || resultsUrl;
-      smsBody = voterName + ' chose ' + matchNames + '! Book now: ' + bookUrl + '\n\nSee full results: ' + resultsUrl;
-    } else {
-      smsBody = voterName + ' looked at your picks but no matches this time. Try again? ' + resultsUrl;
-    }
-    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text ' + from + ' the results</button></div>';
-  }
 
   // If creator viewing results, show option to book the match
   if (isCreator && matches.length > 0 && matches[0].booking_url) {
