@@ -1855,51 +1855,32 @@ function renderPicksView() {
     return;
   }
 
-  // Enrich picks with address from catalog
+  // Build catalog lookup for full card rendering (same as Saved view)
   var _pickCatalog = [].concat(allNYCRestaurants||[], allRestaurants||[], rawRestaurants||[]);
   var _pickLookup = {};
   _pickCatalog.forEach(function(cr) { if (cr.name) _pickLookup[(cr.name||'').toLowerCase().trim()] = cr; });
-  entries.forEach(function(r) {
-    var cat = _pickLookup[(r.name||'').toLowerCase().trim()];
-    if (cat) {
-      if (!r.address) r.address = cat.vicinity || cat.formatted_address || cat.address || '';
-      if (!r.neighborhood) r.neighborhood = cat.neighborhood || '';
-    }
-  });
 
   let html = '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px 8px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button><div><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Tonight\'s Options</div><div style="font-size:12px;color:#888;margin-top:2px">' + count + ' of 5 &middot; ' + (count < 2 ? 'add ' + (2 - count) + ' more to share' : 'ready to share!') + '</div></div></div>';
 
-  entries.forEach(r => {
-    const name = r.name || '';
-    const key = name.toLowerCase().trim();
-    const cuisine = r.cuisine || '';
-    const price = (r.price_level || 0) > 0 ? '$'.repeat(r.price_level) : '';
-    const rating = Number(r.googleRating||0);
-    const ratingStr = rating > 0 ? `&#11088; ${rating}` : '';
-    const neighborhood = r.neighborhood || '';
-    const address = (r.address || '').replace(/,?\s*U\.?S\.?A?\.?$/i, '');
-    const location = address || neighborhood;
-    const sub = [cuisine, price].filter(Boolean).join(' &middot; ');
-    const addrLine = location ? '<div style="font-size:11px;color:#aaa;margin-top:2px">&#128205; ' + location + '</div>' : '';
-    const vibes = (r.vibe_tags || []).slice(0, 3);
-    const vibeHtml = vibes.map(v => {
-      const VE = {date_night:'&#127863;',upscale:'&#128142;',lively:'&#128293;',chill:'&#128524;',trendy:'&#10024;',brunch:'&#129374;',outdoor:'&#127807;',late_night:'&#127769;',casual:'&#128085;',hidden_gem:'&#128373;',foodie:'&#127869;'};
-      const VL = {date_night:'Date',upscale:'Upscale',lively:'Lively',chill:'Chill',trendy:'Trendy',brunch:'Brunch',outdoor:'Outdoor',late_night:'Late Night',casual:'Casual',hidden_gem:'Hidden Gem',foodie:'Foodie'};
-      return `<span style="display:inline-flex;align-items:center;padding:2px 7px;border-radius:6px;font-size:10px;font-weight:700;background:#f0f0f0;color:#666">${VE[v]||''} ${VL[v]||v}</span>`;
-    }).join('');
+  entries.forEach(function(r) {
+    var name = r.name || '';
+    var key = name.toLowerCase().trim();
+    var catR = _pickLookup[key];
 
-    html += `<div class="card" style="margin:0 16px 12px">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start">
-        <div style="flex:1;min-width:0">
-          <div class="card-name">${name}</div>
-          <div class="card-sub">${sub}</div>
-          ${addrLine}
-          ${ratingStr ? '<div style="margin-top:3px"><span class="badge goog">' + ratingStr + '</span></div>' : ''}
-          ${vibeHtml ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">' + vibeHtml + '</div>' : ''}
-        </div>
-        <button onclick="togglePick('${name.replace(/'/g,"\\'")}',null)" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:36px;height:36px;font-size:16px;cursor:pointer;color:#e74c3c;flex-shrink:0;margin-left:8px" title="Remove">&#10005;</button>
-      </div>
-    </div>`;
+    // Remove button
+    var removeBtn = '<div style="padding:4px 16px 8px;text-align:right"><button onclick="togglePick(\'' + name.replace(/'/g,"\\'") + '\',null)" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:6px 14px;font-size:12px;cursor:pointer;color:#e74c3c;font-weight:600;font-family:DM Sans,sans-serif">\u2715 Remove</button></div>';
+
+    if (catR) {
+      // Use the full card renderer from the catalog
+      html += renderCardAR(catR);
+      html += removeBtn;
+    } else {
+      // Fallback for restaurants not in catalog
+      var cuisine = r.cuisine || '';
+      var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(name + ' restaurant New York NY');
+      html += '<div class="card"><div class="card-top"><div class="card-name">' + name + '</div></div><div class="card-sub">' + cuisine + '</div><div class="actions"><a href="' + mapsUrl + '" target="_blank" rel="noopener" class="bbtn google">Find on Google \u2192</a></div></div>';
+      html += removeBtn;
+    }
   });
 
   // Share section
