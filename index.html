@@ -362,38 +362,27 @@ async function _doLogin() {
   }
 
   if (result.error) {
-    msgEl.textContent = result.error.message;
-    msgEl.style.color = '#ef4444';
-    msgEl.style.display = 'block';
-    btnEl.disabled = false;
-    btnEl.textContent = _authMode === 'signup' ? 'Create Account' : 'Log In';
-    return;
-  }
-
-  // Check if we got a session (signup with confirm disabled, or login)
-  if (result.data?.session) {
-    _sbUser = result.data.session.user;
-    _updateAuthUI();
-    _syncSavedToSupabase();
-    _loadSavedFromSupabase();
-  } else if (_authMode === 'signup') {
-    // Email confirmation required — auto-login after signup
-    const loginResult = await _sb.auth.signInWithPassword({ email, password: pass });
-    if (loginResult.data?.session) {
-      _sbUser = loginResult.data.session.user;
-      _updateAuthUI();
-      _syncSavedToSupabase();
-      _loadSavedFromSupabase();
+    // If signup says user exists, try logging in instead
+    if (_authMode === 'signup' && result.error.message.includes('already')) {
+      const loginResult = await _sb.auth.signInWithPassword({ email, password: pass });
+      if (loginResult.error) {
+        msgEl.textContent = loginResult.error.message;
+        msgEl.style.color = '#ef4444';
+        msgEl.style.display = 'block';
+        btnEl.disabled = false;
+        btnEl.textContent = 'Log In';
+        return;
+      }
     } else {
-      msgEl.textContent = 'Account created! Log in now.';
-      msgEl.style.color = '#22c55e';
+      msgEl.textContent = result.error.message;
+      msgEl.style.color = '#ef4444';
       msgEl.style.display = 'block';
-      _authMode = 'login';
-      btnEl.textContent = 'Log In';
       btnEl.disabled = false;
+      btnEl.textContent = _authMode === 'signup' ? 'Create Account' : 'Log In';
       return;
     }
   }
+  // onAuthStateChange will handle the rest
   btnEl.textContent = '\u2705 Done!';
 }
 
@@ -1932,6 +1921,11 @@ function renderPicksView() {
 }
 
 async function _createShareAndGetURL() {
+  // Re-check auth in case _sbUser is stale
+  if (!_sbUser) {
+    const { data } = await _sb.auth.getSession();
+    _sbUser = data?.session?.user || null;
+  }
   if (!_sbUser) { alert('You need to log in first!'); return null; }
   const picks = _getPicks();
   const entries = Object.values(picks);
