@@ -318,7 +318,8 @@ function _updateAuthUI() {
     if (overlay) overlay.style.display = 'none';
     if (bar) {
       bar.style.display = 'block';
-      bar.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)"><div style="font-size:12px;color:#888"><span style="color:#22c55e;font-weight:700">\u25CF</span> ' + (_sbUser.email||'') + '</div><button onclick="_sbLogout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;color:#888;cursor:pointer;font-family:DM Sans,sans-serif">Log out</button></div>';
+      bar.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)"><div style="font-size:12px;color:#888"><span style="color:#22c55e;font-weight:700">\u25CF</span> ' + (_sbUser.email||'') + '</div><button id="logout-btn" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;color:#888;cursor:pointer;font-family:DM Sans,sans-serif">Log out</button></div>';
+      document.getElementById('logout-btn').addEventListener('click', function() { window._sbLogout(); });
     }
   } else {
     if (overlay) overlay.style.display = 'flex';
@@ -457,16 +458,20 @@ async function _getVotes(sessionId) {
 }
 
 // ─── AUTH STATE LISTENER ────────────────────────────────────────────────────
-_sb.auth.onAuthStateChange(async (event, session) => {
-  _sbUser = session?.user || null;
+_sb.auth.onAuthStateChange(function(event, session) {
+  _sbUser = session ? session.user : null;
   _updateAuthUI();
   if (_sbUser) {
-    try { await _syncSavedToSupabase(); } catch(e) { console.warn('sync error:', e); }
-    try { await _loadSavedFromSupabase(); } catch(e) { console.warn('load error:', e); }
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.has('share')) { _openShareSession(params.get('share')); }
-    } catch(e) { console.warn('share open error:', e); }
+    try { _syncSavedToSupabase(); } catch(e) {}
+    try { _loadSavedFromSupabase(); } catch(e) {}
+    // Check for pending share link
+    setTimeout(function() {
+      if (window._pendingShareId && typeof _openShareSession === 'function') {
+        var sid = window._pendingShareId;
+        delete window._pendingShareId;
+        _openShareSession(sid);
+      }
+    }, 1000);
   }
 });
 
@@ -2214,33 +2219,20 @@ function _showShareResults(session, votes) {
 
 // ─── CHECK FOR SHARE LINK ON LOAD ───────────────────────────────────────────
 (function() {
-  const params = new URLSearchParams(window.location.search);
+  var params = new URLSearchParams(window.location.search);
   if (params.has('share')) {
-    const sid = params.get('share');
-    // Wait for auth, then open
-    const _waitAuth = setInterval(async () => {
-      await _sbGetUser();
-      if (_sbUser) {
-        clearInterval(_waitAuth);
-        _openShareSession(sid);
-      } else {
-        // Show login prompt
-        clearInterval(_waitAuth);
-        _updateAuthUI();
-        // Store share ID to open after login
-        window._pendingShareId = sid;
-      }
-    }, 500);
-    // Also listen for auth change
-    _sb.auth.onAuthStateChange(async (event, session) => {
-      if (session?.user && window._pendingShareId) {
-        const sid = window._pendingShareId;
-        delete window._pendingShareId;
-        setTimeout(() => _openShareSession(sid), 500);
-      }
-    });
+    window._pendingShareId = params.get('share');
   }
 })();
+
+// Try to open pending share after page is ready
+setTimeout(function() {
+  if (window._pendingShareId && _sbUser) {
+    var sid = window._pendingShareId;
+    delete window._pendingShareId;
+    _openShareSession(sid);
+  }
+}, 2000);
 
 // ─── RESTAURANT AUTOCOMPLETE ─────────────────────────────────────────────────
 let _restNames = null;
