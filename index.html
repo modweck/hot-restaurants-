@@ -2184,19 +2184,26 @@ function _showShareResults(session, votes) {
     + '</div>';
   });
 
-  // "Text results back" button — only show if the current user is NOT the creator (i.e. they're the voter)
+  // "Text results back" button — only show if the current user is NOT the creator
   const isCreator = _sbUser && session.creator_id === _sbUser.id;
-  if (!isCreator && matches.length > 0) {
-    const resultsUrl = window.location.origin + '/?share=' + session.id;
-    const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
-    const matchNames = matches.map(r => r.name).join(', ');
-    const smsBody = voterName + ' picked their favorites! You matched on: ' + matchNames + '. See results: ' + resultsUrl;
-    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text results to ' + from + '</button></div>';
-  } else if (!isCreator && matches.length === 0) {
-    const resultsUrl = window.location.origin + '/?share=' + session.id;
-    const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
-    const smsBody = voterName + ' picked their favorites but no matches this time! See results: ' + resultsUrl;
-    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text results to ' + from + '</button></div>';
+  const resultsUrl = window.location.origin + '/?share=' + session.id;
+  const voterName = (_sbUser?.email || '').split('@')[0] || 'Your friend';
+
+  if (!isCreator) {
+    let smsBody = '';
+    if (matches.length > 0) {
+      const matchNames = matches.map(r => r.name).join(', ');
+      const bookUrl = matches[0].booking_url || resultsUrl;
+      smsBody = voterName + ' chose ' + matchNames + '! Book now: ' + bookUrl + '\n\nSee full results: ' + resultsUrl;
+    } else {
+      smsBody = voterName + ' looked at your picks but no matches this time. Try again? ' + resultsUrl;
+    }
+    html += '<div style="padding:0 16px 12px"><button onclick="location.href=\'sms:?&body=' + encodeURIComponent(smsBody).replace(/'/g, '%27') + '\'" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#34c759;color:#fff;box-shadow:0 3px 16px rgba(52,199,89,.25);display:flex;align-items:center;justify-content:center;gap:8px">\u{1F4AC} Text ' + from + ' the results</button></div>';
+  }
+
+  // If creator viewing results, show option to book the match
+  if (isCreator && matches.length > 0 && matches[0].booking_url) {
+    html += '<div style="padding:0 16px 12px"><a href="' + matches[0].booking_url + '" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;font-family:DM Sans,sans-serif;background:#ff4500;color:#fff;box-shadow:0 3px 16px rgba(255,69,0,.25);text-decoration:none">Book ' + matches[0].name + ' Now \u2192</a></div>';
   }
 
   html += '<div style="padding:8px 16px 32px"><button onclick="switchNav(\'home\')" style="width:100%;padding:14px;border:none;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#1a1a2e;color:#fff;box-shadow:0 3px 16px rgba(26,26,46,.2)">Browse Restaurants</button></div>';
