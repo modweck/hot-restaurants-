@@ -1884,6 +1884,45 @@ function renderPicksView() {
     }
   });
 
+  // Time range picker
+  if (count >= 2) {
+    html += `<div style="padding:0 16px 12px">
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">
+        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">What time works?</div>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <div style="flex:1">
+            <div style="font-size:11px;color:#888;margin-bottom:4px">From</div>
+            <select id="shareTimeFrom" style="width:100%;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;appearance:auto">
+              <option value="5:00pm">5:00 PM</option>
+              <option value="5:30pm">5:30 PM</option>
+              <option value="6:00pm" selected>6:00 PM</option>
+              <option value="6:30pm">6:30 PM</option>
+              <option value="7:00pm">7:00 PM</option>
+              <option value="7:30pm">7:30 PM</option>
+              <option value="8:00pm">8:00 PM</option>
+              <option value="8:30pm">8:30 PM</option>
+              <option value="9:00pm">9:00 PM</option>
+            </select>
+          </div>
+          <div style="flex:1">
+            <div style="font-size:11px;color:#888;margin-bottom:4px">To</div>
+            <select id="shareTimeTo" style="width:100%;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;appearance:auto">
+              <option value="7:00pm">7:00 PM</option>
+              <option value="7:30pm">7:30 PM</option>
+              <option value="8:00pm">8:00 PM</option>
+              <option value="8:30pm">8:30 PM</option>
+              <option value="9:00pm" selected>9:00 PM</option>
+              <option value="9:30pm">9:30 PM</option>
+              <option value="10:00pm">10:00 PM</option>
+              <option value="10:30pm">10:30 PM</option>
+              <option value="11:00pm">11:00 PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
   // Share section
   if (count >= 2) {
     const senderName = _sbUser ? (_sbUser.email || '').split('@')[0] : '';
@@ -1939,6 +1978,12 @@ async function _createShareAndGetURL() {
   const picks = _getPicks();
   const entries = Object.values(picks);
   if (!entries.length) { alert('No restaurants in your share list!'); return null; }
+  // Get time range
+  var timeFromEl = document.getElementById('shareTimeFrom');
+  var timeToEl = document.getElementById('shareTimeTo');
+  var timeFrom = timeFromEl ? timeFromEl.value : '6:00pm';
+  var timeTo = timeToEl ? timeToEl.value : '9:00pm';
+
   const restaurants = entries.map(r => ({
     name: r.name || '',
     cuisine: r.cuisine || '',
@@ -1949,7 +1994,9 @@ async function _createShareAndGetURL() {
     vibes: (r.vibe_tags || []).slice(0, 3),
     booking_url: r.booking_url || '',
     platform: r.booking_platform || '',
-    address: r.address || ''
+    address: r.address || '',
+    timeFrom: timeFrom,
+    timeTo: timeTo
   }));
   const senderName = (_sbUser.email || '').split('@')[0];
   try {
@@ -2040,8 +2087,39 @@ function _clearPicks() {
 _updatePicksBadge();
 
 // ─── SHARE SESSION: VOTE & RESULTS (IN-APP) ─────────────────────────────────
-let _activeShareSession = null;
-let _shareVoteSelected = new Set();
+var _activeShareSession = null;
+var _shareVoteSelected = new Set();
+var _shareSelectedTime = '';
+var _shareTimeSlotCount = 0;
+
+function _selectShareTime(idx, timeStr) {
+  // Deselect all time buttons
+  for (var i = 0; i < _shareTimeSlotCount; i++) {
+    var b = document.getElementById('sv-time-' + i);
+    if (b) { b.style.background = '#fff'; b.style.color = '#666'; b.style.borderColor = 'rgba(0,0,0,.08)'; }
+  }
+  // Select this one
+  var btn = document.getElementById('sv-time-' + idx);
+  if (btn) { btn.style.background = '#ff4500'; btn.style.color = '#fff'; btn.style.borderColor = '#ff4500'; }
+  _shareSelectedTime = timeStr;
+  // Update submit button
+  _updateVoteBtn();
+}
+
+function _updateVoteBtn() {
+  var btn = document.getElementById('sv-submit-btn');
+  if (!btn) return;
+  if (_shareVoteSelected.size > 0 && _shareSelectedTime) {
+    btn.disabled = false; btn.style.opacity = '1';
+    btn.textContent = 'Done \u2014 ' + _shareVoteSelected.size + ' pick' + (_shareVoteSelected.size > 1 ? 's' : '') + ' at ' + _shareSelectedTime;
+  } else if (_shareVoteSelected.size > 0) {
+    btn.disabled = false; btn.style.opacity = '.7';
+    btn.textContent = 'Pick a time';
+  } else {
+    btn.disabled = true; btn.style.opacity = '.5';
+    btn.textContent = 'Pick at least 1 restaurant';
+  }
+}
 
 async function _openShareSession(sessionId) {
   const session = await _getShareSession(sessionId);
@@ -2101,12 +2179,34 @@ function _showShareVote(session) {
     + '</div>';
   });
 
+  // Time slot picker — generate 30-min slots from the sender's time range
+  var timeFrom = (restaurants[0] || {}).timeFrom || '6:00pm';
+  var timeTo = (restaurants[0] || {}).timeTo || '9:00pm';
+  function _parseTime(t) { var m = t.match(/(\d+):(\d+)(am|pm)/i); if (!m) return 18; var h = parseInt(m[1]); if (m[3].toLowerCase()==='pm' && h<12) h+=12; if (m[3].toLowerCase()==='am' && h===12) h=0; return h + parseInt(m[2])/60; }
+  function _fmtTime(h) { var hr = Math.floor(h); var mn = Math.round((h-hr)*60); var ap = hr >= 12 ? 'PM' : 'AM'; var h12 = hr > 12 ? hr-12 : (hr===0?12:hr); return h12 + ':' + String(mn).padStart(2,'0') + ' ' + ap; }
+  var fromH = _parseTime(timeFrom);
+  var toH = _parseTime(timeTo);
+  var timeSlots = [];
+  for (var t = fromH; t <= toH; t += 0.5) { timeSlots.push(t); }
+
+  if (timeSlots.length > 0) {
+    html += '<div style="margin:0 16px 12px;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">'
+      + '<div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">What time works for you?</div>'
+      + '<div style="display:flex;flex-wrap:wrap;gap:6px">';
+    timeSlots.forEach(function(t, i) {
+      html += '<button id="sv-time-' + i + '" onclick="_selectShareTime(' + i + ',\'' + _fmtTime(t) + '\')" style="padding:8px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;font-size:13px;font-weight:600;color:#666;font-family:DM Sans,sans-serif;transition:all .15s">' + _fmtTime(t) + '</button>';
+    });
+    html += '</div></div>';
+  }
+
   // Submit button
   html += '<div style="padding:16px 20px 32px;position:sticky;bottom:0;background:linear-gradient(0deg,#f7f5f2 70%,transparent)">'
     + '<button id="sv-submit-btn" onclick="_submitShareVote()" disabled style="width:100%;padding:16px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;background:#ff4500;color:#fff;opacity:.5;box-shadow:0 3px 16px rgba(255,69,0,.25)">Pick at least 1</button>'
     + '</div>';
 
   document.getElementById('sharevote-content').innerHTML = html;
+  _shareTimeSlotCount = timeSlots ? timeSlots.length : 0;
+  _shareSelectedTime = '';
 }
 
 function _toggleShareVote(idx) {
@@ -2127,14 +2227,7 @@ function _toggleShareVote(idx) {
     check.style.background = '#ff4500';
     check.style.color = '#fff';
   }
-  const btn = document.getElementById('sv-submit-btn');
-  if (_shareVoteSelected.size > 0) {
-    btn.disabled = false; btn.style.opacity = '1';
-    btn.textContent = 'Done (' + _shareVoteSelected.size + ' selected)';
-  } else {
-    btn.disabled = true; btn.style.opacity = '.5';
-    btn.textContent = 'Pick at least 1';
-  }
+  _updateVoteBtn();
 }
 
 async function _submitShareVote() {
@@ -2151,7 +2244,8 @@ async function _submitShareVote() {
   var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
   var firstMatch = restaurants[myPicks[0]] || {};
   var bookUrl = firstMatch.booking_url || resultsUrl;
-  var smsBody = voterName + ' chose ' + matchNames.join(', ') + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
+  var timeStr = _shareSelectedTime ? ' at ' + _shareSelectedTime : '';
+  var smsBody = voterName + ' chose ' + matchNames.join(', ') + timeStr + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
 
   // Open SMS immediately — don't wait for Supabase
   var a = document.createElement('a');
