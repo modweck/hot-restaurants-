@@ -386,6 +386,10 @@ async function _doLogin() {
   btnEl.textContent = '\u2705 Done!';
 }
 
+// ─── SAVED HELPERS (needed early for auth sync) ─────────────────────────────
+function _getSaved() { try { return JSON.parse(localStorage.getItem('sw_saved') || '{}'); } catch { return {}; } }
+function _setSaved(obj) { localStorage.setItem('sw_saved', JSON.stringify(obj)); }
+
 // ─── SYNC SAVED TO SUPABASE ─────────────────────────────────────────────────
 async function _syncSavedToSupabase() {
   if (!_sbUser) return;
@@ -459,13 +463,12 @@ _sb.auth.onAuthStateChange(async (event, session) => {
   _sbUser = session?.user || null;
   _updateAuthUI();
   if (_sbUser) {
-    await _syncSavedToSupabase();
-    await _loadSavedFromSupabase();
-    // Check if we arrived with a share link
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('share')) {
-      _openShareSession(params.get('share'));
-    }
+    try { await _syncSavedToSupabase(); } catch(e) { console.warn('sync error:', e); }
+    try { await _loadSavedFromSupabase(); } catch(e) { console.warn('load error:', e); }
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('share')) { _openShareSession(params.get('share')); }
+    } catch(e) { console.warn('share open error:', e); }
   }
 });
 
@@ -1583,8 +1586,7 @@ _sbGetUser().then(() => _updateAuthUI());
 
 <script>
 // ─── SAVED RESTAURANTS ───────────────────────────────────────────────────────
-function _getSaved() { try { return JSON.parse(localStorage.getItem('sw_saved') || '{}'); } catch { return {}; } }
-function _setSaved(obj) { localStorage.setItem('sw_saved', JSON.stringify(obj)); }
+// _getSaved and _setSaved defined in script block 1 (Supabase init)
 function isSaved(name) { return !!_getSaved()[(name||'').toLowerCase().trim()]; }
 function toggleSave(name, cardData) {
   const key = (name||'').toLowerCase().trim();
