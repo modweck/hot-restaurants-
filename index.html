@@ -1888,7 +1888,13 @@ function renderPicksView() {
   if (count >= 2) {
     html += `<div style="padding:0 16px 12px">
       <div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">
-        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">What time works?</div>
+        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">When?</div>
+        <div style="margin-bottom:10px">
+          <div style="font-size:11px;color:#888;margin-bottom:4px">Date</div>
+          <select id="shareDate" style="width:100%;padding:10px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:14px;font-weight:600;font-family:DM Sans,sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;appearance:auto">
+            ${(function(){var opts='';var d=new Date();for(var i=0;i<7;i++){var dd=new Date(d);dd.setDate(d.getDate()+i);var label=i===0?'Tonight':i===1?'Tomorrow':dd.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});var val=dd.toISOString().split('T')[0];opts+='<option value="'+val+'">'+label+'</option>';}return opts;})()}
+          </select>
+        </div>
         <div style="display:flex;gap:8px;margin-bottom:8px">
           <div style="flex:1">
             <div style="font-size:11px;color:#888;margin-bottom:4px">From</div>
@@ -1981,8 +1987,13 @@ async function _createShareAndGetURL() {
   // Get time range
   var timeFromEl = document.getElementById('shareTimeFrom');
   var timeToEl = document.getElementById('shareTimeTo');
+  var dateEl = document.getElementById('shareDate');
   var timeFrom = timeFromEl ? timeFromEl.value : '6:00pm';
   var timeTo = timeToEl ? timeToEl.value : '9:00pm';
+  var shareDate = dateEl ? dateEl.value : new Date().toISOString().split('T')[0];
+  // Format date for display
+  var shareDateDisplay = '';
+  try { var dd = new Date(shareDate + 'T12:00:00'); shareDateDisplay = dd.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'}); } catch(e) { shareDateDisplay = shareDate; }
 
   const restaurants = entries.map(r => ({
     name: r.name || '',
@@ -1996,7 +2007,9 @@ async function _createShareAndGetURL() {
     platform: r.booking_platform || '',
     address: r.address || '',
     timeFrom: timeFrom,
-    timeTo: timeTo
+    timeTo: timeTo,
+    date: shareDate,
+    dateDisplay: shareDateDisplay
   }));
   const senderName = (_sbUser.email || '').split('@')[0];
   try {
@@ -2156,7 +2169,9 @@ function _showShareVote(session) {
   const from = session.creator_name || 'Someone';
 
   let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
-  html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">' + from + '\u2019s Picks</div><div style="font-size:13px;color:#888;margin-top:4px">Tap the ones you\u2019d want to go to</div></div>';
+  var dateDisplay = (restaurants[0] || {}).dateDisplay || '';
+  var dateLabel = dateDisplay ? ' for ' + dateDisplay : '';
+  html += '<div style="padding:0 20px 16px"><div style="font-family:Playfair Display,serif;font-size:24px;font-weight:900;color:#1a1a2e">' + from + '\u2019s Picks</div><div style="font-size:13px;color:#888;margin-top:4px">Tap the ones you\u2019d want to go to' + dateLabel + '</div></div>';
 
   restaurants.forEach((r, i) => {
     const name = r.name || '';
@@ -2244,7 +2259,8 @@ async function _submitShareVote() {
   var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
   var firstMatch = restaurants[myPicks[0]] || {};
   var bookUrl = firstMatch.booking_url || resultsUrl;
-  var timeStr = _shareSelectedTime ? ' at ' + _shareSelectedTime : '';
+  var sessionDate = (restaurants[0] || {}).dateDisplay || '';
+  var timeStr = (_shareSelectedTime ? ' at ' + _shareSelectedTime : '') + (sessionDate ? ' on ' + sessionDate : '');
   var smsBody = voterName + ' chose ' + matchNames.join(', ') + timeStr + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
 
   // Open SMS immediately — don't wait for Supabase
