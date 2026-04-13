@@ -1888,10 +1888,9 @@ function renderPicksView() {
   if (count >= 2) {
     html += `<div style="padding:0 16px 12px">
       <div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.03)">
-        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">When? <span style="font-weight:500;color:#ccc">(pick up to 3)</span></div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
-          ${(function(){var chips='';var d=new Date();for(var i=0;i<7;i++){var dd=new Date(d);dd.setDate(d.getDate()+i);var label=i===0?'Tonight':i===1?'Tomorrow':dd.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});var val=dd.toISOString().split('T')[0];chips+='<button data-share-date="'+val+'" onclick="_toggleShareDate(this,\''+val+'\',\''+label+'\')" style="padding:8px 14px;border-radius:10px;border:1px solid rgba(0,0,0,.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;font-family:DM Sans,sans-serif;transition:all .15s">'+label+'</button>';}return chips;})()}
-        </div>
+        <div style="font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">When? <span style="font-weight:500;color:#ccc">(tap up to 3 dates)</span></div>
+        <div id="share-calendar" style="margin-bottom:12px"></div>
+        <div id="share-selected-dates" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px"></div>
         <div style="display:flex;gap:8px;margin-bottom:8px">
           <div style="flex:1">
             <div style="font-size:11px;color:#888;margin-bottom:4px">From</div>
@@ -1957,6 +1956,9 @@ function renderPicksView() {
   html += '<div id="recent-shares-area"></div>';
 
   el.innerHTML = html;
+
+  // Render calendar
+  _renderShareCalendar();
 
   // Attach share button event listeners
   var sendBtn = document.getElementById('shareSendBtn');
@@ -2031,23 +2033,83 @@ function _showShareMsg(text, color) {
 }
 
 var _shareURL = null;
-var _shareDates = []; // [{val:'2026-04-13', label:'Tonight'}, ...]
+var _shareDates = [];
+var _shareCalMonth = new Date().getMonth();
+var _shareCalYear = new Date().getFullYear();
 
-function _toggleShareDate(btn, val, label) {
+function _renderShareCalendar() {
+  var el = document.getElementById('share-calendar');
+  if (!el) return;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var month = _shareCalMonth;
+  var year = _shareCalYear;
+  var monthName = new Date(year, month, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  var firstDay = new Date(year, month, 1).getDay();
+  var daysInMonth = new Date(year, month + 1, 0).getDate();
+  var selectedVals = _shareDates.map(function(d) { return d.val; });
+
+  var h = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">';
+  h += '<button onclick="_shareCalPrev()" style="background:none;border:none;font-size:18px;cursor:pointer;padding:4px 8px;color:#666">\u2039</button>';
+  h += '<div style="font-size:14px;font-weight:700;color:#1a1a2e">' + monthName + '</div>';
+  h += '<button onclick="_shareCalNext()" style="background:none;border:none;font-size:18px;cursor:pointer;padding:4px 8px;color:#666">\u203A</button>';
+  h += '</div>';
+  h += '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center">';
+  ['S','M','T','W','T','F','S'].forEach(function(d) {
+    h += '<div style="font-size:10px;font-weight:700;color:#bbb;padding:4px 0">' + d + '</div>';
+  });
+  for (var i = 0; i < firstDay; i++) { h += '<div></div>'; }
+  for (var d = 1; d <= daysInMonth; d++) {
+    var dt = new Date(year, month, d);
+    var val = dt.toISOString().split('T')[0];
+    var isPast = dt < today;
+    var isSelected = selectedVals.indexOf(val) >= 0;
+    var isToday = dt.getTime() === today.getTime();
+    var bg = isSelected ? '#ff4500' : '#fff';
+    var clr = isSelected ? '#fff' : isPast ? '#ddd' : '#1a1a2e';
+    var border = isToday && !isSelected ? '2px solid #ff4500' : '1px solid ' + (isSelected ? '#ff4500' : 'transparent');
+    var cursor = isPast ? 'default' : 'pointer';
+    var onclick = isPast ? '' : 'onclick="_toggleShareDate(\'' + val + '\')"';
+    h += '<div ' + onclick + ' style="padding:8px 0;border-radius:8px;font-size:13px;font-weight:600;cursor:' + cursor + ';background:' + bg + ';color:' + clr + ';border:' + border + ';transition:all .1s">' + d + '</div>';
+  }
+  h += '</div>';
+  el.innerHTML = h;
+  _renderSelectedDates();
+}
+
+function _renderSelectedDates() {
+  var el = document.getElementById('share-selected-dates');
+  if (!el) return;
+  if (!_shareDates.length) { el.innerHTML = ''; return; }
+  el.innerHTML = _shareDates.map(function(d) {
+    return '<span style="display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:8px;background:#fff5f0;color:#ff4500;font-size:11px;font-weight:700;border:1px solid rgba(255,69,0,.2)">' + d.label + ' <span onclick="_toggleShareDate(\'' + d.val + '\')" style="cursor:pointer;font-size:14px;line-height:1">\u00D7</span></span>';
+  }).join('');
+}
+
+function _shareCalPrev() {
+  _shareCalMonth--;
+  if (_shareCalMonth < 0) { _shareCalMonth = 11; _shareCalYear--; }
+  _renderShareCalendar();
+}
+function _shareCalNext() {
+  _shareCalMonth++;
+  if (_shareCalMonth > 11) { _shareCalMonth = 0; _shareCalYear++; }
+  _renderShareCalendar();
+}
+
+function _toggleShareDate(val) {
   var idx = _shareDates.findIndex(function(d) { return d.val === val; });
   if (idx >= 0) {
     _shareDates.splice(idx, 1);
-    btn.style.background = '#fff';
-    btn.style.color = '#666';
-    btn.style.borderColor = 'rgba(0,0,0,.08)';
   } else {
-    if (_shareDates.length >= 3) { return; }
+    if (_shareDates.length >= 3) return;
+    var dt = new Date(val + 'T12:00:00');
+    var today = new Date(); today.setHours(0,0,0,0);
+    var diff = Math.round((dt - today) / 86400000);
+    var label = diff === 0 ? 'Tonight' : diff === 1 ? 'Tomorrow' : dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
     _shareDates.push({ val: val, label: label });
-    btn.style.background = '#ff4500';
-    btn.style.color = '#fff';
-    btn.style.borderColor = '#ff4500';
   }
-  _shareURL = null; // Clear cache when dates change
+  _shareURL = null;
+  _renderShareCalendar();
 }
 
 async function _shareSendToEmail() {
