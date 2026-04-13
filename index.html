@@ -290,12 +290,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 // ─── SUPABASE INIT ──────────────────────────────────────────────────────────
-const _sbMod = window.supabase;
-const _sb = (_sbMod.createClient || _sbMod)(
+var _sbMod = window.supabase;
+var _sb = (_sbMod.createClient || _sbMod)(
   'https://zdsolubfxzvrqiqvwjev.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM'
 );
-let _sbUser = null;
+var _sbUser = null;
 
 async function _sbGetUser() {
   const { data } = await _sb.auth.getSession();
@@ -303,7 +303,7 @@ async function _sbGetUser() {
   return _sbUser;
 }
 
-let _authMode = 'login'; // 'login' or 'signup'
+var _authMode = 'login'; // 'login' or 'signup'
 
 window._sbLogout = async function() {
   try { await _sb.auth.signOut(); } catch(e) {}
