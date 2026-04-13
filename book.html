@@ -242,6 +242,11 @@ const RESTAURANTS = [
   { name: 'Theodora', slug: 'theodora', venue_id: 0, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
   { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 0, drop_days: 14, drop_hour: 8, hood: 'Upper East Side' },
   { name: 'The Four Horsemen', slug: 'the-four-horsemen', venue_id: 1284, drop_days: 30, drop_hour: 10, hood: 'Williamsburg' },
+  { name: 'Bong', slug: 'bong', venue_id: 86413, drop_days: 19, drop_hour: 0, hood: 'Crown Heights' },
+  { name: 'Jeju Noodle Bar', slug: 'jeju-noodle-bar', venue_id: 1543, drop_days: 44, drop_hour: 0, hood: 'West Village' },
+  { name: 'FREE RANGE at Double Chicken Please', slug: 'free-range-at-double-chicken-please', venue_id: 70330, drop_days: 6, drop_hour: 0, hood: 'Lower East Side' },
+  { name: 'Bungalow', slug: 'bungalow-ny', venue_id: 71822, drop_days: 20, drop_hour: 11, hood: 'East Village' },
+  { name: "Ha's Snack Bar", slug: 'has-snack-bar', venue_id: 85855, drop_days: 19, drop_hour: 12, hood: 'Lower East Side' },
 ];
 
 let partySize = 2;
@@ -262,7 +267,7 @@ function showPage(id) {
 }
 
 function getMinDate(r) {
-  const d = new Date(); d.setDate(d.getDate() + r.drop_days);
+  const d = new Date(); d.setDate(d.getDate() + r.drop_days + 1);
   return d;
 }
 

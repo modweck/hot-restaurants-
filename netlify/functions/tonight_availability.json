@@ -7686,8 +7686,7 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
+    "sunday_only": true,
     "future_dates": {
       "+2": {
         "date": "2026-04-10",
@@ -9877,8 +9876,7 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
+    "walk_in_only": true,
     "future_dates": {
       "+2": {
         "date": "2026-04-11",
@@ -11214,8 +11212,7 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-07",
-    "fully_locked": true,
-    "_recheck_result": "truly_booked",
+    "walk_in_only": true,
     "future_dates": {
       "+2": {
         "date": "2026-04-10",
@@ -15385,7 +15382,7 @@
     "prime": "booked",
     "late": "booked",
     "_checked_date": "2026-04-07",
-    "fully_locked": true,
+    "opens_in": 14,
     "future_dates": {
       "+2": {
         "date": "2026-04-10",
