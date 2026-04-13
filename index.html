@@ -303,10 +303,7 @@ async function _sbGetUser() {
   return _sbUser;
 }
 
-async function _sbLogin(email) {
-  const { error } = await _sb.auth.signInWithOtp({ email, options: { shouldCreateUser: true } });
-  return error;
-}
+let _authMode = 'login'; // 'login' or 'signup'
 
 async function _sbLogout() {
   await _sb.auth.signOut();
@@ -320,30 +317,60 @@ function _updateAuthUI() {
   const overlay = document.getElementById('auth-overlay');
   const bar = document.getElementById('auth-bar');
   if (_sbUser) {
-    // Hide overlay, show small bar
     if (overlay) overlay.style.display = 'none';
     if (bar) {
       bar.style.display = 'block';
       bar.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)"><div style="font-size:12px;color:#888"><span style="color:#22c55e;font-weight:700">\u25CF</span> ' + (_sbUser.email||'') + '</div><button onclick="_sbLogout()" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:5px 12px;font-size:11px;font-weight:600;color:#888;cursor:pointer;font-family:DM Sans,sans-serif">Log out</button></div>';
     }
   } else {
-    // Show overlay
     if (overlay) overlay.style.display = 'flex';
     if (bar) bar.style.display = 'none';
   }
 }
 
+function _toggleAuthMode() {
+  _authMode = _authMode === 'login' ? 'signup' : 'login';
+  const btn = document.getElementById('auth-btn');
+  const toggle = document.getElementById('auth-toggle');
+  const msg = document.getElementById('auth-msg');
+  if (msg) msg.style.display = 'none';
+  if (_authMode === 'signup') {
+    btn.textContent = 'Create Account';
+    toggle.innerHTML = 'Already have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Log in</a>';
+  } else {
+    btn.textContent = 'Log In';
+    toggle.innerHTML = 'Don\u2019t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Sign up</a>';
+  }
+}
+
 async function _doLogin() {
   const emailEl = document.getElementById('auth-email');
+  const passEl = document.getElementById('auth-pass');
   const msgEl = document.getElementById('auth-msg');
   const btnEl = document.getElementById('auth-btn');
   const email = (emailEl?.value || '').trim();
-  if (!email || !email.includes('@')) { msgEl.textContent = 'Enter a valid email'; msgEl.style.display = 'block'; return; }
-  btnEl.textContent = 'Sending...'; btnEl.disabled = true;
-  const err = await _sbLogin(email);
-  if (err) { msgEl.textContent = 'Error: ' + err.message; msgEl.style.display = 'block'; msgEl.style.color = '#ef4444'; btnEl.textContent = 'Send Login Link'; btnEl.disabled = false; return; }
-  msgEl.textContent = '\u2705 Check your email for the login link!'; msgEl.style.display = 'block'; msgEl.style.color = '#22c55e';
-  btnEl.textContent = 'Link sent!'; btnEl.disabled = true;
+  const pass = (passEl?.value || '');
+  if (!email || !email.includes('@')) { msgEl.textContent = 'Enter a valid email'; msgEl.style.color = '#ef4444'; msgEl.style.display = 'block'; return; }
+  if (pass.length < 6) { msgEl.textContent = 'Password must be at least 6 characters'; msgEl.style.color = '#ef4444'; msgEl.style.display = 'block'; return; }
+  btnEl.disabled = true; btnEl.textContent = _authMode === 'signup' ? 'Creating...' : 'Logging in...';
+
+  let result;
+  if (_authMode === 'signup') {
+    result = await _sb.auth.signUp({ email, password: pass });
+  } else {
+    result = await _sb.auth.signInWithPassword({ email, password: pass });
+  }
+
+  if (result.error) {
+    msgEl.textContent = result.error.message;
+    msgEl.style.color = '#ef4444';
+    msgEl.style.display = 'block';
+    btnEl.disabled = false;
+    btnEl.textContent = _authMode === 'signup' ? 'Create Account' : 'Log In';
+    return;
+  }
+  // Success — auth state listener will handle the rest
+  btnEl.textContent = '\u2705 Done!';
 }
 
 // ─── SYNC SAVED TO SUPABASE ─────────────────────────────────────────────────
@@ -442,12 +469,13 @@ _sbGetUser().then(() => _updateAuthUI());
       <div style="font-size:13px;color:#888;margin-bottom:32px">NYC's smartest restaurant finder</div>
       <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)">
         <div style="font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px">Welcome</div>
-        <div style="font-size:13px;color:#999;margin-bottom:20px">Enter your email to get started</div>
-        <input id="auth-email" type="email" placeholder="you@email.com" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
-        <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#ff4500;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(255,69,0,.25);transition:all .2s">Send Login Link</button>
+        <div style="font-size:13px;color:#999;margin-bottom:20px">Log in or create an account</div>
+        <input id="auth-email" type="email" placeholder="Email" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
+        <input id="auth-pass" type="password" placeholder="Password" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
+        <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#ff4500;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(255,69,0,.25);transition:all .2s">Log In</button>
         <div id="auth-msg" style="font-size:12px;color:#888;margin-top:12px;display:none"></div>
       </div>
-      <div style="font-size:11px;color:#bbb;margin-top:20px">No password needed. We'll email you a link.</div>
+      <div id="auth-toggle" style="font-size:12px;color:#888;margin-top:16px">Don&#8217;t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Sign up</a></div>
     </div>
   </div>
 
@@ -1802,16 +1830,22 @@ function renderPicksView() {
 
   // Share section
   if (count >= 2) {
+    const senderName = _sbUser ? (_sbUser.email || '').split('@')[0] : '';
     html += `<div style="padding:0 16px 8px">
       <div style="background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 100%);border-radius:16px;padding:18px;box-shadow:0 4px 20px rgba(26,26,46,.25)">
-        <div style="font-family:Playfair Display,serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:4px">Ready to share!</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:14px">Send ${count} options and let them pick where to go.</div>
-        <input id="picksFromName" type="text" placeholder="Your name (optional)" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;margin-bottom:10px;background:rgba(255,255,255,.08)" />
-        <div style="display:flex;gap:8px">
-          <button onclick="_sharePicksCopy()" style="flex:1;padding:12px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif">Copy Link</button>
-          <button onclick="_sharePicksSMS()" style="flex:1;padding:12px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif">&#128172; Text It</button>
+        <div style="font-family:Playfair Display,serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:4px">Send to your person</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:14px">${count} options ready. They'll pick their favorites.</div>
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Send via email</div>
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <input id="shareToEmail" type="email" placeholder="Their email" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
+          <button id="shareSendBtn" onclick="_shareSendToEmail()" style="padding:11px 18px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Send</button>
         </div>
-        <div id="picksCopiedMsg" style="text-align:center;font-size:12px;color:#34c759;margin-top:8px;display:none">Link copied!</div>
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Or send via text</div>
+        <div style="display:flex;gap:8px">
+          <input id="shareToPhone" type="tel" placeholder="Their phone number" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
+          <button onclick="_shareSendSMS()" style="padding:11px 18px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Text</button>
+        </div>
+        <div id="shareMsg" style="text-align:center;font-size:12px;margin-top:10px;display:none"></div>
       </div>
     </div>`;
   } else {
@@ -1824,11 +1858,10 @@ function renderPicksView() {
   el.innerHTML = html;
 }
 
-async function _generateShareURL() {
+async function _createShareAndGetURL() {
   if (!_sbUser) { alert('Log in first to share!'); return null; }
   const picks = _getPicks();
   const entries = Object.values(picks);
-  const fromName = document.getElementById('picksFromName')?.value.trim() || '';
   const restaurants = entries.map(r => ({
     name: r.name || '',
     cuisine: r.cuisine || '',
@@ -1841,29 +1874,52 @@ async function _generateShareURL() {
     platform: r.booking_platform || '',
     address: r.address || ''
   }));
-  const session = await _createShareSession(restaurants, fromName || _sbUser.email);
-  if (!session) { alert('Error creating share. Try again.'); return null; }
-  return { url: window.location.origin + '/?share=' + session.id, id: session.id };
+  const senderName = (_sbUser.email || '').split('@')[0];
+  const session = await _createShareSession(restaurants, senderName);
+  if (!session) return null;
+  return { url: window.location.origin + '/?share=' + session.id, id: session.id, senderName };
 }
 
-async function _sharePicksCopy() {
-  const btnEl = document.querySelector('[onclick="_sharePicksCopy()"]');
-  if (btnEl) { btnEl.textContent = 'Creating...'; btnEl.disabled = true; }
-  const result = await _generateShareURL();
-  if (!result) { if (btnEl) { btnEl.textContent = 'Copy Link'; btnEl.disabled = false; } return; }
-  navigator.clipboard.writeText(result.url).then(() => {
-    const msg = document.getElementById('picksCopiedMsg');
-    if (msg) { msg.textContent = 'Link copied! Share ID: ' + result.id; msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
-    if (btnEl) { btnEl.textContent = 'Copied!'; setTimeout(() => { btnEl.textContent = 'Copy Link'; btnEl.disabled = false; }, 2500); }
-  });
+function _showShareMsg(text, color) {
+  const msg = document.getElementById('shareMsg');
+  if (!msg) return;
+  msg.textContent = text;
+  msg.style.color = color || '#22c55e';
+  msg.style.display = 'block';
+  setTimeout(() => { msg.style.display = 'none'; }, 5000);
 }
 
-async function _sharePicksSMS() {
-  const result = await _generateShareURL();
-  if (!result) return;
-  const fromName = document.getElementById('picksFromName')?.value.trim() || '';
-  const msg = (fromName || 'I') + ' shared some options for tonight! Pick your favorites: ' + result.url;
-  window.open('sms:?&body=' + encodeURIComponent(msg));
+async function _shareSendToEmail() {
+  const emailEl = document.getElementById('shareToEmail');
+  const btnEl = document.getElementById('shareSendBtn');
+  const email = (emailEl?.value || '').trim();
+  if (!email || !email.includes('@')) { _showShareMsg('Enter a valid email', '#ef4444'); return; }
+  btnEl.textContent = 'Sending...'; btnEl.disabled = true;
+  const result = await _createShareAndGetURL();
+  if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; _showShareMsg('Error creating share', '#ef4444'); return; }
+  // Open email client with pre-composed email
+  const senderName = result.senderName || 'Someone';
+  const subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
+  const body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + result.url + '\n\nPowered by SeatWize');
+  window.open('mailto:' + email + '?subject=' + subject + '&body=' + body);
+  btnEl.textContent = 'Sent!'; btnEl.disabled = false;
+  _showShareMsg('\u2705 Email opened! Share ID: ' + result.id, '#22c55e');
+  setTimeout(() => { btnEl.textContent = 'Send'; }, 3000);
+}
+
+async function _shareSendSMS() {
+  const phoneEl = document.getElementById('shareToPhone');
+  const phone = (phoneEl?.value || '').trim();
+  const result = await _createShareAndGetURL();
+  if (!result) { _showShareMsg('Error creating share', '#ef4444'); return; }
+  const senderName = result.senderName || 'Someone';
+  const msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + result.url;
+  if (phone) {
+    window.open('sms:' + phone + '?&body=' + encodeURIComponent(msg));
+  } else {
+    window.open('sms:?&body=' + encodeURIComponent(msg));
+  }
+  _showShareMsg('\u2705 Text opened!', '#22c55e');
 }
 
 function _clearPicks() {
