@@ -1978,35 +1978,50 @@ function _showShareMsg(text, color) {
   setTimeout(() => { msg.style.display = 'none'; }, 5000);
 }
 
+var _shareURL = null;
+
 async function _shareSendToEmail() {
   try {
-    const emailEl = document.getElementById('shareToEmail');
-    const btnEl = document.getElementById('shareSendBtn');
-    const email = (emailEl?.value || '').trim();
-    if (!email || !email.includes('@')) { alert('Enter a valid email'); return; }
-    btnEl.textContent = 'Sending...'; btnEl.disabled = true;
-    const result = await _createShareAndGetURL();
-    if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; return; }
-    const senderName = result.senderName || 'Someone';
-    const subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
-    const body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + result.url + '\n\nPowered by SeatWize');
-    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+    var emailEl = document.getElementById('shareToEmail');
+    var btnEl = document.getElementById('shareSendBtn');
+    var email = (emailEl ? emailEl.value : '').trim();
+    if (!email || email.indexOf('@') === -1) { alert('Enter a valid email'); return; }
+    btnEl.textContent = 'Creating link...'; btnEl.disabled = true;
+    if (!_shareURL) _shareURL = await _createShareAndGetURL();
+    if (!_shareURL) { btnEl.textContent = 'Send'; btnEl.disabled = false; return; }
+    var senderName = _shareURL.senderName || 'Someone';
+    var subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
+    var body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + _shareURL.url + '\n\nPowered by SeatWize');
+    btnEl.textContent = 'Opening email...';
+    var a = document.createElement('a');
+    a.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+    a.target = '_blank';
+    a.click();
+    btnEl.textContent = 'Sent!'; btnEl.disabled = false;
+    setTimeout(function() { btnEl.textContent = 'Send'; }, 3000);
   } catch(e) {
-    alert('Send email error: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
 async function _shareSendSMS() {
   try {
-    const phoneEl = document.getElementById('shareToPhone');
-    const phone = (phoneEl?.value || '').trim();
-    const result = await _createShareAndGetURL();
-    if (!result) return;
-    const senderName = result.senderName || 'Someone';
-    const msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + result.url;
-    window.location.href = phone ? ('sms:' + phone + '?&body=' + encodeURIComponent(msg)) : ('sms:?&body=' + encodeURIComponent(msg));
+    var phoneEl = document.getElementById('shareToPhone');
+    var smsBtn = document.getElementById('shareSMSBtn');
+    var phone = (phoneEl ? phoneEl.value : '').trim();
+    if (smsBtn) { smsBtn.textContent = 'Creating link...'; smsBtn.disabled = true; }
+    if (!_shareURL) _shareURL = await _createShareAndGetURL();
+    if (!_shareURL) { if (smsBtn) { smsBtn.textContent = 'Text'; smsBtn.disabled = false; } return; }
+    var senderName = _shareURL.senderName || 'Someone';
+    var msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + _shareURL.url;
+    if (smsBtn) smsBtn.textContent = 'Opening text...';
+    var a = document.createElement('a');
+    a.href = phone ? ('sms:' + phone + '?&body=' + encodeURIComponent(msg)) : ('sms:?&body=' + encodeURIComponent(msg));
+    a.target = '_blank';
+    a.click();
+    if (smsBtn) { smsBtn.textContent = 'Sent!'; smsBtn.disabled = false; setTimeout(function() { smsBtn.textContent = 'Text'; }, 3000); }
   } catch(e) {
-    alert('Send text error: ' + e.message);
+    alert('Error: ' + e.message);
   }
 }
 
