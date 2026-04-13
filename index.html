@@ -1974,35 +1974,35 @@ function _showShareMsg(text, color) {
 }
 
 async function _shareSendToEmail() {
-  const emailEl = document.getElementById('shareToEmail');
-  const btnEl = document.getElementById('shareSendBtn');
-  const email = (emailEl?.value || '').trim();
-  if (!email || !email.includes('@')) { _showShareMsg('Enter a valid email', '#ef4444'); return; }
-  btnEl.textContent = 'Sending...'; btnEl.disabled = true;
-  const result = await _createShareAndGetURL();
-  if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; _showShareMsg('Error creating share. Are you logged in?', '#ef4444'); return; }
-  const senderName = result.senderName || 'Someone';
-  const subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
-  const body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + result.url + '\n\nPowered by SeatWize');
-  location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
-  btnEl.textContent = 'Sent!'; btnEl.disabled = false;
-  _showShareMsg('\u2705 Share created! ID: ' + result.id, '#22c55e');
-  setTimeout(() => { btnEl.textContent = 'Send'; }, 3000);
+  try {
+    const emailEl = document.getElementById('shareToEmail');
+    const btnEl = document.getElementById('shareSendBtn');
+    const email = (emailEl?.value || '').trim();
+    if (!email || !email.includes('@')) { alert('Enter a valid email'); return; }
+    btnEl.textContent = 'Sending...'; btnEl.disabled = true;
+    const result = await _createShareAndGetURL();
+    if (!result) { btnEl.textContent = 'Send'; btnEl.disabled = false; return; }
+    const senderName = result.senderName || 'Someone';
+    const subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
+    const body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + result.url + '\n\nPowered by SeatWize');
+    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  } catch(e) {
+    alert('Send email error: ' + e.message);
+  }
 }
 
 async function _shareSendSMS() {
-  const phoneEl = document.getElementById('shareToPhone');
-  const phone = (phoneEl?.value || '').trim();
-  const result = await _createShareAndGetURL();
-  if (!result) { _showShareMsg('Error creating share. Are you logged in?', '#ef4444'); return; }
-  const senderName = result.senderName || 'Someone';
-  const msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + result.url;
-  if (phone) {
-    location.href = 'sms:' + phone + '?&body=' + encodeURIComponent(msg);
-  } else {
-    location.href = 'sms:?&body=' + encodeURIComponent(msg);
+  try {
+    const phoneEl = document.getElementById('shareToPhone');
+    const phone = (phoneEl?.value || '').trim();
+    const result = await _createShareAndGetURL();
+    if (!result) return;
+    const senderName = result.senderName || 'Someone';
+    const msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + result.url;
+    window.location.href = phone ? ('sms:' + phone + '?&body=' + encodeURIComponent(msg)) : ('sms:?&body=' + encodeURIComponent(msg));
+  } catch(e) {
+    alert('Send text error: ' + e.message);
   }
-  _showShareMsg('\u2705 Text opened!', '#22c55e');
 }
 
 function _clearPicks() {
