@@ -2398,9 +2398,9 @@ async function _submitShareVote() {
     await _submitVote(session.id, myPicks, _shareSelectedTime, _shareSelectedDate);
   } catch(e) {}
 
-  // Open SMS — use sms: with proper format for iOS/Android
-  // Also check localStorage for sender phone (backup)
-  if (!senderPhone) senderPhone = localStorage.getItem('sw_reply_phone') || '';
+  // DEBUG — show what number we're texting
+  alert('Texting to: "' + senderPhone + '" (from session creator_name: "' + creatorInfo + '")');
+
   if (senderPhone) {
     window.location.href = 'sms:' + senderPhone + '&body=' + encodeURIComponent(smsBody);
   } else {
