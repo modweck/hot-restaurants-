@@ -2398,9 +2398,6 @@ async function _submitShareVote() {
     await _submitVote(session.id, myPicks, _shareSelectedTime, _shareSelectedDate);
   } catch(e) {}
 
-  // DEBUG — show what number we're texting
-  alert('Texting to: "' + senderPhone + '" (from session creator_name: "' + creatorInfo + '")');
-
   if (senderPhone) {
     window.location.href = 'sms:' + senderPhone + '&body=' + encodeURIComponent(smsBody);
   } else {
