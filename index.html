@@ -1934,6 +1934,8 @@ function renderPicksView() {
       <div style="background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 100%);border-radius:16px;padding:18px;box-shadow:0 4px 20px rgba(26,26,46,.25)">
         <div style="font-family:Playfair Display,serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:4px">Send to your person</div>
         <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:14px">${count} options ready. They'll pick their favorites.</div>
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Your phone (so they can reply)</div>
+        <input id="senderPhone" type="tel" placeholder="Your phone number" style="width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08);margin-bottom:12px" />
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Send via email</div>
         <div style="display:flex;gap:8px;margin-bottom:12px">
           <input id="shareToEmail" type="email" placeholder="Their email" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
@@ -2124,8 +2126,11 @@ async function _shareSendToEmail() {
     if (!_shareURL) _shareURL = await _createShareAndGetURL();
     if (!_shareURL) { btnEl.textContent = 'Send'; btnEl.disabled = false; return; }
     var senderName = _shareURL.senderName || 'Someone';
+    var senderPhoneEl = document.getElementById('senderPhone');
+    var senderPh = (senderPhoneEl ? senderPhoneEl.value : '').trim();
+    var emailShareUrl = _shareURL.url + (senderPh ? '&ph=' + encodeURIComponent(senderPh) : '');
     var subject = encodeURIComponent(senderName + ' wants to pick a restaurant with you!');
-    var body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + _shareURL.url + '\n\nPowered by SeatWize');
+    var body = encodeURIComponent(senderName + ' shared some restaurant options for tonight on SeatWize.\n\nTap here to pick your favorites:\n' + emailShareUrl + '\n\nPowered by SeatWize');
     btnEl.textContent = 'Opening email...';
     var a = document.createElement('a');
     a.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
@@ -2147,8 +2152,10 @@ async function _shareSendSMS() {
     if (!_shareURL) _shareURL = await _createShareAndGetURL();
     if (!_shareURL) { if (smsBtn) { smsBtn.textContent = 'Text'; smsBtn.disabled = false; } return; }
     var senderName = _shareURL.senderName || 'Someone';
-    // Add sender's phone to the share URL so friend can text back
-    var shareUrlWithPhone = _shareURL.url + (phone ? '&ph=' + encodeURIComponent(phone) : '');
+    // Add SENDER's phone to the share URL so friend can text back to the sender
+    var senderPhoneEl = document.getElementById('senderPhone');
+    var senderPh = (senderPhoneEl ? senderPhoneEl.value : '').trim();
+    var shareUrlWithPhone = _shareURL.url + (senderPh ? '&ph=' + encodeURIComponent(senderPh) : '');
     var msg = senderName + ' wants to share restaurants with you! Pick your favorites for tonight: ' + shareUrlWithPhone;
     if (smsBtn) smsBtn.textContent = 'Opening text...';
     var a = document.createElement('a');
