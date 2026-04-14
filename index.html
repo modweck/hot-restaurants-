@@ -4966,6 +4966,12 @@ function showMapInfo(r) {
 
   info.style.display = 'block';
 }
+// Hide Drinks/Bars unless ?bars=1 is in URL
+if (!new URLSearchParams(window.location.search).has('bars')) {
+  document.getElementById('nav-drinks').style.display = 'none';
+  const htd = document.getElementById('ht-drinks'); if (htd) htd.style.display = 'none';
+  document.querySelectorAll('.hero-tab').forEach(t => { if (t.textContent.trim() === 'Drinks') t.style.display = 'none'; });
+}
 </script>
 </body>
 </html>
