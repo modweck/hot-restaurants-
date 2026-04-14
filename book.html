@@ -251,9 +251,9 @@ const RESTAURANTS = [
 
 let partySize = 2;
 let selectedRest = null;
-let resyToken = null;
-let resyPaymentId = null;
-let resyEmail = '';
+let resyToken = localStorage.getItem('sw_resy_token') || null;
+let resyPaymentId = localStorage.getItem('sw_resy_payment_id') || null;
+let resyEmail = localStorage.getItem('sw_resy_email') || '';
 
 function adjParty(d) {
   partySize = Math.max(1, Math.min(8, partySize + d));
@@ -277,13 +277,32 @@ function fmtDate(d) {
 
 function pickRest(idx) {
   selectedRest = RESTAURANTS[idx];
-  resyToken = null; resyPaymentId = null; resyEmail = '';
-  document.getElementById('resyConnected').style.display = 'none';
-  document.getElementById('resyBtn').style.display = '';
-  document.getElementById('resyEmail').value = '';
-  document.getElementById('resyPassword').value = '';
-  document.getElementById('resyError').style.display = 'none';
-  document.getElementById('submitBtn').disabled = true;
+  // Check if already connected from previous session
+  const savedToken = localStorage.getItem('sw_resy_token');
+  const savedEmail = localStorage.getItem('sw_resy_email');
+  const savedPayment = localStorage.getItem('sw_resy_payment_id');
+  if (savedToken && savedEmail) {
+    resyToken = savedToken;
+    resyPaymentId = savedPayment || null;
+    resyEmail = savedEmail;
+    document.getElementById('resyConnected').textContent = 'Resy account connected: ' + savedEmail;
+    document.getElementById('resyConnected').style.display = 'block';
+    document.getElementById('loginPhone').style.display = 'none';
+    document.getElementById('loginEmail').style.display = 'none';
+    document.querySelectorAll('.login-tab').forEach(t => t.style.display = 'none');
+    document.getElementById('resyError').style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
+  } else {
+    resyToken = null; resyPaymentId = null; resyEmail = '';
+    document.getElementById('resyConnected').style.display = 'none';
+    document.getElementById('loginPhone').style.display = 'block';
+    document.querySelectorAll('.login-tab').forEach(t => t.style.display = '');
+    document.getElementById('resyBtn').style.display = '';
+    document.getElementById('resyEmail').value = '';
+    document.getElementById('resyPassword').value = '';
+    document.getElementById('resyError').style.display = 'none';
+    document.getElementById('submitBtn').disabled = true;
+  }
 
   document.getElementById('bookHeader').textContent = selectedRest.name;
 
@@ -320,11 +339,16 @@ function switchLoginTab(tab) {
 
 function showConnected(label) {
   resyEmail = label;
-  document.getElementById('resyConnected').textContent = 'Connected: ' + label;
+  // Save to localStorage so they don't need to login again
+  localStorage.setItem('sw_resy_token', resyToken);
+  localStorage.setItem('sw_resy_payment_id', resyPaymentId || '');
+  localStorage.setItem('sw_resy_email', label);
+  document.getElementById('resyConnected').textContent = 'Resy account connected: ' + label;
   document.getElementById('resyConnected').style.display = 'block';
   document.getElementById('loginPhone').style.display = 'none';
   document.getElementById('loginEmail').style.display = 'none';
   document.querySelectorAll('.login-tab').forEach(t => t.style.display = 'none');
+  document.getElementById('resyError').style.display = 'none';
   document.getElementById('submitBtn').disabled = !document.getElementById('agreeTerms').checked;
 }
 
