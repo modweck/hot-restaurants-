@@ -439,12 +439,14 @@ async function _getShareSession(sessionId) {
   return data;
 }
 
-async function _submitVote(sessionId, picks) {
+async function _submitVote(sessionId, picks, time, date) {
   if (!_sbUser) return null;
+  var voterInfo = (_sbUser.email || '');
+  if (time || date) voterInfo += ' | ' + [time, date].filter(Boolean).join(', ');
   const { data, error } = await _sb.from('share_votes').upsert({
     session_id: sessionId,
     voter_id: _sbUser.id,
-    voter_name: _sbUser.email || '',
+    voter_name: voterInfo,
     picks: picks
   }, { onConflict: 'session_id,voter_id' }).select().single();
   if (error) { console.error('Vote error:', error); return null; }
@@ -2362,6 +2364,7 @@ async function _submitShareVote() {
 
   var session = _activeShareSession;
   var restaurants = session.restaurants || [];
+  var from = session.creator_name || 'Someone';
   var voterName = (_sbUser ? (_sbUser.email || '') : '').split('@')[0] || 'Your friend';
   var senderPhone = window._senderPhone || '';
   var resultsUrl = window.location.origin + '/?share=' + session.id;
@@ -2371,19 +2374,27 @@ async function _submitShareVote() {
   var bookUrl = firstMatch.booking_url || resultsUrl;
   var dateStr = _shareSelectedDate || (restaurants[0] || {}).dateDisplay || '';
   var timeStr = (_shareSelectedTime ? ' at ' + _shareSelectedTime : '') + (dateStr ? ' on ' + dateStr : '');
-  var smsBody = voterName + ' chose ' + matchNames.join(', ') + timeStr + '! Book now: ' + bookUrl + '\n\nSee results: ' + resultsUrl;
 
-  // Open SMS immediately — don't wait for Supabase
-  var a = document.createElement('a');
-  a.href = senderPhone ? ('sms:' + senderPhone + '?&body=' + encodeURIComponent(smsBody)) : ('sms:?&body=' + encodeURIComponent(smsBody));
-  a.click();
+  var confirmed = matchNames.length === 1 ? matchNames[0] : matchNames.join(' & ');
+  var smsBody = 'Confirmed! ' + voterName + ' picked ' + confirmed + timeStr + '\n\nBook now: ' + bookUrl + '\nFull results: ' + resultsUrl;
 
-  // Save vote to Supabase in background
-  _submitVote(session.id, myPicks).then(function() {
-    return _getVotes(session.id);
-  }).then(function(votes) {
-    _showShareResults(session, votes || []);
-  });
+  // Build the SMS URL
+  var smsUrl = senderPhone
+    ? 'sms:' + senderPhone + '?body=' + encodeURIComponent(smsBody)
+    : 'sms:?body=' + encodeURIComponent(smsBody);
+
+  // Save vote to Supabase first, then open SMS + show results
+  try {
+    await _submitVote(session.id, myPicks, _shareSelectedTime, _shareSelectedDate);
+  } catch(e) {}
+
+  // Open SMS — use window.location for reliability
+  window.location.href = smsUrl;
+
+  // Show results after a short delay (user will come back from SMS app)
+  var votes = [];
+  try { votes = await _getVotes(session.id); } catch(e) {}
+  _showShareResults(session, votes || []);
 }
 
 function _showShareResults(session, votes) {
@@ -2440,7 +2451,12 @@ function _showShareResults(session, votes) {
   if (matches.length === 0) {
     html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F62D}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">No matches yet</div><div style="font-size:13px;color:#888;margin-top:6px">Waiting for votes or try different picks!</div></div>';
   } else if (matches.length === 1) {
-    html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F389}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">You matched on 1 spot!</div><div style="font-size:13px;color:#888;margin-top:6px">Looks like you\u2019re going to ' + matches[0].name + '</div></div>';
+    // Extract time/date from voter info if available
+    var voteInfo = (votes[0] || {}).voter_name || '';
+    var voteTimeParts = voteInfo.split(' | ');
+    var confirmedWhen = voteTimeParts.length > 1 ? voteTimeParts[1] : '';
+    var whenStr = confirmedWhen ? '<div style="font-size:14px;font-weight:700;color:#ff4500;margin-top:8px">' + confirmedWhen + '</div>' : '';
+    html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F389}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">Confirmed!</div><div style="font-size:13px;color:#888;margin-top:6px">You\u2019re going to ' + matches[0].name + '</div>' + whenStr + '</div>';
   } else {
     html += '<div style="text-align:center;padding:20px;margin:0 16px 16px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:48px;margin-bottom:8px">\u{1F60D}</div><div style="font-family:Playfair Display,serif;font-size:20px;font-weight:900;color:#1a1a2e">' + matches.length + ' matches!</div><div style="font-size:13px;color:#888;margin-top:6px">You both want to go to these</div></div>';
   }
