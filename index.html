@@ -468,9 +468,12 @@ _sb.auth.onAuthStateChange(function(event, session) {
     try { _loadSavedFromSupabase(); } catch(e) {}
     // Check for pending share link
     setTimeout(function() {
-      if (window._pendingShareId && typeof _openShareSession === 'function') {
-        var sid = window._pendingShareId;
+      // Check window var first, then localStorage (survives login redirect)
+      var sid = window._pendingShareId || localStorage.getItem('sw_pending_share');
+      if (sid && typeof _openShareSession === 'function') {
         delete window._pendingShareId;
+        localStorage.removeItem('sw_pending_share');
+        window._senderPhone = window._senderPhone || localStorage.getItem('sw_reply_phone') || '';
         _openShareSession(sid);
       }
     }, 1000);
@@ -2385,18 +2388,19 @@ async function _submitShareVote() {
   var confirmed = matchNames.length === 1 ? matchNames[0] : matchNames.join(' & ');
   var smsBody = 'Confirmed! ' + voterName + ' picked ' + confirmed + timeStr + '\n\nBook now: ' + bookUrl + '\nFull results: ' + resultsUrl;
 
-  // Build the SMS URL
-  var smsUrl = senderPhone
-    ? 'sms:' + senderPhone + '?body=' + encodeURIComponent(smsBody)
-    : 'sms:?body=' + encodeURIComponent(smsBody);
-
-  // Save vote to Supabase first, then open SMS + show results
+  // Save vote to Supabase first
   try {
     await _submitVote(session.id, myPicks, _shareSelectedTime, _shareSelectedDate);
   } catch(e) {}
 
-  // Open SMS — use window.location for reliability
-  window.location.href = smsUrl;
+  // Open SMS — use sms: with proper format for iOS/Android
+  // Also check localStorage for sender phone (backup)
+  if (!senderPhone) senderPhone = localStorage.getItem('sw_reply_phone') || '';
+  if (senderPhone) {
+    window.location.href = 'sms:' + senderPhone + '&body=' + encodeURIComponent(smsBody);
+  } else {
+    window.location.href = 'sms:&body=' + encodeURIComponent(smsBody);
+  }
 
   // Show results after a short delay (user will come back from SMS app)
   var votes = [];
@@ -2509,6 +2513,9 @@ function _showShareResults(session, votes) {
   if (params.has('share')) {
     window._pendingShareId = params.get('share');
     window._senderPhone = params.get('ph') || '';
+    // Persist so they survive login redirect
+    if (window._pendingShareId) localStorage.setItem('sw_pending_share', window._pendingShareId);
+    if (window._senderPhone) localStorage.setItem('sw_reply_phone', window._senderPhone);
   }
 })();
 
