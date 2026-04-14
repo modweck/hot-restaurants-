@@ -1,0 +1,255 @@
+{
+  "don angie": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "genuinely hard to book"
+  },
+  "zou zou's": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "genuinely hard to book"
+  },
+  "match 65 brasserie": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "booked solid"
+  },
+  "little honey": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "booked solid"
+  },
+  "mansion": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "booked solid"
+  },
+  "alfie's": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "releases 3 days out"
+  },
+  "blue note": {
+    "tier": "booked",
+    "locked": true,
+    "reason": "jazz club/brunch"
+  },
+  "fig & olive": {
+    "platform": "website",
+    "locked": true
+  },
+  "indian summer": {
+    "platform": "website",
+    "locked": true
+  },
+  "burger club": {
+    "platform": "website",
+    "locked": true
+  },
+  "due amici": {
+    "platform": "website",
+    "locked": true
+  },
+  "gui steakhouse": {
+    "platform": "website",
+    "locked": true
+  },
+  "han bat restaurant": {
+    "platform": "website",
+    "locked": true
+  },
+  "insa - bk": {
+    "platform": "website",
+    "locked": true
+  },
+  "ladurée soho": {
+    "platform": "website",
+    "locked": true
+  },
+  "le b.": {
+    "platform": "website",
+    "locked": true
+  },
+  "le jardin rooftop": {
+    "platform": "website",
+    "locked": true
+  },
+  "mamma rosa's": {
+    "platform": "website",
+    "locked": true
+  },
+  "mizumi": {
+    "platform": "website",
+    "locked": true
+  },
+  "papi's grill": {
+    "platform": "website",
+    "locked": true
+  },
+  "spring place": {
+    "platform": "website",
+    "locked": true
+  },
+  "café mars": {
+    "platform": "website",
+    "locked": true
+  },
+  "peaches hothouse": {
+    "platform": "website",
+    "locked": true
+  },
+  "the river café": {
+    "platform": "website",
+    "locked": true
+  },
+  "the vintage tea": {
+    "platform": "website",
+    "locked": true
+  },
+  "pappas - new york": {
+    "platform": "website",
+    "locked": true
+  },
+  "shun lee cafe": {
+    "platform": "website",
+    "locked": true
+  },
+  "néo restaurant": {
+    "platform": "website",
+    "locked": true
+  },
+  "parklife": {
+    "platform": "website",
+    "locked": true
+  },
+  "potluck club 佰樂": {
+    "platform": "website",
+    "locked": true
+  },
+  "sangarita's": {
+    "platform": "website",
+    "locked": true
+  },
+  "simple بسيط": {
+    "platform": "website",
+    "locked": true
+  },
+  "spanglish nyc astoria": {
+    "platform": "website",
+    "locked": true
+  },
+  "supperclub @ le petit parisien": {
+    "platform": "website",
+    "locked": true
+  },
+  "sushi by bou - chelsea nyc at bosque flowers & coffee": {
+    "platform": "website",
+    "locked": true
+  },
+  "sushi by bou - east village nyc": {
+    "platform": "website",
+    "locked": true
+  },
+  "treadwell park - battery park": {
+    "platform": "website",
+    "locked": true
+  },
+  "via brasil restaurant": {
+    "platform": "website",
+    "locked": true
+  },
+  "viva toro": {
+    "platform": "website",
+    "locked": true
+  },
+  "babylon": {
+    "removed": true,
+    "reason": "closed/rebranded to hookah lounge"
+  },
+  "crave fishbar - uws": {
+    "removed": true,
+    "reason": "closed"
+  },
+  "briciola harlem": {
+    "removed": true,
+    "reason": "closed"
+  },
+  "eagle trading co": {
+    "removed": true,
+    "reason": "removed"
+  },
+  "la catrina": {
+    "removed": true,
+    "reason": "closed"
+  },
+  "crystal": {
+    "removed": true,
+    "reason": "wrong RID"
+  },
+  "fei ma": {
+    "removed": true,
+    "reason": "wrong RID"
+  },
+  "flushing house": {
+    "removed": true,
+    "reason": "closed/off OT"
+  },
+  "big apple brunch": {
+    "removed": true,
+    "reason": "no data, not real"
+  },
+  "attaboy": {
+    "removed": true,
+    "reason": "bar, not restaurant"
+  },
+  "salt hank's": {
+    "removed": true,
+    "reason": "not open yet"
+  },
+  "phoenix palace": {
+    "removed": true,
+    "reason": "wrong RID"
+  },
+  "tumi peruvian": {
+    "removed": true,
+    "reason": "wrong RID"
+  },
+  "grand view events": {
+    "removed": true,
+    "reason": "events venue"
+  },
+  "holiday cocktail lounge": {
+    "removed": true,
+    "reason": "cocktail bar"
+  },
+  "the parisian tea room- nyc": {
+    "removed": true,
+    "reason": "tea room"
+  },
+  "planet hollywood - new york city": {
+    "removed": true,
+    "reason": "tourist trap"
+  },
+  "gather espresso & wine bar": {
+    "removed": true,
+    "reason": "coffee/wine bar"
+  },
+  "bruno's restaurant": {
+    "renamed_to": "bruno's italian bistro",
+    "locked": true
+  },
+  "eloise": {
+    "renamed_to": "bistro eloise",
+    "locked": true
+  },
+  "birdy's": {
+    "tier": "limited",
+    "locked": true,
+    "reason": "brunch only, Fri-Sun, closes 2pm"
+  },
+  "lazzara's pizza cafe": {
+    "tier": "limited",
+    "locked": true,
+    "reason": "3+ party only"
+  }
+}

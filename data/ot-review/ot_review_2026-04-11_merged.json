@@ -309,21 +309,6 @@
     "checked_date": "2026-04-11",
     "rid": 1183222
   },
-  "big apple brunch": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T07:34:02.420Z",
-    "matched_name": "Access Denied",
-    "rid": 1279057
-  },
   "aoc east": {
     "tier": "open",
     "dinner_slots": 5,
@@ -588,14 +573,14 @@
     "rid": 107920
   },
   "gallagher's steakhouse": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
     "sample_times": [],
     "platform": "opentable",
     "checked_date": "2026-04-14",
@@ -1536,7 +1521,7 @@
       "7:45pm",
       "8:00pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-15",
     "rid": 820,
     "matched_name": "Access Denied",
@@ -1576,11 +1561,11 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-15",
     "rid": 1278811,
     "matched_name": "Café Mars",
-    "opens_in": "2026-04-15"
+    "opens_in": "+2d"
   },
   "clover hill": {
     "tier": "open",
@@ -2501,27 +2486,6 @@
     "matched_name": "Access Denied",
     "rid": 1226611
   },
-  "babylon": {
-    "tier": "open",
-    "dinner_slots": 4,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [
-      "4:30pm",
-      "4:45pm",
-      "8:45pm",
-      "9:00pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "matched_name": "Access Denied",
-    "fully_locked": true,
-    "rid": 239827
-  },
   "landmark cevicheria": {
     "tier": "open",
     "dinner_slots": 5,
@@ -2730,7 +2694,7 @@
     "rid": 1370884
   },
   "potluck club 佰樂": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 2,
     "early": "booked",
     "prime": "limited",
@@ -2742,10 +2706,11 @@
       "8:00pm",
       "8:15pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-12",
     "rid": 1358950,
-    "matched_name": "Potluck Club"
+    "matched_name": "Potluck Club",
+    "website": "https://thepotluckclubny.com/"
   },
   "mango bay": {
     "tier": "open",
@@ -2809,28 +2774,6 @@
     "checked_date": "2026-04-11",
     "rid": 30754,
     "matched_name": "Emporio"
-  },
-  "phoenix palace": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-15",
-    "matched_name": "Access Denied",
-    "rid": 1358950,
-    "opens_in": "2026-04-15"
   },
   "palm street": {
     "tier": "open",
@@ -2983,7 +2926,7 @@
     "rid": 72178
   },
   "fig & olive": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "limited",
     "prime": "booked",
@@ -2992,7 +2935,7 @@
     "has_prime": false,
     "has_late": true,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T04:27:45.334Z",
     "matched_name": "Access Denied",
     "rid": 1470637
@@ -3357,21 +3300,6 @@
     "checked_date": "2026-04-11",
     "matched_name": "Access Denied",
     "rid": 1175752
-  },
-  "crave fishbar upper east side": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T04:32:05.827Z",
-    "matched_name": "Access Denied",
-    "rid": 1380592
   },
   "lure fishbar": {
     "tier": "open",
@@ -4671,32 +4599,17 @@
     "rid": 262672
   },
   "pure thai cookhouse": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": false,
-    "has_prime": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
     "has_late": true,
     "sample_times": [],
     "platform": "opentable",
     "checked_date": "2026-04-02T04:44:13.967Z",
-    "matched_name": "Access Denied",
-    "rid": 238921
-  },
-  "pure thai restaurant": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T04:44:23.939Z",
     "matched_name": "Access Denied",
     "rid": 238921
   },
@@ -5565,7 +5478,7 @@
     "matched_name": "Access Denied"
   },
   "peaches hothouse": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 2,
     "early": "booked",
     "prime": "limited",
@@ -5577,7 +5490,7 @@
       "10:00 pm",
       "11:00 pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T04:51:42.854Z",
     "matched_name": "Peaches HotHouse",
     "rid": 1438570
@@ -6130,13 +6043,13 @@
     "matched_name": "Don Coqui Edgewater (New Jersey)"
   },
   "rumba cubana": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "has_early": true,
-    "has_prime": false,
+    "has_prime": true,
     "has_late": true,
     "sample_times": [],
     "platform": "opentable",
@@ -6183,28 +6096,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 1315969
-  },
-  "briciola harlem": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "8:15 PM",
-      "8:30 PM",
-      "9:15 PM",
-      "9:30 PM",
-      "9:00 PM"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-10T16:12:50.293Z",
-    "verified": true,
-    "matched_name": "Access Denied",
-    "rid": 731335
   },
   "pastavino": {
     "tier": "open",
@@ -6388,7 +6279,7 @@
     "rid": 1052695
   },
   "due amici": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -6397,7 +6288,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 461241
   },
@@ -6565,13 +6456,13 @@
     "matched_name": "Acadia"
   },
   "aria west village": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": false,
-    "has_prime": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
     "has_late": true,
     "sample_times": [],
     "platform": "opentable",
@@ -6717,7 +6608,7 @@
     "matched_name": "Benjamin Steakhouse Prime"
   },
   "birdy's": {
-    "tier": "open",
+    "tier": "limited",
     "dinner_slots": 4,
     "early": "available",
     "prime": "available",
@@ -6735,7 +6626,12 @@
     "checked_date": "2026-04-10T16:12:50.293Z",
     "verified": true,
     "matched_name": "Access Denied",
-    "rid": 1189612
+    "rid": 1189612,
+    "note": "Breakfast/lunch only, closes 2pm. Open Fri-Sun only.",
+    "opens_in": "+7d",
+    "vibe_tags": [
+      "brunch"
+    ]
   },
   "blackbarn": {
     "tier": "open",
@@ -6918,21 +6814,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 190099
-  },
-  "bruno's restaurant": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 46048,
-    "matched_name": "Bruno's Italian Bistro"
   },
   "burger & lobster - bryant park": {
     "tier": "open",
@@ -7407,14 +7288,14 @@
     "opens_in": "2026-04-15"
   },
   "cotenna": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
     "sample_times": [],
     "platform": "opentable",
     "checked_date": "2026-04-14",
@@ -7441,21 +7322,6 @@
     "checked_date": "2026-04-11",
     "rid": 136066,
     "matched_name": "Mozzarella & Vino"
-  },
-  "crystal": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T05:08:18.314Z",
-    "matched_name": "Access Denied",
-    "rid": 394386
   },
   "central park boathouse restaurant": {
     "tier": "limited",
@@ -7681,21 +7547,6 @@
     "rid": 1424407,
     "opens_in": "2026-04-15"
   },
-  "eagle trading co": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T05:10:12.761Z",
-    "matched_name": "Access Denied",
-    "rid": 185453
-  },
   "el patron mexican grill": {
     "tier": "open",
     "dinner_slots": 5,
@@ -7739,21 +7590,6 @@
     "checked_date": "2026-04-11",
     "rid": 1368328,
     "matched_name": "Brutto - El Salvador"
-  },
-  "eloise": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 1057504,
-    "matched_name": "Bistro Eloise"
   },
   "enzo's restaurant": {
     "tier": "open",
@@ -7895,28 +7731,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 313840
-  },
-  "fei ma": {
-    "tier": "open",
-    "dinner_slots": 8,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "6:45 PM",
-      "7:00 PM",
-      "7:15 PM",
-      "6:30 PM",
-      "7:30 PM"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-10T16:12:50.293Z",
-    "verified": true,
-    "matched_name": "Access Denied",
-    "rid": 161255
   },
   "fratelli restaurant": {
     "tier": "open",
@@ -8222,7 +8036,7 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 441273,
     "matched_name": "Indian Summer"
@@ -8482,7 +8296,8 @@
     "platform": "opentable",
     "checked_date": "2026-04-02T05:16:52.693Z",
     "matched_name": "Access Denied",
-    "rid": 124820
+    "rid": 124820,
+    "opens_in": "+2d"
   },
   "l'express": {
     "tier": "open",
@@ -8839,7 +8654,7 @@
     "matched_name": "Mama Sushi - Bronx"
   },
   "mamma rosa's": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "limited",
     "prime": "booked",
@@ -8848,7 +8663,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T05:20:09.116Z",
     "matched_name": "Access Denied",
     "rid": 364341
@@ -9135,7 +8950,7 @@
     "rid": 36541
   },
   "mizumi": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -9144,7 +8959,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 89977
   },
@@ -9628,7 +9443,7 @@
     "matched_name": "Panini Grill"
   },
   "papi's grill": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "limited",
     "prime": "booked",
@@ -9637,7 +9452,7 @@
     "has_prime": false,
     "has_late": true,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T05:27:14.513Z",
     "matched_name": "Access Denied",
     "rid": 381720
@@ -10525,7 +10340,7 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 1362397,
     "matched_name": "Prohibition Texas"
@@ -11837,40 +11652,6 @@
     "matched_name": "Access Denied",
     "rid": 1204168
   },
-  "attaboy": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T06:02:04.401Z",
-    "matched_name": "Access Denied",
-    "rid": 1460605
-  },
-  "bistro so": {
-    "tier": "open",
-    "dinner_slots": 4,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1386064
-  },
   "los dos hermanos": {
     "tier": "open",
     "dinner_slots": 5,
@@ -12667,26 +12448,6 @@
     "matched_name": "MASSERIA EAST",
     "rid": 220543
   },
-  "fooda": {
-    "tier": "open",
-    "dinner_slots": 4,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1386064,
-    "matched_name": "FOOD"
-  },
   "shan": {
     "tier": "open",
     "dinner_slots": 5,
@@ -13049,27 +12810,6 @@
     "checked_date": "2026-04-11",
     "rid": 1396297,
     "matched_name": "Casa Cruz"
-  },
-  "ainslie bowery": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1211932,
-    "matched_name": "Ainslie Bowery"
   },
   "secret kitchen": {
     "tier": "open",
@@ -13439,27 +13179,6 @@
     "checked_date": "2026-04-11",
     "matched_name": "La Diáspora Bar & Restaurant",
     "rid": 1340860
-  },
-  "bartley dunnes": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1411927,
-    "matched_name": "Bartley Dunnes"
   },
   "gosht restaurant": {
     "tier": "open",
@@ -14515,27 +14234,6 @@
     "rid": 229045,
     "matched_name": "Belli Osteria - Brooklyn"
   },
-  "la catrina": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1468771,
-    "matched_name": "La Catrina Queens"
-  },
   "mexi": {
     "tier": "open",
     "dinner_slots": 5,
@@ -15163,7 +14861,7 @@
     "matched_name": "Curry Flavor"
   },
   "the vintage tea": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -15172,7 +14870,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 1355557
   },
@@ -15238,14 +14936,14 @@
     "rid": 1379896
   },
   "l'incontro by rocco": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
     "sample_times": [],
     "platform": "opentable",
     "checked_date": "2026-04-14",
@@ -15664,21 +15362,6 @@
     "checked_date": "2026-04-11",
     "rid": 1414477,
     "matched_name": "Nin Hao"
-  },
-  "salt hank's": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 1485760,
-    "matched_name": "Access Denied"
   },
   "lulla": {
     "tier": "open",
@@ -16357,21 +16040,6 @@
     "checked_date": "2026-04-11",
     "matched_name": "Bartolo",
     "rid": 1389607
-  },
-  "flushing house": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 31156,
-    "matched_name": "Access Denied"
   },
   "tenjou new york": {
     "tier": "open",
@@ -18272,7 +17940,7 @@
     "matched_name": "Access Denied"
   },
   "burger club": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "limited",
     "prime": "booked",
@@ -18281,7 +17949,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T06:55:49.458Z",
     "matched_name": "Access Denied",
     "rid": 376356
@@ -19141,26 +18809,6 @@
     "rid": 1232089,
     "matched_name": "Felice On Hudson"
   },
-  "le jardin bistro": {
-    "tier": "open",
-    "dinner_slots": 4,
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "matched_name": "Access Denied",
-    "rid": 1386064
-  },
   "george's": {
     "tier": "open",
     "dinner_slots": 5,
@@ -19300,7 +18948,7 @@
     "rid": 1146670
   },
   "via brasil restaurant": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -19309,10 +18957,11 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 239761,
-    "matched_name": "Via Brasil"
+    "matched_name": "Via Brasil",
+    "website": "http://www.viabrasilrestaurantnyc.com/"
   },
   "rosemary's west village": {
     "tier": "open",
@@ -20594,14 +20243,14 @@
     "not_bookable": true
   },
   "artesano": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
     "sample_times": [],
     "platform": "opentable",
     "checked_date": "2026-04-14",
@@ -21055,10 +20704,11 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-12",
     "rid": 1318996,
-    "matched_name": "Supperclub @ Le Petit Parisien"
+    "matched_name": "Supperclub @ Le Petit Parisien",
+    "website": "https://supperclublpp.com/"
   },
   "giardino 54": {
     "tier": "open",
@@ -21389,21 +21039,6 @@
     "checked_date": "2026-04-11",
     "rid": 1036774,
     "matched_name": "Fumo UES"
-  },
-  "grand view events": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 1076863,
-    "matched_name": "Grand View Events"
   },
   "il forno": {
     "tier": "open",
@@ -21896,7 +21531,7 @@
     "matched_name": "Skin Contact"
   },
   "viva toro": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -21905,10 +21540,11 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 161926,
-    "matched_name": "Viva Toro"
+    "matched_name": "Viva Toro",
+    "website": "http://www.vivatoro.com/"
   },
   "bota": {
     "tier": "open",
@@ -22424,14 +22060,14 @@
     "matched_name": "Westville Hell's Kitchen"
   },
   "bond 45": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 3,
-    "early": "booked",
-    "prime": "limited",
-    "late": "booked",
-    "has_early": false,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
     "has_prime": true,
-    "has_late": false,
+    "has_late": true,
     "sample_times": [
       "6:30pm",
       "6:45pm",
@@ -22505,27 +22141,6 @@
     "rid": 211633,
     "matched_name": "Frankie and Johnnie's Steakhouse - 46th Street"
   },
-  "mari": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "5:00pm",
-      "5:30pm",
-      "7:00pm",
-      "7:30pm",
-      "9:00pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-12",
-    "rid": 1237195,
-    "matched_name": "Mari"
-  },
   "hyo dong gak": {
     "tier": "open",
     "dinner_slots": 5,
@@ -22548,7 +22163,7 @@
     "matched_name": "Hyo Dong Gak"
   },
   "han bat restaurant": {
-    "tier": "booked",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -22557,7 +22172,7 @@
     "has_prime": false,
     "has_late": false,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-14",
     "rid": 1242289,
     "matched_name": "Han Bat Korean Restaurant"
@@ -23542,27 +23157,6 @@
     "checked_date": "2026-04-11",
     "rid": 256153,
     "matched_name": "Access Denied"
-  },
-  "obica mozzarella bar": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 42739,
-    "matched_name": "Obicà Mozzarella Bar - Madison Ave"
   },
   "patiala indian grill & bar": {
     "tier": "open",
@@ -25145,11 +24739,12 @@
       "12:00 AM",
       "12:15 AM"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-10T16:12:50.293Z",
     "verified": true,
     "rid": 192763,
-    "matched_name": "Sangarita's"
+    "matched_name": "Sangarita's",
+    "website": "https://sangaritasny.com/"
   },
   "afghan kebab house": {
     "tier": "open",
@@ -26181,12 +25776,13 @@
       "6:30 PM",
       "7:30 PM"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-10T16:12:50.293Z",
     "verified": true,
     "matched_name": "Access Denied",
     "rid": 1197907,
-    "opens_in": "2026-05-04"
+    "opens_in": "2026-05-04",
+    "website": "http://www.zouzousnyc.com/"
   },
   "craft": {
     "tier": "booked",
@@ -26906,10 +26502,11 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-12",
     "rid": 487612,
-    "matched_name": "Access Denied"
+    "matched_name": "Access Denied",
+    "website": "https://www.simplecafenyc.com/"
   },
   "café fleuri": {
     "tier": "open",
@@ -28033,22 +27630,6 @@
     "rid": 1414252,
     "matched_name": "Complete Cafe"
   },
-  "the brooklyn deli - times square": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-14",
-    "rid": 1318528,
-    "matched_name": "Access Denied",
-    "url": "https://www.opentable.com/r/the-brooklyn-deli-times-square-new-york"
-  },
   "dolce momento- asian/mediterranean fusion": {
     "tier": "open",
     "dinner_slots": 5,
@@ -28235,11 +27816,12 @@
       "6:30 PM",
       "7:30 PM"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-10T16:12:50.293Z",
     "verified": true,
     "rid": 1154464,
-    "matched_name": "Parklife"
+    "matched_name": "Parklife",
+    "website": "https://www.parklifebk.com/"
   },
   "max restaurant": {
     "tier": "open",
@@ -28803,7 +28385,7 @@
     "matched_name": "Access Denied"
   },
   "pappas - new york": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "limited",
     "prime": "booked",
@@ -28812,7 +28394,7 @@
     "has_prime": false,
     "has_late": true,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T08:45:38.009Z",
     "matched_name": "Access Denied",
     "rid": 1101250,
@@ -28899,7 +28481,7 @@
     "matched_name": "Teruko - The Hotel Chelsea"
   },
   "sushi by bou - chelsea nyc at bosque flowers & coffee": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 1,
     "early": "booked",
     "prime": "booked",
@@ -28910,10 +28492,11 @@
     "sample_times": [
       "9:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 1048321,
-    "matched_name": "Sushi by Bou - Chelsea NYC at Bosque Flowers & Coffee"
+    "matched_name": "Sushi by Bou - Chelsea NYC at Bosque Flowers & Coffee",
+    "website": "https://sushibybou.com/"
   },
   "kahlo restaurant": {
     "tier": "open",
@@ -29676,7 +29259,7 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 1411927,
     "matched_name": "Le Jardin Rooftop"
@@ -30893,28 +30476,6 @@
     "rid": 242434,
     "matched_name": "Momoya"
   },
-  "crave fishbar - uws": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "6:30 PM",
-      "6:45 PM",
-      "7:00 PM",
-      "7:15 PM",
-      "7:30 PM"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-10T16:12:50.293Z",
-    "verified": true,
-    "rid": 1380592,
-    "matched_name": "Crave Fishbar - UWS"
-  },
   "serafina upper west": {
     "tier": "booked",
     "dinner_slots": 0,
@@ -32070,7 +31631,7 @@
     "matched_name": "SAN CARLO  Osteria Piemonte"
   },
   "ladurée soho": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 1,
     "early": "booked",
     "prime": "booked",
@@ -32081,7 +31642,7 @@
     "sample_times": [
       "4:00pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-15",
     "rid": 1423174,
     "matched_name": "Ladurée Soho",
@@ -32608,10 +32169,11 @@
       "7:15pm",
       "9:00pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 1245115,
-    "matched_name": "Treadwell Park - Battery Park"
+    "matched_name": "Treadwell Park - Battery Park",
+    "website": "https://www.treadwellpark.com/location/downtown/"
   },
   "holywater": {
     "tier": "open",
@@ -33080,22 +32642,6 @@
     "matched_name": "Access Denied",
     "opens_in": 14,
     "rid": 1394212
-  },
-  "the parisian tea room- nyc": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": false,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T09:37:26.872Z",
-    "matched_name": "Access Denied",
-    "rid": 1064044,
-    "url": "https://www.opentable.com/r/the-parisian-tea-room-nyc-morganville"
   },
   "del frisco's grille - nyc": {
     "tier": "open",
@@ -33944,29 +33490,6 @@
     "matched_name": "Access Denied",
     "rid": 1409887
   },
-  "match 65 brasserie (formerly paris match)": {
-    "tier": "open",
-    "dinner_slots": 9,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "6:45 PM",
-      "7:00 PM",
-      "7:15 PM",
-      "8:00 PM",
-      "8:15 PM"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-10T16:12:50.293Z",
-    "verified": true,
-    "matched_name": "Access Denied",
-    "rid": 6420,
-    "url": "https://www.opentable.com/r/match-65-brasserie-formerly-paris-match-new-york"
-  },
   "brasserie cognac central park south": {
     "tier": "open",
     "dinner_slots": 5,
@@ -34611,7 +34134,7 @@
     "url": "https://www.opentable.com/r/musaafer-new-york-new-york-city"
   },
   "gui steakhouse": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 3,
     "early": "limited",
     "prime": "limited",
@@ -34624,7 +34147,7 @@
       "7:30pm",
       "9:00pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "rid": 1237195,
     "matched_name": "Gui Steakhouse"
@@ -34645,7 +34168,7 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "matched_name": "Access Denied",
     "rid": 253246
@@ -35120,11 +34643,12 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-15",
     "rid": 1359898,
     "matched_name": "Spanglish NYC Astoria",
-    "opens_in": "2026-04-15"
+    "opens_in": "2026-04-15",
+    "website": "https://www.spanglishnyc.com/"
   },
   "sammy's smokehouse bbq & grill": {
     "tier": "limited",
@@ -35553,22 +35077,6 @@
     "opens_in": 7,
     "url": "https://www.opentable.com/r/corrados-cucina-richmond-county"
   },
-  "holiday cocktail lounge": {
-    "tier": "limited",
-    "dinner_slots": 0,
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": true,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [],
-    "platform": "opentable",
-    "checked_date": "2026-04-02T09:59:15.457Z",
-    "matched_name": "Access Denied",
-    "rid": 1078159,
-    "url": "https://www.opentable.com/r/holiday-cocktail-lounge-new-york"
-  },
   "inti nyc restaurant": {
     "tier": "open",
     "dinner_slots": 5,
@@ -35596,9 +35104,9 @@
     "early": "available",
     "prime": "available",
     "late": "available",
-    "has_early": false,
+    "has_early": true,
     "has_prime": true,
-    "has_late": false,
+    "has_late": true,
     "sample_times": [
       "6:30pm",
       "6:45pm",
@@ -35610,28 +35118,6 @@
     "checked_date": "2026-04-11",
     "rid": 444544,
     "matched_name": "Fusion HK Bar and Grill"
-  },
-  "warique - williamsburg": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "5:00pm",
-      "6:00pm",
-      "7:00pm",
-      "8:00pm",
-      "9:00pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-13",
-    "rid": 1210783,
-    "matched_name": "Access Denied",
-    "url": "https://www.opentable.com/r/warique-williamsburg-brooklyn"
   },
   "mama pisco kitchen bar": {
     "tier": "open",
@@ -35716,27 +35202,6 @@
     "checked_date": "2026-04-11",
     "matched_name": "Riko Peruvian Cuisine",
     "rid": 267007
-  },
-  "tumi peruvian": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 444544,
-    "matched_name": "Tumi Peruvian"
   },
   "parker & quinn": {
     "tier": "open",
@@ -36369,7 +35834,7 @@
     "matched_name": "Emmy Squared - Midtown West - NYC"
   },
   "shun lee cafe": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 0,
     "early": "booked",
     "prime": "booked",
@@ -36378,7 +35843,7 @@
     "has_prime": false,
     "has_late": true,
     "sample_times": [],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-02T10:07:23.232Z",
     "matched_name": "Access Denied",
     "rid": 18778,
@@ -36735,25 +36200,6 @@
     "opens_in": 3,
     "not_bookable": true,
     "url": "https://resy.com/cities/new-york-ny/venues/5-acres-restaurant"
-  },
-  "the purple tongue": {
-    "tier": "limited",
-    "dinner_slots": 3,
-    "early": "limited",
-    "prime": "limited",
-    "late": "limited",
-    "has_early": true,
-    "has_prime": true,
-    "has_late": true,
-    "sample_times": [
-      "5:00pm",
-      "7:30pm",
-      "9:00pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1237195,
-    "matched_name": "The Purple Tongue"
   },
   "eli’s table": {
     "tier": "open",
@@ -37623,27 +37069,6 @@
     "checked_date": "2026-04-11",
     "matched_name": "Access Denied",
     "rid": 1246276
-  },
-  "planet hollywood - new york city": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1469839,
-    "matched_name": "Planet Hollywood - New York City"
   },
   "red lobster - brooklyn": {
     "tier": "open",
@@ -38631,7 +38056,7 @@
     "not_bookable": true
   },
   "lazzara's pizza cafe": {
-    "tier": "open",
+    "tier": "limited",
     "dinner_slots": 4,
     "early": "available",
     "prime": "available",
@@ -38649,7 +38074,8 @@
     "checked_date": "2026-04-10T16:12:50.293Z",
     "verified": true,
     "rid": 112417,
-    "matched_name": "Lazzara's Pizza Cafe"
+    "matched_name": "Lazzara's Pizza Cafe",
+    "note": "No tables for 2, parties of 3+ only"
   },
   "the lineup dinner": {
     "tier": "open",
@@ -38828,10 +38254,11 @@
       "7:15pm",
       "7:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-12",
     "rid": 1415839,
-    "matched_name": "Néo Restaurant"
+    "matched_name": "Néo Restaurant",
+    "website": "http://neo-ny.com/"
   },
   "empire diner - nyc": {
     "tier": "open",
@@ -39057,27 +38484,6 @@
     "rid": 1208575,
     "matched_name": "Access Denied"
   },
-  "the palm court at the plaza hotel": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 42739,
-    "matched_name": "Access Denied"
-  },
   "the perfect pint - east": {
     "tier": "open",
     "dinner_slots": 5,
@@ -39182,27 +38588,6 @@
     "rid": 1482988,
     "matched_name": "La Pecora Bianca - NoMad"
   },
-  "trattoria l'incontro": {
-    "tier": "open",
-    "dinner_slots": 6,
-    "has_early": false,
-    "has_prime": false,
-    "has_late": true,
-    "early": "booked",
-    "prime": "booked",
-    "late": "available",
-    "sample_times": [
-      "4:30 PM",
-      "9:00 PM",
-      "9:15 PM",
-      "4:30 PM",
-      "9:00 PM"
-    ],
-    "checked_date": "2026-04-03T14:38:56.672Z",
-    "matched_name": "L'Incontro by Rocco",
-    "platform": "opentable",
-    "rid": 1369099
-  },
   "inday all day": {
     "tier": "open",
     "dinner_slots": 5,
@@ -39223,23 +38608,6 @@
     "checked_date": "2026-04-11",
     "rid": 1370200,
     "matched_name": "Inday's Bar & Restaurant"
-  },
-  "sushi by bou - east village nycnew": {
-    "tier": "limited",
-    "dinner_slots": 1,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [
-      "9:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1048321,
-    "matched_name": "Sushi by Bou - East Village NYC"
   },
   "sushi by bou - nomad nyc @ hotel32|32": {
     "tier": "limited",
@@ -39316,7 +38684,7 @@
       "8:00pm",
       "8:30pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
     "matched_name": "Le B.",
     "rid": 1319164
@@ -40127,9 +39495,10 @@
       "8:00pm",
       "9:00pm"
     ],
-    "platform": "opentable",
+    "platform": "website",
     "checked_date": "2026-04-11",
-    "rid": 1490242
+    "rid": 1490242,
+    "website": "https://sushibybou.com/"
   },
   "bar fes": {
     "tier": "open",
@@ -40150,26 +39519,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-14",
     "rid": 1496143
-  },
-  "gather espresso & wine bar": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1488028
   },
   "aromati cafe and wine bar": {
     "tier": "limited",
@@ -40614,27 +39963,6 @@
     "checked_date": "2026-04-11",
     "rid": 1344280
   },
-  "potluck club ‰Ω∞Ê®Ç": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-15",
-    "rid": 1358950,
-    "opens_in": "2026-04-15"
-  },
   "bazaar meat by jos√© andr√©s - new york": {
     "tier": "open",
     "dinner_slots": 4,
@@ -40750,26 +40078,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 1064494
-  },
-  "simple ÿ®ÿ≥Ÿäÿ∑": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 487612
   },
   "the capital grille ‚Äì ny ‚Äì metlife": {
     "tier": "open",
@@ -40890,23 +40198,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 1392421
-  },
-  "ladur√©e soho": {
-    "tier": "limited",
-    "dinner_slots": 1,
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "has_early": false,
-    "has_prime": false,
-    "has_late": true,
-    "sample_times": [
-      "4:00pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-15",
-    "rid": 1423174,
-    "opens_in": "2026-04-15"
   },
   "Â∑ùÈõ≤Ê∂ß sky pavilion nyc": {
     "tier": "open",
@@ -41063,26 +40354,6 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 1496218
-  },
-  "caf√© mars": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1278811
   },
   "olio e pi√π - bryant park": {
     "tier": "open",
@@ -41576,26 +40847,6 @@
     "rid": 1347988,
     "opens_in": "2026-04-15"
   },
-  "n√©o restaurant": {
-    "tier": "open",
-    "dinner_slots": 5,
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "has_early": false,
-    "has_prime": true,
-    "has_late": false,
-    "sample_times": [
-      "6:30pm",
-      "6:45pm",
-      "7:00pm",
-      "7:15pm",
-      "7:30pm"
-    ],
-    "platform": "opentable",
-    "checked_date": "2026-04-11",
-    "rid": 1415839
-  },
   "beijing hot pot ‰∫¨Èó®ÈìúÁÅ´ÈîÖ": {
     "tier": "open",
     "dinner_slots": 5,
@@ -41654,5 +40905,35 @@
     "platform": "opentable",
     "checked_date": "2026-04-11",
     "rid": 1492048
+  },
+  "bruno's italian bistro": {
+    "tier": "open",
+    "dinner_slots": 0,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-14",
+    "rid": 46048,
+    "matched_name": "Bruno's Italian Bistro"
+  },
+  "bistro eloise": {
+    "tier": "open",
+    "dinner_slots": 0,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-14",
+    "rid": 1057504,
+    "matched_name": "Bistro Eloise"
   }
 }

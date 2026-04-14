@@ -588,12 +588,15 @@
       "Infatuation"
     ],
     "address": "228 W 52nd St, New York, NY 10019, USA",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 104182
+    "rid": 104182,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "bad roman": {
     "platform": "opentable",
@@ -2995,7 +2998,7 @@
     "rid": 1257526
   },
   "the river café": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/the-river-cafe-brooklyn",
     "lat": 40.7038342,
     "lng": -73.9947936,
@@ -3062,7 +3065,7 @@
     "rid": 1123618
   },
   "café mars": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/cafe-mars-brooklyn",
     "lat": 40.6778555,
     "lng": -73.9859343,
@@ -3090,7 +3093,8 @@
     "prime": "available",
     "late": "booked",
     "dinner_slots": 5,
-    "rid": 1278811
+    "rid": 1278811,
+    "opens_in": "+2d"
   },
   "clover hill": {
     "platform": "opentable",
@@ -7185,35 +7189,6 @@
     "dinner_slots": 5,
     "rid": 1226611
   },
-  "babylon": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/babylon",
-    "lat": 40.745317,
-    "lng": -73.9778439,
-    "google_rating": 5,
-    "google_reviews": 2215,
-    "place_id": "ChIJibGCxZVZwokR6Nv6NWFWQRg",
-    "website": "https://miranyc34.com/",
-    "cuisine": "Mediterranean",
-    "vibe_tags": [
-      "upscale",
-      "lively",
-      "date_night",
-      "hidden_gem"
-    ],
-    "instagram": "miranyc34",
-    "price": 2,
-    "price_estimated": true,
-    "address": "206 E 34th St, New York, NY 10016, USA",
-    "booking_platform": "opentable",
-    "booking_url": "https://www.opentable.com/r/babylon",
-    "tier": "open",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 4,
-    "rid": 239827
-  },
   "landmark cevicheria": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/landmark-cevicheria-brooklyn",
@@ -8734,35 +8709,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 30754
-  },
-  "phoenix palace": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/phoenix-palace-new-york",
-    "lat": 40.71682,
-    "lng": -73.99527909999999,
-    "google_rating": 4.7,
-    "google_reviews": 200,
-    "place_id": "ChIJQfxkBwBbwokRdqZAdAUuTFc",
-    "website": "http://phoenixpalaceny.com/",
-    "cuisine": "Chinese",
-    "buzz_sources": [
-      "Eater",
-      "Infatuation"
-    ],
-    "vibe_tags": [
-      "casual",
-      "lively"
-    ],
-    "instagram": "phoenixpalaceny",
-    "price": 1,
-    "price_estimated": true,
-    "address": "85 Bowery, New York, NY 10002, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1358950
   },
   "palm street": {
     "platform": "opentable",
@@ -11285,36 +11231,6 @@
     "late": "booked",
     "dinner_slots": 4,
     "rid": 1175752
-  },
-  "crave fishbar upper east side": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/crave-fishbar-upper-east-side-new-york",
-    "lat": 40.7715707,
-    "lng": -73.9560109,
-    "google_rating": 4.8,
-    "google_reviews": 85,
-    "place_id": "ChIJ39p8pu9ZwokRrVZUR4REV00",
-    "website": "https://www.cravefishbar.com/",
-    "cuisine": "Seafood",
-    "vibe_tags": [
-      "foodie",
-      "upscale"
-    ],
-    "instagram": "cravefishbar",
-    "price": 2,
-    "price_estimated": true,
-    "resy_url": "https://resy.com/cities/ny/crave-fishbar-upper-east-side",
-    "resy_slug": "crave-fishbar-upper-east-side",
-    "buzz_sources": [
-      "Infatuation"
-    ],
-    "address": "1462 2nd Ave, New York, NY 10075, USA",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1380592
   },
   "lure fishbar": {
     "platform": "opentable",
@@ -14676,8 +14592,8 @@
     "resy_url": "https://resy.com/cities/new-york-ny/venues/tava-turkish-and-mediterranean"
   },
   "tsion": {
-    "platform": "resy",
-    "url": "https://resy.com/cities/new-york-ny/venues/tsion-cafe",
+    "platform": "website",
+    "url": "http://www.tsioncafe.com/",
     "lat": 40.826321,
     "lng": -73.943403,
     "google_rating": 4.6,
@@ -14692,8 +14608,7 @@
     ],
     "instagram": "tsioncafe",
     "price": 2,
-    "last_availability_check": "2026-03-06",
-    "venue_id": 5738
+    "last_availability_check": "2026-03-06"
   },
   "chez nick": {
     "platform": "resy",
@@ -18873,36 +18788,15 @@
     "buzz_sources": [
       "Time Out"
     ],
-    "tier": "limited",
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 238921
-  },
-  "pure thai restaurant": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/pure-thai-cookhouse-new-york",
-    "lat": 40.7642951,
-    "lng": -73.98815909999999,
-    "google_rating": 4.6,
-    "google_reviews": 3086,
-    "place_id": "ChIJ2XJIN1dYwokRAfIRdv9Vu6c",
-    "website": "http://www.purethaicookhouse.com/",
-    "cuisine": "Thai",
-    "vibe_tags": [
-      "lively",
-      "foodie"
-    ],
-    "instagram": "purethaicookhouse",
-    "price": 2,
-    "address": "766 9th Ave, New York, NY 10019, USA",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 238921
+    "rid": 238921,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "Chama Mama Chelsea": {
     "url": "https://resy.com/cities/new-york-ny/venues/chama-mama-chelsea",
@@ -21070,7 +20964,7 @@
     "address": "5 W 32nd St, New York, NY 10001, USA"
   },
   "peaches hothouse": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/peaches-hothouse-brooklyn",
     "lat": 40.6833733,
     "lng": -73.9438,
@@ -21086,7 +20980,7 @@
     "instagram": "peacheshothouse",
     "price": 2,
     "address": "415 Tompkins Ave, Brooklyn, NY 11216, USA",
-    "tier": "limited",
+    "tier": "open",
     "early": "booked",
     "prime": "limited",
     "late": "limited",
@@ -22692,12 +22586,15 @@
     "price": 2,
     "price_estimated": true,
     "address": "564 Newark Ave, Jersey City, NJ 07306, USA",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 1331809
+    "rid": 1331809,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "antonio's trattoria": {
     "platform": "website",
@@ -23078,33 +22975,6 @@
     ],
     "website": "https://www.tararosenyc.com",
     "address": "384 3rd Ave, New York, NY 10016, USA"
-  },
-  "briciola harlem": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/briciola-new-york",
-    "lat": 40.8240899,
-    "lng": -73.9452634,
-    "google_rating": 4.5,
-    "google_reviews": 231,
-    "place_id": "ChIJ2054MAz3wokR13Q2g5LfV_E",
-    "website": "https://briciolawinebar.com/",
-    "cuisine": "Italian",
-    "vibe_tags": [
-      "chill",
-      "foodie",
-      "casual",
-      "outdoor"
-    ],
-    "instagram": "briciolawinebar",
-    "price": 3,
-    "opentable_url": "https://www.opentable.com/r/briciola-new-york",
-    "address": "398 W 145th St, New York, NY 10031, USA",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 5,
-    "rid": 731335
   },
   "pastavino": {
     "platform": "opentable",
@@ -23927,7 +23797,7 @@
     "rid": 1052695
   },
   "due amici": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/due-amici",
     "lat": 40.719862,
     "lng": -73.997373,
@@ -23945,7 +23815,7 @@
     "opentable_url": "https://www.opentable.com/r/due-amici",
     "booking_platform": "opentable",
     "booking_url": "https://www.opentable.com/r/due-amici",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
@@ -24370,12 +24240,15 @@
     "instagram": "ariawestvillage",
     "price": 2,
     "address": "16 Bedford St, New York, NY 10014, USA",
-    "tier": "limited",
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 986008
+    "rid": 986008,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "aroma brazil": {
     "platform": "opentable",
@@ -24933,17 +24806,20 @@
     "place_id": "ChIJSUYWZABZwokRjwf3d3SU_30",
     "website": "http://birdiesnyc.com/",
     "vibe_tags": [
-      "date_night"
+      "brunch"
     ],
     "instagram": "birdiesnyc",
     "address": "152 7th Ave S, New York, NY 10014, USA",
     "_vibe_confidence": "low",
-    "tier": "open",
+    "tier": "limited",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 4,
-    "rid": 1189612
+    "rid": 1189612,
+    "note": "Breakfast/lunch only, closes 2pm. Open Fri-Sun only.",
+    "opens_in": "+7d",
+    "hours": "Fri-Sun only, closes 2pm"
   },
   "bistro casa azul": {
     "platform": "website",
@@ -25365,29 +25241,6 @@
     "late": "booked",
     "dinner_slots": 4,
     "rid": 190099
-  },
-  "bruno's restaurant": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/brunos-italian-bistro-morris-plains",
-    "lat": 40.6601435,
-    "lng": -73.8404025,
-    "google_rating": 4.7,
-    "google_reviews": 1003,
-    "place_id": "ChIJawjtdH5nwokR1HRZJHJCx6k",
-    "website": "https://www.bruno-ristorante.com/",
-    "cuisine": "Italian",
-    "vibe_tags": [
-      "trendy",
-      "casual"
-    ],
-    "price": 3,
-    "address": "158-22 Cross Bay Blvd, Howard Beach, NY 11414, USA",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 46048
   },
   "bubba gump shrimp co.": {
     "platform": "website",
@@ -26304,12 +26157,15 @@
     "price": 2,
     "address": "21 Bedford St # A, New York, NY 10014, USA",
     "buzz_sources": [],
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 253276
+    "rid": 253276,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "cowgirl seahorse": {
     "platform": "website",
@@ -26391,24 +26247,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 136066
-  },
-  "crystal": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/crystals-karaoke-puerto-banus-marbella",
-    "lat": 40.7083438,
-    "lng": -73.8177932,
-    "google_rating": 4.3,
-    "google_reviews": 142,
-    "place_id": "ChIJMe90mMBgwokRLkwsp8kRT-E",
-    "vibe_tags": [],
-    "neighborhood": "Briarwood",
-    "address": "138-31 Queens Blvd, Briarwood, NY 11435, USA",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "dinner_slots": 0,
-    "rid": 394386
   },
   "central park boathouse restaurant": {
     "platform": "opentable",
@@ -26936,30 +26774,6 @@
     "price": 2,
     "address": "320 Lexington Ave, New York, NY 10016, USA"
   },
-  "eagle trading co": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/trading-post-laguna",
-    "lat": 40.7349674,
-    "lng": -73.958311,
-    "google_rating": 4.6,
-    "google_reviews": 480,
-    "place_id": "ChIJ1XgwOD5ZwokRn-AHoZDr_d0",
-    "website": "http://www.eagletradingco.nyc/",
-    "cuisine": "American",
-    "vibe_tags": [
-      "trendy",
-      "brunch"
-    ],
-    "price": 2,
-    "address": "258 Franklin St, Brooklyn, NY 11222, USA",
-    "_vibe_confidence": "low",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "dinner_slots": 0,
-    "rid": 185453
-  },
   "east harbor seafood palace": {
     "platform": "website",
     "url": "https://eastharborseafoodpalace.site/",
@@ -27201,31 +27015,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1368328
-  },
-  "eloise": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/bistro-eloise-east-elmhurst",
-    "lat": 40.7600249,
-    "lng": -73.8920991,
-    "google_rating": 4.6,
-    "google_reviews": 570,
-    "place_id": "ChIJaW0AKldfwokRZh8-LdwLkkY",
-    "website": "https://bistroeloise.com/",
-    "cuisine": "French",
-    "vibe_tags": [
-      "date_night",
-      "upscale"
-    ],
-    "instagram": "bistroeloisenyc",
-    "price": 3,
-    "price_estimated": true,
-    "address": "75-57 31st Ave, East Elmhurst, NY 11370, USA",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1057504
   },
   "emma's torch": {
     "platform": "website",
@@ -27584,28 +27373,6 @@
     ],
     "price": 2,
     "address": "22 E 21st St, New York, NY 10010, USA"
-  },
-  "fei ma": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-bay-by-chef-fei-mandarin-oriental-shenzhen-futian-district",
-    "lat": 40.7250928,
-    "lng": -73.9844116,
-    "google_rating": 4.2,
-    "google_reviews": 128,
-    "place_id": "ChIJ8_ABuIJZwokRTfeuXS6WZ7c",
-    "cuisine": "Chinese",
-    "vibe_tags": [
-      "trendy"
-    ],
-    "price": 2,
-    "address": "79 Avenue A, New York, NY 10009, USA",
-    "_vibe_confidence": "low",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 8,
-    "rid": 161255
   },
   "fish village": {
     "platform": "website",
@@ -28491,7 +28258,7 @@
     "rid": 1370200
   },
   "indian summer": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/indian-summer",
     "lat": 40.8058943,
     "lng": -73.9472914,
@@ -29094,7 +28861,8 @@
     "prime": "booked",
     "late": "limited",
     "dinner_slots": 0,
-    "rid": 124820
+    "rid": 124820,
+    "opens_in": "+2d"
   },
   "l'angeletto": {
     "url": "https://www.opentable.com/r/langeletto-new-york",
@@ -29891,7 +29659,7 @@
     "rid": 1317040
   },
   "mamma rosa's": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/mamma-ke-pizza-madrid",
     "lat": 40.7865747,
     "lng": -73.72577,
@@ -29908,7 +29676,7 @@
     "price": 1,
     "price_estimated": true,
     "address": "31 S Middle Neck Rd, Great Neck, NY 11021, USA",
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "booked",
     "late": "booked",
@@ -30518,7 +30286,7 @@
     "rid": 36541
   },
   "mizumi": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/mizumi-restaurant-berlin",
     "lat": 40.76368069999999,
     "lng": -73.7490595,
@@ -30534,7 +30302,7 @@
     "instagram": "mizuminyc",
     "price": 2,
     "address": "231-10 Northern Blvd, Flushing, NY 11362, USA",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
@@ -31567,7 +31335,10 @@
     "prime": "available",
     "late": "available",
     "dinner_slots": 17,
-    "rid": 1027621
+    "rid": 1027621,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "oxido": {
     "platform": "opentable",
@@ -31665,7 +31436,7 @@
     "rid": 238648
   },
   "papi's grill": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/papis-grill-playa-del-ingles-maspalomas",
     "lat": 40.6721111,
     "lng": -73.9770352,
@@ -31680,7 +31451,7 @@
     "price": 1,
     "address": "161 7th Ave, Brooklyn, NY 11215, USA",
     "_vibe_confidence": "low",
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "booked",
     "late": "limited",
@@ -33654,7 +33425,7 @@
     "rid": 1146820
   },
   "spring place": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/prohibition-texas-spring",
     "lat": 40.7208609,
     "lng": -74.00609419999999,
@@ -37419,32 +37190,6 @@
     ],
     "price": 2
   },
-  "attaboy": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/attaboy-new-york",
-    "lat": 40.7436242,
-    "lng": -73.9845273,
-    "google_rating": 4.5,
-    "google_reviews": 1353,
-    "place_id": "ChIJZ-xpvadZwokRGVsoX2gW38s",
-    "website": "http://www.atoboynyc.com/",
-    "cuisine": "Korean",
-    "vibe_tags": [
-      "foodie",
-      "upscale",
-      "trendy"
-    ],
-    "instagram": "atoboynyc",
-    "price": 2,
-    "inkind": true,
-    "address": "43 E 28th St, New York, NY 10016, USA",
-    "tier": "limited",
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "dinner_slots": 0,
-    "rid": 1460605
-  },
   "spice mantra": {
     "platform": "resy",
     "url": "https://resy.com/cities/new-york-ny/venues/spice-mantra",
@@ -37558,32 +37303,6 @@
     ],
     "price": 2,
     "address": "125 Canal St, New York, NY 10002, USA"
-  },
-  "bistro so": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/bistro-nando-new-york",
-    "lat": 40.7175604,
-    "lng": -73.9560381,
-    "google_rating": 4.4,
-    "google_reviews": 261,
-    "place_id": "ChIJgVIG49pZwokRef6bFbzOLlE",
-    "website": "http://bistrosonyc.com/",
-    "cuisine": "French",
-    "vibe_tags": [
-      "casual",
-      "date_night"
-    ],
-    "price": 3,
-    "price_estimated": true,
-    "bilt_dining": true,
-    "bilt_id": "143a3202-ecab-30cc-bec1-96b0380db402",
-    "address": "530 Driggs Ave, Brooklyn, NY 11211, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 4,
-    "rid": 1386064
   },
   "los dos hermanos": {
     "platform": "opentable",
@@ -39459,29 +39178,6 @@
     "neighborhood": "Staten Island",
     "address": "1642 Hylan Blvd, Staten Island, NY 10305, USA"
   },
-  "fooda": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/food-new-york",
-    "lat": 40.7644238,
-    "lng": -73.9767511,
-    "google_rating": 4.5,
-    "google_reviews": 884,
-    "place_id": "ChIJ0YBfw1tYwokRzcCcyVoNgh0",
-    "website": "https://mangia.nyc/",
-    "cuisine": "American",
-    "vibe_tags": [
-      "lively",
-      "foodie"
-    ],
-    "price": 2,
-    "address": "57 W 57th St, New York, NY 10019, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 4,
-    "rid": 1386064
-  },
   "Mangia 57th Street": {
     "url": "https://mangia.nyc/",
     "lat": 40.764423799999996,
@@ -40516,32 +40212,6 @@
     "price": 2,
     "ot_slug": "noodle-lane-and-dumplings"
   },
-  "ainslie bowery": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/ainslie-bowery-new-york",
-    "lat": 40.7210037,
-    "lng": -73.9932109,
-    "google_rating": 4.4,
-    "google_reviews": 489,
-    "place_id": "ChIJYX4u-qRZwokRzEn18urM0vM",
-    "instagram": "ainslienyc",
-    "cuisine": "Italian",
-    "vibe_tags": [
-      "casual",
-      "brunch"
-    ],
-    "price": 2,
-    "website": "http://www.ainsliebowery.com",
-    "bilt_dining": true,
-    "bilt_id": "116e2b9b-4ed4-4b10-a1f8-e82fe5efff12",
-    "address": "199 Bowery, New York, NY 10002, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1211932
-  },
   "& son greenwich village": {
     "platform": "resy",
     "url": "https://resy.com/cities/ny/and-son-greenwich-village",
@@ -41453,31 +41123,6 @@
     "late": "available",
     "dinner_slots": 5,
     "rid": 1340860
-  },
-  "bartley dunnes": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/bartley-dunnes-new-york",
-    "lat": 40.76327879999999,
-    "lng": -73.9810001,
-    "google_rating": 4.7,
-    "google_reviews": 812,
-    "place_id": "ChIJOT172pJZwokRrp291yOIT_w",
-    "website": "https://bartleydunnesnyc.com/",
-    "cuisine": "American",
-    "vibe_tags": [
-      "brunch",
-      "lively",
-      "casual"
-    ],
-    "instagram": "bartleydunnes",
-    "price": 2,
-    "address": "160 W 54th St, New York, NY 10019, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1411927
   },
   "gosht restaurant": {
     "platform": "opentable",
@@ -43722,28 +43367,6 @@
     "dinner_slots": 5,
     "rid": 229045
   },
-  "la catrina": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/la-catrina-queens",
-    "lat": 40.7986028,
-    "lng": -73.9408156,
-    "google_rating": 4.8,
-    "google_reviews": 83,
-    "place_id": "ChIJt7v0WgD3wokRflcZ5TWvK-0",
-    "website": "https://catrinamexicanarestaurant.com/",
-    "cuisine": "Peruvian",
-    "vibe_tags": [
-      "casual"
-    ],
-    "price": 2,
-    "address": "163 E 116th St, New York, NY 10029, USA",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1468771
-  },
   "cruz del sur": {
     "platform": "website",
     "url": "http://www.delsurnyc.com/",
@@ -45197,7 +44820,7 @@
     "rid": 1479427
   },
   "the vintage tea": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/the-vintage-tea-staten-island",
     "lat": 40.5494036,
     "lng": -74.15059819999999,
@@ -45213,7 +44836,7 @@
     "instagram": "thevintageteaparlour",
     "neighborhood": "Staten Island",
     "address": "23 Nelson Ave, Staten Island, NY 10308, USA",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
@@ -45454,12 +45077,15 @@
     "instagram": "lincontrobyrocco",
     "price": 3,
     "ot_slug": "lincontro",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 1369099
+    "rid": 1369099,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "little honey": {
     "platform": "opentable",
@@ -46483,27 +46109,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1414477
-  },
-  "salt hank's": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/salt-hanks-new-york",
-    "lat": 40.7317208,
-    "lng": -74.0034605,
-    "google_rating": 4,
-    "google_reviews": 245,
-    "place_id": "ChIJ330HVABZwokRvqws3mNYmsU",
-    "website": "https://salthanks.com/",
-    "vibe_tags": [
-      "lively"
-    ],
-    "address": "280 Bleecker St, New York, NY 10014, USA",
-    "_vibe_confidence": "medium",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1485760
   },
   "lulla": {
     "platform": "opentable",
@@ -48424,29 +48029,6 @@
     "late": "available",
     "dinner_slots": 3,
     "rid": 1389607
-  },
-  "flushing house": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/gyu-kaku-japanese-bbq-flushing-ny",
-    "lat": 40.7617278,
-    "lng": -73.8251875,
-    "google_rating": 4.4,
-    "google_reviews": 25,
-    "place_id": "ChIJmxfOpRBgwokR2MUOUFcJV7o",
-    "website": "https://flushinghouse.com/",
-    "vibe_tags": [
-      "lively",
-      "date_night"
-    ],
-    "instagram": "flushinghouse",
-    "neighborhood": "Flushing",
-    "address": "38-20 Bowne St, Flushing, NY 11354, USA",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 31156
   },
   "burger spot": {
     "platform": "website",
@@ -52802,7 +52384,7 @@
     "price": 2
   },
   "burger club": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/deleito-burger-club-barcelona",
     "lat": 40.7662576,
     "lng": -73.92062279999999,
@@ -52820,7 +52402,7 @@
     ],
     "instagram": "theburgerclubnyc",
     "price": 2,
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "booked",
     "late": "booked",
@@ -87693,16 +87275,14 @@
     "_vibe_confidence": "high"
   },
   "Studio Tropical": {
-    "url": "https://resy.com/cities/new-york-ny/venues/studio-tropical",
-    "platform": "resy",
+    "url": "http://www.brooklynsalsa.com",
+    "platform": "website",
     "resy_url": "https://resy.com/cities/new-york-ny/venues/studio-tropical",
-    "resy_slug": "studio-tropical",
     "lat": 40.69752,
     "lng": -73.96497,
     "cuisine": "Caribbean",
     "neighborhood": "New York",
     "price": "",
-    "venue_id": 90623,
     "place_id": "ChIJC2t-6cdawokRvuVSf3B2gCI",
     "google_rating": 4.7,
     "google_reviews": 18,
@@ -111207,31 +110787,6 @@
     ],
     "address": "33-01 31st Ave, Astoria, NY 11106, USA"
   },
-  "obica mozzarella bar": {
-    "platform": "website",
-    "url": "http://www.obica.com/restaurants/new-york-madison",
-    "lat": 40.762074,
-    "lng": -73.973089,
-    "google_rating": 4,
-    "google_reviews": 308,
-    "place_id": "ChIJpzIwwPpYwokRf8pzNCWEZYA",
-    "website": "http://www.obica.com/restaurants/new-york-madison",
-    "neighborhood": null,
-    "instagram": "obicamozzarellabar",
-    "cuisine": "Italian",
-    "price": 2,
-    "vibe_tags": [
-      "date_night",
-      "trendy"
-    ],
-    "address": "590 Madison Ave, New York, NY 10022, USA",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 5,
-    "rid": 42739
-  },
   "patiala indian grill & bar": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/patiala-new-york",
@@ -134591,16 +134146,6 @@
     "dinner_slots": 4,
     "rid": 1183222
   },
-  "big apple brunch": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1279057
-  },
   "aoc east": {
     "platform": "opentable",
     "url": "",
@@ -134712,19 +134257,20 @@
     "rid": 1436560
   },
   "potluck club 佰樂": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "limited",
+    "tier": "open",
     "early": "booked",
     "prime": "limited",
     "late": "booked",
     "dinner_slots": 2,
-    "rid": 1358950
+    "rid": 1358950,
+    "website": "https://thepotluckclubny.com/"
   },
   "fig & olive": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "booked",
     "late": "limited",
@@ -135271,16 +134817,6 @@
     "dinner_slots": 2,
     "rid": 1232089
   },
-  "le jardin bistro": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 4,
-    "rid": 1386064
-  },
   "george's": {
     "platform": "opentable",
     "url": "",
@@ -135342,14 +134878,15 @@
     "rid": 1146670
   },
   "via brasil restaurant": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
     "dinner_slots": 0,
-    "rid": 239761
+    "rid": 239761,
+    "website": "http://www.viabrasilrestaurantnyc.com/"
   },
   "rosemary's west village": {
     "platform": "opentable",
@@ -135934,12 +135471,15 @@
   "artesano": {
     "platform": "opentable",
     "url": "",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 0,
-    "rid": 1296847
+    "rid": 1296847,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "frank": {
     "platform": "opentable",
@@ -136142,14 +135682,15 @@
     "rid": 1203121
   },
   "supperclub @ le petit parisien": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "booked",
     "prime": "available",
     "late": "booked",
     "dinner_slots": 5,
-    "rid": 1318996
+    "rid": 1318996,
+    "website": "https://supperclublpp.com/"
   },
   "giardino 54": {
     "platform": "opentable",
@@ -136310,16 +135851,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1036774
-  },
-  "grand view events": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1076863
   },
   "il forno": {
     "platform": "opentable",
@@ -136562,14 +136093,15 @@
     "rid": 1361086
   },
   "viva toro": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
     "dinner_slots": 0,
-    "rid": 161926
+    "rid": 161926,
+    "website": "http://www.vivatoro.com/"
   },
   "loft": {
     "platform": "opentable",
@@ -136684,12 +136216,15 @@
   "bond 45": {
     "platform": "opentable",
     "url": "",
-    "tier": "limited",
-    "early": "booked",
-    "prime": "limited",
-    "late": "booked",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
     "dinner_slots": 3,
-    "rid": 1318528
+    "rid": 1318528,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "westville - uws": {
     "platform": "opentable",
@@ -136721,16 +136256,6 @@
     "dinner_slots": 5,
     "rid": 211633
   },
-  "mari": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 5,
-    "rid": 1237195
-  },
   "hyo dong gak": {
     "platform": "opentable",
     "url": "",
@@ -136742,9 +136267,9 @@
     "rid": 237601
   },
   "han bat restaurant": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "booked",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "booked",
@@ -137442,14 +136967,15 @@
     "rid": 193846
   },
   "sangarita's": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 5,
-    "rid": 192763
+    "rid": 192763,
+    "website": "https://sangaritasny.com/"
   },
   "afghan kebab house": {
     "platform": "opentable",
@@ -137932,14 +137458,15 @@
     "rid": 157048
   },
   "zou zou's": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 7,
-    "rid": 1197907
+    "rid": 1197907,
+    "website": "http://www.zouzousnyc.com/"
   },
   "craft": {
     "platform": "opentable",
@@ -138282,14 +137809,15 @@
     "rid": 1344280
   },
   "simple بسيط": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "booked",
     "prime": "available",
     "late": "booked",
     "dinner_slots": 5,
-    "rid": 487612
+    "rid": 487612,
+    "website": "https://www.simplecafenyc.com/"
   },
   "café fleuri": {
     "platform": "opentable",
@@ -138821,16 +138349,6 @@
     "dinner_slots": 3,
     "rid": 1414252
   },
-  "the brooklyn deli - times square": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-brooklyn-deli-times-square-new-york",
-    "tier": "booked",
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1318528
-  },
   "dolce momento- asian/mediterranean fusion": {
     "platform": "opentable",
     "url": "",
@@ -138912,14 +138430,15 @@
     "rid": 101134
   },
   "parklife": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 5,
-    "rid": 1154464
+    "rid": 1154464,
+    "website": "https://www.parklifebk.com/"
   },
   "max restaurant": {
     "platform": "opentable",
@@ -139192,9 +138711,9 @@
     "rid": 443512
   },
   "pappas - new york": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/pappas-new-york",
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "booked",
     "late": "limited",
@@ -139242,14 +138761,15 @@
     "rid": 729868
   },
   "sushi by bou - chelsea nyc at bosque flowers & coffee": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "limited",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "limited",
     "dinner_slots": 1,
-    "rid": 1048321
+    "rid": 1048321,
+    "website": "https://sushibybou.com/"
   },
   "kahlo restaurant": {
     "platform": "opentable",
@@ -139612,7 +139132,7 @@
     "rid": 103810
   },
   "le jardin rooftop": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
@@ -140201,16 +139721,6 @@
     "dinner_slots": 5,
     "rid": 242434
   },
-  "crave fishbar - uws": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 5,
-    "rid": 1380592
-  },
   "serafina upper west": {
     "platform": "opentable",
     "url": "https://www.opentable.com/serafina-upper-west",
@@ -140762,9 +140272,9 @@
     "rid": 212347
   },
   "ladurée soho": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "limited",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "limited",
@@ -141012,14 +140522,15 @@
     "rid": 1310206
   },
   "treadwell park - battery park": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 4,
-    "rid": 1245115
+    "rid": 1245115,
+    "website": "https://www.treadwellpark.com/location/downtown/"
   },
   "holywater": {
     "platform": "opentable",
@@ -141240,16 +140751,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1394212
-  },
-  "the parisian tea room- nyc": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/the-parisian-tea-room-nyc-morganville",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "booked",
-    "dinner_slots": 0,
-    "rid": 1064044
   },
   "del frisco's grille - nyc": {
     "platform": "opentable",
@@ -141651,16 +141152,6 @@
     "dinner_slots": 5,
     "rid": 1409887
   },
-  "match 65 brasserie (formerly paris match)": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/match-65-brasserie-formerly-paris-match-new-york",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 9,
-    "rid": 6420
-  },
   "brasserie cognac central park south": {
     "platform": "opentable",
     "url": "https://www.opentable.com/r/brasserie-brasserie-cognac-central-park-south-new-york",
@@ -141962,9 +141453,9 @@
     "rid": null
   },
   "gui steakhouse": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
-    "tier": "limited",
+    "tier": "open",
     "early": "limited",
     "prime": "limited",
     "late": "limited",
@@ -141972,7 +141463,7 @@
     "rid": 1237195
   },
   "insa - bk": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "limited",
@@ -142202,14 +141693,15 @@
     "rid": 267007
   },
   "spanglish nyc astoria": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "booked",
     "prime": "available",
     "late": "booked",
     "dinner_slots": 5,
-    "rid": 1359898
+    "rid": 1359898,
+    "website": "https://www.spanglishnyc.com/"
   },
   "sammy's smokehouse bbq & grill": {
     "platform": "opentable",
@@ -142421,16 +141913,6 @@
     "dinner_slots": 0,
     "rid": null
   },
-  "holiday cocktail lounge": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/holiday-cocktail-lounge-new-york",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "booked",
-    "late": "limited",
-    "dinner_slots": 0,
-    "rid": 1078159
-  },
   "inti nyc restaurant": {
     "platform": "opentable",
     "url": "",
@@ -142449,17 +141931,10 @@
     "prime": "available",
     "late": "available",
     "dinner_slots": 5,
-    "rid": 444544
-  },
-  "warique - williamsburg": {
-    "platform": "opentable",
-    "url": "https://www.opentable.com/r/warique-williamsburg-brooklyn",
-    "tier": "open",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 5,
-    "rid": 1210783
+    "rid": 444544,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   },
   "mama pisco kitchen bar": {
     "platform": "opentable",
@@ -142500,16 +141975,6 @@
     "late": "available",
     "dinner_slots": 5,
     "rid": 267007
-  },
-  "tumi peruvian": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 444544
   },
   "parker & quinn": {
     "platform": "opentable",
@@ -142802,9 +142267,9 @@
     "rid": 1262035
   },
   "shun lee cafe": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "https://www.opentable.com/r/shun-lee-cafe-new-york",
-    "tier": "limited",
+    "tier": "open",
     "early": "booked",
     "prime": "booked",
     "late": "limited",
@@ -142960,16 +142425,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1469995
-  },
-  "the purple tongue": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "limited",
-    "early": "limited",
-    "prime": "limited",
-    "late": "limited",
-    "dinner_slots": 3,
-    "rid": 1237195
   },
   "eli’s table": {
     "platform": "opentable",
@@ -143390,16 +142845,6 @@
     "late": "limited",
     "dinner_slots": 4,
     "rid": 1246276
-  },
-  "planet hollywood - new york city": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1469839
   },
   "red lobster - brooklyn": {
     "platform": "opentable",
@@ -143864,12 +143309,13 @@
   "lazzara's pizza cafe": {
     "platform": "opentable",
     "url": "",
-    "tier": "open",
+    "tier": "limited",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 4,
-    "rid": 112417
+    "rid": 112417,
+    "note": "No tables for 2, parties of 3+ only"
   },
   "the lineup dinner": {
     "platform": "opentable",
@@ -143952,14 +143398,15 @@
     "rid": 66544
   },
   "néo restaurant": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "booked",
     "prime": "available",
     "late": "booked",
     "dinner_slots": 5,
-    "rid": 1415839
+    "rid": 1415839,
+    "website": "http://neo-ny.com/"
   },
   "empire diner - nyc": {
     "platform": "opentable",
@@ -144071,16 +143518,6 @@
     "dinner_slots": 5,
     "rid": 1208575
   },
-  "the palm court at the plaza hotel": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 42739
-  },
   "the perfect pint - east": {
     "platform": "opentable",
     "url": "",
@@ -144101,16 +143538,6 @@
     "dinner_slots": 4,
     "rid": 1238458
   },
-  "trattoria l'incontro": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "booked",
-    "late": "available",
-    "dinner_slots": 6,
-    "rid": 1369099
-  },
   "inday all day": {
     "platform": "opentable",
     "url": "",
@@ -144120,16 +143547,6 @@
     "late": "available",
     "dinner_slots": 5,
     "rid": 1370200
-  },
-  "sushi by bou - east village nycnew": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "limited",
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "dinner_slots": 1,
-    "rid": 1048321
   },
   "sushi by bou - nomad nyc @ hotel32|32": {
     "platform": "opentable",
@@ -144162,7 +143579,7 @@
     "rid": 189079
   },
   "le b.": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
@@ -144502,14 +143919,15 @@
     "rid": 173878
   },
   "sushi by bou - east village nyc": {
-    "platform": "opentable",
+    "platform": "website",
     "url": "",
     "tier": "open",
     "early": "available",
     "prime": "available",
     "late": "available",
     "dinner_slots": 5,
-    "rid": 1490242
+    "rid": 1490242,
+    "website": "https://sushibybou.com/"
   },
   "bar fes": {
     "platform": "opentable",
@@ -144520,16 +143938,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1496143
-  },
-  "gather espresso & wine bar": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1488028
   },
   "aromati cafe and wine bar": {
     "platform": "opentable",
@@ -144801,16 +144209,6 @@
     "dinner_slots": 5,
     "rid": 1392421
   },
-  "ladur√©e soho": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "limited",
-    "early": "booked",
-    "prime": "booked",
-    "late": "limited",
-    "dinner_slots": 1,
-    "rid": 1423174
-  },
   "â∑ùèõ≤ê∂ß sky pavilion nyc": {
     "platform": "opentable",
     "url": "",
@@ -144890,16 +144288,6 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1496218
-  },
-  "caf√© mars": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1278811
   },
   "olio e pi√π - bryant park": {
     "platform": "opentable",
@@ -145151,16 +144539,6 @@
     "dinner_slots": 4,
     "rid": 1347988
   },
-  "n√©o restaurant": {
-    "platform": "opentable",
-    "url": "",
-    "tier": "open",
-    "early": "booked",
-    "prime": "available",
-    "late": "booked",
-    "dinner_slots": 5,
-    "rid": 1415839
-  },
   "beijing hot pot ‰∫¨èó®èìúáå´èîö": {
     "platform": "opentable",
     "url": "",
@@ -145190,5 +144568,59 @@
     "late": "booked",
     "dinner_slots": 5,
     "rid": 1492048
+  },
+  "bruno's italian bistro": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/brunos-italian-bistro-morris-plains",
+    "lat": 40.6601435,
+    "lng": -73.8404025,
+    "google_rating": 4.7,
+    "google_reviews": 1003,
+    "place_id": "ChIJawjtdH5nwokR1HRZJHJCx6k",
+    "website": "https://www.bruno-ristorante.com/",
+    "cuisine": "Italian",
+    "vibe_tags": [
+      "trendy",
+      "casual"
+    ],
+    "price": 3,
+    "address": "158-22 Cross Bay Blvd, Howard Beach, NY 11414, USA",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "dinner_slots": 0,
+    "rid": 46048,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
+  },
+  "bistro eloise": {
+    "platform": "opentable",
+    "url": "https://www.opentable.com/r/bistro-eloise-east-elmhurst",
+    "lat": 40.7600249,
+    "lng": -73.8920991,
+    "google_rating": 4.6,
+    "google_reviews": 570,
+    "place_id": "ChIJaW0AKldfwokRZh8-LdwLkkY",
+    "website": "https://bistroeloise.com/",
+    "cuisine": "French",
+    "vibe_tags": [
+      "date_night",
+      "upscale"
+    ],
+    "instagram": "bistroeloisenyc",
+    "price": 3,
+    "price_estimated": true,
+    "address": "75-57 31st Ave, East Elmhurst, NY 11370, USA",
+    "tier": "open",
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "dinner_slots": 0,
+    "rid": 1057504,
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true
   }
 }
