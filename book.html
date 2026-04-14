@@ -481,6 +481,24 @@ async function resyLogin() {
 }
 
 async function submitRequest() {
+  // Check if token is expired (JWT exp field)
+  if (resyToken) {
+    try {
+      const payload = JSON.parse(atob(resyToken.split('.')[1]));
+      if (payload.exp && payload.exp * 1000 < Date.now()) {
+        localStorage.removeItem('sw_resy_token');
+        localStorage.removeItem('sw_resy_email');
+        localStorage.removeItem('sw_resy_payment_id');
+        resyToken = null;
+        alert('Your Resy session has expired. Please sign in again.');
+        document.getElementById('resyConnected').style.display = 'none';
+        document.getElementById('loginPhone').style.display = 'block';
+        document.querySelectorAll('.login-tab').forEach(t => t.style.display = '');
+        document.getElementById('submitBtn').disabled = true;
+        return;
+      }
+    } catch {}
+  }
   const name = document.getElementById('bookName').value.trim();
   const contact = document.getElementById('bookContact').value.trim();
   const date1 = document.getElementById('bookDate1').value;
