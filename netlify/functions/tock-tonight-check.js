@@ -196,7 +196,7 @@ async function checkTockRestaurant(page, url) {
       const lateSlots = dinnerTimes.filter(h => h >= 20.75);
 
       function windowStatus(count) {
-        if (count <= 1) return 'booked';
+        if (count === 0) return 'booked';
         if (count <= 3) return 'limited';
         return 'available';
       }
@@ -216,7 +216,7 @@ async function checkTockRestaurant(page, url) {
         tier = 'open';
       }
 
-      const sampleDinner = timeSlots.filter(t => { const h = parseHour(t); return h !== null && h >= 17; }).slice(0, 6);
+      const sampleDinner = timeSlots.filter(t => { const h = parseHour(t); return h !== null && h >= 17; }).sort((a, b) => parseHour(a) - parseHour(b)).slice(0, 10);
 
       return {
         tier,

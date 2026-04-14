@@ -480,7 +480,8 @@
       "open": "5:30 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-04-14T18:58:48.425Z"
+    "checked_date": "2026-04-14T18:58:48.425Z",
+    "fully_locked": true
   },
   "crown shy": {
     "tier": "open",
@@ -4523,12 +4524,13 @@
     "_checked_date": "2026-04-14"
   },
   "dashi okume brooklyn": {
-    "tier": "open",
+    "tier": "booked",
     "dinner_slots": 0,
-    "early": "available",
-    "prime": "available",
-    "late": "available",
-    "_checked_date": "2026-04-14"
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "_checked_date": "2026-04-14",
+    "fully_locked": true
   },
   "deià": {
     "tier": "open",
@@ -16001,20 +16003,9 @@
     }
   },
   "sushi sho - nyc": {
-    "tier": "tasting_menu",
-    "dinner_slots": 1,
-    "early": null,
-    "prime": null,
-    "late": null,
-    "sample_times": [],
+    "tier": "unknown",
     "platform": "tock",
-    "prepaid_price": 450,
-    "open_today": true,
-    "hours": {
-      "open": "5:00 PM",
-      "close": "10:00 PM"
-    },
-    "checked_date": "2026-04-14T19:02:17.419Z"
+    "error": "404"
   },
   "essex restaurant": {
     "tier": "open",
@@ -19714,7 +19705,8 @@
       "open": "5:00 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-04-14T18:59:34.665Z"
+    "checked_date": "2026-04-14T18:59:34.665Z",
+    "opens_in": 3
   },
   "expat": {
     "tier": "open",
@@ -19907,7 +19899,8 @@
     "prepaid_price": null,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-04-14T19:01:45.090Z"
+    "checked_date": "2026-04-14T19:01:45.090Z",
+    "opens_in": 3
   },
   "kazunori the original hand roll bar": {
     "tier": "tasting_menu",
@@ -20159,7 +20152,8 @@
       "open": "6:30 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-04-14T19:05:07.299Z"
+    "checked_date": "2026-04-14T19:05:07.299Z",
+    "opens_in": 3
   },
   "la compagnie centre street": {
     "tier": "open",
@@ -20351,7 +20345,8 @@
       "open": "1:00 PM",
       "close": "10:00 PM"
     },
-    "checked_date": "2026-04-14T19:06:58.752Z"
+    "checked_date": "2026-04-14T19:06:58.752Z",
+    "opens_in": 3
   },
   "restaurant yuu": {
     "tier": "tasting_menu",
@@ -20367,7 +20362,7 @@
       "open": "5:30 PM",
       "close": "11:30 PM"
     },
-    "checked_date": "2026-04-14T18:38:35.823Z"
+    "checked_date": "2026-04-14T19:07:08.431Z"
   },
   "il fresco": {
     "tier": "open",
@@ -20376,12 +20371,16 @@
     "prime": "available",
     "late": "limited",
     "sample_times": [
-      "9:00 PM",
       "5:00 PM",
       "5:15 PM",
       "5:30 PM",
       "5:45 PM",
-      "6:00 PM"
+      "6:00 PM",
+      "6:15 PM",
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20390,7 +20389,7 @@
       "open": "12:00 PM",
       "close": "2:30 PM"
     },
-    "checked_date": "2026-04-14T18:38:51.336Z"
+    "checked_date": "2026-04-14T19:07:24.074Z"
   },
   "grass roots kitchen": {
     "tier": "open",
@@ -20399,12 +20398,16 @@
     "prime": "available",
     "late": "booked",
     "sample_times": [
-      "8:00 PM",
       "5:00 PM",
       "5:15 PM",
       "5:30 PM",
       "5:45 PM",
-      "6:00 PM"
+      "6:00 PM",
+      "6:15 PM",
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20413,23 +20416,23 @@
       "open": "9:00 AM",
       "close": "8:00 PM"
     },
-    "checked_date": "2026-04-14T18:39:04.537Z"
+    "checked_date": "2026-04-14T19:07:36.902Z"
   },
   "luncheonette": {
-    "tier": "limited",
+    "tier": "open",
     "dinner_slots": 2,
     "early": "booked",
     "prime": "limited",
     "late": "booked",
     "sample_times": [
-      "8:15 PM",
-      "7:00 PM"
+      "7:00 PM",
+      "8:15 PM"
     ],
-    "platform": "tock",
+    "platform": "website",
     "prepaid_price": null,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-04-14T18:39:16.900Z"
+    "checked_date": "2026-04-14T19:07:50.668Z"
   },
   "tomatillo": {
     "tier": "open",
@@ -20438,12 +20441,16 @@
     "prime": "available",
     "late": "booked",
     "sample_times": [
-      "8:00 PM",
       "5:00 PM",
       "5:15 PM",
       "5:30 PM",
       "5:45 PM",
-      "6:00 PM"
+      "6:00 PM",
+      "6:15 PM",
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20452,7 +20459,7 @@
       "open": "12:00 PM",
       "close": "8:00 PM"
     },
-    "checked_date": "2026-04-14T18:39:29.484Z"
+    "checked_date": "2026-04-14T19:08:02.635Z"
   },
   "cooper's craft and cocktails": {
     "tier": "open",
@@ -20466,7 +20473,11 @@
       "5:30 PM",
       "5:45 PM",
       "6:00 PM",
-      "6:15 PM"
+      "6:15 PM",
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20475,7 +20486,7 @@
       "open": "12:00 PM",
       "close": "2:00 AM"
     },
-    "checked_date": "2026-04-14T18:39:42.861Z"
+    "checked_date": "2026-04-14T19:08:16.752Z"
   },
   "ms. kim's": {
     "tier": "open",
@@ -20489,7 +20500,11 @@
       "6:30 PM",
       "6:45 PM",
       "7:00 PM",
-      "7:15 PM"
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "8:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20498,7 +20513,7 @@
       "open": "6:00 PM",
       "close": "12:00 AM"
     },
-    "checked_date": "2026-04-14T18:39:55.308Z"
+    "checked_date": "2026-04-14T19:08:32.916Z"
   },
   "sea by jungsik": {
     "tier": "open",
@@ -20507,12 +20522,16 @@
     "prime": "available",
     "late": "available",
     "sample_times": [
-      "9:00 PM",
       "5:00 PM",
       "5:15 PM",
       "5:30 PM",
       "5:45 PM",
-      "6:00 PM"
+      "6:00 PM",
+      "6:15 PM",
+      "6:30 PM",
+      "6:45 PM",
+      "7:00 PM",
+      "7:15 PM"
     ],
     "platform": "tock",
     "prepaid_price": null,
@@ -20521,6 +20540,6 @@
       "open": "4:30 PM",
       "close": "9:00 PM"
     },
-    "checked_date": "2026-04-14T18:40:08.225Z"
+    "checked_date": "2026-04-14T19:08:45.797Z"
   }
 }
