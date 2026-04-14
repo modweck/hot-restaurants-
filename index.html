@@ -2015,10 +2015,13 @@ async function _createShareAndGetURL() {
     dateDisplay: shareDateDisplay
   }));
   const senderName = (_sbUser.email || '').split('@')[0];
+  var senderPhoneEl = document.getElementById('senderPhone');
+  var senderPh = (senderPhoneEl ? senderPhoneEl.value : '').trim() || localStorage.getItem('sw_myphone') || '';
+  const creatorInfo = senderPh ? senderName + '|' + senderPh : senderName;
   try {
     const { data, error } = await _sb.from('share_sessions').insert({
       creator_id: _sbUser.id,
-      creator_name: senderName,
+      creator_name: creatorInfo,
       restaurants: restaurants
     }).select().single();
     if (error) { alert('Supabase error: ' + error.message); return null; }
@@ -2272,7 +2275,7 @@ function _showShareVote(session) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
 
   const restaurants = session.restaurants || [];
-  const from = session.creator_name || 'Someone';
+  const from = (session.creator_name || 'Someone').split('|')[0];
 
   let html = '<div style="padding:20px 20px 10px"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div>';
   var dateDisplay = (restaurants[0] || {}).dateDisplay || '';
@@ -2374,9 +2377,11 @@ async function _submitShareVote() {
 
   var session = _activeShareSession;
   var restaurants = session.restaurants || [];
-  var from = session.creator_name || 'Someone';
+  var creatorInfo = session.creator_name || 'Someone';
+  var creatorParts = creatorInfo.split('|');
+  var from = creatorParts[0] || 'Someone';
+  var senderPhone = creatorParts[1] || '';
   var voterName = (_sbUser ? (_sbUser.email || '') : '').split('@')[0] || 'Your friend';
-  var senderPhone = window._senderPhone || '';
   var resultsUrl = window.location.origin + '/?share=' + session.id;
   var myPicks = [..._shareVoteSelected];
   var matchNames = myPicks.map(function(i) { return (restaurants[i] || {}).name || ''; }).filter(Boolean);
@@ -2414,7 +2419,7 @@ function _showShareResults(session, votes) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
 
   const restaurants = session.restaurants || [];
-  const from = session.creator_name || 'Someone';
+  const from = (session.creator_name || 'Someone').split('|')[0];
 
   // Collect all votes
   const voteCounts = {};
