@@ -118,7 +118,7 @@
         <div id="bookRestInfo" style="margin-bottom:16px"></div>
 
         <div class="field">
-          <label>Pick up to 3 dates that work for you</label>
+          <label>Preferred Dates (pick up to 3)</label>
           <input type="date" id="bookDate1">
           <input type="date" id="bookDate2" style="margin-top:8px">
           <input type="date" id="bookDate3" style="margin-top:8px">
@@ -308,7 +308,7 @@ function pickRest(idx) {
 
   document.getElementById('bookRestInfo').innerHTML =
     '<div style="font-size:13px;color:#555">' + selectedRest.hood + '</div>' +
-    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>' + selectedRest.drop_days + '+ days in advance</b>. Choose your preferred date below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
+    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>20-30 days in advance</b>. Choose your preferred dates below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
 
   const minDate = getMinDate(selectedRest);
   const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);
