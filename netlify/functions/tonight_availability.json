@@ -27991,5 +27991,13 @@
     "_checked_date": "2026-04-09",
     "_platform": "website",
     "website": "https://www.yafarestaurantfh.com/"
+  },
+  "the polo bar": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "fully_locked": true
   }
 }
