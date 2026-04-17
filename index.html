@@ -1952,12 +1952,7 @@ function renderPicksView() {
         <div style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:14px">${count} options ready. They'll pick their favorites.</div>
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Your phone (so they can reply)</div>
         <input id="senderPhone" type="tel" placeholder="Your phone number" value="${localStorage.getItem('sw_myphone')||''}" oninput="localStorage.setItem('sw_myphone',this.value)" style="width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08);margin-bottom:12px" />
-        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Send via email</div>
-        <div style="display:flex;gap:8px;margin-bottom:12px">
-          <input id="shareToEmail" type="email" placeholder="Their email" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
-          <button id="shareSendBtn" style="padding:11px 18px;border:none;border-radius:10px;background:#ff4500;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Send</button>
-        </div>
-        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Or send via text</div>
+        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Their phone number</div>
         <div style="display:flex;gap:8px">
           <input id="shareToPhone" type="tel" placeholder="Their phone number" style="flex:1;padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;outline:none;background:rgba(255,255,255,.08)" />
           <button id="shareSMSBtn" style="padding:11px 18px;border:none;border-radius:10px;background:#34c759;color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Text</button>
@@ -1981,9 +1976,7 @@ function renderPicksView() {
   _renderShareCalendar();
 
   // Attach share button event listeners
-  var sendBtn = document.getElementById('shareSendBtn');
   var smsBtn = document.getElementById('shareSMSBtn');
-  if (sendBtn) sendBtn.addEventListener('click', function() { _shareSendToEmail(); });
   if (smsBtn) smsBtn.addEventListener('click', function() { _shareSendSMS(); });
 
   // Load recent shares async
