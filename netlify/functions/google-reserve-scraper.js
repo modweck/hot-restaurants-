@@ -256,7 +256,36 @@ async function phase1() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function scrapeAvailability(page, reserveId, name) {
-  const url = `https://www.google.com/maps/reserve/v/dine/c/${reserveId}?hl=en-US&ps=${PARTY_SIZE}&ld=${CHECK_DATE_COMPACT}T190000`;
+  // Check 3 time windows to get full availability
+  const TIME_CHECKS = ['T173000', 'T193000', 'T210000']; // 5:30pm, 7:30pm, 9:00pm
+  let allTimeSlots = new Set();
+  let lastData = null;
+
+  for (const timeCode of TIME_CHECKS) {
+    const url = `https://www.google.com/maps/reserve/v/dine/c/${reserveId}?hl=en-US&ps=${PARTY_SIZE}&ld=${CHECK_DATE_COMPACT}${timeCode}`;
+    try {
+      await page.goto(url, { waitUntil: 'networkidle2', timeout: 20000 });
+      await sleep(1500);
+
+      const windowData = await page.evaluate(() => {
+        const text = document.body.innerText;
+        const timeSlots = [];
+        const allEls = document.querySelectorAll('button, a, [role="option"], [role="button"]');
+        for (const el of allEls) {
+          const t = el.textContent.trim();
+          const m = t.match(/^(\d{1,2}:\d{2}\s*[AP]M)$/i);
+          if (m && !el.disabled) timeSlots.push(m[1]);
+        }
+        const textTimes = text.match(/\d{1,2}:\d{2}\s*[AP]M/gi) || [];
+        return [...new Set([...timeSlots, ...textTimes])];
+      });
+
+      windowData.forEach(t => allTimeSlots.add(t));
+    } catch {}
+  }
+
+  // Now do the full evaluation with all collected times
+  const url = `https://www.google.com/maps/reserve/v/dine/c/${reserveId}?hl=en-US&ps=${PARTY_SIZE}&ld=${CHECK_DATE_COMPACT}T193000`;
 
   try {
     await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
@@ -314,11 +343,15 @@ async function scrapeAvailability(page, reserveId, name) {
       return { restaurantName, provider, timeSlots: uniqueSlots, noAvail, sections, paymentRequired };
     });
 
+    // Merge all time slots from 3 windows + this page
+    data.timeSlots.forEach(t => allTimeSlots.add(t));
+    const mergedSlots = [...allTimeSlots];
+
     // Parse time slots into early/prime/late
     let early = 0, prime = 0, late = 0;
     const parsedTimes = [];
 
-    for (const timeStr of data.timeSlots) {
+    for (const timeStr of mergedSlots) {
       const m = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
       if (!m) continue;
       let h = parseInt(m[1]);
@@ -328,34 +361,40 @@ async function scrapeAvailability(page, reserveId, name) {
       if (ampm === 'AM' && h === 12) h = 0;
       const hour = h + min / 60;
 
-      // Only count dinner times (4pm+)
-      if (hour < 16) continue;
+      // Only count dinner times (5pm+)
+      if (hour < 17) continue;
 
       parsedTimes.push(timeStr.trim());
-      if (hour >= 17.0 && hour < 18.5) early++;
-      else if (hour >= 18.5 && hour < 20.5) prime++;
-      else if (hour >= 20.5 && hour < 24.0) late++;
+      if (hour >= 17.0 && hour < 18.75) early++;              // 5:00-6:30pm
+      else if (hour >= 19.0 && hour < 20.5) prime++;          // 7:00-8:30pm
+      else if (hour >= 20.5 && hour < 24.0) late++;           // 8:30pm+
     }
+
+    // Sort times chronologically
+    parsedTimes.sort((a, b) => {
+      const pa = a.match(/(\d+):(\d+)\s*([APap][Mm])/);
+      const pb = b.match(/(\d+):(\d+)\s*([APap][Mm])/);
+      if (!pa || !pb) return 0;
+      let ha = parseInt(pa[1]); if (pa[3].toUpperCase() === 'PM' && ha !== 12) ha += 12; if (pa[3].toUpperCase() === 'AM' && ha === 12) ha = 0;
+      let hb = parseInt(pb[1]); if (pb[3].toUpperCase() === 'PM' && hb !== 12) hb += 12; if (pb[3].toUpperCase() === 'AM' && hb === 12) hb = 0;
+      return (ha + parseInt(pa[2])/60) - (hb + parseInt(pb[2])/60);
+    });
 
     const total = parsedTimes.length;
-    let tier;
-    if (data.noAvail && total === 0) tier = 'booked';
-    else if (total === 0) tier = 'booked';
-    else if (total <= 3) tier = 'limited';
-    else tier = 'open';
-
-    let earlyStatus, primeStatus, lateStatus;
-    if (tier === 'open') {
-      earlyStatus = early > 0 ? 'available' : 'booked';
-      primeStatus = prime > 0 ? 'available' : 'booked';
-      lateStatus = late > 0 ? 'available' : 'booked';
-    } else if (tier === 'limited') {
-      earlyStatus = early > 0 ? 'limited' : 'booked';
-      primeStatus = prime > 0 ? 'limited' : 'booked';
-      lateStatus = late > 0 ? 'limited' : 'booked';
-    } else {
-      earlyStatus = 'booked'; primeStatus = 'booked'; lateStatus = 'booked';
+    // 0=booked, 1-2=limited, 3+=available
+    function windowStatus(count) {
+      if (count === 0) return 'booked';
+      if (count <= 2) return 'limited';
+      return 'available';
     }
+    const earlyStatus = windowStatus(early);
+    const primeStatus = windowStatus(prime);
+    const lateStatus = windowStatus(late);
+
+    let tier;
+    if (earlyStatus === 'available' && primeStatus === 'available' && lateStatus === 'available') tier = 'fully_open';
+    else if (earlyStatus === 'booked' && primeStatus === 'booked' && lateStatus === 'booked') tier = 'booked_tonight';
+    else tier = 'limited';
 
     return {
       tier,
@@ -579,9 +618,9 @@ async function phase2(reserveIds) {
     existing[r.name.toLowerCase()] = result;
 
     let status;
-    if (result.tier === 'open') { status = '🟢'; available++; }
+    if (result.tier === 'fully_open') { status = '🟢'; available++; }
     else if (result.tier === 'limited') { status = '🟡'; limited++; }
-    else if (result.tier === 'booked') { status = '🔴'; booked++; }
+    else if (result.tier === 'booked_tonight') { status = '🔴'; booked++; }
     else { status = '❓'; errors++; }
 
     const slots = result.sample_times?.length ? ` [${result.sample_times.slice(0, 4).join(', ')}]` : '';
@@ -644,7 +683,7 @@ async function phase3() {
   }
 
   const bookedRestaurants = Object.entries(tonight)
-    .filter(([k, v]) => !k.startsWith('_') && v.tier === 'booked' && v.reserve_id)
+    .filter(([k, v]) => !k.startsWith('_') && v.tier === 'booked_tonight' && v.reserve_id)
     .map(([name, v]) => ({ name, reserveId: v.reserve_id }));
 
   console.log(`🔴 Found ${bookedRestaurants.length} booked restaurants to check future dates`);

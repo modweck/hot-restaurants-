@@ -3363,7 +3363,7 @@ function renderCard(r, isRadar) {
 
   // Availability — only show for platforms with real availability data
   const bp = (r.booking_platform || '').toLowerCase();
-  const hasRealAvail = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+  const hasRealAvail = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve';
   const tier = hasRealAvail ? availTier(r) : null;
   let availHtml = '';
   // Build time window badges
@@ -3624,7 +3624,7 @@ function display(restaurants) {
     list = list.filter(r => {
       const tier = r.avail_tier;
       const bp = (r.booking_platform || '').toLowerCase();
-      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve';
       const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';
       if (isBookAhead) {
         if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= (state.daysFilter || 28) && realPlatform)) return false;
@@ -4175,7 +4175,7 @@ function renderCardAR(r) {
   }
 
   const bpAR = (r.booking_platform || r.platform || '').toLowerCase();
-  const realPlatformAR = bpAR === 'resy' || bpAR === 'opentable' || bpAR === 'tock' || bpAR === 'sevenrooms';
+  const realPlatformAR = bpAR === 'resy' || bpAR === 'opentable' || bpAR === 'tock' || bpAR === 'sevenrooms' || bpAR === 'google_reserve';
   const tier = realPlatformAR ? availTierAR(r) : null;
   let availHtml = '';
 
@@ -4385,7 +4385,7 @@ function applyARFilters(list) {
     list = list.filter(r => {
       const tier = r.avail_tier;
       const bp = (r.booking_platform || '').toLowerCase();
-      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms';
+      const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve';
       if (af === 'book_ahead') {
         if (!realPlatform) return false;
         const allDinnerBooked = r.early === 'booked' && r.prime === 'booked' && r.late === 'booked';

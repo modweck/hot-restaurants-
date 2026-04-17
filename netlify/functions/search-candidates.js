@@ -852,7 +852,7 @@ function enrichNYT(r) {
   // Enrich availability from tonight_availability
   const avail = getAvail(mk);
   const plat = (entry.platform || r.booking_platform || '').toLowerCase();
-  const hasRealPlatform = plat === 'resy' || plat === 'opentable' || plat === 'tock' || plat === 'sevenrooms';
+  const hasRealPlatform = plat === 'resy' || plat === 'opentable' || plat === 'tock' || plat === 'sevenrooms' || plat === 'google_reserve';
   if (avail && hasRealPlatform) {
     if (!r.avail_tier) r.avail_tier = avail.tier || null;
     if (!r.opens_in && avail.opens_in) r.opens_in = avail.opens_in;
@@ -1350,7 +1350,7 @@ exports.handler = async (event) => {
     const slimRecord = (r) => {
       if (!r) return null;
       const _bp = (r.booking_platform || '').toLowerCase();
-      const _rp = _bp === 'resy' || _bp === 'opentable' || _bp === 'tock' || _bp === 'sevenrooms';
+      const _rp = _bp === 'resy' || _bp === 'opentable' || _bp === 'tock' || _bp === 'sevenrooms' || _bp === 'google_reserve';
       return {
         name: r.name || null,
         place_id: r.place_id || null,
