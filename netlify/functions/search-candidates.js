@@ -43,6 +43,12 @@ try {
   console.log(`\u2705 Rakuten base: ${RAKUTEN_BASE.length} entries`);
 } catch (err) { console.warn('\u274c Rakuten base missing:', err.message); }
 
+let SEATED_BASE = [];
+try {
+  SEATED_BASE = JSON.parse(fs.readFileSync(path.join(__dirname, 'seated_nyc.json'), 'utf8'));
+  console.log(`\u2705 Seated base: ${SEATED_BASE.length} entries`);
+} catch (err) { console.warn('\u274c Seated base missing:', err.message); }
+
 let POPULAR_BASE = [];
 try {
   POPULAR_BASE = JSON.parse(fs.readFileSync(path.join(__dirname, 'popular_nyc.json'), 'utf8'));
@@ -1184,6 +1190,7 @@ function normalizeQualityMode(q) {
   if (q === 'michelin_rec') return 'michelin_rec';
   if (q === 'chase_sapphire') return 'chase_sapphire';
   if (q === 'rakuten') return 'rakuten';
+  if (q === 'seated') return 'seated';
   if (q === 'new_rising' || q === 'new_and_rising') return 'new_rising';
   if (q === 'coming_soon') return 'coming_soon';
   return 'very_good';
@@ -1372,6 +1379,7 @@ exports.handler = async (event) => {
         bib_gourmand: r.bib_gourmand || null,
         chase_sapphire: r.chase_sapphire || null,
         rakuten: r.rakuten || null,
+        seated: r.seated || null,
         bilt_dining: r.bilt_dining || null,
         inkind: r.inkind || null,
         cuisine: r.cuisine || null,
@@ -1545,6 +1553,11 @@ exports.handler = async (event) => {
       if (r?.name) rakutenNameLookup.add(normalizeName(r.name));
     }
 
+    const seatedNameLookup = new Set();
+    for (const s of SEATED_BASE) {
+      if (s?.name) seatedNameLookup.add(normalizeName(s.name));
+    }
+
     // Michelin mode — pull directly from BOOKING_MASTER (michelin_stars >= 1)
     if (qualityMode === 'michelin') {
       const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
@@ -1585,6 +1598,7 @@ exports.handler = async (event) => {
           bib_gourmand: entry.bib_gourmand || null,
           chase_sapphire: chaseNameLookup.has(normalizeName(name)),
           rakuten: rakutenNameLookup.has(normalizeName(name)),
+          seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
           vibe_tags: entry.vibe_tags || [],
@@ -1676,6 +1690,7 @@ exports.handler = async (event) => {
           bib_gourmand: true,
           chase_sapphire: chaseNameLookup.has(normalizeName(name)),
           rakuten: rakutenNameLookup.has(normalizeName(name)),
+          seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
           vibe_tags: entry.vibe_tags || [],
@@ -1763,6 +1778,7 @@ exports.handler = async (event) => {
           bib_gourmand: entry.bib_gourmand || null,
           chase_sapphire: chaseNameLookup.has(normalizeName(name)),
           rakuten: rakutenNameLookup.has(normalizeName(name)),
+          seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
           vibe_tags: entry.vibe_tags || [],
@@ -1852,6 +1868,29 @@ exports.handler = async (event) => {
       within.sort((a,b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
       timings.total_ms = Date.now()-t0;
       const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, rakutenMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
+      setCache(cacheKey, { elite: within, moreOptions: [], stats });
+      return stableResponse(within, [], stats);
+    }
+
+    // Seated mode — 15 mile radius from seated_nyc.json
+    if (qualityMode === 'seated') {
+      const cuisineFilter = (cuisine && String(cuisine).toLowerCase().trim() !== 'any') ? cuisine : null;
+      console.log('Seated: ' + SEATED_BASE.length + ' entries');
+      const within = SEATED_BASE.filter(r => r.lat != null && r.lng != null).map(r => {
+        const d = haversineMiles(gLat, gLng, r.lat, r.lng);
+        return { place_id: r.place_id || null, name: r.name, vicinity: r.address||'', formatted_address: r.address||'',
+          price_level: r.price_level || null, opening_hours: null, geometry: { location: { lat: r.lat, lng: r.lng } },
+          googleRating: r.googleRating || 0, googleReviewCount: r.googleReviewCount || 0,
+          distanceMiles: Math.round(d*10)/10, walkMinEstimate: Math.round(d*20), driveMinEstimate: Math.round(d*4), transitMinEstimate: Math.round(d*6),
+          michelin: null, cuisine: CUISINE_LOOKUP[r.name] || r.cuisine || null,
+          booking_platform: r.booking_platform || null, booking_url: r.booking_url || null, website: (() => { const mk = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk] || MASTER_BOOK[mk.replace(/^the /,"")] || {}).website || null; })(), instagram: (() => { const mk2 = (r.name||"").toLowerCase().trim(); return (MASTER_BOOK[mk2] || MASTER_BOOK[mk2.replace(/^the /,"")] || {}).instagram || null; })(),
+          seated: true };
+      }).filter(r => r.distanceMiles <= 15)
+        .filter(r => !cuisineFilter || cuisineLookupMatches(r.name, cuisineFilter, r.cuisine));
+      within.forEach(r => { r.seatwizeScore = computeSeatWizeScore(r); });
+      within.sort((a,b) => (b.seatwizeScore || 0) - (a.seatwizeScore || 0) || a.distanceMiles - b.distanceMiles);
+      timings.total_ms = Date.now()-t0;
+      const stats = { confirmedAddress, userLocation: { lat: gLat, lng: gLng }, seatedMode: true, count: within.length, performance: { ...timings, cache_hit: false } };
       setCache(cacheKey, { elite: within, moreOptions: [], stats });
       return stableResponse(within, [], stats);
     }
@@ -2028,6 +2067,7 @@ exports.handler = async (event) => {
           michelin_recommended: entry.michelin_recommended || null,
           chase_sapphire: chaseNameLookup.has(normalizeName(key)) || entry.chase_sapphire || null,
           rakuten: rakutenNameLookup.has(normalizeName(key)) || entry.rakuten || null,
+          seated: seatedNameLookup.has(normalizeName(key)) || entry.seated || null,
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
           vibe_tags: entry.vibe_tags || [],
@@ -2354,6 +2394,7 @@ exports.handler = async (event) => {
         michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : entry.michelin_recommended ? { stars: 0, distinction: 'recommended' } : null,
         chase_sapphire: chaseNameLookup.has(normalizeName(mk)) || null,
         rakuten: rakutenNameLookup.has(normalizeName(mk)) || null,
+        seated: seatedNameLookup.has(normalizeName(mk)) || null,
         bilt_dining: entry.bilt_dining || null,
         inkind: entry.inkind || null,
         avail_tier:  (getAvail(mk) || {}).tier || null,
@@ -2521,6 +2562,42 @@ exports.handler = async (event) => {
       chaseInjected++;
     }
     if (chaseInjected) console.log(`\u2705 Injected ${chaseInjected} Chase Sapphire restaurants not in other results`);
+
+    // TAG + INJECT Seated restaurants
+    const seatedNameSet = new Set();
+    for (const s of SEATED_BASE) {
+      if (s?.name) seatedNameSet.add(normalizeName(s.name));
+    }
+    for (const r of within) {
+      if (r?.name && seatedNameSet.has(normalizeName(r.name))) {
+        r.seated = true;
+      }
+    }
+    let seatedInjected = 0;
+    for (const s of SEATED_BASE) {
+      if (!s?.lat || !s?.lng) continue;
+      if (s.name && existingNames.has(normalizeName(s.name))) continue;
+      if (cuisineStr && !cuisineLookupMatches(s.name, cuisineStr, s.cuisine)) continue;
+      const d = haversineMiles(gLat, gLng, s.lat, s.lng);
+      if (d > 15.0) continue;
+      within.push({
+        place_id: s.place_id || null, name: s.name,
+        vicinity: s.address || '', formatted_address: s.address || '',
+        price_level: s.price_level || null, opening_hours: null,
+        geometry: { location: { lat: s.lat, lng: s.lng } },
+        types: [], googleRating: s.googleRating || 0, googleReviewCount: s.googleReviewCount || 0,
+        distanceMiles: Math.round(d * 10) / 10,
+        walkMinEstimate: Math.round(d * 20), driveMinEstimate: Math.round(d * 4), transitMinEstimate: Math.round(d * 6),
+        michelin: null, cuisine: CUISINE_LOOKUP[s.name] || s.cuisine || null,
+        booking_platform: s.booking_platform || null,
+        booking_url: s.booking_url || null,
+        seated: true,
+        _source: 'seated_inject'
+      });
+      existingNames.add(normalizeName(s.name));
+      seatedInjected++;
+    }
+    if (seatedInjected) console.log(`\u2705 Injected ${seatedInjected} Seated restaurants not in other results`);
 
     // INJECT Google results last — fills in anything MASTER_BOOK missed
     // 250+ review minimum — below that is likely noise already covered by master

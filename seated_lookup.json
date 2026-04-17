@@ -1,0 +1,4 @@
+{
+  "_description": "Seated-enabled restaurants. Keyed by restaurant name or place_id. Value: { seated: true, seated_url?: string }",
+  "restaurants": {}
+}

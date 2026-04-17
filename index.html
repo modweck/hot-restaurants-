@@ -945,6 +945,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <option value="bilt">Bilt</option>
             <option value="rakuten">Rakuten</option>
             <option value="inkind">inKind</option>
+            <option value="seated">Seated</option>
           </select>
         </div>
       </div>
@@ -1256,6 +1257,7 @@ _sbGetUser().then(() => _updateAuthUI());
               <option value="bilt">Bilt</option>
               <option value="rakuten">Rakuten</option>
               <option value="inkind">inKind</option>
+              <option value="seated">Seated</option>
             </select>
           </div>
         </div>
@@ -3942,6 +3944,7 @@ function display(restaurants) {
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
+      if (rf==='seated') return r.seated;
       return true;
     });
   }
@@ -4688,6 +4691,7 @@ function applyARFilters(list) {
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
+      if (rf==='seated') return r.seated;
       return true;
     });
   }
