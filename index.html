@@ -42,6 +42,8 @@
 
     /* FILTER CHIPS - wrap grid */
     .filter-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+    .swp-chip{padding:7px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);cursor:pointer;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .2s;-webkit-tap-highlight-color:transparent}
+    .swp-chip.on{background:rgba(255,69,0,.8);color:#fff;border-color:rgba(255,69,0,.6)}
     .fchip{padding:7px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;cursor:pointer;font-size:12px;font-weight:600;color:#666;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:all .2s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
     .fchip.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e;box-shadow:0 2px 8px rgba(26,26,46,0.15)}
     .fchip:active,.fchip:hover:not(.on){border-color:rgba(0,0,0,.15);color:#333;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
@@ -537,6 +539,88 @@ _sbGetUser().then(() => _updateAuthUI());
           </div>
         </div>
 
+        <!-- SeatWize Pick -->
+        <div style="padding:0 20px 14px">
+          <button id="swPickBtn" onclick="openSWPick()" style="width:100%;padding:14px 20px;border:none;border-radius:14px;background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 100%);color:#fff;font-family:DM Sans,sans-serif;font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 16px rgba(26,26,46,.3);transition:all .15s">
+            <span style="font-size:18px">&#10024;</span> SeatWize Pick <span style="font-size:11px;opacity:.6;font-weight:600">— Just tell me where to go</span>
+          </button>
+        </div>
+
+        <!-- SeatWize Pick Form (hidden by default) -->
+        <div id="swPickForm" style="display:none;padding:0 20px 16px">
+          <div style="background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 100%);border-radius:16px;padding:20px;box-shadow:0 4px 20px rgba(26,26,46,.25)">
+            <div style="font-family:Playfair Display,serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:14px">Find your perfect spot</div>
+
+            <div style="display:flex;gap:10px;margin-bottom:12px">
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">When</div>
+                <select id="swpWhen" style="width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;background:rgba(255,255,255,.08);-webkit-appearance:none">
+                  <option value="tonight">Tonight</option>
+                  <option value="tomorrow">Tomorrow</option>
+                  <option value="weekend">This Weekend</option>
+                </select>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Party Size</div>
+                <select id="swpParty" style="width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;background:rgba(255,255,255,.08);-webkit-appearance:none">
+                  <option value="2">2</option>
+                  <option value="4">4</option>
+                  <option value="6">6+</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom:12px">
+              <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Vibe</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap" id="swpVibes">
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="date_night">Date Night</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="upscale">Upscale</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="casual">Casual</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="lively">Lively</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="outdoor">Outdoor</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="hidden_gem">Hidden Gem</button>
+                <button class="swp-chip" onclick="swpToggle(this)" data-v="foodie">Foodie</button>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:10px;margin-bottom:12px">
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Cuisine</div>
+                <select id="swpCuisine" style="width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;background:rgba(255,255,255,.08);-webkit-appearance:none">
+                  <option value="any">Any</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Mexican">Mexican</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Thai">Thai</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Mediterranean">Mediterranean</option>
+                  <option value="French">French</option>
+                  <option value="Steakhouse">Steakhouse</option>
+                  <option value="Seafood">Seafood</option>
+                  <option value="American">American</option>
+                </select>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Distance</div>
+                <select id="swpDistance" style="width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#fff;background:rgba(255,255,255,.08);-webkit-appearance:none">
+                  <option value="any">Any</option>
+                  <option value="1">1 mi</option>
+                  <option value="2">2 mi</option>
+                  <option value="3">3 mi</option>
+                  <option value="5">5 mi</option>
+                </select>
+              </div>
+            </div>
+
+            <button onclick="doSWPick()" style="width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#ff6b35,#ff4500);color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:DM Sans,sans-serif;box-shadow:0 4px 12px rgba(255,69,0,.3)">Show Me Where to Go</button>
+          </div>
+
+          <!-- Result card -->
+          <div id="swPickResult" style="display:none;margin-top:14px"></div>
+        </div>
+
         <!-- Address + GPS + Radius in one compact row -->
         <div style="padding:0 20px 10px;display:flex;gap:8px;align-items:center">
           <input type="text" id="homeAddrInput" class="finput" placeholder="Address or neighborhood..." style="flex:1">
@@ -592,6 +676,7 @@ _sbGetUser().then(() => _updateAuthUI());
               <button class="fchip" onclick="setVibeFilter('trendy',this)">Trendy</button>
               <button class="fchip" onclick="setVibeFilter('brunch',this)">Brunch</button>
               <button class="fchip" onclick="setVibeFilter('outdoor',this)">Outdoor</button>
+              <button class="fchip" onclick="setVibeFilter('pet_friendly',this)">Pet Friendly</button>
               <button class="fchip" onclick="setVibeFilter('late_night',this)">Late Night</button>
               <button class="fchip" onclick="setVibeFilter('casual',this)">Casual</button>
               <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">Hidden Gem</button>
@@ -621,7 +706,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <div style="display:flex;gap:6px;flex-wrap:wrap">
               <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
               <button class="fchip" id="avail-limited" onclick="setAvailFilter('limited',this)">Limited</button>
-              <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Booked Solid</button>
+              <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Very Hard to Book</button>
               <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early 5-6:15</button>
               <button class="fchip" id="avail-prime" onclick="setAvailFilter('prime',this)">Prime 6:30-8:15</button>
               <button class="fchip" id="avail-late" onclick="setAvailFilter('late',this)">Late 8:30+</button>
@@ -1005,7 +1090,7 @@ _sbGetUser().then(() => _updateAuthUI());
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px">
         <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Seat<span style="color:#1b4332">Wize</span></div>
         <div class="hero-tabs">
-          <button class="hero-tab active">Restaurants</button>
+          <a href="/seatwize-pick.html" class="hero-tab active" style="text-decoration:none">SeatWize Pick</a>
           <button class="hero-tab" onclick="document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById('nav-drinks').classList.add('active');document.getElementById('bar-form').style.display='block';document.getElementById('bar-results').style.display='none';document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById('view-drinks').classList.add('on');syncHeroTabs('drinks')">Drinks</button>
         </div>
       </div>
@@ -1063,7 +1148,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
             <button class="fchip" id="ar-avail-limited" onclick="arSetAvail('limited',this)">Limited</button>
             <button class="fchip" id="ar-avail-book_ahead" onclick="arSetAvail('book_ahead',this)">Book in Advance</button>
-            <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Booked Solid</button>
+            <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Very Hard to Book</button>
             <button class="fchip" id="ar-avail-early" onclick="arSetAvail('early',this)">Early 5-6:15</button>
             <button class="fchip" id="ar-avail-prime" onclick="arSetAvail('prime',this)">Prime 6:30-8:15</button>
             <button class="fchip" id="ar-avail-late" onclick="arSetAvail('late',this)">Late 8:30+</button>
@@ -1121,6 +1206,7 @@ _sbGetUser().then(() => _updateAuthUI());
               <button class="fchip" id="ar-vibe-trendy" onclick="arSetVibe('trendy',this)">Trendy</button>
               <button class="fchip" id="ar-vibe-brunch" onclick="arSetVibe('brunch',this)">Brunch</button>
               <button class="fchip" id="ar-vibe-outdoor" onclick="arSetVibe('outdoor',this)">Outdoor</button>
+              <button class="fchip" id="ar-vibe-pet_friendly" onclick="arSetVibe('pet_friendly',this)">Pet Friendly</button>
               <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">Late Night</button>
               <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
               <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
@@ -1400,6 +1486,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <button class="fchip" id="bar-vibe-chill" onclick="barSetVibe('chill',this)">Chill</button>
             <button class="fchip" id="bar-vibe-trendy" onclick="barSetVibe('trendy',this)">Trendy</button>
             <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">Outdoor</button>
+            <button class="fchip" id="bar-vibe-pet_friendly" onclick="barSetVibe('pet_friendly',this)">Pet Friendly</button>
             <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">Late Night</button>
             <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">Hidden Gem</button>
           </div>
@@ -1460,7 +1547,7 @@ _sbGetUser().then(() => _updateAuthUI());
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="bar-avail-any" onclick="barSetAvail('any',this)">Any Time</button>
             <button class="fchip" id="bar-avail-limited" onclick="barSetAvail('limited',this)">Limited</button>
-            <button class="fchip" id="bar-avail-booked" onclick="barSetAvail('booked_solid',this)">Booked Solid</button>
+            <button class="fchip" id="bar-avail-booked" onclick="barSetAvail('booked_solid',this)">Very Hard to Book</button>
             <button class="fchip" id="bar-avail-early" onclick="barSetAvail('early',this)">Early 5-6:15</button>
             <button class="fchip" id="bar-avail-prime" onclick="barSetAvail('prime',this)">Prime 6:30-8:15</button>
             <button class="fchip" id="bar-avail-late" onclick="barSetAvail('late',this)">Late 8:30+</button>
@@ -2688,7 +2775,7 @@ function setAvailFilter(val, btn) {
   if (bab) { bab.style.borderColor = ''; bab.style.background = ''; }
   homeState.availFilter = val;
   btn.classList.add('on');
-  const labels = { any:'Any Time', tonight:'Tonight', limited:'Limited', booked_solid:'Booked Solid', early:'Early (5–6:15)', prime:'Prime (6:30–8:15)', late:'Late (8:30+)' };
+  const labels = { any:'Any Time', tonight:'Tonight', limited:'Limited', booked_solid:'Very Hard to Book', early:'Early (5–6:15)', prime:'Prime (6:30–8:15)', late:'Late (8:30+)' };
   const vb = document.getElementById('trendingViewBtn');
   if (vb) vb.textContent = '🔥 View Hot Spots — ' + (labels[val] || 'Tonight');
 }
@@ -2769,6 +2856,234 @@ function syncHeroTabs(activeView) {
       }
     });
   });
+}
+
+// ─── SEATWIZE PICK ──────────────────────────────────────────────────────────
+function openSWPick() {
+  const form = document.getElementById('swPickForm');
+  const btn = document.getElementById('swPickBtn');
+  if (form.style.display === 'none') {
+    form.style.display = 'block';
+    btn.style.opacity = '.6';
+  } else {
+    form.style.display = 'none';
+    btn.style.opacity = '1';
+    document.getElementById('swPickResult').style.display = 'none';
+  }
+}
+
+function swpToggle(el) {
+  el.classList.toggle('on');
+}
+
+async function doSWPick() {
+  const when = document.getElementById('swpWhen').value;
+  const party = document.getElementById('swpParty').value;
+  const cuisine = document.getElementById('swpCuisine').value;
+  const distance = document.getElementById('swpDistance').value;
+  const vibeEls = document.querySelectorAll('#swpVibes .swp-chip.on');
+  const vibes = Array.from(vibeEls).map(e => e.dataset.v);
+
+  const resultDiv = document.getElementById('swPickResult');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:13px">Finding your perfect spot...</div>';
+
+  // Use the existing search API
+  const addr = document.getElementById('homeAddrInput').value || 'New York, NY';
+  const body = { location: addr, quality: 'all', broadCity: true, transport: distance === 'any' ? 'all_nyc' : 'radius' };
+  if (distance !== 'any') body.radiusMiles = parseInt(distance);
+  if (cuisine !== 'any') body.cuisine = cuisine;
+
+  try {
+    const resp = await fetch('/.netlify/functions/search-candidates', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+    });
+    const raw = await resp.arrayBuffer();
+    let data;
+    try { const t = new TextDecoder().decode(raw); data = JSON.parse(t); }
+    catch { const d = new Uint8Array(raw); const ds = new DecompressionStream('gzip'); const w = ds.writable.getWriter(); w.write(d); w.close(); const r = ds.readable.getReader(); let chunks = []; while(true) { const {done, value} = await r.read(); if(done) break; chunks.push(value); } const merged = new Uint8Array(chunks.reduce((a,c)=>a+c.length,0)); let off=0; chunks.forEach(c=>{merged.set(c,off);off+=c.length}); data = JSON.parse(new TextDecoder().decode(merged)); }
+
+    const restaurants = data.elite || data.results || [];
+
+    // Filter by vibes
+    let filtered = restaurants;
+    if (vibes.length > 0) {
+      filtered = filtered.filter(r => {
+        const rv = (r.vibes || []).map(v => v.toLowerCase().replace(/\s+/g, '_'));
+        return vibes.some(v => rv.includes(v));
+      });
+    }
+
+    // Filter by availability (tonight = needs avail data)
+    if (when === 'tonight') {
+      const withAvail = filtered.filter(r => r.avail_tier === 'open' || r.avail_tier === 'limited');
+      if (withAvail.length > 0) filtered = withAvail;
+    }
+
+    // Filter out walk-in only and website-only
+    filtered = filtered.filter(r => {
+      const bp = (r.booking_platform || '').toLowerCase();
+      return bp && bp !== 'walk_in' && bp !== 'walkin' && bp !== 'website';
+    });
+
+    if (filtered.length === 0) {
+      resultDiv.innerHTML = '<div style="text-align:center;padding:20px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:6px">No perfect match found</div><div style="font-size:12px;color:#999">Try fewer filters or a wider distance</div></div>';
+      return;
+    }
+
+    // Pick the top one (already sorted by score from API)
+    const pick = filtered[0];
+    const rating = Number(pick.googleRating || 0);
+    const reviews = Number(pick.googleReviewCount || 0);
+    const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : '';
+    const cuisine_label = pick.cuisine || '';
+    const vicinity = pick.vicinity || '';
+    const price = pick.price_level ? '$'.repeat(pick.price_level) : '';
+    const vibesTags = (pick.vibes || []).slice(0, 3).map(v => '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:rgba(26,26,46,.06);font-size:10px;font-weight:600;color:#1a1a2e">' + v + '</span>').join(' ');
+
+    const mapsUrl = pick.place_id
+      ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(pick.name || '') + '&query_place_id=' + pick.place_id
+      : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((pick.name || '') + ' restaurant New York NY');
+
+    const bmap = {resy:'Book on Resy',opentable:'Book on OpenTable',tock:'Book on Tock',google_reserve:'Reserve via Google',sevenrooms:'Book on SevenRooms'};
+    const bp = (pick.booking_platform || '').toLowerCase();
+    const bookLabel = bmap[bp] || 'Find on Google';
+    const bookUrl = pick.booking_url || mapsUrl;
+
+    let availBadge = '';
+    const at = pick.avail_tier;
+    if (at === 'open' || at === 'fully_open') availBadge = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700">Available Tonight</span>';
+    else if (at === 'limited') availBadge = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#fff8e1;color:#f57c00;font-size:10px;font-weight:700">Limited</span>';
+
+    let michelin = '';
+    if (pick.michelin && pick.michelin.stars >= 1) michelin = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#fef3e2;color:#c68a00;font-size:10px;font-weight:700">' + '⭐'.repeat(Math.min(pick.michelin.stars,3)) + ' Michelin</span>';
+
+    resultDiv.innerHTML = '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 4px 16px rgba(0,0,0,.06)">' +
+      '<div style="font-size:11px;font-weight:700;color:#ff4500;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">&#10024; SeatWize Pick</div>' +
+      '<div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e;margin-bottom:6px">' + (pick.name || '') + '</div>' +
+      '<div style="font-size:12px;color:#888;margin-bottom:10px">' + [cuisine_label, vicinity, price].filter(Boolean).join(' · ') + '</div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">' + michelin + availBadge + (rating > 0 ? '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:rgba(26,26,46,.06);font-size:10px;font-weight:700;color:#1a1a2e">⭐ ' + rating + (rs ? ' (' + rs + ')' : '') + '</span>' : '') + '</div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">' + vibesTags + '</div>' +
+      '<a href="' + bookUrl + '" target="_blank" rel="noopener" style="display:block;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(135deg,#1a1a2e,#2d2d5e);color:#fff;font-size:14px;font-weight:800;text-decoration:none;font-family:DM Sans,sans-serif">' + bookLabel + ' &#8594;</a>' +
+      '<button onclick="doSWPick()" style="display:block;width:100%;margin-top:8px;padding:10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;background:#fff;color:#666;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Show me another</button>' +
+    '</div>';
+
+    // Remove the shown pick so "show me another" gets a new one
+    const idx = restaurants.indexOf(pick);
+    if (idx > -1) restaurants.splice(idx, 1);
+
+  } catch(e) {
+    resultDiv.innerHTML = '<div style="text-align:center;padding:20px;color:#c0392b;font-size:13px">Error: ' + e.message + '</div>';
+  }
+}
+
+function openSWPick2() {
+  const form = document.getElementById('swPickForm2');
+  const btn = document.getElementById('swPickBtn2');
+  if (form.style.display === 'none') {
+    form.style.display = 'block';
+    btn.style.opacity = '.6';
+  } else {
+    form.style.display = 'none';
+    btn.style.opacity = '1';
+    document.getElementById('swPickResult2').style.display = 'none';
+  }
+}
+
+let _swpFiltered2 = [];
+async function doSWPick2() {
+  const cuisine = document.getElementById('swpCuisine2').value;
+  const distance = document.getElementById('swpDistance2').value;
+  const when = document.getElementById('swpWhen2').value;
+  const vibeEls = document.querySelectorAll('#swpVibes2 .swp-chip.on');
+  const vibes = Array.from(vibeEls).map(e => e.dataset.v);
+
+  const resultDiv = document.getElementById('swPickResult2');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:13px">Finding your perfect spot...</div>';
+
+  const addr = document.getElementById('arAddrInput')?.value || 'New York, NY';
+  const body = { location: addr, quality: 'all', broadCity: true, transport: distance === 'any' ? 'all_nyc' : 'radius' };
+  if (distance !== 'any') body.radiusMiles = parseInt(distance);
+  if (cuisine !== 'any') body.cuisine = cuisine;
+
+  try {
+    const resp = await fetch('/.netlify/functions/search-candidates', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+    });
+    const raw = await resp.arrayBuffer();
+    let data;
+    try { const t = new TextDecoder().decode(raw); data = JSON.parse(t); }
+    catch { const d = new Uint8Array(raw); const ds = new DecompressionStream('gzip'); const w = ds.writable.getWriter(); w.write(d); w.close(); const r = ds.readable.getReader(); let chunks = []; while(true) { const {done, value} = await r.read(); if(done) break; chunks.push(value); } const merged = new Uint8Array(chunks.reduce((a,c)=>a+c.length,0)); let off=0; chunks.forEach(c=>{merged.set(c,off);off+=c.length}); data = JSON.parse(new TextDecoder().decode(merged)); }
+
+    _swpFiltered2 = data.elite || data.results || [];
+
+    if (vibes.length > 0) {
+      const vibeFiltered = _swpFiltered2.filter(r => {
+        const rv = (r.vibes || []).map(v => v.toLowerCase().replace(/\s+/g, '_'));
+        return vibes.some(v => rv.includes(v));
+      });
+      if (vibeFiltered.length > 0) _swpFiltered2 = vibeFiltered;
+    }
+
+    if (when === 'tonight') {
+      const withAvail = _swpFiltered2.filter(r => r.avail_tier === 'open' || r.avail_tier === 'limited');
+      if (withAvail.length > 0) _swpFiltered2 = withAvail;
+    }
+
+    _swpFiltered2 = _swpFiltered2.filter(r => {
+      const bp = (r.booking_platform || '').toLowerCase();
+      return bp && bp !== 'walk_in' && bp !== 'walkin' && bp !== 'website';
+    });
+
+    _showSWPick2();
+  } catch(e) {
+    resultDiv.innerHTML = '<div style="text-align:center;padding:20px;color:#c0392b;font-size:13px">Error: ' + e.message + '</div>';
+  }
+}
+
+function _showSWPick2() {
+  const resultDiv = document.getElementById('swPickResult2');
+  if (_swpFiltered2.length === 0) {
+    resultDiv.innerHTML = '<div style="text-align:center;padding:20px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:6px">No perfect match found</div><div style="font-size:12px;color:#999">Try fewer filters or a wider distance</div></div>';
+    return;
+  }
+
+  const pick = _swpFiltered2.shift();
+  const rating = Number(pick.googleRating || 0);
+  const reviews = Number(pick.googleReviewCount || 0);
+  const rs = reviews >= 1000 ? (reviews/1000).toFixed(1)+'k' : reviews > 0 ? reviews : '';
+  const cuisine_label = pick.cuisine || '';
+  const vicinity = pick.vicinity || '';
+  const price = pick.price_level ? '$'.repeat(pick.price_level) : '';
+  const vibesTags = (pick.vibes || []).slice(0, 3).map(v => '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:rgba(26,26,46,.06);font-size:10px;font-weight:600;color:#1a1a2e">' + v + '</span>').join(' ');
+
+  const mapsUrl = pick.place_id
+    ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(pick.name || '') + '&query_place_id=' + pick.place_id
+    : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((pick.name || '') + ' restaurant New York NY');
+
+  const bmap = {resy:'Book on Resy',opentable:'Book on OpenTable',tock:'Book on Tock',google_reserve:'Reserve via Google',sevenrooms:'Book on SevenRooms'};
+  const bp = (pick.booking_platform || '').toLowerCase();
+  const bookLabel = bmap[bp] || 'Find on Google';
+  const bookUrl = pick.booking_url || mapsUrl;
+
+  let availBadge = '';
+  const at = pick.avail_tier;
+  if (at === 'open' || at === 'fully_open') availBadge = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#e8f5e9;color:#2e7d32;font-size:10px;font-weight:700">Available Tonight</span>';
+  else if (at === 'limited') availBadge = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#fff8e1;color:#f57c00;font-size:10px;font-weight:700">Limited</span>';
+
+  let michelin = '';
+  if (pick.michelin && pick.michelin.stars >= 1) michelin = '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:#fef3e2;color:#c68a00;font-size:10px;font-weight:700">' + String.fromCodePoint(11088).repeat(Math.min(pick.michelin.stars,3)) + ' Michelin</span>';
+
+  resultDiv.innerHTML = '<div style="background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(0,0,0,.06);box-shadow:0 4px 16px rgba(0,0,0,.06)">' +
+    '<div style="font-size:11px;font-weight:700;color:#ff4500;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">&#10024; SeatWize Pick</div>' +
+    '<div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e;margin-bottom:6px">' + (pick.name || '') + '</div>' +
+    '<div style="font-size:12px;color:#888;margin-bottom:10px">' + [cuisine_label, vicinity, price].filter(Boolean).join(' · ') + '</div>' +
+    '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">' + michelin + availBadge + (rating > 0 ? '<span style="display:inline-block;padding:4px 10px;border-radius:8px;background:rgba(26,26,46,.06);font-size:10px;font-weight:700;color:#1a1a2e">' + String.fromCodePoint(11088) + ' ' + rating + (rs ? ' (' + rs + ')' : '') + '</span>' : '') + '</div>' +
+    '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">' + vibesTags + '</div>' +
+    '<a href="' + bookUrl + '" target="_blank" rel="noopener" style="display:block;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(135deg,#1a1a2e,#2d2d5e);color:#fff;font-size:14px;font-weight:800;text-decoration:none;font-family:DM Sans,sans-serif">' + bookLabel + ' &#8594;</a>' +
+    '<button onclick="_showSWPick2()" style="display:block;width:100%;margin-top:8px;padding:10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;background:#fff;color:#666;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Show me another</button>' +
+  '</div>';
 }
 
 function setHeroTab(tab, btn) {
@@ -3254,8 +3569,8 @@ function renderCard(r, isRadar) {
   const price = r.price_level > 0 ? `<span class="card-price">${'$'.repeat(r.price_level)}</span>` : '';
 
   // Vibe tag pills
-  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'' };
-  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
+  const VIBE_EMOJI = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', pet_friendly:'' };
+  const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', pet_friendly:'Pet Friendly' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => {
@@ -3418,7 +3733,10 @@ function renderCard(r, isRadar) {
       if (!futureBadges) futureBadges = `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span>`;
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${futureBadges}</div>`;
     } else if (isBooked && r.fully_locked) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+      const _ck = (r.name||'').toLowerCase();
+      const _isConcierge = CONCIERGE_SLUGS[_ck];
+      const _conciergeTag = _isConcierge ? `<a href="/book.html?r=${_isConcierge.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conciergeTag}</div>`;
     } else if (isBooked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
     } else if (allAvailable) {
@@ -4224,7 +4542,10 @@ function renderCardAR(r) {
       if (!fb3) fb3 = `<span style="${_sAvail}">Opens +${r.opens_in}d</span>`;
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${fb3}</div>`;
     } else if (isBooked && r.fully_locked) {
-      availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+      const _ck2 = (r.name||'').toLowerCase();
+      const _isCon2 = CONCIERGE_SLUGS[_ck2];
+      const _conTag2 = _isCon2 ? `<a href="/book.html?r=${_isCon2.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTag2}</div>`;
     } else if (isBooked) {
       availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
     } else if (allAvail) {
@@ -4239,7 +4560,10 @@ function renderCardAR(r) {
   } else if (tier === 'booked' && r.opens_in) {
     availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    const _ck3 = (r.name||'').toLowerCase();
+    const _isCon3 = CONCIERGE_SLUGS[_ck3];
+    const _conTag3 = _isCon3 ? `<a href="/book.html?r=${_isCon3.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTag3}</div>`;
   } else if (tier === 'booked') {
     availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
   } else if (tier === 'available') {
@@ -4289,8 +4613,8 @@ function renderCardAR(r) {
     cardLinks += '</div>';
   }
 
-  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'' };
-  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie' };
+  const VIBE_EMOJI_AR = { date_night:'', upscale:'', lively:'', chill:'', trendy:'', brunch:'', outdoor:'', late_night:'', casual:'', hidden_gem:'', foodie:'', pet_friendly:'' };
+  const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', pet_friendly:'Pet Friendly' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
     const pills = r.vibe_tags.slice(0,4).map(v => `<span class="badge vibe">${VIBE_EMOJI_AR[v]||''} ${VIBE_LABEL_AR[v]||v.replace(/_/g,' ')}</span>`).join('');

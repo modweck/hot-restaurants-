@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>SeatWize Pick</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;-webkit-font-smoothing:antialiased;min-height:100vh}
+    .container{max-width:520px;margin:0 auto;min-height:100vh;position:relative}
+    @media(min-width:520px){body{padding:16px}.container{border-radius:24px;overflow:hidden;box-shadow:0 8px 60px rgba(0,0,0,0.12);min-height:auto}}
+
+    .header{padding:20px 20px 0;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#999;letter-spacing:-.3px}
+    .logo a{color:inherit;text-decoration:none}
+    .logo span{color:#ff4500}
+    .back-btn{font-size:13px;color:#888;text-decoration:none;font-weight:600}
+
+    .hero{padding:20px 20px 24px;text-align:center}
+    .hero-icon{font-size:36px;margin-bottom:8px}
+    .hero-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:#1a1a2e;letter-spacing:-.5px}
+    .hero-sub{font-size:13px;color:#888;margin-top:6px}
+
+    .form{padding:0 20px 30px}
+    .field{margin-bottom:16px}
+    .label{font-size:12px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+
+    .addr-row{display:flex;gap:8px}
+    .addr-input{flex:1;padding:12px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:12px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;background:#fff}
+    .addr-input:focus{border-color:#1a1a2e}
+    .gps-btn{flex-shrink:0;width:44px;height:44px;background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:12px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+
+    .mode-row{display:flex;gap:0;border-radius:12px;overflow:hidden;border:1.5px solid rgba(0,0,0,.1);background:#fff}
+    .mode-btn{flex:1;padding:11px;border:none;background:#fff;font-size:13px;font-weight:700;color:#888;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;border-right:1px solid rgba(0,0,0,.06)}
+    .mode-btn:last-child{border-right:none}
+    .mode-btn.on{background:#1a1a2e;color:#fff}
+    .mode-val{margin-top:6px}
+    .mode-slider{width:100%;padding:10px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:10px;font-size:13px;font-family:'DM Sans',sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;outline:none}
+
+    .sel{width:100%;padding:12px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:12px;font-size:14px;font-family:'DM Sans',sans-serif;color:#1a1a2e;background:#fff;-webkit-appearance:none;appearance:none;outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' fill='none' stroke='%23999' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+    .sel:focus{border-color:#1a1a2e}
+
+    .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#fff;border-radius:12px;border:1.5px solid rgba(0,0,0,.1);cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .toggle-row.on{border-color:#1a1a2e}
+    .toggle-label{font-size:14px;font-weight:700;color:#1a1a2e}
+    .toggle-dot{width:44px;height:26px;border-radius:13px;background:#ddd;position:relative;transition:all .2s}
+    .toggle-dot::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+    .toggle-row.on .toggle-dot{background:#1a1a2e}
+    .toggle-row.on .toggle-dot::after{left:21px}
+
+    .go-btn{width:100%;padding:18px;border:none;border-radius:14px;background:linear-gradient(135deg,#ff6b35,#ff4500);color:#fff;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 4px 16px rgba(255,69,0,.3);transition:all .2s;margin-top:8px}
+    .go-btn:active{transform:scale(.98)}
+    .go-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+    .validation{font-size:12px;color:#ff4500;margin-top:6px;display:none;font-weight:600}
+
+    /* Result */
+    .result{display:none;padding:0 20px 40px}
+    .result-card{background:#fff;border-radius:18px;padding:24px;border:2px solid rgba(255,69,0,.15);box-shadow:0 8px 32px rgba(0,0,0,.08)}
+    .result-label{font-size:11px;font-weight:800;color:#ff4500;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+    .result-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:#1a1a2e;line-height:1.15;margin-bottom:8px}
+    .result-sub{font-size:13px;color:#888;margin-bottom:14px}
+    .result-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+    .result-badge{display:inline-block;padding:5px 12px;border-radius:8px;font-size:11px;font-weight:700}
+    .result-vibes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+    .result-vibe{display:inline-block;padding:5px 12px;border-radius:8px;background:rgba(26,26,46,.05);font-size:11px;font-weight:600;color:#1a1a2e}
+    .result-book{display:block;text-align:center;padding:16px;border-radius:14px;background:linear-gradient(135deg,#1a1a2e,#2d2d5e);color:#fff;font-size:15px;font-weight:800;text-decoration:none;font-family:'DM Sans',sans-serif;margin-bottom:10px}
+    .result-another{display:block;width:100%;padding:12px;border:1.5px solid rgba(0,0,0,.08);border-radius:12px;background:#fff;color:#666;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-bottom:10px}
+    .result-startover{display:block;width:100%;padding:10px;border:none;background:none;color:#999;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;text-align:center}
+    .result-relaxed{font-size:11px;color:#f57c00;margin-bottom:8px;font-weight:600}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo"><a href="/">Seat<span>Wize</span></a></div>
+    <a href="/" class="back-btn">&larr; Back</a>
+  </div>
+
+  <!-- FORM -->
+  <div id="formView">
+    <div class="hero">
+      <div class="hero-icon">&#10024;</div>
+      <div class="hero-title">SeatWize Pick</div>
+      <div class="hero-sub">Tell us what you want. We'll pick the spot.</div>
+    </div>
+
+    <div class="form">
+
+      <!-- Location -->
+      <div class="field">
+        <div class="label">Your Location</div>
+        <div class="addr-row">
+          <input type="text" id="swpAddress" class="addr-input" placeholder="Address or neighborhood..." />
+          <button class="gps-btn" onclick="swpUseGPS(this)">&#128205;</button>
+        </div>
+      </div>
+
+      <!-- Distance Mode -->
+      <div class="field">
+        <div class="label">Distance</div>
+        <div class="mode-row">
+          <button class="mode-btn" onclick="setMode('walk',this)">Walk</button>
+          <button class="mode-btn" onclick="setMode('drive',this)">Drive</button>
+          <button class="mode-btn" onclick="setMode('radius',this)">Radius</button>
+          <button class="mode-btn on" onclick="setMode('all',this)">All NYC</button>
+        </div>
+        <div class="mode-val" id="modeVal" style="display:none">
+          <select id="modeSelect" class="mode-slider" onchange="picks.distanceVal=this.value"></select>
+        </div>
+      </div>
+
+      <!-- When -->
+      <div class="field">
+        <div class="label">When</div>
+        <select class="sel" id="selWhen" onchange="picks.when=this.value">
+          <option value="">Select...</option>
+          <option value="tonight">Tonight</option>
+          <option value="tomorrow">Tomorrow</option>
+          <option value="+3">In 3 Days</option>
+          <option value="weekend">This Weekend</option>
+        </select>
+      </div>
+
+      <!-- Time Slot -->
+      <div class="field">
+        <div class="label">Time Slot</div>
+        <select class="sel" id="selTime" onchange="picks.time=this.value">
+          <option value="">Select...</option>
+          <option value="early">Early (5-6:30)</option>
+          <option value="prime">Prime (7-8:30)</option>
+          <option value="late">Late (8:30+)</option>
+        </select>
+      </div>
+
+      <!-- Party Size -->
+      <div class="field">
+        <div class="label">Party Size</div>
+        <select class="sel" id="selParty" onchange="picks.party=this.value">
+          <option value="">Select...</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6+</option>
+        </select>
+      </div>
+
+      <!-- Vibe -->
+      <div class="field">
+        <div class="label">Vibe</div>
+        <select class="sel" id="selVibe" onchange="picks.vibe=this.value">
+          <option value="">Select...</option>
+          <option value="date_night">Date Night</option>
+          <option value="upscale">Upscale</option>
+          <option value="casual">Casual</option>
+          <option value="lively">Lively</option>
+          <option value="outdoor">Outdoor</option>
+          <option value="pet_friendly">Pet Friendly</option>
+          <option value="hidden_gem">Hidden Gem</option>
+          <option value="foodie">Foodie</option>
+          <option value="trendy">Trendy</option>
+          <option value="brunch">Brunch</option>
+          <option value="late_night">Late Night</option>
+          <option value="chill">Chill</option>
+        </select>
+      </div>
+
+      <!-- Cuisine -->
+      <div class="field">
+        <div class="label">Cuisine</div>
+        <select class="sel" id="selCuisine" onchange="picks.cuisine=this.value">
+          <option value="">Select...</option>
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Thai">Thai</option>
+          <option value="Indian">Indian</option>
+          <option value="Korean">Korean</option>
+          <option value="Mediterranean">Mediterranean</option>
+          <option value="French">French</option>
+          <option value="Steakhouse">Steakhouse</option>
+          <option value="Seafood">Seafood</option>
+          <option value="American">American</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Greek">Greek</option>
+          <option value="Caribbean">Caribbean</option>
+          <option value="Peruvian">Peruvian</option>
+        </select>
+      </div>
+
+      <!-- Price -->
+      <div class="field">
+        <div class="label">Price</div>
+        <select class="sel" id="selPrice" onchange="picks.price=this.value">
+          <option value="">Select...</option>
+          <option value="1">$ — Budget</option>
+          <option value="2">$$ — Moderate</option>
+          <option value="3">$$$ — Upscale</option>
+          <option value="4">$$$$ — Fine Dining</option>
+        </select>
+      </div>
+
+      <!-- Hot Spots -->
+      <div class="field">
+        <div class="toggle-row" id="hotspotToggle" onclick="toggleHotspot()">
+          <div class="toggle-label">Hot Spots Only</div>
+          <div class="toggle-dot"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="validation" id="validationMsg"></div>
+        <button class="go-btn" id="goBtn" onclick="doSWPick()">Show Me Where to Go</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result" id="resultView">
+    <div class="hero" style="padding-bottom:16px">
+      <div class="hero-icon">&#10024;</div>
+      <div class="hero-title">Your Pick</div>
+    </div>
+    <div id="resultCard"></div>
+  </div>
+
+</div>
+
+<script>
+const picks = { when: '', time: '', party: '', vibe: '', cuisine: '', price: '', distanceMode: 'all', distanceVal: '', hotspot: false };
+let _filtered = [];
+let _relaxedMsg = null;
+
+function setMode(mode, btn) {
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  picks.distanceMode = mode;
+
+  const valDiv = document.getElementById('modeVal');
+  const sel = document.getElementById('modeSelect');
+  if (mode === 'all') {
+    valDiv.style.display = 'none';
+  } else {
+    valDiv.style.display = 'block';
+    sel.innerHTML = '';
+    if (mode === 'walk') {
+      [5,10,15,20,30].forEach(v => { const o=document.createElement('option'); o.value=v; o.textContent=v+' min walk'; sel.appendChild(o); });
+    } else if (mode === 'drive') {
+      [5,10,15,20].forEach(v => { const o=document.createElement('option'); o.value=v; o.textContent=v+' min drive'; sel.appendChild(o); });
+    } else if (mode === 'radius') {
+      [1,2,3,5].forEach(v => { const o=document.createElement('option'); o.value=v; o.textContent=v+' mi'; sel.appendChild(o); });
+    }
+    picks.distanceVal = sel.value;
+  }
+}
+
+function toggleHotspot() {
+  const row = document.getElementById('hotspotToggle');
+  row.classList.toggle('on');
+  picks.hotspot = row.classList.contains('on');
+}
+
+function swpUseGPS(btn) {
+  if (!navigator.geolocation) { alert('GPS not supported'); return; }
+  btn.textContent = '...';
+  navigator.geolocation.getCurrentPosition(
+    async (pos) => {
+      try {
+        const resp = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + pos.coords.latitude + ',' + pos.coords.longitude + '&key=' + (await (await fetch('/.netlify/functions/get-maps-key')).json()).key);
+        const data = await resp.json();
+        document.getElementById('swpAddress').value = data.results?.[0]?.formatted_address || pos.coords.latitude+','+pos.coords.longitude;
+      } catch { document.getElementById('swpAddress').value = pos.coords.latitude+','+pos.coords.longitude; }
+      btn.textContent = '\u{1F4CD}';
+    },
+    () => { alert('Could not get location'); btn.textContent = '\u{1F4CD}'; }
+  );
+}
+
+function validate() {
+  const required = ['when','time','party','vibe','cuisine','price'];
+  const missing = required.filter(f => !picks[f]);
+  if (missing.length > 0) {
+    document.getElementById('validationMsg').style.display = 'block';
+    document.getElementById('validationMsg').textContent = 'Please fill out: ' + missing.join(', ');
+    return false;
+  }
+  if (picks.distanceMode !== 'all' && !document.getElementById('swpAddress').value.trim()) {
+    document.getElementById('validationMsg').style.display = 'block';
+    document.getElementById('validationMsg').textContent = 'Enter your location or select All NYC';
+    return false;
+  }
+  document.getElementById('validationMsg').style.display = 'none';
+  return true;
+}
+
+async function doSWPick() {
+  if (!validate()) return;
+
+  const btn = document.getElementById('goBtn');
+  btn.disabled = true;
+  btn.textContent = 'Finding your spot...';
+
+  const addr = document.getElementById('swpAddress').value.trim() || 'New York, NY';
+  const body = { location: addr, quality: 'all', broadCity: true, transport: 'all_nyc' };
+  if (picks.distanceMode === 'walk') { body.transport = 'walk'; body.walkTime = parseInt(picks.distanceVal); }
+  else if (picks.distanceMode === 'drive') { body.transport = 'drive'; body.driveTime = parseInt(picks.distanceVal); }
+  else if (picks.distanceMode === 'radius') { body.transport = 'radius'; body.radiusMiles = parseInt(picks.distanceVal); }
+  if (picks.cuisine) body.cuisine = picks.cuisine;
+
+  try {
+    const resp = await fetch('/.netlify/functions/search-candidates', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body)
+    });
+    const raw = await resp.arrayBuffer();
+    let data;
+    try { data = JSON.parse(new TextDecoder().decode(raw)); }
+    catch { const d=new Uint8Array(raw); const ds=new DecompressionStream('gzip'); const w=ds.writable.getWriter(); w.write(d); w.close(); const r=ds.readable.getReader(); let chunks=[]; while(true){const{done,value}=await r.read();if(done)break;chunks.push(value);} const merged=new Uint8Array(chunks.reduce((a,c)=>a+c.length,0)); let off=0; chunks.forEach(c=>{merged.set(c,off);off+=c.length}); data=JSON.parse(new TextDecoder().decode(merged)); }
+
+    let allR = data.elite || [];
+    _relaxedMsg = null;
+
+    function applyFilters(list, opts) {
+      let r = [...list];
+      r = r.filter(x => { const bp=(x.booking_platform||'').toLowerCase(); return bp && bp!=='walk_in' && bp!=='walkin' && bp!=='website'; });
+      if (opts.vibe) { const v=r.filter(x=>(x.vibe_tags||[]).includes(opts.vibe)); if(v.length>0) r=v; }
+      if (opts.price) { const pv=parseInt(opts.price); const p=r.filter(x=>(x.price_level||0)===pv); if(p.length>0) r=p; else { const adj=r.filter(x=>Math.abs((x.price_level||0)-pv)<=1&&(x.price_level||0)>0); if(adj.length>0){r=adj;_relaxedMsg='Showing nearby price range';} } }
+      if (opts.tonight) {
+        const a=r.filter(x=>{ const t=x.avail_tier; if(!t||t==='booked'||t==='booked_tonight') return false; if(opts.time==='early') return x.early==='available'||x.has_early; if(opts.time==='prime') return x.prime==='available'||x.has_prime; if(opts.time==='late') return x.late==='available'||x.has_late; return true; });
+        if(a.length>0) r=a; else { const any=r.filter(x=>x.avail_tier&&x.avail_tier!=='booked'&&x.avail_tier!=='booked_tonight'); if(any.length>0){r=any;_relaxedMsg='Showing other time slots';} }
+      }
+      if (opts.hotspot) { const h=r.filter(x=>x.buzz_sources?.length>0||x.michelin||x.bib_gourmand||x.nyt_top_100||x.instagram_buzz); if(h.length>0) r=h; }
+      return r;
+    }
+
+    // Try strict
+    let restaurants = applyFilters(allR, { vibe:picks.vibe, price:picks.price, tonight:picks.when==='tonight', time:picks.time, hotspot:picks.hotspot });
+    // Relax: drop hotspot
+    if (restaurants.length===0 && picks.hotspot) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:picks.price,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all restaurants'; }
+    // Relax: drop price
+    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:null,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all price ranges'; }
+    // Relax: drop vibe
+    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:null,price:null,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all vibes and prices'; }
+
+    _filtered = restaurants;
+    btn.disabled = false; btn.textContent = 'Show Me Where to Go';
+
+    if (_filtered.length === 0) {
+      document.getElementById('formView').style.display = 'none';
+      document.getElementById('resultView').style.display = 'block';
+      document.getElementById('resultCard').innerHTML = '<div style="text-align:center;padding:30px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:36px;margin-bottom:10px">&#128533;</div><div style="font-size:17px;font-weight:700;margin-bottom:6px">No match found</div><div style="font-size:13px;color:#888;margin-bottom:16px">Try different options</div><button class="result-startover" onclick="startOver()">Start Over</button></div>';
+      return;
+    }
+    showResult();
+  } catch(e) { btn.disabled=false; btn.textContent='Show Me Where to Go'; alert('Error: '+e.message); }
+}
+
+function showResult() {
+  if (_filtered.length===0) {
+    document.getElementById('resultCard').innerHTML = '<div style="text-align:center;padding:30px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06)"><div style="font-size:36px;margin-bottom:10px">&#128528;</div><div style="font-size:17px;font-weight:700;margin-bottom:6px">No more options</div><button class="result-startover" onclick="startOver()">Start Over</button></div>';
+    return;
+  }
+  document.getElementById('formView').style.display = 'none';
+  document.getElementById('resultView').style.display = 'block';
+
+  const pick = _filtered.shift();
+  const rating = Number(pick.googleRating||0);
+  const reviews = Number(pick.googleReviewCount||0);
+  const rs = reviews>=1000?(reviews/1000).toFixed(1)+'k':reviews>0?reviews:'';
+  const cuisine = pick.cuisine||'';
+  const vicinity = pick.vicinity||'';
+  const price = pick.price_level?'$'.repeat(pick.price_level):'';
+  const dist = pick.distanceMiles ? pick.distanceMiles.toFixed(1)+' mi' : '';
+
+  const mapsUrl = pick.place_id ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(pick.name||'')+'&query_place_id='+pick.place_id : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((pick.name||'')+' restaurant New York NY');
+  const bmap = {resy:'Book on Resy',opentable:'Book on OpenTable',tock:'Book on Tock',google_reserve:'Reserve via Google',sevenrooms:'Book on SevenRooms'};
+  const bp = (pick.booking_platform||'').toLowerCase();
+  const bookLabel = bmap[bp]||'Find on Google';
+  const bookUrl = pick.booking_url||mapsUrl;
+
+  let badges = '';
+  if (pick.michelin&&pick.michelin.stars>=1) badges+='<span class="result-badge" style="background:#fef3e2;color:#c68a00">'+'\u2B50'.repeat(Math.min(pick.michelin.stars,3))+' Michelin</span>';
+  const at=pick.avail_tier;
+  if (at==='open'||at==='fully_open') badges+='<span class="result-badge" style="background:#e8f5e9;color:#2e7d32">Available Tonight</span>';
+  else if (at==='limited') badges+='<span class="result-badge" style="background:#fff8e1;color:#f57c00">Limited</span>';
+  if (rating>0) badges+='<span class="result-badge" style="background:rgba(26,26,46,.06);color:#1a1a2e">\u2B50 '+rating+(rs?' ('+rs+')':'')+' </span>';
+
+  const vibesTags = (pick.vibe_tags||[]).slice(0,4).map(v=>'<span class="result-vibe">'+v.replace(/_/g,' ').replace(/\b\w/g,l=>l.toUpperCase())+'</span>').join('');
+
+  document.getElementById('resultCard').innerHTML =
+    '<div class="result-card">'+
+    (_relaxedMsg?'<div class="result-relaxed">'+_relaxedMsg+'</div>':'')+
+    '<div class="result-label">\u2728 SeatWize Pick</div>'+
+    '<div class="result-name">'+(pick.name||'')+'</div>'+
+    '<div class="result-sub">'+[cuisine,vicinity,price,dist].filter(Boolean).join(' \u00B7 ')+'</div>'+
+    '<div class="result-badges">'+badges+'</div>'+
+    '<div class="result-vibes">'+vibesTags+'</div>'+
+    '<a href="'+bookUrl+'" target="_blank" rel="noopener" class="result-book">'+bookLabel+' \u2192</a>'+
+    '<button class="result-another" onclick="showResult()">Show Me Another ('+_filtered.length+' more)</button>'+
+    '<button class="result-startover" onclick="startOver()">Start Over</button>'+
+    '</div>';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startOver() {
+  document.getElementById('formView').style.display = 'block';
+  document.getElementById('resultView').style.display = 'none';
+  document.querySelectorAll('.sel').forEach(s=>s.selectedIndex=0);
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.mode-btn').forEach((b,i)=>{if(i===3)b.classList.add('on')});
+  document.getElementById('hotspotToggle').classList.remove('on');
+  document.getElementById('modeVal').style.display='none';
+  Object.keys(picks).forEach(k=>picks[k]=k==='distanceMode'?'all':k==='hotspot'?false:'');
+  _filtered=[];_relaxedMsg=null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
