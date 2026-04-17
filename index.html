@@ -342,6 +342,18 @@ function _toggleAuthMode() {
   }
 }
 
+async function _forgotPassword() {
+  const email = document.getElementById('auth-email').value.trim();
+  const msgEl = document.getElementById('auth-msg');
+  if (!email) { msgEl.textContent = 'Enter your email first'; msgEl.style.color = '#ef4444'; msgEl.style.display = 'block'; return; }
+  try {
+    const { error } = await _sb.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin });
+    if (error) { msgEl.textContent = error.message; msgEl.style.color = '#ef4444'; }
+    else { msgEl.textContent = 'Password reset link sent to your email'; msgEl.style.color = '#22c55e'; }
+    msgEl.style.display = 'block';
+  } catch (e) { msgEl.textContent = 'Something went wrong'; msgEl.style.color = '#ef4444'; msgEl.style.display = 'block'; }
+}
+
 async function _doLogin() {
   const emailEl = document.getElementById('auth-email');
   const passEl = document.getElementById('auth-pass');
@@ -498,6 +510,7 @@ _sbGetUser().then(() => _updateAuthUI());
         <input id="auth-pass" type="password" placeholder="Password" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
         <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#ff4500;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(255,69,0,.25);transition:all .2s">Log In</button>
         <div id="auth-msg" style="font-size:12px;color:#888;margin-top:12px;display:none"></div>
+        <div style="text-align:right;margin-top:8px"><a href="#" onclick="_forgotPassword();return false" style="font-size:12px;color:#888;text-decoration:none">Forgot password?</a></div>
       </div>
       <div id="auth-toggle" style="font-size:12px;color:#888;margin-top:16px">Don&#8217;t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Sign up</a></div>
     </div>
@@ -2541,7 +2554,9 @@ async function _loadRestNames() {
     });
     const data = await resp.json();
     const all = [...(data.elite||[]), ...(data.moreOptions||[])];
-    _restNames = all.map(r => ({ name: r.name, cuisine: r.cuisine||'', rating: r.googleRating||0, platform: r.booking_platform||'' }));
+    const seen = new Set();
+    _restNames = all.map(r => ({ name: r.name, cuisine: r.cuisine||'', rating: r.googleRating||0, platform: r.booking_platform||'' }))
+      .filter(r => { const k = (r.name||'').toLowerCase().trim(); if (!k || seen.has(k)) return false; seen.add(k); return true; });
     return _restNames;
   } catch { return []; }
 }
@@ -3459,6 +3474,9 @@ function renderCard(r, isRadar) {
     let url = r.booking_url;
     try { if (url.includes('google.com/url')) { const u = new URL(url); url = u.searchParams.get('q')||url; } } catch(e){}
     url = url.replace(/\/+$/,'');
+    if (r.booking_platform === 'google_reserve' && r.reserve_id) {
+      url = `https://www.google.com/maps/reserve/v/dine/${r.reserve_id}`;
+    }
     const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform]||{cls:'site',label:'Book on Website →'};
     const tockPrice = r.booking_platform === 'tock' && r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
@@ -4254,9 +4272,13 @@ function renderCardAR(r) {
   if (isWalkInOnly || r.booking_platform === 'walk_in' || r.booking_platform === 'walkin') {
     bookBtn = `<a href="${mapsUrl}" target="_blank" rel="noopener" class="bbtn walkin">Find on Map →</a>`;
   } else if (r.booking_url && r.booking_platform) {
+    let url = r.booking_url;
+    if (r.booking_platform === 'google_reserve' && r.reserve_id) {
+      url = `https://www.google.com/maps/reserve/v/dine/${r.reserve_id}`;
+    }
     const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},google_reserve:{cls:'google',label:'Book on Google →'},yelp:{cls:'yelp',label:'Book on Yelp →'},sevenrooms:{cls:'sevenrooms',label:'Book on SevenRooms →'},website:{cls:'site',label:'Book on Website →'}};
     const s = bmap[r.booking_platform] || {cls:'site', label:'Book on Website →'};
-    bookBtn = `<a href="${r.booking_url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
+    bookBtn = `<a href="${url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
   } else if (r.website) {
     bookBtn = `<a href="${r.website}" target="_blank" rel="noopener" class="bbtn site">Visit Website →</a>`;
   } else {
