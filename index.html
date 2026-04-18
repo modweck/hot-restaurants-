@@ -864,7 +864,7 @@ _sbGetUser().then(() => _updateAuthUI());
           <button class="tbtn active" onclick="setTransport('all_nyc',this)">All NYC</button>
         </div>
         <div class="dist-drop" id="dd-walk">
-          <select id="walkTime" class="finput" style="padding:7px 10px;font-size:12px" onchange="if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="walkTime" class="finput" style="padding:7px 10px;font-size:12px">
             <option value="10">10 min walk</option>
             <option value="15">15 min walk</option>
             <option value="20" selected>20 min walk</option>
@@ -872,7 +872,7 @@ _sbGetUser().then(() => _updateAuthUI());
           </select>
         </div>
         <div class="dist-drop" id="dd-drive">
-          <select id="driveTime" class="finput" style="padding:7px 10px;font-size:12px" onchange="if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="driveTime" class="finput" style="padding:7px 10px;font-size:12px">
             <option value="10">10 min drive</option>
             <option value="15" selected>15 min drive</option>
             <option value="20">20 min drive</option>
@@ -880,7 +880,7 @@ _sbGetUser().then(() => _updateAuthUI());
           </select>
         </div>
         <div class="dist-drop" id="dd-radius">
-          <select id="radiusMiles" class="finput" style="padding:7px 10px;font-size:12px" onchange="if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="radiusMiles" class="finput" style="padding:7px 10px;font-size:12px">
             <option value="1">1 mile</option>
             <option value="2">2 miles</option>
             <option value="3" selected>3 miles</option>
@@ -925,7 +925,7 @@ _sbGetUser().then(() => _updateAuthUI());
       <div style="margin-bottom:14px">
         <span class="flabel">Price</span>
         <div class="dselect">
-          <select id="priceFilter" onchange="state.priceFilter=this.value;if(rawRestaurants.length>0) display(rawRestaurants);">
+          <select id="priceFilter" onchange="state.priceFilter=this.value">
             <option value="any">Any Price</option>
             <option value="1">$ — Budget</option>
             <option value="2">$$ — Mid Range</option>
@@ -4009,24 +4009,10 @@ function display(restaurants) {
     if (!a.new_rising && b.new_rising) return -1;
     return (b._bs||0)-(a._bs||0);
   }
-  function _sortBySortBy(a, b) {
-    if (hotSpotsSortBy === 'distance') {
-      const dA = a.distanceMiles != null ? a.distanceMiles : 9999;
-      const dB = b.distanceMiles != null ? b.distanceMiles : 9999;
-      if (dA !== dB) return dA - dB;
-    } else if (hotSpotsSortBy === 'price_low') {
-      const pA = a.price_level || 99, pB = b.price_level || 99;
-      if (pA !== pB) return pA - pB;
-    } else if (hotSpotsSortBy === 'price_high') {
-      const pA = a.price_level || 0, pB = b.price_level || 0;
-      if (pA !== pB) return pB - pA;
-    }
-    return _sortRating(a, b);
-  }
   if (isBookAhead) {
     list.sort(_sortRating);
   } else {
-    list.sort(_sortBySortBy);
+    list.sort(_sortRating);
   }
 
   const avail=[], radar=[];
