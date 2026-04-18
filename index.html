@@ -3671,7 +3671,7 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">inKind 20% Off</span>`;
+    badges += `<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="badge inkind" style="text-decoration:none;cursor:pointer">inKind 20% Off</a>`;
   // Bilt badge — only show when Bilt filter is active
   if (r.bilt_dining && state.rewardsFilter === 'bilt')
     badges += `<span class="badge bilt">Bilt Dining</span>`;
@@ -4496,7 +4496,7 @@ function renderCardAR(r) {
     badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
-    badges += `<span class="badge inkind">inKind 20% Off</span>`;
+    badges += `<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="badge inkind" style="text-decoration:none;cursor:pointer">inKind 20% Off</a>`;
   // Bilt badge — only show when Bilt filter is active
   if (r.bilt_dining && arState.rewardsFilter === 'bilt')
     badges += `<span class="badge bilt">Bilt Dining</span>`;
