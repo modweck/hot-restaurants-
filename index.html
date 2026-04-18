@@ -3677,7 +3677,7 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
+    badges += `<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="badge rakuten" style="text-decoration:none;cursor:pointer">Rakuten Cash Back</a>`;
 
   // Instagram Influencers collapsible badge
   if (r.instagram_buzz && r.instagram_buzz.length > 0) {
@@ -4502,7 +4502,7 @@ function renderCardAR(r) {
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
-    badges += `<span class="badge rakuten">Rakuten Cash Back</span>`;
+    badges += `<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="badge rakuten" style="text-decoration:none;cursor:pointer">Rakuten Cash Back</a>`;
 
   // Instagram Influencers collapsible badge
   if (r.instagram_buzz && r.instagram_buzz.length > 0) {
