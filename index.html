@@ -3668,7 +3668,7 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
   // Seated badge
   if (r.seated)
-    badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
+    badges += `<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);text-decoration:none;cursor:pointer">Seated Cash Back</a>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
     badges += `<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="badge inkind" style="text-decoration:none;cursor:pointer">inKind 20% Off</a>`;
@@ -4493,7 +4493,7 @@ function renderCardAR(r) {
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
   // Seated badge
   if (r.seated)
-    badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
+    badges += `<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);text-decoration:none;cursor:pointer">Seated Cash Back</a>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
     badges += `<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="badge inkind" style="text-decoration:none;cursor:pointer">inKind 20% Off</a>`;
