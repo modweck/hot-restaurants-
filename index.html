@@ -3666,6 +3666,9 @@ function renderCard(r, isRadar) {
   // New & Rising badge
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
+  // Seated badge
+  if (r.seated)
+    badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">inKind 20% Off</span>`;
@@ -4488,6 +4491,9 @@ function renderCardAR(r) {
   // New & Rising badge
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
+  // Seated badge
+  if (r.seated)
+    badges += `<span class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2)">Seated Cash Back</span>`;
   // inKind badge
   if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
     badges += `<span class="badge inkind">inKind 20% Off</span>`;

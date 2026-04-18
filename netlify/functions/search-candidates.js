@@ -864,6 +864,7 @@ function enrichNYT(r) {
     if (!r.opens_in && avail.opens_in) r.opens_in = avail.opens_in;
     if (!r.prepaid_price && avail.prepaid_price) r.prepaid_price = avail.prepaid_price;
     if (!r.fully_locked && avail.fully_locked) r.fully_locked = true;
+    if (avail.reserve_id && !r.reserve_id) r.reserve_id = avail.reserve_id;
     if (avail.sunday_only) r.sunday_only = true;
     if (avail.walk_in_only) r.walk_in_only = true;
     if (r.has_early === undefined || r.has_early === null) r.has_early = avail.has_early || false;
@@ -1382,6 +1383,7 @@ exports.handler = async (event) => {
         seated: r.seated || null,
         bilt_dining: r.bilt_dining || null,
         inkind: r.inkind || null,
+        seated: r.seated || null,
         cuisine: r.cuisine || null,
         instagram: r.instagram || null,
         website: r.website || null,
@@ -1403,6 +1405,7 @@ exports.handler = async (event) => {
         fully_locked: _rp ? (r.fully_locked || false) : false,
         sunday_only: _rp ? (r.sunday_only || false) : false,
         walk_in_only: _rp ? (r.walk_in_only || false) : false,
+        reserve_id: r.reserve_id || null,
         future_dates: _rp ? (r.future_dates || null) : null,
         prepaid_price: r.prepaid_price || null,
         vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
@@ -1601,6 +1604,7 @@ exports.handler = async (event) => {
           seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
+          seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
@@ -1693,6 +1697,7 @@ exports.handler = async (event) => {
           seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
+          seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
@@ -1781,6 +1786,7 @@ exports.handler = async (event) => {
           seated: seatedNameLookup.has(normalizeName(name)),
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
+          seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
@@ -2070,6 +2076,7 @@ exports.handler = async (event) => {
           seated: seatedNameLookup.has(normalizeName(key)) || entry.seated || null,
           bilt_dining: entry.bilt_dining || null,
           inkind: entry.inkind || null,
+          seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
           cuisine: entry.cuisine || CUISINE_LOOKUP[key] || null,
           instagram: entry.instagram || null,
