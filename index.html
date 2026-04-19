@@ -156,6 +156,10 @@
     .sec-count{font-size:10px;font-weight:700;color:#999;background:rgba(0,0,0,.04);padding:3px 8px;border-radius:20px}
     .card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:16px;margin:0 16px 10px;padding:16px;transition:all .2s;box-shadow:0 1px 8px rgba(0,0,0,0.04)}
     @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes shimmer{to{background-position:-200% 0}}
+    .skeleton-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:16px;margin:0 16px 10px;padding:16px;height:140px}
+    .skel-line{height:14px;border-radius:6px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;margin-bottom:8px}
+    .skel-title{width:55%;height:18px;margin-bottom:10px}.skel-sub{width:80%}.skel-badge{width:30%;margin-bottom:12px}.skel-btn{width:100%;height:36px;border-radius:10px}
     .card{animation:fadeUp .25s ease both}
     .card:hover{border-color:rgba(0,0,0,.1);box-shadow:0 2px 16px rgba(0,0,0,0.06)}
     .card.dim{border-color:rgba(0,0,0,.03);opacity:.75}
@@ -3566,6 +3570,53 @@ function tc(str) {
   }).replace(/'\w/g, m => m.toLowerCase());
 }
 
+// ─── SEARCH CACHE ────────────────────────────────────────────────────────────
+function _sCacheKey(body) { return 'hsCache_' + JSON.stringify(body); }
+function _sCacheGet(key) {
+  try {
+    const raw = sessionStorage.getItem(key);
+    if (!raw) return null;
+    const c = JSON.parse(raw);
+    if (Date.now() - c.ts > 5 * 60 * 1000) { sessionStorage.removeItem(key); return null; }
+    return c.data;
+  } catch { return null; }
+}
+function _sCacheSet(key, data) {
+  try { sessionStorage.setItem(key, JSON.stringify({ ts: Date.now(), data })); }
+  catch { /* storage full */ }
+}
+
+// ─── SKELETON & LAZY RENDER ───────────────────────────────────────────────────
+function skeletonCards(n) {
+  return Array.from({length:n}, () => '<div class="skeleton-card"><div class="skel-line skel-title"></div><div class="skel-line skel-sub"></div><div class="skel-line skel-badge"></div><div class="skel-line skel-btn"></div></div>').join('');
+}
+
+const LAZY_BATCH = 20;
+const _lazy = { hs: null, ar: null };
+function lazyRender(key, container, items, renderer, headerHtml) {
+  if (_lazy[key]?.observer) _lazy[key].observer.disconnect();
+  if (!items.length) { container.innerHTML = ''; return; }
+  container.innerHTML = (headerHtml || '') + items.slice(0, LAZY_BATCH).map(renderer).join('');
+  let loaded = LAZY_BATCH;
+  if (items.length > LAZY_BATCH) {
+    const sentinel = document.createElement('div');
+    sentinel.style.height = '1px';
+    container.appendChild(sentinel);
+    const obs = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      const next = items.slice(loaded, loaded + LAZY_BATCH);
+      if (!next.length) { obs.disconnect(); sentinel.remove(); return; }
+      sentinel.insertAdjacentHTML('beforebegin', next.map(renderer).join(''));
+      loaded += next.length;
+      if (loaded >= items.length) { obs.disconnect(); sentinel.remove(); }
+    }, { rootMargin: '600px' });
+    obs.observe(sentinel);
+    _lazy[key] = { observer: obs };
+  } else {
+    _lazy[key] = null;
+  }
+}
+
 // ─── RENDER CARD ──────────────────────────────────────────────────────────────
 function renderCard(r, isRadar) {
   const name = tc(r.name) || 'Unknown';
@@ -4041,22 +4092,15 @@ function display(restaurants) {
     ? `${list.length} popular spot${list.length!==1?'s':''} — book ahead`
     : `${list.length} hot spot${list.length!==1?'s':''}`;
 
-  let html = '';
-  if (isBookAhead) {
-    html += `<div class="sec-head"><span class="sec-title hot">📅 Popular — Book in Advance</span><div class="sec-line"></div><span class="sec-count">${list.length}</span></div>`;
-    html += list.map(r=>renderCard(r,false)).join('');
-  } else {
-    if (avail.length) {
-      html += `<div class="sec-head"><span class="sec-title hot">🔥 Hot &amp; Available</span><div class="sec-line"></div><span class="sec-count">${avail.length}</span></div>`;
-      html += avail.map(r=>renderCard(r,false)).join('');
-    }
-    if (radar.length) {
-    }
-  }
+  const listEl = document.getElementById('list');
   if (!list.length) {
-    html = `<div class="empty"><div class="empty-icon">🍽️</div><div class="empty-title">${isBookAhead ? 'No book-ahead spots found' : 'No hot spots found'}</div><div class="empty-sub">Try adjusting your filters</div></div>`;
+    listEl.innerHTML = `<div class="empty"><div class="empty-icon">🍽️</div><div class="empty-title">${isBookAhead ? 'No book-ahead spots found' : 'No hot spots found'}</div><div class="empty-sub">Try adjusting your filters</div></div>`;
+  } else {
+    const header = isBookAhead
+      ? `<div class="sec-head"><span class="sec-title hot">📅 Popular — Book in Advance</span><div class="sec-line"></div><span class="sec-count">${list.length}</span></div>`
+      : `<div class="sec-head"><span class="sec-title hot">🔥 Hot &amp; Available</span><div class="sec-line"></div><span class="sec-count">${avail.length}</span></div>`;
+    lazyRender('hs', listEl, list, r => renderCard(r, false), header);
   }
-  document.getElementById('list').innerHTML = html;
 }
 
 // ─── SEARCH ───────────────────────────────────────────────────────────────────
@@ -4076,29 +4120,39 @@ async function doSearch() {
   document.getElementById('results').style.display = 'block';
   document.getElementById('warnings').innerHTML = '';
   const isBookAheadSearch = state.availFilter === 'book_ahead';
-  document.getElementById('list').innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">${isBookAheadSearch ? '📅' : '🔥'}</div><div style="font-size:13px;font-weight:600;color:#444">${isBookAheadSearch ? 'Finding popular spots to book ahead...' : 'Loading hot spots...'}</div></div>`;
+  document.getElementById('list').innerHTML = skeletonCards(6);
 
   try {
     const tp = getTP();
-    // Map buzz filter to quality param for the backend
-    // If multiple trend filters selected, send 'any' and let client-side filter handle it
     const buzzToQuality = { michelin:'michelin', michelin_rec:'michelin_rec', bib:'bib_gourmand', any:'any', new_rising:'new_rising' };
     const hasNameSearch = !!(state._restNameQuery || '').trim();
     const qualityParam = hasNameSearch ? 'all' : (state.trendFilters && state.trendFilters.length > 1) ? 'any' : (buzzToQuality[state.buzzFilter] || 'any');
+    const reqBody = {
+      location,
+      quality: qualityParam,
+      cuisine: cuisine==='any' ? undefined : cuisine,
+      broadCity: hasNameSearch || (state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc')),
+      transport: tp.transport,
+      walkTime: tp.walkTime,
+      driveTime: tp.driveTime,
+      radiusMiles: tp.radiusMiles,
+      bookAhead: state.availFilter === 'book_ahead'
+    };
+
+    // Check sessionStorage cache first
+    const cacheKey = _sCacheKey(reqBody);
+    const cached = _sCacheGet(cacheKey);
+    if (cached) {
+      allRestaurants = cached;
+      rawRestaurants = cached;
+      display(allRestaurants);
+      return;
+    }
+
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        location,
-        quality: qualityParam,
-        cuisine: cuisine==='any' ? undefined : cuisine,
-        broadCity: hasNameSearch || (state.transport !== 'radius' && state.transport !== 'walk' && state.transport !== 'drive' && (isBroadCity(location) || state.transport==='all_nyc')),
-        transport: tp.transport,
-        walkTime: tp.walkTime,
-        driveTime: tp.driveTime,
-        radiusMiles: tp.radiusMiles,
-        bookAhead: state.availFilter === 'book_ahead'
-      }),
+      body: JSON.stringify(reqBody),
       signal: abortCtrl.signal
     });
 
@@ -4116,7 +4170,6 @@ async function doSearch() {
     const seen = new Set();
     results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
 
-    // Explicitly normalize booking fields so they're never lost
     results = results.map(r => ({
       ...r,
       booking_platform: r.booking_platform || null,
@@ -4127,6 +4180,7 @@ async function doSearch() {
 
     allRestaurants = results;
     rawRestaurants = results;
+    _sCacheSet(cacheKey, results);
     display(allRestaurants);
 
   } catch(err) {
@@ -4148,10 +4202,7 @@ function isBroadCity(loc) {
 
 // ─── BACK ─────────────────────────────────────────────────────────────────────
 function goBack() {
-  allRestaurants = [];
-  rawRestaurants = [];
   document.getElementById('results').style.display = 'none';
-  document.getElementById('list').innerHTML = '';
   document.getElementById('warnings').innerHTML = '';
   document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
 }
@@ -4843,7 +4894,7 @@ function displayAllNYC(restaurants) {
       return 0;
     });
   }
-  document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
+  lazyRender('ar', document.getElementById('allRestList'), filtered, renderCardAR, '');
 }
 
 async function doAllNYCSearch() {
@@ -4856,7 +4907,7 @@ async function doAllNYCSearch() {
 
   const listEl = document.getElementById('allRestList');
   const warnEl = document.getElementById('allRestWarnings');
-  listEl.innerHTML = `<div style="text-align:center;padding:50px 20px"><div style="font-size:28px;margin-bottom:10px">📍</div><div style="font-size:13px;font-weight:600;color:#555">Loading all restaurants...</div></div>`;
+  listEl.innerHTML = skeletonCards(6);
   warnEl.innerHTML = '';
 
   const btn = document.getElementById('arSearchBtn');

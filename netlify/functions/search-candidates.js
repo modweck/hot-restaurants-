@@ -1076,8 +1076,14 @@ async function detectBookingPlatforms(restaurants, KEY) {
     }
   }
 
-  // Pass 3: Crawl restaurant websites for booking links (max 10, only unmatched)
-  const unmatched = restaurants.filter(r => !r.booking_platform && r.websiteUri);
+  // Pass 3: Crawl restaurant websites for booking links (max 30, only unmatched & not in MASTER)
+  const unmatched = restaurants.filter(r => {
+    if (r.booking_platform) return false;
+    if (!r.websiteUri) return false;
+    const key = (r.name || '').toLowerCase().trim();
+    if (MASTER_BOOK[key] || MASTER_BOOK[key.replace(/^the\s+/, '')]) return false;
+    return true;
+  });
   const toCrawl = unmatched.slice(0, 30);
   if (toCrawl.length > 0) {
     console.log(`\ud83d\udd0d Crawling ${toCrawl.length} restaurant websites for booking links...`);
