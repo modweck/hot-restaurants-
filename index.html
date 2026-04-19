@@ -4798,34 +4798,42 @@ function displayAllNYC(restaurants) {
   }
   // Sort based on arSortBy
   const _arSort = typeof arSortBy !== 'undefined' ? arSortBy : 'rating';
-  filtered.sort((a, b) => {
-    if (_arSort === 'distance') {
+  if (_arSort === 'distance') {
+    filtered.sort((a, b) => {
       const dA = a.distanceMiles != null ? a.distanceMiles : 9999;
       const dB = b.distanceMiles != null ? b.distanceMiles : 9999;
-      return dA - dB;
-    }
-    if (_arSort === 'price_low') {
-      const pA = a.price_level || 0, pB = b.price_level || 0;
+      if (dA !== dB) return dA - dB;
+      return (Number(b.googleRating||0)) - (Number(a.googleRating||0));
+    });
+  } else if (_arSort === 'price_low') {
+    filtered.sort((a, b) => {
+      const pA = a.price_level || a.price || 0, pB = b.price_level || b.price || 0;
       if (pA !== pB) return pA - pB;
-    }
-    if (_arSort === 'price_high') {
-      const pA = a.price_level || 0, pB = b.price_level || 0;
+      return (Number(b.googleRating||0)) - (Number(a.googleRating||0));
+    });
+  } else if (_arSort === 'price_high') {
+    filtered.sort((a, b) => {
+      const pA = a.price_level || a.price || 0, pB = b.price_level || b.price || 0;
       if (pA !== pB) return pB - pA;
-    }
+      return (Number(b.googleRating||0)) - (Number(a.googleRating||0));
+    });
+  } else {
     // Default: rating sort
-    const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
-    const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
-    if (aHasData && !bHasData) return -1;
-    if (!aHasData && bHasData) return 1;
-    const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
-    const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
-    const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
-    const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
-    const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
-    const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
-    if (rB !== rA) return rB - rA;
-    return 0;
-  });
+    filtered.sort((a, b) => {
+      const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
+      const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
+      if (aHasData && !bHasData) return -1;
+      if (!aHasData && bHasData) return 1;
+      const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
+      const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
+      const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
+      const penA = (isWalkA || (rcA > 0 && rcA < 75 && (!a.new_rising || rcA < 25))) ? 1 : 0;
+      const penB = (isWalkB || (rcB > 0 && rcB < 75 && (!b.new_rising || rcB < 25))) ? 1 : 0;
+      const rA = Number(a.googleRating||0) - penA, rB = Number(b.googleRating||0) - penB;
+      if (rB !== rA) return rB - rA;
+      return 0;
+    });
+  }
   document.getElementById('allRestList').innerHTML = filtered.map(r => renderCardAR(r)).join('');
 }
 
