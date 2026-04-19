@@ -4790,8 +4790,23 @@ function displayAllNYC(restaurants) {
     document.getElementById('allRestList').innerHTML = `<div style="text-align:center;padding:50px 20px;color:#555"><div style="font-size:36px;margin-bottom:12px">🍽️</div><div>No restaurants match these filters</div></div>`;
     return;
   }
-  // Sort: highest rating first, -1 penalty for <75 reviews (bypass for buzz/new_rising)
+  // Sort based on arSortBy
+  const _arSort = typeof arSortBy !== 'undefined' ? arSortBy : 'rating';
   filtered.sort((a, b) => {
+    if (_arSort === 'distance') {
+      const dA = a.distanceMiles != null ? a.distanceMiles : 9999;
+      const dB = b.distanceMiles != null ? b.distanceMiles : 9999;
+      return dA - dB;
+    }
+    if (_arSort === 'price_low') {
+      const pA = a.price_level || 0, pB = b.price_level || 0;
+      if (pA !== pB) return pA - pB;
+    }
+    if (_arSort === 'price_high') {
+      const pA = a.price_level || 0, pB = b.price_level || 0;
+      if (pA !== pB) return pB - pA;
+    }
+    // Default: rating sort
     const aHasData = (Number(a.googleRating||0) > 0) || !!(a.booking_url);
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
     if (aHasData && !bHasData) return -1;
