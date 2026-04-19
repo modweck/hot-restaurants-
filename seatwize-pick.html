@@ -381,11 +381,32 @@ function showResult() {
   const bookUrl = pick.booking_url||mapsUrl;
 
   let badges = '';
+  // Michelin
   if (pick.michelin&&pick.michelin.stars>=1) badges+='<span class="result-badge" style="background:#fef3e2;color:#c68a00">'+'\u2B50'.repeat(Math.min(pick.michelin.stars,3))+' Michelin</span>';
+  else if (pick.michelin_recommended||pick.bib_gourmand||(pick.michelin&&(pick.michelin.distinction==='recommended'||pick.michelin.distinction==='bib_gourmand'))) badges+='<span class="result-badge" style="background:#fef3e2;color:#c68a00">Michelin Recommended</span>';
+  // Buzz sources (NYT, Eater, Infatuation, etc)
+  if (pick.nyt_top_100) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT Top 100</span>';
+  else if (pick.pete_wells&&pick.nyt_stars) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT '+'\u2605'.repeat(Math.min(pick.nyt_stars,4))+'</span>';
+  else if (pick.pete_wells||(pick.buzz_sources&&pick.buzz_sources.some(s=>s==='NYT'||s==='NY Times'))) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT</span>';
+  if (pick.buzz_sources&&pick.buzz_sources.length>0) {
+    const _bs = pick.buzz_sources.filter(s=>s!=='NYT'&&s!=='NY Times');
+    _bs.forEach(s => badges+='<span class="result-badge" style="background:#f0ede8;color:#555">'+s+'</span>');
+  }
+  // Availability
   const at=pick.avail_tier;
   if (at==='open'||at==='fully_open') badges+='<span class="result-badge" style="background:#e8f5e9;color:#2e7d32">Available Tonight</span>';
   else if (at==='limited') badges+='<span class="result-badge" style="background:#fff8e1;color:#f57c00">Limited</span>';
+  else if (at==='booked'&&pick.opens_in) badges+='<span class="result-badge" style="background:#fde8e8;color:#c0392b">Booked Tonight</span><span class="result-badge" style="background:#e8f5e9;color:#2e7d32">Opens +'+pick.opens_in+'d</span>';
+  else if (at==='booked'&&pick.fully_locked) badges+='<span class="result-badge" style="background:#2a2a2a;color:#fff">Booked Solid</span>';
+  else if (at==='booked') badges+='<span class="result-badge" style="background:#fde8e8;color:#c0392b">Booked Tonight</span>';
+  // Google rating
   if (rating>0) badges+='<span class="result-badge" style="background:rgba(26,26,46,.06);color:#1a1a2e">\u2B50 '+rating+(rs?' ('+rs+')':'')+' </span>';
+  // Rewards badges
+  if (pick.inkind) badges+='<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="result-badge" style="background:#f0fdf4;color:#15803d;text-decoration:none">inKind 20% Off</a>';
+  if (pick.rakuten) badges+='<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="result-badge" style="background:#fce4ec;color:#c2185b;text-decoration:none">Rakuten Cash Back</a>';
+  if (pick.seated) badges+='<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="result-badge" style="background:#e8f5e9;color:#2e7d32;text-decoration:none">Seated Cash Back</a>';
+  // Instagram
+  if (pick.instagram_buzz&&pick.instagram_buzz.length>0) badges+='<span class="result-badge" style="background:#fce4ec;color:#c13584">\uD83D\uDCF8 Instagram ('+pick.instagram_buzz.length+')</span>';
 
   const vibesTags = (pick.vibe_tags||[]).slice(0,4).map(v=>'<span class="result-vibe">'+v.replace(/_/g,' ').replace(/\b\w/g,l=>l.toUpperCase())+'</span>').join('');
 
