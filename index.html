@@ -4336,6 +4336,12 @@ function arTogglePriceAny(btn) {
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
+var arSortBy = 'rating';
+function setARSortOrder(val) {
+  arSortBy = val;
+  if (allNYCRestaurants.length) displayAllNYC(allNYCRestaurants);
+}
+
 function arSetHotspot(val, btn) {
   if (val === 'any') {
     if (arState.hotspotFilter === 'any') {
