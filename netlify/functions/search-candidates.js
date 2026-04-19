@@ -1076,47 +1076,8 @@ async function detectBookingPlatforms(restaurants, KEY) {
     }
   }
 
-  // Pass 3: Crawl restaurant websites for booking links (max 30, only unmatched & not in MASTER)
-  const unmatched = restaurants.filter(r => {
-    if (r.booking_platform) return false;
-    if (!r.websiteUri) return false;
-    const key = (r.name || '').toLowerCase().trim();
-    if (MASTER_BOOK[key] || MASTER_BOOK[key.replace(/^the\s+/, '')]) return false;
-    return true;
-  });
-  const toCrawl = unmatched.slice(0, 30);
-  if (toCrawl.length > 0) {
-    console.log(`\ud83d\udd0d Crawling ${toCrawl.length} restaurant websites for booking links...`);
-    await runWithConcurrency(toCrawl, 5, async (r) => {
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 3000);
-        const resp = await fetch(r.websiteUri, {
-          signal: controller.signal,
-          headers: { 'User-Agent': 'Mozilla/5.0' },
-          redirect: 'follow'
-        });
-        clearTimeout(timeout);
-        if (!resp.ok) return;
-        const html = await resp.text();
-        const lower = html.toLowerCase();
-        if (lower.includes('resy.com/cities/')) {
-          const m = html.match(/https?:\/\/resy\.com\/cities\/[a-z-]+\/[a-z0-9-]+/i);
-          if (m) { r.booking_platform = 'resy'; r.booking_url = m[0]; }
-        } else if (lower.includes('opentable.com/r/') || lower.includes('opentable.com/restref/')) {
-          const m = html.match(/https?:\/\/(?:www\.)?opentable\.com\/r(?:estref)?\/[a-z0-9-]+/i);
-          if (m) { r.booking_platform = 'opentable'; r.booking_url = m[0]; }
-        } else if (lower.includes('exploretock.com/') || lower.includes('tock.com/')) {
-          const m = html.match(/https?:\/\/(?:www\.)?exploretock\.com\/[a-z0-9-]+/i);
-          if (m) { r.booking_platform = 'tock'; r.booking_url = m[0]; }
-        }
-      } catch (e) { /* timeout or fetch error — skip */ }
-    });
-  }
-
   const matched = restaurants.filter(r => r.booking_platform).length;
-  const crawlMatched = toCrawl.filter(r => r.booking_platform).length;
-  console.log(`\u2705 Booking: ${matched}/${restaurants.length} matched (lookup: ${matched - crawlMatched}, crawl: ${crawlMatched})`);
+  console.log(`\u2705 Booking: ${matched}/${restaurants.length} matched (lookup only)`);
 }
 
 async function resolveMichelinPlaces(GOOGLE_API_KEY) {
