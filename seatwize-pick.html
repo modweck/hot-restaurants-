@@ -134,17 +134,6 @@
         </select>
       </div>
 
-      <!-- Party Size -->
-      <div class="field">
-        <div class="label">Party Size</div>
-        <select class="sel" id="selParty" onchange="picks.party=this.value">
-          <option value="">Select...</option>
-          <option value="2">2</option>
-          <option value="4">4</option>
-          <option value="6">6+</option>
-        </select>
-      </div>
-
       <!-- Vibe -->
       <div class="field">
         <div class="label">Vibe</div>
@@ -280,7 +269,7 @@ function swpUseGPS(btn) {
 }
 
 function validate() {
-  const required = ['when','time','party','vibe','cuisine','price'];
+  const required = ['when','time','vibe','cuisine','price'];
   const missing = required.filter(f => !picks[f]);
   if (missing.length > 0) {
     document.getElementById('validationMsg').style.display = 'block';

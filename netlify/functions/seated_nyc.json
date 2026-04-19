@@ -236,7 +236,7 @@
     "booking_url": "https://www.opentable.com/r/amylos-astoria",
     "googleRating": 4.5,
     "googleReviewCount": 1160,
-    "price_level": null,
+    "price_level": 3,
     "seated": true
   },
   {
@@ -735,8 +735,8 @@
     "seated": true
   },
   {
-    "name": "Caf\u00e9 D'Anvers",
-    "seated_name": "Caf\u00e9 D'Anvers",
+    "name": "Café D'Anvers",
+    "seated_name": "Café D'Anvers",
     "cuisine": "Belgian Restaurant",
     "address": "1567 Lexington Ave, New York City, NY 10029",
     "lat": 40.7884591,
@@ -1050,8 +1050,8 @@
     "seated": true
   },
   {
-    "name": "despa\u00f1a",
-    "seated_name": "Despa\u00f1a",
+    "name": "despaña",
+    "seated_name": "Despaña",
     "cuisine": "Spanish",
     "address": "Soho",
     "lat": 40.721073,
@@ -1526,7 +1526,7 @@
     "booking_url": "https://www.opentable.com/r/gui-new-york",
     "googleRating": 4.5,
     "googleReviewCount": 367,
-    "price_level": null,
+    "price_level": 4,
     "seated": true
   },
   {
@@ -2970,8 +2970,8 @@
     "seated": true
   },
   {
-    "name": "Pur\u00e9pecha",
-    "seated_name": "Pur\u00e9pecha",
+    "name": "Purépecha",
+    "seated_name": "Purépecha",
     "cuisine": "Mexican Restaurant",
     "address": "213 Smith St, Brooklyn, NY 11201",
     "lat": 40.6845207,
@@ -3191,7 +3191,7 @@
     "booking_url": "https://www.opentable.com/r/saint-restaurant-bar-and-speakeasy-new-york",
     "googleRating": 4.7,
     "googleReviewCount": 697,
-    "price_level": null,
+    "price_level": 3,
     "seated": true
   },
   {
@@ -3491,7 +3491,7 @@
     "booking_url": "https://www.opentable.com/r/spin",
     "googleRating": 4.5,
     "googleReviewCount": 353,
-    "price_level": null,
+    "price_level": 2,
     "seated": true
   },
   {
@@ -3551,7 +3551,7 @@
     "booking_url": "https://www.opentable.com/r/sushi-by-bou-times-square-nyc-at-sanctuary-hotel-new-york",
     "googleRating": 4.6,
     "googleReviewCount": 819,
-    "price_level": null,
+    "price_level": 3,
     "seated": true
   },
   {

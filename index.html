@@ -3388,6 +3388,11 @@ function hasBookingPlatform(r) {
   return p && p !== 'walk_in' && p !== 'website' && p !== 'walkin' && p !== 'bilt';
 }
 let allRestaurants = [], rawRestaurants = [], abortCtrl = null, searching = false;
+var hotSpotsSortBy = 'rating';
+function setSortOrder(val) {
+  hotSpotsSortBy = val;
+  if (allRestaurants.length) display(allRestaurants);
+}
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 (function(){
@@ -4807,13 +4812,17 @@ function displayAllNYC(restaurants) {
     });
   } else if (_arSort === 'price_low') {
     filtered.sort((a, b) => {
-      const pA = a.price_level || a.price || 0, pB = b.price_level || b.price || 0;
+      const pA = Number(a.price_level || a.price || 0), pB = Number(b.price_level || b.price || 0);
+      if (!pA && pB) return 1;
+      if (pA && !pB) return -1;
       if (pA !== pB) return pA - pB;
       return (Number(b.googleRating||0)) - (Number(a.googleRating||0));
     });
   } else if (_arSort === 'price_high') {
     filtered.sort((a, b) => {
-      const pA = a.price_level || a.price || 0, pB = b.price_level || b.price || 0;
+      const pA = Number(a.price_level || a.price || 0), pB = Number(b.price_level || b.price || 0);
+      if (!pA && pB) return 1;
+      if (pA && !pB) return -1;
       if (pA !== pB) return pB - pA;
       return (Number(b.googleRating||0)) - (Number(a.googleRating||0));
     });
