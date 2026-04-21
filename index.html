@@ -1753,11 +1753,11 @@ function mlToggleAvailTonight() {
     btn.style.borderColor = on ? '#1b4332' : 'rgba(0,0,0,0.1)';
     btn.style.boxShadow = on ? '0 2px 8px rgba(27,67,50,.25)' : '0 1px 3px rgba(0,0,0,.04)';
   }
-  // Hide/show cards based on data-avail attribute
+  // Hide/show cards — only show cards with "Available Tonight" badge or any time slots
   document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
     if (_mlAvail === 'any') { card.style.removeProperty('display'); }
     else {
-      const show = card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open';
+      const show = card.dataset.mlAvail === 'available_tonight' || card.dataset.mlAvail === 'has_slots';
       if (show) card.style.removeProperty('display');
       else card.style.setProperty('display', 'none', 'important');
     }
@@ -2082,7 +2082,18 @@ async function renderSavedView() {
       + statusLabel
       + '</div>';
 
-    const _availTier = catR ? (catR.avail_tier || '') : '';
+    // Determine if card shows "Available Tonight" badge
+    let _mlCardAvail = 'none';
+    if (catR) {
+      const _e = catR.early || (catR.has_early ? 'available' : 'booked');
+      const _p = catR.prime || (catR.has_prime ? 'available' : 'booked');
+      const _l = catR.late || (catR.has_late ? 'available' : 'booked');
+      const _allAvail = _e === 'available' && _p === 'available' && _l === 'available';
+      const _anyAvail = _e === 'available' || _p === 'available' || _l === 'available';
+      const _tier = catR.avail_tier || '';
+      if (_allAvail || _tier === 'fully_open') _mlCardAvail = 'available_tonight';
+      else if (_anyAvail || _tier === 'open' || _tier === 'limited') _mlCardAvail = 'has_slots';
+    }
 
     if (catR) {
       // Override distance on card with My List distance
@@ -2100,7 +2111,7 @@ async function renderSavedView() {
       catR.walkMinEstimate = _origWalk;
       catR.driveMinEstimate = _origDrive;
       // Add data-ml-avail attribute for DOM-based filtering
-      fullCard = fullCard.replace('<div class="card"', '<div class="card" data-ml-avail="' + _availTier + '"');
+      fullCard = fullCard.replace('<div class="card"', '<div class="card" data-ml-avail="' + _mlCardAvail + '"');
       // Add X remove button and rating dots
       // Inject X remove button next to the price in the card-top row
       const removeX = '<button onclick="event.stopPropagation();toggleSave(\'' + eName + '\',null,true)" style="background:none;border:none;cursor:pointer;font-size:16px;color:#bbb;padding:0 0 0 4px;line-height:1" title="Remove from My List">✕</button>';
@@ -2152,7 +2163,7 @@ async function renderSavedView() {
   // Re-apply Available Tonight filter if active
   if (_mlAvail === 'tonight') {
     document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
-      const show = card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open';
+      const show = card.dataset.mlAvail === 'available_tonight' || card.dataset.mlAvail === 'has_slots';
       if (show) card.style.removeProperty('display');
       else card.style.setProperty('display', 'none', 'important');
     });
