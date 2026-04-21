@@ -1824,8 +1824,7 @@ function _enrichSavedData() {
 let _mlDataLoaded = false;
 let _mlCatalog = [];
 async function _mlEnsureData() {
-  if (_mlDataLoaded && _mlCatalog.length > 0) return;
-  try { if (typeof allNYCRestaurants !== 'undefined' && allNYCRestaurants.length > 0) { _mlCatalog = allNYCRestaurants; _mlDataLoaded = true; return; } } catch(e) {}
+  if (_mlCatalog.length > 0) return;
   try {
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -1833,17 +1832,13 @@ async function _mlEnsureData() {
     });
     const data = await resp.json();
     _mlCatalog = [...(data.elite||[]), ...(data.moreOptions||[])];
-    try { allNYCRestaurants = _mlCatalog; } catch(e) {}
-    _mlDataLoaded = true;
-  } catch(e) {}
+  } catch(e) { console.error('My List data load failed:', e); }
 }
 
 async function renderSavedView() {
   _enrichSavedData();
-  // Load catalog data if not available yet — wait for it before filtering
-  if (!allNYCRestaurants || allNYCRestaurants.length === 0) {
-    await _mlEnsureData();
-  }
+  // Always ensure catalog data is loaded before rendering
+  await _mlEnsureData();
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
   const allEntries = Object.values(saved);
@@ -1890,10 +1885,8 @@ async function renderSavedView() {
   html += '</div>';
 
   // Build catalog lookup
-  let _catalogSrc = [];
-  try { _catalogSrc = [...(_mlCatalog||[]), ...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])]; } catch(e) { _catalogSrc = [...(_mlCatalog||[])]; }
   const _catLookup = {};
-  _catalogSrc.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
+  _mlCatalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
   // Address + GPS + Radius row
   const _selStyle = 'padding:8px 10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:12px;font-family:DM Sans,sans-serif;background:#fff;color:#555;font-weight:600';
