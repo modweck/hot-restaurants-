@@ -197,7 +197,7 @@ function renderCardAR(r) {
     availHtml = `<div><span class="avail hard">🔴 Fully Booked Tonight</span></div>`;
   } else if (tier === 'available') availHtml = `<div><span class="avail av">🟢 Available Tonight</span></div>`;
   else if (tier === 'limited') availHtml = `<div><span class="avail lim">🟡 Limited Spots</span></div>`;
-  else if (tier === 'hard') availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+  else if (tier === 'hard') availHtml = `<div><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span></div>`;
 
   const instaHandle = r.instagram || INSTA[(r.name||'').toLowerCase()];
   const mapsUrl = r.place_id
@@ -206,9 +206,13 @@ function renderCardAR(r) {
 
   let bookBtn = '';
   if (r.booking_url && r.booking_platform) {
-    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},website:{cls:'site',label:'Book →'},walkin:{cls:'site',label:'🚶 Walk-ins Welcome'}};
+    let url = r.booking_url;
+    if (r.booking_platform === 'google_reserve' && r.reserve_id) {
+      url = `https://www.google.com/maps/reserve/v/dine/${r.reserve_id}`;
+    }
+    const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},google_reserve:{cls:'google',label:'Reserve via Google →'},website:{cls:'site',label:'Book →'},walkin:{cls:'site',label:'🚶 Walk-ins Welcome'}};
     const s = bmap[r.booking_platform] || {cls:'site', label:'Book →'};
-    bookBtn = `<a href="${r.booking_url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
+    bookBtn = `<a href="${url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
   } else if (r.website) {
     bookBtn = `<a href="${r.website}" target="_blank" rel="noopener" class="bbtn site">Visit Website →</a>`;
   } else {

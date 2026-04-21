@@ -194,7 +194,7 @@ function renderCard(r, isRadar) {
     if (isBooked && r.opens_in) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
     } else if (isBooked && r.fully_locked) {
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span></div>`;
     } else if (isBooked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span></div>`;
     } else if (allAvailable) {
@@ -206,7 +206,7 @@ function renderCard(r, isRadar) {
   } else if (tier === 'booked' && r.opens_in) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Booked Solid</span></div>`;
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span></div>`;
   } else if (tier === 'booked' && r.opens_in) {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">🔴 Booked Tonight</span><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-left:4px;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">🟢 Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked') {
@@ -228,6 +228,10 @@ function renderCard(r, isRadar) {
     let url = r.booking_url;
     try { if (url.includes('google.com/url')) { const u = new URL(url); url = u.searchParams.get('q')||url; } } catch(e){}
     url = url.replace(/\/+$/,'');
+    // For google_reserve, use the Google Reserve booking page instead of the restaurant website
+    if (r.booking_platform === 'google_reserve' && r.reserve_id) {
+      url = `https://www.google.com/maps/reserve/v/dine/${r.reserve_id}`;
+    }
     const bmap = {resy:{cls:'resy',label:'Book on Resy →'},opentable:{cls:'opentable',label:'Book on OpenTable →'},tock:{cls:'tock',label:'Book on Tock →'},bilt:{cls:'bilt',label:'🏠 Book on Bilt →'},google_reserve:{cls:'google',label:'Reserve via Google →'},website:{cls:'site',label:'Book →'},walkin:{cls:'site',label:'🚶 Walk-ins Welcome'}};
     const s = bmap[r.booking_platform]||{cls:'site',label:'Book →'};
     bookBtn = `<a href="${url}" target="_blank" rel="noopener" class="bbtn ${s.cls}">${s.label}</a>`;
