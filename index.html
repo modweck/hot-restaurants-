@@ -1856,14 +1856,10 @@ async function _mlEnsureData() {
   } catch(e) { console.error('My List data load failed:', e); }
 }
 
-let _mlRenderTimer = null;
 function renderSavedView() {
-  clearTimeout(_mlRenderTimer);
-  _mlRenderTimer = setTimeout(_renderSavedViewNow, 50);
-}
-async function _renderSavedViewNow() {
   _enrichSavedData();
-  await _mlEnsureData();
+  // Load data in background if needed — will re-render when done
+  if (_mlCatalog.length === 0) { _mlEnsureData().then(() => { if (_mlCatalog.length > 0) renderSavedView(); }); }
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
   const allEntries = Object.values(saved);
