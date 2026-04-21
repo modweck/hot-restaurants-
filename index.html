@@ -2095,6 +2095,9 @@ async function renderSavedView() {
       else if (_anyAvail || _tier === 'open' || _tier === 'limited') _mlCardAvail = 'has_slots';
     }
 
+    // Skip card if Available Tonight filter is active and card has no availability
+    if (_mlAvail === 'tonight' && _mlCardAvail === 'none') return;
+
     if (catR) {
       // Override distance on card with My List distance
       const _origDist = catR.distanceMiles;
