@@ -1928,7 +1928,7 @@ async function renderSavedView() {
 
   // Row 1: Available Tonight + Hot Spots toggles
   html += '<div style="display:flex;gap:10px;padding:8px 20px 0;align-items:center">';
-  html += '<button id="ml-avail-btn" onclick="mlToggleAvailTonight()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
+  html += '<button id="ml-avail-btn" onclick="_mlAvail=(_mlAvail===\'tonight\'?\'any\':\'tonight\');renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
   html += '<button onclick="_mlHotSpots=!_mlHotSpots;renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlHotSpots?'#1a1a2e':'rgba(0,0,0,.1)') + ';background:' + (_mlHotSpots?'#1a1a2e':'#fff') + ';color:' + (_mlHotSpots?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlHotSpots?'0 2px 8px rgba(26,26,46,.2)':'0 1px 3px rgba(0,0,0,.04)') + '">Hot Spots</button>';
   html += '</div>';
 
