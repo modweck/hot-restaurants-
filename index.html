@@ -1938,17 +1938,21 @@ async function renderSavedView() {
   html += '</div>';
 
   // Apply availability filter
+  console.log('[ML] avail filter:', _mlAvail, 'entries before:', entries.length, 'catLookup keys:', Object.keys(_catLookup).length);
   if (_mlAvail !== 'any') {
+    const before = entries.length;
     entries = entries.filter(r => {
       const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      if (!cat) return false;
+      if (!cat) { console.log('[ML] no cat for:', r.name); return false; }
       const tier = cat.avail_tier || '';
+      console.log('[ML]', r.name, 'tier='+tier);
       if (_mlAvail === 'tonight') return tier === 'open' || tier === 'fully_open';
       if (_mlAvail === 'early') return cat.has_early;
       if (_mlAvail === 'prime') return cat.has_prime;
       if (_mlAvail === 'late') return cat.has_late;
       return true;
     });
+    console.log('[ML] avail filter: before='+before+' after='+entries.length);
   }
 
   // Apply hot spots filter
@@ -2020,6 +2024,16 @@ async function renderSavedView() {
     // Sort by distance
     entries.sort((a, b) => (a._mlDist||999) - (b._mlDist||999));
   }
+
+  // Sort: available tonight first
+  entries.sort((a, b) => {
+    const catA = _catLookup[(a.name||'').toLowerCase().trim()];
+    const catB = _catLookup[(b.name||'').toLowerCase().trim()];
+    const tA = catA?.avail_tier; const tB = catB?.avail_tier;
+    const aOpen = tA === 'open' || tA === 'fully_open' ? 0 : tA === 'limited' ? 1 : 2;
+    const bOpen = tB === 'open' || tB === 'fully_open' ? 0 : tB === 'limited' ? 1 : 2;
+    return aOpen - bOpen;
+  });
 
   // No results
   if (!entries.length) {
