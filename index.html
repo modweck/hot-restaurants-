@@ -1856,13 +1856,13 @@ async function _mlEnsureData() {
   } catch(e) { console.error('My List data load failed:', e); }
 }
 
-let _mlRendering = false;
-let _mlRenderQueued = false;
-async function renderSavedView() {
-  if (_mlRendering) { _mlRenderQueued = true; return; }
-  _mlRendering = true;
+let _mlRenderTimer = null;
+function renderSavedView() {
+  clearTimeout(_mlRenderTimer);
+  _mlRenderTimer = setTimeout(_renderSavedViewNow, 50);
+}
+async function _renderSavedViewNow() {
   _enrichSavedData();
-  // Always ensure catalog data is loaded before rendering
   await _mlEnsureData();
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
@@ -2171,8 +2171,6 @@ async function renderSavedView() {
       else card.style.setProperty('display', 'none', 'important');
     });
   }
-  _mlRendering = false;
-  if (_mlRenderQueued) { _mlRenderQueued = false; renderSavedView(); }
 }
 
 // ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
