@@ -1686,7 +1686,7 @@ _sbGetUser().then(() => _updateAuthUI());
     -->
     <button class="nav-item" id="nav-saved" onclick="switchNav('saved')">
       <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-      <span class="nav-label">My List</span>
+      <span class="nav-label">Saved</span>
     </button>
     <button class="nav-item" id="nav-picks" onclick="switchNav('picks')">
       <svg class="nav-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
@@ -1704,11 +1704,9 @@ _sbGetUser().then(() => _updateAuthUI());
 // ─── SAVED RESTAURANTS ───────────────────────────────────────────────────────
 // _getSaved and _setSaved defined in script block 1 (Supabase init)
 function isSaved(name) { return !!_getSaved()[(name||'').toLowerCase().trim()]; }
-function toggleSave(name, cardData, allowRemove) {
+function toggleSave(name, cardData) {
   const key = (name||'').toLowerCase().trim();
   const saved = _getSaved();
-  // If already saved and not on My List page, don't allow removal
-  if (saved[key] && !allowRemove) return;
   if (saved[key]) { delete saved[key]; } else { saved[key] = cardData || { name }; }
   _setSaved(saved);
   // Update all save buttons for this restaurant
@@ -1730,58 +1728,6 @@ function toggleSave(name, cardData, allowRemove) {
 // Saved view filter state
 let _savedFilter = 'all';
 let _savedSearch = '';
-let _mlAvail = 'any';
-let _mlDist = 0;
-let _mlAddr = '';
-let _mlUserLat = null;
-let _mlUserLng = null;
-let _mlHotSpots = false;
-let _mlPrice = 'any';
-let _mlVibe = 'any';
-let _mlFuture = 0;
-let _mlCuisine = 'any';
-
-function mlSetAvail(val) { _mlAvail = val; renderSavedView(); }
-function mlSetDist(val) { _mlDist = val; renderSavedView(); }
-function mlSetPrice(val) { _mlPrice = val; renderSavedView(); }
-function mlSetVibe(val) { _mlVibe = val; renderSavedView(); }
-function mlSetFuture(val) { _mlFuture = parseInt(val)||0; renderSavedView(); }
-function mlSetCuisine(val) { _mlCuisine = val; renderSavedView(); }
-async function mlSetAddr(val) {
-  _mlAddr = val;
-  if (!val) { _mlUserLat = null; _mlUserLng = null; renderSavedView(); return; }
-  try {
-    if (!window._mapsApiKey) {
-      const resp = await fetch('/.netlify/functions/get-maps-key');
-      const data = await resp.json();
-      window._mapsApiKey = data.key;
-    }
-    const geoResp = await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(val) + '&key=' + window._mapsApiKey);
-    const geoData = await geoResp.json();
-    if (geoData.results && geoData.results[0]) {
-      _mlUserLat = geoData.results[0].geometry.location.lat;
-      _mlUserLng = geoData.results[0].geometry.location.lng;
-    }
-  } catch(e) {}
-  renderSavedView();
-}
-function mlUseGPS() {
-  if (!navigator.geolocation) return;
-  navigator.geolocation.getCurrentPosition(pos => {
-    _mlUserLat = pos.coords.latitude;
-    _mlUserLng = pos.coords.longitude;
-    _mlAddr = 'Current Location';
-    renderSavedView();
-  });
-}
-function _mlCalcDist(lat1, lng1, lat2, lng2) {
-  if (!lat1 || !lng1 || !lat2 || !lng2) return null;
-  const R = 3959; // miles
-  const dLat = (lat2-lat1)*Math.PI/180;
-  const dLng = (lng2-lng1)*Math.PI/180;
-  const a = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)*Math.sin(dLng/2);
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-}
 
 function _getSavedRating(name) {
   const saved = _getSaved();
@@ -1821,32 +1767,13 @@ function _enrichSavedData() {
   if (changed) _setSaved(saved);
 }
 
-let _mlDataLoaded = false;
-async function _mlEnsureData() {
-  if (_mlDataLoaded || (allNYCRestaurants && allNYCRestaurants.length > 0)) { _mlDataLoaded = true; return; }
-  try {
-    const resp = await fetch('/.netlify/functions/search-candidates', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
-    });
-    const data = await resp.json();
-    allNYCRestaurants = [...(data.elite||[]), ...(data.moreOptions||[])];
-    _mlDataLoaded = true;
-    renderSavedView();
-  } catch(e) {}
-}
-
 function renderSavedView() {
   _enrichSavedData();
-  // Load catalog data if not available yet
-  if (!allNYCRestaurants || allNYCRestaurants.length === 0) {
-    _mlEnsureData();
-  }
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
   const allEntries = Object.values(saved);
   if (!allEntries.length) {
-    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:36px;margin-bottom:12px"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">My List</div><div style="font-size:13px;color:#999">Tap the bookmark on any restaurant to add it here</div></div>';
+    el.innerHTML = '<div style="padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button></div><div style="padding:40px 20px;text-align:center"><div style="font-size:36px;margin-bottom:12px"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div><div style="font-size:15px;font-weight:700;color:#555;margin-bottom:6px">Saved Places</div><div style="font-size:13px;color:#999">Tap the bookmark on any restaurant to save it here</div></div>';
     return;
   }
 
@@ -1872,7 +1799,7 @@ function renderSavedView() {
   if (q) entries = entries.filter(r => (r.name||'').toLowerCase().includes(q) || (r.cuisine||'').toLowerCase().includes(q) || (r.neighborhood||'').toLowerCase().includes(q) || (r.address||'').toLowerCase().includes(q));
 
   // Header with back button
-  let html = '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button><div><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">My List</div><div style="font-size:12px;color:#888;margin-top:2px">' + allEntries.length + ' saved</div></div></div>';
+  let html = '<div style="display:flex;align-items:center;gap:12px;padding:16px 20px 0"><button onclick="switchNav(\'home\')" class="back-btn">\u2190 Back</button><div><div style="font-family:Playfair Display,serif;font-size:22px;font-weight:900;color:#1a1a2e">Saved Places</div><div style="font-size:12px;color:#888;margin-top:2px">' + allEntries.length + ' saved</div></div></div>';
 
   // Search bar
   html += '<div style="padding:10px 20px 0"><input type="text" placeholder="Search your saved..." value="' + (q||'').replace(/"/g,'&quot;') + '" oninput="onSavedSearch(this.value)" style="width:100%;padding:11px 14px 11px 36px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;font-size:13px;font-family:DM Sans,sans-serif;color:#1a1a2e;outline:none;box-shadow:0 1px 3px rgba(0,0,0,.04);background-image:url(\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23bbb%22 stroke-width=%222%22 stroke-linecap=%22round%22><circle cx=%2211%22 cy=%2211%22 r=%228%22/><line x1=%2221%22 y1=%2221%22 x2=%2216.65%22 y2=%2216.65%22/></svg>\');background-repeat:no-repeat;background-position:12px center;background-size:14px" /></div>';
@@ -1887,144 +1814,6 @@ function renderSavedView() {
   html += _fc('nah', '\u{1F534} Nah', counts.nah);
   html += '</div>';
 
-  // Build catalog lookup
-  const _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
-  const _catLookup = {};
-  _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
-
-  // Address + GPS + Radius row
-  const _selStyle = 'padding:8px 10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:12px;font-family:DM Sans,sans-serif;background:#fff;color:#555;font-weight:600';
-  html += '<div style="display:flex;gap:6px;padding:6px 20px 0;align-items:center">';
-  html += '<input type="text" id="mlAddrInput" placeholder="Your address..." value="' + (_mlAddr||'').replace(/"/g,'&quot;') + '" style="flex:1;min-width:0;padding:9px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#1a1a2e;outline:none;background:#fff" onchange="mlSetAddr(this.value)">';
-  html += '<button onclick="mlUseGPS()" style="width:36px;height:36px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:10px;cursor:pointer;font-size:13px;flex-shrink:0">📍</button>';
-  html += '<select onchange="mlSetDist(parseInt(this.value))" style="' + _selStyle + ';flex-shrink:0">';
-  html += '<option value="0"' + (_mlDist===0?' selected':'') + '>Any Radius</option>';
-  html += '<option value="1"' + (_mlDist===1?' selected':'') + '>1 mi</option>';
-  html += '<option value="2"' + (_mlDist===2?' selected':'') + '>2 mi</option>';
-  html += '<option value="3"' + (_mlDist===3?' selected':'') + '>3 mi</option>';
-  html += '<option value="5"' + (_mlDist===5?' selected':'') + '>5 mi</option>';
-  html += '</select></div>';
-
-  // Row 1: Available Tonight + Hot Spots toggles
-  html += '<div style="display:flex;gap:10px;padding:8px 20px 0;align-items:center">';
-  html += '<button onclick="_mlAvail=(_mlAvail===\'tonight\'?\'any\':\'tonight\');renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
-  html += '<button onclick="_mlHotSpots=!_mlHotSpots;renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlHotSpots?'#1a1a2e':'rgba(0,0,0,.1)') + ';background:' + (_mlHotSpots?'#1a1a2e':'#fff') + ';color:' + (_mlHotSpots?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlHotSpots?'0 2px 8px rgba(26,26,46,.2)':'0 1px 3px rgba(0,0,0,.04)') + '">Hot Spots</button>';
-  html += '</div>';
-
-  // Row 2: Price + Cuisine + Vibe + Future — all one line
-  const _cuisines = new Set();
-  entries.forEach(r => {
-    const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-    const c = (cat && cat.cuisine) || r.cuisine || '';
-    if (c) _cuisines.add(c);
-  });
-  html += '<div style="display:flex;gap:6px;padding:6px 20px 4px;align-items:center">';
-  html += '<select onchange="mlSetFuture(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="0"' + (_mlFuture===0?' selected':'') + '>Future</option>';
-  [2,3,5,7,14,21].forEach(d => { html += '<option value="'+d+'"' + (_mlFuture===d?' selected':'') + '>+'+d+'d</option>'; });
-  html += '</select>';
-  html += '<select onchange="mlSetCuisine(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="any"' + (_mlCuisine==='any'?' selected':'') + '>Cuisine</option>';
-  [..._cuisines].sort().forEach(c => { html += '<option value="'+c+'"' + (_mlCuisine===c?' selected':'') + '>'+c+'</option>'; });
-  html += '</select>';
-  html += '<select onchange="mlSetVibe(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="any"' + (_mlVibe==='any'?' selected':'') + '>Vibe</option>';
-  const _vOpts = [['date_night','Date Night'],['upscale','Upscale'],['lively','Lively'],['chill','Chill'],['trendy','Trendy'],['casual','Casual'],['foodie','Foodie'],['hidden_gem','Hidden Gem'],['outdoor','Outdoor'],['late_night','Late Night'],['brunch','Brunch']];
-  _vOpts.forEach(([v,l]) => { html += '<option value="'+v+'"' + (_mlVibe===v?' selected':'') + '>'+l+'</option>'; });
-  html += '</select>';
-  html += '<select onchange="mlSetPrice(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="any"' + (_mlPrice==='any'?' selected':'') + '>Price</option>';
-  html += '<option value="1"' + (_mlPrice==='1'?' selected':'') + '>$</option>';
-  html += '<option value="2"' + (_mlPrice==='2'?' selected':'') + '>$$</option>';
-  html += '<option value="3"' + (_mlPrice==='3'?' selected':'') + '>$$$</option>';
-  html += '<option value="4"' + (_mlPrice==='4'?' selected':'') + '>$$$$</option>';
-  html += '</select>';
-  html += '</div>';
-
-  // Apply availability filter
-  if (_mlAvail !== 'any') {
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      if (!cat) return false;
-      const tier = cat.avail_tier || '';
-      if (_mlAvail === 'tonight') return tier === 'open' || tier === 'limited' || cat.has_early || cat.has_prime || cat.has_late;
-      if (_mlAvail === 'early') return cat.has_early;
-      if (_mlAvail === 'prime') return cat.has_prime;
-      if (_mlAvail === 'late') return cat.has_late;
-      return true;
-    });
-  }
-
-  // Apply hot spots filter
-  if (_mlHotSpots) {
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      return cat && (cat.seatwizeScore >= 4.5 || (cat.buzz_sources && cat.buzz_sources.length >= 2) || cat.michelin);
-    });
-  }
-
-  // Apply price filter
-  if (_mlPrice !== 'any') {
-    const pl = parseInt(_mlPrice);
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      return (cat && cat.price_level === pl) || r.price_level === pl;
-    });
-  }
-
-  // Apply vibe filter
-  if (_mlVibe !== 'any') {
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      const tags = (cat && cat.vibe_tags) || r.vibe_tags || [];
-      return tags.includes(_mlVibe);
-    });
-  }
-
-  // Apply cuisine filter
-  if (_mlCuisine !== 'any') {
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      const c = (cat && cat.cuisine) || r.cuisine || '';
-      return c.toLowerCase() === _mlCuisine.toLowerCase();
-    });
-  }
-
-  // Apply future availability filter
-  if (_mlFuture > 0) {
-    entries = entries.filter(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      if (!cat) return false;
-      // Check if opens_in is within the selected range
-      if (cat.opens_in && cat.opens_in <= _mlFuture) return true;
-      // Check future_dates
-      if (cat.future_dates) {
-        const offsets = [2,3,4,5,7,10,14,21,28];
-        for (const o of offsets) {
-          if (o > _mlFuture) break;
-          const fd = cat.future_dates['+'+o];
-          if (fd && (fd.tier === 'open' || fd.tier === 'limited')) return true;
-        }
-      }
-      return false;
-    });
-  }
-
-  // Calculate distance for each entry and apply distance filter
-  if (_mlUserLat && _mlUserLng) {
-    entries.forEach(r => {
-      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
-      const lat = (cat && (cat.lat ?? cat.geometry?.location?.lat)) || null;
-      const lng = (cat && (cat.lng ?? cat.geometry?.location?.lng)) || null;
-      r._mlDist = _mlCalcDist(_mlUserLat, _mlUserLng, lat, lng);
-    });
-    if (_mlDist > 0) {
-      entries = entries.filter(r => r._mlDist !== null && r._mlDist <= _mlDist);
-    }
-    // Sort by distance
-    entries.sort((a, b) => (a._mlDist||999) - (b._mlDist||999));
-  }
-
   // No results
   if (!entries.length) {
     html += '<div style="text-align:center;padding:40px 20px;color:#999;font-size:13px">No restaurants match this filter</div>';
@@ -2032,6 +1821,10 @@ function renderSavedView() {
     return;
   }
 
+  // Build catalog lookup for full card rendering
+  const _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
+  const _catLookup = {};
+  _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
   // Cards — use full renderCardAR when possible, with rating dots appended
   entries.forEach(r => {
@@ -2062,24 +1855,9 @@ function renderSavedView() {
       + '</div>';
 
     if (catR) {
-      // Override distance on card with My List distance
-      const _origDist = catR.distanceMiles;
-      const _origWalk = catR.walkMinEstimate;
-      const _origDrive = catR.driveMinEstimate;
-      if (r._mlDist !== null && r._mlDist !== undefined) {
-        catR.distanceMiles = Math.round(r._mlDist * 10) / 10;
-        catR.walkMinEstimate = Math.round(r._mlDist * 20); // ~20 min per mile
-        catR.driveMinEstimate = Math.round(r._mlDist * 3); // ~3 min per mile
-      }
+      // Render using the full card renderer, then inject rating dots
       let fullCard = renderCardAR(catR);
-      // Restore original values
-      catR.distanceMiles = _origDist;
-      catR.walkMinEstimate = _origWalk;
-      catR.driveMinEstimate = _origDrive;
-      // Add X remove button and rating dots
-      // Inject X remove button next to the price in the card-top row
-      const removeX = '<button onclick="event.stopPropagation();toggleSave(\'' + eName + '\',null,true)" style="background:none;border:none;cursor:pointer;font-size:16px;color:#bbb;padding:0 0 0 4px;line-height:1" title="Remove from My List">✕</button>';
-      fullCard = fullCard.replace(/<\/div>(\s*<div class="card-sub")/, removeX + '</div>$1');
+      // Insert rating dots before the closing </div> of the card
       const lastClose = fullCard.lastIndexOf('</div>');
       fullCard = fullCard.slice(0, lastClose) + ratingDots + '</div>';
       html += fullCard;
@@ -2101,28 +1879,6 @@ function renderSavedView() {
   });
 
   el.innerHTML = html;
-
-  // Attach Google Places autocomplete to the My List address input
-  const _mlInput = document.getElementById('mlAddrInput');
-  if (_mlInput && window.google?.maps?.places) {
-    const ac = new google.maps.places.Autocomplete(_mlInput, {
-      bounds: new google.maps.LatLngBounds({lat:40.49,lng:-74.26},{lat:40.92,lng:-73.68}),
-      strictBounds: false,
-      componentRestrictions: { country: 'us' },
-      fields: ['formatted_address', 'name', 'geometry']
-    });
-    ac.addListener('place_changed', () => {
-      const p = ac.getPlace();
-      if (p?.formatted_address) _mlInput.value = p.formatted_address;
-      else if (p?.name) _mlInput.value = p.name;
-      if (p?.geometry?.location) {
-        _mlAddr = _mlInput.value;
-        _mlUserLat = p.geometry.location.lat();
-        _mlUserLng = p.geometry.location.lng();
-        renderSavedView();
-      }
-    });
-  }
 }
 
 // ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
@@ -2954,10 +2710,7 @@ function _selectRest(name) {
     let results = [...(data.elite||[]), ...(data.moreOptions||[])];
     const seen = new Set();
     results = results.filter(r => { const k=(r.name||'').toLowerCase().trim(); if(!k||seen.has(k)) return false; seen.add(k); return true; });
-    // Exact match first, then starts-with, then contains
-    const exact = results.filter(r => (r.name||'').toLowerCase().trim() === q.trim());
-    const startsWith = results.filter(r => (r.name||'').toLowerCase().startsWith(q) && (r.name||'').toLowerCase().trim() !== q.trim());
-    const matched = exact.length ? exact : startsWith.length ? startsWith : results.filter(r => (r.name||'').toLowerCase().includes(q));
+    const matched = results.filter(r => (r.name||'').toLowerCase().includes(q));
     if (matched.length) {
       resultsEl.innerHTML = '<div style="margin-bottom:12px;font-size:13px;color:#888">' + matched.length + ' result' + (matched.length !== 1 ? 's' : '') + '</div>' + matched.map(r => renderCard(r)).join('');
     } else {
@@ -4137,17 +3890,9 @@ function renderCard(r, isRadar) {
     : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
   const pickBtn = `<button data-pick-key="${_skey}" onclick="togglePick('${(r.name||'').replace(/'/g,"\\'")}',${_pickData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_picked?'#ff4500':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_picked?'Remove from Share':'Add to Share'}">${_svgShare}</button>`;
 
-  // User's saved rating badge
-  const _ur = _getSavedRating(r.name);
-  const _rb = _ur === 'loved' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#22c55e;background:#e8f5e9;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Loved</span>'
-    : _ur === 'solid' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#eab308;background:#fef9c3;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Solid</span>'
-    : _ur === 'nah' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#ef4444;background:#fee2e2;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Nah</span>'
-    : isSaved(r.name) && !_ur ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#888;background:#f0f0f0;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Wishlist</span>'
-    : '';
-
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card${isRadar?' dim':''}" id="${_cardId}">
-    <div class="card-top"><div class="card-name">${name}${_rb}</div>${price}</div>
+    <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
     ${vibeHtml}
     ${badgesHtml}
@@ -4481,7 +4226,7 @@ function setupAC() {
     new google.maps.LatLng(40.918, -73.700)
   );
 
-  ['addressInput','arAddrInput','barAddrInput','homeAddrInput','searchAddrInput','mlAddrInput'].forEach(id => {
+  ['addressInput','arAddrInput','barAddrInput','homeAddrInput','searchAddrInput'].forEach(id => {
     const input = document.getElementById(id);
     if (!input) return;
     const ac = new google.maps.places.Autocomplete(input, {
@@ -4494,13 +4239,6 @@ function setupAC() {
       const p = ac.getPlace();
       if (p?.formatted_address) input.value = p.formatted_address;
       else if (p?.name) input.value = p.name;
-      // If My List address, update distance with geometry directly
-      if (id === 'mlAddrInput' && p?.geometry?.location) {
-        _mlAddr = input.value;
-        _mlUserLat = p.geometry.location.lat();
-        _mlUserLng = p.geometry.location.lng();
-        renderSavedView();
-      }
     });
   });
 }
@@ -4983,17 +4721,9 @@ function renderCardAR(r) {
     : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
   const arPickBtn = `<button data-pick-key="${_arKey}" onclick="togglePick('${(r.name||'').replace(/'/g,"\\'")}',${_arCardData.replace(/"/g,'&quot;')})" style="background:none;border:1px solid rgba(0,0,0,.08);border-radius:10px;width:44px;height:44px;cursor:pointer;color:${_arPicked?'#ff4500':'#ccc'};flex-shrink:0;display:flex;align-items:center;justify-content:center" title="${_arPicked?'Remove from Share':'Add to Share'}">${_arSvgShare}</button>`;
 
-  // User's saved rating badge
-  const _userRating = _getSavedRating(r.name);
-  const _ratingBadge = _userRating === 'loved' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#22c55e;background:#e8f5e9;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Loved</span>'
-    : _userRating === 'solid' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#eab308;background:#fef9c3;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Solid</span>'
-    : _userRating === 'nah' ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#ef4444;background:#fee2e2;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Nah</span>'
-    : isSaved(r.name) && !_userRating ? '<span style="display:inline-block;font-size:9px;font-weight:800;color:#888;background:#f0f0f0;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle">Wishlist</span>'
-    : '';
-
   const _cardId = 'card-' + (r.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');
   return `<div class="card" id="${_cardId}">
-    <div class="card-top"><div class="card-name">${name}${_ratingBadge}</div>${price}</div>
+    <div class="card-top"><div class="card-name">${name}</div>${price}</div>
     <div class="card-sub">${sub}</div>
     ${vibeHtmlAR}
     ${badges ? `<div class="badges">${badges}</div>` : ''}
