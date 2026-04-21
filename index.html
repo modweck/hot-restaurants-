@@ -1805,6 +1805,7 @@ function _enrichSavedData() {
   // Backfill missing address/neighborhood/vibe_tags from loaded restaurant catalog
   let catalog = [];
   try { catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])]; } catch(e) {}
+  if (!catalog.length && window._mlCachedCatalog) catalog = window._mlCachedCatalog;
   if (!catalog.length) return;
   const lookup = {};
   catalog.forEach(r => { if (r.name) lookup[(r.name||'').toLowerCase().trim()] = r; });
@@ -1888,9 +1889,23 @@ function renderSavedView() {
   html += _fc('nah', '\u{1F534} Nah', counts.nah);
   html += '</div>';
 
-  // Build catalog lookup (try/catch needed because allNYCRestaurants is declared later with let)
+  // Build catalog lookup
   let _catalog = [];
   try { _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])]; } catch(e) {}
+  // If catalog empty, use cached My List data
+  if (!_catalog.length && window._mlCachedCatalog) _catalog = window._mlCachedCatalog;
+  // If still empty, load it
+  if (!_catalog.length) {
+    fetch('/.netlify/functions/search-candidates', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
+    }).then(r => r.json()).then(data => {
+      window._mlCachedCatalog = [...(data.elite||[]), ...(data.moreOptions||[])];
+      renderSavedView();
+    }).catch(() => {});
+    return; // wait for data to load
+  }
+  if (!window._mlCachedCatalog && _catalog.length) window._mlCachedCatalog = _catalog;
   const _catLookup = {};
   _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
