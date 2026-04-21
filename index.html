@@ -1822,15 +1822,18 @@ function _enrichSavedData() {
 }
 
 let _mlDataLoaded = false;
+let _mlCatalog = [];
 async function _mlEnsureData() {
-  if (_mlDataLoaded || (allNYCRestaurants && allNYCRestaurants.length > 0)) { _mlDataLoaded = true; return; }
+  if (_mlDataLoaded && _mlCatalog.length > 0) return;
+  try { if (typeof allNYCRestaurants !== 'undefined' && allNYCRestaurants.length > 0) { _mlCatalog = allNYCRestaurants; _mlDataLoaded = true; return; } } catch(e) {}
   try {
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
     });
     const data = await resp.json();
-    allNYCRestaurants = [...(data.elite||[]), ...(data.moreOptions||[])];
+    _mlCatalog = [...(data.elite||[]), ...(data.moreOptions||[])];
+    try { allNYCRestaurants = _mlCatalog; } catch(e) {}
     _mlDataLoaded = true;
   } catch(e) {}
 }
@@ -1887,9 +1890,10 @@ async function renderSavedView() {
   html += '</div>';
 
   // Build catalog lookup
-  const _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
+  let _catalogSrc = [];
+  try { _catalogSrc = [...(_mlCatalog||[]), ...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])]; } catch(e) { _catalogSrc = [...(_mlCatalog||[])]; }
   const _catLookup = {};
-  _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
+  _catalogSrc.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
   // Address + GPS + Radius row
   const _selStyle = 'padding:8px 10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:12px;font-family:DM Sans,sans-serif;background:#fff;color:#555;font-weight:600';
