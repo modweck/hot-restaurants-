@@ -1950,7 +1950,7 @@ async function renderSavedView() {
       const cat = _catLookup[(r.name||'').toLowerCase().trim()];
       if (!cat) return false;
       const tier = cat.avail_tier || '';
-      if (_mlAvail === 'tonight') return tier === 'open' || tier === 'fully_open' || tier === 'limited' || cat.has_early || cat.has_prime || cat.has_late;
+      if (_mlAvail === 'tonight') return tier === 'open' || tier === 'fully_open';
       if (_mlAvail === 'early') return cat.has_early;
       if (_mlAvail === 'prime') return cat.has_prime;
       if (_mlAvail === 'late') return cat.has_late;
