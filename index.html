@@ -1742,27 +1742,6 @@ let _mlFuture = 0;
 let _mlCuisine = 'any';
 
 function mlSetAvail(val) { _mlAvail = val; renderSavedView(); }
-function mlToggleAvailTonight() {
-  _mlAvail = (_mlAvail === 'tonight') ? 'any' : 'tonight';
-  // Update button style
-  const btn = document.getElementById('ml-avail-btn');
-  if (btn) {
-    const on = _mlAvail === 'tonight';
-    btn.style.background = on ? '#1b4332' : '#fff';
-    btn.style.color = on ? '#fff' : '#1a1a2e';
-    btn.style.borderColor = on ? '#1b4332' : 'rgba(0,0,0,0.1)';
-    btn.style.boxShadow = on ? '0 2px 8px rgba(27,67,50,.25)' : '0 1px 3px rgba(0,0,0,.04)';
-  }
-  // Hide/show cards — only show cards with "Available Tonight" badge or any time slots
-  document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
-    if (_mlAvail === 'any') { card.style.removeProperty('display'); }
-    else {
-      const show = card.dataset.mlAvail === 'available_tonight' || card.dataset.mlAvail === 'has_slots';
-      if (show) card.style.removeProperty('display');
-      else card.style.setProperty('display', 'none', 'important');
-    }
-  });
-}
 function mlSetDist(val) { _mlDist = val; renderSavedView(); }
 function mlSetPrice(val) { _mlPrice = val; renderSavedView(); }
 function mlSetVibe(val) { _mlVibe = val; renderSavedView(); }
@@ -1843,23 +1822,26 @@ function _enrichSavedData() {
 }
 
 let _mlDataLoaded = false;
-let _mlCatalog = [];
 async function _mlEnsureData() {
-  if (_mlCatalog.length > 0) return;
+  if (_mlDataLoaded || (allNYCRestaurants && allNYCRestaurants.length > 0)) { _mlDataLoaded = true; return; }
   try {
     const resp = await fetch('/.netlify/functions/search-candidates', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ location: 'New York, NY', quality: 'all', broadCity: true, transport: 'all_nyc' })
     });
     const data = await resp.json();
-    _mlCatalog = [...(data.elite||[]), ...(data.moreOptions||[])];
-  } catch(e) { console.error('My List data load failed:', e); }
+    allNYCRestaurants = [...(data.elite||[]), ...(data.moreOptions||[])];
+    _mlDataLoaded = true;
+    renderSavedView();
+  } catch(e) {}
 }
 
 function renderSavedView() {
   _enrichSavedData();
-  // Load data in background if needed — will re-render when done
-  if (_mlCatalog.length === 0) { _mlEnsureData().then(() => { if (_mlCatalog.length > 0) renderSavedView(); }); }
+  // Load catalog data if not available yet
+  if (!allNYCRestaurants || allNYCRestaurants.length === 0) {
+    _mlEnsureData();
+  }
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
   const allEntries = Object.values(saved);
@@ -1906,8 +1888,9 @@ function renderSavedView() {
   html += '</div>';
 
   // Build catalog lookup
+  const _catalog = [...(allNYCRestaurants||[]), ...(allRestaurants||[]), ...(rawRestaurants||[])];
   const _catLookup = {};
-  _mlCatalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
+  _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
   // Address + GPS + Radius row
   const _selStyle = 'padding:8px 10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:12px;font-family:DM Sans,sans-serif;background:#fff;color:#555;font-weight:600';
@@ -1924,7 +1907,7 @@ function renderSavedView() {
 
   // Row 1: Available Tonight + Hot Spots toggles
   html += '<div style="display:flex;gap:10px;padding:8px 20px 0;align-items:center">';
-  html += '<button id="ml-avail-btn" onclick="_mlAvail=(_mlAvail===\'tonight\'?\'any\':\'tonight\');renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
+  html += '<button onclick="_mlAvail=(_mlAvail===\'tonight\'?\'any\':\'tonight\');renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
   html += '<button onclick="_mlHotSpots=!_mlHotSpots;renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlHotSpots?'#1a1a2e':'rgba(0,0,0,.1)') + ';background:' + (_mlHotSpots?'#1a1a2e':'#fff') + ';color:' + (_mlHotSpots?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlHotSpots?'0 2px 8px rgba(26,26,46,.2)':'0 1px 3px rgba(0,0,0,.04)') + '">Hot Spots</button>';
   html += '</div>';
 
@@ -1959,7 +1942,18 @@ function renderSavedView() {
   html += '</div>';
 
   // Apply availability filter
-  // Available Tonight filter now handled by mlToggleAvailTonight() via DOM
+  if (_mlAvail !== 'any') {
+    entries = entries.filter(r => {
+      const cat = _catLookup[(r.name||'').toLowerCase().trim()];
+      if (!cat) return false;
+      const tier = cat.avail_tier || '';
+      if (_mlAvail === 'tonight') return tier === 'open' || tier === 'limited' || cat.has_early || cat.has_prime || cat.has_late;
+      if (_mlAvail === 'early') return cat.has_early;
+      if (_mlAvail === 'prime') return cat.has_prime;
+      if (_mlAvail === 'late') return cat.has_late;
+      return true;
+    });
+  }
 
   // Apply hot spots filter
   if (_mlHotSpots) {
@@ -2031,16 +2025,6 @@ function renderSavedView() {
     entries.sort((a, b) => (a._mlDist||999) - (b._mlDist||999));
   }
 
-  // Sort: available tonight first
-  entries.sort((a, b) => {
-    const catA = _catLookup[(a.name||'').toLowerCase().trim()];
-    const catB = _catLookup[(b.name||'').toLowerCase().trim()];
-    const tA = catA?.avail_tier; const tB = catB?.avail_tier;
-    const aOpen = tA === 'open' || tA === 'fully_open' ? 0 : tA === 'limited' ? 1 : 2;
-    const bOpen = tB === 'open' || tB === 'fully_open' ? 0 : tB === 'limited' ? 1 : 2;
-    return aOpen - bOpen;
-  });
-
   // No results
   if (!entries.length) {
     html += '<div style="text-align:center;padding:40px 20px;color:#999;font-size:13px">No restaurants match this filter</div>';
@@ -2051,7 +2035,6 @@ function renderSavedView() {
 
   // Cards — use full renderCardAR when possible, with rating dots appended
   entries.forEach(r => {
-   try {
     const name = r.name || '';
     const key = name.toLowerCase().trim();
     const eName = name.replace(/'/g,"\\'");
@@ -2078,22 +2061,6 @@ function renderSavedView() {
       + statusLabel
       + '</div>';
 
-    // Determine if card shows "Available Tonight" badge
-    let _mlCardAvail = 'none';
-    if (catR) {
-      const _e = catR.early || (catR.has_early ? 'available' : 'booked');
-      const _p = catR.prime || (catR.has_prime ? 'available' : 'booked');
-      const _l = catR.late || (catR.has_late ? 'available' : 'booked');
-      const _allAvail = _e === 'available' && _p === 'available' && _l === 'available';
-      const _anyAvail = _e === 'available' || _p === 'available' || _l === 'available';
-      const _tier = catR.avail_tier || '';
-      if (_allAvail || _tier === 'fully_open') _mlCardAvail = 'available_tonight';
-      else if (_anyAvail || _tier === 'open' || _tier === 'limited') _mlCardAvail = 'has_slots';
-    }
-
-    // Skip card if Available Tonight filter is active and card has no availability
-    if (_mlAvail === 'tonight' && _mlCardAvail === 'none') return;
-
     if (catR) {
       // Override distance on card with My List distance
       const _origDist = catR.distanceMiles;
@@ -2109,8 +2076,6 @@ function renderSavedView() {
       catR.distanceMiles = _origDist;
       catR.walkMinEstimate = _origWalk;
       catR.driveMinEstimate = _origDrive;
-      // Add data-ml-avail attribute for DOM-based filtering
-      fullCard = fullCard.replace('<div class="card"', '<div class="card" data-ml-avail="' + _mlCardAvail + '"');
       // Add X remove button and rating dots
       // Inject X remove button next to the price in the card-top row
       const removeX = '<button onclick="event.stopPropagation();toggleSave(\'' + eName + '\',null,true)" style="background:none;border:none;cursor:pointer;font-size:16px;color:#bbb;padding:0 0 0 4px;line-height:1" title="Remove from My List">✕</button>';
@@ -2133,12 +2098,31 @@ function renderSavedView() {
         + ratingDots
         + '</div>';
     }
-   } catch(e) { console.error('Card render error for:', r.name, e); }
   });
 
   el.innerHTML = html;
 
-  // Note: address autocomplete handled by initAC() which runs once on page load
+  // Attach Google Places autocomplete to the My List address input
+  const _mlInput = document.getElementById('mlAddrInput');
+  if (_mlInput && window.google?.maps?.places) {
+    const ac = new google.maps.places.Autocomplete(_mlInput, {
+      bounds: new google.maps.LatLngBounds({lat:40.49,lng:-74.26},{lat:40.92,lng:-73.68}),
+      strictBounds: false,
+      componentRestrictions: { country: 'us' },
+      fields: ['formatted_address', 'name', 'geometry']
+    });
+    ac.addListener('place_changed', () => {
+      const p = ac.getPlace();
+      if (p?.formatted_address) _mlInput.value = p.formatted_address;
+      else if (p?.name) _mlInput.value = p.name;
+      if (p?.geometry?.location) {
+        _mlAddr = _mlInput.value;
+        _mlUserLat = p.geometry.location.lat();
+        _mlUserLng = p.geometry.location.lng();
+        renderSavedView();
+      }
+    });
+  }
 }
 
 // ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
