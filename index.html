@@ -1755,8 +1755,12 @@ function mlToggleAvailTonight() {
   }
   // Hide/show cards based on data-avail attribute
   document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
-    if (_mlAvail === 'any') { card.style.display = ''; }
-    else { card.style.display = (card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open') ? '' : 'none'; }
+    if (_mlAvail === 'any') { card.style.removeProperty('display'); }
+    else {
+      const show = card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open';
+      if (show) card.style.removeProperty('display');
+      else card.style.setProperty('display', 'none', 'important');
+    }
   });
 }
 function mlSetDist(val) { _mlDist = val; renderSavedView(); }
@@ -2148,7 +2152,9 @@ async function renderSavedView() {
   // Re-apply Available Tonight filter if active
   if (_mlAvail === 'tonight') {
     document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
-      card.style.display = (card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open') ? '' : 'none';
+      const show = card.dataset.mlAvail === 'open' || card.dataset.mlAvail === 'fully_open';
+      if (show) card.style.removeProperty('display');
+      else card.style.setProperty('display', 'none', 'important');
     });
   }
   _mlRendering = false;
