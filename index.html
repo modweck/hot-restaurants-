@@ -2142,35 +2142,7 @@ async function _renderSavedViewNow() {
 
   el.innerHTML = html;
 
-  // Attach Google Places autocomplete to the My List address input
-  const _mlInput = document.getElementById('mlAddrInput');
-  if (_mlInput && window.google?.maps?.places) {
-    const ac = new google.maps.places.Autocomplete(_mlInput, {
-      bounds: new google.maps.LatLngBounds({lat:40.49,lng:-74.26},{lat:40.92,lng:-73.68}),
-      strictBounds: false,
-      componentRestrictions: { country: 'us' },
-      fields: ['formatted_address', 'name', 'geometry']
-    });
-    ac.addListener('place_changed', () => {
-      const p = ac.getPlace();
-      if (p?.formatted_address) _mlInput.value = p.formatted_address;
-      else if (p?.name) _mlInput.value = p.name;
-      if (p?.geometry?.location) {
-        _mlAddr = _mlInput.value;
-        _mlUserLat = p.geometry.location.lat();
-        _mlUserLng = p.geometry.location.lng();
-        renderSavedView();
-      }
-    });
-  }
-  // Re-apply Available Tonight filter if active
-  if (_mlAvail === 'tonight') {
-    document.querySelectorAll('#view-saved .card[data-ml-avail]').forEach(card => {
-      const show = card.dataset.mlAvail === 'available_tonight' || card.dataset.mlAvail === 'has_slots';
-      if (show) card.style.removeProperty('display');
-      else card.style.setProperty('display', 'none', 'important');
-    });
-  }
+  // Note: address autocomplete handled by initAC() which runs once on page load
 }
 
 // ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
