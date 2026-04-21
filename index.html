@@ -1832,15 +1832,14 @@ async function _mlEnsureData() {
     const data = await resp.json();
     allNYCRestaurants = [...(data.elite||[]), ...(data.moreOptions||[])];
     _mlDataLoaded = true;
-    renderSavedView();
   } catch(e) {}
 }
 
-function renderSavedView() {
+async function renderSavedView() {
   _enrichSavedData();
-  // Load catalog data if not available yet
+  // Load catalog data if not available yet — wait for it before filtering
   if (!allNYCRestaurants || allNYCRestaurants.length === 0) {
-    _mlEnsureData();
+    await _mlEnsureData();
   }
   const saved = _getSaved();
   const el = document.getElementById('view-saved');
