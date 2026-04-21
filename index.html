@@ -1835,7 +1835,11 @@ async function _mlEnsureData() {
   } catch(e) { console.error('My List data load failed:', e); }
 }
 
+let _mlRendering = false;
+let _mlRenderQueued = false;
 async function renderSavedView() {
+  if (_mlRendering) { _mlRenderQueued = true; return; }
+  _mlRendering = true;
   _enrichSavedData();
   // Always ensure catalog data is loaded before rendering
   await _mlEnsureData();
@@ -2135,6 +2139,8 @@ async function renderSavedView() {
       }
     });
   }
+  _mlRendering = false;
+  if (_mlRenderQueued) { _mlRenderQueued = false; renderSavedView(); }
 }
 
 // ─── TONIGHT'S PICKS ─────────────────────────────────────────────────────────
