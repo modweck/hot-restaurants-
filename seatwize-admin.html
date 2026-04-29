@@ -9,11 +9,15 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'DM Sans',sans-serif;background:#f7f5f2;color:#1a1a2e;padding:20px}
     h1{font-size:24px;font-weight:800;margin-bottom:20px}
+    .tabs{display:flex;gap:8px;margin-bottom:20px}
+    .tab{padding:8px 16px;border-radius:8px;border:1px solid rgba(0,0,0,.1);background:#fff;font-size:13px;font-weight:700;cursor:pointer}
+    .tab.active{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
     .card{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid rgba(0,0,0,0.06)}
     .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
     .card-name{font-size:16px;font-weight:800}
-    .card-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+    .card-status{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;cursor:pointer}
     .status-pending{background:#fff8e1;color:#f57c00}
+    .status-sniping{background:#e3f2fd;color:#1565c0}
     .status-booked{background:#e8f5e9;color:#2e7d32}
     .status-failed{background:#fde8e8;color:#c0392b}
     .card-details{font-size:13px;color:#555;margin-bottom:6px}
@@ -22,48 +26,106 @@
     .copy-btn{font-size:11px;color:#ff4500;cursor:pointer;background:none;border:none;font-weight:700;margin-left:8px}
     .refresh-btn{padding:10px 20px;background:#ff4500;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:20px}
     .empty{text-align:center;padding:40px;color:#888}
+    .notes-input{width:100%;padding:6px 10px;border:1px solid rgba(0,0,0,.1);border-radius:6px;font-size:12px;margin-top:6px;font-family:'DM Sans',sans-serif}
   </style>
 </head>
 <body>
   <h1>Booking Requests</h1>
   <button class="refresh-btn" onclick="loadRequests()">Refresh</button>
+  <div class="tabs">
+    <button class="tab active" onclick="filterStatus('all',this)">All</button>
+    <button class="tab" onclick="filterStatus('pending',this)">Pending</button>
+    <button class="tab" onclick="filterStatus('sniping',this)">Sniping</button>
+    <button class="tab" onclick="filterStatus('booked',this)">Booked</button>
+    <button class="tab" onclick="filterStatus('failed',this)">Failed</button>
+  </div>
   <div id="list"><div class="empty">Loading...</div></div>
 
 <script>
-async function loadRequests() {
-  try {
-    const resp = await fetch('/.netlify/functions/booking-request?action=list');
-    const data = await resp.json();
-    const list = data.requests || [];
-    if (!list.length) {
-      document.getElementById('list').innerHTML = '<div class="empty">No booking requests yet</div>';
-      return;
-    }
-    // Show newest first
-    list.reverse();
-    document.getElementById('list').innerHTML = list.map(r => `
+const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+
+let allRequests = [];
+let currentFilter = 'all';
+
+function filterStatus(status, btn) {
+  currentFilter = status;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderList();
+}
+
+function renderList() {
+  const list = currentFilter === 'all' ? allRequests : allRequests.filter(r => r.status === currentFilter);
+  if (!list.length) {
+    document.getElementById('list').innerHTML = '<div class="empty">No ' + (currentFilter === 'all' ? '' : currentFilter + ' ') + 'requests</div>';
+    return;
+  }
+  document.getElementById('list').innerHTML = list.map(r => {
+    const dates = r.target_dates ? r.target_dates.join(', ') : r.date || '';
+    const token = r.resy_token || '';
+    const safeToken = token.replace(/'/g, "\\'");
+    return `
       <div class="card">
         <div class="card-top">
-          <div class="card-name">${r.restaurant}</div>
-          <span class="card-status status-${r.status}">${r.status}</span>
+          <div class="card-name">${r.restaurant || ''}</div>
+          <span class="card-status status-${r.status || 'pending'}" onclick="cycleStatus('${r.id}')">${r.status || 'pending'}</span>
         </div>
         <div class="card-details">
-          ${r.date} · Party of ${r.party_size} · ${r.time_pref}<br>
-          ${r.name} · ${r.contact}
+          <b>Dates:</b> ${dates}<br>
+          <b>Party:</b> ${r.party_size || 2} · <b>Time:</b> ${r.time_pref || 'any'}<br>
+          <b>Customer:</b> ${r.name || ''} · ${r.contact || ''}<br>
+          ${r.venue_slug ? '<b>Slug:</b> ' + r.venue_slug + ' · <b>Venue ID:</b> ' + (r.venue_id || '') + '<br>' : ''}
+          ${r.drop_days ? '<b>Drop:</b> ' + r.drop_days + ' days at ' + (r.drop_hour || '?') + ':00<br>' : ''}
         </div>
         <div class="card-token">
-          <b>Resy:</b> ${r.resy_email}<br>
-          <b>Token:</b> ${r.resy_token ? r.resy_token.slice(0, 40) + '...' : 'none'}
-          <button class="copy-btn" onclick="navigator.clipboard.writeText('${r.resy_token}');this.textContent='Copied!'">Copy Token</button><br>
+          <b>Resy:</b> ${r.resy_email || 'phone'}<br>
+          <b>Token:</b> ${token ? token.slice(0, 50) + '...' : 'none'}
+          ${token ? '<button class="copy-btn" onclick="navigator.clipboard.writeText(\'' + safeToken + '\');this.textContent=\'Copied!\'">Copy Token</button>' : ''}<br>
           <b>Payment ID:</b> ${r.resy_payment_id || 'none'}
           ${r.resy_payment_id ? '<button class="copy-btn" onclick="navigator.clipboard.writeText(\'' + r.resy_payment_id + '\');this.textContent=\'Copied!\'">Copy</button>' : ''}
         </div>
-        <div style="font-size:11px;color:#aaa;margin-top:6px">${r.created_at}</div>
+        <input class="notes-input" placeholder="Notes..." value="${r.notes || ''}" onchange="updateNotes('${r.id}', this.value)" />
+        <div style="font-size:11px;color:#aaa;margin-top:6px">${r.created_at || ''}</div>
       </div>
-    `).join('');
+    `;
+  }).join('');
+}
+
+async function loadRequests() {
+  try {
+    const resp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests?order=created_at.desc&limit=100', {
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+    });
+    allRequests = await resp.json();
+    renderList();
   } catch (e) {
-    document.getElementById('list').innerHTML = '<div class="empty">Failed to load requests</div>';
+    document.getElementById('list').innerHTML = '<div class="empty">Failed to load</div>';
   }
+}
+
+async function cycleStatus(id) {
+  const statuses = ['pending', 'sniping', 'booked', 'failed'];
+  const r = allRequests.find(x => x.id === id);
+  if (!r) return;
+  const idx = statuses.indexOf(r.status || 'pending');
+  const next = statuses[(idx + 1) % statuses.length];
+  r.status = next;
+  r.updated_at = new Date().toISOString();
+  renderList();
+  await fetch(SUPABASE_URL + '/rest/v1/booking_requests?id=eq.' + id, {
+    method: 'PATCH',
+    headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ status: next, updated_at: r.updated_at })
+  });
+}
+
+async function updateNotes(id, notes) {
+  await fetch(SUPABASE_URL + '/rest/v1/booking_requests?id=eq.' + id, {
+    method: 'PATCH',
+    headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ notes, updated_at: new Date().toISOString() })
+  });
 }
 
 loadRequests();

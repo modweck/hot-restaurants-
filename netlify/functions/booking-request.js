@@ -1,9 +1,25 @@
 /**
  * booking-request.js — Handle booking requests
- * Sends email notification via Resend (no filesystem writes — works on Netlify)
+ * Saves to Supabase + sends email notification via Resend
  */
 
+const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+
 exports.handler = async (event) => {
+  // GET: list requests for admin
+  if (event.httpMethod === 'GET') {
+    try {
+      const resp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests?order=created_at.desc&limit=100', {
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+      });
+      const data = await resp.json();
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) };
+    } catch (e) {
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify([]) };
+    }
+  }
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
@@ -84,6 +100,22 @@ exports.handler = async (event) => {
     const emailResult = await emailResp.json();
     if (emailResult.error) {
       console.error('Resend error:', emailResult);
+    }
+
+    // Save to Supabase
+    try {
+      await fetch(SUPABASE_URL + '/rest/v1/booking_requests', {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(request)
+      });
+    } catch (e) {
+      console.error('Supabase save error:', e.message);
     }
 
     return {
