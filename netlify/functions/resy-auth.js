@@ -19,7 +19,7 @@ async function resyFetch(endpoint, opts = {}) {
       body: JSON.stringify({ endpoint, formBody: opts.body || '', authToken: opts.authToken || '' }),
     });
     const data = await resp.json();
-    return { status: data.status, json: () => { try { return JSON.parse(data.body); } catch { return {}; } }, text: () => data.body, ok: data.status >= 200 && data.status < 300 };
+    return { status: data.status, json: async () => { try { return JSON.parse(data.body); } catch { return {}; } }, text: async () => data.body, ok: data.status >= 200 && data.status < 300 };
   }
   return fetch(endpoint, opts);
 }
