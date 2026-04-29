@@ -352,6 +352,13 @@ function showConnected(label) {
   document.getElementById('submitBtn').disabled = !document.getElementById('agreeTerms').checked;
 }
 
+const RESY_API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
+const RESY_HEADERS = {
+  'Authorization': 'ResyAPI api_key="' + RESY_API_KEY + '"',
+  'Content-Type': 'application/x-www-form-urlencoded',
+  'Accept': 'application/json, text/plain, */*',
+};
+
 async function sendPhoneCode() {
   const phone = document.getElementById('resyPhone').value.trim();
   const errEl = document.getElementById('resyError');
@@ -361,22 +368,22 @@ async function sendPhoneCode() {
   btn.disabled = true; btn.textContent = 'Sending...';
 
   try {
-    const resp = await fetch('/.netlify/functions/resy-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ method: 'phone_send', phone })
+    const formatted = phone.replace(/\D/g, '');
+    const intl = formatted.startsWith('1') ? '+' + formatted : '+1' + formatted;
+    const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+      method: 'POST', headers: RESY_HEADERS,
+      body: 'mobile_number=' + encodeURIComponent(intl)
     });
     const data = await resp.json();
-    if (data.error) {
-      errEl.textContent = data.error; errEl.style.display = 'block';
-      btn.disabled = false; btn.textContent = 'Send Code';
+    if (data.sent) {
+      resyPhoneIntl = intl;
+      document.getElementById('phoneStep2').style.display = 'block';
+      btn.textContent = 'Code Sent';
+      document.getElementById('resyPhone').disabled = true;
       return;
     }
-    resyPhoneIntl = data.phone;
-    resyCookies = data.cookies || '';
-    document.getElementById('phoneStep2').style.display = 'block';
-    btn.textContent = 'Code Sent';
-    document.getElementById('resyPhone').disabled = true;
+    errEl.textContent = data.message || 'Failed to send code. Check your phone number.'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Send Code';
   } catch (e) {
     errEl.textContent = 'Failed to send code. Try again.'; errEl.style.display = 'block';
     btn.disabled = false; btn.textContent = 'Send Code';
@@ -392,10 +399,9 @@ async function verifyPhoneCode() {
   btn.disabled = true; btn.textContent = 'Verifying...';
 
   try {
-    const resp = await fetch('/.netlify/functions/resy-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ method: 'phone_verify', phone: resyPhoneIntl, code })
+    const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+      method: 'POST', headers: RESY_HEADERS,
+      body: 'mobile_number=' + encodeURIComponent(resyPhoneIntl) + '&code=' + encodeURIComponent(code)
     });
     const data = await resp.json();
     if (data.token) {
@@ -404,15 +410,15 @@ async function verifyPhoneCode() {
       showConnected(resyPhoneIntl);
       return;
     }
-    if (data.challenge_required) {
-      resyClaimToken = data.claim_token;
-      resyChallengeId = data.challenge_id;
+    if (data.mobile_claim && data.challenge) {
+      resyClaimToken = data.mobile_claim.claim_token;
+      resyChallengeId = data.challenge.challenge_id;
       document.getElementById('phoneStep2').style.display = 'none';
       document.getElementById('phoneStep3').style.display = 'block';
-      document.getElementById('challengeMessage').textContent = (data.message || 'One more step') + '. ' + (data.challenge_prompt || 'Enter your email');
+      document.getElementById('challengeMessage').textContent = (data.challenge.message || 'One more step') + '. ' + (data.challenge.properties?.[0]?.message || 'Enter your email');
       return;
     }
-    errEl.textContent = data.error || 'Verification failed'; errEl.style.display = 'block';
+    errEl.textContent = data?.data?.code || data.message || 'Invalid code. Please try again.'; errEl.style.display = 'block';
     btn.disabled = false; btn.textContent = 'Verify & Connect';
   } catch (e) {
     errEl.textContent = 'Verification failed. Try again.'; errEl.style.display = 'block';
@@ -429,20 +435,19 @@ async function answerChallenge() {
   btn.disabled = true; btn.textContent = 'Verifying...';
 
   try {
-    const resp = await fetch('/.netlify/functions/resy-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ method: 'phone_challenge', claim_token: resyClaimToken, challenge_id: resyChallengeId, em_address: email })
+    const resp = await fetch('https://api.resy.com/4/auth/challenge', {
+      method: 'POST', headers: RESY_HEADERS,
+      body: 'challenge_id=' + encodeURIComponent(resyChallengeId) + '&claim_token=' + encodeURIComponent(resyClaimToken) + '&em_address=' + encodeURIComponent(email)
     });
     const data = await resp.json();
-    if (data.error || !data.token) {
-      errEl.textContent = data.error || 'Verification failed'; errEl.style.display = 'block';
-      btn.disabled = false; btn.textContent = 'Verify & Connect';
+    if (data.token) {
+      resyToken = data.token;
+      resyPaymentId = data.payment_method_id;
+      showConnected(resyPhoneIntl);
       return;
     }
-    resyToken = data.token;
-    resyPaymentId = data.payment_method_id;
-    showConnected(resyPhoneIntl);
+    errEl.textContent = data.message || 'Email did not match. Please try again.'; errEl.style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Verify & Connect';
   } catch (e) {
     errEl.textContent = 'Verification failed. Try again.'; errEl.style.display = 'block';
     btn.disabled = false; btn.textContent = 'Verify & Connect';
@@ -460,19 +465,34 @@ async function resyLogin() {
   btn.disabled = true; btn.textContent = 'Connecting...';
 
   try {
-    const resp = await fetch('/.netlify/functions/resy-auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+    const authResp = await fetch('https://api.resy.com/3/auth/password', {
+      method: 'POST', headers: RESY_HEADERS,
+      body: 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password)
     });
-    const data = await resp.json();
-    if (data.error) {
-      errEl.textContent = data.error; errEl.style.display = 'block';
+    if (!authResp.ok) {
+      const errData = await authResp.json().catch(() => ({}));
+      errEl.textContent = errData.message || 'Invalid email or password.'; errEl.style.display = 'block';
       btn.disabled = false; btn.textContent = 'Connect Resy';
       return;
     }
-    resyToken = data.token;
-    resyPaymentId = data.payment_method_id;
+    const authData = await authResp.json();
+    if (!authData.token) {
+      errEl.textContent = 'Authentication failed.'; errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Connect Resy';
+      return;
+    }
+    resyToken = authData.token;
+    // Get payment methods
+    try {
+      const payResp = await fetch('https://api.resy.com/2/user/payment_methods', {
+        headers: { 'Authorization': 'ResyAPI api_key="' + RESY_API_KEY + '"', 'X-Resy-Auth-Token': resyToken, 'X-Resy-Universal-Auth': resyToken, 'Accept': 'application/json' }
+      });
+      if (payResp.ok) {
+        const payData = await payResp.json();
+        const methods = payData.payment_methods || payData.results || [];
+        if (methods.length > 0) resyPaymentId = methods[0].id;
+      }
+    } catch {}
     showConnected(email);
   } catch (e) {
     errEl.textContent = 'Connection failed. Try again.'; errEl.style.display = 'block';
