@@ -8,6 +8,21 @@
  */
 
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
+const PROXY_URL = process.env.RESY_PROXY_URL || ''; // e.g. https://xxxx.ngrok.io
+
+// Helper: call Resy via proxy if available, otherwise direct
+async function resyFetch(endpoint, opts = {}) {
+  if (PROXY_URL) {
+    const resp = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ endpoint, formBody: opts.body || '', authToken: opts.authToken || '' }),
+    });
+    const data = await resp.json();
+    return { status: data.status, json: () => { try { return JSON.parse(data.body); } catch { return {}; } }, text: () => data.body, ok: data.status >= 200 && data.status < 300 };
+  }
+  return fetch(endpoint, opts);
+}
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -42,12 +57,12 @@ exports.handler = async (event) => {
       if (!phone) return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Phone number required' }) };
       const formatted = phone.replace(/\D/g, '');
       const intl = formatted.startsWith('1') ? '+' + formatted : '+1' + formatted;
-      const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+      const resp = await resyFetch('https://api.resy.com/4/auth/mobile', {
         method: 'POST', headers: HEADERS,
         body: `mobile_number=${encodeURIComponent(intl)}`,
       });
       const rawText = await resp.text();
-      console.log('Resy /4/auth/mobile response:', resp.status, rawText.slice(0, 500));
+      console.log('Resy /4/auth/mobile response:', resp.status || 'proxy', rawText.slice(0, 500));
       let data = {};
       try { data = JSON.parse(rawText); } catch {}
       if (data.sent) {
@@ -59,7 +74,7 @@ exports.handler = async (event) => {
     // ── Phone: Step 2 — verify code (returns claim + challenge) ──
     if (method === 'phone_verify') {
       if (!phone || !code) return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Phone and code required' }) };
-      const resp = await fetch('https://api.resy.com/4/auth/mobile', {
+      const resp = await resyFetch('https://api.resy.com/4/auth/mobile', {
         method: 'POST', headers: HEADERS,
         body: `mobile_number=${encodeURIComponent(phone)}&code=${encodeURIComponent(code)}`,
       });
@@ -89,7 +104,7 @@ exports.handler = async (event) => {
       if (!claim_token || !challenge_id || !em_address) {
         return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: 'Missing challenge fields' }) };
       }
-      const resp = await fetch('https://api.resy.com/4/auth/challenge', {
+      const resp = await resyFetch('https://api.resy.com/4/auth/challenge', {
         method: 'POST', headers: HEADERS,
         body: `challenge_id=${encodeURIComponent(challenge_id)}&claim_token=${encodeURIComponent(claim_token)}&em_address=${encodeURIComponent(em_address)}`,
       });
@@ -105,7 +120,7 @@ exports.handler = async (event) => {
       return { statusCode: 400, body: JSON.stringify({ error: 'Email and password required' }) };
     }
 
-    const authResp = await fetch('https://api.resy.com/3/auth/password', {
+    const authResp = await resyFetch('https://api.resy.com/3/auth/password', {
       method: 'POST', headers: HEADERS,
       body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
     });
@@ -134,7 +149,7 @@ exports.handler = async (event) => {
     // Step 2: Get payment methods
     let paymentMethodId = null;
     try {
-      const payResp = await fetch('https://api.resy.com/2/user/payment_methods', {
+      const payResp = await resyFetch('https://api.resy.com/2/user/payment_methods', {
         headers: {
           'Authorization': `ResyAPI api_key="${API_KEY}"`,
           'X-Resy-Auth-Token': token,
@@ -143,6 +158,7 @@ exports.handler = async (event) => {
           'Origin': 'https://resy.com',
           'Referer': 'https://resy.com/',
         },
+        authToken: token,
       });
       if (payResp.ok) {
         const payData = await payResp.json();
