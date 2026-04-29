@@ -46,11 +46,14 @@ exports.handler = async (event) => {
         method: 'POST', headers: HEADERS,
         body: `mobile_number=${encodeURIComponent(intl)}`,
       });
-      const data = await resp.json().catch(() => ({}));
+      const rawText = await resp.text();
+      console.log('Resy /4/auth/mobile response:', resp.status, rawText.slice(0, 500));
+      let data = {};
+      try { data = JSON.parse(rawText); } catch {}
       if (data.sent) {
         return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sent: true, phone: intl }) };
       }
-      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: data.message || 'Failed to send code. Check your phone number.' }) };
+      return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ error: data.message || 'Failed to send code. Check your phone number. (HTTP ' + resp.status + ')' }) };
     }
 
     // ── Phone: Step 2 — verify code (returns claim + challenge) ──
