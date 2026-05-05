@@ -1369,7 +1369,7 @@ exports.handler = async (event) => {
         prime: _rp ? (r.prime || null) : null,
         late: _rp ? (r.late || null) : null,
         opens_in: _rp ? (r.opens_in || null) : null,
-        fully_locked: _rp ? (r.fully_locked || false) : false,
+        fully_locked: r.fully_locked || false,
         sunday_only: _rp ? (r.sunday_only || false) : false,
         walk_in_only: _rp ? (r.walk_in_only || false) : false,
         reserve_id: r.reserve_id || null,
