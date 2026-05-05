@@ -100,6 +100,34 @@ function arSetHotspot(val, btn) {
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 
+function arSetRewardsFilter(val, btn) {
+  if (val === 'any') {
+    arState.rewardsFilters = [];
+    arState.rewardsFilter = 'any';
+    document.querySelectorAll('[id^="ar-rw-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  } else {
+    const anyBtn = document.getElementById('ar-rw-any');
+    if (arState.rewardsFilter === 'any') {
+      arState.rewardsFilters = [val];
+      anyBtn && anyBtn.classList.remove('on');
+      btn.classList.add('on');
+    } else {
+      const idx = arState.rewardsFilters.indexOf(val);
+      if (idx > -1) { arState.rewardsFilters.splice(idx, 1); btn.classList.remove('on'); }
+      else { arState.rewardsFilters.push(val); btn.classList.add('on'); }
+    }
+    if (arState.rewardsFilters.length > 0) {
+      anyBtn && anyBtn.classList.remove('on');
+      arState.rewardsFilter = arState.rewardsFilters[0];
+    } else {
+      arState.rewardsFilter = 'any';
+      anyBtn && anyBtn.classList.add('on');
+    }
+  }
+  if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
 function arSetCuisine(val) {
   arState.cuisine = val;
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
@@ -179,15 +207,15 @@ function renderCardAR(r) {
   }
 
   // inKind badge — show for restaurants with a booking platform, or when inkind filter is active
-  if (r.inkind && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'inkind' || arState.rewardsFilters?.includes('inkind')))
     badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
 
   // Bilt badge
-  if (r.bilt_dining && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'bilt'))
+  if (r.bilt_dining && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'bilt' || arState.rewardsFilters?.includes('bilt')))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
 
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatformAR(r) || arState.rewardsFilter === 'rakuten' || arState.rewardsFilters?.includes('rakuten')))
     badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const tier = availTierAR(r);
@@ -302,19 +330,21 @@ function applyARFilters(list) {
     list = list.filter(r => { const cc = (r.cuisine || '').toLowerCase().trim(); return cc.includes(cs) || (cc && cs.includes(cc)); });
   }
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
-  if (arState.rewardsFilter !== 'bilt') {
+  const arHasRewardBilt = arState.rewardsFilters?.includes('bilt') || arState.rewardsFilter === 'bilt';
+  if (!arHasRewardBilt) {
     list = list.filter(r => !isBiltOnly(r));
   }
 
-  const rf = arState.rewardsFilter;
-  if (rf !== 'any') {
-    list = list.filter(r => {
+  const arRfs = (arState.rewardsFilters && arState.rewardsFilters.length > 0) ? arState.rewardsFilters : (arState.rewardsFilter !== 'any' ? [arState.rewardsFilter] : []);
+  if (arRfs.length > 0) {
+    list = list.filter(r => arRfs.some(rf => {
       if (rf==='bilt') return r.bilt_dining || r.booking_platform==='bilt';
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
+      if (rf==='seated') return r.seated;
       return true;
-    });
+    }));
   }
   // ── Hot Spots filter (multi-select OR logic, same as Hot Spots view) ──
   const hsfs = (arState.hotspotFilters && arState.hotspotFilters.length > 0) ? arState.hotspotFilters : (arState.hotspotFilter && arState.hotspotFilter !== 'any' ? [arState.hotspotFilter] : []);

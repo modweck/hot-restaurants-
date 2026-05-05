@@ -137,15 +137,15 @@ function renderCard(r, isRadar) {
     badges += `<span class="badge" style="background:#fef2f2;color:#dc2626;border:1px solid rgba(220,38,38,.2)">💳 Deposit Req.</span>`;
 
   // inKind badge — show for restaurants with a booking platform, or when inkind filter is active
-  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'inkind' || state.rewardsFilters?.includes('inkind')))
     badges += `<span class="badge inkind">🔥 inKind 20% Off</span>`;
 
   // Bilt badge
-  if (r.bilt_dining && (hasBookingPlatform(r) || state.rewardsFilter === 'bilt'))
+  if (r.bilt_dining && (hasBookingPlatform(r) || state.rewardsFilter === 'bilt' || state.rewardsFilters?.includes('bilt')))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
 
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten' || state.rewardsFilters?.includes('rakuten')))
     badges += `<span class="badge rakuten">🛍️ Rakuten Cash Back</span>`;
 
   const badgesHtml = badges ? `<div class="badges">${badges}</div>` : '';
@@ -363,19 +363,21 @@ function display(restaurants) {
   }
 
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
-  if (state.rewardsFilter !== 'bilt') {
+  const hasRewardBilt = state.rewardsFilters.includes('bilt') || state.rewardsFilter === 'bilt';
+  if (!hasRewardBilt) {
     list = list.filter(r => !isBiltOnly(r));
   }
 
-  if (state.rewardsFilter!=='any') {
-    const rf = state.rewardsFilter;
-    list = list.filter(r => {
+  const rfs = (state.rewardsFilters && state.rewardsFilters.length > 0) ? state.rewardsFilters : (state.rewardsFilter !== 'any' ? [state.rewardsFilter] : []);
+  if (rfs.length > 0) {
+    list = list.filter(r => rfs.some(rf => {
       if (rf==='bilt') return r.bilt_dining || r.booking_platform==='bilt';
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
+      if (rf==='seated') return r.seated;
       return true;
-    });
+    }));
   }
 
   // ── Availability filter (from home OR search page) ──
@@ -585,6 +587,35 @@ function setSearchAvailFilter(val, btn) {
   btn.classList.add('on');
   state.availFilter = val;
   if (rawRestaurants.length > 0) display(rawRestaurants);
+}
+
+// ─── REWARDS FILTER (multi-select) ───────────────────────────────────────────
+function setRewardsFilter(val, btn) {
+  if (val === 'any') {
+    state.rewardsFilters = [];
+    state.rewardsFilter = 'any';
+    document.querySelectorAll('[id^="rw-"]').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  } else {
+    const anyBtn = document.getElementById('rw-any');
+    if (state.rewardsFilter === 'any') {
+      state.rewardsFilters = [val];
+      anyBtn && anyBtn.classList.remove('on');
+      btn.classList.add('on');
+    } else {
+      const idx = state.rewardsFilters.indexOf(val);
+      if (idx > -1) { state.rewardsFilters.splice(idx, 1); btn.classList.remove('on'); }
+      else { state.rewardsFilters.push(val); btn.classList.add('on'); }
+    }
+    if (state.rewardsFilters.length > 0) {
+      anyBtn && anyBtn.classList.remove('on');
+      state.rewardsFilter = state.rewardsFilters[0];
+    } else {
+      state.rewardsFilter = 'any';
+      anyBtn && anyBtn.classList.add('on');
+    }
+  }
+  if (allRestaurants.length) display(allRestaurants);
 }
 
 // ─── SORT ────────────────────────────────────────────────────────────────────

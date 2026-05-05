@@ -942,15 +942,13 @@ _sbGetUser().then(() => _updateAuthUI());
       <!-- Rewards -->
       <div style="margin-bottom:14px">
         <span class="flabel">Rewards</span>
-        <div class="dselect">
-          <select id="rewardsFilter" onchange="state.rewardsFilter=this.value">
-            <option value="any">Any</option>
-            <option value="chase_sapphire">Chase Sapphire</option>
-            <option value="bilt">Bilt</option>
-            <option value="rakuten">Rakuten</option>
-            <option value="inkind">inKind</option>
-            <option value="seated">Seated</option>
-          </select>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">
+          <button class="fchip on" id="rw-any" onclick="setRewardsFilter('any',this)">Any</button>
+          <button class="fchip" id="rw-chase_sapphire" onclick="setRewardsFilter('chase_sapphire',this)">Chase Sapphire</button>
+          <button class="fchip" id="rw-bilt" onclick="setRewardsFilter('bilt',this)">Bilt</button>
+          <button class="fchip" id="rw-rakuten" onclick="setRewardsFilter('rakuten',this)">Rakuten</button>
+          <button class="fchip" id="rw-inkind" onclick="setRewardsFilter('inkind',this)">inKind</button>
+          <button class="fchip" id="rw-seated" onclick="setRewardsFilter('seated',this)">Seated</button>
         </div>
       </div>
 
@@ -1254,15 +1252,13 @@ _sbGetUser().then(() => _updateAuthUI());
         <!-- Rewards -->
         <div style="margin-bottom:14px">
           <span class="flabel">Rewards</span>
-          <div class="dselect">
-            <select id="arRewardsFilter" onchange="arState.rewardsFilter=this.value">
-              <option value="any">Any</option>
-              <option value="chase_sapphire">Chase Sapphire</option>
-              <option value="bilt">Bilt</option>
-              <option value="rakuten">Rakuten</option>
-              <option value="inkind">inKind</option>
-              <option value="seated">Seated</option>
-            </select>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">
+            <button class="fchip on" id="ar-rw-any" onclick="arSetRewardsFilter('any',this)">Any</button>
+            <button class="fchip" id="ar-rw-chase_sapphire" onclick="arSetRewardsFilter('chase_sapphire',this)">Chase Sapphire</button>
+            <button class="fchip" id="ar-rw-bilt" onclick="arSetRewardsFilter('bilt',this)">Bilt</button>
+            <button class="fchip" id="ar-rw-rakuten" onclick="arSetRewardsFilter('rakuten',this)">Rakuten</button>
+            <button class="fchip" id="ar-rw-inkind" onclick="arSetRewardsFilter('inkind',this)">inKind</button>
+            <button class="fchip" id="ar-rw-seated" onclick="arSetRewardsFilter('seated',this)">Seated</button>
           </div>
         </div>
 
