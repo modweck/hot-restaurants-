@@ -42,16 +42,17 @@ function arSetVibe(vibe, btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = [];
-    arState.hotspotFilter = 'any';
+    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising'];
+    arState.hotspotFilter = 'all_hotspots';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
   } else {
     // If coming from "All" (empty array = no filter), start fresh
     const anyBtn = document.getElementById('ar-hot-any');
-    if (arState.hotspotFilter === 'any') {
+    if (arState.hotspotFilter === 'any' || arState.hotspotFilter === 'all_hotspots') {
       arState.hotspotFilters = [val];
       anyBtn && anyBtn.classList.remove('on');
+      document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
       btn.classList.add('on');
     } else {
       const idx = arState.hotspotFilters.indexOf(val);
@@ -67,7 +68,9 @@ function arSetHotspot(val, btn) {
       anyBtn && anyBtn.classList.remove('on');
       arState.hotspotFilter = arState.hotspotFilters[0];
     } else {
-      arState.hotspotFilter = 'any';
+      // No filters selected — revert to "All" hot spots
+      arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising'];
+      arState.hotspotFilter = 'all_hotspots';
       anyBtn && anyBtn.classList.add('on');
     }
   }
