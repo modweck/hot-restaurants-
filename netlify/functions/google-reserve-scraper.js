@@ -38,7 +38,7 @@ const CHECK_ALL   = args.includes('--all');
 const DEBUG       = args.includes('--debug');
 const PARTY_SIZE  = parseInt(getArg('party', '2'), 10);
 const BATCH_LIMIT = parseInt(getArg('batch', '0'), 10);
-const BROWSER_RESTART_EVERY = 60;
+const BROWSER_RESTART_EVERY = 30;
 
 let CHECK_DATE = getArg('date', null);
 if (!CHECK_DATE) {
@@ -235,7 +235,7 @@ async function phase1() {
       fs.writeFileSync(RESERVE_ID_FILE, JSON.stringify(reserveIds, null, 2));
     }
 
-    await sleep(randomDelay(2000, 5000));
+    await sleep(randomDelay(5000, 10000));
   }
 
   // Final save

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mns02dhs92o0",
+    "restaurant": "Torrisi",
+    "date": "2026-04-30",
+    "party_size": 2,
+    "time_pref": "prime",
+    "name": "maurice dweck",
+    "contact": "mauricedweck16@gmail.com",
+    "resy_email": "mauricedweck16@gmail.com",
+    "resy_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk2NTg3NTcsInVpZCI6Mzk4MTc5NDYsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxMzE1NzU1OTh9fQ.AJBGxH67LyX7Ri8lb8dtvaZJq6Yyv2RTQPNrU0vYCM5d5Cc3TpRP9dzelpZBtfnl18JUHOKOTXTdus_suFfMAkW_ABuO4mC0YPWxO29e64XpiWPch3bo9PzcdNuNlnCl2Hg47JvHj_4Lew7Im5LdHtW4KnrqQSCNX-CCcoFzLIOZikhi",
+    "resy_payment_id": null,
+    "status": "pending",
+    "created_at": "2026-04-09T21:39:27.568Z"
+  },
+  {
+    "id": "mnt6tbgi3pos",
+    "restaurant": "Torrisi",
+    "venue_slug": "torrisi",
+    "venue_id": 64593,
+    "drop_days": 30,
+    "drop_hour": 10,
+    "date": "2026-05-10",
+    "party_size": 2,
+    "time_pref": "early",
+    "name": "mo",
+    "contact": "sarahjursta@gmail.com",
+    "resy_email": "+15166988394",
+    "resy_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk3MzA0MzAsInVpZCI6OTQ5MjYzNiwiZ3QiOiJjb25zdW1lciIsImdzIjpbXSwibGFuZyI6ImVuLXVzIiwiZXh0cmEiOnsiZ3Vlc3RfaWQiOjQzODU3OTk1fX0.APkm4S7I80zd-vYHlun-3DaHzZvgwfTczR-Hf3c-l6f0_Fk8hGvxJOXnGk31EgnDMi3sPTkvMaMgj6hBHQelM8YoAB8zqS-CjY8UDc53y1SItFPKzEDQOh_LVCh0MT51_OtZRohaFtKqNSU5Kaj6At_zA9U6s4q8kcs4z6ew9jLXmDh4",
+    "resy_payment_id": 29401204,
+    "status": "pending",
+    "created_at": "2026-04-10T17:36:08.514Z"
+  },
+  {
+    "id": "mnt98ayynamw",
+    "restaurant": "Torrisi",
+    "venue_slug": "torrisi",
+    "venue_id": 64593,
+    "drop_days": 30,
+    "drop_hour": 10,
+    "date": "2026-05-10",
+    "party_size": 2,
+    "time_pref": "either",
+    "name": "maurice dweck 8",
+    "contact": "mauricedweck16@gmailcom",
+    "resy_email": "+15166988394",
+    "resy_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk3MzQ2MTYsInVpZCI6OTQ5MjYzNiwiZ3QiOiJjb25zdW1lciIsImdzIjpbXSwibGFuZyI6ImVuLXVzIiwiZXh0cmEiOnsiZ3Vlc3RfaWQiOjQzODU3OTk1fX0.ASP6NflT-F9zI-NJwI5fOY9iU00d7wlAQqAgyVHo4jzJMGiDDDI5xmmm139y5PSyDranTDziJkqMq_5NQxT21kKoAGNUgUvOwlQbIp8xoCund4czUYjXtvZMFhBl78xXijwTD_KjYBFz0HocDIlWFn9nlCDfhKmokfPPn42TKm5oVXsU",
+    "resy_payment_id": 29401204,
+    "status": "pending",
+    "created_at": "2026-04-10T18:43:46.954Z"
+  }
+]

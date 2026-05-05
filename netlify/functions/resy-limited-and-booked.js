@@ -112,7 +112,7 @@ function buildTimeFlags(slots) {
 // ── Resy tokens ──────────────────────────────────────────────────────────────
 const RESY_API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 const RESY_TOKENS = [
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk0MDczOTEsInVpZCI6Mzk4MTc5NDYsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxMzE1NzU1OTh9fQ.AN9bvDSJhN41QD4qtXmyJJl6zopWWjCp7X12plmGyKf9s8_AFBdEBkF5uY2FJe6_KJ_WyBnrIVw2-lHkLvogVFN5APP0XXEoEenKBvmmgKA30lEeM1vJRY1LBLkKYYQ_1Ktb54No6aHlCeRXG6Cu1MAudtuRgxgQl4iJinqyEx8M6r68',
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE4NzcwMDEsInVpZCI6NjQ3MzQ1NTgsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM1MTEzMDV9fQ.AOlKh4ANqfmn4d15NBxgPMa6jLS7lgXTJ_9e-3uRMkUUl_SZi_5nI6bA4qBvXO-FgM8HMJXEYokbe0cP9lAim5LSAbxkhpiKzC1JpPV4PCUTJ7TKc2BuAyFdLxOHh7BvGLjprkYkeyQYCqxmCK6m0DIEG5ueF4l6CyzVbjMvlmu584lY',
 ];
 let tokenIdx = 0;
 function getHeaders() {

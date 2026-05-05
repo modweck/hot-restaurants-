@@ -1,0 +1,2130 @@
+{
+  "novita": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:35:22.029Z"
+  },
+  "the palm court": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:35:43.997Z"
+  },
+  "don angie": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:36:03.961Z"
+  },
+  "osteria al doge": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:37:45.966Z"
+  },
+  "club a steakhouse": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:39:41.491Z"
+  },
+  "palma": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:40:05.528Z"
+  },
+  "il mulino prime - soho": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:40:14.389Z"
+  },
+  "locanda verde tribeca": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:40:38.692Z"
+  },
+  "noda": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:40:54.520Z"
+  },
+  "tsukimi": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:41:09.218Z"
+  },
+  "gigino trattoria": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:41:25.168Z"
+  },
+  "babylon": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:41:40.838Z"
+  },
+  "tempura matsui": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:41:56.422Z"
+  },
+  "potluck club 佰樂": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:42:12.269Z"
+  },
+  "emporio": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:42:35.929Z"
+  },
+  "fig & olive": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:42:51.022Z"
+  },
+  "st john's restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:43:05.785Z"
+  },
+  "basta pasta": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:43:20.543Z"
+  },
+  "costata": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:43:36.272Z"
+  },
+  "atlantic grill": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:43:51.396Z"
+  },
+  "saperavi": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:44:16.270Z"
+  },
+  "friedman's lunch": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:44:31.038Z"
+  },
+  "felice columbus": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:44:45.736Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "rucola restaurant": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:44:59.144Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "chiko": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:45:13.296Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "tulum brooklyn": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:45:19.192Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "aunt jake's": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:45:34.391Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "nisi estiatorio": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:45:48.740Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "peaches hothouse": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:45:54.163Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "greek": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:46:15.065Z"
+  },
+  "barosa": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:47:45.493Z"
+  },
+  "am thai": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:48:00.292Z"
+  },
+  "manchego": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:48:05.760Z"
+  },
+  "hudson hound": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:48:38.695Z"
+  },
+  "sallys": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:49:03.488Z"
+  },
+  "nyy steak": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:49:27.998Z"
+  },
+  "arcadia": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:49:52.597Z"
+  },
+  "berlin currywurst": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:49:58.134Z"
+  },
+  "blue": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:51:16.629Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "boon thai": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:51:36.925Z"
+  },
+  "burger one nyc": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:51:43.703Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "cent'anni": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:51:48.115Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "istanbul bay": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:51:55.143Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "kyoto sushi": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:52:08.905Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "lex restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:52:24.309Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "los amigos restaurant": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "7:15 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:52:38.132Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mama's": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:52:58.377Z"
+  },
+  "mamma rosa's": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:53:03.882Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "medusa": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:53:19.469Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mirador restaurant": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:53:36.022Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mizumi": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:53:58.170Z"
+  },
+  "nana's kitchen": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:55:17.881Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "papi's grill": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:55:24.631Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "port o call": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:55:30.716Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "queens burger": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:57:11.044Z"
+  },
+  "sapporo": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:57:20.601Z"
+  },
+  "he xin": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:57:25.708Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "surf city": {
+    "tier": "limited",
+    "dinner_slots": 3,
+    "early": "booked",
+    "prime": "limited",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": true,
+    "has_late": false,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:57:30.938Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "vivo!": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:57:46.468Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "merchants ny": {
+    "tier": "limited",
+    "dinner_slots": 2,
+    "early": "booked",
+    "prime": "booked",
+    "late": "limited",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": true,
+    "sample_times": [
+      "11:15 PM",
+      "11:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:57:52.680Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "sunday to sunday": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:58:36.243Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "yogi by barnjoo": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:58:50.883Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "bistro so": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "7:30 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T02:59:06.413Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "los dos hermanos": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T02:59:55.277Z"
+  },
+  "nudibranch": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:00.926Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mino brasserie": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:05.671Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "brooklyn kebab house": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:12.383Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "addictive nyc": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:19.282Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "shan": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:43.537Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "il tinello": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:00:49.843Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mamazul": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:02:36.951Z"
+  },
+  "the laurels": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:04:07.564Z"
+  },
+  "mr. broadway restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:04:22.391Z"
+  },
+  "the mouth": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:04:28.151Z"
+  },
+  "salt hank's": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:04:35.383Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "wayward fare": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:04:41.692Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "flushing house": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:05:05.640Z"
+  },
+  "roast": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:05:27.968Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "sunday": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:05:33.928Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "hell's kitchen": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:05:56.476Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "aurora brooklyn": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:03.209Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "cuba": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:07.159Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "bustronome new york": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:21.805Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "banter": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:27.617Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "alta": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:42.819Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "bedford & co.": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:06:49.135Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "virgil's real bbq - nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:07:16.162Z"
+  },
+  "carroll place": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:08:05.123Z"
+  },
+  "la mela": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:10:52.635Z"
+  },
+  "riviera maya": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:11:03.127Z"
+  },
+  "gargiulo's coney island": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:11:10.739Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "amylos": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:12:50.870Z"
+  },
+  "grand view events": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:13:00.156Z"
+  },
+  "victor's café": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:13:04.336Z"
+  },
+  "wild - west village": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:14:25.302Z"
+  },
+  "blue note": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:14:31.298Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "loft": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:14:36.694Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "café d'anvers": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:14:57.572Z"
+  },
+  "mari": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "5:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "9:00 PM",
+      "9:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:15:20.935Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "han bat restaurant": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:15:43.910Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "knori hand roll bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:16:34.509Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "tipsy shanghai - east village": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:16:49.054Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "matisse 167": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:18:19.520Z"
+  },
+  "noma social": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:18:35.229Z"
+  },
+  "drift restaurant and bar": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:18:41.341Z"
+  },
+  "socarrat paella bar - nolita": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:18:47.368Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "west end bar & grill": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:20:27.132Z"
+  },
+  "knickerbocker bar & grill": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:20:36.654Z"
+  },
+  "roscioli": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:20:41.471Z"
+  },
+  "arturo's": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:20:48.615Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "lola's": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:20:54.603Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "baohaus": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:21:09.231Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "sangarita's": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:21:29.312Z"
+  },
+  "foxtail": {
+    "tier": "open",
+    "dinner_slots": 12,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "5:00 PM",
+      "6:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:21:45.374Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "sarabeth’s greenwich village": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:22:06.153Z"
+  },
+  "friedman's - battery park": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:22:20.924Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "zou zou's": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:22:27.008Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "craft": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:22:47.901Z"
+  },
+  "one dine at one world observatory": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:23:36.868Z"
+  },
+  "olio e più– greenwich village": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:23:57.667Z"
+  },
+  "roberta's - domino park": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:24:04.341Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "the mermaid oyster bar": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:25:35.138Z"
+  },
+  "ruta oaxaca - brooklyn": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:25:53.412Z"
+  },
+  "atrio wine bar & restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:27:44.661Z"
+  },
+  "bar nena": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:27:54.120Z"
+  },
+  "old tbilisi": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:27:58.985Z"
+  },
+  "golden steer steakhouse nyc": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "5:00 PM",
+      "5:15 PM",
+      "8:45 PM",
+      "9:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:28:05.115Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "the olive tree cafe": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:28:19.950Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "pappas - new york": {
+    "tier": "open",
+    "dinner_slots": 9,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:45 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:28:42.360Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "kahlo restaurant": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:28:48.403Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "rocco steakhouse madison ave": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:29:39.304Z"
+  },
+  "bukhara grill : indian spice rave & catering nyc": {
+    "tier": "open",
+    "dinner_slots": 10,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:29:46.584Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "tavern 29": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:30:07.670Z"
+  },
+  "sarabeth's central park south": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:30:27.811Z"
+  },
+  "hunt & fish club nyc": {
+    "tier": "open",
+    "dinner_slots": 8,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "6:15 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:30:43.436Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "massawa - ny": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "8:30 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:30:49.449Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "the fox": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:32:11.537Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "the inn by fumo": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:32:17.660Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "balvanera - nyc": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:32:23.704Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "swan room": {
+    "tier": "open",
+    "dinner_slots": 4,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:00 PM",
+      "6:15 PM",
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:32:29.261Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "lindens": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:32:35.484Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "san carlo  osteria piemonte": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:34:06.809Z"
+  },
+  "ladurée soho": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:34:25.199Z"
+  },
+  "felix roasting co.": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:34:38.900Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "shh omakase": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:35:02.735Z"
+  },
+  "friedman's hell's kitchen - 450 10th ave": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:36:31.128Z"
+  },
+  "sahara's turkish cuisine": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:36:56.738Z"
+  },
+  "limani - nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:37:18.682Z"
+  },
+  "the parisian tea room- nyc": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM",
+      "7:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:37:25.804Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "dough by licastri silver lake": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:37:46.347Z"
+  },
+  "tiny tapas and bites": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:37:53.147Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "mario's restaurant - arthur ave.": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:38:13.454Z"
+  },
+  "bistro vendome - nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:39:31.899Z"
+  },
+  "baro + k sushi": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:41:02.979Z"
+  },
+  "unglo thai restaurant & bar": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:41:17.907Z"
+  },
+  "om real indian food": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:41:23.217Z"
+  },
+  "gamsung pocha - emokase table bar": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:41:56.131Z"
+  },
+  "han bat korean restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:43:21.588Z"
+  },
+  "empire steak house- east": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:44:10.182Z"
+  },
+  "lady blue": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:44:53.937Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "marbella restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:45:14.497Z"
+  },
+  "fusion hk bar and grill": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:45:34.307Z"
+  },
+  "republic latin asian fusion": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:45:41.471Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "riko peruvian cuisine": {
+    "tier": "open",
+    "dinner_slots": 7,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:15 PM",
+      "5:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:45:47.183Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "sugar bar": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:46:07.317Z"
+  },
+  "da raffaele - nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:46:57.028Z"
+  },
+  "shun lee cafe": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:47:04.192Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "moonstone modern asian cuisine & bar": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:47:09.724Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "kid pizza": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:47:16.493Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "bloom botanical bistro": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:47:22.069Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "have & meyer | vineria naturale con cucina": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:48:52.494Z"
+  },
+  "the parlour room": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:49:08.201Z"
+  },
+  "wayan nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:49:12.716Z"
+  },
+  "boat house waterfront dining": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:50:05.002Z"
+  },
+  "montesacro bk": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:50:11.220Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "rustik tavern": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:51:29.285Z"
+  },
+  "the history": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:51:43.339Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "dave & buster's - brooklyn": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:51:57.555Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "lazzara's pizza cafe": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:52:18.203Z"
+  },
+  "austin's ale house": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:53:06.517Z"
+  },
+  "violette's restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:53:14.602Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "baci abbracci": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:53:20.954Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "prime bistro": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:53:41.084Z"
+  },
+  "bar fes": {
+    "tier": "open",
+    "dinner_slots": 6,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "7:00 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:53:48.950Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "bogota latin bistro": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:55:27.574Z"
+  },
+  "blake’s tavern nyc": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:55:42.954Z"
+  },
+  "kurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:55:47.898Z"
+  },
+  "mission ceviche": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:55:52.962Z"
+  },
+  "planet hollywood - new york": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:57:12.522Z"
+  },
+  "prime catch": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-08T03:57:19.529Z",
+    "check_for_date": "2026-04-08",
+    "source": "direct_slug"
+  },
+  "root & vine": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:58:38.739Z"
+  },
+  "sutton bar room": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T03:59:27.315Z"
+  },
+  "the shell restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T04:00:16.098Z"
+  },
+  "friedmans west end": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T04:01:04.896Z"
+  },
+  "blend - lic": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T04:02:43.762Z"
+  },
+  "burger & lobster bryant park": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T04:02:58.701Z"
+  },
+  "inti peruvian restaurant": {
+    "tier": "error",
+    "error": "blocked",
+    "checked_date": "2026-04-08T04:03:04.006Z"
+  }
+}

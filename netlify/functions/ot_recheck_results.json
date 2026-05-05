@@ -1,0 +1,191 @@
+{
+  "886": {
+    "tier": "unknown",
+    "error": "blocked_empty"
+  },
+  "nobu downtown": {
+    "tier": "unknown",
+    "error": "access_denied"
+  },
+  "serafina osteria": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "7:00 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:26:00.067Z",
+    "check_date_target": "2026-04-10",
+    "rid": 460558,
+    "matched_name": "Serafina Osteria"
+  },
+  "frenchette": {
+    "tier": "limited",
+    "dinner_slots": 3,
+    "early": "limited",
+    "prime": "booked",
+    "late": "limited",
+    "has_early": true,
+    "has_prime": false,
+    "has_late": true,
+    "sample_times": [
+      "5:30 PM",
+      "5:45 PM",
+      "9:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:26:14.705Z",
+    "check_date_target": "2026-04-10",
+    "rid": 1028608,
+    "matched_name": "Frenchette"
+  },
+  "soothr": {
+    "tier": "unknown",
+    "error": "access_denied"
+  },
+  "san sabino": {
+    "tier": "unknown",
+    "error": "access_denied"
+  },
+  "la grande boucherie": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:26:52.746Z",
+    "check_date_target": "2026-04-10",
+    "rid": 1142380,
+    "matched_name": "La Grande Boucherie NYC"
+  },
+  "exquisite restaurant": {
+    "tier": "open",
+    "dinner_slots": 5,
+    "early": "available",
+    "prime": "available",
+    "late": "available",
+    "has_early": true,
+    "has_prime": true,
+    "has_late": true,
+    "sample_times": [
+      "6:45 PM",
+      "7:15 PM",
+      "7:30 PM",
+      "7:45 PM",
+      "8:15 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:27:06.749Z",
+    "check_date_target": "2026-04-10",
+    "rid": 1404829,
+    "matched_name": "Exquisite Bistro"
+  },
+  "new york city center": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:27:20.752Z",
+    "check_date_target": "2026-04-10",
+    "rid": 76933,
+    "matched_name": ""
+  },
+  "gallagher's steakhouse": {
+    "tier": "limited",
+    "dinner_slots": 2,
+    "early": "booked",
+    "prime": "booked",
+    "late": "limited",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": true,
+    "sample_times": [
+      "8:30 PM",
+      "8:45 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:27:35.273Z",
+    "check_date_target": "2026-04-10",
+    "rid": 104182,
+    "matched_name": "Gallaghers Steakhouse - Manhattan"
+  },
+  "caviar russe": {
+    "tier": "unknown",
+    "error": "blocked_empty"
+  },
+  "Northshore Brasserie": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:28:45.111Z",
+    "check_date_target": "2026-04-10",
+    "rid": 269902,
+    "matched_name": "Northshore Brasserie"
+  },
+  "le veau d'or": {
+    "tier": "unknown",
+    "error": "access_denied"
+  },
+  "don angie": {
+    "tier": "booked",
+    "dinner_slots": 0,
+    "early": "booked",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": false,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:29:12.142Z",
+    "check_date_target": "2026-04-10",
+    "rid": 994474,
+    "matched_name": "Don Angie"
+  },
+  "wild cherry": {
+    "tier": "limited",
+    "dinner_slots": 1,
+    "early": "limited",
+    "prime": "booked",
+    "late": "booked",
+    "has_early": true,
+    "has_prime": false,
+    "has_late": false,
+    "sample_times": [
+      "5:00 PM"
+    ],
+    "platform": "opentable",
+    "checked_date": "2026-04-09T16:29:23.759Z",
+    "check_date_target": "2026-04-10",
+    "rid": 1427557,
+    "matched_name": "Wild Cherry"
+  }
+}

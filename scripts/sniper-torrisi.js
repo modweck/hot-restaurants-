@@ -11,15 +11,15 @@ const { homedir } = require('os');
 const { execSync } = require('child_process');
 
 // ── Config ──
-const VENUE_SLUG = 'torrisi';
-const VENUE_ID = 64593;
-const TARGET_DATE = '2026-05-08';
-const PARTY_SIZE = 2;
+const VENUE_SLUG = 'carbone';
+const VENUE_ID = 6194;
+const TARGET_DATE = '2026-05-10';
+const PARTY_SIZE = 4;
 const DROP_HOUR = 10;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 // uid 64692867
-const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzk0NjM1NjEsInVpZCI6NjQ3MzQ1NTgsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM1MTEzMDV9fQ.AI8EyMqEKGkOg1AqUpzTW1P-6k-Dn7mHn05rGOg3rTy_yzav2Lz83Vg0KBEi6p8bO4q6u9oftlCg4Lo1JCLz9pGeAb6ySt8iHsg2XMXD_NdlTNrGREs08gUjf5kl7iQaux3aUtExwzZZwT7WbnCpctLhf3Xmhw8vd7MClbdYX0oUrkzn';
+const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE4NzcwMDEsInVpZCI6NjQ3MzQ1NTgsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM1MTEzMDV9fQ.AOlKh4ANqfmn4d15NBxgPMa6jLS7lgXTJ_9e-3uRMkUUl_SZi_5nI6bA4qBvXO-FgM8HMJXEYokbe0cP9lAim5LSAbxkhpiKzC1JpPV4PCUTJ7TKc2BuAyFdLxOHh7BvGLjprkYkeyQYCqxmCK6m0DIEG5ueF4l6CyzVbjMvlmu584lY';
 const PAYMENT_METHOD_ID = 34876858; // Mastercard ending 3162
 
 const CAPTCHA_KEY = 'c9f9650dcc39ce04c40e5414c201836a';
@@ -87,7 +87,7 @@ async function apiFind() {
     const allTimes = slots.map(s => (s.date?.start || '').match(/(\d{2}:\d{2})/)?.[1]).filter(Boolean);
 
     let pick = null;
-    const TARGET_HOUR = 21;
+    const TARGET_HOUR = 17;
     const TARGET_MIN = 0;
     const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
     const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
@@ -170,7 +170,7 @@ async function apiBook(bookToken) {
 
 async function main() {
   log('TORRISI SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 9:00 PM (fallback closest to 9pm, going lower)`);
+  log(`   Target: ${TARGET_DATE} — 5:00 PM (fallback closest to 5pm)`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log(`   Log file: ${LOG_FILE}`);

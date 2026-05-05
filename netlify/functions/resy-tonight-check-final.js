@@ -130,8 +130,8 @@ function extractResySlug(url) {
 // ── Resy tokens ──────────────────────────────────────────────────────────────
 const RESY_API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
 const RESY_TOKENS = [
-  // New account (uid 64640437) — added Mar 31
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3Nzg4NjcyMTgsInVpZCI6NjQ2NDA0MzcsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTMyNTg0MDZ9fQ.AbIb4_1fzODDTl7V4f7jpGRLurhHJ4dmYrDJY5VNqfonj8fGXTGDvm6QFD2DK8woHToIGR7esllXerxRL0x9cuQNAf2C7KrBseDuAQc0U-J-Hf2xub26Fh-CYRsF1ZQ-bc2TqylKGkhtrdImXz6qLy1sXiyH938NbR1nIJTNzT-_CYdv',
+  // uid 64734558 — updated May 5
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE4NzcwMDEsInVpZCI6NjQ3MzQ1NTgsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM1MTEzMDV9fQ.AOlKh4ANqfmn4d15NBxgPMa6jLS7lgXTJ_9e-3uRMkUUl_SZi_5nI6bA4qBvXO-FgM8HMJXEYokbe0cP9lAim5LSAbxkhpiKzC1JpPV4PCUTJ7TKc2BuAyFdLxOHh7BvGLjprkYkeyQYCqxmCK6m0DIEG5ueF4l6CyzVbjMvlmu584lY',
 ];
 let tokenIdx = 0;
 function getHeaders() {
@@ -577,7 +577,7 @@ async function main() {
     });
 
   if (bookedList.length > 0) {
-    const OFFSETS = [3, 7, 14];
+    const OFFSETS = [3, 7, 14, 21, 28];
     function futureDate(offset) {
       const d = new Date(); d.setDate(d.getDate() + offset);
       return d.toISOString().split('T')[0];
@@ -653,7 +653,7 @@ async function main() {
       if (calendarWorking !== false) {
         try {
           const resp = await fetch(
-            `https://api.resy.com/4/venue/calendar?venue_id=${venueId}&num_seats=${PARTY_SIZE}&start_date=${TODAY}&end_date=${futureDate(14)}`,
+            `https://api.resy.com/4/venue/calendar?venue_id=${venueId}&num_seats=${PARTY_SIZE}&start_date=${TODAY}&end_date=${futureDate(28)}`,
             { headers: getHeaders(), signal: AbortSignal.timeout(10000) }
           );
 

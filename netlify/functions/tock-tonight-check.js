@@ -25,7 +25,7 @@ const DEBUG = args.includes('--debug');
 
 const TODAY = new Date().toISOString().split('T')[0];
 const MASTER_FILE = path.join(__dirname, 'BOOKING_MASTER.json');
-const OUTPUT_FILE = path.join(__dirname, 'tonight_availability.json');
+const OUTPUT_FILE = path.join(__dirname, 'tonight_availability_tock.json');
 
 const PARTY_SIZE = 2;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
