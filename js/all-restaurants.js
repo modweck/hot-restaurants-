@@ -42,25 +42,33 @@ function arSetVibe(vibe, btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','new_rising'];
+    arState.hotspotFilters = [];
     arState.hotspotFilter = 'any';
     document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
   } else {
-    const idx = arState.hotspotFilters.indexOf(val);
-    if (idx > -1) {
-      arState.hotspotFilters.splice(idx, 1);
-      btn.classList.remove('on');
-    } else {
-      arState.hotspotFilters.push(val);
-      btn.classList.add('on');
-    }
+    // If coming from "All" (empty array = no filter), start fresh
     const anyBtn = document.getElementById('ar-hot-any');
+    if (arState.hotspotFilter === 'any') {
+      arState.hotspotFilters = [val];
+      anyBtn && anyBtn.classList.remove('on');
+      btn.classList.add('on');
+    } else {
+      const idx = arState.hotspotFilters.indexOf(val);
+      if (idx > -1) {
+        arState.hotspotFilters.splice(idx, 1);
+        btn.classList.remove('on');
+      } else {
+        arState.hotspotFilters.push(val);
+        btn.classList.add('on');
+      }
+    }
     if (arState.hotspotFilters.length > 0) {
       anyBtn && anyBtn.classList.remove('on');
       arState.hotspotFilter = arState.hotspotFilters[0];
     } else {
-      arState.hotspotFilter = 'none';
+      arState.hotspotFilter = 'any';
+      anyBtn && anyBtn.classList.add('on');
     }
   }
   // Coming Soon: render hardcoded list directly
