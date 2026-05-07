@@ -735,20 +735,6 @@ _sbGetUser().then(() => _updateAuthUI());
 
     <div class="divider"></div>
 
-    <!-- HEALTH RATING SEARCH -->
-    <div class="home-section" style="padding-top:14px">
-      <div class="section-header">
-        <div class="section-title">🏥 Health Inspection Grade</div>
-      </div>
-      <div style="display:flex;gap:8px;margin-bottom:12px">
-        <input type="text" id="healthSearchInput" placeholder="Search restaurant name..." style="flex:1;padding:12px 14px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none" onkeydown="if(event.key==='Enter')searchHealthGrade()">
-        <button onclick="searchHealthGrade()" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">Search</button>
-      </div>
-      <div id="healthResults" style="min-height:0"></div>
-    </div>
-
-    <div class="divider"></div>
-
     <!-- ALL RESTAURANTS NEARBY -->
     <div class="home-section" style="padding-top:14px">
       <div class="section-header">
@@ -996,6 +982,27 @@ _sbGetUser().then(() => _updateAuthUI());
       </div>
 
       <button class="sbtn" id="searchBtn" onclick="doSearch()">Find Hot Spots</button>
+
+      <!-- SEARCH RESTAURANT BY NAME -->
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)">
+        <span class="flabel">Search Restaurant</span>
+        <div style="display:flex;gap:8px;margin-top:4px">
+          <input type="text" id="restNameSearch" class="finput" placeholder="Type a restaurant name..." style="flex:1" onkeydown="if(event.key==='Enter')searchByName()">
+          <button onclick="searchByName()" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0">Search</button>
+        </div>
+        <div id="nameSearchResults" style="margin-top:8px"></div>
+      </div>
+
+      <!-- HEALTH INSPECTION GRADE -->
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)">
+        <span class="flabel">🏥 Health Inspection Grade</span>
+        <div style="display:flex;gap:8px;margin-top:4px">
+          <input type="text" id="healthSearchInput" class="finput" placeholder="Search restaurant name..." style="flex:1" onkeydown="if(event.key==='Enter')searchHealthGrade()">
+          <button onclick="searchHealthGrade()" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0">Search</button>
+        </div>
+        <div id="healthResults" style="margin-top:8px"></div>
+      </div>
+
       <div style="height:24px"></div>
     </div><!-- /form -->
 
@@ -4749,6 +4756,35 @@ function arSetRewardsFilter(val, btn) {
     }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
+// ─── SEARCH BY RESTAURANT NAME ────────────────────────────────────────────────
+function searchByName() {
+  const input = document.getElementById('restNameSearch').value.trim().toLowerCase();
+  const el = document.getElementById('nameSearchResults');
+  if (!input) return;
+
+  // Search through BOOKING_MASTER data that's already loaded
+  const matches = allNYCRestaurants.filter(r => (r.name || '').toLowerCase().includes(input)).slice(0, 10);
+
+  if (!matches.length) {
+    el.innerHTML = '<div style="padding:12px 0;color:#888;font-size:12px">No restaurants found. Try the main search above.</div>';
+    return;
+  }
+
+  el.innerHTML = matches.map(r => {
+    const rating = r.googleRating ? `⭐ ${r.googleRating}` : '';
+    const cuisine = r.cuisine || '';
+    const bp = r.booking_platform || 'website';
+    const url = r.booking_url || r.website || '#';
+    return `<div style="padding:10px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#1a1a2e">${r.name}</div>
+        <div style="font-size:11px;color:#888;margin-top:2px">${cuisine} ${rating}</div>
+      </div>
+      ${url !== '#' ? `<a href="${url}" target="_blank" rel="noopener" style="font-size:11px;font-weight:700;color:#1b4332;text-decoration:none;padding:6px 12px;border:1px solid #1b4332;border-radius:8px">Book</a>` : ''}
+    </div>`;
+  }).join('');
 }
 
 // ─── HEALTH INSPECTION SEARCH ─────────────────────────────────────────────────
