@@ -4308,7 +4308,9 @@ function display(restaurants) {
       }
       if (af === 'tonight') {
         if (!realPlatform) return false;
-        return tier === 'open' || tier === 'fully_open';
+        if (tier !== 'open' && tier !== 'fully_open') return false;
+        // Must have all three windows available
+        return r.early === 'available' && r.prime === 'available' && r.late === 'available';
       }
       if (af === 'limited' || af === 'booked_solid' || af === 'early' || af === 'prime' || af === 'late') {
         if (!realPlatform) return false;
@@ -5169,7 +5171,8 @@ function applyARFilters(list) {
       }
       if (af === 'tonight') {
         if (!realPlatform) return false;
-        return tier === 'open' || tier === 'fully_open';
+        if (tier !== 'open' && tier !== 'fully_open') return false;
+        return r.early === 'available' && r.prime === 'available' && r.late === 'available';
       }
       if (!realPlatform) return false;
       if (!tier) return false;
