@@ -1041,6 +1041,17 @@ _sbGetUser().then(() => _updateAuthUI());
       </div>
       <div id="warnings"></div>
       <div id="list"></div>
+
+      <!-- HEALTH INSPECTION GRADE (on results page) -->
+      <div style="margin:24px 16px;padding:16px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 3px rgba(0,0,0,.03)">
+        <span class="flabel" style="margin-bottom:8px;display:block">🏥 Health Inspection Grade</span>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="healthSearchInput2" class="finput" placeholder="Search restaurant name..." style="flex:1" onkeydown="if(event.key==='Enter')searchHealthGrade('healthSearchInput2','healthResults2')">
+          <button onclick="searchHealthGrade('healthSearchInput2','healthResults2')" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0">Search</button>
+        </div>
+        <div id="healthResults2" style="margin-top:8px"></div>
+      </div>
+
       <div style="height:80px"></div>
     </div>
 
@@ -4788,9 +4799,9 @@ function searchByName() {
 }
 
 // ─── HEALTH INSPECTION SEARCH ─────────────────────────────────────────────────
-async function searchHealthGrade() {
-  const input = document.getElementById('healthSearchInput').value.trim();
-  const resultsEl = document.getElementById('healthResults');
+async function searchHealthGrade(inputId, resultsId) {
+  const input = document.getElementById(inputId || 'healthSearchInput').value.trim();
+  const resultsEl = document.getElementById(resultsId || 'healthResults');
   if (!input) return;
 
   resultsEl.innerHTML = '<div style="text-align:center;padding:20px;color:#888;font-size:13px">Searching...</div>';
