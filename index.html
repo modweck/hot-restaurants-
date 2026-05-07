@@ -735,6 +735,20 @@ _sbGetUser().then(() => _updateAuthUI());
 
     <div class="divider"></div>
 
+    <!-- HEALTH RATING SEARCH -->
+    <div class="home-section" style="padding-top:14px">
+      <div class="section-header">
+        <div class="section-title">🏥 Health Inspection Grade</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <input type="text" id="healthSearchInput" placeholder="Search restaurant name..." style="flex:1;padding:12px 14px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none" onkeydown="if(event.key==='Enter')searchHealthGrade()">
+        <button onclick="searchHealthGrade()" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif">Search</button>
+      </div>
+      <div id="healthResults" style="min-height:0"></div>
+    </div>
+
+    <div class="divider"></div>
+
     <!-- ALL RESTAURANTS NEARBY -->
     <div class="home-section" style="padding-top:14px">
       <div class="section-header">
@@ -4735,6 +4749,71 @@ function arSetRewardsFilter(val, btn) {
     }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
+}
+
+// ─── HEALTH INSPECTION SEARCH ─────────────────────────────────────────────────
+async function searchHealthGrade() {
+  const input = document.getElementById('healthSearchInput').value.trim();
+  const resultsEl = document.getElementById('healthResults');
+  if (!input) return;
+
+  resultsEl.innerHTML = '<div style="text-align:center;padding:20px;color:#888;font-size:13px">Searching...</div>';
+
+  try {
+    const resp = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?$where=upper(dba) like '%25${encodeURIComponent(input.toUpperCase())}%25'&$order=inspection_date DESC&$limit=50`);
+    const data = await resp.json();
+
+    if (!data.length) {
+      resultsEl.innerHTML = '<div style="text-align:center;padding:20px;color:#888;font-size:13px">No results found. Try a different name.</div>';
+      return;
+    }
+
+    // Group by restaurant (camis = unique ID), take latest inspection per restaurant
+    const byRestaurant = {};
+    for (const row of data) {
+      const id = row.camis;
+      if (!byRestaurant[id] || row.inspection_date > byRestaurant[id].inspection_date) {
+        byRestaurant[id] = row;
+      }
+    }
+
+    const restaurants = Object.values(byRestaurant)
+      .filter(r => r.grade)
+      .sort((a, b) => (b.inspection_date || '').localeCompare(a.inspection_date || ''));
+
+    if (!restaurants.length) {
+      resultsEl.innerHTML = '<div style="text-align:center;padding:20px;color:#888;font-size:13px">No graded inspections found.</div>';
+      return;
+    }
+
+    let html = '';
+    for (const r of restaurants.slice(0, 10)) {
+      const grade = r.grade || '?';
+      const score = r.score || '?';
+      const date = r.inspection_date ? new Date(r.inspection_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+      const name = (r.dba || '').split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ');
+      const addr = [(r.building || ''), (r.street || '')].filter(Boolean).join(' ');
+      const boro = r.boro || '';
+
+      let gradeColor, gradeBg;
+      if (grade === 'A') { gradeColor = '#15803d'; gradeBg = '#dcfce7'; }
+      else if (grade === 'B') { gradeColor = '#a16207'; gradeBg = '#fef9c3'; }
+      else { gradeColor = '#dc2626'; gradeBg = '#fef2f2'; }
+
+      html += `<div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:14px">
+        <div style="width:48px;height:48px;border-radius:12px;background:${gradeBg};display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:${gradeColor};flex-shrink:0;border:1px solid ${gradeColor}22">${grade}</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700;color:#1a1a2e">${name}</div>
+          <div style="font-size:11px;color:#888;margin-top:2px">${addr}, ${boro}</div>
+          <div style="font-size:11px;color:#aaa;margin-top:2px">Score: ${score} &middot; ${date}</div>
+        </div>
+      </div>`;
+    }
+
+    resultsEl.innerHTML = html;
+  } catch (e) {
+    resultsEl.innerHTML = '<div style="text-align:center;padding:20px;color:#dc2626;font-size:13px">Error searching. Try again.</div>';
+  }
 }
 
 function arSetHotspot(val, btn) {
