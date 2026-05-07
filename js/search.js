@@ -376,6 +376,7 @@ function display(restaurants) {
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
       if (rf==='seated') return r.seated;
+      if (rf==='franki') return r.franki;
       return true;
     }));
   }

@@ -950,6 +950,7 @@ _sbGetUser().then(() => _updateAuthUI());
           <button class="fchip" id="rw-rakuten" onclick="setRewardsFilter('rakuten',this)">Rakuten</button>
           <button class="fchip" id="rw-inkind" onclick="setRewardsFilter('inkind',this)">inKind</button>
           <button class="fchip" id="rw-seated" onclick="setRewardsFilter('seated',this)">Seated</button>
+          <button class="fchip" id="rw-franki" onclick="setRewardsFilter('franki',this)">Franki</button>
         </div>
       </div>
 
@@ -1261,6 +1262,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <button class="fchip" id="ar-rw-rakuten" onclick="arSetRewardsFilter('rakuten',this)">Rakuten</button>
             <button class="fchip" id="ar-rw-inkind" onclick="arSetRewardsFilter('inkind',this)">inKind</button>
             <button class="fchip" id="ar-rw-seated" onclick="arSetRewardsFilter('seated',this)">Seated</button>
+            <button class="fchip" id="ar-rw-franki" onclick="arSetRewardsFilter('franki',this)">Franki</button>
           </div>
         </div>
 
@@ -4288,6 +4290,7 @@ function display(restaurants) {
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
       if (rf==='seated') return r.seated;
+      if (rf==='franki') return r.franki;
       return true;
     }));
   }
@@ -5126,6 +5129,7 @@ function applyARFilters(list) {
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
       if (rf==='seated') return r.seated;
+      if (rf==='franki') return r.franki;
       return true;
     }));
   }
