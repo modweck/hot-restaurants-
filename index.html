@@ -709,6 +709,7 @@ _sbGetUser().then(() => _updateAuthUI());
             <span class="filter-section-label">Available Tonight</span>
             <div style="display:flex;gap:6px;flex-wrap:wrap">
               <button class="fchip on" id="avail-any" onclick="setAvailFilter('any',this)">Any Time</button>
+              <button class="fchip" id="avail-tonight" onclick="setAvailFilter('tonight',this)">Available Tonight</button>
               <button class="fchip" id="avail-limited" onclick="setAvailFilter('limited',this)">Limited</button>
               <button class="fchip" id="avail-booked" onclick="setAvailFilter('booked_solid',this)">Very Hard to Book</button>
               <button class="fchip" id="avail-early" onclick="setAvailFilter('early',this)">Early 5-6:15</button>
@@ -1149,6 +1150,7 @@ _sbGetUser().then(() => _updateAuthUI());
           <span class="flabel">Available Tonight</span>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <button class="fchip on" id="ar-avail-any" onclick="arSetAvail('any',this)">Any Time</button>
+            <button class="fchip" id="ar-avail-tonight" onclick="arSetAvail('tonight',this)">Available Tonight</button>
             <button class="fchip" id="ar-avail-limited" onclick="arSetAvail('limited',this)">Limited</button>
             <button class="fchip" id="ar-avail-book_ahead" onclick="arSetAvail('book_ahead',this)">Book in Advance</button>
             <button class="fchip" id="ar-avail-booked" onclick="arSetAvail('booked_solid',this)">Very Hard to Book</button>
@@ -4304,6 +4306,10 @@ function display(restaurants) {
         if (state.daysFilter) return r.opens_in === state.daysFilter;
         return true;
       }
+      if (af === 'tonight') {
+        if (!realPlatform) return false;
+        return tier === 'open' || tier === 'fully_open';
+      }
       if (af === 'limited' || af === 'booked_solid' || af === 'early' || af === 'prime' || af === 'late') {
         if (!realPlatform) return false;
         if (!tier) return false;
@@ -5160,6 +5166,10 @@ function applyARFilters(list) {
         if (!((tier === 'booked' || allDinnerBooked) && r.opens_in && r.opens_in <= maxDays)) return false;
         if (arState.daysFilter) return r.opens_in === arState.daysFilter;
         return true;
+      }
+      if (af === 'tonight') {
+        if (!realPlatform) return false;
+        return tier === 'open' || tier === 'fully_open';
       }
       if (!realPlatform) return false;
       if (!tier) return false;
