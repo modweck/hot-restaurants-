@@ -4278,16 +4278,16 @@ function display(restaurants) {
     list = list.filter(r => !isBiltOnly(r));
   }
 
-  if (state.rewardsFilter!=='any') {
-    const rf = state.rewardsFilter;
-    list = list.filter(r => {
+  const rfs = (state.rewardsFilters && state.rewardsFilters.length > 0) ? state.rewardsFilters : (state.rewardsFilter !== 'any' ? [state.rewardsFilter] : []);
+  if (rfs.length > 0) {
+    list = list.filter(r => rfs.every(rf => {
       if (rf==='bilt') return r.bilt_dining || r.booking_platform==='bilt';
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
       if (rf==='seated') return r.seated;
       return true;
-    });
+    }));
   }
 
   // ── Availability filter (skip when searching by restaurant name) ──
@@ -4904,13 +4904,13 @@ function renderCardAR(r) {
   if (r.seated)
     badges += `<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);text-decoration:none;cursor:pointer">Seated Cash Back</a>`;
   // inKind badge
-  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind'))
+  if (r.inkind && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'inkind' || arState.rewardsFilters?.includes('inkind')))
     badges += `<a href="https://app.inkind.com/refer/PKPQT3GI" target="_blank" rel="noopener" class="badge inkind" style="text-decoration:none;cursor:pointer">inKind 20% Off</a>`;
-  // Bilt badge — only show when Bilt filter is active
-  if (r.bilt_dining && arState.rewardsFilter === 'bilt')
+  // Bilt badge
+  if (r.bilt_dining && (hasBookingPlatform(r) || arState.rewardsFilter === 'bilt' || arState.rewardsFilters?.includes('bilt')))
     badges += `<span class="badge bilt">Bilt Dining</span>`;
   // Rakuten badge
-  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten'))
+  if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten' || arState.rewardsFilters?.includes('rakuten')))
     badges += `<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="badge rakuten" style="text-decoration:none;cursor:pointer">Rakuten Cash Back</a>`;
 
   // Instagram Influencers collapsible badge
@@ -5103,20 +5103,21 @@ function applyARFilters(list) {
     list = list.filter(r => { const cc = (r.cuisine || '').toLowerCase().trim(); return arCuis.some(cs => cc.includes(cs.toLowerCase()) || (cc && cs.toLowerCase().includes(cc))); });
   }
   // Hide bilt-only restaurants (no booking URL) unless user specifically picked Bilt filter
-  if (arState.rewardsFilter !== 'bilt') {
+  const arHasBilt = arState.rewardsFilters?.includes('bilt') || arState.rewardsFilter === 'bilt';
+  if (!arHasBilt) {
     list = list.filter(r => !isBiltOnly(r));
   }
 
-  const rf = arState.rewardsFilter;
-  if (rf !== 'any') {
-    list = list.filter(r => {
+  const arRfs = (arState.rewardsFilters && arState.rewardsFilters.length > 0) ? arState.rewardsFilters : (arState.rewardsFilter !== 'any' ? [arState.rewardsFilter] : []);
+  if (arRfs.length > 0) {
+    list = list.filter(r => arRfs.every(rf => {
       if (rf==='bilt') return r.bilt_dining || r.booking_platform==='bilt';
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
       if (rf==='inkind') return r.inkind;
       if (rf==='seated') return r.seated;
       return true;
-    });
+    }));
   }
   // ── Hot Spots filter (multi-select OR logic) ──
   const hsfs = (arState.hotspotFilters && arState.hotspotFilters.length > 0) ? arState.hotspotFilters : [];

@@ -370,7 +370,7 @@ function display(restaurants) {
 
   const rfs = (state.rewardsFilters && state.rewardsFilters.length > 0) ? state.rewardsFilters : (state.rewardsFilter !== 'any' ? [state.rewardsFilter] : []);
   if (rfs.length > 0) {
-    list = list.filter(r => rfs.some(rf => {
+    list = list.filter(r => rfs.every(rf => {
       if (rf==='bilt') return r.bilt_dining || r.booking_platform==='bilt';
       if (rf==='chase_sapphire') return r.chase_sapphire;
       if (rf==='rakuten') return r.rakuten;
