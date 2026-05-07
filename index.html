@@ -4733,26 +4733,22 @@ function arSetRewardsFilter(val, btn) {
 
 function arSetHotspot(val, btn) {
   if (val === 'any') {
-    if (arState.hotspotFilter === 'any') {
-      // Already on "All" — toggle OFF to no filter and collapse section
+    if (arState.hotspotFilter === 'all_hotspots') {
+      // Already on "All" hot spots — toggle OFF, show all restaurants
       arState.hotspotFilters = [];
       arState.hotspotFilter = 'none';
       document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
-      const hsBody = document.getElementById('arHotspotFilters');
-      const hsToggle = hsBody?.previousElementSibling;
-      if (hsBody) hsBody.classList.remove('open');
-      if (hsToggle) hsToggle.classList.remove('open');
     } else {
-      // Turn on "All" — show all hot spot types
+      // Turn on "All" hot spots
       arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising'];
       arState.hotspotFilter = 'all_hotspots';
       document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
       btn.classList.add('on');
     }
   } else {
-    // If coming from "All" (empty array), start fresh with just this filter
     const anyBtn = document.getElementById('ar-hot-any');
-    if (arState.hotspotFilter === 'any' || arState.hotspotFilter === 'all_hotspots') {
+    if (arState.hotspotFilter === 'none' || arState.hotspotFilter === 'all_hotspots') {
+      // Starting fresh from no filter or All — select just this one
       arState.hotspotFilters = [val];
       anyBtn && anyBtn.classList.remove('on');
       document.querySelectorAll('[id^="ar-hot-"]').forEach(b => b.classList.remove('on'));
@@ -4762,8 +4758,14 @@ function arSetHotspot(val, btn) {
       if (idx > -1) { arState.hotspotFilters.splice(idx, 1); btn.classList.remove('on'); }
       else { arState.hotspotFilters.push(val); btn.classList.add('on'); }
     }
-    if (arState.hotspotFilters.length > 0) { anyBtn && anyBtn.classList.remove('on'); arState.hotspotFilter = arState.hotspotFilters[0]; }
-    else { arState.hotspotFilters = ['michelin','michelin_rec','nyt','press','timeout','instagram','exceptional','new_rising']; arState.hotspotFilter = 'all_hotspots'; anyBtn && anyBtn.classList.add('on'); }
+    if (arState.hotspotFilters.length > 0) {
+      anyBtn && anyBtn.classList.remove('on');
+      arState.hotspotFilter = arState.hotspotFilters[0];
+    } else {
+      // All deselected — remove filter, show all restaurants
+      arState.hotspotFilters = [];
+      arState.hotspotFilter = 'none';
+    }
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
