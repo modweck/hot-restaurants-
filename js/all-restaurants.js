@@ -416,8 +416,9 @@ function displayAllNYC(restaurants) {
 
     // Website-only without hot spot badge → push to bottom
     const _isHS = r => r.michelin || r.bib_gourmand || r.nyt_top_100 || r.pete_wells || (r.buzz_sources && r.buzz_sources.length > 0) || (r.instagram_buzz && r.instagram_buzz.length > 0) || r.new_rising;
-    const aWO = a.booking_platform === 'website' && !_isHS(a);
-    const bWO = b.booking_platform === 'website' && !_isHS(b);
+    const _isWO = r => r.booking_platform === 'website' || (!r.booking_platform && !r.booking_url);
+    const aWO = _isWO(a) && !_isHS(a);
+    const bWO = _isWO(b) && !_isHS(b);
     if (aWO && !bWO) return 1;
     if (!aWO && bWO) return -1;
 

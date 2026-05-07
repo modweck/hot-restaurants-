@@ -407,8 +407,9 @@ function display(restaurants) {
 
     // Website-only without hot spot badge → push to bottom
     const _isHotSpot = r => r.michelin || r.bib_gourmand || r.nyt_top_100 || r.pete_wells || (r.buzz_sources && r.buzz_sources.length > 0) || (r.instagram_buzz && r.instagram_buzz.length > 0) || r.new_rising;
-    const aWebOnly = a.booking_platform === 'website' && !_isHotSpot(a);
-    const bWebOnly = b.booking_platform === 'website' && !_isHotSpot(b);
+    const _isWebOnly = r => r.booking_platform === 'website' || (!r.booking_platform && !r.booking_url);
+    const aWebOnly = _isWebOnly(a) && !_isHotSpot(a);
+    const bWebOnly = _isWebOnly(b) && !_isHotSpot(b);
     if (aWebOnly && !bWebOnly) return 1;
     if (!aWebOnly && bWebOnly) return -1;
 
