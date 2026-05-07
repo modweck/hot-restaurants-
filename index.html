@@ -3653,6 +3653,18 @@ function hasBookingPlatform(r) {
   const p = r.booking_platform || r.platform || '';
   return p && p !== 'walk_in' && p !== 'website' && p !== 'walkin' && p !== 'bilt';
 }
+// Push website-only (no real booking platform, no hot spot badge) to end of any sorted list
+function pushWebsiteToBottom(list) {
+  const isHotSpot = r => r.michelin || r.bib_gourmand || r.nyt_top_100 || r.pete_wells || (r.buzz_sources && r.buzz_sources.length > 0) || (r.instagram_buzz && r.instagram_buzz.length > 0) || r.new_rising;
+  const bookable = [], websiteOnly = [];
+  for (const r of list) {
+    if (hasBookingPlatform(r) || isHotSpot(r)) bookable.push(r);
+    else websiteOnly.push(r);
+  }
+  list.length = 0;
+  list.push(...bookable, ...websiteOnly);
+  return list;
+}
 let allRestaurants = [], rawRestaurants = [], abortCtrl = null, searching = false;
 var hotSpotsSortBy = 'rating';
 function setSortOrder(val) {
@@ -4316,6 +4328,13 @@ function display(restaurants) {
     const bHasData = (Number(b.googleRating||0) > 0) || !!(b.booking_url);
     if (aHasData && !bHasData) return -1;
     if (!aHasData && bHasData) return 1;
+    // No real booking platform → push to bottom (unless hot spot)
+    const _isHS2 = r => r.michelin || r.bib_gourmand || r.nyt_top_100 || r.pete_wells || (r.buzz_sources && r.buzz_sources.length > 0) || (r.instagram_buzz && r.instagram_buzz.length > 0) || r.new_rising;
+    const _hasRB2 = r => { const bp = (r.booking_platform||'').toLowerCase(); return bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve'; };
+    const aWO2 = !_hasRB2(a) && !_isHS2(a);
+    const bWO2 = !_hasRB2(b) && !_isHS2(b);
+    if (aWO2 && !bWO2) return 1;
+    if (!aWO2 && bWO2) return -1;
     const rcA = Number(a.googleReviewCount||0), rcB = Number(b.googleReviewCount||0);
     const isWalkA = a.booking_platform==='walk_in'||a.booking_platform==='walkin';
     const isWalkB = b.booking_platform==='walk_in'||b.booking_platform==='walkin';
@@ -4354,6 +4373,7 @@ function display(restaurants) {
   } else {
     list.sort(_sortBySortBy);
   }
+  pushWebsiteToBottom(list);
 
   const avail=[], radar=[];
   list.forEach(r => { avail.push(r); });
@@ -5187,6 +5207,7 @@ function displayAllNYC(restaurants) {
       return 0;
     });
   }
+  pushWebsiteToBottom(filtered);
   lazyRender('ar', document.getElementById('allRestList'), filtered, renderCardAR, '');
 }
 

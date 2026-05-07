@@ -405,13 +405,15 @@ function display(restaurants) {
     if (aHasData && !bHasData) return -1;
     if (!aHasData && bHasData) return 1;
 
-    // Website-only without hot spot badge → push to bottom
+    // No real booking platform → push to bottom (unless hot spot)
     const _isHotSpot = r => r.michelin || r.bib_gourmand || r.nyt_top_100 || r.pete_wells || (r.buzz_sources && r.buzz_sources.length > 0) || (r.instagram_buzz && r.instagram_buzz.length > 0) || r.new_rising;
-    const _isWebOnly = r => r.booking_platform === 'website' || (!r.booking_platform && !r.booking_url);
-    const aWebOnly = _isWebOnly(a) && !_isHotSpot(a);
-    const bWebOnly = _isWebOnly(b) && !_isHotSpot(b);
+    const _hasRealBooking = r => { const bp = (r.booking_platform||'').toLowerCase(); return bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve'; };
+    const aWebOnly = !_hasRealBooking(a) && !_isHotSpot(a);
+    const bWebOnly = !_hasRealBooking(b) && !_isHotSpot(b);
     if (aWebOnly && !bWebOnly) return 1;
     if (!aWebOnly && bWebOnly) return -1;
+    // DEBUG: remove after testing
+    if (aWebOnly || bWebOnly) console.log('SORT DEBUG:', a.name, 'bp:', a.booking_platform, 'webOnly:', aWebOnly, '|', b.name, 'bp:', b.booking_platform, 'webOnly:', bWebOnly);
 
     if (hotSpotsSortBy === 'distance') {
       const dA = a.distanceMiles != null ? a.distanceMiles : 9999;
