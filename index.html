@@ -1702,9 +1702,12 @@ _sbGetUser().then(() => _updateAuthUI());
     <!-- HEALTH INSPECTION GRADE -->
     <div style="margin:0 20px 24px;padding:16px;background:#fff;border-radius:14px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 3px rgba(0,0,0,.03)">
       <span class="flabel" style="margin-bottom:8px;display:block">🏥 Health Inspection Grade</span>
-      <div style="display:flex;gap:8px">
-        <input type="text" id="healthSearchInput4" class="finput" placeholder="Search restaurant name..." style="flex:1" onkeydown="if(event.key==='Enter')searchHealthGrade('healthSearchInput4','healthResults4')">
-        <button onclick="searchHealthGrade('healthSearchInput4','healthResults4')" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0">Search</button>
+      <div style="position:relative">
+        <div style="display:flex;gap:8px">
+          <input type="text" id="healthSearchInput4" class="finput" placeholder="Search restaurant name..." style="flex:1" autocomplete="off" oninput="_healthAutocomplete(this.value)" onkeydown="if(event.key==='Enter'){document.getElementById('healthAutoList4').style.display='none';searchHealthGrade('healthSearchInput4','healthResults4')}">
+          <button onclick="document.getElementById('healthAutoList4').style.display='none';searchHealthGrade('healthSearchInput4','healthResults4')" style="padding:10px 16px;background:#1b4332;color:#fff;border:none;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0">Search</button>
+        </div>
+        <div id="healthAutoList4" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid rgba(0,0,0,.06);border-top:none;border-radius:0 0 14px 14px;max-height:300px;overflow-y:auto;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.08)"></div>
       </div>
       <div id="healthResults4" style="margin-top:8px"></div>
     </div>
@@ -4822,6 +4825,37 @@ function searchByName() {
 }
 
 // ─── HEALTH INSPECTION SEARCH ─────────────────────────────────────────────────
+let _healthAutoTimer = null;
+function _healthAutocomplete(val) {
+  clearTimeout(_healthAutoTimer);
+  const list = document.getElementById('healthAutoList4');
+  if (!val || val.length < 2) { list.style.display = 'none'; return; }
+  _healthAutoTimer = setTimeout(async () => {
+    try {
+      const resp = await fetch(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?$where=upper(dba) like '%25${encodeURIComponent(val.toUpperCase())}%25'&$order=inspection_date DESC&$limit=30`);
+      const data = await resp.json();
+      // Dedupe by restaurant name
+      const seen = new Set();
+      const unique = [];
+      for (const r of data) {
+        const name = (r.dba || '').toLowerCase();
+        if (!seen.has(name) && r.grade) { seen.add(name); unique.push(r); }
+      }
+      if (!unique.length) { list.style.display = 'none'; return; }
+      list.innerHTML = unique.slice(0, 8).map(r => {
+        const name = (r.dba || '').split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ');
+        const grade = r.grade || '';
+        const gradeColor = grade === 'A' ? '#15803d' : grade === 'B' ? '#a16207' : '#dc2626';
+        return `<div onclick="document.getElementById('healthSearchInput4').value='${name.replace(/'/g,"\\'")}';document.getElementById('healthAutoList4').style.display='none';searchHealthGrade('healthSearchInput4','healthResults4')" style="padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,.04)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">
+          <div><div style="font-size:13px;font-weight:600;color:#1a1a2e">${name}</div><div style="font-size:11px;color:#999">${r.cuisine_description || ''}</div></div>
+          <span style="font-weight:800;color:${gradeColor};font-size:16px">${grade}</span>
+        </div>`;
+      }).join('');
+      list.style.display = 'block';
+    } catch(e) { list.style.display = 'none'; }
+  }, 300);
+}
+
 async function searchHealthGrade(inputId, resultsId) {
   const input = document.getElementById(inputId || 'healthSearchInput').value.trim();
   const resultsEl = document.getElementById(resultsId || 'healthResults');
