@@ -1351,6 +1351,7 @@ exports.handler = async (event) => {
         bilt_dining: r.bilt_dining || null,
         inkind: r.inkind || null,
         franki: r.franki || null,
+        min_party_size: r.min_party_size || null,
         seated: r.seated || null,
         cuisine: r.cuisine || null,
         instagram: r.instagram || null,

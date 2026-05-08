@@ -4041,6 +4041,9 @@ function renderCard(r, isRadar) {
   // Franki badge
   if (r.franki && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'franki' || state.rewardsFilters?.includes('franki')))
     badges += `<span class="badge" style="background:#fff3e0;color:#e65100;border:1px solid rgba(230,81,0,.2)">🎬 Franki Cash Back</span>`;
+  // Min party size badge
+  if (r.min_party_size && r.min_party_size > 1)
+    badges += `<span class="badge" style="background:#f0f4ff;color:#3b5998;border:1px solid rgba(59,89,152,.2)">👥 Party of ${r.min_party_size}+</span>`;
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || state.rewardsFilter === 'rakuten'))
     badges += `<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="badge rakuten" style="text-decoration:none;cursor:pointer">Rakuten Cash Back</a>`;
 
@@ -5074,6 +5077,9 @@ function renderCardAR(r) {
   // Franki badge
   if (r.franki && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'franki' || arState.rewardsFilters?.includes('franki')))
     badges += `<span class="badge" style="background:#fff3e0;color:#e65100;border:1px solid rgba(230,81,0,.2)">🎬 Franki Cash Back</span>`;
+  // Min party size badge
+  if (r.min_party_size && r.min_party_size > 1)
+    badges += `<span class="badge" style="background:#f0f4ff;color:#3b5998;border:1px solid rgba(59,89,152,.2)">👥 Party of ${r.min_party_size}+</span>`;
   if (r.rakuten && (hasBookingPlatform(r) || r.booking_platform === 'website' || arState.rewardsFilter === 'rakuten' || arState.rewardsFilters?.includes('rakuten')))
     badges += `<a href="https://www.rakuten.com/r/MASTER11579" target="_blank" rel="noopener" class="badge rakuten" style="text-decoration:none;cursor:pointer">Rakuten Cash Back</a>`;
 
