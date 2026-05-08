@@ -2991,7 +2991,7 @@ function _restAutocomplete(query, listId) {
   _autoTimeout = setTimeout(async () => {
     const names = await _loadRestNames();
     const q = query.toLowerCase();
-    const matches = names.filter(r => r.name.toLowerCase().includes(q)).slice(0, 8);
+    const matches = names.filter(r => r.name.toLowerCase().startsWith(q)).slice(0, 8);
     if (!matches.length) { el.style.display = 'none'; return; }
     el.innerHTML = matches.map(r => {
       const ratingStr = r.rating > 0 ? `⭐ ${r.rating}` : '';
@@ -4830,7 +4830,7 @@ function _healthAutocomplete(val) {
   if (!val || val.length < 2) { list.style.display = 'none'; return; }
   // Search YOUR restaurant database, not the NYC API
   const vl = val.toLowerCase();
-  const matches = allNYCRestaurants.filter(r => (r.name || '').toLowerCase().includes(vl)).slice(0, 8);
+  const matches = allNYCRestaurants.filter(r => (r.name || '').toLowerCase().startsWith(vl)).slice(0, 8);
   if (!matches.length) { list.style.display = 'none'; return; }
   list.innerHTML = matches.map(r => {
     const name = r.name || '';
