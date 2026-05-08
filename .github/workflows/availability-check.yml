@@ -1,0 +1,30 @@
+name: Daily Availability Check
+
+on:
+  schedule:
+    # 10:30 AM ET (14:30 UTC)
+    - cron: '30 14 * * *'
+  workflow_dispatch: # Manual trigger from GitHub UI
+
+jobs:
+  google-reserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Google Reserve availability check
+        run: node scripts/google-reserve-node.js
+
+      - name: Commit and push results
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add netlify/functions/tonight_availability_google.json
+          git diff --cached --quiet || git commit -m "Auto-update Google Reserve availability $(date +%Y-%m-%d)"
+          git push
