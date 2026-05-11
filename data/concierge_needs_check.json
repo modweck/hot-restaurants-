@@ -1,0 +1,39 @@
+{
+  "special_drop_patterns": [
+    {
+      "name": "Ramen By Ra",
+      "issue": "Drops only on 1st and 15th at 9am. 1st releases 16th-end of month, 15th releases 1st-15th of next month."
+    },
+    {
+      "name": "Dashi Okume Brooklyn",
+      "issue": "Drops around 1st and 15th at 11am. Releases full month's dates at once."
+    }
+  ],
+  "need_drop_time": [
+    {
+      "name": "4 Charles Prime Rib",
+      "window": 20,
+      "issue": "Drop time unknown"
+    },
+    {
+      "name": "Ambassadors Clubhouse New York",
+      "window": 20,
+      "issue": "Drop time unknown"
+    },
+    {
+      "name": "Little Egg",
+      "window": 20,
+      "issue": "Drop time unknown. Is this a lunch spot? Check hours."
+    }
+  ],
+  "closed_days_need_testing": [
+    {
+      "name": "Bungalow",
+      "issue": "Closed Mondays — calendar skips but needs real-world testing"
+    },
+    {
+      "name": "Ha's Snack Bar",
+      "issue": "Closed Sunday & Monday — calendar skips but needs real-world testing"
+    }
+  ]
+}
