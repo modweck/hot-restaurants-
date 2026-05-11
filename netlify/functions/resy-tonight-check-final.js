@@ -115,6 +115,16 @@ catch (e) { console.error('❌ Cannot load booking_lookup.json'); process.exit(1
 let EXISTING = {};
 try { EXISTING = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8')); } catch (e) {}
 
+// ── Exclusion list: restaurants that should NOT be overwritten by this script ──
+// These are manually managed (closed, walk-in, bars, wrong platform, etc.)
+const EXCLUDE_FROM_RECHECK = new Set([
+  '30 love', 'bar primi bowery', 'gugu room', 'little prince',
+  'ootoya - times square', "winona's", 'futago soho', 'yakiniku futago soho',
+  'peacock alley at waldorf astoria new york', 'baylander steel beach',
+  'frying pan nyc', 'empress room', 'russ & daughters cafe', 'russ and daughters cafe',
+  'lucali ny', 'jongro bbq', 'jongro bbq market',
+]);
+
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // ── Resy URL → slug ───────────────────────────────────────────────────────────
@@ -440,10 +450,14 @@ async function main() {
 
   for (let i = 0; i < list.length; i++) {
     const r = list[i];
+    const key = r.name.toLowerCase().trim();
+
+    // Skip excluded restaurants (manually managed — closed, walk-in, bars, etc.)
+    if (EXCLUDE_FROM_RECHECK.has(key)) { skipped++; continue; }
+
     process.stdout.write(`  [${i + 1}/${list.length}] ${r.name.substring(0, 38).padEnd(38)} `);
 
     const result = await checkOne(r.name, r.url, CHECK_DATE, PARTY_SIZE);
-    const key = r.name.toLowerCase().trim();
 
     if (result) {
       // Track API health: was this a real result or suspicious 0 slots?
