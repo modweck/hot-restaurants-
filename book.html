@@ -237,16 +237,16 @@
 const RESTAURANTS = [
   { name: 'Torrisi', slug: 'torrisi', venue_id: 64593, drop_days: 30, drop_hour: 10, hood: 'Nolita' },
   { name: 'Carbone', slug: 'carbone', venue_id: 6194, drop_days: 30, drop_hour: 10, hood: 'Greenwich Village' },
-  { name: 'Via Carota', slug: 'via-carota', venue_id: 25973, drop_days: 30, drop_hour: 10, hood: 'West Village' },
-  { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 20, drop_hour: 9, hood: 'Midtown' },
-  { name: 'Theodora', slug: 'theodora', venue_id: 0, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
-  { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 0, drop_days: 14, drop_hour: 8, hood: 'Upper East Side' },
-  { name: 'The Four Horsemen', slug: 'the-four-horsemen', venue_id: 1284, drop_days: 30, drop_hour: 10, hood: 'Williamsburg' },
-  { name: 'Bong', slug: 'bong', venue_id: 86413, drop_days: 19, drop_hour: 0, hood: 'Crown Heights' },
-  { name: 'Jeju Noodle Bar', slug: 'jeju-noodle-bar', venue_id: 1543, drop_days: 44, drop_hour: 0, hood: 'West Village' },
-  { name: 'FREE RANGE at Double Chicken Please', slug: 'free-range-at-double-chicken-please', venue_id: 70330, drop_days: 6, drop_hour: 0, hood: 'Lower East Side' },
-  { name: 'Bungalow', slug: 'bungalow-ny', venue_id: 71822, drop_days: 20, drop_hour: 11, hood: 'East Village' },
-  { name: "Ha's Snack Bar", slug: 'has-snack-bar', venue_id: 85855, drop_days: 19, drop_hour: 12, hood: 'Lower East Side' },
+  { name: 'Via Carota', slug: 'via-carota', venue_id: 2567, drop_days: 30, drop_hour: 10, hood: 'West Village' },
+  { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 21, drop_hour: 10, hood: 'Midtown' },
+  { name: 'Theodora', slug: 'theodora', venue_id: 73589, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
+  { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 90079, drop_days: 15, drop_hour: 12, hood: 'Upper East Side' },
+  { name: 'The Four Horsemen', slug: 'the-four-horsemen', venue_id: 2492, drop_days: 30, drop_hour: 7, hood: 'Williamsburg' },
+  { name: 'Bong', slug: 'bong', venue_id: 86413, drop_days: 21, drop_hour: 0, hood: 'Crown Heights' },
+  { name: 'Jeju Noodle Bar', slug: 'jeju-noodle-bar', venue_id: 1543, drop_days: 30, drop_hour: 0, hood: 'West Village' },
+  { name: 'FREE RANGE at Double Chicken Please', slug: 'free-range-at-double-chicken-please', venue_id: 84535, drop_days: 5, drop_hour: 10, hood: 'Lower East Side' },
+  { name: 'Bungalow', slug: 'bungalow-ny', venue_id: 80201, drop_days: 19, drop_hour: 11, hood: 'East Village', closed_days: ['monday'] },
+  { name: "Ha's Snack Bar", slug: 'has-snack-bar', venue_id: 85855, drop_days: 20, drop_hour: 12, hood: 'Lower East Side', closed_days: ['sunday','monday'] },
 ];
 
 let partySize = 2;
@@ -267,7 +267,15 @@ function showPage(id) {
 }
 
 function getMinDate(r) {
-  const d = new Date(); d.setDate(d.getDate() + r.drop_days + 1);
+  // +2 cushion: drop_days + 2 (1 for tomorrow's drop + 1 extra buffer)
+  const d = new Date(); d.setDate(d.getDate() + r.drop_days + 2);
+  // Skip closed days if restaurant has them
+  if (r.closed_days) {
+    const dayNames = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    while (r.closed_days.includes(dayNames[d.getDay()])) {
+      d.setDate(d.getDate() + 1);
+    }
+  }
   return d;
 }
 
@@ -308,7 +316,7 @@ function pickRest(idx) {
 
   document.getElementById('bookRestInfo').innerHTML =
     '<div style="font-size:13px;color:#555">' + selectedRest.hood + '</div>' +
-    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>20-30 days in advance</b>. Choose your preferred dates below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
+    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>' + selectedRest.drop_days + ' days in advance</b>. Choose your preferred dates below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
 
   const minDate = getMinDate(selectedRest);
   const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);

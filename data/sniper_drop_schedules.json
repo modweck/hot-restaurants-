@@ -1,0 +1,83 @@
+{
+  "torrisi": {
+    "venue_id": 64593,
+    "slug": "torrisi",
+    "drop_hour": 10,
+    "window_days": 30
+  },
+  "carbone": {
+    "venue_id": 6194,
+    "slug": "carbone",
+    "drop_hour": 10,
+    "window_days": 30
+  },
+  "via carota": {
+    "venue_id": 2567,
+    "slug": "via-carota",
+    "drop_hour": 10,
+    "window_days": 30
+  },
+  "the four horsemen": {
+    "venue_id": 2492,
+    "slug": "the-four-horsemen",
+    "drop_hour": 7,
+    "window_days": 30
+  },
+  "theodora": {
+    "venue_id": 73589,
+    "slug": "theodora",
+    "drop_hour": 9,
+    "window_days": 30
+  },
+  "monkey bar": {
+    "venue_id": 60058,
+    "slug": "monkey-bar-nyc",
+    "drop_hour": 10,
+    "window_days": 21
+  },
+  "i cavallini": {
+    "venue_id": 90079,
+    "slug": "i-cavallini",
+    "drop_hour": 12,
+    "window_days": 15
+  },
+  "bong": {
+    "venue_id": 86413,
+    "slug": "bong",
+    "drop_hour": 0,
+    "window_days": 21,
+    "note": "12am midnight drop"
+  },
+  "jeju noodle bar": {
+    "venue_id": 1543,
+    "slug": "jeju-noodle-bar",
+    "drop_hour": 0,
+    "window_days": 30,
+    "note": "12am midnight drop"
+  },
+  "free range at double chicken please": {
+    "venue_id": 84535,
+    "slug": "free-range-at-double-chicken-please",
+    "drop_hour": 10,
+    "window_days": 5
+  },
+  "bungalow": {
+    "venue_id": 80201,
+    "slug": "bungalow-ny",
+    "drop_hour": 11,
+    "window_days": 19,
+    "closed_days": [
+      "monday"
+    ]
+  },
+  "ha's snack bar": {
+    "venue_id": 85855,
+    "slug": "has-snack-bar",
+    "drop_hour": 12,
+    "window_days": 20,
+    "closed_days": [
+      "sunday",
+      "monday"
+    ]
+  }
+}
