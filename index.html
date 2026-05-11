@@ -5953,6 +5953,8 @@ if (!new URLSearchParams(window.location.search).has('bars')) {
   const htd = document.getElementById('ht-drinks'); if (htd) htd.style.display = 'none';
   document.querySelectorAll('.hero-tab').forEach(t => { if (t.textContent.trim() === 'Drinks') t.style.display = 'none'; });
 }
+// Auto-open concierge if hash is #concierge
+if (window.location.hash === '#concierge') { switchNav('concierge'); }
 </script>
 </body>
 </html>

@@ -82,7 +82,7 @@
     <!-- PAGE 1: Pick a restaurant -->
     <div class="page active" id="pagePick">
       <div class="header">
-        <a class="back-btn" href="javascript:history.back()">&larr; Back</a>
+        <a class="back-btn" href="/">&larr; Back</a>
         <h1>Get a Table</h1>
       </div>
       <div class="section">
@@ -111,7 +111,7 @@
     <!-- PAGE 2: Book form for selected restaurant -->
     <div class="page" id="pageBook">
       <div class="header">
-        <span class="back-btn" onclick="showPage('pagePick')">&larr; Back</span>
+        <span class="back-btn" onclick="showPage('pagePick');history.replaceState(null,'','/book.html')">&larr; Back</span>
         <h1 id="bookHeader"></h1>
       </div>
       <div class="section">
@@ -594,7 +594,7 @@ if (preselect) {
   const idx = RESTAURANTS.findIndex(r => r.slug === preselect);
   if (idx >= 0) {
     pickRest(idx);
-    document.querySelector('#pageBook .back-btn').onclick = function(){ window.location = '/'; return false; };
+    document.querySelector('#pageBook .back-btn').onclick = function(){ window.location = '/#concierge'; return false; };
   } else {
     window.location = '/';
   }
