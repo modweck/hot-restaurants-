@@ -254,6 +254,8 @@ const RESTAURANTS = [
   { name: 'Rezdora', slug: 'rezdora', venue_id: 5771, drop_days: 30, drop_hour: 0, hood: 'Flatiron' },
   { name: 'Le Café Louis Vuitton', slug: 'le-cafe-louis-vuitton', venue_id: 85214, drop_days: 28, drop_hour: 0, hood: 'Midtown' },
   { name: "The Chef's Counter at Manhatta", slug: 'the-chefs-counter-at-manhatta', venue_id: 59549, drop_days: 28, drop_hour: 12, hood: 'Financial District' },
+  { name: 'Ramen By Ra', slug: 'ramen-by-ra', venue_id: 79848, drop_pattern: 'semi_monthly', drop_dates: [1, 15], drop_hour: 9, hood: 'East Village' },
+  { name: 'Dashi Okume Brooklyn', slug: 'dashi-okume-brooklyn', venue_id: 77666, drop_pattern: 'semi_monthly', drop_dates: [1, 15], drop_hour: 11, hood: 'Greenpoint' },
 ];
 
 let partySize = 2;
@@ -274,7 +276,29 @@ function showPage(id) {
 }
 
 function getMinDate(r) {
-  // +2 cushion: drop_days + 2 (1 for tomorrow's drop + 1 extra buffer)
+  const today = new Date();
+
+  // Semi-monthly pattern (1st and 15th drops)
+  if (r.drop_pattern === 'semi_monthly') {
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const day = today.getDate();
+
+    // Figure out next drop and what it releases
+    // 1st releases 16th–end of that month
+    // 15th releases 1st–15th of next month
+    let minDate;
+    if (day < 15) {
+      // Next drop is the 15th → releases 1st–15th of next month
+      minDate = new Date(year, month + 1, 1 + 2); // 1st of next month + 2 cushion
+    } else {
+      // Next drop is 1st of next month → releases 16th–end of next month
+      minDate = new Date(year, month + 1, 16 + 2); // 16th of next month + 2 cushion
+    }
+    return minDate;
+  }
+
+  // Standard daily drop: +2 cushion
   const d = new Date(); d.setDate(d.getDate() + r.drop_days + 2);
   // Skip closed days if restaurant has them
   if (r.closed_days) {
@@ -321,9 +345,12 @@ function pickRest(idx) {
 
   document.getElementById('bookHeader').textContent = selectedRest.name;
 
+  const advanceText = selectedRest.drop_pattern === 'semi_monthly'
+    ? 'Reservations drop on the <b>1st and 15th</b> of each month'
+    : 'We can secure a reservation for you <b>' + selectedRest.drop_days + ' days in advance</b>';
   document.getElementById('bookRestInfo').innerHTML =
     '<div style="font-size:13px;color:#555">' + selectedRest.hood + '</div>' +
-    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">We can secure a reservation for you <b>' + selectedRest.drop_days + ' days in advance</b>. Choose your preferred dates below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
+    '<div style="font-size:13px;color:#555;margin-top:10px;line-height:1.6">' + advanceText + '. Choose your preferred dates below and we\'ll book a table between <b>5:00 PM - 10:00 PM</b>, prioritizing prime time seating.</div>';
 
   const minDate = getMinDate(selectedRest);
   const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);
@@ -580,7 +607,7 @@ document.getElementById('restList').innerHTML = RESTAURANTS.map((r, i) =>
   `<div class="rest-card" onclick="pickRest(${i})">
     <div class="rest-card-left">
       <div class="rest-card-name">${r.name}</div>
-      <div class="rest-card-sub">${r.hood} &middot; ${r.drop_days}+ days out</div>
+      <div class="rest-card-sub">${r.hood} &middot; ${r.drop_pattern === 'semi_monthly' ? 'Drops 1st & 15th' : r.drop_days + '+ days out'}</div>
     </div>
     <div class="rest-card-arrow">&rsaquo;</div>
   </div>`

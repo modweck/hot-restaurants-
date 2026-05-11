@@ -79,5 +79,21 @@
       "sunday",
       "monday"
     ]
+  },
+  "ramen by ra": {
+    "venue_id": 79848,
+    "slug": "ramen-by-ra",
+    "drop_pattern": "semi_monthly",
+    "drop_dates": [1, 15],
+    "drop_hour": 9,
+    "note": "1st releases 16th-end of month, 15th releases 1st-15th of next month"
+  },
+  "dashi okume brooklyn": {
+    "venue_id": 77666,
+    "slug": "dashi-okume-brooklyn",
+    "drop_pattern": "semi_monthly",
+    "drop_dates": [1, 15],
+    "drop_hour": 11,
+    "note": "1st releases 16th-end of month, 15th releases 1st-15th of next month"
   }
 }
