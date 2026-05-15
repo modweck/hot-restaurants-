@@ -102,9 +102,10 @@ exports.handler = async (event) => {
       console.error('Resend error:', emailResult);
     }
 
-    // Save to Supabase
+    // Save to Supabase (strip fields that aren't in the table schema)
     let supabaseError = null;
     try {
+      const { date: _unused, ...supabaseRequest } = request;
       const sbResp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests', {
         method: 'POST',
         headers: {
@@ -113,7 +114,7 @@ exports.handler = async (event) => {
           'Content-Type': 'application/json',
           'Prefer': 'return=minimal'
         },
-        body: JSON.stringify(request)
+        body: JSON.stringify(supabaseRequest)
       });
       if (!sbResp.ok) {
         supabaseError = await sbResp.text();
