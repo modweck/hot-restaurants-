@@ -677,10 +677,16 @@ function closeStripeModal() {
 }
 
 // Auto-select restaurant from URL param — skip picker, go straight to form
+// If session_id is present, payment succeeded — redirect to concierge page
 // If no param, redirect back to main site (entry point is via Concierge cards only)
 const urlParams = new URLSearchParams(window.location.search);
+const sessionId = urlParams.get('session_id');
 const preselect = urlParams.get('r');
-if (preselect) {
+
+if (sessionId) {
+  // Payment succeeded — go straight to Concierge tab where their request shows
+  window.location = '/?nav=concierge';
+} else if (preselect) {
   const idx = RESTAURANTS.findIndex(r => r.slug === preselect);
   if (idx >= 0) {
     pickRest(idx);
