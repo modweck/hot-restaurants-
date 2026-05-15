@@ -1,0 +1,25 @@
+{
+  "_comment": "Single source of truth for Concierge restaurant drop times. Used by book.html (frontend) AND concierge-scheduler.js (backend). When a restaurant's drop time changes, update it here only.",
+  "_format": {
+    "key": "Display name (must match exactly across system)",
+    "slug": "Resy URL slug (e.g. resy.com/cities/ny/torrisi → 'torrisi')",
+    "venue_id": "Resy numeric venue ID",
+    "drop_days": "Days ahead of target date when reservations open",
+    "drop_hour": "Hour of day (24h) when reservations open. 0 = midnight",
+    "hood": "Neighborhood label for UI"
+  },
+  "restaurants": [
+    { "name": "Torrisi",                              "slug": "torrisi",                              "venue_id": 64593, "drop_days": 30, "drop_hour": 10, "hood": "Nolita" },
+    { "name": "Carbone",                              "slug": "carbone",                              "venue_id": 6194,  "drop_days": 30, "drop_hour": 10, "hood": "Greenwich Village" },
+    { "name": "Via Carota",                           "slug": "via-carota",                           "venue_id": 25973, "drop_days": 30, "drop_hour": 10, "hood": "West Village" },
+    { "name": "Monkey Bar",                           "slug": "monkey-bar-nyc",                       "venue_id": 60058, "drop_days": 20, "drop_hour": 9,  "hood": "Midtown" },
+    { "name": "Theodora",                             "slug": "theodora",                             "venue_id": 0,     "drop_days": 30, "drop_hour": 9,  "hood": "Flatiron" },
+    { "name": "I Cavallini",                          "slug": "i-cavallini",                          "venue_id": 0,     "drop_days": 14, "drop_hour": 8,  "hood": "Upper East Side" },
+    { "name": "The Four Horsemen",                    "slug": "the-four-horsemen",                    "venue_id": 1284,  "drop_days": 30, "drop_hour": 10, "hood": "Williamsburg" },
+    { "name": "Bong",                                 "slug": "bong",                                 "venue_id": 86413, "drop_days": 19, "drop_hour": 0,  "hood": "Crown Heights" },
+    { "name": "Jeju Noodle Bar",                      "slug": "jeju-noodle-bar",                      "venue_id": 1543,  "drop_days": 44, "drop_hour": 0,  "hood": "West Village" },
+    { "name": "FREE RANGE at Double Chicken Please",  "slug": "free-range-at-double-chicken-please",  "venue_id": 70330, "drop_days": 6,  "drop_hour": 0,  "hood": "Lower East Side" },
+    { "name": "Bungalow",                             "slug": "bungalow-ny",                          "venue_id": 71822, "drop_days": 20, "drop_hour": 11, "hood": "East Village" },
+    { "name": "Ha's Snack Bar",                       "slug": "has-snack-bar",                        "venue_id": 85855, "drop_days": 19, "drop_hour": 12, "hood": "Lower East Side" }
+  ]
+}
