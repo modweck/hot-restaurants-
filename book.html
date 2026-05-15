@@ -75,6 +75,7 @@
     .login-tab{flex:1;padding:10px;background:#f5f5f5;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;color:#888;font-family:'DM Sans',sans-serif}
     .login-tab.active{background:#1a1a2e;color:#fff}
   </style>
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
   <div class="container">
@@ -119,9 +120,9 @@
 
         <div class="field">
           <label>Preferred Dates (pick up to 3)</label>
-          <input type="date" id="bookDate1">
-          <input type="date" id="bookDate2" style="margin-top:8px">
-          <input type="date" id="bookDate3" style="margin-top:8px">
+          <input type="date" id="bookDate1" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
+          <input type="date" id="bookDate2" style="margin-top:8px" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
+          <input type="date" id="bookDate3" style="margin-top:8px" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
           <div class="field-note" id="dateNote"></div>
         </div>
 
@@ -144,12 +145,12 @@
 
         <div class="field">
           <label>Your Name</label>
-          <input type="text" id="bookName" placeholder="Full name">
+          <input type="text" id="bookName" placeholder="Full name" oninput="validateSubmit()">
         </div>
 
         <div class="field">
           <label>Phone or Email</label>
-          <input type="text" id="bookContact" placeholder="We'll notify you when booked">
+          <input type="text" id="bookContact" placeholder="We'll notify you when booked" oninput="validateSubmit()">
         </div>
 
         <div class="resy-login">
@@ -209,7 +210,7 @@
         </div>
 
         <div style="margin-top:16px;display:flex;align-items:flex-start;gap:8px">
-          <input type="checkbox" id="agreeTerms" onchange="document.getElementById('submitBtn').disabled=!this.checked||!resyToken" style="margin-top:3px;width:16px;height:16px;accent-color:#ff4500">
+          <input type="checkbox" id="agreeTerms" onchange="validateSubmit()" style="margin-top:3px;width:16px;height:16px;accent-color:#ff4500">
           <label for="agreeTerms" style="font-size:12px;color:#555;line-height:1.5;cursor:pointer">I agree to the <a href="/terms.html" target="_blank" style="color:#d4a373;font-weight:700">Terms of Service</a> and <a href="/terms.html#privacy" target="_blank" style="color:#d4a373;font-weight:700">Privacy Policy</a>, including authorizing SeatWize to book on my behalf using my Resy account.</label>
         </div>
 
@@ -218,16 +219,25 @@
       </div>
     </div>
 
+    <!-- Stripe Checkout Modal -->
+    <div id="stripeModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;padding:16px;overflow-y:auto">
+      <div style="background:#fff;border-radius:16px;width:100%;max-width:520px;position:relative;max-height:95vh;overflow-y:auto">
+        <button onclick="closeStripeModal()" style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;border:none;background:#f0f0f0;font-size:18px;font-weight:700;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center">&times;</button>
+        <div id="stripeCheckout" style="padding:8px"></div>
+      </div>
+    </div>
+
     <!-- PAGE 3: Success -->
     <div class="page" id="pageSuccess">
       <div class="success-box">
-        <div class="success-icon">🎉</div>
-        <div class="success-title">You're In the Queue!</div>
+        <div class="success-icon">✅</div>
+        <div class="success-title">Reservation Request Confirmed</div>
         <div class="success-sub">
-          We're locked in on <b id="successRestaurant"></b>.<br><br>
-          Our system will snipe your table the moment reservations drop. We'll text/email you as soon as it's booked.
+          We received your request for <b id="successRestaurant"></b>.<br><br>
+          Our system will snipe your table the moment reservations drop. We'll text/email you as soon as it's booked.<br><br>
+          <span style="font-size:12px;color:#aaa">Check the Concierge tab to see your request status anytime.</span>
         </div>
-        <button class="btn" onclick="window.location='/'" style="margin-top:24px">Back to Home</button>
+        <button class="btn" onclick="window.location='/?nav=concierge'" style="margin-top:24px">View My Requests</button>
       </div>
     </div>
 
@@ -250,7 +260,7 @@ const RESTAURANTS = [
   { name: 'Shion 69 Leonard Street', slug: '69leonardstreet', venue_id: 888, drop_days: 30, drop_hour: 0, hood: 'TriBeCa' },
   { name: 'I Sodi', slug: 'i-sodi', venue_id: 443, drop_days: 14, drop_hour: 0, hood: 'West Village' },
   { name: 'Le Café Louis Vuitton', slug: 'le-cafe-louis-vuitton', venue_id: 85214, drop_days: 28, drop_hour: 0, hood: 'Midtown' },
-  { name: "The Chef's Counter at Manhatta", slug: 'the-chefs-counter-at-manhatta', venue_id: 59549, drop_days: 28, drop_hour: 12, hood: 'Financial District' },
+  // Removed: Chef's Counter at Manhatta — moved to SevenRooms, no longer on Resy
   { name: 'Ramen By Ra', slug: 'ramen-by-ra', venue_id: 79848, drop_pattern: 'semi_monthly', drop_dates: [1, 15], drop_hour: 9, hood: 'East Village' },
   { name: 'Dashi Okume Brooklyn', slug: 'dashi-okume-brooklyn', venue_id: 77666, drop_pattern: 'semi_monthly', drop_dates: [1, 15], drop_hour: 11, hood: 'Greenpoint' },
 ];
@@ -311,12 +321,48 @@ function fmtDate(d) {
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 }
 
+function validateSubmit() {
+  const btn = document.getElementById('submitBtn');
+  if (!btn) return;
+  const date1 = document.getElementById('bookDate1')?.value.trim();
+  const name = document.getElementById('bookName')?.value.trim();
+  const contact = document.getElementById('bookContact')?.value.trim();
+  const agreed = document.getElementById('agreeTerms')?.checked;
+  const ok = !!(date1 && name && contact && agreed && resyToken);
+  btn.disabled = !ok;
+}
+
+function isTokenExpired(token, rest) {
+  if (!token) return true;
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    if (!payload.exp) return true;
+    // Need token to survive until the drop fires.
+    // Semi-monthly: up to 31 days. Daily drops: use restaurant's drop_days.
+    let daysNeeded = 3;
+    if (rest) {
+      daysNeeded = rest.drop_pattern === 'semi_monthly' ? 31 : (rest.drop_days || 3);
+    }
+    const bufferSecs = daysNeeded * 24 * 60 * 60;
+    return (payload.exp - bufferSecs) <= (Date.now() / 1000);
+  } catch (e) {
+    return true;
+  }
+}
+
 function pickRest(idx) {
   selectedRest = RESTAURANTS[idx];
   // Check if already connected from previous session
-  const savedToken = localStorage.getItem('sw_resy_token');
+  let savedToken = localStorage.getItem('sw_resy_token');
   const savedEmail = localStorage.getItem('sw_resy_email');
   const savedPayment = localStorage.getItem('sw_resy_payment_id');
+  // Clear token if it won't survive until this restaurant's drop fires
+  if (savedToken && isTokenExpired(savedToken, selectedRest)) {
+    localStorage.removeItem('sw_resy_token');
+    localStorage.removeItem('sw_resy_payment_id');
+    localStorage.removeItem('sw_resy_email');
+    savedToken = null;
+  }
   if (savedToken && savedEmail) {
     resyToken = savedToken;
     resyPaymentId = savedPayment || null;
@@ -327,7 +373,6 @@ function pickRest(idx) {
     document.getElementById('loginEmail').style.display = 'none';
     document.querySelectorAll('.login-tab').forEach(t => t.style.display = 'none');
     document.getElementById('resyError').style.display = 'none';
-    document.getElementById('submitBtn').disabled = false;
   } else {
     resyToken = null; resyPaymentId = null; resyEmail = '';
     document.getElementById('resyConnected').style.display = 'none';
@@ -337,7 +382,6 @@ function pickRest(idx) {
     document.getElementById('resyEmail').value = '';
     document.getElementById('resyPassword').value = '';
     document.getElementById('resyError').style.display = 'none';
-    document.getElementById('submitBtn').disabled = true;
   }
 
   document.getElementById('bookHeader').textContent = selectedRest.name;
@@ -388,7 +432,7 @@ function showConnected(label) {
   document.getElementById('loginEmail').style.display = 'none';
   document.querySelectorAll('.login-tab').forEach(t => t.style.display = 'none');
   document.getElementById('resyError').style.display = 'none';
-  document.getElementById('submitBtn').disabled = !document.getElementById('agreeTerms').checked;
+  validateSubmit();
 }
 
 async function sendPhoneCode() {
@@ -533,7 +577,7 @@ async function submitRequest() {
         document.getElementById('resyConnected').style.display = 'none';
         document.getElementById('loginPhone').style.display = 'block';
         document.querySelectorAll('.login-tab').forEach(t => t.style.display = '');
-        document.getElementById('submitBtn').disabled = true;
+        validateSubmit();
         return;
       }
     } catch {}
@@ -548,6 +592,15 @@ async function submitRequest() {
   if (!contact) { alert('Enter your phone or email'); return; }
   if (dates.length === 0) { alert('Pick at least one date'); return; }
   if (!resyToken) { alert('Connect your Resy account first'); return; }
+
+  // Save contact email so Concierge tab can find this request later
+  if (contact && contact.includes('@')) {
+    const knownEmails = JSON.parse(localStorage.getItem('sw_known_emails') || '[]');
+    if (!knownEmails.includes(contact.toLowerCase())) {
+      knownEmails.push(contact.toLowerCase());
+      localStorage.setItem('sw_known_emails', JSON.stringify(knownEmails));
+    }
+  }
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true; btn.textContent = 'Submitting...';
@@ -574,13 +627,53 @@ async function submitRequest() {
     });
     const data = await resp.json();
     if (data.success) {
-      // Redirect to Stripe payment
-      window.location.href = 'https://buy.stripe.com/5kQcN50PQgl1fZa6QEao800';
+      await openStripeModal();
     } else {
       alert(data.error || 'Something went wrong');
     }
   } catch { alert('Failed to submit'); }
   btn.disabled = false; btn.textContent = 'Submit Request · $20';
+}
+
+const STRIPE_PUBLISHABLE_KEY = 'pk_live_51MkdTNHjs55OuAy0nUlZ4PCQFdKMnEm8zwhqVes3M0R1aU8xqAWlvRsi2awnTehTLGGrdYMkGWN2sdnPli6mYJ6p00mImBXjCn';
+let stripeCheckoutInstance = null;
+
+async function openStripeModal() {
+  const modal = document.getElementById('stripeModal');
+  modal.style.display = 'flex';
+  try {
+    const resp = await fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        restaurant_name: selectedRest.name,
+        customer_email: (function() {
+          const candidates = [resyEmail, document.getElementById('bookContact').value.trim()];
+          for (const c of candidates) {
+            if (c && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c)) return c;
+          }
+          return undefined;
+        })(),
+      })
+    });
+    const { clientSecret, error } = await resp.json();
+    if (error) { alert('Payment setup failed: ' + error); closeStripeModal(); return; }
+    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+    stripeCheckoutInstance = await stripe.initEmbeddedCheckout({ clientSecret });
+    stripeCheckoutInstance.mount('#stripeCheckout');
+  } catch (e) {
+    alert('Could not open payment: ' + e.message);
+    closeStripeModal();
+  }
+}
+
+function closeStripeModal() {
+  document.getElementById('stripeModal').style.display = 'none';
+  if (stripeCheckoutInstance) {
+    try { stripeCheckoutInstance.destroy(); } catch (e) {}
+    stripeCheckoutInstance = null;
+  }
+  document.getElementById('stripeCheckout').innerHTML = '';
 }
 
 // Auto-select restaurant from URL param — skip picker, go straight to form

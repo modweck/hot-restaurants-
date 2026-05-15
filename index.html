@@ -1093,6 +1093,10 @@ _sbGetUser().then(() => _updateAuthUI());
       <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a1a2e;letter-spacing:-0.5px">Concierge</div>
       <div style="font-size:13px;color:#888;margin-top:4px;line-height:1.5">Willing to wait 20-30 days? We help you book some of the hardest-to-get restaurants in NYC.</div>
     </div>
+    <div id="myRequestsSection" style="padding:0 20px;margin-bottom:8px;display:none">
+      <div style="font-size:13px;font-weight:800;color:#1a1a2e;margin-bottom:8px;display:flex;align-items:center;gap:6px">⏳ Your Requests</div>
+      <div id="myRequestsList"></div>
+    </div>
     <div id="conciergeList" style="padding:0 20px 80px">
       <div style="text-align:center;padding:30px;color:#888;font-size:13px">Loading...</div>
     </div>
@@ -3101,6 +3105,16 @@ function showView(name) {
   document.getElementById('view-' + name).classList.add('on');
 }
 
+// Auto-open concierge when ?nav=concierge is in URL (from book.html success page)
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const navParam = params.get('nav');
+  if (navParam === 'concierge') {
+    setTimeout(() => switchNav('concierge'), 200);
+    history.replaceState(null, '', window.location.pathname);
+  }
+});
+
 function switchNav(name) {
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   const navKey = name === 'allrestaurants' ? 'search' : name;
@@ -3135,7 +3149,7 @@ function switchNav(name) {
   }
   else if (name === 'saved') { showView('saved'); renderSavedView(); }
   else if (name === 'picks') { showView('picks'); renderPicksView(); }
-  else if (name === 'concierge') { showView('concierge'); loadConcierge(); }
+  else if (name === 'concierge') { showView('concierge'); loadConcierge(); loadMyRequests(); }
   else if (name === 'map') { showView('map'); initMap(); }
   else showView(name);
   // Sync hero tab highlights across all tab switchers
@@ -3431,12 +3445,47 @@ const CONCIERGE_SLUGS = {
   '69leonardstreet': { slug: '69leonardstreet', days: 30 },
   'i sodi': { slug: 'i-sodi', days: 14 },
   'le café louis vuitton': { slug: 'le-cafe-louis-vuitton', days: 28 },
-  "the chef's counter at manhatta": { slug: 'the-chefs-counter-at-manhatta', days: 28 },
   'ramen by ra': { slug: 'ramen-by-ra', days: 0, drop_pattern: 'semi_monthly' },
   'dashi okume brooklyn': { slug: 'dashi-okume-brooklyn', days: 0, drop_pattern: 'semi_monthly' },
 };
 let conciergeLoaded = false;
+
+async function loadMyRequests() {
+  try {
+    const emails = new Set();
+    if (_sbUser && _sbUser.email) emails.add(_sbUser.email.toLowerCase());
+    const stored = localStorage.getItem('sw_resy_email');
+    if (stored) emails.add(stored.toLowerCase());
+    const altEmails = JSON.parse(localStorage.getItem('sw_known_emails') || '[]');
+    altEmails.forEach(e => emails.add(e.toLowerCase()));
+    if (!emails.size) { document.getElementById('myRequestsSection').style.display = 'none'; return; }
+    const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+    const emailList = [...emails].map(e => '"' + e + '"').join(',');
+    const resp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests?or=(contact.in.(' + emailList + '),resy_email.in.(' + emailList + '))&order=created_at.desc&limit=10', {
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+    });
+    const requests = await resp.json();
+    if (!requests || !requests.length) { document.getElementById('myRequestsSection').style.display = 'none'; return; }
+    const STATUS_STYLES = {
+      pending: { bg: '#fff8e1', color: '#f57c00', icon: '⏳', label: 'Searching' },
+      sniping: { bg: '#e3f2fd', color: '#1565c0', icon: '🎯', label: 'Sniping' },
+      booked: { bg: '#e8f5e9', color: '#2e7d32', icon: '✅', label: 'Booked' },
+      failed: { bg: '#fde8e8', color: '#c0392b', icon: '❌', label: 'Not Available' }
+    };
+    document.getElementById('myRequestsSection').style.display = 'block';
+    document.getElementById('myRequestsList').innerHTML = requests.map(r => {
+      const s = STATUS_STYLES[r.status] || STATUS_STYLES.pending;
+      const dates = (r.target_dates || [r.date]).filter(Boolean).join(', ');
+      return '<div style="background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:12px 14px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:14px;font-weight:800">' + (r.restaurant || '') + '</div><span style="font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;background:' + s.bg + ';color:' + s.color + '">' + s.icon + ' ' + s.label + '</span></div><div style="font-size:12px;color:#888;margin-top:4px">' + dates + ' · Party of ' + (r.party_size || 2) + '</div>' + (r.status === 'booked' ? '<div style="font-size:12px;color:#2e7d32;margin-top:4px;font-weight:700">We secured your table! Check your email.</div>' : r.status === 'pending' ? '<div style="font-size:12px;color:#888;margin-top:4px">We will notify you the moment we secure it.</div>' : '') + '</div>';
+    }).join('');
+  } catch (e) {
+    document.getElementById('myRequestsSection').style.display = 'none';
+  }
+}
+
 async function loadConcierge() {
+  loadMyRequests();
   if (conciergeLoaded) return;
   try {
     const resp = await fetch('/.netlify/functions/search-candidates', {
