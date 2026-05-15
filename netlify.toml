@@ -20,6 +20,3 @@
 [functions]
   included_files = ["netlify/functions/*.json"]
   node_bundler = "esbuild"
-
-[functions."create-checkout-session"]
-  external_node_modules = ["stripe"]
