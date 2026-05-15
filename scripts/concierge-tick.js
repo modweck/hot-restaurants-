@@ -28,9 +28,12 @@ const RESTAURANTS = {};
 for (const r of _config.restaurants) RESTAURANTS[r.name] = r;
 
 // How early before drop_time we should launch the sniper (gives it time to open Chrome + solve captchas)
-const LAUNCH_LEAD_MINUTES = 8;
+// Sniper internally waits until drop time, so launching early is fine.
+const LAUNCH_LEAD_MINUTES = 15;
 // How wide a window we consider (so we don't miss drops if tick runs slightly late)
-const LAUNCH_WINDOW_MINUTES = 10;
+// Tick fires every 5 min, so window must be >= 5. Sniper needs 5+ min for captchas.
+// 15 - 5 = 10 min minimum lead even in worst case.
+const LAUNCH_WINDOW_MINUTES = 5;
 
 function calculateFireTime(targetDateStr, drop_days, drop_hour) {
   const target = new Date(targetDateStr + 'T00:00:00');
