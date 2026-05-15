@@ -103,8 +103,9 @@ exports.handler = async (event) => {
     }
 
     // Save to Supabase
+    let supabaseError = null;
     try {
-      await fetch(SUPABASE_URL + '/rest/v1/booking_requests', {
+      const sbResp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests', {
         method: 'POST',
         headers: {
           'apikey': SUPABASE_KEY,
@@ -114,14 +115,19 @@ exports.handler = async (event) => {
         },
         body: JSON.stringify(request)
       });
+      if (!sbResp.ok) {
+        supabaseError = await sbResp.text();
+        console.error('Supabase HTTP', sbResp.status, supabaseError);
+      }
     } catch (e) {
+      supabaseError = e.message;
       console.error('Supabase save error:', e.message);
     }
 
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ success: true, id: request.id })
+      body: JSON.stringify({ success: true, id: request.id, supabase_error: supabaseError })
     };
 
   } catch (e) {
