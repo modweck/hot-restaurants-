@@ -504,9 +504,9 @@ async function main() {
       consecutiveFails++;
       retryQueue.push(r);
 
-      // Back off on consecutive fails
+      // Back off on consecutive fails (aggressive — likely rate limited)
       if (consecutiveFails >= 5) {
-        const backoff = Math.min(consecutiveFails * 2, 20);
+        const backoff = Math.min(consecutiveFails * 5, 90);
         console.log(`    ⏸️  ${consecutiveFails} consecutive fails — backing off ${backoff}s`);
         await sleep(backoff * 1000);
       }
@@ -518,7 +518,7 @@ async function main() {
       console.log(`    💾 Progress saved (${i + 1}/${list.length})`);
     }
 
-    await sleep(3000 + Math.floor(Math.random() * 2000)); // 3-5s random delay
+    await sleep(5000 + Math.floor(Math.random() * 3000)); // 5-8s random delay
   }
 
   // ── Retry pass for failed restaurants ──
@@ -768,6 +768,22 @@ async function main() {
 
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
     console.log(`\n   🟢 Has future: ${hasFuture}  🔒 Locked: ${locked}  ⚪ Not bookable: ${notBookable}  ❌ API failed: ${apiFailed}  🔒 No slug: ${noSlugCount}`);
+  }
+
+  // ── Cleanup: strip stale fully_locked flags ──
+  // Any entry whose _checked_date isn't today is stale data — remove fully_locked
+  // so the website doesn't show "Booked Solid" labels based on outdated info.
+  let cleanedFlags = 0;
+  for (const [key, v] of Object.entries(output)) {
+    if (key.startsWith('_')) continue;
+    if (v.fully_locked && v._checked_date !== TODAY) {
+      delete output[key].fully_locked;
+      cleanedFlags++;
+    }
+  }
+  if (cleanedFlags > 0) {
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
+    console.log(`\n   🧹 Stripped ${cleanedFlags} stale fully_locked flag(s) (entries not checked today)`);
   }
 
   // Clean up Puppeteer browser if used
