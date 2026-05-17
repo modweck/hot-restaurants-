@@ -120,7 +120,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:04.217Z"
+    "checked_date": "2026-05-17T15:00:07.033Z"
   },
   "tony's di napoli": {
     "tier": "fully_open",
@@ -333,7 +333,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:04.042Z"
+    "checked_date": "2026-05-17T15:00:06.922Z"
   },
   "wolfgang's steakhouse": {
     "tier": "fully_open",
@@ -385,7 +385,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:04.038Z"
+    "checked_date": "2026-05-17T15:00:06.631Z"
   },
   "il buco alimentari": {
     "tier": "limited",
@@ -783,7 +783,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:26.760Z"
+    "checked_date": "2026-05-17T15:03:33.485Z"
   },
   "insa": {
     "tier": "open",
@@ -1171,7 +1171,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 15,
     "sample_times": [
       "6:00 PM",
       "5:00 PM",
@@ -1187,7 +1187,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:06.686Z"
+    "checked_date": "2026-05-17T15:00:08.935Z"
   },
   "hupo": {
     "tier": "open",
@@ -1213,7 +1213,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:08.233Z"
+    "checked_date": "2026-05-17T15:00:10.491Z"
   },
   "seva indian cuisine": {
     "tier": "open",
@@ -1239,7 +1239,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:10.450Z"
+    "checked_date": "2026-05-17T15:00:11.238Z"
   },
   "d garden": {
     "tier": "limited",
@@ -1406,7 +1406,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 11,
     "sample_times": [
       "6:00 PM",
       "9:00 PM",
@@ -1418,11 +1418,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM",
-      "5:45 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:08.446Z"
+    "checked_date": "2026-05-17T15:00:10.966Z"
   },
   "oso": {
     "tier": "unknown",
@@ -1495,7 +1494,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:08.397Z"
+    "checked_date": "2026-05-17T15:00:10.784Z"
   },
   "kabawa": {
     "tier": "unknown",
@@ -1658,7 +1657,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:08.739Z"
+    "checked_date": "2026-05-17T15:00:11.097Z"
   },
   "meximodo": {
     "tier": "open",
@@ -1684,7 +1683,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:12.126Z"
+    "checked_date": "2026-05-17T15:00:13.462Z"
   },
   "mitsuru": {
     "tier": "unknown",
@@ -1935,7 +1934,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:12.435Z"
+    "checked_date": "2026-05-17T15:00:13.478Z"
   },
   "ginger sapori & salute": {
     "tier": "open",
@@ -1945,7 +1944,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -1957,11 +1956,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:14.607Z"
+    "checked_date": "2026-05-17T15:00:15.058Z"
   },
   "beija flor": {
     "tier": "open",
@@ -1987,7 +1985,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:15.040Z"
+    "checked_date": "2026-05-17T15:00:15.977Z"
   },
   "un plaza grill": {
     "tier": "open",
@@ -1997,7 +1995,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -2010,10 +2008,10 @@
       "8:30 PM",
       "9:00 PM",
       "9:30 PM",
-      "5:45 PM"
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:15.038Z"
+    "checked_date": "2026-05-17T15:00:15.528Z"
   },
   "pascalou": {
     "tier": "open",
@@ -2039,7 +2037,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:14.790Z"
+    "checked_date": "2026-05-17T15:00:15.487Z"
   },
   "shinjuku ramen": {
     "tier": "open",
@@ -2063,7 +2061,7 @@
       "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:14.010Z"
+    "checked_date": "2026-05-17T15:00:14.910Z"
   },
   "momoya upper west": {
     "tier": "open",
@@ -2089,7 +2087,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:16.166Z"
+    "checked_date": "2026-05-17T15:00:17.188Z"
   },
   "la pecora bianca bryant park": {
     "tier": "open",
@@ -2193,7 +2191,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:18.229Z"
+    "checked_date": "2026-05-17T15:00:19.251Z"
   },
   "queens": {
     "tier": "limited",
@@ -2271,7 +2269,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:17.145Z"
+    "checked_date": "2026-05-17T15:00:18.120Z"
   },
   "hayashi japanese cuisine": {
     "tier": "limited",
@@ -2349,7 +2347,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:16.305Z"
+    "checked_date": "2026-05-17T15:00:17.208Z"
   },
   "xiang hotpot": {
     "tier": "open",
@@ -2375,7 +2373,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:19.438Z"
+    "checked_date": "2026-05-17T15:00:20.709Z"
   },
   "xiang hotpot-brooklyn": {
     "tier": "limited",
@@ -2426,7 +2424,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:19.772Z"
+    "checked_date": "2026-05-17T15:00:21.203Z"
   },
   "cactus restaurant": {
     "tier": "limited",
@@ -2530,7 +2528,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:19.989Z"
+    "checked_date": "2026-05-17T15:00:21.205Z"
   },
   "lulu mediterranean grill - edgewater": {
     "tier": "limited",
@@ -2582,7 +2580,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:22.177Z"
+    "checked_date": "2026-05-17T15:00:23.422Z"
   },
   "amy thai bistro": {
     "tier": "open",
@@ -2608,7 +2606,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:22.588Z"
+    "checked_date": "2026-05-17T15:00:24.022Z"
   },
   "daphne's": {
     "tier": "open",
@@ -2634,7 +2632,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:21.956Z"
+    "checked_date": "2026-05-17T15:00:23.399Z"
   },
   "dept. of culture": {
     "tier": "limited",
@@ -2741,7 +2739,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:22.182Z"
+    "checked_date": "2026-05-17T15:00:23.818Z"
   },
   "refried beans": {
     "tier": "open",
@@ -2767,7 +2765,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:25.002Z"
+    "checked_date": "2026-05-17T15:00:26.625Z"
   },
   "uncle peter's": {
     "tier": "open",
@@ -2793,7 +2791,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:24.528Z"
+    "checked_date": "2026-05-17T15:00:26.694Z"
   },
   "palo santo": {
     "tier": "open",
@@ -2819,7 +2817,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:24.688Z"
+    "checked_date": "2026-05-17T15:00:26.649Z"
   },
   "chef huang jian bing & peking duck": {
     "tier": "open",
@@ -2845,7 +2843,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:25.651Z"
+    "checked_date": "2026-05-17T15:00:26.956Z"
   },
   "casa tulum": {
     "tier": "open",
@@ -2871,7 +2869,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:25.062Z"
+    "checked_date": "2026-05-17T15:00:26.577Z"
   },
   "p.j. clarke's third avenue": {
     "tier": "open",
@@ -2923,7 +2921,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:27.631Z"
+    "checked_date": "2026-05-17T15:00:29.063Z"
   },
   "hao noodle chelsea": {
     "tier": "open",
@@ -2948,7 +2946,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:27.100Z"
+    "checked_date": "2026-05-17T15:00:28.252Z"
   },
   "wokuni broadway": {
     "tier": "open",
@@ -3040,7 +3038,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:27.478Z"
+    "checked_date": "2026-05-17T15:00:28.600Z"
   },
   "san patricios jersey city": {
     "tier": "open",
@@ -3050,7 +3048,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -3066,7 +3064,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:26.999Z"
+    "checked_date": "2026-05-17T15:00:28.311Z"
   },
   "terravita edgewater": {
     "tier": "open",
@@ -3092,7 +3090,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:29.245Z"
+    "checked_date": "2026-05-17T15:00:30.765Z"
   },
   "el fish marisqueria": {
     "tier": "open",
@@ -3102,7 +3100,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -3118,7 +3116,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:29.196Z"
+    "checked_date": "2026-05-17T15:00:30.630Z"
   },
   "orale mexican kitchen restaurants jersey city": {
     "tier": "limited",
@@ -3154,23 +3152,23 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
-      "6:00 PM",
+      "8:00 PM",
       "5:00 PM",
       "11:00 PM",
       "5:30 PM",
+      "6:00 PM",
       "6:30 PM",
       "7:00 PM",
       "7:30 PM",
-      "8:00 PM",
       "8:30 PM",
       "9:00 PM",
       "9:30 PM",
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:29.725Z"
+    "checked_date": "2026-05-17T15:00:30.992Z"
   },
   "hamilton pork": {
     "tier": "open",
@@ -3196,7 +3194,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:29.365Z"
+    "checked_date": "2026-05-17T15:00:31.164Z"
   },
   "kephi greek kitchen": {
     "tier": "open",
@@ -3222,7 +3220,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:29.832Z"
+    "checked_date": "2026-05-17T15:00:31.415Z"
   },
   "domodomo jersey city": {
     "tier": "open",
@@ -3248,7 +3246,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:31.871Z"
+    "checked_date": "2026-05-17T15:00:33.522Z"
   },
   "superfine": {
     "tier": "limited",
@@ -3302,7 +3300,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:31.964Z"
+    "checked_date": "2026-05-17T15:00:33.589Z"
   },
   "kafana": {
     "tier": "open",
@@ -3328,7 +3326,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:31.672Z"
+    "checked_date": "2026-05-17T15:00:32.967Z"
   },
   "am thai bistro": {
     "tier": "open",
@@ -3354,7 +3352,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:31.994Z"
+    "checked_date": "2026-05-17T15:00:33.781Z"
   },
   "grand vin": {
     "tier": "limited",
@@ -3442,7 +3440,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -3458,7 +3456,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:33.398Z"
+    "checked_date": "2026-05-17T15:00:35.186Z"
   },
   "le bilboquet ny": {
     "tier": "open",
@@ -3468,7 +3466,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -3484,7 +3482,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:34.314Z"
+    "checked_date": "2026-05-17T15:00:36.967Z"
   },
   "dullboy": {
     "tier": "limited",
@@ -3562,7 +3560,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:33.395Z"
+    "checked_date": "2026-05-17T15:00:35.358Z"
   },
   "the river palm terrace - edgewater": {
     "tier": "open",
@@ -3749,7 +3747,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:33.914Z"
+    "checked_date": "2026-05-17T15:00:36.053Z"
   },
   "angelina's kitchen": {
     "tier": "open",
@@ -3774,7 +3772,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:39.170Z"
+    "checked_date": "2026-05-17T15:00:44.648Z"
   },
   "angelina's ristorante": {
     "tier": "open",
@@ -3800,7 +3798,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:39.178Z"
+    "checked_date": "2026-05-17T15:00:44.479Z"
   },
   "animal": {
     "tier": "limited",
@@ -3910,7 +3908,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:41.880Z"
+    "checked_date": "2026-05-17T15:00:46.895Z"
   },
   "fbgb": {
     "tier": "limited",
@@ -3920,16 +3918,14 @@
     "has_early": true,
     "has_prime": false,
     "has_late": false,
-    "dinner_slots": 5,
+    "dinner_slots": 3,
     "sample_times": [
       "5:00 PM",
       "6:00 PM",
-      "5:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "5:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:41.267Z"
+    "checked_date": "2026-05-17T15:00:47.251Z"
   },
   "aberdeen barn": {
     "tier": "limited",
@@ -3939,7 +3935,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 9,
     "sample_times": [
       "9:00 PM",
       "5:00 PM",
@@ -3949,12 +3945,10 @@
       "7:00 PM",
       "7:30 PM",
       "8:00 PM",
-      "8:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:43.751Z"
+    "checked_date": "2026-05-17T15:00:48.977Z"
   },
   "blujeen": {
     "tier": "open",
@@ -3964,7 +3958,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "11:00 PM",
@@ -3980,7 +3974,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:45.327Z"
+    "checked_date": "2026-05-17T15:00:51.303Z"
   },
   "bottega restaurant": {
     "tier": "limited",
@@ -4110,7 +4104,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:45.448Z"
+    "checked_date": "2026-05-17T15:00:50.815Z"
   },
   "da claudio nyc ristorante": {
     "tier": "open",
@@ -4136,7 +4130,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:48.968Z"
+    "checked_date": "2026-05-17T15:00:55.097Z"
   },
   "draught 55": {
     "tier": "open",
@@ -4162,7 +4156,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:48.071Z"
+    "checked_date": "2026-05-17T15:00:53.707Z"
   },
   "el castillo de manhattan restaurant": {
     "tier": "limited",
@@ -4240,7 +4234,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:51.434Z"
+    "checked_date": "2026-05-17T15:00:57.591Z"
   },
   "famous": {
     "tier": "limited",
@@ -4292,7 +4286,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:51.514Z"
+    "checked_date": "2026-05-17T15:00:57.530Z"
   },
   "follia": {
     "tier": "open",
@@ -4318,7 +4312,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:50.840Z"
+    "checked_date": "2026-05-17T15:00:57.429Z"
   },
   "friends and lovers": {
     "tier": "open",
@@ -4344,7 +4338,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:50.985Z"
+    "checked_date": "2026-05-17T15:00:57.209Z"
   },
   "gelso and grand": {
     "tier": "limited",
@@ -4398,7 +4392,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:53.823Z"
+    "checked_date": "2026-05-17T15:00:59.678Z"
   },
   "haidilao hot pot": {
     "tier": "open",
@@ -4424,7 +4418,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:52.783Z"
+    "checked_date": "2026-05-17T15:00:58.945Z"
   },
   "hummus kitchen": {
     "tier": "open",
@@ -4450,7 +4444,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:56.038Z"
+    "checked_date": "2026-05-17T15:01:02.143Z"
   },
   "inca's grill peruvian kitchen": {
     "tier": "open",
@@ -4502,7 +4496,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:55.997Z"
+    "checked_date": "2026-05-17T15:01:02.215Z"
   },
   "levante": {
     "tier": "open",
@@ -4528,7 +4522,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:58.179Z"
+    "checked_date": "2026-05-17T15:01:03.760Z"
   },
   "lilly's craft and kitchen": {
     "tier": "open",
@@ -4554,7 +4548,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:56.330Z"
+    "checked_date": "2026-05-17T15:01:02.606Z"
   },
   "lima": {
     "tier": "limited",
@@ -4632,7 +4626,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:02.222Z"
+    "checked_date": "2026-05-17T15:01:07.508Z"
   },
   "max": {
     "tier": "open",
@@ -4722,9 +4716,9 @@
     "has_late": true,
     "dinner_slots": 13,
     "sample_times": [
-      "11:00 PM",
-      "10:00 PM",
       "5:00 PM",
+      "10:00 PM",
+      "11:00 PM",
       "5:30 PM",
       "6:00 PM",
       "6:30 PM",
@@ -4736,7 +4730,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:05.482Z"
+    "checked_date": "2026-05-17T15:01:11.065Z"
   },
   "ofrenda": {
     "tier": "limited",
@@ -4798,7 +4792,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 15,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -4814,7 +4808,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:04.438Z"
+    "checked_date": "2026-05-17T15:01:09.579Z"
   },
   "porto bello": {
     "tier": "open",
@@ -4840,7 +4834,7 @@
       "5:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:03.488Z"
+    "checked_date": "2026-05-17T15:01:08.906Z"
   },
   "puerto plata restaurant": {
     "tier": "limited",
@@ -4933,7 +4927,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "6:00 PM",
       "9:00 PM",
@@ -4945,11 +4939,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:06.938Z"
+    "checked_date": "2026-05-17T15:01:12.573Z"
   },
   "sage": {
     "tier": "limited",
@@ -5001,7 +4994,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:08.034Z"
+    "checked_date": "2026-05-17T15:01:13.508Z"
   },
   "san pedro": {
     "tier": "limited",
@@ -5053,7 +5046,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:07.592Z"
+    "checked_date": "2026-05-17T15:01:13.467Z"
   },
   "shogun japanese restaurant": {
     "tier": "limited",
@@ -5160,7 +5153,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:06.733Z"
+    "checked_date": "2026-05-17T15:01:12.281Z"
   },
   "szechuan mountain house": {
     "tier": "open",
@@ -5186,7 +5179,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:15.424Z"
+    "checked_date": "2026-05-17T15:01:21.369Z"
   },
   "tam sang thai kitchen": {
     "tier": "limited",
@@ -5211,7 +5204,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:16.413Z"
+    "checked_date": "2026-05-17T15:01:22.286Z"
   },
   "tandoor & co. restaurantnew": {
     "tier": "limited",
@@ -5292,7 +5285,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:18.781Z"
+    "checked_date": "2026-05-17T15:01:25.821Z"
   },
   "the pomeroy": {
     "tier": "limited",
@@ -5346,7 +5339,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:15.946Z"
+    "checked_date": "2026-05-17T15:01:22.014Z"
   },
   "udon lab": {
     "tier": "open",
@@ -5372,7 +5365,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:20.056Z"
+    "checked_date": "2026-05-17T15:01:27.525Z"
   },
   "violette's cellar": {
     "tier": "open",
@@ -5398,7 +5391,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:21.096Z"
+    "checked_date": "2026-05-17T15:01:28.047Z"
   },
   "dim sum chelsea": {
     "tier": "open",
@@ -5424,7 +5417,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:20.811Z"
+    "checked_date": "2026-05-17T15:01:28.057Z"
   },
   "casa andrea": {
     "tier": "fully_open",
@@ -5502,7 +5495,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:21.266Z"
+    "checked_date": "2026-05-17T15:01:27.780Z"
   },
   "destefano's steakhouse": {
     "tier": "open",
@@ -5528,7 +5521,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:22.900Z"
+    "checked_date": "2026-05-17T15:01:29.884Z"
   },
   "sushi 456": {
     "tier": "open",
@@ -5554,7 +5547,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:23.233Z"
+    "checked_date": "2026-05-17T15:01:30.025Z"
   },
   "gold taste": {
     "tier": "limited",
@@ -5632,7 +5625,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:25.524Z"
+    "checked_date": "2026-05-17T15:01:32.884Z"
   },
   "er hot pot": {
     "tier": "open",
@@ -5658,7 +5651,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:25.003Z"
+    "checked_date": "2026-05-17T15:01:32.231Z"
   },
   "ye's apothecary": {
     "tier": "open",
@@ -5710,7 +5703,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:27.738Z"
+    "checked_date": "2026-05-17T15:01:35.134Z"
   },
   "siam thai restaurant": {
     "tier": "limited",
@@ -5746,7 +5739,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 15,
     "sample_times": [
       "11:00 PM",
       "5:00 PM",
@@ -5762,7 +5755,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:26.906Z"
+    "checked_date": "2026-05-17T15:01:34.407Z"
   },
   "taste from everest": {
     "tier": "open",
@@ -5788,7 +5781,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:27.530Z"
+    "checked_date": "2026-05-17T15:01:35.126Z"
   },
   "mello bistro": {
     "tier": "open",
@@ -5814,7 +5807,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:28.085Z"
+    "checked_date": "2026-05-17T15:01:36.011Z"
   },
   "harlemite": {
     "tier": "open",
@@ -5824,7 +5817,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "9:00 PM",
       "10:00 PM",
@@ -5836,11 +5829,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:34.523Z"
+    "checked_date": "2026-05-17T15:03:40.435Z"
   },
   "steak frites bistro": {
     "tier": "open",
@@ -5866,7 +5858,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:30.559Z"
+    "checked_date": "2026-05-17T15:01:38.291Z"
   },
   "the office of mr moto": {
     "tier": "open",
@@ -5892,7 +5884,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:29.493Z"
+    "checked_date": "2026-05-17T15:01:37.293Z"
   },
   "sogno toscana": {
     "tier": "open",
@@ -5918,7 +5910,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:29.862Z"
+    "checked_date": "2026-05-17T15:01:37.749Z"
   },
   "dakota's on the cove": {
     "tier": "open",
@@ -5944,7 +5936,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:32.360Z"
+    "checked_date": "2026-05-17T15:01:40.220Z"
   },
   "guest new york": {
     "tier": "open",
@@ -5970,7 +5962,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:32.115Z"
+    "checked_date": "2026-05-17T15:01:39.896Z"
   },
   "ayy chihuahua": {
     "tier": "open",
@@ -5996,7 +5988,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:32.823Z"
+    "checked_date": "2026-05-17T15:01:40.498Z"
   },
   "la sirène soho": {
     "tier": "limited",
@@ -6073,7 +6065,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:34.761Z"
+    "checked_date": "2026-05-17T15:01:42.304Z"
   },
   "zen sushi omakase": {
     "tier": "open",
@@ -6083,7 +6075,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "10:30 PM",
@@ -6099,7 +6091,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:34.260Z"
+    "checked_date": "2026-05-17T15:01:42.005Z"
   },
   "otani": {
     "tier": "open",
@@ -6125,7 +6117,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:35.266Z"
+    "checked_date": "2026-05-17T15:01:43.013Z"
   },
   "ponte modern american": {
     "tier": "limited",
@@ -6177,7 +6169,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:37.177Z"
+    "checked_date": "2026-05-17T15:01:44.602Z"
   },
   "djon djon": {
     "tier": "open",
@@ -6203,7 +6195,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:37.027Z"
+    "checked_date": "2026-05-17T15:01:44.813Z"
   },
   "sushi saikou": {
     "tier": "open",
@@ -6228,7 +6220,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:36.575Z"
+    "checked_date": "2026-05-17T15:01:44.343Z"
   },
   "grata thai cuisine": {
     "tier": "open",
@@ -6254,7 +6246,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:39.162Z"
+    "checked_date": "2026-05-17T15:01:46.942Z"
   },
   "fan szechuan": {
     "tier": "open",
@@ -6280,7 +6272,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:38.705Z"
+    "checked_date": "2026-05-17T15:01:46.207Z"
   },
   "rudraks fine indian cuisine": {
     "tier": "limited",
@@ -6332,7 +6324,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:40.562Z"
+    "checked_date": "2026-05-17T15:01:48.450Z"
   },
   "mikiya wagyu shabu house": {
     "tier": "open",
@@ -6358,7 +6350,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:41.022Z"
+    "checked_date": "2026-05-17T15:01:48.780Z"
   },
   "le petit pecheur": {
     "tier": "open",
@@ -6384,7 +6376,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:40.894Z"
+    "checked_date": "2026-05-17T15:01:50.575Z"
   },
   "mamasushi williamsburg": {
     "tier": "open",
@@ -6410,7 +6402,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:41.019Z"
+    "checked_date": "2026-05-17T15:01:49.366Z"
   },
   "tan": {
     "tier": "open",
@@ -6436,7 +6428,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:42.764Z"
+    "checked_date": "2026-05-17T15:01:52.251Z"
   },
   "little basil thai": {
     "tier": "open",
@@ -6448,9 +6440,9 @@
     "has_late": true,
     "dinner_slots": 12,
     "sample_times": [
+      "5:00 PM",
       "9:30 PM",
       "9:00 PM",
-      "5:00 PM",
       "5:30 PM",
       "6:00 PM",
       "6:30 PM",
@@ -6462,7 +6454,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:43.111Z"
+    "checked_date": "2026-05-17T15:01:52.286Z"
   },
   "plus de vin": {
     "tier": "open",
@@ -6488,7 +6480,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:42.360Z"
+    "checked_date": "2026-05-17T15:01:51.910Z"
   },
   "teakwood thai chophouse": {
     "tier": "open",
@@ -6514,7 +6506,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:42.909Z"
+    "checked_date": "2026-05-17T15:01:52.309Z"
   },
   "simply noodles & dim sum": {
     "tier": "open",
@@ -6540,7 +6532,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:45.222Z"
+    "checked_date": "2026-05-17T15:01:55.108Z"
   },
   "los cuernos": {
     "tier": "open",
@@ -6566,7 +6558,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:44.958Z"
+    "checked_date": "2026-05-17T15:01:55.111Z"
   },
   "la terraza mexican grill": {
     "tier": "open",
@@ -6592,7 +6584,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:46.986Z"
+    "checked_date": "2026-05-17T15:01:56.826Z"
   },
   "sawaan thai": {
     "tier": "open",
@@ -6602,7 +6594,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "11:00 PM",
@@ -6618,7 +6610,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:46.787Z"
+    "checked_date": "2026-05-17T15:01:56.916Z"
   },
   "chor bazaar": {
     "tier": "limited",
@@ -6641,7 +6633,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:47.305Z"
+    "checked_date": "2026-05-17T15:01:57.145Z"
   },
   "made in miami": {
     "tier": "limited",
@@ -6745,7 +6737,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:47.310Z"
+    "checked_date": "2026-05-17T15:01:57.143Z"
   },
   "settepani": {
     "tier": "open",
@@ -6771,7 +6763,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:49.498Z"
+    "checked_date": "2026-05-17T15:01:59.279Z"
   },
   "chotto matte": {
     "tier": "open",
@@ -6797,7 +6789,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:49.016Z"
+    "checked_date": "2026-05-17T15:01:58.521Z"
   },
   "yakiniku great": {
     "tier": "open",
@@ -6823,7 +6815,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:51.343Z"
+    "checked_date": "2026-05-17T15:02:01.185Z"
   },
   "santa fe restaurant": {
     "tier": "limited",
@@ -6901,7 +6893,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:51.915Z"
+    "checked_date": "2026-05-17T15:02:01.751Z"
   },
   "dziupla": {
     "tier": "open",
@@ -6927,7 +6919,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:54.287Z"
+    "checked_date": "2026-05-17T15:02:03.818Z"
   },
   "bacaro": {
     "tier": "open",
@@ -6953,7 +6945,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:54.802Z"
+    "checked_date": "2026-05-17T15:02:04.017Z"
   },
   "soho sushi": {
     "tier": "open",
@@ -6979,7 +6971,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:55.071Z"
+    "checked_date": "2026-05-17T15:02:04.251Z"
   },
   "kesari indian cuisine": {
     "tier": "open",
@@ -7005,7 +6997,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:54.388Z"
+    "checked_date": "2026-05-17T15:02:03.980Z"
   },
   "mazzat": {
     "tier": "limited",
@@ -7083,7 +7075,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:57.339Z"
+    "checked_date": "2026-05-17T15:02:06.224Z"
   },
   "el santo": {
     "tier": "limited",
@@ -7135,7 +7127,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:58.321Z"
+    "checked_date": "2026-05-17T15:02:07.310Z"
   },
   "da raffaele": {
     "tier": "limited",
@@ -7213,7 +7205,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:57.323Z"
+    "checked_date": "2026-05-17T15:02:06.091Z"
   },
   "haam caribbean plant cuisine": {
     "tier": "open",
@@ -7239,7 +7231,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:56.448Z"
+    "checked_date": "2026-05-17T15:02:05.530Z"
   },
   "asian fusion grills & sushi": {
     "tier": "limited",
@@ -7346,7 +7338,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:00.418Z"
+    "checked_date": "2026-05-17T15:02:09.398Z"
   },
   "cantina 46": {
     "tier": "limited",
@@ -7401,7 +7393,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:01.014Z"
+    "checked_date": "2026-05-17T15:02:10.050Z"
   },
   "crabtree's restaurant": {
     "tier": "limited",
@@ -7453,7 +7445,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:02.526Z"
+    "checked_date": "2026-05-17T15:02:11.822Z"
   },
   "faubourg weehawken": {
     "tier": "limited",
@@ -7505,7 +7497,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:03.033Z"
+    "checked_date": "2026-05-17T15:02:12.103Z"
   },
   "fusionista": {
     "tier": "limited",
@@ -7557,7 +7549,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:03.317Z"
+    "checked_date": "2026-05-17T15:02:11.676Z"
   },
   "gioia mia": {
     "tier": "limited",
@@ -7634,7 +7626,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:05.363Z"
+    "checked_date": "2026-05-17T15:02:14.507Z"
   },
   "frida": {
     "tier": "limited",
@@ -7800,7 +7792,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "11:00 PM",
       "5:00 PM",
@@ -7816,7 +7808,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:05.003Z"
+    "checked_date": "2026-05-17T15:02:13.416Z"
   },
   "minka nikkei": {
     "tier": "limited",
@@ -7978,7 +7970,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:08.854Z"
+    "checked_date": "2026-05-17T15:02:17.628Z"
   },
   "sant ambroeus café at sothebys": {
     "tier": "limited",
@@ -8074,7 +8066,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:07.452Z"
+    "checked_date": "2026-05-17T15:02:16.418Z"
   },
   "spice palace indian restaurant": {
     "tier": "open",
@@ -8084,7 +8076,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 16,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -8100,7 +8092,7 @@
       "9:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:10.435Z"
+    "checked_date": "2026-05-17T15:02:19.678Z"
   },
   "sweet t’s southern eatery - montclair": {
     "tier": "limited",
@@ -8152,7 +8144,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:11.508Z"
+    "checked_date": "2026-05-17T15:02:20.423Z"
   },
   "the ridge house": {
     "tier": "limited",
@@ -8268,7 +8260,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "9:00 PM",
       "9:30 PM",
@@ -8284,7 +8276,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:13.117Z"
+    "checked_date": "2026-05-17T15:02:22.348Z"
   },
   "veerays": {
     "tier": "limited",
@@ -8521,7 +8513,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:13.176Z"
+    "checked_date": "2026-05-17T15:02:22.121Z"
   },
   "paesano of mulberry street": {
     "tier": "limited",
@@ -8573,7 +8565,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:15.723Z"
+    "checked_date": "2026-05-17T15:02:24.650Z"
   },
   "love korean bbq": {
     "tier": "open",
@@ -8599,7 +8591,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:15.495Z"
+    "checked_date": "2026-05-17T15:02:24.546Z"
   },
   "mughlai grill": {
     "tier": "open",
@@ -8625,7 +8617,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:15.615Z"
+    "checked_date": "2026-05-17T15:02:24.922Z"
   },
   "athena mediterranean cuisine": {
     "tier": "open",
@@ -8651,7 +8643,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:15.649Z"
+    "checked_date": "2026-05-17T15:02:24.622Z"
   },
   "sathi": {
     "tier": "open",
@@ -8677,7 +8669,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:17.802Z"
+    "checked_date": "2026-05-17T15:02:27.177Z"
   },
   "trattoria pesce pasta": {
     "tier": "limited",
@@ -8731,7 +8723,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:17.449Z"
+    "checked_date": "2026-05-17T15:02:27.244Z"
   },
   "gradisca": {
     "tier": "limited",
@@ -8767,7 +8759,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "10:30 PM",
@@ -8783,7 +8775,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:19.541Z"
+    "checked_date": "2026-05-17T15:02:29.116Z"
   },
   "chomp chomp thai kitchen": {
     "tier": "open",
@@ -8809,7 +8801,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:19.831Z"
+    "checked_date": "2026-05-17T15:02:29.323Z"
   },
   "il punto ristorante": {
     "tier": "open",
@@ -8861,7 +8853,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:19.829Z"
+    "checked_date": "2026-05-17T15:02:29.263Z"
   },
   "fogo de chao brazilian steakhouse": {
     "tier": "open",
@@ -8975,7 +8967,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "8:00 PM",
       "5:00 PM",
@@ -8987,11 +8979,10 @@
       "7:30 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:23.617Z"
+    "checked_date": "2026-05-17T15:02:33.434Z"
   },
   "smorgas chef at scandinavia house": {
     "tier": "limited",
@@ -9043,7 +9034,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:25.638Z"
+    "checked_date": "2026-05-17T15:02:34.908Z"
   },
   "punch": {
     "tier": "limited",
@@ -9095,7 +9086,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:25.626Z"
+    "checked_date": "2026-05-17T15:02:35.748Z"
   },
   "westville chelsea": {
     "tier": "open",
@@ -9147,7 +9138,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:26.151Z"
+    "checked_date": "2026-05-17T15:02:35.422Z"
   },
   "giano restaurant": {
     "tier": "open",
@@ -9225,7 +9216,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:28.199Z"
+    "checked_date": "2026-05-17T15:02:38.054Z"
   },
   "gao's bbq & crab": {
     "tier": "open",
@@ -9303,7 +9294,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:27.393Z"
+    "checked_date": "2026-05-17T15:02:36.988Z"
   },
   "izakaya": {
     "tier": "open",
@@ -9436,7 +9427,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:28.202Z"
+    "checked_date": "2026-05-17T15:02:37.577Z"
   },
   "italianissimo ristorante": {
     "tier": "open",
@@ -9462,7 +9453,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:30.184Z"
+    "checked_date": "2026-05-17T15:02:40.122Z"
   },
   "farida": {
     "tier": "open",
@@ -9488,7 +9479,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:30.396Z"
+    "checked_date": "2026-05-17T15:02:40.521Z"
   },
   "margie's": {
     "tier": "open",
@@ -9514,7 +9505,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:29.469Z"
+    "checked_date": "2026-05-17T15:02:39.437Z"
   },
   "izakaya seasun": {
     "tier": "open",
@@ -9540,7 +9531,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:31.914Z"
+    "checked_date": "2026-05-17T15:02:42.289Z"
   },
   "goku kitchen": {
     "tier": "limited",
@@ -9563,7 +9554,7 @@
       "8:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:31.645Z"
+    "checked_date": "2026-05-17T15:02:41.754Z"
   },
   "safina": {
     "tier": "open",
@@ -9589,7 +9580,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:34.176Z"
+    "checked_date": "2026-05-17T15:02:44.218Z"
   },
   "easy joy dim sum & ayce hot pot": {
     "tier": "open",
@@ -9599,7 +9590,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -9611,10 +9602,11 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:33.977Z"
+    "checked_date": "2026-05-17T15:02:44.683Z"
   },
   "il nonno": {
     "tier": "open",
@@ -9640,7 +9632,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:34.486Z"
+    "checked_date": "2026-05-17T15:02:44.624Z"
   },
   "jackson hole burgers": {
     "tier": "open",
@@ -9691,7 +9683,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:34.488Z"
+    "checked_date": "2026-05-17T15:02:44.198Z"
   },
   "la pecora bianca - nomad": {
     "tier": "open",
@@ -9740,10 +9732,10 @@
       "8:15 PM",
       "8:45 PM",
       "5:30 PM",
-      "6:00 PM"
+      "7:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:39.198Z"
+    "checked_date": "2026-05-17T15:02:45.902Z"
   },
   "cellini italian restaurant": {
     "tier": "limited",
@@ -9795,7 +9787,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:39.003Z"
+    "checked_date": "2026-05-17T15:02:46.830Z"
   },
   "caravaggio restaurant": {
     "tier": "open",
@@ -9821,7 +9813,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:38.693Z"
+    "checked_date": "2026-05-17T15:02:46.215Z"
   },
   "alcala restaurant": {
     "tier": "open",
@@ -9873,7 +9865,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:38.954Z"
+    "checked_date": "2026-05-17T15:02:46.557Z"
   },
   "tri dim shanghai": {
     "tier": "open",
@@ -9899,7 +9891,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:39.202Z"
+    "checked_date": "2026-05-17T15:02:46.586Z"
   },
   "bobby van's 230 park": {
     "tier": "limited",
@@ -9935,7 +9927,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -9947,10 +9939,11 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:41.072Z"
+    "checked_date": "2026-05-17T15:02:48.936Z"
   },
   "99 favor taste": {
     "tier": "open",
@@ -9976,7 +9969,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:43.150Z"
+    "checked_date": "2026-05-17T15:02:51.214Z"
   },
   "amber upper west": {
     "tier": "open",
@@ -10002,7 +9995,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:40.980Z"
+    "checked_date": "2026-05-17T15:02:48.416Z"
   },
   "jasper's taphouse": {
     "tier": "open",
@@ -10109,7 +10102,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:44.793Z"
+    "checked_date": "2026-05-17T15:02:52.889Z"
   },
   "mediterraneo": {
     "tier": "open",
@@ -10135,7 +10128,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:45.071Z"
+    "checked_date": "2026-05-17T15:02:53.254Z"
   },
   "luna rossa ristorante": {
     "tier": "open",
@@ -10187,7 +10180,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:45.264Z"
+    "checked_date": "2026-05-17T15:02:53.080Z"
   },
   "em vietnamese bistro": {
     "tier": "limited",
@@ -10239,7 +10232,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:45.502Z"
+    "checked_date": "2026-05-17T15:02:53.494Z"
   },
   "tri dim west": {
     "tier": "open",
@@ -10265,7 +10258,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:30.193Z"
+    "checked_date": "2026-05-17T15:03:37.294Z"
   },
   "chubby crab - asian wok & cajun kitchen": {
     "tier": "booked",
@@ -10305,7 +10298,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:46.599Z"
+    "checked_date": "2026-05-17T15:02:54.806Z"
   },
   "love mama": {
     "tier": "open",
@@ -10331,7 +10324,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:47.655Z"
+    "checked_date": "2026-05-17T15:02:55.927Z"
   },
   "joe & pat's nyc": {
     "tier": "open",
@@ -10357,7 +10350,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:51.339Z"
+    "checked_date": "2026-05-17T15:02:59.242Z"
   },
   "caliente cab co.": {
     "tier": "open",
@@ -10408,7 +10401,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:51.391Z"
+    "checked_date": "2026-05-17T15:02:59.730Z"
   },
   "anjappar indian cuisine": {
     "tier": "open",
@@ -10434,7 +10427,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:51.386Z"
+    "checked_date": "2026-05-17T15:02:59.424Z"
   },
   "tarallucci e vino nomad": {
     "tier": "limited",
@@ -10498,7 +10491,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -10514,7 +10507,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:55.649Z"
+    "checked_date": "2026-05-17T15:03:03.190Z"
   },
   "the irish exit": {
     "tier": "limited",
@@ -10566,7 +10559,7 @@
       "5:20 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:52.839Z"
+    "checked_date": "2026-05-17T15:03:01.146Z"
   },
   "hudson malone: a new york joint": {
     "tier": "open",
@@ -10592,7 +10585,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:52.842Z"
+    "checked_date": "2026-05-17T15:03:01.129Z"
   },
   "thai pavilion nyc": {
     "tier": "open",
@@ -10644,7 +10637,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:57.392Z"
+    "checked_date": "2026-05-17T15:03:04.658Z"
   },
   "nittis italian restaurant in hell's kitchen": {
     "tier": "open",
@@ -10670,7 +10663,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:57.424Z"
+    "checked_date": "2026-05-17T15:03:05.001Z"
   },
   "alachi masala": {
     "tier": "open",
@@ -10696,7 +10689,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:57.745Z"
+    "checked_date": "2026-05-17T15:03:05.394Z"
   },
   "azara kitchen llc": {
     "tier": "open",
@@ -10722,7 +10715,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:59.459Z"
+    "checked_date": "2026-05-17T15:03:07.177Z"
   },
   "tampopo kitchen": {
     "tier": "open",
@@ -10747,7 +10740,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:58.955Z"
+    "checked_date": "2026-05-17T15:03:06.939Z"
   },
   "white star warren street": {
     "tier": "open",
@@ -10773,7 +10766,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:01.461Z"
+    "checked_date": "2026-05-17T15:03:09.490Z"
   },
   "bass and bourbon": {
     "tier": "limited",
@@ -10809,7 +10802,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "9:00 PM",
@@ -10821,10 +10814,11 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:01.094Z"
+    "checked_date": "2026-05-17T15:03:08.978Z"
   },
   "san giuseppe": {
     "tier": "limited",
@@ -10902,7 +10896,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:01.417Z"
+    "checked_date": "2026-05-17T15:03:09.480Z"
   },
   "cork & slice bk": {
     "tier": "limited",
@@ -10980,7 +10974,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:03.436Z"
+    "checked_date": "2026-05-17T15:03:11.059Z"
   },
   "amilias": {
     "tier": "open",
@@ -11006,7 +11000,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:03.983Z"
+    "checked_date": "2026-05-17T15:03:11.500Z"
   },
   "best 164": {
     "tier": "open",
@@ -11016,7 +11010,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -11032,7 +11026,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:09.368Z"
+    "checked_date": "2026-05-17T15:03:17.603Z"
   },
   "funny bbq": {
     "tier": "open",
@@ -11058,7 +11052,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:11.052Z"
+    "checked_date": "2026-05-17T15:03:19.275Z"
   },
   "lunera": {
     "tier": "open",
@@ -11084,7 +11078,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:17.692Z"
+    "checked_date": "2026-05-17T15:03:24.485Z"
   },
   "lutali": {
     "tier": "open",
@@ -11094,7 +11088,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "10:00 PM",
       "8:00 PM",
@@ -11110,7 +11104,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:17.038Z"
+    "checked_date": "2026-05-17T15:03:24.802Z"
   },
   "psari": {
     "tier": "open",
@@ -11136,7 +11130,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:19.861Z"
+    "checked_date": "2026-05-17T15:03:26.674Z"
   },
   "real madrid": {
     "tier": "open",
@@ -11162,7 +11156,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:20.104Z"
+    "checked_date": "2026-05-17T15:03:27.131Z"
   },
   "siempre": {
     "tier": "open",
@@ -11188,7 +11182,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:19.980Z"
+    "checked_date": "2026-05-17T15:03:26.812Z"
   },
   "the little pig": {
     "tier": "open",
@@ -11214,7 +11208,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:22.210Z"
+    "checked_date": "2026-05-17T15:03:29.141Z"
   },
   "dhamaka": {
     "tier": "limited",
@@ -11265,7 +11259,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:25.020Z"
+    "checked_date": "2026-05-17T15:03:31.521Z"
   },
   "nerina": {
     "tier": "open",
@@ -11407,7 +11401,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -11419,10 +11413,11 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:25.066Z"
+    "checked_date": "2026-05-17T15:03:31.525Z"
   },
   "eyval": {
     "tier": "limited",
@@ -11500,7 +11495,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:24.885Z"
+    "checked_date": "2026-05-17T15:03:31.526Z"
   },
   "cafe sabarsky": {
     "tier": "limited",
@@ -11565,7 +11560,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -11577,11 +11572,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:24.951Z"
+    "checked_date": "2026-05-17T15:03:31.527Z"
   },
   "rubirosa": {
     "tier": "limited",
@@ -11711,7 +11705,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:28.043Z"
+    "checked_date": "2026-05-17T15:03:34.166Z"
   },
   "bua": {
     "tier": "open",
@@ -11737,7 +11731,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:28.005Z"
+    "checked_date": "2026-05-17T15:03:35.243Z"
   },
   "edo japanese restaurant": {
     "tier": "booked",
@@ -11831,7 +11825,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:30.058Z"
+    "checked_date": "2026-05-17T15:03:37.293Z"
   },
   "delbianco prime": {
     "tier": "open",
@@ -11857,7 +11851,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:30.063Z"
+    "checked_date": "2026-05-17T15:03:37.011Z"
   },
   "five acres": {
     "tier": "open",
@@ -11909,7 +11903,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:29.848Z"
+    "checked_date": "2026-05-17T15:03:36.994Z"
   },
   "chemistry room": {
     "tier": "open",
@@ -11935,7 +11929,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:32.027Z"
+    "checked_date": "2026-05-17T15:03:38.662Z"
   },
   "swagat": {
     "tier": "open",
@@ -11961,7 +11955,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:32.031Z"
+    "checked_date": "2026-05-17T15:03:38.903Z"
   },
   "han dynasty - uws": {
     "tier": "open",
@@ -11987,7 +11981,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:32.160Z"
+    "checked_date": "2026-05-17T15:03:39.078Z"
   },
   "mari ne": {
     "tier": "limited",
@@ -12010,7 +12004,7 @@
       "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:32.383Z"
+    "checked_date": "2026-05-17T15:03:38.890Z"
   },
   "chinta": {
     "tier": "open",
@@ -12036,7 +12030,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:34.096Z"
+    "checked_date": "2026-05-17T15:03:40.747Z"
   },
   "yasubee ramen": {
     "tier": "open",
@@ -12062,7 +12056,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:34.799Z"
+    "checked_date": "2026-05-17T15:03:41.782Z"
   },
   "bondi sushi": {
     "tier": "limited",
@@ -12166,7 +12160,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:37.938Z"
+    "checked_date": "2026-05-17T15:03:44.846Z"
   },
   "fonda tribeca": {
     "tier": "open",
@@ -12246,7 +12240,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:38.461Z"
+    "checked_date": "2026-05-17T15:03:45.182Z"
   },
   "el asadero mexican grill fort": {
     "tier": "limited",
@@ -12350,7 +12344,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:40.641Z"
+    "checked_date": "2026-05-17T15:03:47.436Z"
   },
   "fonda park slope": {
     "tier": "open",
@@ -12376,7 +12370,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:42.437Z"
+    "checked_date": "2026-05-17T15:03:49.130Z"
   },
   "il villaggio": {
     "tier": "limited",
@@ -12662,7 +12656,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:45.015Z"
+    "checked_date": "2026-05-17T15:03:52.219Z"
   },
   "oda house - brooklyn": {
     "tier": "open",
@@ -12688,7 +12682,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:44.220Z"
+    "checked_date": "2026-05-17T15:03:51.156Z"
   },
   "gosht steakhouse": {
     "tier": "open",
@@ -12724,7 +12718,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "9:00 PM",
@@ -12740,7 +12734,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:44.423Z"
+    "checked_date": "2026-05-17T15:03:52.027Z"
   },
   "179 bar & grill": {
     "tier": "limited",
@@ -12795,7 +12789,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:44.436Z"
+    "checked_date": "2026-05-17T15:03:51.665Z"
   },
   "ariella's restaurant": {
     "tier": "limited",
@@ -13257,7 +13251,7 @@
       "9:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:46.844Z"
+    "checked_date": "2026-05-17T15:03:54.376Z"
   },
   "hui restaurant & bar": {
     "tier": "limited",
@@ -13364,7 +13358,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:49.577Z"
+    "checked_date": "2026-05-17T15:03:57.006Z"
   },
   "gabriel's italian bar and restaurant": {
     "tier": "open",
@@ -13390,7 +13384,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:49.294Z"
+    "checked_date": "2026-05-17T15:03:56.751Z"
   },
   "schilling restaurant & bar": {
     "tier": "open",
@@ -13400,7 +13394,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "5:00 PM",
       "9:00 PM",
@@ -13412,11 +13406,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:48.931Z"
+    "checked_date": "2026-05-17T15:03:56.507Z"
   },
   "taq - taqueria restaurant & bar - ny": {
     "tier": "limited",
@@ -13783,7 +13776,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:51.263Z"
+    "checked_date": "2026-05-17T15:03:58.870Z"
   },
   "bar mexicana": {
     "tier": "limited",
@@ -13864,7 +13857,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:52.790Z"
+    "checked_date": "2026-05-17T15:04:00.647Z"
   },
   "bangkok supper club": {
     "tier": "limited",
@@ -13942,7 +13935,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:51.411Z"
+    "checked_date": "2026-05-17T15:03:58.631Z"
   },
   "blake’s tavern": {
     "tier": "limited",
@@ -14282,7 +14275,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:04.406Z"
+    "checked_date": "2026-05-17T15:00:07.154Z"
   },
   "aquavit restaurant": {
     "tier": "fully_open",
@@ -14589,7 +14582,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:27.592Z"
+    "checked_date": "2026-05-17T15:03:34.132Z"
   },
   "blue ribbon brasserie": {
     "tier": "open",
@@ -14599,7 +14592,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -14615,7 +14608,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:12.128Z"
+    "checked_date": "2026-05-17T15:00:12.948Z"
   },
   "grand banks": {
     "tier": "open",
@@ -14667,7 +14660,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:12.659Z"
+    "checked_date": "2026-05-17T15:00:13.359Z"
   },
   "la pecora bianca - soho": {
     "tier": "open",
@@ -14719,7 +14712,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:19.759Z"
+    "checked_date": "2026-05-17T15:00:21.189Z"
   },
   "bea": {
     "tier": "open",
@@ -14745,7 +14738,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:39.680Z"
+    "checked_date": "2026-05-17T15:00:44.979Z"
   },
   "cecconi's at the ned nomad": {
     "tier": "open",
@@ -14771,7 +14764,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:02.933Z"
+    "checked_date": "2026-05-17T15:04:11.373Z"
   },
   "kikoo sushi": {
     "tier": "open",
@@ -14797,7 +14790,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:55.174Z"
+    "checked_date": "2026-05-17T15:01:01.307Z"
   },
   "made in mexico": {
     "tier": "open",
@@ -14807,7 +14800,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -14823,7 +14816,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:00.325Z"
+    "checked_date": "2026-05-17T15:01:05.630Z"
   },
   "new garden restaurant": {
     "tier": "open",
@@ -14849,7 +14842,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:00.388Z"
+    "checked_date": "2026-05-17T15:01:05.757Z"
   },
   "fork and vine": {
     "tier": "open",
@@ -14875,7 +14868,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:04.134Z"
+    "checked_date": "2026-05-17T15:01:09.426Z"
   },
   "the islands": {
     "tier": "open",
@@ -14927,7 +14920,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:23.408Z"
+    "checked_date": "2026-05-17T15:01:30.404Z"
   },
   "caviar by dnhg": {
     "tier": "limited",
@@ -14937,7 +14930,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 9,
     "sample_times": [
       "9:00 PM",
       "5:00 PM",
@@ -14947,12 +14940,10 @@
       "7:00 PM",
       "7:30 PM",
       "8:00 PM",
-      "8:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:29.820Z"
+    "checked_date": "2026-05-17T15:01:37.513Z"
   },
   "koon taste of siam": {
     "tier": "open",
@@ -14978,7 +14969,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:32.632Z"
+    "checked_date": "2026-05-17T15:01:40.407Z"
   },
   "china river": {
     "tier": "open",
@@ -15004,7 +14995,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:32.103Z"
+    "checked_date": "2026-05-17T15:01:40.087Z"
   },
   "mountain house midtown": {
     "tier": "open",
@@ -15030,7 +15021,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:36.700Z"
+    "checked_date": "2026-05-17T15:01:44.559Z"
   },
   "the modern": {
     "tier": "open",
@@ -15082,7 +15073,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:38.490Z"
+    "checked_date": "2026-05-17T15:01:46.122Z"
   },
   "aroqa": {
     "tier": "open",
@@ -15108,7 +15099,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:38.925Z"
+    "checked_date": "2026-05-17T15:01:46.466Z"
   },
   "hearty and healthy": {
     "tier": "open",
@@ -15134,7 +15125,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:40.521Z"
+    "checked_date": "2026-05-17T15:01:48.423Z"
   },
   "kid": {
     "tier": "open",
@@ -15160,7 +15151,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:43.207Z"
+    "checked_date": "2026-05-17T15:01:52.938Z"
   },
   "clara": {
     "tier": "limited",
@@ -15170,7 +15161,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": false,
-    "dinner_slots": 9,
+    "dinner_slots": 7,
     "sample_times": [
       "5:00 PM",
       "8:00 PM",
@@ -15178,12 +15169,10 @@
       "6:00 PM",
       "6:30 PM",
       "7:00 PM",
-      "7:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "7:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:44.934Z"
+    "checked_date": "2026-05-17T15:01:54.382Z"
   },
   "rei": {
     "tier": "open",
@@ -15193,7 +15182,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "11:00 PM",
@@ -15209,7 +15198,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:46.668Z"
+    "checked_date": "2026-05-17T15:01:56.684Z"
   },
   "bloomfield steak & seafood house": {
     "tier": "open",
@@ -15261,7 +15250,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:52.582Z"
+    "checked_date": "2026-05-17T15:02:01.862Z"
   },
   "bobby van's steakhouse - 50th street": {
     "tier": "open",
@@ -15313,7 +15302,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:00.933Z"
+    "checked_date": "2026-05-17T15:02:09.191Z"
   },
   "atlas kitchen": {
     "tier": "open",
@@ -15375,7 +15364,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 10,
     "sample_times": [
       "9:00 PM",
       "9:30 PM",
@@ -15386,12 +15375,10 @@
       "7:00 PM",
       "7:30 PM",
       "8:00 PM",
-      "8:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:04.935Z"
+    "checked_date": "2026-05-17T15:02:13.731Z"
   },
   "plantmade": {
     "tier": "open",
@@ -15443,7 +15430,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:07.760Z"
+    "checked_date": "2026-05-17T15:02:16.204Z"
   },
   "the ribbon": {
     "tier": "open",
@@ -15469,7 +15456,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:10.672Z"
+    "checked_date": "2026-05-17T15:02:19.378Z"
   },
   "veeraswamy": {
     "tier": "open",
@@ -15479,7 +15466,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -15491,11 +15478,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:13.350Z"
+    "checked_date": "2026-05-17T15:02:21.906Z"
   },
   "ferdi": {
     "tier": "open",
@@ -15521,7 +15507,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:13.519Z"
+    "checked_date": "2026-05-17T15:02:22.380Z"
   },
   "itaewon pocha": {
     "tier": "open",
@@ -15547,7 +15533,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:17.195Z"
+    "checked_date": "2026-05-17T15:02:26.504Z"
   },
   "nonna beppa": {
     "tier": "open",
@@ -15573,7 +15559,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:23.483Z"
+    "checked_date": "2026-05-17T15:02:33.574Z"
   },
   "butcher and banker steakhouse": {
     "tier": "open",
@@ -15651,7 +15637,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:23.148Z"
+    "checked_date": "2026-05-17T15:02:33.005Z"
   },
   "the tuck room": {
     "tier": "limited",
@@ -15668,7 +15654,7 @@
       "11:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:25.903Z"
+    "checked_date": "2026-05-17T15:02:35.253Z"
   },
   "massawa - ny": {
     "tier": "open",
@@ -15694,7 +15680,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:02.931Z"
+    "checked_date": "2026-05-17T15:04:11.378Z"
   },
   "nando's": {
     "tier": "open",
@@ -15720,7 +15706,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:30.296Z"
+    "checked_date": "2026-05-17T15:02:40.288Z"
   },
   "tea and tattle": {
     "tier": "limited",
@@ -15745,7 +15731,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:32.150Z"
+    "checked_date": "2026-05-17T15:02:42.226Z"
   },
   "forno grill": {
     "tier": "open",
@@ -15781,7 +15767,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 24,
+    "dinner_slots": 22,
     "sample_times": [
       "10:00 PM",
       "11:00 PM",
@@ -15797,7 +15783,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:37.114Z"
+    "checked_date": "2026-05-17T15:02:44.417Z"
   },
   "mole mexican restaurant & tequileria": {
     "tier": "open",
@@ -15823,7 +15809,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:40.941Z"
+    "checked_date": "2026-05-17T15:02:48.622Z"
   },
   "eli's table restaurant": {
     "tier": "open",
@@ -15833,7 +15819,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 10,
     "sample_times": [
       "5:30 PM",
       "9:30 PM",
@@ -15844,11 +15830,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "5:00 PM",
-      "5:45 PM"
+      "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:45.324Z"
+    "checked_date": "2026-05-17T15:02:52.966Z"
   },
   "the ruby": {
     "tier": "open",
@@ -15874,7 +15859,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:46.821Z"
+    "checked_date": "2026-05-17T15:02:54.815Z"
   },
   "next door by wegmans": {
     "tier": "open",
@@ -15884,7 +15869,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "11:00 PM",
       "5:00 PM",
@@ -15900,7 +15885,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:46.947Z"
+    "checked_date": "2026-05-17T15:02:54.871Z"
   },
   "tarallucci e vino - nomad": {
     "tier": "open",
@@ -15910,7 +15895,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 12,
     "sample_times": [
       "5:00 PM",
       "10:30 PM",
@@ -15926,7 +15911,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:02.947Z"
+    "checked_date": "2026-05-17T15:04:11.380Z"
   },
   "tiberias": {
     "tier": "open",
@@ -15936,7 +15921,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "7:00 PM",
       "5:00 PM",
@@ -15952,7 +15937,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:51.297Z"
+    "checked_date": "2026-05-17T15:02:59.001Z"
   },
   "scandinavia house": {
     "tier": "limited",
@@ -15962,7 +15947,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": false,
-    "dinner_slots": 9,
+    "dinner_slots": 7,
     "sample_times": [
       "8:00 PM",
       "5:00 PM",
@@ -15970,12 +15955,10 @@
       "6:00 PM",
       "6:30 PM",
       "7:00 PM",
-      "7:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "7:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:53.222Z"
+    "checked_date": "2026-05-17T15:03:01.351Z"
   },
   "red oyster usa": {
     "tier": "open",
@@ -15999,7 +15982,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:52.619Z"
+    "checked_date": "2026-05-17T15:03:01.387Z"
   },
   "locanda verde hudson yards": {
     "tier": "open",
@@ -16051,7 +16034,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:56.760Z"
+    "checked_date": "2026-05-17T15:03:04.360Z"
   },
   "mangetsu sushi": {
     "tier": "open",
@@ -16077,7 +16060,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:59.708Z"
+    "checked_date": "2026-05-17T15:03:07.700Z"
   },
   "rt 60": {
     "tier": "open",
@@ -16201,7 +16184,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:30.406Z"
+    "checked_date": "2026-05-17T15:03:37.291Z"
   },
   "clove indian restaurant & bar": {
     "tier": "open",
@@ -16211,7 +16194,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -16227,7 +16210,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:34.260Z"
+    "checked_date": "2026-05-17T15:03:40.987Z"
   },
   "em vietnamese restaurant": {
     "tier": "open",
@@ -16237,7 +16220,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 10,
+    "dinner_slots": 12,
     "sample_times": [
       "5:00 PM",
       "9:00 PM",
@@ -16248,10 +16231,12 @@
       "7:00 PM",
       "7:30 PM",
       "8:00 PM",
-      "8:30 PM"
+      "8:30 PM",
+      "5:15 PM",
+      "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:42.328Z"
+    "checked_date": "2026-05-17T15:03:49.920Z"
   },
   "chi restaurant and bar": {
     "tier": "open",
@@ -16277,7 +16262,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:47.378Z"
+    "checked_date": "2026-05-17T15:03:54.583Z"
   },
   "le district bar & bistro": {
     "tier": "open",
@@ -16287,7 +16272,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "8:30 PM",
       "10:00 PM",
@@ -16299,10 +16284,11 @@
       "7:30 PM",
       "8:00 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:46.654Z"
+    "checked_date": "2026-05-17T15:03:54.057Z"
   },
   "hui": {
     "tier": "booked",
@@ -16326,7 +16312,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "10:30 PM",
       "5:00 PM",
@@ -16342,7 +16328,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:49.010Z"
+    "checked_date": "2026-05-17T15:03:56.277Z"
   },
   "hwaro nyc times square": {
     "tier": "limited",
@@ -16365,7 +16351,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:51.036Z"
+    "checked_date": "2026-05-17T15:03:58.499Z"
   },
   "lumo ombro": {
     "tier": "open",
@@ -16391,7 +16377,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:54.745Z"
+    "checked_date": "2026-05-17T15:04:02.674Z"
   },
   "giardino d'oro": {
     "tier": "open",
@@ -16401,7 +16387,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 10,
     "sample_times": [
       "5:00 PM",
       "9:30 PM",
@@ -16412,12 +16398,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:00 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:54.370Z"
+    "checked_date": "2026-05-17T15:04:02.284Z"
   },
   "art soho": {
     "tier": "open",
@@ -16553,7 +16537,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:02.754Z"
+    "checked_date": "2026-05-17T15:04:11.389Z"
   },
   "cafe luxembourg": {
     "tier": "open",
@@ -16644,7 +16628,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -16660,7 +16644,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:04.150Z"
+    "checked_date": "2026-05-17T15:04:12.623Z"
   },
   "hasalon - nyc": {
     "tier": "open",
@@ -16686,7 +16670,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:04.933Z"
+    "checked_date": "2026-05-17T15:04:13.542Z"
   },
   "ánimo!": {
     "tier": "open",
@@ -16696,7 +16680,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -16708,11 +16692,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:06.769Z"
+    "checked_date": "2026-05-17T15:04:15.161Z"
   },
   "noi due cafe": {
     "tier": "open",
@@ -16722,7 +16705,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "11:00 PM",
       "5:00 PM",
@@ -16738,7 +16721,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:07.845Z"
+    "checked_date": "2026-05-17T15:04:17.462Z"
   },
   "chop chop": {
     "tier": "open",
@@ -16764,7 +16747,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:09.576Z"
+    "checked_date": "2026-05-17T15:04:19.242Z"
   },
   "sahara mediterranean grill": {
     "tier": "unknown",
@@ -16800,7 +16783,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:39.755Z"
+    "checked_date": "2026-05-17T15:03:46.565Z"
   },
   "café mars": {
     "tier": "open",
@@ -16852,7 +16835,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:05.615Z"
+    "checked_date": "2026-05-17T15:00:08.313Z"
   },
   "meju": {
     "tier": "open",
@@ -16876,7 +16859,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:05.618Z"
+    "checked_date": "2026-05-17T15:00:08.323Z"
   },
   "kaizen nyc": {
     "tier": "open",
@@ -16928,7 +16911,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:05.631Z"
+    "checked_date": "2026-05-17T15:00:08.499Z"
   },
   "café spaghetti": {
     "tier": "booked",
@@ -16997,7 +16980,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:04.152Z"
+    "checked_date": "2026-05-17T15:04:12.638Z"
   },
   "cactus shop": {
     "tier": "open",
@@ -17023,7 +17006,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:20.655Z"
+    "checked_date": "2026-05-17T15:00:21.913Z"
   },
   "dept of culture": {
     "tier": "limited",
@@ -17045,7 +17028,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:22.069Z"
+    "checked_date": "2026-05-17T15:00:23.298Z"
   },
   "lebanese eatery": {
     "tier": "open",
@@ -17055,7 +17038,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -17067,11 +17050,10 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:16.828Z"
+    "checked_date": "2026-05-17T15:03:23.368Z"
   },
   "bk9": {
     "tier": "open",
@@ -17097,7 +17079,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:41.248Z"
+    "checked_date": "2026-05-17T15:00:46.621Z"
   },
   "claw daddy’s": {
     "tier": "open",
@@ -17123,7 +17105,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:45.454Z"
+    "checked_date": "2026-05-17T15:00:50.386Z"
   },
   "concrete shoals": {
     "tier": "open",
@@ -17149,7 +17131,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:25.614Z"
+    "checked_date": "2026-05-17T15:03:32.391Z"
   },
   "one more charm": {
     "tier": "open",
@@ -17175,7 +17157,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:20.352Z"
+    "checked_date": "2026-05-17T15:01:27.522Z"
   },
   "wonder pig kbbq": {
     "tier": "open",
@@ -17201,7 +17183,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:22.677Z"
+    "checked_date": "2026-05-17T15:01:29.360Z"
   },
   "bang bang bangkok": {
     "tier": "open",
@@ -17226,7 +17208,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:38.688Z"
+    "checked_date": "2026-05-17T15:01:46.191Z"
   },
   "puerta del alma": {
     "tier": "open",
@@ -17252,7 +17234,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:49.246Z"
+    "checked_date": "2026-05-17T15:01:58.986Z"
   },
   "schnitzel haus": {
     "tier": "open",
@@ -17278,7 +17260,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:52.362Z"
+    "checked_date": "2026-05-17T15:02:01.864Z"
   },
   "ani ramen - jersey city": {
     "tier": "open",
@@ -17304,7 +17286,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:00.237Z"
+    "checked_date": "2026-05-17T15:02:09.208Z"
   },
   "bricklane curry house - jersey city": {
     "tier": "open",
@@ -17330,7 +17312,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:00.563Z"
+    "checked_date": "2026-05-17T15:02:09.198Z"
   },
   "jiang nan - flushing": {
     "tier": "open",
@@ -17340,7 +17322,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -17356,7 +17338,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:04.857Z"
+    "checked_date": "2026-05-17T15:02:14.455Z"
   },
   "otway": {
     "tier": "open",
@@ -17382,7 +17364,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:08.857Z"
+    "checked_date": "2026-05-17T15:02:17.630Z"
   },
   "sushi katsuei brooklyn": {
     "tier": "open",
@@ -17406,7 +17388,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:10.222Z"
+    "checked_date": "2026-05-17T15:02:19.223Z"
   },
   "takumen": {
     "tier": "open",
@@ -17432,7 +17414,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:10.717Z"
+    "checked_date": "2026-05-17T15:02:19.466Z"
   },
   "juqi": {
     "tier": "open",
@@ -17458,7 +17440,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:25.582Z"
+    "checked_date": "2026-05-17T15:02:35.132Z"
   },
   "best western": {
     "tier": "open",
@@ -17484,7 +17466,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:27.951Z"
+    "checked_date": "2026-05-17T15:02:37.509Z"
   },
   "kyuramen - park slope": {
     "tier": "open",
@@ -17510,7 +17492,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:27.687Z"
+    "checked_date": "2026-05-17T15:02:37.004Z"
   },
   "medusa the greek": {
     "tier": "open",
@@ -17558,11 +17540,11 @@
       "7:45 PM",
       "8:15 PM",
       "8:45 PM",
-      "5:00 PM",
-      "5:30 PM"
+      "5:30 PM",
+      "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:59.568Z"
+    "checked_date": "2026-05-17T15:03:07.106Z"
   },
   "han dynasty long island city": {
     "tier": "open",
@@ -17587,7 +17569,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:01.658Z"
+    "checked_date": "2026-05-17T15:03:09.559Z"
   },
   "camellia family": {
     "tier": "open",
@@ -17613,7 +17595,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:09.678Z"
+    "checked_date": "2026-05-17T15:03:17.549Z"
   },
   "dani's": {
     "tier": "open",
@@ -17623,7 +17605,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "9:00 PM",
@@ -17635,10 +17617,11 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:07.728Z"
+    "checked_date": "2026-05-17T15:03:15.414Z"
   },
   "desi kabab & curry": {
     "tier": "open",
@@ -17648,7 +17631,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "10:30 PM",
@@ -17664,7 +17647,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:08.114Z"
+    "checked_date": "2026-05-17T15:03:16.304Z"
   },
   "eat italian": {
     "tier": "open",
@@ -17674,7 +17657,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "10:00 PM",
       "11:00 PM",
@@ -17690,7 +17673,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:08.407Z"
+    "checked_date": "2026-05-17T15:03:16.377Z"
   },
   "ee lang": {
     "tier": "open",
@@ -17716,7 +17699,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:11.830Z"
+    "checked_date": "2026-05-17T15:03:19.686Z"
   },
   "kafe": {
     "tier": "open",
@@ -17742,7 +17725,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:15.480Z"
+    "checked_date": "2026-05-17T15:03:22.133Z"
   },
   "kutty": {
     "tier": "open",
@@ -17768,7 +17751,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:11.078Z"
+    "checked_date": "2026-05-17T15:03:18.970Z"
   },
   "kyo": {
     "tier": "open",
@@ -17794,7 +17777,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:17.276Z"
+    "checked_date": "2026-05-17T15:03:24.065Z"
   },
   "meze": {
     "tier": "open",
@@ -17820,7 +17803,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:17.852Z"
+    "checked_date": "2026-05-17T15:03:23.843Z"
   },
   "saikai ramen": {
     "tier": "open",
@@ -17846,7 +17829,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:19.343Z"
+    "checked_date": "2026-05-17T15:03:26.406Z"
   },
   "sunny's": {
     "tier": "open",
@@ -17871,7 +17854,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:21.489Z"
+    "checked_date": "2026-05-17T15:03:28.513Z"
   },
   "teppyaki": {
     "tier": "open",
@@ -17897,7 +17880,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:22.073Z"
+    "checked_date": "2026-05-17T15:03:29.013Z"
   },
   "trattoria l'incontro": {
     "tier": "open",
@@ -17907,7 +17890,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 12,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -17923,7 +17906,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:32.375Z"
+    "checked_date": "2026-05-17T15:03:38.638Z"
   },
   "shaking crab - brooklyn": {
     "tier": "open",
@@ -17949,7 +17932,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:40.039Z"
+    "checked_date": "2026-05-17T15:03:46.835Z"
   },
   "royal queen": {
     "tier": "open",
@@ -17975,7 +17958,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:40.033Z"
+    "checked_date": "2026-05-17T15:03:46.715Z"
   },
   "ann & tony's": {
     "tier": "open",
@@ -18001,7 +17984,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:40.279Z"
+    "checked_date": "2026-05-17T15:03:46.849Z"
   },
   "bettie's restaurant": {
     "tier": "open",
@@ -18027,7 +18010,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:42.826Z"
+    "checked_date": "2026-05-17T15:03:49.860Z"
   },
   "frida tacos": {
     "tier": "open",
@@ -18053,7 +18036,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:42.355Z"
+    "checked_date": "2026-05-17T15:03:49.595Z"
   },
   "mayahuel bar & restaurant": {
     "tier": "open",
@@ -18079,7 +18062,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:46.681Z"
+    "checked_date": "2026-05-17T15:03:54.457Z"
   },
   "red hook tavern": {
     "tier": "open",
@@ -18131,7 +18114,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:54.284Z"
+    "checked_date": "2026-05-17T15:04:02.274Z"
   },
   "two tigers": {
     "tier": "open",
@@ -18157,7 +18140,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:54.752Z"
+    "checked_date": "2026-05-17T15:04:02.665Z"
   },
   "la'mode bk": {
     "tier": "open",
@@ -18167,7 +18150,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 14,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -18183,7 +18166,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:02.929Z"
+    "checked_date": "2026-05-17T15:04:11.016Z"
   },
   "beijing hot pot 京门铜火锅": {
     "tier": "open",
@@ -18209,7 +18192,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:04.148Z"
+    "checked_date": "2026-05-17T15:04:12.691Z"
   },
   "driftaway coffee tasting room": {
     "tier": "limited",
@@ -18226,7 +18209,7 @@
       "7:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:06.228Z"
+    "checked_date": "2026-05-17T15:04:14.748Z"
   },
   "glatt a la carte": {
     "tier": "open",
@@ -18236,7 +18219,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -18248,10 +18231,11 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:06.305Z"
+    "checked_date": "2026-05-17T15:04:16.203Z"
   },
   "table 40": {
     "tier": "open",
@@ -18277,7 +18261,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:11.119Z"
+    "checked_date": "2026-05-17T15:04:20.843Z"
   },
   "yakar kosher steakhouse": {
     "tier": "open",
@@ -18313,7 +18297,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "11:00 PM",
@@ -18329,7 +18313,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:09.747Z"
+    "checked_date": "2026-05-17T15:04:19.305Z"
   },
   "crown heights butcher": {
     "tier": "open",
@@ -18339,7 +18323,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "5:00 PM",
       "10:30 PM",
@@ -18355,7 +18339,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:09.378Z"
+    "checked_date": "2026-05-17T15:04:19.228Z"
   },
   "cucina modern kitchen": {
     "tier": "open",
@@ -18365,7 +18349,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "10:00 PM",
       "5:00 PM",
@@ -18377,10 +18361,11 @@
       "8:00 PM",
       "8:30 PM",
       "9:00 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:12.555Z"
+    "checked_date": "2026-05-17T15:04:22.465Z"
   },
   "carmine's - 44th street": {
     "tier": "open",
@@ -18430,7 +18415,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:06.179Z"
+    "checked_date": "2026-05-17T15:00:09.143Z"
   },
   "1885 grill": {
     "tier": "open",
@@ -18456,7 +18441,7 @@
       "9:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:04.109Z"
+    "checked_date": "2026-05-17T15:00:07.138Z"
   },
   "ha's đặc biệt": {
     "tier": "booked",
@@ -18531,7 +18516,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 14,
     "sample_times": [
       "5:30 PM",
       "5:00 PM",
@@ -18547,7 +18532,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:12.289Z"
+    "checked_date": "2026-05-17T15:00:12.943Z"
   },
   "southern spice": {
     "tier": "open",
@@ -18573,7 +18558,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:27.331Z"
+    "checked_date": "2026-05-17T15:00:29.049Z"
   },
   "avra 48th street": {
     "tier": "open",
@@ -18599,7 +18584,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:31.663Z"
+    "checked_date": "2026-05-17T15:00:33.871Z"
   },
   "antique garage tribeca": {
     "tier": "open",
@@ -18625,7 +18610,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:39.430Z"
+    "checked_date": "2026-05-17T15:00:44.680Z"
   },
   "ayada thai restaurant": {
     "tier": "open",
@@ -18651,7 +18636,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:39.523Z"
+    "checked_date": "2026-05-17T15:00:44.791Z"
   },
   "rare chelsea": {
     "tier": "open",
@@ -18677,7 +18662,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:37.440Z"
+    "checked_date": "2026-05-17T15:00:42.679Z"
   },
   "crab house seafood all you can eat": {
     "tier": "open",
@@ -18703,7 +18688,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:45.480Z"
+    "checked_date": "2026-05-17T15:00:51.596Z"
   },
   "bg - bergdorf goodman": {
     "tier": "limited",
@@ -18713,16 +18698,14 @@
     "has_early": true,
     "has_prime": false,
     "has_late": false,
-    "dinner_slots": 5,
+    "dinner_slots": 3,
     "sample_times": [
       "5:00 PM",
       "6:00 PM",
-      "5:30 PM",
-      "5:15 PM",
-      "5:45 PM"
+      "5:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:41.301Z"
+    "checked_date": "2026-05-17T15:00:47.492Z"
   },
   "cecconi's mayfair": {
     "tier": "open",
@@ -18748,7 +18731,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:46.010Z"
+    "checked_date": "2026-05-17T15:00:50.801Z"
   },
   "el patron mexican grill": {
     "tier": "open",
@@ -18774,7 +18757,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:48.081Z"
+    "checked_date": "2026-05-17T15:00:53.592Z"
   },
   "el coyote restaurant": {
     "tier": "open",
@@ -18800,7 +18783,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:48.065Z"
+    "checked_date": "2026-05-17T15:00:53.713Z"
   },
   "don giovanni ristorante": {
     "tier": "open",
@@ -18826,7 +18809,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:48.445Z"
+    "checked_date": "2026-05-17T15:00:54.041Z"
   },
   "gina la fornarina": {
     "tier": "open",
@@ -18852,7 +18835,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:52.948Z"
+    "checked_date": "2026-05-17T15:00:59.197Z"
   },
   "famous sichuan": {
     "tier": "open",
@@ -18878,7 +18861,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:50.576Z"
+    "checked_date": "2026-05-17T15:00:56.653Z"
   },
   "giovanni restaurant": {
     "tier": "open",
@@ -18904,7 +18887,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:53.690Z"
+    "checked_date": "2026-05-17T15:01:00.003Z"
   },
   "noches de colombia": {
     "tier": "open",
@@ -18930,7 +18913,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:59.904Z"
+    "checked_date": "2026-05-17T15:01:05.429Z"
   },
   "hibachi express": {
     "tier": "open",
@@ -18956,7 +18939,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:53.695Z"
+    "checked_date": "2026-05-17T15:00:59.572Z"
   },
   "famili": {
     "tier": "open",
@@ -18980,7 +18963,7 @@
       "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:59.872Z"
+    "checked_date": "2026-05-17T15:01:05.638Z"
   },
   "one star": {
     "tier": "open",
@@ -19005,7 +18988,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:03.299Z"
+    "checked_date": "2026-05-17T15:01:08.903Z"
   },
   "turntable chicken & rock": {
     "tier": "open",
@@ -19031,7 +19014,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:15.894Z"
+    "checked_date": "2026-05-17T15:01:22.164Z"
   },
   "press room": {
     "tier": "open",
@@ -19057,7 +19040,7 @@
       "5:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:13.956Z"
+    "checked_date": "2026-05-17T15:01:19.711Z"
   },
   "geisha asian fusion": {
     "tier": "open",
@@ -19083,7 +19066,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:25.431Z"
+    "checked_date": "2026-05-17T15:01:32.715Z"
   },
   "geisha japanese grill": {
     "tier": "open",
@@ -19109,7 +19092,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:25.442Z"
+    "checked_date": "2026-05-17T15:01:32.489Z"
   },
   "mictlan mexico": {
     "tier": "open",
@@ -19119,7 +19102,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -19135,7 +19118,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:23.036Z"
+    "checked_date": "2026-05-17T15:01:30.220Z"
   },
   "our new place": {
     "tier": "open",
@@ -19161,7 +19144,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:25.289Z"
+    "checked_date": "2026-05-17T15:01:32.498Z"
   },
   "harlemite peruvian cuisine": {
     "tier": "open",
@@ -19171,7 +19154,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 11,
     "sample_times": [
       "9:00 PM",
       "10:00 PM",
@@ -19183,11 +19166,10 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:30 PM",
-      "5:15 PM"
+      "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:30.027Z"
+    "checked_date": "2026-05-17T15:01:37.254Z"
   },
   "curry house": {
     "tier": "open",
@@ -19213,7 +19195,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:27.950Z"
+    "checked_date": "2026-05-17T15:01:35.131Z"
   },
   "gotham burger social club": {
     "tier": "open",
@@ -19238,7 +19220,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:34.354Z"
+    "checked_date": "2026-05-17T15:01:41.944Z"
   },
   "gotham restaurants llc": {
     "tier": "open",
@@ -19263,7 +19245,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:34.198Z"
+    "checked_date": "2026-05-17T15:01:42.086Z"
   },
   "go sushi": {
     "tier": "open",
@@ -19289,7 +19271,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:45.094Z"
+    "checked_date": "2026-05-17T15:01:54.607Z"
   },
   "arianas cucina": {
     "tier": "open",
@@ -19315,7 +19297,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:48.989Z"
+    "checked_date": "2026-05-17T15:01:58.588Z"
   },
   "n/a": {
     "tier": "open",
@@ -19341,7 +19323,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:45.257Z"
+    "checked_date": "2026-05-17T15:01:54.530Z"
   },
   "ming men": {
     "tier": "open",
@@ -19367,7 +19349,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:49.156Z"
+    "checked_date": "2026-05-17T15:01:58.933Z"
   },
   "ki sushi": {
     "tier": "open",
@@ -19377,7 +19359,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 13,
     "sample_times": [
       "5:00 PM",
       "5:30 PM",
@@ -19393,7 +19375,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:51.566Z"
+    "checked_date": "2026-05-17T15:02:00.821Z"
   },
   "golden thai": {
     "tier": "open",
@@ -19403,7 +19385,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 14,
+    "dinner_slots": 16,
     "sample_times": [
       "5:00 PM",
       "10:15 PM",
@@ -19419,7 +19401,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:57.064Z"
+    "checked_date": "2026-05-17T15:02:06.064Z"
   },
   "dim sum palace": {
     "tier": "open",
@@ -19445,7 +19427,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:53.819Z"
+    "checked_date": "2026-05-17T15:02:03.427Z"
   },
   "club please": {
     "tier": "open",
@@ -19471,7 +19453,7 @@
       "5:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:02.620Z"
+    "checked_date": "2026-05-17T15:02:11.701Z"
   },
   "hiroshi japanese asian fusion": {
     "tier": "open",
@@ -19497,7 +19479,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:02.613Z"
+    "checked_date": "2026-05-17T15:02:11.865Z"
   },
   "olivia's": {
     "tier": "open",
@@ -19523,7 +19505,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:05.656Z"
+    "checked_date": "2026-05-17T15:02:14.471Z"
   },
   "sora": {
     "tier": "open",
@@ -19549,7 +19531,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:06.794Z"
+    "checked_date": "2026-05-17T15:02:16.018Z"
   },
   "tillie's x wsa": {
     "tier": "open",
@@ -19575,7 +19557,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:13.201Z"
+    "checked_date": "2026-05-17T15:02:22.177Z"
   },
   "southern charm restaurant": {
     "tier": "open",
@@ -19585,7 +19567,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 13,
+    "dinner_slots": 15,
     "sample_times": [
       "10:00 PM",
       "11:00 PM",
@@ -19601,7 +19583,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:14.958Z"
+    "checked_date": "2026-05-17T15:02:23.950Z"
   },
   "thailicious": {
     "tier": "open",
@@ -19627,7 +19609,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:17.450Z"
+    "checked_date": "2026-05-17T15:02:26.637Z"
   },
   "the best sichuan": {
     "tier": "open",
@@ -19653,7 +19635,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:17.290Z"
+    "checked_date": "2026-05-17T15:02:26.354Z"
   },
   "ayat": {
     "tier": "open",
@@ -19678,7 +19660,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:19.118Z"
+    "checked_date": "2026-05-17T15:02:28.673Z"
   },
   "the butcher and bottle": {
     "tier": "open",
@@ -19730,7 +19712,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:23.747Z"
+    "checked_date": "2026-05-17T15:02:33.468Z"
   },
   "pollen street social": {
     "tier": "open",
@@ -19756,7 +19738,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:21.964Z"
+    "checked_date": "2026-05-17T15:02:31.736Z"
   },
   "anand indian cuisine": {
     "tier": "open",
@@ -19782,7 +19764,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:30.167Z"
+    "checked_date": "2026-05-17T15:02:39.898Z"
   },
   "agave": {
     "tier": "open",
@@ -19808,7 +19790,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:24.313Z"
+    "checked_date": "2026-05-17T15:02:33.349Z"
   },
   "rickard ridge bbq": {
     "tier": "limited",
@@ -19853,7 +19835,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:40.528Z"
+    "checked_date": "2026-05-17T15:02:48.334Z"
   },
   "spice 55 thai & sushi": {
     "tier": "open",
@@ -19863,7 +19845,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 16,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -19879,7 +19861,7 @@
       "9:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:32.015Z"
+    "checked_date": "2026-05-17T15:02:42.448Z"
   },
   "the spice of life": {
     "tier": "open",
@@ -19889,7 +19871,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 15,
+    "dinner_slots": 16,
     "sample_times": [
       "10:00 PM",
       "10:30 PM",
@@ -19905,7 +19887,7 @@
       "9:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:32.245Z"
+    "checked_date": "2026-05-17T15:02:42.377Z"
   },
   "kawa sushi": {
     "tier": "open",
@@ -19931,7 +19913,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:50.761Z"
+    "checked_date": "2026-05-17T15:02:59.025Z"
   },
   "simply noodles": {
     "tier": "open",
@@ -19957,7 +19939,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:57.439Z"
+    "checked_date": "2026-05-17T15:03:05.157Z"
   },
   "el toro mexican grill": {
     "tier": "open",
@@ -19983,7 +19965,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:49.504Z"
+    "checked_date": "2026-05-17T15:02:57.565Z"
   },
   "100 fun": {
     "tier": "open",
@@ -20009,7 +19991,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:03.490Z"
+    "checked_date": "2026-05-17T15:03:11.499Z"
   },
   "clove": {
     "tier": "open",
@@ -20019,7 +20001,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 12,
+    "dinner_slots": 14,
     "sample_times": [
       "5:00 PM",
       "10:00 PM",
@@ -20035,7 +20017,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:02:59.671Z"
+    "checked_date": "2026-05-17T15:03:07.248Z"
   },
   "pierres": {
     "tier": "open",
@@ -20061,7 +20043,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:06.473Z"
+    "checked_date": "2026-05-17T15:03:14.208Z"
   },
   "new miyabi": {
     "tier": "open",
@@ -20087,7 +20069,7 @@
       "8:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:19.337Z"
+    "checked_date": "2026-05-17T15:03:26.279Z"
   },
   "baht": {
     "tier": "open",
@@ -20113,7 +20095,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:03.454Z"
+    "checked_date": "2026-05-17T15:03:11.586Z"
   },
   "filipiniana": {
     "tier": "open",
@@ -20139,7 +20121,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:12.087Z"
+    "checked_date": "2026-05-17T15:03:19.979Z"
   },
   "sizzling squid": {
     "tier": "open",
@@ -20165,7 +20147,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:21.738Z"
+    "checked_date": "2026-05-17T15:03:28.701Z"
   },
   "bar": {
     "tier": "open",
@@ -20175,7 +20157,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 10,
+    "dinner_slots": 11,
     "sample_times": [
       "5:00 PM",
       "9:30 PM",
@@ -20186,10 +20168,11 @@
       "7:30 PM",
       "8:00 PM",
       "8:30 PM",
-      "9:00 PM"
+      "9:00 PM",
+      "6:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:26.916Z"
+    "checked_date": "2026-05-17T15:03:33.773Z"
   },
   "the goat": {
     "tier": "limited",
@@ -20214,7 +20197,7 @@
       "5:45 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:23.802Z"
+    "checked_date": "2026-05-17T15:03:30.237Z"
   },
   "edo": {
     "tier": "booked",
@@ -20254,7 +20237,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:37.532Z"
+    "checked_date": "2026-05-17T15:03:44.623Z"
   },
   "5ive spice les": {
     "tier": "open",
@@ -20280,7 +20263,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:35.696Z"
+    "checked_date": "2026-05-17T15:03:42.619Z"
   },
   "yemen cafe": {
     "tier": "open",
@@ -20306,7 +20289,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:37.220Z"
+    "checked_date": "2026-05-17T15:03:44.114Z"
   },
   "don patron bar & grill": {
     "tier": "open",
@@ -20332,7 +20315,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:42.649Z"
+    "checked_date": "2026-05-17T15:03:49.223Z"
   },
   "sushi by bou ani ramen": {
     "tier": "open",
@@ -20357,7 +20340,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:37.241Z"
+    "checked_date": "2026-05-17T15:03:43.855Z"
   },
   "golden dove": {
     "tier": "open",
@@ -20382,7 +20365,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:44.785Z"
+    "checked_date": "2026-05-17T15:03:52.218Z"
   },
   "little sheep hot pot & bar": {
     "tier": "open",
@@ -20408,7 +20391,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:47.139Z"
+    "checked_date": "2026-05-17T15:03:54.585Z"
   },
   "the great indian kitchen": {
     "tier": "open",
@@ -20434,7 +20417,7 @@
       "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:49.621Z"
+    "checked_date": "2026-05-17T15:03:57.016Z"
   },
   "bar kabawa": {
     "tier": "open",
@@ -20485,7 +20468,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:51.136Z"
+    "checked_date": "2026-05-17T15:03:58.588Z"
   },
   "broadway comedy club": {
     "tier": "open",
@@ -20511,7 +20494,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:00.997Z"
+    "checked_date": "2026-05-17T15:04:09.379Z"
   },
   "vegan grill": {
     "tier": "open",
@@ -20537,7 +20520,7 @@
       "9:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:06.342Z"
+    "checked_date": "2026-05-17T15:04:14.722Z"
   },
   "tempura nyc": {
     "tier": "limited",
@@ -20559,7 +20542,7 @@
       "8:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:09.390Z"
+    "checked_date": "2026-05-17T15:04:18.936Z"
   },
   "raku midtown": {
     "tier": "open",
@@ -20583,7 +20566,7 @@
       "9:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:00:16.138Z"
+    "checked_date": "2026-05-17T15:00:17.294Z"
   },
   "massara": {
     "tier": "open",
@@ -20609,7 +20592,7 @@
       "10:00 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:01:36.888Z"
+    "checked_date": "2026-05-17T15:01:44.561Z"
   },
   "casa la femme": {
     "tier": "open",
@@ -20635,7 +20618,7 @@
       "10:30 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:03:00.841Z"
+    "checked_date": "2026-05-17T15:03:09.050Z"
   },
   "lazzara's pizza cafe": {
     "tier": "open",
@@ -20645,7 +20628,7 @@
     "has_early": true,
     "has_prime": true,
     "has_late": true,
-    "dinner_slots": 11,
+    "dinner_slots": 13,
     "sample_times": [
       "8:00 PM",
       "9:00 PM",
@@ -20657,9 +20640,10 @@
       "7:00 PM",
       "7:30 PM",
       "8:30 PM",
-      "9:30 PM"
+      "9:30 PM",
+      "5:15 PM"
     ],
     "platform": "google_reserve",
-    "checked_date": "2026-05-16T15:04:04.874Z"
+    "checked_date": "2026-05-17T15:04:12.975Z"
   }
 }
