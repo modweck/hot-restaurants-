@@ -1,0 +1,13 @@
+{
+  "description": "Restaurants still needing rid lookup or availability check",
+  "low_confidence_matches": {
+    "count": 0,
+    "note": "These had possible matches but score < 0.9 — review manually",
+    "entries": {}
+  },
+  "no_match_found": {
+    "count": 0,
+    "note": "No match found on OT search — may be closed, renamed, or not on OT",
+    "entries": []
+  }
+}

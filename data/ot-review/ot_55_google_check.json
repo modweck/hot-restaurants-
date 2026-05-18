@@ -1,0 +1,432 @@
+[
+  {
+    "name": "marian's",
+    "google_name": "Marian’s",
+    "status": "CLOSED_PERMANENTLY",
+    "address": "24 Greenwich Ave, New York, NY 10011, USA",
+    "website": "",
+    "rating": 4.6,
+    "reviews": 214,
+    "in_nyc": true
+  },
+  {
+    "name": "eli’s table",
+    "google_name": "Eli's Table",
+    "status": "OPERATIONAL",
+    "address": "1413 3rd Ave, New York, NY 10028, USA",
+    "website": "https://www.elizabar.com/Elis-Table.aspx?utm_medium=local&utm_source=google",
+    "rating": 4.4,
+    "reviews": 100,
+    "in_nyc": true
+  },
+  {
+    "name": "santo domingo restaurant",
+    "google_name": "Santo Domingo Restaurant",
+    "status": "CLOSED_TEMPORARILY",
+    "address": "862 New Lots Ave, Brooklyn, NY 11208, USA",
+    "website": "",
+    "rating": 4,
+    "reviews": 359,
+    "in_nyc": true
+  },
+  {
+    "name": "bobby van's grill - phantom",
+    "google_name": "Bobby Van's Grill",
+    "status": "OPERATIONAL",
+    "address": "135 W 50th St, New York, NY 10020, USA",
+    "website": "http://bobbyvans50th.com/",
+    "rating": 4.3,
+    "reviews": 787,
+    "in_nyc": true
+  },
+  {
+    "name": "beijing hot pot 京门铜火锅",
+    "google_name": "BeiJing Hot Pot 京门铜火锅",
+    "status": "OPERATIONAL",
+    "address": "39-16 Prince St G02, Flushing, NY 11354, USA",
+    "website": "https://www.jingmenhotpot.com/",
+    "rating": 4.9,
+    "reviews": 1866,
+    "in_nyc": false
+  },
+  {
+    "name": "animo!",
+    "google_name": "Animo!",
+    "status": "OPERATIONAL",
+    "address": "1004 2nd Ave, New York, NY 10022, USA",
+    "website": "https://animonyc.com/",
+    "rating": 4.9,
+    "reviews": 592,
+    "in_nyc": true
+  },
+  {
+    "name": "blake‚Äôs tavern",
+    "google_name": "Blake's Tavern",
+    "status": "OPERATIONAL",
+    "address": "252 W 46th St, New York, NY 10036, USA",
+    "website": "https://www.blakestavernnyc.com/",
+    "rating": 4.7,
+    "reviews": 43,
+    "in_nyc": true
+  },
+  {
+    "name": "mission ceviche",
+    "google_name": "Mission Ceviche Union Square",
+    "status": "OPERATIONAL",
+    "address": "7 E 17th St, New York, NY 10003, USA",
+    "website": "http://www.missionceviche.com/",
+    "rating": 4.7,
+    "reviews": 1897,
+    "in_nyc": true
+  },
+  {
+    "name": "dim sum sam",
+    "google_name": "Dim Sum Sam",
+    "status": "OPERATIONAL",
+    "address": "240 W 40th St, New York, NY 10018, USA",
+    "website": "https://dimsumsam.us/",
+    "rating": 4.5,
+    "reviews": 2764,
+    "in_nyc": true
+  },
+  {
+    "name": "bogota latin bistronew",
+    "google_name": "Bogota Latin Bistro",
+    "status": "OPERATIONAL",
+    "address": "141 5th Ave, Brooklyn, NY 11217, USA",
+    "website": "https://www.bogotabistro.com/",
+    "rating": 4.3,
+    "reviews": 2846,
+    "in_nyc": true
+  },
+  {
+    "name": "carnegie diner & cafe, 711 7th avenue",
+    "google_name": "Carnegie Diner & Cafe, 711 7th Avenue",
+    "status": "OPERATIONAL",
+    "address": "711 7th Ave, New York, NY 10036, USA",
+    "website": "https://www.carnegiediner.com/",
+    "rating": 4.8,
+    "reviews": 51,
+    "in_nyc": true
+  },
+  {
+    "name": "carnegie diner & cafe, 711 7th avenuenew",
+    "google_name": "Carnegie Diner & Cafe, 711 7th Avenue",
+    "status": "OPERATIONAL",
+    "address": "711 7th Ave, New York, NY 10036, USA",
+    "website": "https://www.carnegiediner.com/",
+    "rating": 4.8,
+    "reviews": 51,
+    "in_nyc": true
+  },
+  {
+    "name": "sugar'd",
+    "google_name": "Sugar'd",
+    "status": "OPERATIONAL",
+    "address": "2614 Newkirk Ave, Brooklyn, NY 11226, USA",
+    "website": "https://sugard.getsauce.com/?utm_source=GMB&utm_medium=Website+Button&utm_id=sugard",
+    "rating": 4.2,
+    "reviews": 363,
+    "in_nyc": true
+  },
+  {
+    "name": "wollensky‚Äôs grill",
+    "google_name": "Smith & Wollensky",
+    "status": "OPERATIONAL",
+    "address": "797 3rd Ave, New York, NY 10022, USA",
+    "website": "https://www.smithandwollenskynyc.com/",
+    "rating": 4.4,
+    "reviews": 4603,
+    "in_nyc": true
+  },
+  {
+    "name": "ikyu 一休",
+    "google_name": "Ikyu 一休",
+    "status": "OPERATIONAL",
+    "address": "1718 2nd Ave, New York, NY 10128, USA",
+    "website": "http://www.ikyuny.com/",
+    "rating": 4.5,
+    "reviews": 239,
+    "in_nyc": true
+  },
+  {
+    "name": "the harold",
+    "google_name": "The Harold",
+    "status": "CLOSED_PERMANENTLY",
+    "address": "1271 Broadway, New York, NY 10001, USA",
+    "website": "http://www.theharoldnyc.com/",
+    "rating": 4.2,
+    "reviews": 1837,
+    "in_nyc": true
+  },
+  {
+    "name": "press box",
+    "google_name": "The Perfect Pint",
+    "status": "OPERATIONAL",
+    "address": "203 E 45th St, New York, NY 10017, USA",
+    "website": "http://www.theperfectpintnyc.com/",
+    "rating": 4.3,
+    "reviews": 1572,
+    "in_nyc": true
+  },
+  {
+    "name": "sarabeth's greenwich village 2",
+    "google_name": "Sarabeth's Greenwich Village",
+    "status": "OPERATIONAL",
+    "address": "100 W Houston St, New York, NY 10012, USA",
+    "website": "https://www.sarabethsrestaurants.com/greenwich-village/",
+    "rating": 4.6,
+    "reviews": 236,
+    "in_nyc": true
+  },
+  {
+    "name": "trattoria l'incontro",
+    "google_name": "L’incontro by Rocco",
+    "status": "OPERATIONAL",
+    "address": "1572 2nd Ave, New York, NY 10028, USA",
+    "website": "https://www.lincontrobyrocco.com/",
+    "rating": 4.7,
+    "reviews": 1486,
+    "in_nyc": true
+  },
+  {
+    "name": "mambo latín kitchen & empanadas",
+    "google_name": "Mambo Latin Kitchen - Cuban Peruvian",
+    "status": "OPERATIONAL",
+    "address": "313 Union Ave, Rutherford, NJ 07070, USA",
+    "website": "http://www.mamboempanadas.com/",
+    "rating": 4.5,
+    "reviews": 868,
+    "in_nyc": false
+  },
+  {
+    "name": "eli‚Äôs table",
+    "google_name": "Eli's Table",
+    "status": "OPERATIONAL",
+    "address": "1413 3rd Ave, New York, NY 10028, USA",
+    "website": "https://www.elizabar.com/Elis-Table.aspx?utm_medium=local&utm_source=google",
+    "rating": 4.4,
+    "reviews": 100,
+    "in_nyc": true
+  },
+  {
+    "name": "amuni",
+    "google_name": "Amuni",
+    "status": "OPERATIONAL",
+    "address": "7217 3rd Ave, Brooklyn, NY 11209, USA",
+    "website": "http://amunibrooklyn.com/",
+    "rating": 4.9,
+    "reviews": 141,
+    "in_nyc": true
+  },
+  {
+    "name": "hōseki",
+    "google_name": "Hōseki",
+    "status": "CLOSED_PERMANENTLY",
+    "address": "611 5th Ave, New York, NY 10022, USA",
+    "website": "http://hosekinyc.com/",
+    "rating": 4.7,
+    "reviews": 64,
+    "in_nyc": true
+  },
+  {
+    "name": "mama rosa's",
+    "google_name": "Mama Rosa's Cucina & Pizzeria",
+    "status": "OPERATIONAL",
+    "address": "53 John F. Kennedy Blvd, Bayonne, NJ 07002, USA",
+    "website": "https://mamarosascucinapizzeria.com/?utm_source=google",
+    "rating": 4.4,
+    "reviews": 429,
+    "in_nyc": false
+  },
+  {
+    "name": "tanner smiths",
+    "google_name": "Tanner Smith's",
+    "status": "OPERATIONAL",
+    "address": "204 W 55th St, New York, NY 10019, USA",
+    "website": "http://www.tannersmiths.com/",
+    "rating": 4.4,
+    "reviews": 3316,
+    "in_nyc": true
+  },
+  {
+    "name": "wollensky’s grill",
+    "google_name": "Wollensky's Grill",
+    "status": "OPERATIONAL",
+    "address": "201 E 49th St, New York, NY 10022, USA",
+    "website": "http://www.smithandwollenskynyc.com/wollenskys-grill/",
+    "rating": 4.4,
+    "reviews": 843,
+    "in_nyc": true
+  },
+  {
+    "name": "cafe luxembourg",
+    "google_name": "Cafe Luxembourg",
+    "status": "OPERATIONAL",
+    "address": "200 W 70th St, New York, NY 10023, USA",
+    "website": "http://www.cafeluxembourg.com/",
+    "rating": 4.4,
+    "reviews": 1769,
+    "in_nyc": true
+  },
+  {
+    "name": "dolly varden",
+    "google_name": "Dolly's",
+    "status": "OPERATIONAL",
+    "address": "302 W 51st St, New York, NY 10019, USA",
+    "website": "http://dollys51.com/",
+    "rating": 4.5,
+    "reviews": 1020,
+    "in_nyc": true
+  },
+  {
+    "name": "borikén",
+    "google_name": "Boriken Neighborhood Health Center",
+    "status": "OPERATIONAL",
+    "address": "2265 3rd Ave &, E 123rd St, New York, NY 10035, USA",
+    "website": "http://www.boriken.org/",
+    "rating": 2.9,
+    "reviews": 122,
+    "in_nyc": true
+  },
+  {
+    "name": "blake’s tavern",
+    "google_name": "Blake's Tavern",
+    "status": "OPERATIONAL",
+    "address": "252 W 46th St, New York, NY 10036, USA",
+    "website": "https://www.blakestavernnyc.com/",
+    "rating": 4.7,
+    "reviews": 43,
+    "in_nyc": true
+  },
+  {
+    "name": "sunday restaurant",
+    "google_name": "Sunday In Brooklyn",
+    "status": "OPERATIONAL",
+    "address": "348 Wythe Ave, Brooklyn, NY 11249, USA",
+    "website": "http://sundayinbrooklyn.com/",
+    "rating": 4.4,
+    "reviews": 3902,
+    "in_nyc": true
+  },
+  {
+    "name": "nomo soho",
+    "google_name": "NOMO SOHO",
+    "status": "OPERATIONAL",
+    "address": "9 Crosby St, New York, NY 10013, USA",
+    "website": "https://nomosoho.com/",
+    "rating": 3.8,
+    "reviews": 2030,
+    "in_nyc": true
+  },
+  {
+    "name": "that sushi spot",
+    "google_name": "That Sushi Spot🍣",
+    "status": "OPERATIONAL",
+    "address": "3004 Avenue L, Brooklyn, NY 11210, USA",
+    "website": "http://www.thatsushispot.com/",
+    "rating": 4.5,
+    "reviews": 603,
+    "in_nyc": true
+  },
+  {
+    "name": "bar goyana",
+    "google_name": "Bar Goyana",
+    "status": "OPERATIONAL",
+    "address": "177 E 100th St, New York, NY 10029, USA",
+    "website": "https://bargoyana.com/",
+    "rating": 4.8,
+    "reviews": 311,
+    "in_nyc": true
+  },
+  {
+    "name": "café fleuri",
+    "google_name": "Café Fleuri",
+    "status": "OPERATIONAL",
+    "address": "109 Washington St, New York, NY 10006, USA",
+    "website": "https://cafefleuri.com/",
+    "rating": 4.5,
+    "reviews": 637,
+    "in_nyc": true
+  },
+  {
+    "name": "casa galicia",
+    "google_name": "Casa Galicia",
+    "status": "OPERATIONAL",
+    "address": "37-09 31st Ave, Astoria, NY 11103, USA",
+    "website": "https://www.casagaliciany.com/restaurante-bar.php",
+    "rating": 4.7,
+    "reviews": 239,
+    "in_nyc": false
+  },
+  {
+    "name": "berlin currywurst",
+    "google_name": "Berlin Currywurst",
+    "status": "OPERATIONAL",
+    "address": "75 9th Ave, New York, NY 10011, USA",
+    "website": "https://www.eatcurrywurst.com/",
+    "rating": 4.1,
+    "reviews": 290,
+    "in_nyc": true
+  },
+  {
+    "name": "golden child - hotel park ave nyc",
+    "google_name": "Hotel Park Ave",
+    "status": "OPERATIONAL",
+    "address": "444 Park Ave S, New York, NY 10016, USA",
+    "website": "https://hotelparkave.com/?utm_source=google&utm_medium=local&utm_campaign=hotel-park-ave",
+    "rating": 3.8,
+    "reviews": 1043,
+    "in_nyc": true
+  },
+  {
+    "name": "mēdüzā mediterrania",
+    "google_name": "Mēdüzā Mediterrania New York",
+    "status": "OPERATIONAL",
+    "address": "657 Hudson St, New York, NY 10014, USA",
+    "website": "https://www.meduza33.com/",
+    "rating": 4,
+    "reviews": 1233,
+    "in_nyc": true
+  },
+  {
+    "name": "hoexter’s",
+    "google_name": "Hoexter's",
+    "status": "OPERATIONAL",
+    "address": "174 E 82nd St, New York, NY 10028, USA",
+    "website": "http://www.hoexters.com/",
+    "rating": 4.4,
+    "reviews": 203,
+    "in_nyc": true
+  },
+  {
+    "name": "rustico",
+    "google_name": "Rustico Craft Sandwiches & More",
+    "status": "OPERATIONAL",
+    "address": "255 Dyckman St, New York, NY 10034, USA",
+    "website": "https://rusticocraftsandwiches.com/",
+    "rating": 5,
+    "reviews": 44,
+    "in_nyc": true
+  },
+  {
+    "name": "chinatown's",
+    "google_name": "Chinatown",
+    "status": "",
+    "address": "Chinatown, New York, NY, USA",
+    "website": "",
+    "rating": "",
+    "reviews": "",
+    "in_nyc": true
+  },
+  {
+    "name": "millies",
+    "google_name": "Millie's Deli & Grocery Inc",
+    "status": "OPERATIONAL",
+    "address": "13-01 Jackson Ave, Long Island City, NY 11101, USA",
+    "website": "",
+    "rating": 4.1,
+    "reviews": 105,
+    "in_nyc": false
+  }
+]

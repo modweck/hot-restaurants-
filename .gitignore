@@ -15,6 +15,10 @@ tonight_availability_resy_half*.json
 # Logs
 data/*.log
 data/sniper-*.log
+*.log
+
+# Sniper scripts
+scripts/sniper-*.js
 data/test-launch.txt
 data/opentable-debug.png
 

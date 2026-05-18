@@ -16,7 +16,10 @@ const https = require('https');
 
 const BM_PATH = path.join(__dirname, '..', 'netlify', 'functions', 'BOOKING_MASTER.json');
 const SCRAPER_PATH = path.join(__dirname, '..', 'netlify', 'functions', 'google-reserve-scraper.js');
-const API_KEY = 'AIzaSyDQKfB84Z1-hK5JBpSIzjn6P5F2aOC_Ehw';
+// Random pick from rotation pool (set in .env as GOOGLE_API_KEYS, comma-separated)
+const _keyPool = (process.env.GOOGLE_API_KEYS || '').split(',').map(k => k.trim()).filter(Boolean);
+const API_KEY = _keyPool.length > 0 ? _keyPool[Math.floor(Math.random() * _keyPool.length)] : (process.env.GOOGLE_PLACES_API_KEY || '');
+if (!API_KEY) { console.error('No Google API key available'); process.exit(1); }
 
 function googlePlacesCheck(query) {
   return new Promise((resolve, reject) => {

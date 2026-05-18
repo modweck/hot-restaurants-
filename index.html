@@ -3797,7 +3797,9 @@ function adjParty(d) {
 
 async function reverseGeocode(lat, lng) {
   try {
-    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyBX275d7cDYs9Q2rXWocvpCGXLg171gEPU`);
+    const keyResp = await fetch('/.netlify/functions/get-maps-key');
+    const { key } = await keyResp.json();
+    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${key}`);
     const data = await res.json();
     if (data.results && data.results.length > 0) {
       // Find street address component (like Uber — "123 Main St, New York, NY")

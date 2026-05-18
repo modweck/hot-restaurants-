@@ -11,12 +11,12 @@ const { execSync } = require('child_process');
 // ── Config ──
 const VENUE_SLUG = '4-charles-prime-rib';
 const VENUE_ID = 834;
-const TARGET_DATE = '2026-04-27';
+const TARGET_DATE = '2026-06-04';
 const PARTY_SIZE = 4;
 const DROP_HOUR = 9;
 const DROP_MINUTE = 0;
 const API_KEY = 'VbWk7s3L4KiK5fzlO7JD3Q5EYolJI7n5';
-// uid 64692867
+// uid 64734558 — Token 1
 const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODE4NzcwMDEsInVpZCI6NjQ3MzQ1NTgsImd0IjoiY29uc3VtZXIiLCJncyI6W10sImxhbmciOiJlbi11cyIsImV4dHJhIjp7Imd1ZXN0X2lkIjoxOTM1MTEzMDV9fQ.AOlKh4ANqfmn4d15NBxgPMa6jLS7lgXTJ_9e-3uRMkUUl_SZi_5nI6bA4qBvXO-FgM8HMJXEYokbe0cP9lAim5LSAbxkhpiKzC1JpPV4PCUTJ7TKc2BuAyFdLxOHh7BvGLjprkYkeyQYCqxmCK6m0DIEG5ueF4l6CyzVbjMvlmu584lY';
 const PAYMENT_METHOD_ID = 34876858; // Mastercard ending 3162
 
@@ -78,26 +78,33 @@ async function apiFind() {
     if (!slots.length) return { found: false, slotCount: 0, ms: Date.now() - t0 };
 
     let pick = null;
-    const maxMins = 22 * 60; // 10:00 PM max
-    const minMins = 17 * 60; // 5:00 PM minimum
+    const TARGET_HOUR = 16;
+    const TARGET_MIN = 30;
+    const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
 
     // Log ALL slots so we can see what dropped
     log(`   ALL SLOTS: ${slots.map(s => (s.date?.start || '').match(/\d{2}:\d{2}/)?.[0] || '?').join(', ')}`);
 
-    // Filter: 5pm to 10pm, latest first (prefer 10pm, then 9:30, 9, etc.)
-    const evening = slots.filter(s => {
-      const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-      if (!hm) return false;
-      const mins = parseInt(hm[1]) * 60 + parseInt(hm[2]);
-      return mins >= minMins && mins <= maxMins;
-    }).sort((a, b) => {
-      const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
-      const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
-      return (parseInt(hb[1]) * 60 + parseInt(hb[2])) - (parseInt(ha[1]) * 60 + parseInt(ha[2]));
-    });
-    if (evening.length) pick = evening[0];
+    // Priority 1: exact 4:30 PM
+    const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
+    for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // NO last resort — only 5pm-10pm slots
+    // Priority 2: closest to 4:30pm, 4pm+ only
+    if (!pick) {
+      const evening = slots.filter(s => {
+        const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
+        return hm && parseInt(hm[1]) >= 16;
+      }).sort((a, b) => {
+        const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
+        const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
+        const aDiff = Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - targetMins);
+        const bDiff = Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - targetMins);
+        return aDiff - bDiff;
+      });
+      if (evening.length) pick = evening[0];
+    }
+
+    // NO last resort — only 4pm+ slots
     if (!pick) return { found: false, slotCount: slots.length, noEveningSlots: true, ms: Date.now() - t0 };
 
     return { found: true, time: pick.date?.start, configToken: pick.config?.token, slotCount: slots.length, ms: Date.now() - t0 };
@@ -157,7 +164,7 @@ async function apiBook(bookToken) {
 
 async function main() {
   log('4 CHARLES PRIME RIB SNIPER — Hybrid API + 2Captcha');
-  log(`   Target: ${TARGET_DATE} — 5:00-10:00 PM, prefer latest`);
+  log(`   Target: ${TARGET_DATE} — 5:00-11:30 PM, prefer latest`);
   log(`   Party: ${PARTY_SIZE}`);
   log(`   Drop: ${DROP_HOUR}:00 AM`);
   log('');
@@ -242,8 +249,8 @@ async function main() {
     log('All captchas failed — will try without + browser fallback');
   }
 
-  // Wait until 500ms before drop
-  const startAt = drop.getTime() - 1500;
+  // Wait until 2s before drop
+  const startAt = drop.getTime() - 2000;
   if (startAt > Date.now()) {
     log('Waiting for drop...');
     while (Date.now() < startAt) {
@@ -257,15 +264,15 @@ async function main() {
   log('PHASE 1: API polling...');
   let slot = null;
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 12; i++) {
     const result = await apiFind();
     if (result.found) {
       slot = result;
       log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
       break;
     }
-    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5:30pm+` : 'no slots'} (${result.ms}ms)`);
-    if (i < 3) await sleep(500);
+    log(`Check ${i + 1}/12: ${result.error ? 'error ' + result.error : result.noEveningSlots ? `${result.slotCount} slots but none 5:30pm+` : 'no slots'} (${result.ms}ms)`);
+    if (i < 4) await sleep(300);
   }
 
   if (!slot) {

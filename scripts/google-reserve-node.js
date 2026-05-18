@@ -155,9 +155,64 @@ async function main() {
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
 
   console.log(`\n${'═'.repeat(50)}`);
-  console.log(`✅ Done! Checked ${checked} Google Reserve restaurants`);
+  console.log(`✅ Phase 1 Done! Checked ${checked} Google Reserve restaurants`);
   console.log(`   🟢 Open: ${open}  🟡 Limited: ${limited}  🔴 Booked: ${booked}`);
-  console.log(`   Output: ${OUTPUT_FILE}`);
+
+  // Phase 2: Check future availability for booked restaurants
+  const bookedList = list.filter(([name]) => {
+    const r = results[name.toLowerCase()];
+    return r && r.tier === 'booked';
+  });
+
+  if (bookedList.length > 0) {
+    console.log(`\n${'─'.repeat(50)}`);
+    console.log(`🔮 Phase 2: Checking future availability for ${bookedList.length} booked restaurants`);
+
+    const FUTURE_OFFSETS = [2, 3, 7, 14];
+    let opensUp = 0, locked = 0;
+
+    for (const [name, rid] of bookedList) {
+      const key = name.toLowerCase();
+      let opensIn = null;
+
+      for (const offset of FUTURE_OFFSETS) {
+        const futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + offset);
+        const fDateCompact = futureDate.toISOString().split('T')[0].replace(/-/g, '');
+
+        try {
+          const url = `https://www.google.com/maps/reserve/v/dine/c/${rid}?hl=en-US&ps=${PARTY_SIZE}&ld=${fDateCompact}T193000`;
+          const resp = await fetch(url, {
+            headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' }
+          });
+          if (!resp.ok) continue;
+          const html = await resp.text();
+          const slots = parseSlots(html);
+          if (slots.length >= 2) {
+            opensIn = offset;
+            break;
+          }
+        } catch {}
+      }
+
+      if (opensIn) {
+        results[key].opens_in = opensIn;
+        opensUp++;
+        console.log(`  🟢 ${name}: opens in +${opensIn}d`);
+      } else {
+        results[key].fully_locked = true;
+        locked++;
+        console.log(`  🔒 ${name}: locked through +14d`);
+      }
+
+      await sleep(500);
+    }
+
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(results, null, 2));
+    console.log(`\n   🟢 Opens up: ${opensUp}  🔒 Locked: ${locked}`);
+  }
+
+  console.log(`\n   Output: ${OUTPUT_FILE}`);
 }
 
 main().catch(e => { console.error('❌', e); process.exit(1); });

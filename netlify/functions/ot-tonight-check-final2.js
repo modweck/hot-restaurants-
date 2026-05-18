@@ -778,4 +778,10 @@ async function main() {
   console.log(`   Output: ${OUTPUT_FILE}`);
 }
 
-main().catch(e => { console.error('❌', e); process.exit(1); });
+main().then(() => {
+  console.log('\n🔄 Starting future availability check for booked restaurants...\n');
+  const { execSync } = require('child_process');
+  try {
+    execSync('node ' + require('path').join(__dirname, 'ot-limited-and-booked-final-2.js'), { stdio: 'inherit' });
+  } catch(e) { console.error('⚠️ Future check failed:', e.message); }
+}).catch(e => { console.error('❌', e); process.exit(1); });

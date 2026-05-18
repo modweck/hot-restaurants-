@@ -1,0 +1,76 @@
+{
+  "working": [],
+  "broken": [
+    {
+      "name": "nomo soho",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "cafe luxembourg",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "beijing hot pot 京门铜火锅",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "berlin currywurst",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "sugar'd",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "mēdüzā mediterrania",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "casa galicia",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "dim sum sam",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "mission ceviche",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "that sushi spot",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "carnegie diner & cafe, 711 7th avenue",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "amuni",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "trattoria l'incontro",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "dolly varden",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "bar goyana",
+      "error": "The read operation timed out"
+    },
+    {
+      "name": "animo!",
+      "error": "The read operation timed out"
+    }
+  ],
+  "no_url": [
+    "carnegie diner & cafe, 711 7th avenuenew",
+    "sarabeth's greenwich village 2",
+    "sunday restaurant",
+    "bobby van's grill - phantom",
+    "bogota latin bistronew"
+  ]
+}

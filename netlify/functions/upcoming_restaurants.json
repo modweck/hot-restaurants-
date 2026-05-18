@@ -141,5 +141,115 @@
     "platform": null,
     "url": null,
     "bookable": false
+  },
+  "Cote 550": {
+    "source": "eater",
+    "neighborhood": "Midtown",
+    "address": "550 Madison Avenue, New York, New York 10022, United StatesExternal LinkLinkVisit website",
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/cote-550",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Cynthia": {
+    "coming_soon": true,
+    "source": "eater",
+    "neighborhood": "West Village",
+    "address": "140 tasting menu",
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": null,
+    "url": null,
+    "bookable": false
+  },
+  "After Eden": {
+    "source": "resy_blog",
+    "neighborhood": "Lower East Side",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/after-eden",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Dumbo Oyster Bar": {
+    "source": "resy_blog",
+    "neighborhood": "Dumbo",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/dumbo-oyster-bar",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Bar Bruno": {
+    "source": "resy_blog",
+    "neighborhood": "Carroll Gardens",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/bar-bruno",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Zoli East": {
+    "coming_soon": true,
+    "source": "resy_blog",
+    "neighborhood": "Williamsburg",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": null,
+    "url": null,
+    "bookable": false
+  },
+  "Dear Margo": {
+    "source": "resy_blog",
+    "neighborhood": "Upper East Side",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/dear-margo",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Ms Alice": {
+    "source": "resy_blog",
+    "neighborhood": "Lower East Side",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/ms-alice",
+    "bookable": true,
+    "opened_date": "2026-05-11"
+  },
+  "Ador Brighton Beach": {
+    "coming_soon": true,
+    "source": "resy_blog",
+    "neighborhood": null,
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": null,
+    "url": null,
+    "bookable": false
+  },
+  "Patsy’s Pizzeria Flatiron": {
+    "source": "resy_blog",
+    "neighborhood": "Flatiron",
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-05-11",
+    "platform": "resy",
+    "url": "https://resy.com/cities/new-york-ny/patsys-pizzeria-flatiron",
+    "bookable": true,
+    "opened_date": "2026-05-11"
   }
 }
