@@ -4150,7 +4150,12 @@ function renderCard(r, isRadar) {
     const allBooked    = earlyStatus === 'booked'    && primeStatus === 'booked'    && lateStatus === 'booked';
     const isBooked     = tier === 'booked' || allBooked;
 
-    if (isBooked && r.opens_in) {
+    if (isBooked && r.fully_locked) {
+      const _ck = (r.name||'').toLowerCase();
+      const _isConcierge = CONCIERGE_SLUGS[_ck];
+      const _conciergeTag = _isConcierge ? `<a href="/book.html?r=${_isConcierge.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conciergeTag}</div>`;
+    } else if (isBooked && r.opens_in) {
       let futureBadges = '';
       if (r.future_dates) {
         const offsets = [2,4,7,10,14,21,28];
@@ -4164,11 +4169,6 @@ function renderCard(r, isRadar) {
       }
       if (!futureBadges) futureBadges = `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span>`;
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${futureBadges}</div>`;
-    } else if (isBooked && r.fully_locked) {
-      const _ck = (r.name||'').toLowerCase();
-      const _isConcierge = CONCIERGE_SLUGS[_ck];
-      const _conciergeTag = _isConcierge ? `<a href="/book.html?r=${_isConcierge.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conciergeTag}</div>`;
     } else if (isBooked) {
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
     } else if (allAvailable) {
@@ -4180,6 +4180,11 @@ function renderCard(r, isRadar) {
   } else if (tier === 'tasting_menu') {
     const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
+  } else if (tier === 'booked' && r.fully_locked) {
+    const _ckFl = (r.name||'').toLowerCase();
+    const _isConFl = CONCIERGE_SLUGS[_ckFl];
+    const _conTagFl = _isConFl ? `<a href="/book.html?r=${_isConFl.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTagFl}</div>`;
   } else if (tier === 'booked' && r.opens_in) {
     let futureBadges2 = '';
     if (r.future_dates) {
@@ -4194,8 +4199,6 @@ function renderCard(r, isRadar) {
     }
     if (!futureBadges2) futureBadges2 = `<span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.25)">Opens +${r.opens_in}d</span>`;
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${futureBadges2}</div>`;
-  } else if (tier === 'booked' && r.fully_locked) {
-    availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0;background:#2a2a2a;color:#fff;border-color:#2a2a2a">Fully Booked</span></div>`;
   } else if (tier === 'booked') {
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span></div>`;
   } else if (tier === 'available') {
@@ -5176,7 +5179,12 @@ function renderCardAR(r) {
     const allBooked = earlyS === 'booked' && primeS === 'booked' && lateS === 'booked';
     const isBooked  = tier === 'booked' || allBooked;
 
-    if (isBooked && r.opens_in) {
+    if (isBooked && r.fully_locked) {
+      const _ck2 = (r.name||'').toLowerCase();
+      const _isCon2 = CONCIERGE_SLUGS[_ck2];
+      const _conTag2 = _isCon2 ? `<a href="/book.html?r=${_isCon2.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
+      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTag2}</div>`;
+    } else if (isBooked && r.opens_in) {
       let fb3 = '';
       if (r.future_dates) {
         for (const o of [2,4,7,10,14,21,28]) {
@@ -5188,11 +5196,6 @@ function renderCardAR(r) {
       }
       if (!fb3) fb3 = `<span style="${_sAvail}">Opens +${r.opens_in}d</span>`;
       availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:9px"><span class="avail hard" style="margin-bottom:0">Booked Tonight</span>${fb3}</div>`;
-    } else if (isBooked && r.fully_locked) {
-      const _ck2 = (r.name||'').toLowerCase();
-      const _isCon2 = CONCIERGE_SLUGS[_ck2];
-      const _conTag2 = _isCon2 ? `<a href="/book.html?r=${_isCon2.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
-      availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTag2}</div>`;
     } else if (isBooked) {
       availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
     } else if (allAvail) {
@@ -5204,13 +5207,13 @@ function renderCardAR(r) {
   } else if (tier === 'tasting_menu') {
     const pp = r.prepaid_price ? ` · $${r.prepaid_price}/pp` : '';
     availHtml = `<div><span style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:#f3e8ff;color:#7c3aed;border:1px solid rgba(124,58,237,.2)">Tasting Menu${pp}</span></div>`;
-  } else if (tier === 'booked' && r.opens_in) {
-    availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked' && r.fully_locked) {
     const _ck3 = (r.name||'').toLowerCase();
     const _isCon3 = CONCIERGE_SLUGS[_ck3];
     const _conTag3 = _isCon3 ? `<a href="/book.html?r=${_isCon3.slug}" style="display:inline-flex;align-items:center;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;background:linear-gradient(135deg,#f5ede0,#e8dcc8);color:#8b7355;border:1px solid rgba(139,115,85,.25);text-decoration:none;gap:3px">🔑 SeatWize Concierge — We can get you in</a>` : '';
     availHtml = `<div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="avail hard" style="background:#2a2a2a;color:#fff;border-color:#2a2a2a">Very Hard to Book</span>${_conTag3}</div>`;
+  } else if (tier === 'booked' && r.opens_in) {
+    availHtml = `<div style="display:flex;align-items:center;gap:4px"><span class="avail hard">Booked Tonight</span><span style="${_sAvail}">Opens +${r.opens_in}d</span></div>`;
   } else if (tier === 'booked') {
     availHtml = `<div><span class="avail hard">Booked Tonight</span></div>`;
   } else if (tier === 'available') {

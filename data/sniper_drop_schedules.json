@@ -80,6 +80,24 @@
       "monday"
     ]
   },
+  "i sodi": {
+    "venue_id": 443,
+    "slug": "i-sodi",
+    "drop_hour": 10,
+    "window_days": 14
+  },
+  "shion 69 leonard street": {
+    "venue_id": 888,
+    "slug": "69leonardstreet",
+    "drop_hour": 10,
+    "window_days": 30
+  },
+  "le café louis vuitton": {
+    "venue_id": 85214,
+    "slug": "le-cafe-louis-vuitton",
+    "drop_hour": 0,
+    "window_days": 28
+  },
   "ramen by ra": {
     "venue_id": 79848,
     "slug": "ramen-by-ra",
