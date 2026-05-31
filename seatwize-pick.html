@@ -97,68 +97,11 @@
         </div>
       </div>
 
-      <!-- Distance Mode -->
-      <div class="field">
-        <div class="label">Distance</div>
-        <div class="mode-row">
-          <button class="mode-btn" onclick="setMode('walk',this)">Walk</button>
-          <button class="mode-btn" onclick="setMode('drive',this)">Drive</button>
-          <button class="mode-btn" onclick="setMode('radius',this)">Radius</button>
-          <button class="mode-btn on" onclick="setMode('all',this)">All NYC</button>
-        </div>
-        <div class="mode-val" id="modeVal" style="display:none">
-          <select id="modeSelect" class="mode-slider" onchange="picks.distanceVal=this.value"></select>
-        </div>
-      </div>
-
-      <!-- When -->
-      <div class="field">
-        <div class="label">When</div>
-        <select class="sel" id="selWhen" onchange="picks.when=this.value">
-          <option value="">Select...</option>
-          <option value="tonight">Tonight</option>
-          <option value="tomorrow">Tomorrow</option>
-          <option value="+3">In 3 Days</option>
-          <option value="weekend">This Weekend</option>
-        </select>
-      </div>
-
-      <!-- Time Slot -->
-      <div class="field">
-        <div class="label">Time Slot</div>
-        <select class="sel" id="selTime" onchange="picks.time=this.value">
-          <option value="">Select...</option>
-          <option value="early">Early (5-6:30)</option>
-          <option value="prime">Prime (7-8:30)</option>
-          <option value="late">Late (8:30+)</option>
-        </select>
-      </div>
-
-      <!-- Vibe -->
-      <div class="field">
-        <div class="label">Vibe</div>
-        <select class="sel" id="selVibe" onchange="picks.vibe=this.value">
-          <option value="">Select...</option>
-          <option value="date_night">Date Night</option>
-          <option value="upscale">Upscale</option>
-          <option value="casual">Casual</option>
-          <option value="lively">Lively</option>
-          <option value="outdoor">Outdoor</option>
-          <option value="pet_friendly">Pet Friendly</option>
-          <option value="hidden_gem">Hidden Gem</option>
-          <option value="foodie">Foodie</option>
-          <option value="trendy">Trendy</option>
-          <option value="brunch">Brunch</option>
-          <option value="late_night">Late Night</option>
-          <option value="chill">Chill</option>
-        </select>
-      </div>
-
       <!-- Cuisine -->
       <div class="field">
         <div class="label">Cuisine</div>
         <select class="sel" id="selCuisine" onchange="picks.cuisine=this.value">
-          <option value="">Select...</option>
+          <option value="">Choose a cuisine...</option>
           <option value="Italian">Italian</option>
           <option value="Japanese">Japanese</option>
           <option value="Mexican">Mexican</option>
@@ -179,23 +122,35 @@
         </select>
       </div>
 
-      <!-- Price -->
-      <div class="field">
-        <div class="label">Price</div>
-        <select class="sel" id="selPrice" onchange="picks.price=this.value">
-          <option value="">Select...</option>
-          <option value="1">$ — Budget</option>
-          <option value="2">$$ — Moderate</option>
-          <option value="3">$$$ — Upscale</option>
-          <option value="4">$$$$ — Fine Dining</option>
-        </select>
-      </div>
-
-      <!-- Hot Spots -->
-      <div class="field">
-        <div class="toggle-row" id="hotspotToggle" onclick="toggleHotspot()">
-          <div class="toggle-label">Hot Spots Only</div>
-          <div class="toggle-dot"></div>
+      <!-- Vibe + Price on one row -->
+      <div class="field" style="display:flex;gap:12px">
+        <div style="flex:1;min-width:0">
+          <div class="label">Vibe</div>
+          <select class="sel" id="selVibe" onchange="picks.vibe=this.value" style="width:100%">
+            <option value="">Any</option>
+            <option value="date_night">Date Night</option>
+            <option value="upscale">Upscale</option>
+            <option value="casual">Casual</option>
+            <option value="lively">Lively</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="pet_friendly">Pet Friendly</option>
+            <option value="hidden_gem">Hidden Gem</option>
+            <option value="foodie">Foodie</option>
+            <option value="trendy">Trendy</option>
+            <option value="brunch">Brunch</option>
+            <option value="late_night">Late Night</option>
+            <option value="chill">Chill</option>
+          </select>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div class="label">Price</div>
+          <select class="sel" id="selPrice" onchange="picks.price=this.value" style="width:100%">
+            <option value="">Any</option>
+            <option value="1">$ — Budget</option>
+            <option value="2">$$ — Moderate</option>
+            <option value="3">$$$ — Upscale</option>
+            <option value="4">$$$$ — Fine Dining</option>
+          </select>
         </div>
       </div>
 
@@ -269,19 +224,13 @@ function swpUseGPS(btn) {
 }
 
 function validate() {
-  const required = ['when','time','vibe','cuisine','price'];
-  const missing = required.filter(f => !picks[f]);
-  if (missing.length > 0) {
-    document.getElementById('validationMsg').style.display = 'block';
-    document.getElementById('validationMsg').textContent = 'Please fill out: ' + missing.join(', ');
+  const msg = document.getElementById('validationMsg');
+  if (!picks.cuisine) {
+    msg.style.display = 'block';
+    msg.textContent = 'Pick a cuisine to continue';
     return false;
   }
-  if (picks.distanceMode !== 'all' && !document.getElementById('swpAddress').value.trim()) {
-    document.getElementById('validationMsg').style.display = 'block';
-    document.getElementById('validationMsg').textContent = 'Enter your location or select All NYC';
-    return false;
-  }
-  document.getElementById('validationMsg').style.display = 'none';
+  msg.style.display = 'none';
   return true;
 }
 
@@ -292,11 +241,12 @@ async function doSWPick() {
   btn.disabled = true;
   btn.textContent = 'Finding your spot...';
 
-  const addr = document.getElementById('swpAddress').value.trim() || 'New York, NY';
+  const rawAddr = document.getElementById('swpAddress').value.trim();
+  const addr = rawAddr || 'New York, NY';
   const body = { location: addr, quality: 'all', broadCity: true, transport: 'all_nyc' };
-  if (picks.distanceMode === 'walk') { body.transport = 'walk'; body.walkTime = parseInt(picks.distanceVal); }
-  else if (picks.distanceMode === 'drive') { body.transport = 'drive'; body.driveTime = parseInt(picks.distanceVal); }
-  else if (picks.distanceMode === 'radius') { body.transport = 'radius'; body.radiusMiles = parseInt(picks.distanceVal); }
+  // If the user gave us a location, auto-apply a sensible 3-mile proximity filter
+  // so results aren't pulled from across the city. No address → "All NYC".
+  if (rawAddr) { body.transport = 'radius'; body.radiusMiles = 3; }
   if (picks.cuisine) body.cuisine = picks.cuisine;
 
   try {
@@ -324,14 +274,47 @@ async function doSWPick() {
       return r;
     }
 
+    // Always assume tonight + prefer hot spots (no user-visible toggles for either)
     // Try strict
-    let restaurants = applyFilters(allR, { vibe:picks.vibe, price:picks.price, tonight:picks.when==='tonight', time:picks.time, hotspot:picks.hotspot });
+    let restaurants = applyFilters(allR, { vibe:picks.vibe, price:picks.price, tonight:true, time:'', hotspot:true });
     // Relax: drop hotspot
-    if (restaurants.length===0 && picks.hotspot) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:picks.price,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all restaurants'; }
+    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:picks.price,tonight:true,time:'',hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all restaurants'; }
     // Relax: drop price
-    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:null,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all price ranges'; }
+    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:picks.vibe,price:null,tonight:true,time:'',hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all price ranges'; }
     // Relax: drop vibe
-    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:null,price:null,tonight:picks.when==='tonight',time:picks.time,hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all vibes and prices'; }
+    if (restaurants.length===0) { _relaxedMsg=null; restaurants=applyFilters(allR,{vibe:null,price:null,tonight:true,time:'',hotspot:false}); if(restaurants.length>0) _relaxedMsg='Showing all vibes and prices'; }
+
+    // Rank by a weighted score that blends quality signals + proximity, so a
+    // nearby press pick can beat a far-away Michelin and vice-versa.
+    //
+    // Quality boosts (additive):
+    //   Michelin star    +200      Bib / Recommended       +120
+    //   NYT Top 100      +120      Pete Wells review        +80
+    //   Press (buzz)     +60       Instagram buzz           +40
+    //   High rating  (4-pt scale): +(rating-4)*80 when rating ≥ 4.5 & reviews ≥ 100
+    // Distance penalty: -30 per mile. (e.g. a press pick 3 mi away gets +60-90 = -30,
+    // while a nearby restaurant with 4.7★ at 0.3 mi gets +56-9 = +47.)
+    const _score = r => {
+      let s = 0;
+      if (r.michelin?.stars >= 1) s += 200;
+      else if (r.michelin_recommended || r.bib_gourmand) s += 120;
+      if (r.nyt_top_100) s += 120;
+      if (r.pete_wells) s += 80;
+      if (r.buzz_sources?.length > 0) s += 60;
+      if (r.instagram_buzz?.length > 0) s += 40;
+      const rating = Number(r.googleRating || 0);
+      const reviews = Number(r.googleReviewCount || 0);
+      if (rating >= 4.5 && reviews >= 100) s += (rating - 4) * 80;
+      // Price-tier preference: $$$ > $$$$ > $$ > $
+      const pl = r.price_level || 0;
+      if (pl === 3)      s += 30;
+      else if (pl === 4) s += 20;
+      else if (pl === 2) s += 10;
+      else if (pl === 1) s += 3;
+      s -= (r.distanceMiles ?? 5) * 30;
+      return s;
+    };
+    restaurants.sort((a, b) => _score(b) - _score(a));
 
     _filtered = restaurants;
     btn.disabled = false; btn.textContent = 'Show Me Where to Go';
@@ -362,6 +345,12 @@ function showResult() {
   const vicinity = pick.vicinity||'';
   const price = pick.price_level?'$'.repeat(pick.price_level):'';
   const dist = pick.distanceMiles ? pick.distanceMiles.toFixed(1)+' mi' : '';
+  // Title-case the restaurant name (data sometimes arrives lowercased, e.g. "king")
+  const _minor = new Set(['a','an','the','and','but','or','for','nor','of','on','in','at','to','by','as','is','if','it']);
+  const displayName = (pick.name||'').replace(/\w\S*/g, (w,i) => {
+    if (i>0 && _minor.has(w.toLowerCase())) return w.toLowerCase();
+    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+  });
 
   const mapsUrl = pick.place_id ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(pick.name||'')+'&query_place_id='+pick.place_id : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((pick.name||'')+' restaurant New York NY');
   const bmap = {resy:'Book on Resy',opentable:'Book on OpenTable',tock:'Book on Tock',google_reserve:'Reserve via Google',sevenrooms:'Book on SevenRooms'};
@@ -374,12 +363,30 @@ function showResult() {
   if (pick.michelin&&pick.michelin.stars>=1) badges+='<span class="result-badge" style="background:#fef3e2;color:#c68a00">'+'\u2B50'.repeat(Math.min(pick.michelin.stars,3))+' Michelin</span>';
   else if (pick.michelin_recommended||pick.bib_gourmand||(pick.michelin&&(pick.michelin.distinction==='recommended'||pick.michelin.distinction==='bib_gourmand'))) badges+='<span class="result-badge" style="background:#fef3e2;color:#c68a00">Michelin Recommended</span>';
   // Buzz sources (NYT, Eater, Infatuation, etc)
-  if (pick.nyt_top_100) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT Top 100</span>';
-  else if (pick.pete_wells&&pick.nyt_stars) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT '+'\u2605'.repeat(Math.min(pick.nyt_stars,4))+'</span>';
-  else if (pick.pete_wells||(pick.buzz_sources&&pick.buzz_sources.some(s=>s==='NYT'||s==='NY Times'))) badges+='<span class="result-badge" style="background:#f5ede0;color:#8b7355">NYT</span>';
+  const _nytUrl = 'https://www.nytimes.com/interactive/2025/dining/best-nyc-restaurants.html';
+  const _nytStyle = 'background:#f5ede0;color:#8b7355;text-decoration:none;cursor:pointer';
+  if (pick.nyt_top_100) badges+='<a href="'+_nytUrl+'" target="_blank" rel="noopener" class="result-badge" style="'+_nytStyle+'">NYT Top 100</a>';
+  else if (pick.pete_wells&&pick.nyt_stars) badges+='<a href="'+_nytUrl+'" target="_blank" rel="noopener" class="result-badge" style="'+_nytStyle+'">NYT '+'\u2605'.repeat(Math.min(pick.nyt_stars,4))+'</a>';
+  else if (pick.pete_wells||(pick.buzz_sources&&pick.buzz_sources.some(s=>s==='NYT'||s==='NY Times'))) badges+='<a href="'+_nytUrl+'" target="_blank" rel="noopener" class="result-badge" style="'+_nytStyle+'">NYT</a>';
   if (pick.buzz_sources&&pick.buzz_sources.length>0) {
     const _bs = pick.buzz_sources.filter(s=>s!=='NYT'&&s!=='NY Times');
-    _bs.forEach(s => badges+='<span class="result-badge" style="background:#f0ede8;color:#555">'+s+'</span>');
+    // Map each buzz source to a working URL: publication search page where it
+    // has one, Google site-search for the ones that don't (Infatuation, Time Out).
+    const _pubUrl = (src, name) => {
+      const q = encodeURIComponent(name||'');
+      const sg = u => 'https://www.google.com/search?q=' + encodeURIComponent(`site:${u} "${name}"`);
+      const norm = (src||'').toLowerCase();
+      if (norm === 'eater')         return 'https://ny.eater.com/search?q=' + q;
+      if (norm === 'grubstreet' || norm === 'grub street') return 'https://www.grubstreet.com/search?q=' + q;
+      if (norm === 'infatuation' || norm === 'the infatuation') return sg('theinfatuation.com');
+      if (norm === 'time out' || norm === 'timeout') return sg('timeout.com/newyork');
+      return null;
+    };
+    _bs.forEach(s => {
+      const u = _pubUrl(s, pick.name);
+      if (u) badges += '<a href="'+u+'" target="_blank" rel="noopener" class="result-badge" style="background:#f0ede8;color:#555;text-decoration:none;cursor:pointer">'+s+'</a>';
+      else   badges += '<span class="result-badge" style="background:#f0ede8;color:#555">'+s+'</span>';
+    });
   }
   // Availability
   const at=pick.avail_tier;
@@ -403,12 +410,12 @@ function showResult() {
     '<div class="result-card">'+
     (_relaxedMsg?'<div class="result-relaxed">'+_relaxedMsg+'</div>':'')+
     '<div class="result-label">\u2728 SeatWize Pick</div>'+
-    '<div class="result-name">'+(pick.name||'')+'</div>'+
+    '<div class="result-name">'+displayName+'</div>'+
     '<div class="result-sub">'+[cuisine,vicinity,price,dist].filter(Boolean).join(' \u00B7 ')+'</div>'+
     '<div class="result-badges">'+badges+'</div>'+
     '<div class="result-vibes">'+vibesTags+'</div>'+
     '<a href="'+bookUrl+'" target="_blank" rel="noopener" class="result-book">'+bookLabel+' \u2192</a>'+
-    '<button class="result-another" onclick="showResult()">Show Me Another ('+_filtered.length+' more)</button>'+
+    '<button class="result-another" onclick="showResult()">Next Option</button>'+
     '<button class="result-startover" onclick="startOver()">Start Over</button>'+
     '</div>';
   window.scrollTo({top:0,behavior:'smooth'});

@@ -5093,7 +5093,7 @@ function renderCardAR(r) {
       else badges += `<span class="badge bib">Michelin Recommended</span>`;
     }
   }
-  if (hasBuzzAR(r) && !r.michelin) {
+  if (hasBuzzAR(r) && !(r.michelin?.stars >= 1)) {
     const pressLinksAR = new Map();
     const _nsAR = s => ({'eater':'Eater','infatuation':'Infatuation','the infatuation':'Infatuation','The Infatuation':'Infatuation','timeout':'Time Out','TimeOut':'Time Out','Time Out':'Time Out','grubstreet':'GrubStreet','GrubStreet':'GrubStreet','Grub Street':'GrubStreet','nyt':'NYT','NY Times':'NYT','michelin':'Michelin'}[s] || s.charAt(0).toUpperCase()+s.slice(1));
     if (bdataAR?.links) bdataAR.links.forEach(l => { const k = _nsAR(l.source); if (k !== 'NYT' && k !== 'Michelin') pressLinksAR.set(k, l.url); });
@@ -5108,7 +5108,7 @@ function renderCardAR(r) {
       badges += `<span class="badge press">Press Pick</span>`;
     }
   }
-  if (!r.michelin) {
+  if (!(r.michelin?.stars >= 1)) {
     const isNYT_AR = (r.buzz_sources && r.buzz_sources.some(s => s === 'NYT' || s === 'NY Times')) || r.pete_wells || r.nyt_top_100;
     if (isNYT_AR) {
       // Remove specific press source badges if NYT is present (NYT gets its own badge)
