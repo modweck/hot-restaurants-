@@ -1477,8 +1477,32 @@ exports.handler = async (event) => {
 
     const allNYCMode = !!body.allNYC || body.broadCity === true || body.broadCity === 'true' || body.transport === 'all_nyc';
     const qualityMode = normalizeQualityMode(quality || 'any');
-    const KEY = process.env.GOOGLE_PLACES_API_KEY;
+    // Build the candidate-key list: rotation pool first, then the legacy single-key
+    // fallback. The geocoder tries them in order until one returns a non-REQUEST_DENIED
+    // / non-OVER_QUERY_LIMIT response — so a single broken key in the pool no longer
+    // breaks the whole search.
+    const _poolKeys = (process.env.GOOGLE_API_KEYS || '').split(',').map(k => k.trim()).filter(Boolean);
+    const _fallbackKey = process.env.GOOGLE_PLACES_API_KEY || '';
+    const KEY_LIST = [..._poolKeys, ...(_fallbackKey && !_poolKeys.includes(_fallbackKey) ? [_fallbackKey] : [])];
+    const KEY = KEY_LIST[0] || '';
     if (!KEY) return stableResponse([], [], {}, 'API key not configured');
+
+    // Try every available key for one geocode lookup; skip ones that come back
+    // REQUEST_DENIED / OVER_QUERY_LIMIT. Returns { status, results } or null.
+    async function _geocodeWithFailover(addr) {
+      let lastStatus = 'UNKNOWN_ERROR';
+      for (const k of KEY_LIST) {
+        try {
+          const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(addr)}&key=${k}`).then(r=>r.json());
+          if (gd.status === 'OK') return gd;
+          lastStatus = gd.status || lastStatus;
+          // Only retry on key-level failures — other statuses (ZERO_RESULTS,
+          // INVALID_REQUEST) mean the address itself is the problem.
+          if (gd.status !== 'REQUEST_DENIED' && gd.status !== 'OVER_QUERY_LIMIT') break;
+        } catch (e) { lastStatus = 'FETCH_ERROR'; }
+      }
+      return { status: lastStatus, results: [] };
+    }
 
     const cacheKey = getCacheKey(location, qualityMode, cuisine, openNow) + '_v25';
     const cached = getFromCache(cacheKey);
@@ -1493,20 +1517,18 @@ exports.handler = async (event) => {
       if (cm) {
         lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`;
       } else if (locStr && locStr.toLowerCase() !== 'new york, ny' && locStr.toLowerCase() !== 'nyc') {
-        try {
-          const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
-          if (gd.status === 'OK') {
-            lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
-            confirmedAddress = gd.results[0].formatted_address;
-          } else { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
-        } catch(e) { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
+        const gd = await _geocodeWithFailover(locStr);
+        if (gd.status === 'OK') {
+          lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
+          confirmedAddress = gd.results[0].formatted_address;
+        } else { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
       } else { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
     } else {
       const locStr = String(location||'').trim();
       const cm = locStr.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
       if (cm) { lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`; }
       else {
-        const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
+        const gd = await _geocodeWithFailover(locStr);
         if (gd.status !== 'OK') return stableResponse([],[],{ performance: { total_ms: Date.now()-t0 } }, `Geocode failed: ${gd.status}`);
         lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
         confirmedAddress = gd.results[0].formatted_address;
