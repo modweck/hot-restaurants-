@@ -76,6 +76,8 @@
     .login-tab.active{background:#1a1a2e;color:#fff}
   </style>
   <script src="https://js.stripe.com/v3/"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4"></script>
 </head>
 <body>
   <div class="container">
@@ -120,9 +122,9 @@
 
         <div class="field">
           <label>Preferred Dates (pick up to 3)</label>
-          <input type="date" id="bookDate1" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
-          <input type="date" id="bookDate2" style="margin-top:8px" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
-          <input type="date" id="bookDate3" style="margin-top:8px" onchange="validateSubmit()" onclick="this.showPicker && this.showPicker()">
+          <input type="text" id="bookDate1" placeholder="Pick a date" readonly onchange="validateSubmit()">
+          <input type="text" id="bookDate2" placeholder="Pick a date (optional)" readonly style="margin-top:8px" onchange="validateSubmit()">
+          <input type="text" id="bookDate3" placeholder="Pick a date (optional)" readonly style="margin-top:8px" onchange="validateSubmit()">
           <div class="field-note" id="dateNote"></div>
         </div>
 
@@ -324,11 +326,34 @@ function fmtDate(d) {
 function validateSubmit() {
   const btn = document.getElementById('submitBtn');
   if (!btn) return;
-  const date1 = document.getElementById('bookDate1')?.value.trim();
+  const el1 = document.getElementById('bookDate1');
+  const date1 = el1?.value.trim();
+  const date2 = document.getElementById('bookDate2')?.value.trim();
+  const date3 = document.getElementById('bookDate3')?.value.trim();
   const name = document.getElementById('bookName')?.value.trim();
   const contact = document.getElementById('bookContact')?.value.trim();
   const agreed = document.getElementById('agreeTerms')?.checked;
-  const ok = !!(date1 && name && contact && agreed && resyToken);
+
+  // Some mobile date pickers (notably older iOS Safari) don't enforce min/max,
+  // so validate the range here too. YYYY-MM-DD sorts lexicographically.
+  const minStr = el1?.min || '';
+  const maxStr = el1?.max || '';
+  const inRange = d => !d || ((!minStr || d >= minStr) && (!maxStr || d <= maxStr));
+  const outOfRange = ![date1, date2, date3].every(inRange);
+
+  const note = document.getElementById('dateNote');
+  if (note && minStr) {
+    const minPretty = fmtDate(new Date(minStr + 'T00:00:00'));
+    if (outOfRange) {
+      note.style.color = '#c0392b';
+      note.innerHTML = `<b>Earliest bookable date is ${minPretty}.</b> Please pick a date on or after that.`;
+    } else {
+      note.style.color = '';
+      note.innerHTML = 'Soonest available: ' + minPretty + '. Pick up to 3 dates in order of priority. We always try for your first pick first &mdash; we\'re working on getting it every time.';
+    }
+  }
+
+  const ok = !!(date1 && name && contact && agreed && resyToken && !outOfRange);
   btn.disabled = !ok;
 }
 
@@ -400,7 +425,22 @@ function pickRest(idx) {
   ['bookDate1', 'bookDate2', 'bookDate3'].forEach((id, i) => {
     const el = document.getElementById(id);
     el.min = minStr; el.max = maxStr;
-    if (i === 0) el.value = minStr;
+    // Tear down any previous Flatpickr instance (re-rendering when the user
+    // picks a different restaurant) before re-initializing with new min/max.
+    if (el._flatpickr) el._flatpickr.destroy();
+    if (typeof flatpickr === 'function') {
+      flatpickr(el, {
+        minDate: minStr,
+        maxDate: maxStr,
+        dateFormat: 'Y-m-d',
+        disableMobile: true,   // use Flatpickr's UI on mobile too (native picker doesn't grey out invalid dates reliably)
+        defaultDate: i === 0 ? minStr : null,
+        onChange: validateSubmit,
+      });
+    } else if (i === 0) {
+      // Flatpickr failed to load (offline / blocked CDN) — fall back to today's min
+      el.value = minStr;
+    }
   });
   document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first &mdash; we\'re working on getting it every time.';
 
@@ -584,13 +624,23 @@ async function submitRequest() {
   }
   const name = document.getElementById('bookName').value.trim();
   const contact = document.getElementById('bookContact').value.trim();
-  const date1 = document.getElementById('bookDate1').value;
+  const el1 = document.getElementById('bookDate1');
+  const date1 = el1.value;
   const date2 = document.getElementById('bookDate2').value;
   const date3 = document.getElementById('bookDate3').value;
   const dates = [date1, date2, date3].filter(Boolean);
   if (!name) { alert('Enter your name'); return; }
   if (!contact) { alert('Enter your phone or email'); return; }
   if (dates.length === 0) { alert('Pick at least one date'); return; }
+  // Defensive: in case a mobile date picker let a past/future-of-range date slip through
+  const minStr = el1.min || '', maxStr = el1.max || '';
+  const badDate = dates.find(d => (minStr && d < minStr) || (maxStr && d > maxStr));
+  if (badDate) {
+    const minPretty = fmtDate(new Date(minStr + 'T00:00:00'));
+    alert('That date is outside the bookable range. The earliest available date is ' + minPretty + '.');
+    validateSubmit();
+    return;
+  }
   if (!resyToken) { alert('Connect your Resy account first'); return; }
 
   // Save contact email so Concierge tab can find this request later
