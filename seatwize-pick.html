@@ -296,11 +296,19 @@ async function doSWPick() {
     // while a nearby restaurant with 4.7★ at 0.3 mi gets +56-9 = +47.)
     const _score = r => {
       let s = 0;
-      if (r.michelin?.stars >= 1) s += 200;
+      if (r.michelin?.stars >= 1) s += 145;
       else if (r.michelin_recommended || r.bib_gourmand) s += 120;
       if (r.nyt_top_100) s += 120;
       if (r.pete_wells) s += 80;
-      if (r.buzz_sources?.length > 0) s += 60;
+      // Infatuation gets its own slightly-higher bucket (+70); other press
+      // sources (Eater / Time Out / GrubStreet) share the generic +60.
+      if (r.buzz_sources?.length > 0) {
+        const hasInfat = r.buzz_sources.some(src => {
+          const lc = (src || '').toLowerCase();
+          return lc === 'infatuation' || lc === 'the infatuation';
+        });
+        s += hasInfat ? 70 : 60;
+      }
       if (r.instagram_buzz?.length > 0) s += 40;
       const rating = Number(r.googleRating || 0);
       const reviews = Number(r.googleReviewCount || 0);
