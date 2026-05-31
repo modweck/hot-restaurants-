@@ -1941,26 +1941,10 @@ function renderSavedView() {
   const _catLookup = {};
   _catalog.forEach(cr => { if (cr.name) _catLookup[(cr.name||'').toLowerCase().trim()] = cr; });
 
-  // Address + GPS + Radius row
+  // Available Tonight (full-width)
   const _selStyle = 'padding:8px 10px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:12px;font-family:DM Sans,sans-serif;background:#fff;color:#555;font-weight:600';
-  html += '<div style="display:flex;gap:6px;padding:6px 20px 0;align-items:center">';
-  html += '<input type="text" id="mlAddrInput" placeholder="Your address..." value="' + (_mlAddr||'').replace(/"/g,'&quot;') + '" style="flex:1;min-width:0;padding:9px 12px;border:1px solid rgba(0,0,0,.08);border-radius:10px;font-size:13px;font-family:DM Sans,sans-serif;color:#1a1a2e;outline:none;background:#fff" onchange="mlSetAddr(this.value)">';
-  html += '<button onclick="mlUseGPS()" style="width:36px;height:36px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:10px;cursor:pointer;font-size:13px;flex-shrink:0">📍</button>';
-  html += '<select onchange="mlSetDist(parseInt(this.value))" style="' + _selStyle + ';flex-shrink:0">';
-  html += '<option value="0"' + (_mlDist===0?' selected':'') + '>Any Radius</option>';
-  html += '<option value="1"' + (_mlDist===1?' selected':'') + '>1 mi</option>';
-  html += '<option value="2"' + (_mlDist===2?' selected':'') + '>2 mi</option>';
-  html += '<option value="3"' + (_mlDist===3?' selected':'') + '>3 mi</option>';
-  html += '<option value="5"' + (_mlDist===5?' selected':'') + '>5 mi</option>';
-  html += '</select></div>';
-
-  // Row 1: Available Tonight + Future
   html += '<div style="display:flex;gap:8px;padding:8px 20px 0;align-items:center">';
   html += '<button onclick="_mlAvail=(_mlAvail===\'tonight\'?\'any\':\'tonight\');renderSavedView()" style="flex:1;padding:9px 14px;border-radius:10px;border:1.5px solid ' + (_mlAvail==='tonight'?'#1b4332':'rgba(0,0,0,.1)') + ';background:' + (_mlAvail==='tonight'?'#1b4332':'#fff') + ';color:' + (_mlAvail==='tonight'?'#fff':'#1a1a2e') + ';cursor:pointer;font-size:12px;font-weight:800;font-family:DM Sans,sans-serif;box-shadow:' + (_mlAvail==='tonight'?'0 2px 8px rgba(27,67,50,.25)':'0 1px 3px rgba(0,0,0,.04)') + '">Available Tonight</button>';
-  html += '<select onchange="mlSetFuture(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="0"' + (_mlFuture===0?' selected':'') + '>Future</option>';
-  [2,3,5,7,14,21].forEach(d => { html += '<option value="'+d+'"' + (_mlFuture===d?' selected':'') + '>+'+d+'d</option>'; });
-  html += '</select>';
   html += '</div>';
 
   // Row 2: Cuisine + Vibe + Price
@@ -1980,13 +1964,6 @@ function renderSavedView() {
   html += '<option value="any"' + (_mlVibe==='any'?' selected':'') + '>Vibe</option>';
   const _vOpts = [['date_night','Date Night'],['upscale','Upscale'],['lively','Lively'],['chill','Chill'],['trendy','Trendy'],['casual','Casual'],['foodie','Foodie'],['hidden_gem','Hidden Gem'],['outdoor','Outdoor'],['late_night','Late Night'],['brunch','Brunch']];
   _vOpts.forEach(([v,l]) => { html += '<option value="'+v+'"' + (_mlVibe===v?' selected':'') + '>'+l+'</option>'; });
-  html += '</select>';
-  html += '<select onchange="mlSetPrice(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
-  html += '<option value="any"' + (_mlPrice==='any'?' selected':'') + '>Price</option>';
-  html += '<option value="1"' + (_mlPrice==='1'?' selected':'') + '>$</option>';
-  html += '<option value="2"' + (_mlPrice==='2'?' selected':'') + '>$$</option>';
-  html += '<option value="3"' + (_mlPrice==='3'?' selected':'') + '>$$$</option>';
-  html += '<option value="4"' + (_mlPrice==='4'?' selected':'') + '>$$$$</option>';
   html += '</select>';
   html += '</div>';
 
