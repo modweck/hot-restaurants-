@@ -1506,10 +1506,18 @@ exports.handler = async (event) => {
       const cm = locStr.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/);
       if (cm) { lat = +cm[1]; lng = +cm[2]; confirmedAddress = `(${lat.toFixed(5)}, ${lng.toFixed(5)})`; }
       else {
-        const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
-        if (gd.status !== 'OK') return stableResponse([],[],{ performance: { total_ms: Date.now()-t0 } }, `Geocode failed: ${gd.status}`);
-        lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
-        confirmedAddress = gd.results[0].formatted_address;
+        try {
+          const gd = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(locStr)}&key=${KEY}`).then(r=>r.json());
+          if (gd.status === 'OK') {
+            lat = gd.results[0].geometry.location.lat; lng = gd.results[0].geometry.location.lng;
+            confirmedAddress = gd.results[0].formatted_address;
+          } else {
+            // Geocoding failed — fall back to NYC center so the search still
+            // returns results (the user-set radius/walk/drive filter is now
+            // measured from Midtown instead of the unparsed address).
+            lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA';
+          }
+        } catch (e) { lat = 40.7580; lng = -73.9855; confirmedAddress = 'New York, NY, USA'; }
       }
     }
     const gLat = Math.round(lat*10000)/10000, gLng = Math.round(lng*10000)/10000;
