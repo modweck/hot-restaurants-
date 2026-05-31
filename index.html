@@ -582,7 +582,6 @@ _sbGetUser().then(() => _updateAuthUI());
                 <button class="swp-chip" onclick="swpToggle(this)" data-v="casual">Casual</button>
                 <button class="swp-chip" onclick="swpToggle(this)" data-v="lively">Lively</button>
                 <button class="swp-chip" onclick="swpToggle(this)" data-v="outdoor">Outdoor</button>
-                <button class="swp-chip" onclick="swpToggle(this)" data-v="hidden_gem">Hidden Gem</button>
                 <button class="swp-chip" onclick="swpToggle(this)" data-v="foodie">Foodie</button>
               </div>
             </div>
@@ -683,7 +682,6 @@ _sbGetUser().then(() => _updateAuthUI());
               <button class="fchip" onclick="setVibeFilter('pet_friendly',this)">Pet Friendly</button>
               <button class="fchip" onclick="setVibeFilter('late_night',this)">Late Night</button>
               <button class="fchip" onclick="setVibeFilter('casual',this)">Casual</button>
-              <button class="fchip" onclick="setVibeFilter('hidden_gem',this)">Hidden Gem</button>
               <button class="fchip" onclick="setVibeFilter('foodie',this)">Foodie</button>
             </div>
           </div>
@@ -1230,7 +1228,6 @@ _sbGetUser().then(() => _updateAuthUI());
               <button class="fchip" id="ar-vibe-pet_friendly" onclick="arSetVibe('pet_friendly',this)">Pet Friendly</button>
               <button class="fchip" id="ar-vibe-late_night" onclick="arSetVibe('late_night',this)">Late Night</button>
               <button class="fchip" id="ar-vibe-casual" onclick="arSetVibe('casual',this)">Casual</button>
-              <button class="fchip" id="ar-vibe-hidden_gem" onclick="arSetVibe('hidden_gem',this)">Hidden Gem</button>
               <button class="fchip" id="ar-vibe-foodie" onclick="arSetVibe('foodie',this)">Foodie</button>
             </div>
           </div>
@@ -1511,7 +1508,6 @@ _sbGetUser().then(() => _updateAuthUI());
             <button class="fchip" id="bar-vibe-outdoor" onclick="barSetVibe('outdoor',this)">Outdoor</button>
             <button class="fchip" id="bar-vibe-pet_friendly" onclick="barSetVibe('pet_friendly',this)">Pet Friendly</button>
             <button class="fchip" id="bar-vibe-late_night" onclick="barSetVibe('late_night',this)">Late Night</button>
-            <button class="fchip" id="bar-vibe-hidden_gem" onclick="barSetVibe('hidden_gem',this)">Hidden Gem</button>
           </div>
         </div>
 
@@ -1962,7 +1958,7 @@ function renderSavedView() {
   html += '</select>';
   html += '<select onchange="mlSetVibe(this.value)" style="' + _selStyle + ';flex:1;min-width:0">';
   html += '<option value="any"' + (_mlVibe==='any'?' selected':'') + '>Vibe</option>';
-  const _vOpts = [['date_night','Date Night'],['upscale','Upscale'],['lively','Lively'],['chill','Chill'],['trendy','Trendy'],['casual','Casual'],['foodie','Foodie'],['hidden_gem','Hidden Gem'],['outdoor','Outdoor'],['late_night','Late Night'],['brunch','Brunch']];
+  const _vOpts = [['date_night','Date Night'],['upscale','Upscale'],['lively','Lively'],['chill','Chill'],['trendy','Trendy'],['casual','Casual'],['foodie','Foodie'],['outdoor','Outdoor'],['late_night','Late Night'],['brunch','Brunch']];
   _vOpts.forEach(([v,l]) => { html += '<option value="'+v+'"' + (_mlVibe===v?' selected':'') + '>'+l+'</option>'; });
   html += '</select>';
   html += '</div>';
@@ -3991,7 +3987,10 @@ function renderCard(r, isRadar) {
   const VIBE_LABEL = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', pet_friendly:'Pet Friendly' };
   let vibeHtml = '';
   if (r.vibe_tags && r.vibe_tags.length) {
-    const pills = r.vibe_tags.slice(0,4).map(v => {
+    // Drop hidden_gem from card vibe chips — the dedicated `new_rising` field +
+    // "✨ New & Rising" badge handle that concept properly (5-50 reviews + 4.0+).
+    const _vibesShown = r.vibe_tags.filter(v => v !== 'hidden_gem');
+    const pills = _vibesShown.slice(0,4).map(v => {
       const emoji = VIBE_EMOJI[v] || '';
       const label = VIBE_LABEL[v] || v.replace(/_/g,' ');
       return `<span class="badge vibe">${emoji} ${label}</span>`;
@@ -5287,7 +5286,10 @@ function renderCardAR(r) {
   const VIBE_LABEL_AR = { date_night:'Date', upscale:'Upscale', lively:'Lively', chill:'Chill', trendy:'Trendy', brunch:'Brunch', outdoor:'Outdoor', late_night:'Late Night', casual:'Casual', hidden_gem:'Hidden Gem', foodie:'Foodie', pet_friendly:'Pet Friendly' };
   let vibeHtmlAR = '';
   if (r.vibe_tags && r.vibe_tags.length) {
-    const pills = r.vibe_tags.slice(0,4).map(v => `<span class="badge vibe">${VIBE_EMOJI_AR[v]||''} ${VIBE_LABEL_AR[v]||v.replace(/_/g,' ')}</span>`).join('');
+    // Same suppression as the Hot Spots card render — hidden_gem is handled
+    // by the dedicated new_rising signal instead.
+    const _vibesShownAR = r.vibe_tags.filter(v => v !== 'hidden_gem');
+    const pills = _vibesShownAR.slice(0,4).map(v => `<span class="badge vibe">${VIBE_EMOJI_AR[v]||''} ${VIBE_LABEL_AR[v]||v.replace(/_/g,' ')}</span>`).join('');
     vibeHtmlAR = `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px">${pills}</div>`;
   }
 
