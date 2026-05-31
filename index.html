@@ -4650,7 +4650,7 @@ initAC();
 // ALL RESTAURANTS VIEW — state + helpers
 // ══════════════════════════════════════════════════════════════════════════════
 
-const arState = { cuisine: 'any', cuisines: [], buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', rewardsFilters: [], transport: 'all_nyc', availFilter: 'any', horizonFilter: null, vibeFilter: null, vibeFilters: [], hotspotFilter: 'none', hotspotFilters: [] };
+const arState = { cuisine: 'any', cuisines: [], buzzFilter: 'any', priceFilter: 'any', rewardsFilter: 'any', rewardsFilters: [], transport: 'all_nyc', availFilter: 'any', availFilters: [], horizonFilter: null, vibeFilter: null, vibeFilters: [], hotspotFilter: 'none', hotspotFilters: [] };
 let allNYCRestaurants = [], allNYCSearching = false, allNYCAbort = null, allNYCCacheKey = '';
 
 // Init date
@@ -4671,15 +4671,31 @@ function arSetTransport(mode, btn) {
   });
 }
 
-function arSetAvail(val, btn) {
+const AR_AVAIL_VAL_TO_ID = { tonight:'ar-avail-tonight', limited:'ar-avail-limited', book_ahead:'ar-avail-book_ahead', booked_solid:'ar-avail-booked', early:'ar-avail-early', prime:'ar-avail-prime', late:'ar-avail-late' };
+const AR_AVAIL_ALL_IDS = ['ar-avail-any','ar-avail-tonight','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'];
+
+function arSetAvail(val) {
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  arState.availFilter = val; arState.horizonFilter = null; arState.daysFilter = null;
-  btn.classList.add('on');
-  if (val !== 'book_ahead') {
+  if (!Array.isArray(arState.availFilters)) arState.availFilters = [];
+  if (val === 'any') {
+    arState.availFilters = [];
+  } else {
+    const i = arState.availFilters.indexOf(val);
+    if (i >= 0) arState.availFilters.splice(i, 1);
+    else arState.availFilters.push(val);
+  }
+  arState.availFilter = arState.availFilters.length === 1 ? arState.availFilters[0] : (arState.availFilters.length === 0 ? 'any' : null);
+  arState.horizonFilter = null;
+  if (!arState.availFilters.includes('book_ahead')) {
     arState.daysFilter = null;
     ['ar-res-days-any','ar-res-days-2','ar-res-days-3','ar-res-days-5','ar-res-days-7','ar-res-days-10','ar-res-days-14','ar-res-days-21','ar-res-days-28'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-    const anyBtn = document.getElementById('ar-res-days-any'); if(anyBtn) anyBtn.classList.add('on');
+    const anyDays = document.getElementById('ar-res-days-any'); if (anyDays) anyDays.classList.add('on');
+  }
+  AR_AVAIL_ALL_IDS.forEach(id => { const el = document.getElementById(id); if (el) el.classList.remove('on'); });
+  if (arState.availFilters.length === 0) {
+    const anyEl = document.getElementById('ar-avail-any'); if (anyEl) anyEl.classList.add('on');
+  } else {
+    arState.availFilters.forEach(v => { const el = document.getElementById(AR_AVAIL_VAL_TO_ID[v]); if (el) el.classList.add('on'); });
   }
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
@@ -4701,7 +4717,8 @@ function arSetDays(val, btn) {
     if (resChip) resChip.classList.add('on');
     arState.daysFilter = val === 'any' ? null : Number(val);
     // Auto-set book_ahead filter if selecting a specific day
-    if (val !== 'any' && arState.availFilter !== 'book_ahead') {
+    if (val !== 'any' && !(arState.availFilters || []).includes('book_ahead')) {
+      arState.availFilters = ['book_ahead'];
       arState.availFilter = 'book_ahead';
       document.querySelectorAll('[id^="ar-avail-"]').forEach(el => el.classList.remove('on'));
       const ba = document.getElementById('ar-avail-book_ahead'); if (ba) ba.classList.add('on');
@@ -4710,9 +4727,9 @@ function arSetDays(val, btn) {
   if (allNYCRestaurants.length > 0) displayAllNYC(allNYCRestaurants);
 }
 function arSetHorizon(days, btn) {
-  ['ar-avail-any','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
+  ['ar-avail-any','ar-avail-tonight','ar-avail-limited','ar-avail-book_ahead','ar-avail-booked','ar-avail-early','ar-avail-prime','ar-avail-late'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
   ['ar-hor-3','ar-hor-5','ar-hor-7','ar-hor-14'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});
-  arState.availFilter = null; arState.horizonFilter = days;
+  arState.availFilter = null; arState.availFilters = []; arState.horizonFilter = days;
   btn.classList.add('on');
 }
 function barSetVibe(vibe, btn) {
@@ -5378,11 +5395,13 @@ function applyARFilters(list) {
       return false;
     }));
   }
-  // ── Availability filter ──
-  const af = arState.availFilter;
+  // ── Availability filter (multi-select OR logic) ──
+  const afs = (Array.isArray(arState.availFilters) && arState.availFilters.length > 0)
+    ? arState.availFilters
+    : (arState.availFilter && arState.availFilter !== 'any' ? [arState.availFilter] : []);
   const hf = arState.horizonFilter;
-  if (af && af !== 'any') {
-    list = list.filter(r => {
+  if (afs.length > 0) {
+    const matchAvail = (r, af) => {
       const tier = r.avail_tier;
       const bp = (r.booking_platform || '').toLowerCase();
       const realPlatform = bp === 'resy' || bp === 'opentable' || bp === 'tock' || bp === 'sevenrooms' || bp === 'google_reserve';
@@ -5412,8 +5431,9 @@ function applyARFilters(list) {
       if (af === 'early') return r.has_early && tier !== 'booked';
       if (af === 'prime') return r.has_prime && tier !== 'booked';
       if (af === 'late')  return r.has_late  && tier !== 'booked';
-      return true;
-    });
+      return false;
+    };
+    list = list.filter(r => afs.some(af => matchAvail(r, af)));
   }
   // ── Vibe filter — supports multiple selections (AND logic) ──
   const arVfs = (arState.vibeFilters && arState.vibeFilters.length > 0) ? arState.vibeFilters : (arState.vibeFilter ? [arState.vibeFilter] : []);
@@ -5425,7 +5445,7 @@ function applyARFilters(list) {
 
 function displayAllNYC(restaurants) {
   const _resDaysEl = document.getElementById('ar-results-days');
-  if (_resDaysEl) _resDaysEl.style.display = arState.availFilter === 'book_ahead' ? 'block' : 'none';
+  if (_resDaysEl) _resDaysEl.style.display = ((arState.availFilters || []).includes('book_ahead') || arState.availFilter === 'book_ahead') ? 'block' : 'none';
   const filtered = applyARFilters([...restaurants]);
   document.getElementById('allRestMeta').textContent = `${filtered.length} restaurant${filtered.length !== 1 ? 's' : ''}`;
   if (!filtered.length) {
