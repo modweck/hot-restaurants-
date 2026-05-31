@@ -15979,45 +15979,6 @@
     "late": "available",
     "_checked_date": "2026-04-09"
   },
-  "69leonardstreet": {
-    "tier": "booked",
-    "dinner_slots": 0,
-    "early": "booked",
-    "prime": "booked",
-    "late": "booked",
-    "_checked_date": "2026-04-07",
-    "_recheck_result": "truly_booked",
-    "future_dates": {
-      "+2": {
-        "date": "2026-04-11",
-        "tier": "booked"
-      },
-      "+4": {
-        "date": "2026-04-13",
-        "tier": "booked"
-      },
-      "+7": {
-        "date": "2026-04-16",
-        "tier": "booked"
-      },
-      "+10": {
-        "date": "2026-04-19",
-        "tier": "booked"
-      },
-      "+14": {
-        "date": "2026-04-23",
-        "tier": "booked"
-      },
-      "+21": {
-        "date": "2026-04-30",
-        "tier": "booked"
-      },
-      "+28": {
-        "date": "2026-05-07",
-        "tier": "booked"
-      }
-    }
-  },
   "dejavu": {
     "tier": "booked",
     "dinner_slots": 0,
