@@ -848,6 +848,8 @@ function enrichNYT(r) {
   if (!r.pete_wells_rank && entry.pete_wells_rank) r.pete_wells_rank = entry.pete_wells_rank;
   if (!r.instagram_buzz) r.instagram_buzz = INSTAGRAM_BUZZ[mk] || INSTAGRAM_BUZZ[mk.replace(/^the /, '')] || null;
   if (!r.vibe_tags || r.vibe_tags.length === 0) r.vibe_tags = entry.vibe_tags || [];
+  if (!Array.isArray(r.closed_days) && Array.isArray(entry.closed_days)) r.closed_days = entry.closed_days;
+  if (!r.weekly_hours && entry.weekly_hours) r.weekly_hours = entry.weekly_hours;
   if (!r.bib_gourmand && entry.bib_gourmand) r.bib_gourmand = entry.bib_gourmand;
   if (!r.michelin_recommended && entry.michelin_recommended) r.michelin_recommended = entry.michelin_recommended;
   if (!r.michelin && entry.michelin_stars) r.michelin = { stars: entry.michelin_stars, distinction: 'star' };
@@ -1378,6 +1380,8 @@ exports.handler = async (event) => {
         future_dates: _rp ? (r.future_dates || null) : null,
         prepaid_price: r.prepaid_price || null,
         vibe_tags: r.vibe_tags?.length ? r.vibe_tags : undefined,
+        closed_days: r.closed_days?.length ? r.closed_days : undefined,
+        weekly_hours: r.weekly_hours || undefined,
         velocity: r.velocity || null,
         new_rising: r.new_rising || null,
         coming_soon: r.coming_soon || null,
@@ -1451,6 +1455,8 @@ exports.handler = async (event) => {
           michelin_recommended: entry.michelin_recommended || null,
           bib_gourmand: entry.bib_gourmand || null,
           vibe_tags: entry.vibe_tags || [],
+          closed_days: entry.closed_days || [],
+          weekly_hours: entry.weekly_hours || null,
           buzz_sources: entry.buzz_sources || [],
           instagram_buzz: INSTAGRAM_BUZZ[name] || null,
           new_rising: entry.new_rising || null,
@@ -1598,6 +1604,8 @@ exports.handler = async (event) => {
           franki: entry.franki || null,
           seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
+          closed_days: entry.closed_days || [],
+          weekly_hours: entry.weekly_hours || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
           pete_wells: entry.pete_wells || false,
@@ -1692,6 +1700,8 @@ exports.handler = async (event) => {
           franki: entry.franki || null,
           seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
+          closed_days: entry.closed_days || [],
+          weekly_hours: entry.weekly_hours || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
           pete_wells: entry.pete_wells || false,
@@ -1782,6 +1792,8 @@ exports.handler = async (event) => {
           franki: entry.franki || null,
           seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
+          closed_days: entry.closed_days || [],
+          weekly_hours: entry.weekly_hours || null,
           buzz_sources: entry.buzz_sources || [],
           nyt_stars: entry.nyt_stars || null,
           pete_wells: entry.pete_wells || false,
@@ -2073,6 +2085,8 @@ exports.handler = async (event) => {
           franki: entry.franki || null,
           seated: entry.seated || null,
           vibe_tags: entry.vibe_tags || [],
+          closed_days: entry.closed_days || [],
+          weekly_hours: entry.weekly_hours || null,
           cuisine: entry.cuisine || CUISINE_LOOKUP[key] || null,
           instagram: entry.instagram || null,
           // ── Availability: from tonight_availability.json ──
@@ -2391,6 +2405,8 @@ exports.handler = async (event) => {
         website: entry.website || null,
         cuisine: entry.cuisine || CUISINE_LOOKUP[mk] || null,
         vibe_tags: entry.vibe_tags || [],
+        closed_days: entry.closed_days || [],
+        weekly_hours: entry.weekly_hours || null,
         instagram: entry.instagram || null,
         bib_gourmand: entry.bib_gourmand || null,
         michelin: entry.michelin_stars ? { stars: entry.michelin_stars, distinction: 'star' } : entry.michelin_recommended ? { stars: 0, distinction: 'recommended' } : null,
