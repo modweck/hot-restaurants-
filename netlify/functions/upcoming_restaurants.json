@@ -251,5 +251,38 @@
     "url": "https://resy.com/cities/new-york-ny/patsys-pizzeria-flatiron",
     "bookable": true,
     "opened_date": "2026-05-11"
+  },
+  "Oyatte": {
+    "coming_soon": true,
+    "source": "eater",
+    "neighborhood": "Murray Hill",
+    "address": "125 East 39th Street, New York, New York 10016, United StatesExternal LinkLinkVisit websiteOyatte",
+    "cuisine": null,
+    "added_date": "2026-06-01",
+    "platform": null,
+    "url": null,
+    "bookable": false
+  },
+  "Sanwits": {
+    "coming_soon": true,
+    "source": "eater",
+    "neighborhood": "East Village",
+    "address": "149 1st Avenue, New York, New York 10003, United StatesExternal LinkLinkVisit websitePaul McDonough",
+    "cuisine": null,
+    "added_date": "2026-06-01",
+    "platform": null,
+    "url": null,
+    "bookable": false
+  },
+  "Latest Stories": {
+    "coming_soon": true,
+    "source": "hauteliving",
+    "neighborhood": null,
+    "address": null,
+    "cuisine": null,
+    "added_date": "2026-06-01",
+    "platform": null,
+    "url": null,
+    "bookable": false
   }
 }
