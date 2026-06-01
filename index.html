@@ -302,6 +302,9 @@ var _sb = (_sbMod.createClient || _sbMod)(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM'
 );
 var _sbUser = null;
+// Set by _promptLogin when an auth-gated view triggers the overlay; on
+// successful login we route the user back to whatever view they wanted.
+var _pendingNav = null;
 
 async function _sbGetUser() {
   const { data } = await _sb.auth.getSession();
@@ -328,9 +331,29 @@ function _updateAuthUI() {
       document.getElementById('logout-btn').addEventListener('click', function() { window._sbLogout(); });
     }
   } else {
-    if (overlay) overlay.style.display = 'flex';
+    // Logged out is no longer a wall \u2014 let users browse freely. The overlay
+    // only appears when _promptLogin() is explicitly called from a gated nav.
+    if (overlay) overlay.style.display = 'none';
     if (bar) bar.style.display = 'none';
   }
+}
+
+// Show the login overlay because the user tried to enter an auth-gated view.
+// Remembers `viewName` so we can take them there after they log in.
+function _promptLogin(viewName) {
+  _pendingNav = viewName || null;
+  const overlay = document.getElementById('auth-overlay');
+  if (overlay) overlay.style.display = 'flex';
+  // Default to log-in mode (in case a previous prompt left it on signup)
+  if (_authMode !== 'login') _toggleAuthMode();
+  setTimeout(function() { const e = document.getElementById('auth-email'); if (e) e.focus(); }, 50);
+}
+
+// Dismiss the prompt without logging in \u2014 user keeps browsing.
+function _dismissLoginPrompt() {
+  _pendingNav = null;
+  const overlay = document.getElementById('auth-overlay');
+  if (overlay) overlay.style.display = 'none';
 }
 
 function _toggleAuthMode() {
@@ -484,6 +507,12 @@ _sb.auth.onAuthStateChange(function(event, session) {
   if (_sbUser) {
     try { _syncSavedToSupabase(); } catch(e) {}
     try { _loadSavedFromSupabase(); } catch(e) {}
+    // If a gated view triggered this login, take the user where they wanted.
+    if (_pendingNav) {
+      var target = _pendingNav;
+      _pendingNav = null;
+      try { switchNav(target); } catch(e) {}
+    }
     // Check for pending share link
     setTimeout(function() {
       // Check window var first, then localStorage (survives login redirect)
@@ -505,13 +534,14 @@ _sbGetUser().then(() => _updateAuthUI());
 <div class="container">
 
   <!-- AUTH OVERLAY -->
-  <div id="auth-overlay" style="position:fixed;inset:0;z-index:9999;background:#f7f5f2;display:flex;align-items:center;justify-content:center">
-    <div style="width:100%;max-width:380px;padding:0 24px;text-align:center">
+  <div id="auth-overlay" style="position:fixed;inset:0;z-index:9999;background:rgba(247,245,242,.95);display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)" onclick="if(event.target===this)_dismissLoginPrompt()">
+    <div style="width:100%;max-width:380px;padding:0 24px;text-align:center;position:relative">
+      <button onclick="_dismissLoginPrompt()" aria-label="Close" style="position:absolute;top:0;right:24px;width:32px;height:32px;border:none;border-radius:50%;background:rgba(0,0,0,.05);color:#888;font-size:18px;line-height:1;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center">✕</button>
       <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#1a1a2e;letter-spacing:-1px;margin-bottom:4px">Seat<span style="color:#1b4332">Wize</span></div>
       <div style="font-size:13px;color:#888;margin-bottom:32px">NYC's smartest restaurant finder</div>
       <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)">
         <div style="font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px">Welcome</div>
-        <div style="font-size:13px;color:#999;margin-bottom:20px">Log in or create an account</div>
+        <div style="font-size:13px;color:#666;margin-bottom:20px;line-height:1.45">Just a quick sign-in so we can save your spots, ratings, and bookings — nothing more.</div>
         <input id="auth-email" type="email" placeholder="Email" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
         <input id="auth-pass" type="password" placeholder="Password" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
         <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#d4a373;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(212,163,115,.3);transition:all .2s">Log In</button>
@@ -3089,6 +3119,13 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function switchNav(name) {
+  // Gate the three views that need persistent user state — Saved (My List),
+  // Picks (Share with friends), and Concierge ($20 booking). Everything else
+  // (Hot Spots, All Restaurants, SeatWize Pick, home, map) browses freely.
+  if (!_sbUser && (name === 'saved' || name === 'picks' || name === 'concierge')) {
+    _promptLogin(name);
+    return;
+  }
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   const navKey = name === 'allrestaurants' ? 'search' : name;
   const navEl = document.getElementById('nav-' + navKey);
