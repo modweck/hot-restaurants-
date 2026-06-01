@@ -1,13 +1,24 @@
 // Netlify function: get-maps-key
-// Returns the single trusted Google Maps API key (GOOGLE_PLACES_API_KEY).
-// The rotation pool (GOOGLE_API_KEYS) is intentionally bypassed because
-// random keys in the pool were missing the Maps JavaScript API / had
-// referrer restrictions, causing intermittent "Do you own this website?"
-// popups on the frontend. Switch back to pooled rotation once each pool
-// key is verified to have Maps JS API enabled + seatwize.com allowed.
+// Returns a single Google Maps API key for the frontend.
+//
+// Defensive parsing: GOOGLE_PLACES_API_KEY has historically been set to
+// a comma-separated list (paste error), which the browser can't use as
+// a single key — it triggers "This page can't load Google Maps correctly".
+// We split on commas, trim, and return the first plausible key.
+// GOOGLE_API_KEYS is used as a secondary fallback if the primary var
+// is empty or malformed.
+
+function extractFirstKey(raw) {
+  return (raw || '')
+    .split(',')
+    .map(k => k.trim())
+    .find(k => /^AIzaSy[\w-]{30,}$/.test(k)) || '';
+}
 
 exports.handler = async () => {
-  const key = process.env.GOOGLE_PLACES_API_KEY || '';
+  const key = extractFirstKey(process.env.GOOGLE_PLACES_API_KEY)
+           || extractFirstKey(process.env.GOOGLE_API_KEYS)
+           || '';
 
   return {
     statusCode: 200,
