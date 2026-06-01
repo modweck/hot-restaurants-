@@ -4119,6 +4119,15 @@ function renderCard(r, isRadar) {
   // New & Rising badge
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
+  // Closed-day badge (one chip summarizing weekly closures from Google hours)
+  if (r.closed_days && r.closed_days.length > 0) {
+    const _DAY = { sunday:'Sun', monday:'Mon', tuesday:'Tue', wednesday:'Wed', thursday:'Thu', friday:'Fri', saturday:'Sat' };
+    let _cdLabel;
+    if (r.closed_days.length === 1)      _cdLabel = `Closed ${_DAY[r.closed_days[0]]}`;
+    else if (r.closed_days.length === 2) _cdLabel = `Closed ${r.closed_days.map(d => _DAY[d]).join(' & ')}`;
+    else                                  _cdLabel = `Closed ${r.closed_days.length} days/wk`;
+    badges += `<span class="badge" style="background:#fff4ed;color:#c2410c;border:1px solid rgba(194,65,12,.2)">${_cdLabel}</span>`;
+  }
   // Seated badge
   if (r.seated)
     badges += `<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);text-decoration:none;cursor:pointer">Seated Cash Back</a>`;
@@ -5182,6 +5191,15 @@ function renderCardAR(r) {
   // New & Rising badge
   if (r.new_rising || r._source === 'new_rising')
     badges += `<span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid rgba(21,128,61,.2)">✨ New & Rising</span>`;
+  // Closed-day badge (one chip summarizing weekly closures from Google hours)
+  if (r.closed_days && r.closed_days.length > 0) {
+    const _DAY = { sunday:'Sun', monday:'Mon', tuesday:'Tue', wednesday:'Wed', thursday:'Thu', friday:'Fri', saturday:'Sat' };
+    let _cdLabel;
+    if (r.closed_days.length === 1)      _cdLabel = `Closed ${_DAY[r.closed_days[0]]}`;
+    else if (r.closed_days.length === 2) _cdLabel = `Closed ${r.closed_days.map(d => _DAY[d]).join(' & ')}`;
+    else                                  _cdLabel = `Closed ${r.closed_days.length} days/wk`;
+    badges += `<span class="badge" style="background:#fff4ed;color:#c2410c;border:1px solid rgba(194,65,12,.2)">${_cdLabel}</span>`;
+  }
   // Seated badge
   if (r.seated)
     badges += `<a href="https://seated.app.link/DGiwo9ybq2b" target="_blank" rel="noopener" class="badge" style="background:#e8f5e9;color:#2e7d32;border:1px solid rgba(46,125,50,.2);text-decoration:none;cursor:pointer">Seated Cash Back</a>`;
