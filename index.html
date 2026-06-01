@@ -341,10 +341,10 @@ function _toggleAuthMode() {
   if (msg) msg.style.display = 'none';
   if (_authMode === 'signup') {
     btn.textContent = 'Create Account';
-    toggle.innerHTML = 'Already have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Log in</a>';
+    toggle.innerHTML = 'Already have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#1b4332;font-weight:700;text-decoration:none">Log in</a>';
   } else {
     btn.textContent = 'Log In';
-    toggle.innerHTML = 'Don\u2019t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Sign up</a>';
+    toggle.innerHTML = 'Don\u2019t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#1b4332;font-weight:700;text-decoration:none">Sign up</a>';
   }
 }
 
@@ -507,18 +507,18 @@ _sbGetUser().then(() => _updateAuthUI());
   <!-- AUTH OVERLAY -->
   <div id="auth-overlay" style="position:fixed;inset:0;z-index:9999;background:#f7f5f2;display:flex;align-items:center;justify-content:center">
     <div style="width:100%;max-width:380px;padding:0 24px;text-align:center">
-      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#1a1a2e;letter-spacing:-1px;margin-bottom:4px">Seat<span style="color:#ff4500">Wize</span></div>
+      <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#1a1a2e;letter-spacing:-1px;margin-bottom:4px">Seat<span style="color:#1b4332">Wize</span></div>
       <div style="font-size:13px;color:#888;margin-bottom:32px">NYC's smartest restaurant finder</div>
       <div style="background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)">
         <div style="font-size:16px;font-weight:800;color:#1a1a2e;margin-bottom:4px">Welcome</div>
         <div style="font-size:13px;color:#999;margin-bottom:20px">Log in or create an account</div>
         <input id="auth-email" type="email" placeholder="Email" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
         <input id="auth-pass" type="password" placeholder="Password" style="width:100%;padding:14px 16px;border:1px solid rgba(0,0,0,.1);border-radius:12px;font-size:15px;font-family:'DM Sans',sans-serif;color:#1a1a2e;outline:none;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)" />
-        <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#ff4500;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(255,69,0,.25);transition:all .2s">Log In</button>
+        <button id="auth-btn" onclick="_doLogin()" style="width:100%;padding:15px;border:none;border-radius:12px;background:#d4a373;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;box-shadow:0 3px 16px rgba(212,163,115,.3);transition:all .2s">Log In</button>
         <div id="auth-msg" style="font-size:12px;color:#888;margin-top:12px;display:none"></div>
         <div style="text-align:right;margin-top:8px"><a href="#" onclick="_forgotPassword();return false" style="font-size:12px;color:#888;text-decoration:none">Forgot password?</a></div>
       </div>
-      <div id="auth-toggle" style="font-size:12px;color:#888;margin-top:16px">Don&#8217;t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#ff4500;font-weight:700;text-decoration:none">Sign up</a></div>
+      <div id="auth-toggle" style="font-size:12px;color:#888;margin-top:16px">Don&#8217;t have an account? <a href="#" onclick="_toggleAuthMode();return false" style="color:#1b4332;font-weight:700;text-decoration:none">Sign up</a></div>
     </div>
   </div>
 
