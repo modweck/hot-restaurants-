@@ -23,7 +23,23 @@ const _config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
 const RESTAURANTS = {};
 for (const r of _config.restaurants) RESTAURANTS[r.name] = r;
 
-const TIME_PREF_HOUR = { early: 17, prime: 22, late: 22, any: 22 };
+// Special restaurants: customer's "early"/"late" maps to extreme times
+const SPECIAL_SLUGS = new Set(['monkey-bar-nyc', 'torrisi']);
+
+// Returns { target_hour, direction } based on venue + customer's time preference.
+// direction: 'up' = only target hour or later, 'down' = only target or earlier, 'closest' = any 5pm+ closest match.
+function pickTarget(slug, time_pref) {
+  const pref = time_pref || 'any';
+  if (SPECIAL_SLUGS.has(slug)) {
+    if (pref === 'early') return { target_hour: 17, direction: 'up' };    // 5pm and later
+    if (pref === 'late')  return { target_hour: 22, direction: 'down' };  // 10pm and earlier
+    return { target_hour: 19, direction: 'closest' };
+  }
+  // Other restaurants: target prime (7pm), fall back in user's chosen direction
+  if (pref === 'early') return { target_hour: 19, direction: 'down' };
+  if (pref === 'late')  return { target_hour: 19, direction: 'up' };
+  return { target_hour: 19, direction: 'closest' };
+}
 
 async function main() {
   const args = process.argv.slice(2);
@@ -51,7 +67,7 @@ async function main() {
   const targetDate = (r.target_dates || [])[dateIndex];
   if (!targetDate) { console.error(`No target_dates[${dateIndex}]`); process.exit(1); }
 
-  const targetHour = TIME_PREF_HOUR[r.time_pref] ?? TIME_PREF_HOUR.any;
+  const { target_hour: targetHour, direction: targetDirection } = pickTarget(cfg.slug, r.time_pref);
 
   // Load CAPTCHA_KEY from .env if not in process.env
   if (!process.env.CAPTCHA_KEY) {
@@ -74,6 +90,7 @@ async function main() {
     DROP_MINUTE: '0',
     TARGET_HOUR: String(targetHour),
     TARGET_MIN: '0',
+    TARGET_DIRECTION: targetDirection,
     AUTH_TOKEN: r.resy_token || '',
     PAYMENT_METHOD_ID: String(r.resy_payment_id || ''),
     DRY_RUN: dryRun ? '1' : '0',
@@ -84,7 +101,7 @@ async function main() {
   console.log(`  Customer: ${r.name} <${r.contact}>`);
   console.log(`  Restaurant: ${r.restaurant} (${cfg.slug}, venue ${cfg.venue_id})`);
   console.log(`  Date: ${targetDate} (index ${dateIndex} of ${(r.target_dates||[]).length})`);
-  console.log(`  Party: ${r.party_size}, Target time: ${targetHour}:00, Drop: ${cfg.drop_hour}:00`);
+  console.log(`  Party: ${r.party_size}, Target time: ${targetHour}:00 (dir=${targetDirection}), Drop: ${cfg.drop_hour}:00`);
   console.log(`  Token: ${r.resy_token ? r.resy_token.slice(0,30)+'...' : 'MISSING'}`);
   console.log(`  Payment ID: ${r.resy_payment_id || 'MISSING'}`);
   console.log(`  Mode: ${dryRun ? 'DRY RUN' : 'LIVE'}`);

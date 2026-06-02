@@ -31,6 +31,7 @@ const DROP_HOUR         = parseInt(process.env.DROP_HOUR || '10', 10);
 const DROP_MINUTE       = parseInt(process.env.DROP_MINUTE || '0', 10);
 const TARGET_HOUR       = parseInt(process.env.TARGET_HOUR || '22', 10);
 const TARGET_MIN        = parseInt(process.env.TARGET_MIN || '0', 10);
+const TARGET_DIRECTION  = process.env.TARGET_DIRECTION || 'closest'; // 'up' / 'down' / 'closest'
 const AUTH_TOKEN        = process.env.AUTH_TOKEN;
 const PAYMENT_METHOD_ID = parseInt(process.env.PAYMENT_METHOD_ID, 10);
 const DRY_RUN           = process.env.DRY_RUN === '1';
@@ -125,17 +126,20 @@ async function apiFind() {
     // Priority 1: exact target time
     for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 2: any slot 5pm+, closest to target
+    // Priority 2: fallback honoring TARGET_DIRECTION (up = target+, down = target-, closest = any 5pm+)
     if (!pick) {
-      const evening = slots.filter(s => {
+      const filtered = slots.map(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && parseInt(hm[1]) >= 17;
-      }).sort((a, b) => {
-        const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
-        const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - targetMins) - Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - targetMins);
-      });
-      if (evening.length) pick = evening[0];
+        if (!hm) return null;
+        const mins = parseInt(hm[1]) * 60 + parseInt(hm[2]);
+        return { s, mins };
+      }).filter(Boolean).filter(({ mins }) => {
+        if (mins < 17 * 60) return false; // never before 5pm
+        if (TARGET_DIRECTION === 'up')   return mins >= targetMins;
+        if (TARGET_DIRECTION === 'down') return mins <= targetMins;
+        return true;
+      }).sort((a, b) => Math.abs(a.mins - targetMins) - Math.abs(b.mins - targetMins));
+      if (filtered.length) pick = filtered[0].s;
     }
 
     if (!pick) return { found: false, slotCount: slots.length, noEveningSlots: true, allTimes, ms: Date.now() - t0 };
@@ -284,9 +288,12 @@ async function main() {
     if (result.found) {
       slot = result;
       log(`FOUND: ${result.time} (${result.slotCount} slots, ${result.ms}ms)`);
+      if (result.allTimes?.length) log(`   ALL SLOTS: ${result.allTimes.join(', ')}`);
       break;
     }
-    log(`Check ${i + 1}/8: ${result.error ? 'error ' + result.error : 'no slots'} (${result.ms}ms)`);
+    let msg = result.error ? 'error ' + result.error : (result.noEveningSlots ? `${result.slotCount} slots but none 5pm+` : 'no slots');
+    if (result.allTimes?.length) msg += ` [${result.allTimes.join(', ')}]`;
+    log(`Check ${i + 1}/8: ${msg} (${result.ms}ms)`);
     if (i < 3) await sleep(500);
   }
 
