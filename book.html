@@ -442,10 +442,7 @@ function pickRest(idx) {
         el.value = minStr;
       }
     });
-    const takenNote = taken.length
-      ? ` <span style="color:#dc2626">(${taken.length} date${taken.length > 1 ? 's' : ''} already taken by other customers — greyed out)</span>`
-      : '';
-    document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first.' + takenNote;
+    document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first.';
   });
 
   showPage('pageBook');
