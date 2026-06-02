@@ -250,7 +250,7 @@ const RESTAURANTS = [
   { name: 'Torrisi', slug: 'torrisi', venue_id: 64593, drop_days: 30, drop_hour: 10, hood: 'Nolita' },
   { name: 'Carbone', slug: 'carbone', venue_id: 6194, drop_days: 30, drop_hour: 10, hood: 'Greenwich Village' },
   { name: 'Via Carota', slug: 'via-carota', venue_id: 2567, drop_days: 30, drop_hour: 10, hood: 'West Village' },
-  { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 21, drop_hour: 10, hood: 'Midtown' },
+  { name: 'Monkey Bar', slug: 'monkey-bar-nyc', venue_id: 60058, drop_days: 21, drop_hour: 9, hood: 'Midtown' },
   { name: 'Theodora', slug: 'theodora', venue_id: 73589, drop_days: 30, drop_hour: 9, hood: 'Flatiron' },
   { name: 'I Cavallini', slug: 'i-cavallini', venue_id: 90079, drop_days: 14, drop_hour: 8, hood: 'Williamsburg' },
   { name: 'The Four Horsemen', slug: 'the-four-horsemen', venue_id: 2492, drop_days: 30, drop_hour: 7, hood: 'Williamsburg' },
@@ -421,29 +421,54 @@ function pickRest(idx) {
   const maxDate = new Date(); maxDate.setDate(maxDate.getDate() + 90);
   const minStr = minDate.toISOString().split('T')[0];
   const maxStr = maxDate.toISOString().split('T')[0];
-  ['bookDate1', 'bookDate2', 'bookDate3'].forEach((id, i) => {
-    const el = document.getElementById(id);
-    el.min = minStr; el.max = maxStr;
-    // Tear down any previous Flatpickr instance (re-rendering when the user
-    // picks a different restaurant) before re-initializing with new min/max.
-    if (el._flatpickr) el._flatpickr.destroy();
-    if (typeof flatpickr === 'function') {
-      flatpickr(el, {
-        minDate: minStr,
-        maxDate: maxStr,
-        dateFormat: 'Y-m-d',
-        disableMobile: true,   // use Flatpickr's UI on mobile too (native picker doesn't grey out invalid dates reliably)
-        defaultDate: i === 0 ? minStr : null,
-        onChange: validateSubmit,
-      });
-    } else if (i === 0) {
-      // Flatpickr failed to load (offline / blocked CDN) — fall back to today's min
-      el.value = minStr;
-    }
+
+  // Fetch dates other customers have already paid for — disable those.
+  fetchTakenDates(selectedRest.venue_id).then(taken => {
+    ['bookDate1', 'bookDate2', 'bookDate3'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      el.min = minStr; el.max = maxStr;
+      if (el._flatpickr) el._flatpickr.destroy();
+      if (typeof flatpickr === 'function') {
+        flatpickr(el, {
+          minDate: minStr,
+          maxDate: maxStr,
+          dateFormat: 'Y-m-d',
+          disableMobile: true,
+          disable: taken,
+          defaultDate: i === 0 && !taken.includes(minStr) ? minStr : null,
+          onChange: validateSubmit,
+        });
+      } else if (i === 0 && !taken.includes(minStr)) {
+        el.value = minStr;
+      }
+    });
+    const takenNote = taken.length
+      ? ` <span style="color:#dc2626">(${taken.length} date${taken.length > 1 ? 's' : ''} already taken by other customers — greyed out)</span>`
+      : '';
+    document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first.' + takenNote;
   });
-  document.getElementById('dateNote').innerHTML = 'Soonest available: ' + fmtDate(minDate) + '. Pick up to 3 dates in order of priority. We always try for your first pick first &mdash; we\'re working on getting it every time.';
 
   showPage('pageBook');
+}
+
+const SW_SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SW_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+
+async function fetchTakenDates(venue_id) {
+  try {
+    // Any request that's pending, scheduled, or booked for this venue blocks the dates it claims.
+    const url = SW_SUPABASE_URL + '/rest/v1/booking_requests?venue_id=eq.' + venue_id +
+      '&or=(status.is.null,status.eq.pending,status.eq.scheduled,status.eq.booked)&select=target_dates,booked_date';
+    const resp = await fetch(url, { headers: { 'apikey': SW_SUPABASE_KEY, 'Authorization': 'Bearer ' + SW_SUPABASE_KEY } });
+    const rows = await resp.json();
+    if (!Array.isArray(rows)) return [];
+    const taken = new Set();
+    for (const r of rows) {
+      if (r.booked_date) taken.add(r.booked_date);
+      for (const d of (r.target_dates || [])) if (d) taken.add(d);
+    }
+    return Array.from(taken);
+  } catch { return []; }
 }
 
 let resyPhoneIntl = '';

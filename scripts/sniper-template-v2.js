@@ -43,6 +43,24 @@ const fs = require('fs');
 const LOG_FILE = require('path').join(__dirname, '..', `sniper-torrisi-${TARGET_DATE}.log`);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// Supabase reporting (only used when scheduler-generated, REQUEST_ID is set)
+const REQUEST_ID = null; // scheduler will replace with actual UUID
+const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+
+async function reportBooked(slot_time) {
+  if (!REQUEST_ID) return;
+  try {
+    await fetch(SUPABASE_URL + '/rest/v1/booking_requests?id=eq.' + encodeURIComponent(REQUEST_ID), {
+      method: 'PATCH',
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ status: 'booked', booked_date: TARGET_DATE, booked_at: new Date().toISOString(), status_note: `Booked at ${slot_time}` }),
+    });
+    log(`   Supabase updated: status=booked, date=${TARGET_DATE}`);
+  } catch (e) { log('Supabase report error: ' + e.message); }
+}
+
+
 function log(msg) {
   const now = new Date();
   const ts = now.toLocaleTimeString('en-US', { hour12: false }) + '.' + String(now.getMilliseconds()).padStart(3, '0');
@@ -93,28 +111,29 @@ async function apiFind() {
     let pick = null;
     const TARGET_HOUR = 21;
     const TARGET_MIN = 0;
+    const TARGET_DIRECTION = 'closest'; // 'up' (later only), 'down' (earlier only), 'closest'
     const targetMins = TARGET_HOUR * 60 + TARGET_MIN;
     const targetTimeStr = `${String(TARGET_HOUR).padStart(2, '0')}:${String(TARGET_MIN).padStart(2, '0')}`;
 
-    // Priority 1: exact 9:00 PM
+    // Priority 1: exact target time
     for (const s of slots) { if ((s.date?.start || '').includes(targetTimeStr)) { pick = s; break; } }
 
-    // Priority 2: closest to 9pm, going lower first (8:30, 8:00, 7:30...)
+    // Priority 2: fallback per TARGET_DIRECTION
     if (!pick) {
-      const evening = slots.filter(s => {
+      const filtered = slots.map(s => {
         const hm = (s.date?.start || '').match(/(\d{2}):(\d{2})/);
-        return hm && parseInt(hm[1]) >= 17;
-      }).sort((a, b) => {
-        const ha = (a.date?.start || '').match(/(\d{2}):(\d{2})/);
-        const hb = (b.date?.start || '').match(/(\d{2}):(\d{2})/);
-        const aDiff = Math.abs(parseInt(ha[1]) * 60 + parseInt(ha[2]) - targetMins);
-        const bDiff = Math.abs(parseInt(hb[1]) * 60 + parseInt(hb[2]) - targetMins);
-        return aDiff - bDiff;
-      });
-      if (evening.length) pick = evening[0];
+        if (!hm) return null;
+        const mins = parseInt(hm[1]) * 60 + parseInt(hm[2]);
+        return { s, mins };
+      }).filter(Boolean).filter(({ mins }) => {
+        if (mins < 17 * 60) return false; // never before 5pm
+        if (TARGET_DIRECTION === 'up') return mins >= targetMins;     // only target or later
+        if (TARGET_DIRECTION === 'down') return mins <= targetMins;   // only target or earlier
+        return true; // closest from anywhere ≥5pm
+      }).sort((a, b) => Math.abs(a.mins - targetMins) - Math.abs(b.mins - targetMins));
+      if (filtered.length) pick = filtered[0].s;
     }
 
-    // NO last resort — only 5pm+ slots
     if (!pick) return { found: false, slotCount: slots.length, noEveningSlots: true, allTimes, ms: Date.now() - t0 };
 
     return { found: true, time: pick.date?.start, configToken: pick.config?.token, slotCount: slots.length, allTimes, ms: Date.now() - t0 };
@@ -293,7 +312,7 @@ async function main() {
     log('No slots found. Browser fallback.');
     await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
     log('BOOK MANUALLY NOW!');
-    await new Promise(() => {});
+    if (REQUEST_ID) { try { await browser.close(); } catch {} process.exit(0); } else { await new Promise(() => {}); }
   }
 
   // ── PHASE 2+3: Details + Book ──
@@ -308,7 +327,7 @@ async function main() {
       log('All tokens exhausted — browser fallback.');
       await page.goto(resyUrl, { waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
       log('BOOK MANUALLY NOW!');
-      await new Promise(() => {});
+      if (REQUEST_ID) { try { await browser.close(); } catch {} process.exit(0); } else { await new Promise(() => {}); }
     }
 
     log(`Book token ready (${details.ms}ms)`);
@@ -323,6 +342,7 @@ async function main() {
       log(`   Resy token: ${book.resyToken}`);
       log(`   find=${slot.ms}ms + details=${details.ms}ms + book=${book.ms}ms`);
       log('   Check your Resy app!');
+      await reportBooked(slot.time);
       break;
     } else {
       log(`Book FAILED: ${book.status} — ${book.error} (${book.ms}ms)`);
@@ -333,6 +353,14 @@ async function main() {
     }
   }
 
+  // When scheduler-launched (REQUEST_ID set), exit after 5 minutes
+  // so we release the browser profile. Manual runs stay open for inspection.
+  if (REQUEST_ID) {
+    log('Auto-exiting in 5 minutes (scheduler-launched)');
+    await sleep(5 * 60 * 1000);
+    try { await browser.close(); } catch {}
+    process.exit(0);
+  }
   log('Browser stays open. Ctrl+C to exit.');
   await new Promise(() => {});
 }

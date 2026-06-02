@@ -19,6 +19,7 @@ data/sniper-*.log
 
 # Sniper scripts
 scripts/sniper-*.js
+scripts/auto-sniper-*.js
 data/test-launch.txt
 data/opentable-debug.png
 

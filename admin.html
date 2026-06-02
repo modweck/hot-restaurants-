@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SeatWize Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'DM Sans',-apple-system,sans-serif;background:#f7f5f2;color:#1a1a2e;padding:20px;-webkit-font-smoothing:antialiased}
+    .container{max-width:1280px;margin:0 auto}
+    h1{font-size:24px;font-weight:800;margin-bottom:6px}
+    .sub{font-size:13px;color:#666;margin-bottom:20px}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+    .stat{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:10px;padding:14px}
+    .stat-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px}
+    .stat-value{font-size:24px;font-weight:800;margin-top:2px}
+    .actions{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+    .btn{padding:8px 14px;background:#1a1a2e;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif}
+    .btn:hover{opacity:.9}
+    .btn.danger{background:#dc2626}
+    .btn.secondary{background:#fff;color:#1a1a2e;border:1px solid rgba(0,0,0,.1)}
+    table{width:100%;background:#fff;border-radius:12px;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid rgba(0,0,0,.06);font-size:13px}
+    th{background:#faf8f6;text-align:left;padding:10px 12px;font-weight:700;font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid rgba(0,0,0,.06)}
+    td{padding:12px;border-bottom:1px solid rgba(0,0,0,.04);vertical-align:top}
+    tr:last-child td{border-bottom:none}
+    .pill{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700}
+    .pill.pending{background:#fef3c7;color:#92400e}
+    .pill.scheduled{background:#dbeafe;color:#1e40af}
+    .pill.booked{background:#d1fae5;color:#065f46}
+    .pill.failed{background:#fee2e2;color:#991b1b}
+    .pill.conflict{background:#fef3c7;color:#92400e}
+    .pill.invalid{background:#fee2e2;color:#991b1b}
+    .pill.cancelled{background:#f3f4f6;color:#374151}
+    .pill.token_expired{background:#fee2e2;color:#991b1b}
+    .when{color:#666;font-size:11px}
+    .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+    .filter-row button{padding:6px 12px;background:#fff;color:#666;border:1px solid rgba(0,0,0,.1);border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit}
+    .filter-row button.on{background:#1a1a2e;color:#fff;border-color:#1a1a2e}
+    .row-actions{display:flex;gap:6px}
+    .row-actions a, .row-actions button{padding:4px 10px;background:#f3f4f6;color:#374151;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;text-decoration:none;font-family:inherit}
+    .row-actions a:hover, .row-actions button:hover{background:#e5e7eb}
+    .empty{text-align:center;padding:40px;color:#888}
+    .login{max-width:340px;margin:80px auto;background:#fff;padding:30px;border-radius:14px;box-shadow:0 8px 40px rgba(0,0,0,.06)}
+    .login input{width:100%;padding:12px 14px;border:1px solid rgba(0,0,0,.1);border-radius:8px;font-size:14px;margin-bottom:10px;font-family:inherit}
+    .resy-link{color:#1a1a2e;text-decoration:underline}
+  </style>
+</head>
+<body>
+  <div class="container" id="content" style="display:none">
+    <h1>SeatWize Admin</h1>
+    <div class="sub">Booking requests · <span id="lastUpdated"></span> · <a href="#" onclick="loadData();return false" class="resy-link">Refresh</a></div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="actions">
+      <button class="btn" onclick="triggerScheduler()">Run scheduler now</button>
+      <button class="btn secondary" onclick="loadData()">Refresh</button>
+    </div>
+
+    <div class="filter-row" id="filters"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Restaurant</th>
+          <th>Dates wanted</th>
+          <th>Party / Time</th>
+          <th>Status</th>
+          <th>Attempted</th>
+          <th>Booked</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="rows"><tr><td colspan="8" class="empty">Loading…</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="login" id="login">
+    <h1 style="margin-bottom:14px;font-size:20px">Admin Login</h1>
+    <input type="password" id="pwInput" placeholder="Password" onkeyup="if(event.key==='Enter') checkLogin()">
+    <button class="btn" onclick="checkLogin()" style="width:100%">Sign in</button>
+  </div>
+
+<script>
+const SUPABASE_URL = 'https://zdsolubfxzvrqiqvwjev.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkc29sdWJmeHp2cnFpcXZ3amV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzMwODksImV4cCI6MjA5MDcwOTA4OX0.XOuZOh4yaYGf1bUJpIDl48F0MV-kjct-_nWtgs6MJPM';
+const SH_HEADERS = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
+
+let requests = [];
+let activeFilter = 'all';
+
+function checkLogin() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === 'seatwize2026') {
+    localStorage.setItem('sw_admin', '1');
+    showAdmin();
+  } else { alert('Wrong password'); }
+}
+
+function showAdmin() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  loadData();
+}
+
+if (localStorage.getItem('sw_admin') === '1') showAdmin();
+
+async function loadData() {
+  document.getElementById('rows').innerHTML = '<tr><td colspan="8" class="empty">Loading…</td></tr>';
+  const resp = await fetch(SUPABASE_URL + '/rest/v1/booking_requests?order=created_at.desc&limit=500', { headers: SH_HEADERS });
+  requests = await resp.json();
+  if (!Array.isArray(requests)) { requests = []; }
+  document.getElementById('lastUpdated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+  renderStats();
+  renderFilters();
+  render();
+}
+
+function statusOf(r) {
+  if (r.status === 'booked') return 'booked';
+  if (r.status === 'failed') return 'failed';
+  if (r.status === 'cancelled') return 'cancelled';
+  if (r.status === 'conflict') return 'conflict';
+  if (r.status === 'invalid') return 'invalid';
+  if (r.status === 'token_expired') return 'token_expired';
+  if (r.attempted_dates && r.attempted_dates.length > 0) return 'scheduled';
+  return 'pending';
+}
+
+function renderStats() {
+  const counts = { pending: 0, scheduled: 0, booked: 0, failed: 0, conflict: 0, invalid: 0, cancelled: 0, token_expired: 0, total: requests.length };
+  for (const r of requests) counts[statusOf(r)]++;
+  const items = [
+    ['Total', counts.total],
+    ['Pending', counts.pending],
+    ['Scheduled', counts.scheduled],
+    ['Booked', counts.booked],
+    ['Failed', counts.failed],
+    ['Conflicts', counts.conflict],
+    ['Invalid', counts.invalid + counts.token_expired],
+    ['Cancelled', counts.cancelled],
+  ];
+  document.getElementById('stats').innerHTML = items.map(([l, v]) => `<div class="stat"><div class="stat-label">${l}</div><div class="stat-value">${v}</div></div>`).join('');
+}
+
+function renderFilters() {
+  const filters = ['all', 'pending', 'scheduled', 'booked', 'failed', 'conflict', 'invalid', 'cancelled'];
+  document.getElementById('filters').innerHTML = filters.map(f =>
+    `<button class="${f === activeFilter ? 'on' : ''}" onclick="setFilter('${f}')">${f.charAt(0).toUpperCase() + f.slice(1)}</button>`
+  ).join('');
+}
+
+function setFilter(f) { activeFilter = f; renderFilters(); render(); }
+
+function render() {
+  const tbody = document.getElementById('rows');
+  let list = requests;
+  if (activeFilter !== 'all') list = list.filter(r => statusOf(r) === activeFilter || (activeFilter === 'invalid' && (statusOf(r) === 'token_expired' || statusOf(r) === 'invalid')));
+  if (list.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="8" class="empty">No requests match</td></tr>';
+    return;
+  }
+  tbody.innerHTML = list.map(r => {
+    const s = statusOf(r);
+    const dates = (r.target_dates || [r.date]).filter(Boolean).join('<br>');
+    const attempted = (r.attempted_dates || []).join('<br>') || '—';
+    const booked = r.booked_date ? `${r.booked_date}<div class="when">${new Date(r.booked_at).toLocaleString()}</div>` : '—';
+    const note = r.status_note ? `<div class="when" style="margin-top:4px">${escapeHtml(r.status_note)}</div>` : '';
+    return `<tr>
+      <td><b>${escapeHtml(r.name||'?')}</b><div class="when">${escapeHtml(r.contact||'')}</div><div class="when">${escapeHtml(r.resy_email||'')}</div></td>
+      <td>${escapeHtml(r.restaurant||'?')}<div class="when">${escapeHtml(r.venue_slug||'')}</div><div class="when">Drop ${r.drop_hour}:00 / ${r.drop_days}d</div></td>
+      <td>${dates}</td>
+      <td>Party ${r.party_size||2}<div class="when">${r.time_pref||'any'}</div></td>
+      <td><span class="pill ${s}">${s}</span>${note}</td>
+      <td>${attempted}</td>
+      <td>${booked}</td>
+      <td><div class="row-actions">
+        ${s !== 'cancelled' && s !== 'booked' ? `<button onclick="markCancelled('${r.id}')">Cancel</button>` : ''}
+        ${s === 'failed' || s === 'invalid' || s === 'conflict' || s === 'token_expired' ? `<button onclick="reactivate('${r.id}')">Reactivate</button>` : ''}
+      </div></td>
+    </tr>`;
+  }).join('');
+}
+
+function escapeHtml(s) { return String(s||'').replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+async function markCancelled(id) {
+  if (!confirm('Mark as cancelled?')) return;
+  await fetch(SUPABASE_URL + '/rest/v1/booking_requests?id=eq.' + encodeURIComponent(id), {
+    method: 'PATCH', headers: { ...SH_HEADERS, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ status: 'cancelled' })
+  });
+  loadData();
+}
+
+async function reactivate(id) {
+  if (!confirm('Reset to pending and clear attempted dates?')) return;
+  await fetch(SUPABASE_URL + '/rest/v1/booking_requests?id=eq.' + encodeURIComponent(id), {
+    method: 'PATCH', headers: { ...SH_HEADERS, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: JSON.stringify({ status: 'pending', attempted_dates: [], status_note: 'Reactivated by admin' })
+  });
+  loadData();
+}
+
+async function triggerScheduler() {
+  alert('Open Terminal and run:\n\nnode ~/.seatwize/auto-sniper-scheduler.js\n\n(The scheduler can only run locally — the admin page is just for viewing/managing requests.)');
+}
+</script>
+</body>
+</html>
