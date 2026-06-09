@@ -13,7 +13,7 @@
       "open": "5:30 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:30:13.921Z",
+    "checked_date": "2026-06-09T14:30:11.226Z",
     "fully_locked": true
   },
   "jungsik": {
@@ -30,7 +30,7 @@
       "open": "5:00 PM",
       "close": "9:00 PM"
     },
-    "checked_date": "2026-06-08T14:30:24.837Z"
+    "checked_date": "2026-06-09T14:30:23.471Z"
   },
   "frevo": {
     "tier": "booked",
@@ -41,9 +41,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 395,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:30:37.031Z",
+    "open_today": true,
+    "hours": {
+      "open": "5:30 PM",
+      "close": "11:30 PM"
+    },
+    "checked_date": "2026-06-09T14:30:33.792Z",
     "opens_in": 3
   },
   "per se": {
@@ -60,7 +63,7 @@
       "open": "4:30 PM",
       "close": "9:00 PM"
     },
-    "checked_date": "2026-06-08T14:30:47.226Z"
+    "checked_date": "2026-06-09T14:30:42.938Z"
   },
   "atera": {
     "tier": "tasting_menu",
@@ -76,7 +79,7 @@
       "open": "5:00 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:30:57.127Z"
+    "checked_date": "2026-06-09T14:30:52.707Z"
   },
   "icca": {
     "tier": "tasting_menu",
@@ -87,15 +90,18 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 195,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:31:08.961Z"
+    "open_today": true,
+    "hours": {
+      "open": "5:30 PM",
+      "close": "12:00 AM"
+    },
+    "checked_date": "2026-06-09T14:31:02.617Z"
   },
   "expat": {
     "tier": "unknown",
     "platform": "tock",
     "open_today": true,
-    "checked_date": "2026-06-08T14:31:19.787Z"
+    "checked_date": "2026-06-09T14:31:14.250Z"
   },
   "duane park": {
     "tier": "open",
@@ -119,7 +125,7 @@
     "prepaid_price": null,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-06-08T14:31:43.743Z"
+    "checked_date": "2026-06-09T14:31:37.676Z"
   },
   "ahgassi gopchang korean bbq": {
     "tier": "tasting_menu",
@@ -135,7 +141,7 @@
       "open": "11:00 AM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:31:54.817Z"
+    "checked_date": "2026-06-09T14:31:47.597Z"
   },
   "diwine": {
     "tier": "open",
@@ -162,7 +168,7 @@
       "open": "5:00 PM",
       "close": "12:00 AM"
     },
-    "checked_date": "2026-06-08T14:32:10.062Z"
+    "checked_date": "2026-06-09T14:32:04.794Z"
   },
   "dubrovnik restaurant": {
     "tier": "open",
@@ -189,7 +195,7 @@
       "open": "11:00 AM",
       "close": "9:00 PM"
     },
-    "checked_date": "2026-06-08T14:32:28.078Z"
+    "checked_date": "2026-06-09T14:32:20.219Z"
   },
   "loreley beer garden": {
     "tier": "open",
@@ -216,7 +222,7 @@
       "open": "5:00 PM",
       "close": "12:00 AM"
     },
-    "checked_date": "2026-06-08T14:32:44.955Z"
+    "checked_date": "2026-06-09T14:32:35.230Z"
   },
   "chef guo - 小国宴": {
     "tier": "tasting_menu",
@@ -227,9 +233,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 518,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:32:53.749Z"
+    "open_today": true,
+    "hours": {
+      "open": "5:30 PM",
+      "close": "11:30 PM"
+    },
+    "checked_date": "2026-06-09T14:32:44.164Z"
   },
   "the roosevelt": {
     "tier": "open",
@@ -251,9 +260,12 @@
     ],
     "platform": "tock",
     "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:33:12.172Z"
+    "open_today": true,
+    "hours": {
+      "open": "4:00 PM",
+      "close": "10:00 PM"
+    },
+    "checked_date": "2026-06-09T14:33:00.591Z"
   },
   "puertas": {
     "tier": "booked",
@@ -266,7 +278,7 @@
     "prepaid_price": null,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-06-08T14:33:27.914Z",
+    "checked_date": "2026-06-09T14:33:13.291Z",
     "opens_in": 3
   },
   "kazunori the original hand roll bar": {
@@ -283,7 +295,7 @@
       "open": "11:30 AM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:33:39.931Z"
+    "checked_date": "2026-06-09T14:33:24.023Z"
   },
   "masa": {
     "tier": "tasting_menu",
@@ -294,9 +306,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 495,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:33:51.132Z"
+    "open_today": true,
+    "hours": {
+      "open": "12:00 PM",
+      "close": "1:00 PM"
+    },
+    "checked_date": "2026-06-09T14:33:38.119Z"
   },
   "sushi sho - nyc": {
     "tier": "unknown",
@@ -317,19 +332,19 @@
       "open": "5:30 PM",
       "close": "10:30 PM"
     },
-    "checked_date": "2026-06-08T14:34:11.838Z"
+    "checked_date": "2026-06-09T14:34:00.530Z"
   },
   "perry street by cedric & jean-georges": {
     "tier": "pickup_only",
     "platform": "tock",
     "open_today": false,
-    "checked_date": "2026-06-08T14:34:23.492Z"
+    "checked_date": "2026-06-09T14:34:10.015Z"
   },
   "noodlelove": {
     "tier": "pickup_only",
     "platform": "tock",
     "open_today": false,
-    "checked_date": "2026-06-08T14:34:34.038Z"
+    "checked_date": "2026-06-09T14:34:20.811Z"
   },
   "super nice pizza": {
     "tier": "open",
@@ -356,7 +371,7 @@
       "open": "5:00 PM",
       "close": "10:00 PM"
     },
-    "checked_date": "2026-06-08T14:34:47.407Z"
+    "checked_date": "2026-06-09T14:34:36.454Z"
   },
   "la compagnie wine bar - flatiron": {
     "tier": "open",
@@ -383,7 +398,7 @@
       "open": "5:00 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:35:02.880Z"
+    "checked_date": "2026-06-09T14:34:51.228Z"
   },
   "aman new york": {
     "tier": "open",
@@ -407,7 +422,7 @@
     "prepaid_price": null,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-06-08T14:35:15.027Z"
+    "checked_date": "2026-06-09T14:35:04.905Z"
   },
   "ahgassi gopchang": {
     "tier": "tasting_menu",
@@ -423,13 +438,13 @@
       "open": "11:00 AM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:35:25.014Z"
+    "checked_date": "2026-06-09T14:35:15.465Z"
   },
   "jojo restaurant by jean-georges": {
     "tier": "pickup_only",
     "platform": "tock",
     "open_today": false,
-    "checked_date": "2026-06-08T14:35:39.592Z"
+    "checked_date": "2026-06-09T14:35:30.790Z"
   },
   "le zie trattoria": {
     "tier": "open",
@@ -456,7 +471,7 @@
       "open": "12:00 PM",
       "close": "10:00 PM"
     },
-    "checked_date": "2026-06-08T14:35:54.344Z"
+    "checked_date": "2026-06-09T14:35:49.256Z"
   },
   "bodai nyc": {
     "tier": "tasting_menu",
@@ -467,15 +482,18 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 99,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:36:07.112Z"
+    "open_today": true,
+    "hours": {
+      "open": "5:00 PM",
+      "close": "9:00 PM"
+    },
+    "checked_date": "2026-06-09T14:35:59.115Z"
   },
   "futago usa": {
     "tier": "pickup_only",
     "platform": "tock",
     "open_today": true,
-    "checked_date": "2026-06-08T14:36:16.468Z"
+    "checked_date": "2026-06-09T14:36:10.761Z"
   },
   "edward's": {
     "tier": "open",
@@ -502,7 +520,7 @@
       "open": "11:00 AM",
       "close": "10:00 PM"
     },
-    "checked_date": "2026-06-08T14:36:30.103Z"
+    "checked_date": "2026-06-09T14:36:26.379Z"
   },
   "cafe carlyle": {
     "tier": "booked",
@@ -513,9 +531,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 200,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:36:41.194Z",
+    "open_today": true,
+    "hours": {
+      "open": "6:30 PM",
+      "close": "11:00 PM"
+    },
+    "checked_date": "2026-06-09T14:36:38.841Z",
     "opens_in": 3
   },
   "la compagnie centre street": {
@@ -543,13 +564,13 @@
       "open": "4:00 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:36:57.616Z"
+    "checked_date": "2026-06-09T14:36:51.959Z"
   },
   "the expat": {
     "tier": "unknown",
     "platform": "tock",
     "open_today": true,
-    "checked_date": "2026-06-08T14:37:11.379Z"
+    "checked_date": "2026-06-09T14:37:00.927Z"
   },
   "abaita": {
     "tier": "open",
@@ -576,7 +597,7 @@
       "open": "12:00 PM",
       "close": "9:00 PM"
     },
-    "checked_date": "2026-06-08T14:37:39.630Z"
+    "checked_date": "2026-06-09T14:37:23.197Z"
   },
   "polanco social": {
     "tier": "open",
@@ -600,10 +621,10 @@
     "prepaid_price": null,
     "open_today": true,
     "hours": {
-      "open": "4:00 PM",
+      "open": "5:00 PM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:37:54.622Z"
+    "checked_date": "2026-06-09T14:37:36.087Z"
   },
   "tomokase": {
     "tier": "tasting_menu",
@@ -616,7 +637,7 @@
     "prepaid_price": 235,
     "open_today": false,
     "hours": null,
-    "checked_date": "2026-06-08T14:38:03.645Z"
+    "checked_date": "2026-06-09T14:37:48.416Z"
   },
   "kazunori - greenwich village": {
     "tier": "tasting_menu",
@@ -632,7 +653,7 @@
       "open": "11:30 AM",
       "close": "11:00 PM"
     },
-    "checked_date": "2026-06-08T14:38:12.889Z"
+    "checked_date": "2026-06-09T14:37:58.743Z"
   },
   "chef guo nyc": {
     "tier": "tasting_menu",
@@ -643,9 +664,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 518,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:38:21.549Z"
+    "open_today": true,
+    "hours": {
+      "open": "5:30 PM",
+      "close": "11:30 PM"
+    },
+    "checked_date": "2026-06-09T14:38:10.777Z"
   },
   "jō": {
     "tier": "tasting_menu",
@@ -656,9 +680,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 300,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:38:31.441Z"
+    "open_today": true,
+    "hours": {
+      "open": "12:00 PM",
+      "close": "2:00 PM"
+    },
+    "checked_date": "2026-06-09T14:38:20.410Z"
   },
   "osakana": {
     "tier": "tasting_menu",
@@ -674,7 +701,7 @@
       "open": "5:00 PM",
       "close": "6:45 PM"
     },
-    "checked_date": "2026-06-08T14:38:41.232Z"
+    "checked_date": "2026-06-09T14:38:31.965Z"
   },
   "restaurant yuu": {
     "tier": "tasting_menu",
@@ -685,9 +712,12 @@
     "sample_times": [],
     "platform": "tock",
     "prepaid_price": 300,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:38:51.577Z"
+    "open_today": true,
+    "hours": {
+      "open": "5:30 PM",
+      "close": "11:30 PM"
+    },
+    "checked_date": "2026-06-09T14:38:41.231Z"
   },
   "il fresco": {
     "tier": "open",
@@ -709,9 +739,12 @@
     ],
     "platform": "tock",
     "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:39:09.600Z"
+    "open_today": true,
+    "hours": {
+      "open": "12:00 PM",
+      "close": "2:30 PM"
+    },
+    "checked_date": "2026-06-09T14:38:58.791Z"
   },
   "grass roots kitchen": {
     "tier": "open",
@@ -738,7 +771,7 @@
       "open": "9:00 AM",
       "close": "8:00 PM"
     },
-    "checked_date": "2026-06-08T14:39:25.155Z"
+    "checked_date": "2026-06-09T14:39:13.845Z"
   },
   "tomatillo": {
     "tier": "open",
@@ -760,9 +793,12 @@
     ],
     "platform": "tock",
     "prepaid_price": null,
-    "open_today": false,
-    "hours": null,
-    "checked_date": "2026-06-08T14:39:39.354Z"
+    "open_today": true,
+    "hours": {
+      "open": "12:00 PM",
+      "close": "8:00 PM"
+    },
+    "checked_date": "2026-06-09T14:39:26.853Z"
   },
   "cooper's craft and cocktails": {
     "tier": "open",
@@ -789,7 +825,7 @@
       "open": "12:00 PM",
       "close": "2:00 AM"
     },
-    "checked_date": "2026-06-08T14:39:56.423Z"
+    "checked_date": "2026-06-09T14:39:41.426Z"
   },
   "ms. kim's": {
     "tier": "open",
@@ -816,7 +852,7 @@
       "open": "6:00 PM",
       "close": "12:00 AM"
     },
-    "checked_date": "2026-06-08T14:40:11.357Z"
+    "checked_date": "2026-06-09T14:39:54.245Z"
   },
   "sea by jungsik": {
     "tier": "unknown",
